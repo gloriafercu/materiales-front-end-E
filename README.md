@@ -11,13 +11,13 @@
 ## Contenido
 
 - [Acerca del curso](#acerca-del-curso)
-- [Sobre AdaLab](#sobre-adalab)
+- [Sobre Adalab](#sobre-adalab)
 - [Objetivos generales](#objetivos-generales)
 - [Cómo colaborar](#cómo-colaborar)
 
 ## Acerca del programa
 
-Este repositorio recoge los materiales utilizados dentro del curso intensivo de programación front-end impartido en AdaLab. El curso está enfocado a mujeres sin conocimientos previos de programación pero que sepan manejar equipos informáticos sin complicaciones. La idea es brindar la oportunidad de aprender los detalles de la profesión a personas con menos oportunidades y crear diversificación en las profesiones digitales.
+Este repositorio recoge los materiales utilizados dentro del curso intensivo de programación front-end impartido en Adalab. El curso está enfocado a mujeres sin conocimientos previos de programación pero que sepan manejar equipos informáticos sin complicaciones. La idea es brindar la oportunidad de aprender los detalles de la profesión a personas con menos oportunidades y crear diversificación en las profesiones digitales.
 
 El objetivo principal del curso es que las participantes adquieran las habilidades y conocimientos básicos necesarios para trabajar, de forma profesional, en el mundo de la programación web front-end. Intentamos que todas ellas acaben obteniendo una oportunidad laboral de calidad.
 
@@ -25,9 +25,9 @@ La duración del programa es de cuatro meses. Durante estos meses se partirá de
 
 El fin del curso es que todas las participantes sean capaces de realizar todas las tareas reflejadas en los [Objetivos generales](#objetivos-generales)
 
-## Sobre AdaLab
+## Sobre Adalab
 
-AdaLab es una startup social centrada en crear diversidad en el sector digital, impulsando a mujeres jóvenes con talento de entornos con pocas oportunidades, para que se conviertan en profesionales digitales y accedan a un futuro mejor.
+Adalab es una startup social centrada en crear diversidad en el sector digital, impulsando a mujeres jóvenes con talento de entornos con pocas oportunidades, para que se conviertan en profesionales digitales y accedan a un futuro mejor.
 
 Identificamos los perfiles digitales que necesitan las empresas y formamos a nuestras alumnas para que accedan a los puestos demandados.
 
