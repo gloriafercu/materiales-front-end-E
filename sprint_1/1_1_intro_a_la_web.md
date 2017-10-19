@@ -64,7 +64,7 @@ Hasta ahora hablamos de consultar páginas web que ya están hechas y colocadas 
 ### Pero ¿cómo vemos una página web que hayamos creado nosotros?
 Como introducción, una página web es un archivo con un nombre y una extensión `html` que estará en nuestro ordenador:
 ```
-mi-pagina.html
+index.html
 ```
 
 Haciendo doble clic sobre el archivo se abrirá en la aplicación asignada, en este caso, el navegador web, y podremos ver el resultado. **Aquí estamos consultando un archivo de nuestro ordenador**.
@@ -301,7 +301,7 @@ Una forma de añadir estilos a una página es a través de la etiqueta `<style>`
 Bueno, es una de las opciones pero como desde hace unos años intentamos separar el contenido de la presentación vamos a pasar nuestros estilos siempre a un archivo externo que estará enlazado desde nuestra página HTML.
 Lo haremos con la etiqueta `<link>`, que es una de esas etiquetas que no necesita cerrarse. Esta etiqueta lleva dos atributos, uno que dice el tipo de archivo que va enlazado `rel="stylesheet"` y otro diciendo dónde está el archivo `href="estilos.css"`.
 
-**pagina.html**
+**index.html**
 
 ```html
 <!doctype html>
@@ -309,7 +309,7 @@ Lo haremos con la etiqueta `<link>`, que es una de esas etiquetas que no necesit
 <head>
 	<meta charset="utf-8">
 	<title>Mi página</title>
-	<link rel="stylesheet" href="estilos.css">
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 	<h1>Título de mi página</h1>
@@ -318,7 +318,7 @@ Lo haremos con la etiqueta `<link>`, que es una de esas etiquetas que no necesit
 </html>
 ```
 
-**estilos.css**
+**styles.css**
 
 ```css
 h1 {
