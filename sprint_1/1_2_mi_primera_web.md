@@ -221,9 +221,9 @@ Hacer una tabla con la comida de cada día de la semana usando `<th>`.
 * * *
 
 * * *
-EJERCICIO 2: Buscar información sobre todos estos elementos en [html5doctor](http://html5doctor.com/#glosary)
+EJERCICIO 2: Buscar información sobre todos estos elementos en  la [MDN](https://developer.mozilla.org/es/docs/Web/HTML/Elemento)
 
-* De definición de página
+* Definición de página
 	* doctype
 	* html
 	* head
@@ -257,18 +257,68 @@ EJERCICIO 2: Buscar información sobre todos estos elementos en [html5doctor](ht
 
 * * *
 
-
-
-
-
-
 ## CSS
-SP. Más etiquetas HTML (a, img, div, span, button, input), HTML5 (header, footer, main, section, aside, article), estilos (), cascada CSS. Selectores CSS: elemento, clase, id, anidados, especificidad de selectores, !important
+Todos los elementos HTML tienen una apariencia que comparte cada navegador, con pequeñas variaciones. Por defecto, el tamaño de texto es de 16px, con un intelineado de 1.15. Los encabezados y párrafos tienen un margen superior e inferior relacionado con el tamaño que tiene: el `<h1>` se muestra a 32px y tiene 22px de margen, el fondo de la página es blanco y el color del texto es negro.
+
+	NOTA:
+	La médida básica en web es el pixel o px, cada dispositivo tiene su pantalla que tiene unas dimensiones definidas en pixels, por ejemplo, la pantalla de móvil más pequeña tiene 320x480px (si no se indica lo contrario siempre es "alto por ancho").
+
+Los navegadores ofrecen este aspecto por defecto pero nosotros lo podemos cambiar con CSS, creando estilos para definir la apariencia de nuestras página.
+
+Para cambiar el aspecto de un elemento usando un selector, hay varios tipos de selectores:
+* la propia etiqueta del elemento: h1, a, p,…
+* una clase que hayamos incluido con el atributo `class=""`
+* a través de un identificador en el atributo `id=""`
+* a través de una pseudo clase, que son unas palabras claves que añadidas al selector especifican un estado especial del elemento.
+* a través de un atributo y/o su valor
+* a través de una mezcla de los anteriores
+
+Vamos a ver cada uno de los casos.
+
+### El propio elemento como selector
+Esto no es lo ideal y se aplica los estilos a cada elemento de este tipo que aparezca en la página, así que hay que usarlo con tiento.
+
+Podemos, por ejemplo, hacer que todos los enlaces sean rojos.
+```css
+ a {
+	 color: red;
+ }
+```
+
+### Clases como selectores
+Las clases son palabras claves que atribuimos a elementos HTML para poder agruparlos por función o apariencia y diferenciarlos del resto de elementos de su mismo tipo.
+
+Por ejemplo: La clase "text-link" nos permite aplicar estilos particulares a los enlaces que lleven dicha clase sin afectar al resto de enlaces.
+```html
+<a class="text-link">Enlace de texto</a>
+```
+En css creamos clases para aplicar a grupos de elementos como puede ser todos los enlaces de texto, o solo al listado de ingredientes o a los párrafos del pié de página.
+La manera de indicar en css que se trata de una clase es escribiendo un `.` primero:
+```css
+.text-link {
+	color: red;
+}
+```
+
+### Id como selector
 
 
 
-Cuando abrimos un archivo HTML en un navegador este último lo interpreta y muestra un tipo de texto enriquecido llamado hipertexto. El hipertexto es uno de los conceptos clave detrás de HTML y nos permite utilizar referencias en nuestro texto (hipervínculos) para enlazar otras partes de un mismo documento o de otros documento distintos. Esta cualidad es la que permite tener enlaces en nuestras páginas web, la que permite que podamos navegar a través de internet e ir saltando de una página a otra.+
+ estilos ()
 
-En esta sección vamos a ver cuales son las etiquetas utilizadas para crear este tipo de enlaces y cómo escribir el código para utilizarlas.
-Por otro lado también veremos otro tipo de elementos cómo tablas para mostrar contenido de forma estructurada y comentarios HTML para escribir texto que se puedan ver cuando leemos el código de un archivo pero que no se muestran en la página y por tanto nos permite, cómo su nombre indica, comentar el texto para poder explicar partes concretas de él.
-Más etiquetas HTML
+ Selectores CSS:
+ elemento,
+ clase,
+ id,
+ anidados,
+
+cascada CSS y especificidad de selectores,
+!important
+
+
+
+
+https://stuffandnonsense.co.uk/archives/css_specificity_wars.html
+
+
+http://cssspecificity.com/#
