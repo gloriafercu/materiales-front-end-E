@@ -9,6 +9,31 @@ La etiquetas html nos premiten estructurar nuestro contenido según su función 
 * para identificar semánticamente el **contenido**
 * para crear **tablas de datos**
 
+	NOTA:
+	Todavía no lo hemos dicho expresamente pero lo normal es anidarlas, meter etiquetas dentro de etiquetas:
+
+	```html
+	<html>
+		<body>
+			<header>
+				<h1>Título</h1>
+			</header>
+			<main>
+				<section>
+					<h2>Subtítulo</h2>
+					<p>Contenido y más contenido</p>
+					<p>Contenido con <a href="">enlaces</a></p>
+					<ul>
+						<li>lista</li>
+						<li>de</li>
+						<li>cosas</li>
+					</ul>
+				</section>
+			</main>
+		</body>
+	</html>
+	```
+
 ## Secciones
 Normalmente no vamos a querer meter nuestro contenido en la página y ya está, querremos darle una estructura y agruparlo en bloques. Para ello tenemos la etiqueta `<section>`.
 Usaremos una sección para agrupar contenidos por temática:
