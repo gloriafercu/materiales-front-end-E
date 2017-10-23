@@ -142,25 +142,61 @@ Para ello tenemos la etiqueta `<img>`, que tiene varios atributos:
 **Ejemplo:**  
 ![Ejemplo de alt=""](assets/img/alt.png)
 
-Saltos de línea
-`<br>``
-Separadores horizontales
+### Saltos de línea
+Aunque es recomendable usarlo con tiento tenemos unas etiquetas que fuerzan un salto de línea: `<br>`.
+Desde que empezamos a separar el contenido y el diseño esta etiqueta ha quedado relegada a un lugar muy secundario pero todavía hay veces en los que vas a querer forzar una línea nueva en mitad de un texto y está bien conocerla.
 
-Contenedores generales
-	*
-	* strong, em
-	* small, abbr, sup, sub
-	* br, hr
-	* div/span
-	* img
+```html
+<h1>Mi título genial <br>en dos líneas</h1>
+```
 
+### Contenedores generales
+Aparte de las secciones tenemos un par de contenedores sin propósito específico que nos sirven para hacer agrupaciones sin carga semántica. Son el `<div>` y el `<span>`. Mientras que el **div** es para bloques de contenido el **span** está indicado para partes del texto. Los iremos viendo más adelante.
 
 
 
 
+## Tablas
+Hubo un tiempo en el que las tablas eran la base sobre la que se maquetaba cualquier página web. Hoy se utilizan para lo que son: presentar datos tabulados.
 
+La tabla básica tiene una estructura bastante simple y tiene tres etiquetas principales:
+* una etiqueta que marque que se va a escribir una tabla
+* una etiqueta para las filas
+* una etiqueta para las celdas
 
+En una imagen, una tabla de 3 filas y 3 columnas sería algo asi:
+![Tabla de 3x3](assets/img/table.png)
 
+y en código quedaría así:
+```html
+<table>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+```
+
+En principio, en las tablas siempre tiene que haber igual número de celdas en cada fila.
+
+* * *
+EJERCICIO 1:
+Hacer una tabla con la comida de cada día de la semana usando `<th>`.
+* * *
+
+* * *
+EJERCICIO 2: Buscar información sobre todos estos elementos en [html5doctor](http://html5doctor.com/#glosary)
 
 * De definición de página
 	* doctype
@@ -188,14 +224,13 @@ Contenedores generales
 	* table
 	* tr
 	* td, th
+	* caption
+	* thead
+	* tbody
+	* tfoot
+	* col, colgroup
 
-http://html5doctor.com/#glosary
-
-
-
-
-	Un ejemplo más cercano:
-	En mi blog personal escribo una reseña sobre la última de Blade Runner y con un par de enlaces ofrezco mi opinión personal, información de la película a través de su ficha de la IMDB.com y la 	valoración de otros en la página de valoraciones Metacritic.com
+* * *
 
 
 
