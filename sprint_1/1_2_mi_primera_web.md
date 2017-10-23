@@ -103,20 +103,45 @@ Si quisiese enlazar al contenido principal de mi página desde otra página usar
 <a href="index.html#top">Volver arriba</a>
 ```
 
-En estos dos casos se dice que los enlaces son relativos porque apuntan dentro de nuestro proyecto. Si conocemos una página que use id, podemos enlazar directamente a esa parte del contenido. Vamos a enlazar a la wikipedia, justo a la parte donde se habla de la piratería en la edad media:
+En estos dos casos se dice que las rutas son **relativas** porque apuntan dentro de nuestro proyecto. Si incluímos el dominio donde está alojada la página o archivo, aunque sea en nuestro dominio, diremos que la ruta es **absoluta**.
+
+Si conocemos una página que use id, podemos enlazar directamente a esa parte del contenido . Vamos a enlazar a la wikipedia, justo a la parte donde se habla de la piratería en la edad media:
 
 ```html
 <a href="https://es.wikipedia.org/wiki/Piratería#La_Edad_Media">La piratería en la edad media</a>
 ```
 Aquí el atributo href lleva la dirección de la página de la Wikipedia sobre la piratería y el id de la sección que se refiere a la edad media.
 
+La etiqueta tiene varios atributos que debemos conocer:
+* `title=""`: Donde podemos añadir un texto complementario que el navegador mostrará en un pequeño tooltip cuando pongamos el cursor sobre el enlace. Me interesa usarlo cuando tengo un enlace tipo "descargar" y quiero asociarle el texto "Descargar archivo PDF".  
+**Ejemplo:**  
+![Ejemplo de title=""](assets/img/title.png)
+* `target=""`: Aquí podemos especificar si se abre en ventana nueva. Esto me interesa hacerlo cuando en mi página enlazo a páginas de otros y no quiero que el usuario "pierda" mi página al hacer clic en ellos.
 
 
-Negritas, cursivas
+### Negritas, cursivas
+Tradicionalmente se usaban las etiquetas `<b>` y `<i>` para poner un texto en negrita (bold) o en cursivas o itálicas (italic). Estas etiquetas se mantienen aunque no tienen carga semántica, no significan nada más allá de que muestran el texto en negrita o cursiva.
 
-`<strong>`, `<em>`
-Imágenes
-`<img>`
+Las nuevas etiquetas, `<strong>` y `<em>`, aunque visualmente hacen lo mismo (strong muestra el texto en negrita y em, en cursiva) sí que tienen una carga semántica, para indicar el nivel de énfasis o de importancia.
+Con `<em>` resaltas un texto importante, y con `<strong>` resaltas un texto más importante.
+
+```html
+<p>Dentro de este párrafo tenemos <em>un texto importante</em> y <strong>uno que es muy importante</strong></p>
+```
+
+	NOTA:
+	El aspecto visual de estas etiquetas es una convención entre los diferentes navegadores y, como veremos, se puede cambiar.
+
+### Imágenes
+Muchas veces querremos acompañar nuestro contenido con imágenes, ya sea para acompañarlo (imágenes de una noticia,… ), como motivo principal (una galería de ilustraciones,…).
+
+Para ello tenemos la etiqueta `<img>`, que tiene varios atributos:
+* `src=""`: Aquí indicamos la ruta de nuestro archivo de imagen
+* `title=""` Este atributo se puede aplicar a casi todas las etiquetas y siempre es un texto complementario que ayuda a entender mejor el texto enlazado y/o en temas de accesibilidad.
+* * `alt=""`: El atributo alt es muy parecido pero es solo para imágenes y es el texto que va a mostrar el navegador en caso de la imagen no se pueda cargar.  
+**Ejemplo:**  
+![Ejemplo de alt=""](assets/img/alt.png)
+
 Saltos de línea
 `<br>``
 Separadores horizontales
