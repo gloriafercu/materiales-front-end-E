@@ -120,6 +120,14 @@ Otro de los beneficios de pensar en un diseño enfocado a móvil es que, al tene
 
 Para este proyecto hemos preparado un listado de recursos que os pueden servir de ayuda.
 
+### Cómo diseñar una web desde cero
+
+Saber diseñar una web no es un requisito previo para este curso. Tampoco es un objetivo del curso que aprendáis a hacerlo ni os lo exigiremos, por eso hemos preparado una breve guía para aprender a diseñar una web desde cero, para que os sirva como referencia para realizar el diseño y para daros los pasos y la información necesaria para llevar a cabo un diseño básico.
+
+[Guía para diseñar una web desde cero](P1_anexo_diseno.md)
+
+**Nota:** Si por algún casual, preferís dedicaros solo a la programación, podéis tomar como referencia algún diseño que ya exista previamente siempre y cuando cambiéis ciertos aspectos del diseño para que no mantenga unos estilos muy similares. Sea cual sea la vía que se escoja el contenido (texto y fotos) asi como el nombre y el logo de la página deberá ser diseñado por vosotras para asi darle un toque personal a la web.
+
 ### Iconos e imágenes
 
 En esta sección os mostramos varias páginas para obtener iconos e imágenes de bastante calidad.
