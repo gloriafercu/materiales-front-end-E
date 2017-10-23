@@ -72,7 +72,7 @@ _Definir mediante tres palabras los atributos que se quieran asociar al producto
 
 En esta sección siempre viene bien hacer una tabla de opuestos para ayudarnos a entender como queremos que sea nuestra marca y solventar bloqueos. A continuación se muestra una imagen de ejemplo:
 
-![Tabla de opuestos](assets/tabla_opuestos_briefing.png)
+![Tabla de opuestos](assets/imagestabla_opuestos_briefing.png)
 
 
 #### Público objetivo o target
@@ -115,7 +115,7 @@ Una vez hayamos respondido estas preguntas tendremos claro qué queremos comunic
 
 ### 2. Estructurar el contenido
 
-Ahora que tenemos claro que queremos contar, es el momento de organizar la información para optimizar el mensaje. Para ello, no hay nada mejor que ver cómo deberíamos de meter la información en nuestra web, en esta fase nos haremos preguntas similares a las siguientes:
+Ahora que tenemos claro qué queremos contar, es el momento de organizar la información para optimizar el mensaje. Para ello, no hay nada mejor que ver cómo deberíamos de meter la información en nuestra web, en esta fase nos haremos preguntas similares a las siguientes:
 
 - ¿Tiene sentido meter toda la información en una página web o es mejor crear varias para las distintas secciones?
 - ¿Qué contenido es más importante y cuál menos?
@@ -130,32 +130,34 @@ Tras hacer el ejercicio de reflexionar acerca de como queremos organizar el cont
 
 - Sitemap: Un sitemap es la representación visual de la estructura de páginas de nuestra web y cómo están relacionadas. En él definimos páginas y subpáginas y permite ver a simple vista la organización de nuestra web. Hay gente que incluye en el sitemap las secciones de cada página, es decir, si tienes una página inicial con cuatro apartados, esos apartados se mostrarían en el sitemap. Nosotros mostraremos en el sitemap solo las páginas y dejaremos las secciones para la parte de estructura del contenido, así tendremos una vista global de las páginas y su relación sin entrar al detalle de qué es lo que contiene cada una.
 
-![sitemap](assets/mapa_web.jpg)
+![sitemap](assets/imagesmapa_web.jpg)
 
 - Estructura del contenido de las webs: En esta parte, reflejaremos cuál va a ser el contenido de cada página a grandes rasgos, es decir, mostraremos que bloques irán en cada página, el orden que tendrán, el tamaño (aproximado siempre ) y la importancia. Esto no será algo definitivo, sino más bien una guía pero nos servirá para facilitarnos la tarea de ver cómo vamos a crear la web. Crearemos la estructura de contenido de cada página para tener claro cómo serán todas ellas. En la imagen se puede ver que se establecen ya los tamaños y las partes más importantes, el color no tiene relación con el que se usará en el diseño final, simplemente sirve para reflejar que esa sección será destacada.
 
-![Estructura de contenido](assets/estructura_de_contenido.png)
+![Estructura de contenido](assets/imagesestructura_de_contenido.png)
 
 
 ### 3. Realizar bocetos en papel de la página
 
 Aquí empezamos con la acción. Ya tenemos claro qué es lo que queremos contar, cómo vamos a contarlo y cuál va a ser la estructura de nuestro mensaje. Es el momento de pasar estas ideas al soporte, de convertirlas en un diseño. En esta fase definiremos cada página usando un papel y un lápiz, de forma rápida pero que quede claro qué elementos vamos a poner en cada una de ellas (botones, imágenes, menús, etc.) La idea es hacer algo en sucio que sea fácil de realizar y modificar para jugar con la posibles ideas que tengamos de forma rápida.
 
-Para esta página empezaremos con el diseño para dispositivos móviles, asi que el diseño deberá ser enfocado a un móvil. Veremos el por qué de este requisito durante la clase de diseño responsive. Si se desea, también se puede realizar el diseño para pantallas de ordenador siempre y cuando no nos quite mucho tiempo de la función principal del curso: aprender programación.
+Para esta página empezaremos con el diseño para dispositivos móviles, asi que el diseño deberá ser enfocado a un móvil. Veremos el por qué de este requisito durante la clase de diseño responsive. Si se desea, también se puede realizar el diseño para pantallas de ordenador siempre y cuando no quite mucho tiempo a la función principal del curso: aprender programación.
+
+Si se decide diseñar la versión para pantallas de ordenador, es importante que el diseño no sea radicalmente diferente a la versión móvil, cuanto más distinta sea más difícil será para el usuario identificar la información que encuentra en el móvil en su ordenador y viceversa y además cuanto más varie más tiempo nos llevará realizar la web y más complejidad tendrá el trabajo.
 
 Es importante que en esta pensemos solo en elementos, no en diseño final. Es decir, no hace falta hacer un diseño con acabados muy cuidados porque estos serán solo de referencia para saber qué vamos a poner en cada sitio.
 
-![Bocetos de ejemplo de diseño en papel para pantallas móviles](assets/bocetos_diseno.jpg)
+![Bocetos de ejemplo de diseño en papel para pantallas móviles](assets/imagesbocetos_diseno.jpg)
 
-### 4. Creación de los low-fidelity wireframes (paso opcional)
+### 4. Creación de los low-fidelity wireframes
+
+**Importante:** Para el proyecto de diseño de nuestro sitio web no vamos a realizar este paso porque llevaría demasiado tiempo en realizar el diseño y nos desviaríamos del objetivo más importante, aprender a programar. Aún así lo explicamos brevemente para que sepáis que este paso se suele realizar en proyectos reales.
 
 Una vez hechos los bocetos en papel, lo normal es pasar esos bocetos a un diseño de baja fidelidad. Se llama diseño de baja fidelidad (low-fidelity wireframe) porque el resultado no tiene porque ser muy parecido al diseño final, simplemente reflejar qué elementos va a haber en la web y cómo se van a distribuir.
 
 Este paso es muy parecido al anterior de realizar bocetos, pero en este caso se busca una solución con mayor calidad y un poco más de detalle, que permitirá crear los diseños finales de forma más rápida.
 
-Este paso es opcional para realizar el diseño del primer proyecto grupal y puede llevar bastante tiempo, por lo que solo es aconsejable llevarlo a cabo si se realiza en poco tiempo. Otra alternativa, si te sientes más cómoda con las herramientas digitales frente al papel, es hacer este paso en vez de los bocetos del paso anterior. Sea cual sea la opción que elijamos, es fundamental que no invirtamos todo el tiempo en el diseño y que se de prioridad al tiempo de programación.
-
-![Low-fidelity wireframes](assets/low_fidelity_wireframes.png)
+![Low-fidelity wireframes](assets/imageslow_fidelity_wireframes.png)
 
 
 ### 5. Diseño de la identidad y la linea gráfica de la web
@@ -178,13 +180,15 @@ Tenemos los conceptos y los atributos de la marca y tenemos las referencias, es 
 
 Una vez hemos jugado y probado varias opciones y tenemos ya clara cual queremos, es el momento de realizar una guía de estilos que cuadre con la marca y tenga relación con esta. Además, en esta fase añadiremos color a la marca y elegiremos una tipografía (fuente) que transmita los atributos que hemos escogido. El resultado final será una guia de estilos que servirá como referencia a la hora de diseñar los wireframes (las vistas) finales de la web.
 
-![Guía de estilos de ejemplo](assets/styleguide.png)
+![Guía de estilos de ejemplo](assets/imagesstyleguide.png)
 
 
 Ahora que tenemos la guía de estilos y la marca, ya tenemos la referencia visual que nos servirá como referencia para aplicar los estilos al resto de la web.
 
 
-### 6. Realización de los high-fidelity wireframes (paso opcional)
+### 6. Realización de los high-fidelity wireframes
+
+**Importante:** Para el proyecto de diseño de nuestro sitio web no vamos a realizar este paso porque llevaría demasiado tiempo en realizar el diseño y nos desviaríamos del objetivo más importante, aprender a programar. Aún así lo explicamos brevemente para que sepáis que este paso se suele realizar en proyectos reales.
 
 Como su nombre indica (wireframes de alta fidelidad), este tipo de wireframes serán lo más parecido posible al resultado deseado desde el punto de vista de diseño. La idea es coger el resultado de la fase de creación de los low-fidelity wireframes y combinarlo con el resultado de la fase de desarrollo de la linea gráfica de la web para crear un resultado que combine una buena estructura y un diseño acorde a lo que se quiere transmitir.
 
@@ -192,12 +196,10 @@ En esta fase es cuando realmente prestamos atención a los detalles estéticos (
 
 Cuanto más cuidemos el resultado, más fácil nos será luego implementarlo y menos cambios tendremos que hacer si vemos que algo del diseño nos cuesta mucho realizarlo con código.
 
-Cómo se describe, esta fase es opcional. Es importante adaptar también el diseño a la capacidad de cada uno y no hacer un diseño que sea muy complejo porque si no podemos implementarlo será bonito sobre el papel, pero sería como hacer un plano de una casa que no se puede construir o el molde de una tarta que no puede realizarse. Por lo tanto, tengamos en cuenta las capacidades de cada uno y a partir de ahí diseñemos algo alcanzable.
-
 Algunos consejos importantes:
 
 - Diseñaremos siempre con el pixel como medida para márgenes, relleno, tamaño de fuentes y bordes y con el porcentaje para anchos y algunas alturas
-- Lo normal es diseñar en una pantalla de 320x480 o 640x960 pixeles (320 ancho y 480 alto)
+- Lo normal es diseñar en una pantalla de 320x480
 - Es recomendable usar múltiplos de 12, 8 o 10 para las medidas, de esta forma creamos cierto ritmo y consistencia en el diseño
 - Lo normal para los márgenes en móvil es usar entre 16 y 24 píxeles
 - Usar un interlineado de entre 1.4 y 1.6 para el texto ayuda a dar espacio y lo deja mucho menos sobrecargado.
@@ -214,7 +216,7 @@ Llegó el momento. Una vez hemos realizado los pasos anteriores, ya podemos lanz
 
 Lo fundamental de esta fase es intentar que el resultado sea lo más similar posible al diseño que hemos realizado, eso servirá como reto para medir nuestras habilidades de programación pero si procuramos cuidar al máximo el detalle aprenderemos a resolver problemas más complejos y por tanto mejoraremos nuestras habilidades de forma notable.
 
-Si hemos creado el diseño con Photoshop o Sketch, podemos utilizar la aplicación de Zeplin para facilitar el desarrollo de la web de forma grupal y obtener beneficios a la hora de ver distancias entre elementos, tamaños de tipografías y colores.
+En el futuro veremos cómo algunas herramientas nos facilitan el proceso de pasar el diseño a código y obtener beneficios a la hora de ver distancias entre elementos, tamaños de tipografías y colores empleados, pero por el momento aprenderlas no será necesario para este proyecto.
 
 Muchas veces se nos escapa algún detalle que no hemos tenido en cuenta en el diseño pero que al implementarlo vemos que es fundamental. En este tipo de casos tenemos dos opciones, realizarlo directamente o diseñarlo y posteriormente convertirlo a código. En los proyectos reales, la segunda opción suele ser la indicada ya que la maquetación debe ser el reflejo del diseño y no al revés. En este caso, ya que hemos sido nosotros los que realizamos el diseño, podemos modificar algo directamente en el código siempre que sea sencillo de realizar y tengamos estilos similares para otros elementos que podemos usar como referencia.
 
