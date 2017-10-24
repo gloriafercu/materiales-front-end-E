@@ -258,7 +258,7 @@ EJERCICIO 2: Buscar información sobre todos estos elementos en  la [MDN](https:
 * * *
 
 ## CSS
-Todos los elementos HTML tienen una apariencia que comparte cada navegador, con pequeñas variaciones. Por defecto, el tamaño de texto es de 16px, con un intelineado de 1.15. Los encabezados y párrafos tienen un margen superior e inferior relacionado con el tamaño que tiene: el `<h1>` se muestra a 32px y tiene 22px de margen, el fondo de la página es blanco y el color del texto es negro.
+Todos los elementos HTML tienen una apariencia que comparte cada navegador, con pequeñas variaciones. Por defecto, el tamaño de texto por defecto es de 16px, con un intelineado de 1.15. Los encabezados y párrafos tienen un margen superior e inferior relacionado con el tamaño de texto: el `<h1>` se muestra a 32px y tiene 22px de margen. El fondo de la página es blanco y el color del texto es negro...
 
 	NOTA:
 	La médida básica en web es el pixel o px, cada dispositivo tiene su pantalla que tiene unas dimensiones definidas en pixels, por ejemplo, la pantalla de móvil más pequeña tiene 320x480px (si no se indica lo contrario siempre es "alto por ancho").
@@ -385,18 +385,52 @@ Digamos que queremos que los botones tengan una caja con bordes redondeados pero
 ```
 [Codepen de ejemplo](https://codepen.io/oneeyedman/pen/gGNpaQ)
 
+### Herencia
+Hay una serie de estilos que se heredan, es decir, que se transmiten a los hijos. Entonces, si aplicamos una de estas propiedades a un elemento, todos los elementos anidados la heredarán también.
 
+* * *
+EJERCICIO
+El color es una de ellas así que si tenemos esta estructura:
+```html
+<article>
+	<h2>Título</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+	<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+	<aside class="links">
+		<h3>Enlaces relaccionados</h3>
+		<ul>
+			<li><a href="#">Enlace 1</a></li>
+			<li><a href="#">Enlace 2</a></li>
+			<li><a href="#">Enlace 3</a></li>
+			<li><a href="#">Enlace 4</a></li>
+		</ul>
+	</aside>
+</article>
+```
+y al `<aside>` con clase `.links` le aplicamos una regla que ponga el texto rojo, ¿qué quedará en rojo?
+* * *
+*
+[Más en la MDN](https://developer.mozilla.org/es/docs/Web/CSS/inheritance)
 
-
-
+* * *
+EJERCICIO:
+Plantea un ejemplo como el anterior donde no forcemos la herencia de una propiedad que no se hereda, por ejemplo el color de fondo.
+* * *
 
 ### Cascada y especificidad de selectores
-!important
-[Codepen de ejemplo](https://codepen.io/oneeyedman/pen/dVBPVv)
+CSS es, en español, Hojas de estilo en cascada. La "cascada" se refiere al proceso de combinación y aplicación de estilos en CSS y cómo se resuelven los conflictos entre ellos.
 
+Acabamos de ver que a veces varios selectores se aplican al mismo elemento y es el algoritmo de la cascada lo que decide que propiedades se aplicaran.
 
+La cascada depende de 4 factores:
 
-https://stuffandnonsense.co.uk/archives/css_specificity_wars.html
+1. La **importancia**: hay una palabra clave que hace que nuestra propiedad se aplique siempre.
+2. La **especificidad**: es un arma de doble filo porque cuanto más específico sea un selector más fuerza tendrán sus reglas sobre las demás, pero el reto es escribir los selectores lo menos específicos posible.
+3. El **orden** en el archivo CSS: Si varios selectores tienen la misma "fuerza" ganarán los que estén al final porque el css se aplica en orden de escritura.
 
+[En la MDN viene perféctamente explicado](https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Cascada_y_herencia).
 
-http://cssspecificity.com/#
+Dos enlaces sobre la especificidad más... amenos
+
+* [CSS Specifity Wars](https://stuffandnonsense.co.uk/archives/css_specificity_wars.html)
+* [CSS SPECIFITY](http://cssspecificity.com/#)
