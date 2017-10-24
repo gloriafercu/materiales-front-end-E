@@ -265,12 +265,11 @@ Todos los elementos HTML tienen una apariencia que comparte cada navegador, con 
 
 Los navegadores ofrecen este aspecto por defecto pero nosotros lo podemos cambiar con CSS, creando estilos para definir la apariencia de nuestras página.
 
-Para cambiar el aspecto de un elemento usando un selector, hay varios tipos de selectores:
+Para cambiar el aspecto de un elemento usamos un selector, hay varios tipos de selectores:
 * la propia etiqueta del elemento: h1, a, p,…
 * una clase que hayamos incluido con el atributo `class=""`
 * a través de un identificador en el atributo `id=""`
 * a través de una pseudo clase, que son unas palabras claves que añadidas al selector especifican un estado especial del elemento.
-* a través de un atributo y/o su valor
 * a través de una mezcla de los anteriores
 
 Vamos a ver cada uno de los casos.
@@ -290,7 +289,7 @@ Las clases son palabras claves que atribuimos a elementos HTML para poder agrupa
 
 Por ejemplo: La clase "text-link" nos permite aplicar estilos particulares a los enlaces que lleven dicha clase sin afectar al resto de enlaces.
 ```html
-<a class="text-link">Enlace de texto</a>
+<a href="#" class="text-link">Enlace de texto</a>
 ```
 En css creamos clases para aplicar a grupos de elementos como puede ser todos los enlaces de texto, o solo al listado de ingredientes o a los párrafos del pié de página.
 La manera de indicar en css que se trata de una clase es escribiendo un `.` primero:
@@ -301,20 +300,99 @@ La manera de indicar en css que se trata de una clase es escribiendo un `.` prim
 ```
 
 ### Id como selector
+Ya habíamos visto que los ID eran una palabra clave que usábamos como identificador para un único elemento. En css también los podemos usar como selector, pero a lo poder haber más de uno por página no es recomendable usarlo salvo en casos muy excepcionales.
+
+En una lista de acciones, por ejemplo, podemos tener unas clases para añadir estilos a los elementos del bloque y, ademas, añadir un identificador único para cada elemento.
+```html
+<ul class="actions">
+	<li class="action">
+		<a id="add-user" href="" class="button">Nuevo usuario</a>
+	</li>
+	<li class="action">
+		<a id="rename-user" href="" class="button">Renombrar usuario</a>
+	</li>
+	<li class="action">
+		<a id="delete-user" href="" class="button">Eliminar usuario</a>
+	</li>
+</ul>
+```
+Y ahora podríamos usar el ID para cambiar el tañamo del texto de uno de los elementos. Para ello, usamos la `#` seguida de la id como selector.
+```css
+#add-user {
+	font-size: 24px;
+}
+```
+
+### Pseudo clase como selector
+Las pseudo clases son palabras claves que añadidas a alguno de los selectores anteriores especifican un estado concreto del elemento. El más usado es el estado de hover, que es cuando colocamos el ratón encima del elemento.
+
+Las pseudo clases se escriben usando el seleector,  `:` y la palabra clave que toque.
+
+Por ejemplo, como uno de los ejemplos anteriores tenemos un enlace que vamos a poner de texto rojo, pero cuando coloques el cursor encima invetiremos los colores y lo mostraremos con fondo blanco y color rojo. Partimos del mismo html que anteriormente.
+```html
+<a href="#" class="text-link">Enlace de texto</a>
+```
+Y el css sería:
+```css
+.text-link {
+	color: red;
+}
+.text-link:hover {
+	background: red;
+	color: white;
+}
+```
+[Codepen de ejemplo](https://codepen.io/oneeyedman/pen/wrLBQQ)
+
+### Los selectores se pueden mezclar
+Esto nos ayuda a contemplar casos particulares sin tener que usar las ID.
+
+Por ejemplo, si tenemos una lista de botones como la anterior:
+```html
+<ul class="actions">
+	<li class="action">
+		<a href="" class="button button--new">Nuevo usuario</a>
+	</li>
+	<li class="action">
+		<a href="" class="button button--rename">Renombrar usuario</a>
+	</li>
+	<li class="action">
+		<a href="" class="button button--delete">Eliminar usuario</a>
+	</li>
+</ul>
+```
+Hemos eliminado el atributo id y hemos añadido una clase extra para cada tipo de botón. De esta manera tenemos por cada "botón" una clase general `.button` donde colocaremos los estilos comunes a todos los botones y luego una particular (`.button--new`, `.button--rename` y `.button--delete`) donde solo pondremos los ajustes particulares.
+Digamos que queremos que los botones tengan una caja con bordes redondeados pero que el de añadir usuario sea verde, el de renombrar sea azul y el de borrar sea, claramente, rojo muerte.
+```css
+.button {
+  background: grey;
+  border-radius: 20px;
+  color: white;
+  display: inline-block;
+  margin-bottom: 1em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+.button--new {
+  background: green;
+}
+.button--rename {
+  background: blue;
+}
+.button--delete {
+  background: red;
+}
+```
+[Codepen de ejemplo](https://codepen.io/oneeyedman/pen/gGNpaQ)
 
 
 
- estilos ()
 
- Selectores CSS:
- elemento,
- clase,
- id,
- anidados,
 
-cascada CSS y especificidad de selectores,
+
+### Cascada y especificidad de selectores
 !important
-
+[Codepen de ejemplo](https://codepen.io/oneeyedman/pen/dVBPVv)
 
 
 
