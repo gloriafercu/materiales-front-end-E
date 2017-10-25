@@ -263,6 +263,20 @@ Todos los elementos HTML tienen una apariencia que comparte cada navegador, con 
 	NOTA:
 	La médida básica en web es el pixel o px, cada dispositivo tiene su pantalla que tiene unas dimensiones definidas en pixels, por ejemplo, la pantalla de móvil más pequeña tiene 320x480px (si no se indica lo contrario siempre es "alto por ancho").
 
+### Hojas de CSS reset
+Debido a las pequeñas variaciones de la apariencia por defecto de los diferentes elementos html en cada navegador existen unas hojas de estilos más o menos estándar y más o menos completas que se llaman hojas de CSS reset.
+Se trata de una hoja de estilos que intenta que todos los elementos se muestren igual en todos los navegadores y no hay un estándar para hacerlo.
+
+Ahora mismo hay parte de la comunidad de desarrollo que no considera que estas hojas de reset sean necesarias porque:
+* Las páginas deben verse bien en todos los navegadores, no exactamente igual
+* Las últimas versiones de los navegadores son bastante decentes y la época dura de los navegadores antiguos, ya paso
+* No hay un método estándar de reseteo de CSS
+
+	NOTA: Aún así, en algúnos casos puede interesar usar una o incluso hacerse una propia, así que conocerlas es importante.
+
+[Reset CSS](https://es.wikipedia.org/wiki/Reset_CSS)
+
+### Selectores
 Los navegadores ofrecen este aspecto por defecto pero nosotros lo podemos cambiar con CSS, creando estilos para definir la apariencia de nuestras página.
 
 Para cambiar el aspecto de un elemento usamos un selector, hay varios tipos de selectores:
@@ -274,7 +288,7 @@ Para cambiar el aspecto de un elemento usamos un selector, hay varios tipos de s
 
 Vamos a ver cada uno de los casos.
 
-### El propio elemento como selector
+#### El propio elemento como selector
 Esto no es lo ideal y se aplica los estilos a cada elemento de este tipo que aparezca en la página, así que hay que usarlo con tiento.
 
 Podemos, por ejemplo, hacer que todos los enlaces sean rojos.
@@ -284,7 +298,7 @@ Podemos, por ejemplo, hacer que todos los enlaces sean rojos.
  }
 ```
 
-### Clases como selectores
+#### Clases como selectores
 Las clases son palabras claves que atribuimos a elementos HTML para poder agruparlos por función o apariencia y diferenciarlos del resto de elementos de su mismo tipo.
 
 Por ejemplo: La clase "text-link" nos permite aplicar estilos particulares a los enlaces que lleven dicha clase sin afectar al resto de enlaces.
@@ -299,7 +313,7 @@ La manera de indicar en css que se trata de una clase es escribiendo un `.` prim
 }
 ```
 
-### Id como selector
+#### Id como selector
 Ya habíamos visto que los ID eran una palabra clave que usábamos como identificador para un único elemento. En css también los podemos usar como selector, pero a lo poder haber más de uno por página no es recomendable usarlo salvo en casos muy excepcionales.
 
 En una lista de acciones, por ejemplo, podemos tener unas clases para añadir estilos a los elementos del bloque y, ademas, añadir un identificador único para cada elemento.
@@ -323,7 +337,7 @@ Y ahora podríamos usar el ID para cambiar el tañamo del texto de uno de los el
 }
 ```
 
-### Pseudo clase como selector
+#### Pseudo clase como selector
 Las pseudo clases son palabras claves que añadidas a alguno de los selectores anteriores especifican un estado concreto del elemento. El más usado es el estado de hover, que es cuando colocamos el ratón encima del elemento.
 
 Las pseudo clases se escriben usando el seleector,  `:` y la palabra clave que toque.
@@ -344,7 +358,7 @@ Y el css sería:
 ```
 [Codepen de ejemplo](https://codepen.io/oneeyedman/pen/wrLBQQ)
 
-### Los selectores se pueden mezclar
+#### Los selectores se pueden mezclar
 Esto nos ayuda a contemplar casos particulares sin tener que usar las ID.
 
 Por ejemplo, si tenemos una lista de botones como la anterior:
