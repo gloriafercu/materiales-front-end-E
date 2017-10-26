@@ -87,7 +87,33 @@ Entrar en [Wikipedia.org](Wikipedia.org) y
 De momento veremos hasta ahí. Las herramientas para desarrolladores de Google Chrome ofrecen un sinfín de posibilidades más pero más adelante comenzaremos a ver recursos muy útiles para cuando trabajemos en otras áreas de nuestra página como JavaScript.
 
 
+
+### Terminal
+
+#### Introducción a la Terminal y comandos básicos de GNU/Linux
+
+- [Curso de introducción a GNU/Linux - ¿Qué es la Terminal? ](https://www.youtube.com/watch?v=5b7j-Keeokc)
+- [Curso de introducción a GNU/Linux - Comandos Básicos](https://www.youtube.com/watch?v=esbup7hKv6E)
+
+* * *
+EJERCICIO:
+Ir a nuestra carpeta de documentos y crear la siquiente estructura de carpetas y archivos (vacíos):
+```txt
+nombre
+	datos
+		mis-datos.txt
+	proyecto
+		ruta-del-proyecto.txt
+```
+- En el archivo **mis-datos.txt** vamos a escribir el Nombre y la comida favorita.
+- En el archivo **ruta_del-proyecto.txt**
+- Mover los dos archivos a la carpeta principal, que sería **nombre**
+* * *
+
 ## Recursos externos
+
+### Más información sobre las DevTools
+[Explicación detallada sobre las DevTools](https://developers.google.com/web/tools/chrome-devtools/?hl=es)
 
 ### Videos de las herramientas para desarrollores de Chrome
 
@@ -99,20 +125,19 @@ De momento veremos hasta ahí. Las herramientas para desarrolladores de Google C
 
 https://developers.google.com/web/tools/chrome-devtools/shortcuts?hl=es
 
+
 ### Usando las herramientas de desarrollador
 
 [Herramientas web](https://es.khanacademy.org/computing/computer-programming/html-css/web-development-tools/a/using-the-browser-developer-tools)
 
 **Nota:** Los dos videos de esta sección del curso de Khan Academy se pueden abrir en Youtube. Si los abrís en Youtube, activais los subtitulos y cambiais la configuración a Auto-translate, podréis ver el video sin problemas ya que el traductor funciona muy bien.
 
-### Introducción a la Terminal y comandos básicos de GNU/Linux
-
-- [Curso de introducción a GNU/Linux - ¿Qué es la Terminal? ](https://www.youtube.com/watch?v=5b7j-Keeokc)
-- [Curso de introducción a GNU/Linux - Comandos Básicos](https://www.youtube.com/watch?v=esbup7hKv6E)
-
 
 
 ## Resumen de la sesión
 
+1. El objetivo principal de la sesión es aprender que tenemos una herramienta muy potente justo en el navegador que son las DevTools, donde podremos inspecionar y manipular el código de una página nuestra o de otra persona.
+2. Además daremos nuestros primeros pasos con la consola.
 
 ## Ejercicios
+{{pendiente}}
