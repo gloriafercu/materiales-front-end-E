@@ -1,6 +1,6 @@
 # Publicando nuestra web
 
-## Resumen
+## Contenidos
 
 - Intro a git: concepto control de versiones, git init, add, commit, status, algo básico para revertir commit?
 - GitHub, GitHub pages, git push y publicar poniendo README, descripción del repo, etc.
@@ -15,6 +15,7 @@ Github es una red social montada sobre git.
 Por ahora solo hemos empezado a arañar el mundo frontend pero el uso de un control de versiones nos ofrece algo que antes no teníamos:
 * ¿Qué pasa si me dejé el trabajo en casa?
 * ¿Qué pasa si hago un cambio y quiero volver atrás?
+* ¿Qué pasa si quiero saber de forma clara en qué punto hice un cambio concreto?
 * ¿Cómo trabajo con otros sin que sea un caos y nos estemos pisando todo el rato?
 
 Pues con un control de versiones.
@@ -46,7 +47,7 @@ Comprobar que tenemos git instalado o instalarlo si no lo tenemos aún
 * * *
 
 ### Github y Github Pages
-Github es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git. Está muy enfocada a proyectos de código abierto por lo que es de uso gratuíto siempre que tus proyectos estén en displonibles para todos. Pagando puedes tener proyectos privados pero la verdadera fuerza de Github está en la comunidad tan grande que se ha montado sobre la idea de código abierto u opensource :)
+Github es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git. Está muy enfocada a proyectos de código abierto por lo que es de uso gratuito siempre que tus proyectos estén en disponibles para todos. Pagando puedes tener proyectos privados pero la verdadera fuerza de Github está en la comunidad tan grande que se ha montado sobre la idea de código abierto u opensource :)
 
 Además, ofrece un pequeño sistema de publicación de página: [Github Pages](https://pages.github.com).
 
@@ -59,15 +60,15 @@ EJERCICIO:
 Crear una cuenta en Github
 * * *
 EJERCICIO:
-Configurar git en nuestro ordenador según la quía.
+Configurar git en nuestro ordenador según la guía.
 * * *
 EJERCICIO:
-Vamos a hacer nuestra primer proyecto siguiendo nuestra estrutura de proyectos:
+Vamos a hacer nuestra primer proyecto siguiendo nuestra estructura de proyectos:
 ```txt
 nombre-del-proyecto
-	styles
-	images
-	index.html
+    styles
+    images
+    index.html
 ```
 * * *
 EJERCICIO:
@@ -79,9 +80,9 @@ Es importante acompañar el commit con un mensaje.
 Este mensaje debe ser suficientemente corto para que no sea una locura pero que explique qué cambio se ha hecho.
 
 Aquí hay muchas maneras de plantearlo y hay infinidad de guías, como estamos empezando tengamos en cuenta que:
-* Tiene que ser un mensaje corto
-* Debe explicar brevemente lo que se ha hecho
-* No tiene que detallar los cambios, recordemos que ya tenemos un control de versiones que muestra, exactamente, qué se ha hecho.
+* Tiene que ser un mensaje corto (menos de 72 caracteres)
+* Debe explicar brevemente y a nivel general los cambios que se han hecho (añadido el footer, corregidos los enlaces del artículo, etc.)
+* No tiene que detallar los cambios, recordemos que ya tenemos un control de versiones que muestra, exactamente, qué se ha hecho. (ej: no pongáis "he añadido dos <p>s")
 
 * * *
 EJERCICIO:
@@ -104,6 +105,6 @@ Vamos a:
 
 ## Resumen de la sesión
 
-EEn esta sesión se intenta acercar el control de versiones para que lo acabemos incluyendo en nnuestro flujo de trabajo.
+En esta sesión se intenta acercar el control de versiones para que lo acabemos incluyendo en nuestro flujo de trabajo.
 
-AAdemás presentamos la plataforma Github y su sservicio de hosting: Github Pages.
+Además presentamos la plataforma Github y su servicio de hosting: Github Pages.
