@@ -76,7 +76,7 @@ También podemos, con una aplicación destinada para ello, enviar nuestro archiv
 	`video-de-gatitos.mp4`
 
 
-## Herramientas (Ubuntu, Chrome, Atom y live server, Trello, Slack)
+## Herramientas
 Para hacer este curso necesitaremos un ordenador y una serie de aplicaciones necesarias para completarlo.
 
 ### Ubuntu
@@ -111,6 +111,13 @@ Con el tiempo han ido surgiendo nuevas formas de organizar el trabajo y, claro, 
 
 ### Slack
 Igual que con la gestión de tareas, también han ido apareciendo aplicaciones para gestionar la comunicación en el entorno empresarial, como [Slack](https://slack.com/). Es como un programa de mensajería pero con un buscador súper potente y que da la posibilidad de crear canales, enviar mensajes directos y conectar otro tipo de aplicaciones, como Trello ;).
+
+Durante el curso, usaremos algunos canales de Slack para comunicación sobre una temática específica:
+- *#general*: es el canal donde estáis todas las alumnas de todas las promociones de Adalab, los profesores y el resto del equipo. Sólo lo usaremos para comunicaciones que interesan a toda la comunidad Adalab
+- *#random*: en este canal también está casi toda la comunidad, aunque aquí sí podemos compartir lo que se nos ocurra, relacionado o no con el curso, pero de interés para es resto de adalabers
+- *#dudas*: usamos esta canal para plantear dudas al resto de alumnas y a los profesores para que nos ayuden cuando no estamos cara a cara. Ayudar a solucionar las dudas no es labor exclusiva de los profesores y os animamos a echar un cable a vuestras compañeras
+- *#eventos-noticias*: usamos este canal para compartir eventos y noticias interesantes para las adalabers en la comunidad de desarrollo. Seguro que, poco a poco, vais empezando a publicar más cosas vosotras que nosotros
+- *#recursos*: en este canal compartimos recursos interesantes, desde cursos, tutoriales, videos para aprender desarrollo web, incluso nuevas tecnologías o herramientas con las que experimentamos. También esperamos que vosotras tengáis un papel muy activo en este canal
 
 ## HTML Y CSS
 La base de una página web es el HTML y el CSS. Con HTML escribes el contenido de la página y con CSS modificas el aspecto que va a tener.
