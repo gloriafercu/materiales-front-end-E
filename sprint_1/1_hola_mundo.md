@@ -6,23 +6,29 @@ Este es el momento en el que comienza todo, en el que os damos la bienvenida al 
 
 Los objetivos de este bloque, al que de aquí en adelante llamaremos sprint "Hola Mundo", serán los siguientes:
 
-- **Objetivos individuales**
+- **Objetivos de desarrollo profesional**
+	- Entender el programa de Adalab en todos su componentes
+	- Aprender cómo se gestionan proyectos siguiendo las metodologías ágiles
+	- Elaborar discursos interesantes para todo tipo de audiencias
+	- Desarrollar estrategias para que resulte sencillo hablar en público
+	- Identificar los obstáculos de género en la comunicación de las mujeres
+- **Objetivos técnicos**
 	- Entender cómo funciona la web
 	- Ser capaces de construir páginas web con HTML, CSS
-	- Realizar webs que se adapten a distintos dispositivos (móviles, tablets, ordenadores...)
+	- Realizar webs que se adapten a distintos dispositivos
 	- Conocer y saber aplicar lo básico de control de versiones
 	- Usar con soltura las herramientas de desarrollo web proporcionadas
 - **Objetivos grupales**
 	- Usar las herramientas de comunicación y organización para realizar una colaboración efectiva dentro del equipo
 	- Saber organizar el trabajo grupal por roles
 	- Aplicar un flujo de trabajo correcto a la hora de trabajar con control de versiones
+	- Mejorar el trabajo en equipo con la división de roles
+
+
 
 ## Proyectos
 
-A lo largo de este bloque desarrollaremos un proyecto individual y otro en grupo, ambos para crear una página que mostrar de cara al público:
-
-- Página personal
-- Página grupal
+A lo largo de este bloque desarrollaremos un proyecto en grupo, para crear una página que mostrar de cara al público y que presente a vuestro equipo de trabajo.
 
 ## Herramientas que aprenderemos a utilizar
 
@@ -40,6 +46,7 @@ Una buena forma de mejorar la productividad en nuestro trabajo y en nuestra vida
 	- [Codepen](https://codepen.io) - Plataforma donde la gente muestra y comparte código muy visual
 	- [GitHub](https://github.com) - Plataforma con control de versiones para organizar código y ver código de otros
 	- [Mozilla Developer Network](https://developer.mozilla.org/es/) - Recurso para aprender más acerca de programación web
+
 - **Herramientas de organización y comunicación**
 	- [Trello](https://trello.com) - Para organización individual y por equipos
 	- [Slack](https://slack.com/intl/es-es) - Chat enfocado a organizaciones que facilita la comunicación
@@ -50,7 +57,5 @@ Una buena forma de mejorar la productividad en nuestro trabajo y en nuestra vida
 
 Una parte fundamental de nuestro programa son los voluntarios. Estos colaborarán con nosotros para enseñaros aspectos técnicos y profesiones en los cuales tienen gran experiencia. De esta forma el aprendizaje será mucho mejor ya que el tema que os expliquen será algo que ha formado parte de su día a día y, por tanto, dominan.
 Las charlas de voluntarios que tendremos durante este sprint son las siguientes:
-- (Pendiente)
-- (Pendiente)
-
-
+- *Metodologías ágiles en un equipo de desarrollo* (Thinking with you)
+- *Tomar la palabra: todas tenemos algo que decir* (Marina Lorenzo)
