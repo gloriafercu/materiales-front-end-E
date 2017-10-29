@@ -187,6 +187,8 @@ La codificación de un documento se indica en dos pasos:
 1. El archivo se guarda usando una codificación.
 2. En el `<head>` de la página se incluye una etiqueta `<meta charset="">` indicando al navegador qué juego de caracteres hemos usado al guardar el archivo.
 
+	NOTA: Atom (y la mayoría de editores de código) ya guardan los documentos en `utf-8` por defecto. Esto es más algo a comprobar ;).
+
 #### BONUS
 En este artículo de la wikipedia puedes ampliar información sobre la [codificación de caracteres](https://es.wikipedia.org/wiki/Codificación_de_caracteres)
 

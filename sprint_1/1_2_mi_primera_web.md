@@ -359,7 +359,7 @@ Y el css sería:
 [Codepen de ejemplo](https://codepen.io/oneeyedman/pen/wrLBQQ)
 
 #### Los selectores se pueden mezclar
-Esto nos ayuda a contemplar casos particulares sin tener que usar las ID.
+De los ejemplos de las pseudo clases vemos que los selectores se pueden mezclar. Esto nos ayuda a contemplar casos particulares sin tener que usar las ID.
 
 Por ejemplo, si tenemos una lista de botones como la anterior:
 ```html
@@ -404,7 +404,7 @@ Hay una serie de estilos que se heredan, es decir, que se transmiten a los hijos
 
 * * *
 EJERCICIO
-El color es una de ellas así que si tenemos esta estructura:
+El color es una de la propiedades que se heredan así que si tenemos esta estructura:
 ```html
 <article>
 	<h2>Título</h2>
@@ -428,7 +428,7 @@ y al `<aside>` con clase `.links` le aplicamos una regla que ponga el texto rojo
 
 * * *
 EJERCICIO:
-Plantea un ejemplo como el anterior donde no forcemos la herencia de una propiedad que no se hereda, por ejemplo el color de fondo.
+Plantea un ejemplo como el anterior donde forcemos la herencia de una propiedad que no se hereda, por ejemplo el color de fondo.
 * * *
 
 ### Cascada y especificidad de selectores
@@ -448,3 +448,14 @@ Dos enlaces sobre la especificidad más... amenos
 
 * [CSS Specifity Wars](https://stuffandnonsense.co.uk/archives/css_specificity_wars.html)
 * [CSS SPECIFITY](http://cssspecificity.com/#)
+
+
+* * *
+EJERCICIO:
+Partiendo de este [Codepen de ejemplo](https://codepen.io/oneeyedman/pen/vWEBex):
+1. Por qué los enlaces son verdes y no rojos
+2. Hacer que los enlaces sean rojos
+3. Rehacer el HTML usando `<div>` en lugar de `<ul>` y `<li>`. ¿Qué pasa?
+4. Comentar el CSS que no se puede tocar y reescribirlo usando una clase por selector para que se vea igual.
+5. BONUS: Cambiar ahora entre `<div>` y `<ul>`/`<li>`
+* * *
