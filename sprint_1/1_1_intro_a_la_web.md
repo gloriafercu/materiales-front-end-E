@@ -338,8 +338,31 @@ h1 {
 
 Cuando vemos nuestra página HTML en un navegador le decimos que busque y aplique la hoja de estilos `estilos.css`.
 
-	Práctica:
-	Añadir hoja de estilos al ejercicio anterior donde:
-	- El color de fondo de la página tiene que ser #f3f4f5
-	- El título tiene que estar en tipo de letra Arial a 24px y color black.
-	- El texto de los párrafos tiene que usar la fuente Georgia 1 18px y color #757575.
+* * *
+EJERCICIO:
+Añadir hoja de estilos al ejercicio anterior donde:
+- El color de fondo de la página tiene que ser #f3f4f5
+- El título tiene que estar en tipo de letra Arial a 24px y color black.
+- El texto de los párrafos tiene que usar la fuente Georgia 1 18px y color #757575.
+* * *
+
+## Notas finales sobre como organizar nuestro proyecto
+A la hora de organizar los archivos y carpetas de un proyecto es normal fijar unas pequeñas normas que pueda seguir todo el equipo de manera que no sea un caos de archivos y cualquier persona del equipo pueda orientarse rápidamente en el proyecto y/o seguirlo.
+
+No hay una manera "buena" y cada empresa tiene las suyas. Como norma: es más importante tener unas normas que tener unas normas en concreto.
+Para este curso vamos a plantear unas que dan bastante buen resultado para empezar. Aquí van:
+
+* Los nombres de archivo irán siempre en minúsculas, sin tildes y sin caracteres especiales
+* Usamos guinoes para separar palabras: `mi-archivo-molon.png`
+* Usaremos rutas relativas siempre
+* Los nombres de archivo siempre en inglés: `my-super-awesome-file.png`
+* Los archivos de estilos se llamarán `style.css` o `stylesheet.css`
+* El archivo HTML princpal se llamará `index.html`
+
+Para la estructura del proyecto usaremos estas carpetas:
+```
+nombre-de-proyecto
+|- images
+|- scripts
+`- styles
+```
