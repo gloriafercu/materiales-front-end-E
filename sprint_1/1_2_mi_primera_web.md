@@ -338,11 +338,11 @@ Y ahora podríamos usar el ID para cambiar el tañamo del texto de uno de los el
 ```
 
 #### Pseudo clase como selector
-Las pseudo clases son palabras claves que añadidas a alguno de los selectores anteriores especifican un estado concreto del elemento. El más usado es el estado de hover, que es cuando colocamos el ratón encima del elemento.
+Las pseudo clases son palabras claves que añadidas a alguno de los selectores anteriores especifican un estado concreto del elemento. El más usado es el estado de `hover`, que es cuando colocamos el ratón encima del elemento.
 
-Las pseudo clases se escriben usando el seleector,  `:` y la palabra clave que toque.
+Las pseudo clases se escriben usando el selector,  `:` y la palabra clave que toque.
 
-Por ejemplo, como uno de los ejemplos anteriores tenemos un enlace que vamos a poner de texto rojo, pero cuando coloques el cursor encima invetiremos los colores y lo mostraremos con fondo blanco y color rojo. Partimos del mismo html que anteriormente.
+Por ejemplo, como uno de los ejemplos anteriores tenemos un enlace que vamos a poner de texto rojo, pero cuando coloques el cursor encima invertiremos los colores y lo mostraremos con fondo blanco y color rojo. Partimos del mismo html que anteriormente.
 ```html
 <a href="#" class="text-link">Enlace de texto</a>
 ```
@@ -424,7 +424,7 @@ El color es una de ellas así que si tenemos esta estructura:
 y al `<aside>` con clase `.links` le aplicamos una regla que ponga el texto rojo, ¿qué quedará en rojo?
 * * *
 *
-[Más en la MDN](https://developer.mozilla.org/es/docs/Web/CSS/inheritance)
+[Más info sobre herencia en la MDN](https://developer.mozilla.org/es/docs/Web/CSS/inheritance)
 
 * * *
 EJERCICIO:
@@ -442,7 +442,7 @@ La cascada depende de 4 factores:
 2. La **especificidad**: es un arma de doble filo porque cuanto más específico sea un selector más fuerza tendrán sus reglas sobre las demás, pero el reto es escribir los selectores lo menos específicos posible.
 3. El **orden** en el archivo CSS: Si varios selectores tienen la misma "fuerza" ganarán los que estén al final porque el css se aplica en orden de escritura.
 
-[En la MDN viene perféctamente explicado](https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Cascada_y_herencia).
+[En la MDN viene perfectamente explicado](https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Cascada_y_herencia).
 
 Dos enlaces sobre la especificidad más... amenos
 
