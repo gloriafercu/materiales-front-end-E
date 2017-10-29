@@ -2,11 +2,18 @@
 
 ## Contenidos
 
-- Display flex Y Ejercicios de flexbox
+- Display flex Y ejercicios de flexbox
 
-## Introducción
+## Flexbox
 
-Durante esta sesión veremos cómo distribuir los elementos en una página usando Flexbox
+Durante esta sesión veremos cómo distribuir los elementos en una página usando Flexbox.
+
+Según la MDN, la propiedad Flexible Box, o flexbox, de CSS3 es un modo de diseño que permite colocar los elementos de una página para que se comporten de forma predecible cuando el diseño de la página debe acomodarse a diferentes tamaños de pantalla y diferentes dispositivos.
+
+Hasta que apareció Flexbox la única manera de distribuir elementos en horizontal (por ejemplo: un menú horizontal, o un bloque principal y uno secundario) era calculando el espacio que debe ocupar cada bloque
+
+[Guía visual para aprender Flexbox](http://soyfrontend.com/guia-visual-aprender-flexbox-css3/)
+
 
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
