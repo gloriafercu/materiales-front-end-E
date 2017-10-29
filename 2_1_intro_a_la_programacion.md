@@ -187,7 +187,7 @@ _String_ traducido al español significa cadena y cómo su nombre indica es el t
 
 En los ejercicios anteriores, siempre que hemos escrito entre comillas (`''`) un texto, lo que hemos hecho es incluir en el código un _string_, decirle al programa encargado de ejecutar nuestro código que eso es un texto y que debe utilizarlo como tal.
 
-Para representar un string en JavaScript se puede utilizar tanto texto envuelto entre comillas simples (`''`) como dobles (`''`). Ambas son totalmente válidas y funcionan de la misma manera salvo que las comillas simples no pueden contener dentro otras comillas simples y las dobles no pueden contener dobles. De esta forma, `'Esto es un 'bug''` da error porque el intérprete de JavaScript entiende que un texto termina antes de `bug` y comienza otro texto después de `bug`. Pasaría lo mismo si usamos `"Esto es un "bug""`.
+Para representar un string en JavaScript, como se comenta en la sección anterior, se puede utilizar tanto texto envuelto entre comillas simples (`''`) como dobles (`""`). Ambas son totalmente válidas y funcionan de la misma manera salvo que las comillas simples no pueden contener dentro otras comillas simples y las dobles no pueden contener dobles. De esta forma, `'Esto es un 'bug''` da error porque el intérprete de JavaScript entiende que un texto termina antes de `bug` y comienza otro texto después de `bug`. Pasaría lo mismo si usamos `"Esto es un "bug""`.
 
 Para evitar estos errores producidos por el uso de comillas anidadas existen dos soluciones:
 - Usar comillas simples siempre que el texto contenga comillas dobles o viceversa
