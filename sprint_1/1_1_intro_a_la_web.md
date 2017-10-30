@@ -10,7 +10,7 @@ La respuesta corta a **cómo funciona Internet** es que funciona conectando dos 
 
 **El cliente** es nuestro ordenador o dispositivo (tablet/móvil/etc…) y desde él nos conectamos al servidor para acceder a la información que estamos buscando.
 
-La respuesta más en detalle es que Internet es una red de ordenadores conectados con un cable, un cable muy tocho, pero un cable al fin y al cabo. Estos ordenadores se llaman servidores y, entre todos, tienen almacenado toda la información y archivos disponibles (documentos, música, películas… ).
+La respuesta más en detalle es que Internet es una red de ordenadores conectados con un cable, un cable muy tocho, pero un cable al fin y al cabo. Estos ordenadores se llaman servidores y, entre todos, tienen almacenada toda la información y archivos disponibles (documentos, música, películas… ).
 A estos ordenadores se les llama **servidores** y dentro de esta red, cada equipo está localizado por un conjunto de números que se llama dirección IP, formado por cuatro números separados por puntos, por ejemplo:
 
 ```
@@ -25,8 +25,8 @@ Ahora vamos a nuestros equipos (ordenadores, móviles, tablets, etc.). Estos dis
 
 Desde nuestro cliente (ordenador, móvil, tablet) consultamos una web, por ejemplo, *www.google.es*. Esto nos conecta a través de nuestro proveedor a un servidor DNS para buscar a qué equipo corresponde la dirección "*www.google.es*" y conectarnos con ese equipo (*216.58.211.206*) y nosotros vemos en nuestro navegador la página de Google.
 
-	Práctica:
-	Escribir en un navegador la dirección IP 216.58.211.206
+    Práctica:
+    Escribir en un navegador la dirección IP 216.58.211.206
 
 ### Partes de una dirección web o URL
 En el día a día escribimos versiones cortas de las URL, como por ejemplo `google.es`, y es el navegador quien las interpreta en su forma completa:
@@ -45,13 +45,13 @@ protocolo://nombre-de-dominio/directorio/nombre-de-archivo
 
 * **Protocolo**: Indica cómo se van a intercambiar los datos entre  el ordenador cliente y el servidor. Hay varios tipos de protocolo, el normal para navegar es http (o https, que es http pero en modo seguro). http significa Hypertext Transfer Protocol, que español viene a ser "Protocolo de transferencia de hipertexto". Existen más protocolos como `mailto` o `ftp`.
 * **Nombre de dominio**: Dominio es la dirección amigable de un ordenador en Internet (recordad como vimos que `google.es` es el dominio que dirige al servidor que está en la dirección 216.58.211.206). Los dominios tienen un nombre y una extensión.
-	* Las **extensiones** las crea una entidad [ICANN](icann.org) y algunos dominios populares son `.com`, `.net` o `.org`. Intentan añadir información al dominio, por ejemplo:
-		* `.es` indica que es una página española
-		* `.com` indica que es una página comercial
-		* `.cat` indica que es una página catalana, no de gatitos
-	* El **nombre** es la denominación principal de dominio.
-	* De manera opcional pueden contender *subdominios*, que es un nombre especial que se usa para identificar diferentes partes del dominio, por ejemplo, un blog: `https://blog.twitter.com`. Muchas direcciones usan las tres w como subdominio, y podríamos decir que `www` es un subdominio que viene por defecto.
-* **directorio y nombre de archivo**: si no especificamos nada más que protocolo y dominio, `https://google.es` en el navegador se nos mostrará la página por defecto que estuviese indicada, pero podemos pedir un archivo en concreto y que puede estar dentro de una serie de carpetas (recordemos que el servidor, al final, es un ordenador:
+    * Las **extensiones** las crea una entidad [ICANN](icann.org) y algunos dominios populares son `.com`, `.net` o `.org`. Intentan añadir información al dominio, por ejemplo:
+        * `.es` indica que es una página española
+        * `.com` indica que es una página comercial
+        * `.cat` indica que es una página catalana, no de gatitos
+    * El **nombre** es la denominación principal de dominio.
+    * De manera opcional pueden contener *subdominios*, que es un nombre especial que se usa para identificar diferentes partes del dominio, por ejemplo, un blog: `https://blog.twitter.com`. Muchas direcciones usan las tres w como subdominio, y podríamos decir que `www` es un subdominio que viene por defecto.
+* **directorio y nombre de archivo**: si no especificamos nada más que protocolo y dominio, `https://google.es` en el navegador se nos mostrará la página que esté indicada por defecto, pero podemos pedir un archivo en concreto y que puede estar dentro de una serie de carpetas (recordemos que el servidor, al final, es un ordenador:
 
 ```
 https://www.adidas.es/zapatilla-adizero-ubersonic-3.0-jade/BY1617.html
@@ -71,61 +71,68 @@ Haciendo doble clic sobre el archivo se abrirá en la aplicación asignada, en e
 
 También podemos, con una aplicación destinada para ello, enviar nuestro archivo html a uno de estos servidores y que todo el mundo pueda consultar nuestro archivo.
 
-	NOTA:
-	Los archivos se nombran con el formato "nombre.extensión", donde la extensión indica qué tipo de archivo es. Por ejemplo:
-	`video-de-gatitos.mp4`
+    NOTA:
+    Los archivos se nombran con el formato "nombre.extensión", donde la extensión indica qué tipo de archivo es. Por ejemplo:
+    `video-de-gatitos.mp4`
 
 
 ## Herramientas
 Para hacer este curso necesitaremos un ordenador y una serie de aplicaciones necesarias para completarlo.
 
 ### Ubuntu
-Empezamos con el [**sistema operativo**](https://www.youtube.com/watch?v=7ZI5KbY8n-w), que es el encargado de hacer de intermediario entre el ordenador y el usuario, gestionado el hardware (pantalla, teclado, micrófono...) y las aplicaciones que se instalan en el equipo (navegador, reproductor de video, mensajería instantánea… ). Hemos elegido **Ubuntu** que es un sistema operativo de [código abierto](https://es.wikipedia.org/wiki/Código_abierto) basado en Linux.
+Empezamos con el [**sistema operativo**](https://www.youtube.com/watch?v=7ZI5KbY8n-w), que es el encargado de hacer de intermediario entre el ordenador y el usuario, gestionando el hardware (pantalla, teclado, micrófono...) y las aplicaciones que se instalan en el equipo (navegador, reproductor de video, mensajería instantánea… ). Hemos elegido **Ubuntu** que es un sistema operativo de [código abierto](https://es.wikipedia.org/wiki/Código_abierto) basado en Linux.
 
-	NOTA:
-	Otros sistemas operativos conocidos son, por ejemplo, Windows (de Microsoft) o MacOS (de Apple).
+    NOTA:
+    Otros sistemas operativos conocidos son, por ejemplo, Windows (de Microsoft) o MacOS (de Apple).
 
 Además del sistema operativo necesitaremos una serie de aplicaciones:
 
 ### Chrome
-Ahora mismo, [Chrome](https://www.google.com/chrome/), es el navegador web más popular con mucha diferencia y es el elegido para usar en el curso debido a sus herramientas de desarrollo. Lo necesitaremos para visualizar todo lo que hagamos ya que, principalmente, lo que hagamos irá destinado a usarse en un navegador.
+Ahora mismo, [Chrome](https://www.google.com/chrome/), es el navegador web más popular con diferencia y es el que hemos elegido para usar durante el curso debido a las potentes herramientas de desarrollo que incluye por defecto. Lo necesitaremos para visualizar todo lo que hagamos ya que, principalmente, todo ello irá destinado a usarse en un navegador.
 
 ### Gmail y Google Drive
 Para gestionar la comunicación y el resto de programas necesitaremos una cuenta de correo electrónico. Desde hace tiempo ya no puedes vivir sin una. Hemos elegido [Gmail](https://www.google.com/gmail/) por la integración que ofrece con su aplicación hermana [Google Drive](https://www.google.com/drive/), que es un servicio de almacenamiento de archivos con una suite de ofimática (como Microsoft Office) que incluye procesador de textos, hoja de cálculo y un programa para crear presentaciones.
 Solo con la cuenta de correo, Gmail te ofrece automáticamente espacio en Google Drive y acceso a los programa de ofimática.
+
+### Google Classroom
+Para organizarnos y tener un canal en el que colgar la información de las clases y mensaje que queremos que permanezcan ahí bastante tiempo y se puedan encontrar fácilmente utilizaremos Google Classroom. Esta plataforma permite tener calendarios y archivos de Drive para utilizar en clase. En esta plataforma también se podrán lanzar preguntas y abrir debates.
+
+Aunque parezca que es lo mismo que Slack, este canal será para añadir posts, comentarios y archivos en un orden cronológico. Slack será un canal más volátil y servirá para conversaciones rápidas y que no es necesario que perduren mucho.
+
+Tenéis ya el acceso a Google Classroom y, si queréis echar un ojo a cómo funciona, podéis visitar [la web oficial](https://edu.google.com/intl/es-419/products/productivity-tools/classroom/)
 
 ### Atom
 Para crear nuestras páginas web usaremos un tipo especial de programa de edición de texto que son **los editores de código**. Nosotros hemos elegido [Atom](https://atom.io), que también es de código abierto.
 
 Un editor de código es un editor de texto diseñado específicamente para editar el código de páginas o aplicaciones digitales.
 
-Este tipo de editores tiene características diseñadas exclusivamente para simplificar y acelerar la escritura de código, como: resaltado de lenguaje (html, javascript, php… ), autocompletar o verificación del código.
+Este tipo de editores tiene características diseñadas exclusivamente para simplificar y acelerar la escritura de código, como: resaltado de lenguaje (html, javascript, php… ), autocompletar o comprobar que la sintaxis es correcta.
 
 Además, suelen tener una comunidad de usuarios que desarrolla pequeños complementos que potencian las capacidades básicas del editor, como ordenar un bloque de código o lanzar un servidor.
 
 #### Live server
-Al principio hablábamos de que hay dos tipos de ordenadores, los nuestros, **clientes**, y los servidores que son los que nos muestran (o sirven) el contenido. Pues para visualizar nuestro trabajo muchas veces necesitaremos simular que lo está mostrando uno de estos servidores, para ello usaremos, al principio, un pequeño complemento de Atom que hace el trabajo de simular un servidor por nosotros.
+Al principio hablábamos de que hay dos tipos de ordenadores, los nuestros, **clientes** y los servidores, que son los que nos muestran (o sirven) el contenido. Pues para visualizar nuestro trabajo muchas veces necesitaremos simular que lo está mostrando uno de estos servidores, para ello usaremos, al principio, un pequeño complemento de Atom que hace el trabajo de simular un servidor por nosotros.
 
 ### Trello
-Con el tiempo han ido surgiendo nuevas formas de organizar el trabajo y, claro, aplicaciones que nos ayudan a gestionar esta organización. [Trello](https://trello.com) es una de estas aplicaciones que sin ser la más vistosa sí que es de las más fáciles de usar. En Trello tendremos como tableros de trabajo donde iremos añadiendo "tarjetas" con las tareas a completar e incluso podremos asignarlas a alguien del equipo.
+Con el tiempo han ido surgiendo nuevas formas de organizar el trabajo y, con ello, aplicaciones que nos ayudan a gestionar esta organización. [Trello](https://trello.com) es una de estas aplicaciones que, sin ser la más vistosa, sí que es de las más fáciles de usar. En Trello tendremos tableros de trabajo donde iremos añadiendo "tarjetas" con las tareas a completar e incluso podremos asignárselas a alguien de nuestro equipo.
 
 ### Slack
 Igual que con la gestión de tareas, también han ido apareciendo aplicaciones para gestionar la comunicación en el entorno empresarial, como [Slack](https://slack.com/). Es como un programa de mensajería pero con un buscador súper potente y que da la posibilidad de crear canales, enviar mensajes directos y conectar otro tipo de aplicaciones, como Trello ;).
 
 Durante el curso, usaremos algunos canales de Slack para comunicación sobre una temática específica:
 - *#general*: es el canal donde estáis todas las alumnas de todas las promociones de Adalab, los profesores y el resto del equipo. Sólo lo usaremos para comunicaciones que interesan a toda la comunidad Adalab
-- *#random*: en este canal también está casi toda la comunidad, aunque aquí sí podemos compartir lo que se nos ocurra, relacionado o no con el curso, pero de interés para es resto de adalabers
-- *#dudas*: usamos esta canal para plantear dudas al resto de alumnas y a los profesores para que nos ayuden cuando no estamos cara a cara. Ayudar a solucionar las dudas no es labor exclusiva de los profesores y os animamos a echar un cable a vuestras compañeras
-- *#eventos-noticias*: usamos este canal para compartir eventos y noticias interesantes para las adalabers en la comunidad de desarrollo. Seguro que, poco a poco, vais empezando a publicar más cosas vosotras que nosotros
-- *#recursos*: en este canal compartimos recursos interesantes, desde cursos, tutoriales, videos para aprender desarrollo web, incluso nuevas tecnologías o herramientas con las que experimentamos. También esperamos que vosotras tengáis un papel muy activo en este canal
+- *#random*: en este canal también está casi toda la comunidad, aunque aquí sí podemos compartir lo que se nos ocurra, relacionado o no con el curso, pero de interés para el resto de adalabers
+- *#dudas*: usamos esta canal para plantear dudas al resto de alumnas y a los profesores para que nos ayuden cuando no estamos cara a cara. Ayudar a solucionar las dudas no es labor exclusiva de los profesores y por eso os animamos a echar un cable a vuestras compañeras. Esto además os servirá para reforzar conocimientos y mejorar vuestro propio aprendizaje ya que, como dice el refrán, "cuando uno enseña, dos aprenden"
+- *#eventos-noticias*: usamos este canal para compartir eventos y noticias interesantes para las adalabers en la comunidad de desarrollo. Seguro que, poco a poco, vais empezando a publicar más cosas vosotras que nosotros mismos
+- *#recursos*: en este canal compartimos recursos interesantes: cursos, tutoriales, videos para aprender desarrollo web e incluso nuevas tecnologías o herramientas que estamos experimentando en ese momento. También esperamos que vosotras tengáis un papel muy activo aquí
 
 ## HTML Y CSS
 La base de una página web es el HTML y el CSS. Con HTML escribes el contenido de la página y con CSS modificas el aspecto que va a tener.
 
 ### HTML
-HTML es un lenguaje de marcado, es una forma de codificar un documento que, junto con el texto, incorpora etiquetas o marcas que contienen información adicional acerca de la estructura del texto: si es un título, un enlace o un párrafo, por ejemplo.
+HTML es un lenguaje de marcado, es una forma de codificar un documento que, junto con el texto, incorpora etiquetas o marcas que contienen información adicional acerca de su estructura: si es un título, un enlace o un párrafo, por ejemplo.
 
-Un elemento HTML suele estar formado por dos etiquetas, una de apertura y una de cierre, dentro de las cuales está nuestro contenido. Las etiquetas de apertura pueden incluir unos modificadores que se llaman atributos y que modifican el comportamiento por defecto del elemento o aportan información extra:
+Un elemento HTML suele estar formado por dos etiquetas, una de apertura y una de cierre, entre esas etiquetas colocaremos el contenido, que podrá ser texto y/o otra/s etiquetas HTML. Las etiquetas de apertura pueden incluir unos modificadores que se llaman atributos y que modifican el comportamiento por defecto del elemento o aportan información extra:
 
 Con el atributo "lang" indicamos que este párrafo está en español:
 
@@ -133,8 +140,8 @@ Con el atributo "lang" indicamos que este párrafo está en español:
 <p lang="es">Párrafo</p>
 ```
 
-	Nota:
-	Hay una serie de elementos HTML que no necesitan etiqueta de cierre y los veremos más adelante.
+    Nota:
+    Hay una serie de elementos HTML que no necesitan etiqueta de cierre, los veremos más adelante.
 
 A los elementos HTML los vamos a llamar "etiquetas", para abreviar.
 
@@ -148,11 +155,11 @@ Una página html con cabecera y cuerpo:
 ```html
 <!DOCTYPE html>
 <html>
-	<head>
-	</head>
+    <head>
+    </head>
 
-	<body>
-	</body>
+    <body>
+    </body>
 </html>
 ```
 
@@ -160,15 +167,15 @@ Justo antes de la etiqueta `<html>` se debe añadir una etiqueta especial que in
 
 En el siguiente ejemplo vemos la misma página, un poco más definida, con su doctype, un atributo en el `<html>` que indica que está en español y dos etiquetas en la cabecera: una que indica la codificación del texto y otra que indica el título del documento.
 
-	NOTA:
-	Es importante acostumbrarnos a usar el atributo "lang" en nuestras etiquetas `<html>` para indicar el idioma en el que está escrito nuestro contenido.
+    NOTA:
+    Es importante acostumbrarnos a usar el atributo "lang" en nuestras etiquetas `<html>` para indicar el idioma en el que está escrito nuestro contenido.
 
 ```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<title>Mi página</title>
+    <meta charset="utf-8">
+    <title>Mi página</title>
 </head>
 <body>
 
@@ -176,8 +183,8 @@ En el siguiente ejemplo vemos la misma página, un poco más definida, con su do
 </html>
 ```
 
-	NOTA:
-	<meta> es una de esas etiquetas que no necesita cerrarse.
+    NOTA:
+    <meta> es una de esas etiquetas que no necesita cerrarse.
 
 ### Codificación de una página HTML
 Vamos a detenernos un momento en este punto: podemos usar varios juegos de caracteres al crear nuestra página, cada juego tiene más o menos caracteres así que podría pasar que nuestras tildes o caracteres especiales no estén disponibles.
@@ -187,7 +194,7 @@ La codificación de un documento se indica en dos pasos:
 1. El archivo se guarda usando una codificación.
 2. En el `<head>` de la página se incluye una etiqueta `<meta charset="">` indicando al navegador qué juego de caracteres hemos usado al guardar el archivo.
 
-	NOTA: Atom (y la mayoría de editores de código) ya guardan los documentos en `utf-8` por defecto. Esto es más algo a comprobar ;).
+    NOTA: Atom (y la mayoría de editores de código) ya guardan los documentos en `utf-8` por defecto. Esto es más algo a comprobar ;).
 
 #### BONUS
 En este artículo de la wikipedia puedes ampliar información sobre la [codificación de caracteres](https://es.wikipedia.org/wiki/Codificación_de_caracteres)
@@ -197,8 +204,8 @@ El navegador lee las etiquetas en orden de escritura, de arriba a abajo, y va a 
 
 El buen uso de estas etiquetas hace que se añada al contenido una valoración semántica, lo que mejora la accesibilidad de nuestra página. Esto ayuda cuando se consulta la página usando algún sistema de soporte como lectores de pantalla.
 
-	EJEMPLO:
-	Si marcamos un texto como encabezado le estamos asignando una importancia diferente a si lo marcamos como párrafo o elemento de una lista.
+    EJEMPLO:
+    Si marcamos un texto como encabezado le estamos asignando una importancia diferente a si lo marcamos como párrafo o elemento de una lista.
 
 Vamos a ver nuestros primeros elementos en html:
 
@@ -206,11 +213,16 @@ Vamos a ver nuestros primeros elementos en html:
 Se indican con las etiquetas `<h1>` a `<h6>`, de más relevancia a menos.
 
 ```html
-<h1>Encabezado 1</h1>
+<h1>Encabezado de nivel 1</h1>
+<h2>Encabezado de nivel 2</h2>
+<h3>Encabezado de nivel 3</h3>
+<h4>Encabezado de nivel 4</h4>
+<h5>Encabezado de nivel 5</h5>
+<h6>Encabezado de nivel 6</h6>
 ```
 
 #### Párrafo
-Con la etiqueta `<p>` indicaremos que el texto que contiene es un párrafo.
+Con la etiqueta `<p>` definiremos una etiqueta del tipo párrafo e indicaremos que su contenido va a ser un párrafo de texto.
 
 ```html
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -222,19 +234,20 @@ En algún momento vamos a necesitar añadir una serie de elementos e indicar que
 
 ```html
 <ol>
-	<li>Elemento de la lista</>
-	<li>Elemento de la lista</>
-	<li>Elemento de la lista</>
+    <li>Elemento de la lista</>
+    <li>Elemento de la lista</>
+    <li>Elemento de la lista</>
 </ol>
 
 <ul>
-	<li>Elemento de la lista</>
-	<li>Elemento de la lista</>
-	<li>Elemento de la lista</>
+    <li>Elemento de la lista</>
+    <li>Elemento de la lista</>
+    <li>Elemento de la lista</>
 </ul>
 ```
-La lista ordenada produce una lista numerando cada item por orden de escritura y la desordenada añade un símbolo (por defecto pinta un círculo) delante de cada elemento de la lista, también por orden de escritura.
+La lista ordenada produce una lista numerando cada ítem por orden de escritura y la desordenada añade un símbolo (por defecto pinta un círculo) delante de cada elemento de la lista, también por orden de escritura.
 
+<<<<<<< HEAD
 * * *
 EJERCICIO:
 Con estos elementos vamos a crear nuestra primera página:
@@ -272,9 +285,17 @@ Aunque existe la posibilidad de emplear zanahorias, es una costumbre poco habitu
 
 El aceite de oliva, vinagre, agua y sal son el resto de ingredientes. Suelen emplearse los de mejor calidad, bien conocido es el refrán popular «Con mal vinagre y peor aceite, buen gazpacho no puede hacerse».
 * * *
+=======
+    Práctica:
+    Con estos elementos vamos a crear nuestra primera página.
+***
+    Pendiente:
+    Tendremos que preparar un contenido de ejemplo
+***
+>>>>>>> Fix some typos and improve text structure
 
 #### BONUS
-Con estos enlaces puedes conocer otros elementos HTML, aunque ya los iremos viendo más adelante:
+Con estos enlaces puedes conocer otros elementos HTML, aunque los iremos viendo más adelante:
 
 * [Lista de elementos html | MDN](https://developer.mozilla.org/es/docs/HTML/HTML5/HTML5_lista_elementos)
 * [(Inglés) Lista de elementos html | html5doctor ](http://html5doctor.com/#glossary)
@@ -282,13 +303,13 @@ Con estos enlaces puedes conocer otros elementos HTML, aunque ya los iremos vien
 ### CSS
 La maquetación web tiene mucha relación con la maquetación en papel de toda la vida, donde se utilizan los estilos para definir la apariencia que tendrá un cierto contenido.
 
-En web tenemos CSS (del inglés "Cascading Style Sheets" o, en español, "Hojas de estilo en cascada") que es un lenguaje de estilos para definir la presentación de un documento escrito en un lenguaje de marcado, como HTML.
+En la web tenemos CSS (del inglés "Cascading Style Sheets" o, en español, "Hojas de estilo en cascada") que es un lenguaje de estilos para definir la presentación de un documento escrito en un lenguaje de marcado, como HTML.
 
 CSS tiene una sintaxis simple, y usa un conjunto de palabras clave en inglés para especificar los nombres de varias propiedades de estilo.
 
 **¿Y lo de "en cascada"?** Eso hace referencia al proceso de combinación y aplicación de estilos en CSS y cómo se resuelven los conflictos entre ellos, pero eso lo veremos más adelante.
 
-Entonces, en una hoja de estilos CSS tendremos un conjunto de reglas que dirán cómo se tienen que mostrar nuestros elementos. Vamos a suponer que partimos de nuestro ejercicio anterior, donde tenemos maquetado un documento simple, y queremos cambiar el color y el tamaño de letra o el color de fondo de nuestra página.
+Entonces, en una hoja de estilos CSS tendremos un conjunto de reglas que dirán cómo se tienen que mostrar nuestros elementos. Supongamos que partimos de nuestro ejercicio anterior, donde tenemos maquetado un documento simple, y queremos cambiar el color y el tamaño de letra o el color de fondo de nuestra página.
 
 Para esto tenemos las propiedades:
 
@@ -298,21 +319,26 @@ Para esto tenemos las propiedades:
 
 Vamos a decirle a nuestro encabezado `<h1>` que se muestre de color azul y a 20px de tamaño.
 
-```css
+```CSS
 h1 {
-	color: blue;
-	font-size: 20px;
+    color: blue;
+    font-size: 20px;
 }
 ```
 
-Cada atributo CSS está formado por el nombre de la propiedad y un valor, separados por `:`. A su vez, cada atributo va separado del siguiente por un `;`.
+Para aplicar estilos a uno o varios elementos de nuestra web, la estructura que debemos utilizar es la siguiente:
 
-Cada conjunto de atributos que se aplican a un elemento van agrupadas entre llaves `{ }` y con un nombre de **selector** que hace referencia al elemento HTML.
+- Escribiremos el nombre de un selector, que es un texto que hace referencia a un elemento HTML, como por ejemplo, `h1` que hace referencia a la etiqueta `h1`.
+- A continuación añadiremos unas llaves
+- Dentro de esas llaves escribiremos los atributos CSS, estos son un conjunto de reglas formadas por una clave y un valor, separados por `:` y acabados en `;`. Estas reglas son las que definirán los estilos que aplicaremos al selector que hemos definido previamente.
+
+**Nota:** Como norma general escribiremos un espacio después de los dos puntos `:` en cada atributo CSS para facilitar la lectura del código. Esta es una práctica muy típica y se lleva a cabo en muchas de las empresas de programación.
 
 Para el selector se puede usar:
 
-* la etiqueta del elemento html (`h1`, `p`, `ul`, etc.)
-* un atributo del elemento html, hay dos especiales que se usan para esto: el id y la clase (los veremos más adelante).
+* La etiqueta del elemento html (`h1`, `p`, `ul`, etc.)
+* Un atributo del elemento html, hay dos especiales que se usan para esto: el id y la clase (los veremos más adelante).
+* Otros selectores más avanzados que iremos viendo poco a poco
 
 Dentro de nuestra página esto quedaría así:
 
@@ -320,25 +346,25 @@ Dentro de nuestra página esto quedaría así:
 <!doctype html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<title>Mi página</title>
-	<style>
-		h1 {
-		color: blue;
-		font-size: 20px;
-		}
-	</style>
+    <meta charset="utf-8">
+    <title>Mi página</title>
+    <style>
+        h1 {
+        color: blue;
+        font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-	<h1>Título de mi página</h1>
-	<p>Contenido de prueba de mi página web.</p>
+    <h1>Título de mi página</h1>
+    <p>Contenido de prueba de mi página web.</p>
 </body>
 </html>
 ```
 
 Una forma de añadir estilos a una página es a través de la etiqueta `<style>` que, como aplica ajustes visuales sobre la página iría dentro de la cabecera de mi documento.
 
-Bueno, es una de las opciones pero como desde hace unos años intentamos separar el contenido de la presentación vamos a pasar nuestros estilos siempre a un archivo externo que estará enlazado desde nuestra página HTML.
+Bueno, es una de las opciones, pero desde hace unos años, intentamos separar el contenido de la presentación vamos a pasar nuestros estilos siempre a un archivo externo que estará enlazado desde nuestra página HTML.
 Lo haremos con la etiqueta `<link>`, que es una de esas etiquetas que no necesita cerrarse. Esta etiqueta lleva dos atributos, uno que dice el tipo de archivo que va enlazado `rel="stylesheet"` y otro diciendo dónde está el archivo `href="estilos.css"`.
 
 **index.html**
@@ -347,52 +373,52 @@ Lo haremos con la etiqueta `<link>`, que es una de esas etiquetas que no necesit
 <!doctype html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<title>Mi página</title>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>Mi página</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	<h1>Título de mi página</h1>
-	<p>Contenido de prueba de mi página web.</p>
+    <h1>Título de mi página</h1>
+    <p>Contenido de prueba de mi página web.</p>
 </body>
 </html>
 ```
 
-**styles.css**
+**style.css**
 
-```css
+```CSS
 h1 {
-	color: blue;
-	font-size: 20px;
+    color: blue;
+    font-size: 20px;
 }
 ```
 
-Cuando vemos nuestra página HTML en un navegador le decimos que busque y aplique la hoja de estilos `estilos.css`.
+Al abrir nuestra web en un navegador, la etiqueta link indica al navegador que debe buscar y aplicar los estilos de la hoja de estilos enlazada, en este caso `style.css`.
 
 * * *
 EJERCICIO:
 Añadir hoja de estilos al ejercicio anterior donde:
 - El color de fondo de la página tiene que ser #f3f4f5
-- El título tiene que estar en tipo de letra Arial a 24px y color black.
-- El texto de los párrafos tiene que usar la fuente Georgia 1 18px y color #757575.
+- El título tiene que tener asignado un tipo de letra Arial a 24px de tamaño y color de texto black.
+- Para el texto de los párrafos, tendremos que usar la fuente Georgia a 18px de tamaño y color de texto #757575.
 * * *
 
-## Notas finales sobre como organizar nuestro proyecto
+## Notas finales sobre cómo organizar nuestro proyecto
 A la hora de organizar los archivos y carpetas de un proyecto es normal fijar unas pequeñas normas que pueda seguir todo el equipo de manera que no sea un caos de archivos y cualquier persona del equipo pueda orientarse rápidamente en el proyecto y/o seguirlo.
 
 No hay una manera "buena" y cada empresa tiene las suyas. Como norma: es más importante tener unas normas que tener unas normas en concreto.
 Para este curso vamos a plantear unas que dan bastante buen resultado para empezar. Aquí van:
 
 * Los nombres de archivo irán siempre en minúsculas, sin tildes y sin caracteres especiales
-* Usamos guinoes para separar palabras: `mi-archivo-molon.png`
+* Usaremos guiones para separar palabras: `baby-kangaroo.png`
 * Usaremos rutas relativas siempre
-* Los nombres de archivo siempre en inglés: `my-super-awesome-file.png`
+* Los nombres de archivo siempre en inglés: `rainy-and-windy-day.png`
 * Los archivos de estilos se llamarán `style.css` o `stylesheet.css`
-* El archivo HTML princpal se llamará `index.html`
+* El archivo HTML principal se llamará `index.html`
 
 Para la estructura del proyecto usaremos estas carpetas:
 ```
-nombre-de-proyecto
+proyect-name
 |- images
 |- scripts
 `- styles
