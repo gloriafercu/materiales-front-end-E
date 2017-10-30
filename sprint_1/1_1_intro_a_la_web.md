@@ -247,7 +247,6 @@ En algún momento vamos a necesitar añadir una serie de elementos e indicar que
 ```
 La lista ordenada produce una lista numerando cada ítem por orden de escritura y la desordenada añade un símbolo (por defecto pinta un círculo) delante de cada elemento de la lista, también por orden de escritura.
 
-<<<<<<< HEAD
 * * *
 EJERCICIO:
 Con estos elementos vamos a crear nuestra primera página:
@@ -285,14 +284,6 @@ Aunque existe la posibilidad de emplear zanahorias, es una costumbre poco habitu
 
 El aceite de oliva, vinagre, agua y sal son el resto de ingredientes. Suelen emplearse los de mejor calidad, bien conocido es el refrán popular «Con mal vinagre y peor aceite, buen gazpacho no puede hacerse».
 * * *
-=======
-    Práctica:
-    Con estos elementos vamos a crear nuestra primera página.
-***
-    Pendiente:
-    Tendremos que preparar un contenido de ejemplo
-***
->>>>>>> Fix some typos and improve text structure
 
 #### BONUS
 Con estos enlaces puedes conocer otros elementos HTML, aunque los iremos viendo más adelante:
