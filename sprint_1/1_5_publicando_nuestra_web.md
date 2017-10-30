@@ -33,7 +33,7 @@ Pues desde en los casos más simples como un pequeño proyecto o un archivo de c
 ### Introducción a Git
 - [1.- Curso Git - Introducción a Git](https://www.youtube.com/watch?v=zH3I1DZNovk)
 - [2.- Curso Git - Primeros pasos](https://www.youtube.com/watch?v=XXdaqtLgOGI)
-- [2.- Curso Git - Primeros pasos](https://www.youtube.com/watch?v=vH9pkFf1D7M)
+- [3.- Curso Git - Nuestro primer proyecto](https://www.youtube.com/watch?v=vH9pkFf1D7M)
 - [5.- Curso Git - Empezando con Github](https://www.youtube.com/watch?v=Qn186NyDqOk)
 
 
