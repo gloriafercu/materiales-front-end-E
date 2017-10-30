@@ -409,7 +409,7 @@ Para este curso vamos a plantear unas que dan bastante buen resultado para empez
 
 Para la estructura del proyecto usaremos estas carpetas:
 ```
-proyect-name
+project-name
 |- images
 |- scripts
 `- styles
