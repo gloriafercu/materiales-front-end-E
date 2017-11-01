@@ -26,6 +26,8 @@ Los elementos de bloque pueden contenter elementos inline u otros elementos de b
 ### Elementos inline-block
 Por defecto hay muy pocos elementos con comportamiento inline-block por defecto (imágenes y formularios). Es un estado mixto donde el elmento inline-block se comporta como uno inline pero, además, puede tener ancho y alto.
 
+	NOTA:
+	Puedes hacer que un elemento de un tipo se comporte como si fuese de otro tipo usando la propiedad "display"
 
 [Elementos inline, inline-block y block en Codepen](https://codepen.io/oneeyedman/pen/veoGxj)
 
