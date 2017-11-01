@@ -52,7 +52,10 @@ Dado que nos permite controlar qué está pasando con una web, podemos ver los r
 
 Por otro lado nos permite investigar qué cambios queremos hacer sin guarrear nuestro CSS o HTML y corregir de forma más rápida y sencilla los errores de nuestro código.
 
-Podemos colocarlo arriba, abajo, a la derecha o sacarlo a una nueva ventana
+Por ejemplo, podemos ver información del modelo de caja:
+![HTML y Moodelo de caja en las DevTools](assets/html-inspector-modelo-de-caja.png)
+
+Podemos colocarlo arriba, abajo, a la derecha o sacarlo a una nueva ventana.
 
 * * *
 EJERCICIO:
@@ -106,7 +109,7 @@ nombre
         ruta-del-proyecto.txt
 ```
 - En el archivo **mis-datos.txt** vamos a escribir el Nombre y la comida favorita.
-- En el archivo **ruta_del-proyecto.txt**
+- En el archivo **ruta_del-proyecto.txt** pondremos la ruta del nuestro proyecto desde nuestra carpeta de `Documentos`
 - Mover los dos archivos a la carpeta principal, que sería **nombre**
 * * *
 
@@ -143,5 +146,14 @@ El navegador Google Chrome nos ofrece una serie de herramientas llamadas Chrome 
 La terminal es una herramienta fundamental para el desarrollo front-end. Su finalidad es ejecutar comandos mediante instrucciones. Estos comandos serían similares a las interacciones que haríamos en una aplicación normal (clics, escribir en campos, cambiar de sección, etc.) pero en este caso se hacen escribiendo órdenes en la ventana. Muchas de las herramientas para programación están hechas sin interfaz por ser más sencillas, aprender a usar la terminal nos ayudará en el futuro a poder usar esas herramientas y mejorar nuestro flujo de trabajo gracias a ellas.
 
 
-## Ejercicios
-{{pendiente}}
+* * *
+EJERCICIO:
+Desde la terminal, vamos a crear un nuevo proyecto en nuestra carpeta de proyectos que se llame **Rutas relativas**, con las carpetas `images` y `styles`. Y los archivos index.html (en la raíz del proyecto), style.css (en la carpeta styles) y imagen-de-prueba.png (os la proporcionaremos por classroom e irá dentro de la carpeta images).
+
+Ahora, en index.html se tiene que ver la imagen de dos formas:
+1. Con un `<img>`
+2. Como fondo de un div del mismo tamaño que la imagen
+
+¿Cómo es la ruta de ambas imágenes? ¿Absoluta? ¿Relativa?
+¿Es diferente en los dos casos? ¿por qué?
+* * *
