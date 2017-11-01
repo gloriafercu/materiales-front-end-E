@@ -4,10 +4,10 @@
 
 ## Sprint 1. Hola Mundo
 
-* [1.1. Intro a la web](/sprint_1/1_1_intro_a_la_web.md)
-  * [Cómo funciona la web](/sprint_1/1_1_intro_a_la_web.md#cómo-funciona-la-web)
-  * [Herramientas](/sprint_1/1_1_intro_a_la_web.md#herramientas)
-  * [HTML y CSS](/sprint_1/1_1_intro_a_la_web.md#html-y-css)
+* [1.1. Intro a la web](sprint_1/1_1_intro_a_la_web.md)
+  * [Cómo funciona la web](sprint_1/1_1_intro_a_la_web.md#cómo-funciona-la-web)
+  * [Herramientas](sprint_1/1_1_intro_a_la_web.md#herramientas)
+  * [HTML y CSS](sprint_1/1_1_intro_a_la_web.md#html-y-css)
 * [1.2. Mi primera página web](sprint_1/1_2_mi_primera_web.md)
   * [Más etiquetas HTML](sprint_1/1_2_mi_primera_web.md#más-etiquetas-html)
   * [Secciones](sprint_1/1_2_mi_primera_web.md#secciones)
