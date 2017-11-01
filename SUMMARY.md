@@ -16,7 +16,7 @@
   * [CSS](sprint_1/1_2_mi_primera_web.md#css)
 * [1.3. Posicionando elementos](sprint_1/1_3_posicionando_elementos_en_una_web.md)
   * [Tipos de elementos](sprint_1/1_3_posicionando_elementos_en_una_web.md#tipos-de-elementos)
-  * [Modelo de caja](sprint_1/1_3_posicionando_elementos_en_una_web.md#modelo-de-caja-margin-borde-padding-y-anchoalto)
+  * [Modelo de caja](sprint_1/1_3_posicionando_elementos_en_una_web.md#modelo-de-caja-margen-borde-padding-y-anchoalto)
   * [Posicionamiento](sprint_1/1_3_posicionando_elementos_en_una_web.md#posicionamiento)
   * [Ejercicios](sprint_1/1_3_posicionando_elementos_en_una_web.md#ejercicios)
 * [1.4 Herramientas básicas](sprint_1/1_4_herramientas_basicas_de_desarrollo_web.md)

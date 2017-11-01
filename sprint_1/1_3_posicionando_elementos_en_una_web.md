@@ -1,11 +1,5 @@
 # Posicionando elementos en una web
 
-## Resumen
-
-- Tipos de elementos (block, inline, inline-block)
-- Modelo de caja: border, margin (margin: auto), padding, height, width
-- Posicionamiento (absolute, relative, fixed, static)
-
 
 ## Tipos de elementos
 Los elementos HTML, normalmente, tienen una presentación "en línea" o en "en bloque". Un elemento en línea ocupa sólo el espacio del elemento, mientras que uno de bloque ocupa el ancho entero disponible.
@@ -42,7 +36,7 @@ Por defecto hay muy pocos elementos con comportamiento inline-block por defecto 
 	Entre dos párrafos añadir una imagen de 200x200 y explicar como se distribuye el contenido.
 * * *
 
-## Modelo de caja: margin, borde, padding y ancho/alto
+## Modelo de caja: margen, borde, padding y ancho/alto
 
 Las páginas web se componen de rectángulos formados por elementos que contienen otros elementos. Este método de combinación es al que nos referimos cuando hablamos de modelo de cajas y nos servirá para hacernos una idea de cómo se compone la estructura de una web y cómo podemos pensar en ella combinando elementos que contienen otros elementos a su vez.
 
@@ -50,6 +44,7 @@ Las páginas web se componen de rectángulos formados por elementos que contiene
 
 Por defecto, el modelo de caja del navegador es el content-box, donde a las dimensiones de la caja se le suman el borde y el padding:
 
+	EJEMPLO:
 	Si tengo una caja de 100x100px, con un borde de 2px y con un padding de 16px, tendría una caja de 2+16+100+16+2: 136x136px.
 
 Con la propiedad `box-sizing` podemos cambiar el modelo de caja para un elemento (o para todos). Y podríamos asignarle `border-box`, que es el otro modelo existente.
@@ -116,12 +111,9 @@ Algunos casos concretos son:
 - Video para entender [float](https://www.youtube.com/watch?v=AoAy4jCFDDw)
 
 - Recursos extra
-  - Libro de Introducción a CSS
     - [Libro Introducción a CSS - 5.1. Tipos de elementos](https://librosweb.es/libro/css/capitulo_5/tipos_de_elementos.html)
     - [Libro Introducción a CSS - 4. Modelo de cajas](https://librosweb.es/libro/css/capitulo_4.html)
     - [Libro de Introducción a CSS - 4.1. Anchura y altura](https://librosweb.es/libro/css/capitulo_4/anchura_y_altura.html)
-
-
     - [Libro Introducción a CSS - 5.2. Posicionamiento](http://librosweb.es/libro/css/capitulo_5/posicionamiento.html)
     - [Libro Introducción a CSS - 5.3. Posicionamiento normal (static)](http://librosweb.es/libro/css/capitulo_5/posicionamiento_normal.html)
     - [Libro de Introducción a CSS - 5.4 Posicionamiento relativo](http://librosweb.es/libro/css/capitulo_5/posicionamiento_relativo.html)
@@ -135,7 +127,7 @@ Los objetivos de la sesión son:
 
 1. Aprender los principales modos de presentación de los elementos HTML: inline, inline-block y block
 2. Saber que hay dos modelos de caja, en qué se diferencian y como aplicar uno u otro.
-3. Conocer los modos de posicionamiento: static, relative y static.
+3. Conocer los modos de posicionamiento: static, relative, absolute y fixed.
 
 
 ## Ejercicios
