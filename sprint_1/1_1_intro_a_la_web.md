@@ -234,15 +234,15 @@ En algún momento vamos a necesitar añadir una serie de elementos e indicar que
 
 ```html
 <ol>
-    <li>Elemento de la lista</>
-    <li>Elemento de la lista</>
-    <li>Elemento de la lista</>
+    <li>Elemento de la lista</li>
+    <li>Elemento de la lista</li>
+    <li>Elemento de la lista</li>
 </ol>
 
 <ul>
-    <li>Elemento de la lista</>
-    <li>Elemento de la lista</>
-    <li>Elemento de la lista</>
+    <li>Elemento de la lista</li>
+    <li>Elemento de la lista</li>
+    <li>Elemento de la lista</li>
 </ul>
 ```
 La lista ordenada produce una lista numerando cada ítem por orden de escritura y la desordenada añade un símbolo (por defecto pinta un círculo) delante de cada elemento de la lista, también por orden de escritura.
@@ -409,7 +409,7 @@ Para este curso vamos a plantear unas que dan bastante buen resultado para empez
 
 Para la estructura del proyecto usaremos estas carpetas:
 ```
-proyect-name
+project-name
 |- images
 |- scripts
 `- styles
