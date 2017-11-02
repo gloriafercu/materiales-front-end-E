@@ -1,7 +1,9 @@
 # Mi primera página web
+
 Hasta ahora hemos visto una pequeña introducción a unos elementos básicos de HTML y CSS, pero hay más.
 
 ## Más etiquetas HTML
+
 La etiquetas html nos premiten estructurar nuestro contenido según su función o carga semántica. Vamos a ver más etiquetas:
 
 * para **definir nuestra página**
@@ -41,7 +43,7 @@ Usaremos una sección para agrupar contenidos por temática:
 	EJEMPLO:
 	En la página de un producto agruparemos la descripción del producto por un lado y los comentarios de los compradores/usuarios por otro.
 
-Hay una serie de secciones especiales que tienen asignado un significado semático predeterminado:
+Hay una serie de secciones especiales que tienen asignado un significado semántico predeterminado:
 
 * `<header>`: una cacebera o sección de presentación de un bloque
 * `<main>`: Indica la principal sección de contenido
