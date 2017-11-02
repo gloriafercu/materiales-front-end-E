@@ -147,13 +147,13 @@ Aparte de modificar esa distribución, podremos hacer que cambien su comportamie
 
 La propiedad `position` de CSS será la que nos permita modificar la forma en la que se distribuyen los objetos a través de una página web.
 
-El atributo `position` es fundamental en las webs actuales porque sin él todo el contenido sería lineal, es decir, no podríamos tener ciertas superposiciones y no podríamos sacar a un elemento de la posición que está dentro del flujo de la página.
+El atributo `position` es fundamental en las webs actuales porque sin él todo el contenido sería lineal, es decir, no podríamos tener ciertas superposiciones y no podríamos sacar a un elemento del flujo de la página, el resto de elementos (contenedor y elementos hermanos) no lo tienen en cuenta, lo ignoran.
 
 La propiedad `position` tiene cuatro valores posibles:
-* `static`: es el valor por defecto de cada elemento HTML
-* `relative`: con lo conseguimos modificar su posición siempre dependiendo de dónde esté en la página y actuar como contenedor de origen a los elementos con `position:absolute` que haya dentro
-* `absolute`: saca al elemento del flujo de la página teniendo como origen el `<body>` o un contenedor padre con `position:relative`
-* `fixed`: Saca al elemento a un segundo nivel que solo depende de la ventana del navegador.
+* `static`: es el tipo de posición por defecto en todos los elementos HTML
+* `relative`: Permite modificar la posición de un elemento en función de su posición actual en la página
+* `absolute`: Saca al elemento del flujo de la página, es decir, hace que su contenedor y los elementos de antes y después no lo tengan en cuenta a la hora de posicionarse y definir su tamaño y por otro lado posiciona el elemento en función de la posición del body o en su defecto del primer elemento contenedor que tenga una posición diferente a static (posicion por defecto)
+* `fixed`: Saca a un elemento del flujo normal de la página y permite posicionarlo en función de la ventana del navegador. Aparte, este tipo de elementos mantienen su posición cuando hacemos scroll en la página (como si se mantuviesen anclados en un mismo punto), de ahí su nombre fixed (fijo)
 
 - Video explicatorio de [posicionamiento web](https://www.youtube.com/watch?v=13CbCpAnvYI)
 - Video para entender [position: static](https://www.youtube.com/watch?v=whqnlupzpNk)
@@ -168,7 +168,7 @@ La propiedad `position` tiene cuatro valores posibles:
     Hacer un enlace de descarga con una etiqueta del tipo de archivo que siempre esté a la derecha
 * * *
     EJERCICIO:
-    Hacer una cabecera que se quede fija en la parte superior de la página aunque te desplaces hacia abajo en esta.
+    Hacer una página que tenga una cabecera que se mantenga fija.
 * * *
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
