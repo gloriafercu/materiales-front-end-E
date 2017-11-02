@@ -19,7 +19,7 @@ La terminal parece muy agresiva al principio pero poco a poco le iremos pillando
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 ### Devtools
-Desde que aparecieron las Devtools en todos los navegadores decentes, la vida del frontend es mucho más tranquila. Estas herramientas nos permite saber qué está pasando en un módulo concreto (medidas, posicionamiento, css aplicados) o qué está cargando nuestra web (hojas de estilos, imágenes, vídeos/audios, javascript).
+Desde que aparecieron las Devtools en todos los navegadores decentes, la vida del frontend es mucho más tranquila. Estas herramientas nos permiten saber qué está pasando en un módulo concreto (medidas, posicionamiento, css aplicados) o qué está cargando nuestra web (hojas de estilos, imágenes, vídeos/audios, javascript).
 
 ### Terminal
 Ahora mismo solo vamos a movernos por las carpetas y crear algún archivo pero más adelante será una herramienta fundamental al trabajar en grupo y con control de versiones.
