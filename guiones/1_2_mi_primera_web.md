@@ -1,8 +1,8 @@
-# {{number}} - {{name}}
+# 1.2 - Mi primera web
 
 ## Kahoot de esta sesión
 
-- Grupo de tarde [1.1. Intro a la web]({{https://play.kahoot.it/#/k/c7e9d6d7-fd8b-41bb-a424-26b5be5c0aac}})
+- Grupo de tarde [1.1. Intro a la web](https://play.kahoot.it/#/k/c7e9d6d7-fd8b-41bb-a424-26b5be5c0aac)
 
 
 ## Comunicados importantes
@@ -15,7 +15,7 @@
 - [Presentación del proyecto](https://drive.google.com/open?id=0B3IpQkIeRKHgVjZZWVZiNU9wVUE)
 
 
-### ¿Qué hemos visto hasta ahora?
+## ¿Qué hemos visto hasta ahora?
 
 - Como funciona un servidor
 - Las herramientas que vamos a utilizar durante el curso (Trello, Slack, Ubuntu...)
@@ -24,7 +24,7 @@
 - Qué es CSS y como darle estilos a nuestra página
 
 
-### ¿Qué vamos a ver hoy?
+## ¿Qué vamos a ver hoy?
 
 - Avanzamos con HTML
   - Etiquetas para agrupar a otras y etiquetas para secciones
@@ -36,18 +36,9 @@
   - Herencia
   - Cascada y especificidad
 
-
-### Espacio para preguntar dudas
-
-- ¿Podríais explicarme que es la cascada?
-- ¿Cuándo usamos una clase y cuando un id?
-- ¿Qué diferencia hay entre un div y un span?
-- ¿Para qué sirve el alt de una imágen?
-
-
 ### Contenido de la sesión
 
-[1.2 Mi primera web](1_2_mi_primera_web.md)
+[1.2 Mi primera web](https://adalab.gitbooks.io/curso-programacion-front-end-2018/content/sprint_1/1_2_mi_primera_web.html)
 
 
 ### Parte grupal
@@ -59,6 +50,16 @@
 - 15 min al final para ver cómo lo van a hacer
 
 
-### Comunicados para el siguiente día
+## Resumen de la sesión
+
+### Espacio para preguntar dudas
+
+- ¿Podríais explicarme que es la cascada?
+- ¿Cuándo usamos una clase y cuando un id?
+- ¿Qué diferencia hay entre un div y un span?
+- ¿Para qué sirve el alt de una imágen?
+
+
+## Comunicados para el siguiente día
 
 - Traer los auriculares
