@@ -39,7 +39,7 @@ Pues desde en los casos más simples como un pequeño proyecto o un archivo de c
 
 ### Instalar Git y nuestro primer proyecto con git.
 
-[Empezar con Git](guias/empezar_con_git.md)
+[Empezar con Git](../guias/empezar_con_git.md)
 
 * * *
 EJERCICIO:
