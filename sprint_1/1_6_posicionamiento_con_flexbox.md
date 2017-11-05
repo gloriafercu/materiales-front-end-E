@@ -51,7 +51,9 @@ Hacer una página con `<header>`, `<main>` y `<footer>` y hacer que aunque haya 
 Si hubiese mucho contenido el footer debe colocarse tras el main, de forma natural.
 * * *
 EJERCICIO 6
+
 ![Ejemplo](assets/1-6-ejercicio-6.png)
+
 Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprendido hoy de Flexbox. Los requisitos son los siguientes:
 
 * Las medidas tienen que ser relativas, es decir, los elementos de la página deben adaptarse al ancho de la ventana del navegador web. Si el tamaño de la ventana aumenta, el tamaño de los elementos debe aumentar.
@@ -59,6 +61,7 @@ Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprend
 * Cada bloque debe de crearse con una etiqueta HTML5 (header, footer, aside...) y debe tener un título que esté centrado (como aparece en la imágen). El bloque central (que sería un article), en vez de tener un título, tendrá un párrafo con un texto aleatorio, podéis escribir dentro de él lo que queráis.
 * * *
 EJERCICIO 7
+
 ![Ejemplo](assets/1-6-ejercicio-7.png)
 
 Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprendido hoy de Flexbox. Los requisitos son los siguientes:
@@ -78,12 +81,13 @@ Crear una página con un texto simple centrado que ocupe el 100% de la pantalla 
 Además deberá tener una cabecera con un fondo que ocupe toda la pantalla y un contenido que ocupe el mismo ancho que el texto. A su vez, tendrá que tener también un footer que se quede pegado en la parte inferior de la página. Cuando haya poco texto se mantendrá ahí y cuando aparezca mucho más texto se irá hacia abajo, siempre al final de la página.
 
 Ejemplo de la página cuando el texto es largo
+
 ![Ejemplo](assets/1-6-ejercicio-8-1.png)
 
 
 Ejemplo de la página cuando el texto es corto
-![Ejemplo](assets/1-6-ejercicio-8-2.png)
 
+![Ejemplo](assets/1-6-ejercicio-8-2.png)
 
 Una vez que tengamos esa estructura y una distribución visual similar a la de la imagen crearemos un elemento que se superponga sobre él. Ese elemento tendrá un fondo oscuro transparente y un div en su interior. Ese div entero estará centrado tanto vertical como horizontalmente y contendrá un titular, un texto y un par de botones. El resultado quedaría igual a la siguiente imagen.
 
