@@ -23,11 +23,11 @@ EJERCICIO 1: FLEX y FLEX DIRECTION
 3. Indicar cuál es el eje principal
 * * *
 EJERCICIO 2: FLEX WRAP
-![Ejemplo](1-6-ejercicio-2.png)
+![Ejemplo](assets/1-6-ejercicio-2.png)
 Teniendo una lista de 10 a 15 imágenes de 200x100 px, hacer un bloque flexbox donde las imágenes se distribuyan por el eje horizontal y se vayan apilando uno detrás de otro.
 * * *
 EJERCICIO 3: JUSTIFY CONTENT y ALIGN ITEMS
-![Ejemplo](1-6-ejercicio-3.png)
+![Ejemplo](assets/1-6-ejercicio-3.png)
 1. Hacer un menú horizontal con un contenedor flex de 100px de alto
 2. Las opciones de menú serán:
 	* Home
@@ -40,18 +40,18 @@ EJERCICIO 3: JUSTIFY CONTENT y ALIGN ITEMS
 5. El espacio restante debe usarse para separar las opciones de menú, unas de otras
 * * *
 EJERCICIO 4: ORDER
-![Ejemplo](1-6-ejercicio-4.png)
+![Ejemplo](assets/1-6-ejercicio-4.png)
 1. Hacer un listado de noticias con imagen, título y párrafo de contenido
 2. Meterlas en un contenedor flex y hacer que se distribuyan a dos columnas
 3. Elegir una noticia, por ejemplo, la última, y ponerla como destacada, en primer lugar y ocupando las dos columnas
 * * *
 EJERCICIO 5: FLEX/GROW/SHRINK/BASIS
-![Ejemplo](1-6-ejercicio-5.png)
+![Ejemplo](assets/1-6-ejercicio-5.png)
 Hacer una página con `<header>`, `<main>` y `<footer>` y hacer que aunque haya poco contenido el footer siempre está abajo de la página y el main ocupe todo el espacio disponible.
 Si hubiese mucho contenido el footer debe colocarse tras el main, de forma natural.
 * * *
 EJERCICIO 6
-![Ejemplo](1-6-ejercicio-6.png)
+![Ejemplo](assets/1-6-ejercicio-6.png)
 Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprendido hoy de Flexbox. Los requisitos son los siguientes:
 
 * Las medidas tienen que ser relativas, es decir, los elementos de la página deben adaptarse al ancho de la ventana del navegador web. Si el tamaño de la ventana aumenta, el tamaño de los elementos debe aumentar.
@@ -59,7 +59,7 @@ Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprend
 * Cada bloque debe de crearse con una etiqueta HTML5 (header, footer, aside...) y debe tener un título que esté centrado (como aparece en la imágen). El bloque central (que sería un article), en vez de tener un título, tendrá un párrafo con un texto aleatorio, podéis escribir dentro de él lo que queráis.
 * * *
 EJERCICIO 7
-![Ejemplo](1-6-ejercicio-7.png)
+![Ejemplo](assets/1-6-ejercicio-7.png)
 
 Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprendido hoy de Flexbox. Los requisitos son los siguientes:
 
@@ -78,16 +78,16 @@ Crear una página con un texto simple centrado que ocupe el 100% de la pantalla 
 Además deberá tener una cabecera con un fondo que ocupe toda la pantalla y un contenido que ocupe el mismo ancho que el texto. A su vez, tendrá que tener también un footer que se quede pegado en la parte inferior de la página. Cuando haya poco texto se mantendrá ahí y cuando aparezca mucho más texto se irá hacia abajo, siempre al final de la página.
 
 Ejemplo de la página cuando el texto es largo
-![Ejemplo](1-6-ejercicio-8-1.png)
+![Ejemplo](assets/1-6-ejercicio-8-1.png)
 
 
 Ejemplo de la página cuando el texto es corto
-![Ejemplo](1-6-ejercicio-8-2.png)
+![Ejemplo](assets/1-6-ejercicio-8-2.png)
 
 
 Una vez que tengamos esa estructura y una distribución visual similar a la de la imagen crearemos un elemento que se superponga sobre él. Ese elemento tendrá un fondo oscuro transparente y un div en su interior. Ese div entero estará centrado tanto vertical como horizontalmente y contendrá un titular, un texto y un par de botones. El resultado quedaría igual a la siguiente imagen.
 
-![Ejemplo](1-6-ejercicio-8-3.png)
+![Ejemplo](assets/1-6-ejercicio-8-3.png)
 
 En la imágen, es importante observar que la cabecera estará por debajo de la ventana emergente.
 
