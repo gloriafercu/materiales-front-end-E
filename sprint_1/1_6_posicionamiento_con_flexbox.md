@@ -17,17 +17,23 @@ Vamos a seguir esta guía y a ir planteando unos ejercicios para cada propiedad 
 
 * * *
 EJERCICIO 1: FLEX y FLEX DIRECTION
+
 ![Ejemplo](assets/1-6-ejercicio-1.png)
+
 1. Crear un contenedor flex de  500px por 500px y con 6 o más elementos.
 2. Hacer que se distribuyan en horizontal o vertical
 3. Indicar cuál es el eje principal
 * * *
 EJERCICIO 2: FLEX WRAP
+
 ![Ejemplo](assets/1-6-ejercicio-2.png)
+
 Teniendo una lista de 10 a 15 imágenes de 200x100 px, hacer un bloque flexbox donde las imágenes se distribuyan por el eje horizontal y se vayan apilando uno detrás de otro.
 * * *
 EJERCICIO 3: JUSTIFY CONTENT y ALIGN ITEMS
+
 ![Ejemplo](assets/1-6-ejercicio-3.png)
+
 1. Hacer un menú horizontal con un contenedor flex de 100px de alto
 2. Las opciones de menú serán:
 	* Home
@@ -40,13 +46,17 @@ EJERCICIO 3: JUSTIFY CONTENT y ALIGN ITEMS
 5. El espacio restante debe usarse para separar las opciones de menú, unas de otras
 * * *
 EJERCICIO 4: ORDER
+
 ![Ejemplo](assets/1-6-ejercicio-4.png)
+
 1. Hacer un listado de noticias con imagen, título y párrafo de contenido
 2. Meterlas en un contenedor flex y hacer que se distribuyan a dos columnas
 3. Elegir una noticia, por ejemplo, la última, y ponerla como destacada, en primer lugar y ocupando las dos columnas
 * * *
 EJERCICIO 5: FLEX/GROW/SHRINK/BASIS
+
 ![Ejemplo](assets/1-6-ejercicio-5.png)
+
 Hacer una página con `<header>`, `<main>` y `<footer>` y hacer que aunque haya poco contenido el footer siempre está abajo de la página y el main ocupe todo el espacio disponible.
 Si hubiese mucho contenido el footer debe colocarse tras el main, de forma natural.
 * * *
