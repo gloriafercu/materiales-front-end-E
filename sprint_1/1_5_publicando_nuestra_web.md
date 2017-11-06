@@ -88,13 +88,13 @@ sudo add-apt-repository ppa:git-core/ppa
 Una vez tengamos la información disponible para poder descargar la versión más reciente, actualizaremos la info que tenemos en el ordenador:
 
 ```shell
-sudo apt update
+sudo apt-get update
 ```
 
 Por último, ejecutaremos el comando para instalar Git:
 
 ```shell
-apt install git
+sudo apt-get install git -y
 ```
 
 Con esto deberíamos tener ya instalado Git en nuestro ordenador, para estar seguros volveremos a ejecutar el comando `git --version`, esta vez debería de aparecernos un número de versión mayor que `2.11.0`.
