@@ -66,23 +66,206 @@ Para el tema de la tipografía hay varias escuelas y formas de afrontarlo según
 `em`: 1em es el tamaño de fuente del elemento actual (es el ancho de la letra M mayúscula). El tamaño de fuente por defecto que los navegadores usan antes de aplicar CSS es de 16 píxeles, lo que significa que este es el valor asignado por defecto a un elemento (1em). Ojo — los tamaños de fuente de los elementos se heredan de los padres, por lo que si a los padres se les aplica otros tamaños de fuente, la equivalencia en pixel de un em puede complicarse.
 
 ![Cómo funcionan los em](assets/images/em.png)
-[Calculadora de em](https://vasilis.nl/nerd/code/emcalc/)
+* * *
+EJERCICIO 1:  
+En la web de [Calculadora de em](https://vasilis.nl/nerd/code/emcalc/) crear una estructura como:
+```html
+<body>
+	<main>
+		<section>
+			<p></p>
+		</section>
+	</main>
+</body>
+```
+donde el '<body>' estará a 16px, el `<main>` a los mismos 16px, el `<section>` a 20px y el `<p>` a 20px.
+* ¿A cuántos px equivale 1em en el `<body>`?
+* ¿A cuántos em está el `<section>`?
+* ¿A cuántos em está el `<p>`?
+* * *
+EJERCICIO 2:
+Vamos a ver cómo funcionan en un ejemplo unas unidades flexibles como los `em` y qué pueden hacer por nosotros:
+En el siguiente [codepen](https://codepen.io/adalab/pen/vWXwZd) hay un contenedor con clase `.icon`. Y él y todas sus hijas están en `em`.
+Probar a diferentes valores de pixels para el font-size del elemento `.icon`:
+
+* 10px
+* 16px
+* 50px
+* 100px
+* * *
 
 ## Max-width, min-width (y height). Width: 100%.
 Estas propiedades que permiten "limitar" anchos y altos se pueden aplicar a casi cualquier contenedor (que admitan dimensiones) de manera que podamos tener elementos que se dimensionen a base de porcentajes pero sobre los que tengamos un poco de control para que en determinados escenarios no se hagan demasiado pequeños ni demasiado grandes.
 
-Ejemplos de esto son:
+* * *
+EJERCICIO 3:
+Ya que ayer vimos flexbox, en este [codepen](https://codepen.io/adalab/pen/LORKzX) tenemos dos columnas, una (.aside) que ocupa el 50% del ancho hasta 320px y la otra (.main) que ocupa el resto:
 
-* La imagen de una noticia que en móvil ocupa el 100% del ancho de la página pero que cuando llega a un cierto ancho se queda a la izquierda del texto de la noticia y ya no crece más.
-* 
+* Hacer la ventana del navegador tan pequeña para que las dos columnas ocupen lo mismo
+* y agrandar hasta que .aside se quede en 320px de ancho mientras .main ocupa el resto del espacio
+* * *
+EJERCICIO 4:
+En el siguiente [codepen](https://codepen.io/adalab/pen/MOjMPr) hay un módulo con una noticia sobre Bill Murray. Nada nuevo, no?
 
-## Mobile first.
-## Bonus: vh
+* ¿Qué pasa si duplico el párrafo de texto?
+* ¿Y si duplico otra vez?
+* * *
+
+## Mediaqueries. meta-name=”viewport”. Viewport.
+Las mediaqueries son las instrucciones que nos permiten aplicar una serie de reglas CSS cuando se cumplan una o varias condiciones. Tienen este aspecto:
+```css
+@media all and (min-width:500px) {
+	/* CSS que aplicaremos */
+}
+```
+En el ejemplo superior le decimos que aplique unos CSS cuando estemos en una ventana de navegador de al menos 500px
+* * *
+EJERCICIO 5:
+Crea un index.html que contenga:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Viewport Sample</title>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>
+```
+1) Sin que sirva de precendente, incluiremos una etiqueta `<style>` en el `<head>` con:
+```css
+.box {
+	background: red;
+	height: 100px;
+}
+@media all and (min-width:550px) {
+	.box {
+		background: blue;
+	}
+}
+```
+Veremos que el div `.box` ocupará el ancho disponible y tendrá 100px de alto, y fondo rojo.
+
+2) Vamos a añadir nuestra primera mediaquery: vamos a hacer que por encima de 550px el elemento `.box` tenga fondo azul. Para ello el CSS dentro de nuestra etiqueta `<style>` quedará así:
+```css
+.box {
+	background: red;
+	height: 100px;
+}
+@media all and (min-width:500px) {
+	.box {
+		background: blue;
+	}
+}
+```
+Si ahora redimensionamos la ventana del navegador veremos que a partir de 550px de ancho nuesto elemento `.box` se vuelve azul.
+
+	NOTA:
+	A cada una de estas medidas que ponemos en los mediaqueries las llamamos breakpoints, o puntos de ruptura.
+
+3) Habramos ahora las herramientas de desarrollo de chrome y lancemos el simulador de dispositivos móviles. Probemos varios dispositivos o resoluciones. ¿Qué pasa? ¿Cuándo se vuelve azul? ¿Cuándo se vuelve rojo?
+* * *
+
+Aquí es donde entra en juego una etiqueta que la conocíamos por otros motivos pero que ahora tiene un contenido especial: el viewport.
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+Los dispositivos móviles (teléfonos y tablets) muestran la página de una forma curiosa: salvo que se le indique lo contrario intentarán mostrarla al máximo tamaño posible, haciendo suficiente zoom para permitir que las páginas no adaptadas se puedan ver (aunque diminutas) por eso en nuestro ejemplo las mediaqueries no "funcionan".
+
+Con la etiqueta meta viewport le decimos a estos dispositivos cómo tienen que comportarse. El ejemplo anterior es el más típico y le dice al viewport de un dispositivo movil que:
+1) el ancho del viewport debe coincidir con el ancho del dispositvo
+2) la escala inicial siempre será el 100%
+
+* * *
+EJERCICIO 6:
+Vamos a añadir al `<head>` de nuesta página el tag meta viewport quedando toda nuestra página así:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Viewport Sample</title>
+	<style>
+		.box {
+			background: red;
+			height: 100px;
+		}
+		@media all and (min-width:550px) {
+			.box {
+				background: blue;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>
+```
+¿Qué tal ahora? ¿Si nos vamos a las herramientas de desarrollo, abrimos el simulador y probamos con diferentes dispositivos/anchos? ¿Cambia ahora de rojo a azul?
+* * *
+EJERCICIO 7:
+Vamos a hacer algo más "real": En un html tendremos un contenedor con:
+1. Un título
+2. Uno o dos párrafos de texto
+
+Y vamos a plantear 3 escenarios (de pequeño a grande) según esta guía:
+![Guía](assets/images/1-7-ejercicio-7.png)
+
+Vamos a empezar con los css de móvil e iremos ajustando los estilos según dispongamos de mayores tamaños de pantalla:
+
+1. Por defecto:
+	1. Nuestro contenedor tendrá 20px de margen a cada lado
+	2. El título estará en negrita y a 32px
+	3. El texto de los párrafos estará a 18px con un interlineado de 24px
+2. De 768px en adelante:
+	1. Nuestro contenedor tendrá 30px de margen superior y 40px de margen a cada lado
+	2. El título estará en negrita y a 28px
+	1. El texto de los párrafos estará a 16px con un interlineado de 20px
+3. De 1140px en adelante:
+	1. Nuestro contenedor tendrá 190px de margen superior y margen automático a cada lado, con un ancho máximo de 750px
+	2. El título estará en negrita y a 42px
+	3. El texto de los párrafos estará a 24px con un interlineado de 32px
+* * *
 
 
-## ¿En qué casos se utiliza?
+## Mobile first
+Hay varias formas de afrontar la maquetación de un proyecto responsive, la que nos parece más adecuada es la mobile first donde se plantean primero los estilos de la vista de móvil y conforme tenemos mayor tamaño de pantalla sobreescribimos o ajustamos los estilos necesarios.
 
-{{usecase_info}}
+La maquetación mobile first da prioridad a los dispositivos con menos capacidad de pantalla, conexión y batería de manera que, por ejemplo, se cargan imágenes más pequeñas que consumen muchos menos datos o se muestra una maquetación más simple y adaptada a que usemos los dedos como punteros (botones y zonas clicables más grandes). Y si luego resulta que estamos viendo la página en un una pantalla más grande, gracias a las mediaqueries, podemos cargar elementos más pesados, mostrar otros que en móvil pueden no tener sentido y adaptarlo todo a que ya se va a manejar con ratón.
+
+Un ejemplo sería la típica página que tiene una primera sección con una imagen de fondo enorme: con la maquetación mobile first colocaríamos primero un fondo adaptado a una pantalla más pequeña con el consiguiente ahorro en nuestra tarifa de datos. Si alguien la carga desde escritorio, donde suele tener una conexión con tarifa plana, pasaríamos a mostrar una imagen de fondo mucho más grande, acorde a la pantalla que esté usando. Pero nunca obligamos a quien va en el metro a descargarse una imagen descomunal de chopocientos megapixels en su móvil con una tarifa de datos que se paga con sangre.
+
+En el css esto se representa escribiendo primero los css que se verán en las pantallas/ventanas de navegador más pequeñas. Posteriormente añadiremos, dentro de mediaqueries, los ajustes necesarios para los tamaños mayores de pantalla o ventanta.
+
+	NOTA:
+	Responsive no es solo tema de dispositivos. Claro que hay móviles de 320, tablets de 768 y pantalas desde 1336 a 2560 de ancho. Pero responsive tb es un tipo en una pantalla más modesta trabajando con una ventana de navegador a 473px de ancho y el resto con otra aplicación como un editor de textos o un reproductor de vídeo porque está enganchado a GoT...
+
+### Entonces, ¿cuántos breakpoints hay? ¿hay unos más estandar que otros?
+Pues sí y no. Pero sí.
+Realmente hay una serie de anchos que se tienen más en cuanta que otros. por ejemplo, un tablet suele tener de 768px (en vertical) a 1024px (en horizontal). En ordenadores de escritorio hay una serie de anchos que se suelen repetirse en los diseños (1280, 1500, 1600)...
+
+Todo esto es muy relativo pero cuando el equipo de diseño entrega un diseño suele hacer de 2 a 3/4 vistas, y tomaremos esas medidas como nuestros breakpoints principales. El objetivo es clavar el diseño en esos puntos.
+
+Luego tendremos breakpoints menores que nos los da el contenido: desde el tamaño más chico vamos redimensionando el navegador y cuando algo "se rompe" (o se descoloca), creamos un breakpoint y arreglamos lo que se haya roto o descolocado.
+
+De esta manera nos aseguramos de que en cualquier ventana de navegador nuestra página se va a ver correcta. Quizás no se vea de una manera ideal, pero no se va a ver descolocada.
+
+## Bonus: vw y vh
+De postre, tenemos unas unidades flexibles que no dependen de un tamaño de fuente como los `em` sino que dependen de las dimensiones del viewport o de la ventana del navegador. Son los `vw` y `vh` (viewport width y viewport height).
+
+A efectos prácticos actuan como un porcentaje en función del ancho/alto del viewport/ventana del navegador: Entonces, el 100% de la altura de nuestra ventana de navegador sería 100vh.
+* * *
+EJERCICIO 8:
+En el siguiene [codepen](https://codepen.io/adalab/pen/BmQaQa) variad las dimensiones en vw y vh para:
+* hacer que el contenedor `.box` ocupe el 50% de ancho y el 100% de alto
+* hacer que el contenedor `.box` ocupe el 10% de ancho y el 10% de alto
+* hacer que el contenedor `.box` ocupe el 100% de ancho y el 80% de alto
+
+
 
 
 ## Recursos externos
@@ -104,9 +287,7 @@ Ejemplos de esto son:
 [Cómo aplicar el mobile first y el responsive design](https://www.youtube.com/watch?v=KjHRa_Qzus8&index=8&list=PL6hPvfzEEMDaKYAabXoDL7A-fZcwxvIqe)
 
 
-## Resumen de la sesión
 
-{{summary_info}}
 
 
 ### Ejercicios
