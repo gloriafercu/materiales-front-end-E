@@ -1,0 +1,91 @@
+/*
+  PARTE 1
+
+  Al principio los enlaces se ven verdes en vez de rojos porque sobre esos
+  enlaces se aplican dos reglas:
+
+  1. todos los enlaces
+
+  a {
+    color: red;
+  }
+
+  2. los enlaces con la clase news__item-link dentro de los li con la clase
+     .news__item, dentro de los ul con la clase .news
+
+  ul.news li.news__item a.news__item-link {
+    color: green;
+  }
+
+  La primera es más general (todos los enlaces) y la segunda más específica (solo
+  estos enlaces en concreto) por lo tanto la segunda prevalece y por eso se ven
+  todos verdes
+*/
+
+
+/*
+  PARTE 2
+
+  Para hacer que los enlaces fuesen rojos, simplemente sería necesario eliminar
+  la siguiente regla:
+
+  ul.news li.news__item a.news__item-link {
+    color: green;
+  }
+*/
+
+/*
+  PARTE 3, 4 y 5
+
+  Para que los estilos se mantengan al cambiar los ul y li del ejercicio por
+  divs, lo que debemos hacer es utilizar en CSS sólo las clases, sin combinarlas
+  con las etiquetas.
+
+  Es decir, en vez de hacer lo siguiente:
+
+  ul.news
+
+  Utilizar:
+
+  .news
+
+  Esto permitirá que los estilos se mantengan independientemente del tipo de
+  etiqueta que usemos (div, li o ul)
+
+*/
+
+/* Estilos finales (tras aplicar los pasos 1, 2, 3, 4 y 5)*/
+
+.news {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+}
+
+a {
+  color: red;
+}
+
+.news li.news__item {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 10px;
+}
+
+.news .news__item + .news__item {
+  border-top: 1px solid #ccc;
+}
+
+.news .news__item:nth-child(2n) {
+  background: #eee;
+}
+
+.news .news__item:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.news .news__item .news__item-title {
+  margin: 0 0 .25em;
+  font-size: 20px;
+}

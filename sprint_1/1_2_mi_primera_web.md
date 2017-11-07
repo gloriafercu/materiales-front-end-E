@@ -428,10 +428,6 @@ y al `<aside>` con clase `.links` le aplicamos una regla que ponga el texto rojo
 *
 [Más info sobre herencia en la MDN](https://developer.mozilla.org/es/docs/Web/CSS/inheritance)
 
-* * *
-EJERCICIO:
-Plantea un ejemplo como el anterior donde forcemos la herencia de una propiedad que no se hereda, por ejemplo el color de fondo.
-* * *
 
 ### Cascada y especificidad de selectores
 CSS es, en español, Hojas de estilo en cascada. La "cascada" se refiere al proceso de combinación y aplicación de estilos en CSS y cómo se resuelven los conflictos entre ellos.
