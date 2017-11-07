@@ -65,7 +65,17 @@ Para el tema de la tipografía hay varias escuelas y formas de afrontarlo según
 
 `em`: 1em es el tamaño de fuente del elemento actual (es el ancho de la letra M mayúscula). El tamaño de fuente por defecto que los navegadores usan antes de aplicar CSS es de 16 píxeles, lo que significa que este es el valor asignado por defecto a un elemento (1em). Ojo — los tamaños de fuente de los elementos se heredan de los padres, por lo que si a los padres se les aplica otros tamaños de fuente, la equivalencia en pixel de un em puede complicarse.
 
+![Cómo funcionan los em](assets/images/em.png)
+[Calculadora de em](https://vasilis.nl/nerd/code/emcalc/)
+
 ## Max-width, min-width (y height). Width: 100%.
+Estas propiedades que permiten "limitar" anchos y altos se pueden aplicar a casi cualquier contenedor (que admitan dimensiones) de manera que podamos tener elementos que se dimensionen a base de porcentajes pero sobre los que tengamos un poco de control para que en determinados escenarios no se hagan demasiado pequeños ni demasiado grandes.
+
+Ejemplos de esto son:
+
+* La imagen de una noticia que en móvil ocupa el 100% del ancho de la página pero que cuando llega a un cierto ancho se queda a la izquierda del texto de la noticia y ya no crece más.
+* 
+
 ## Mobile first.
 ## Bonus: vh
 
