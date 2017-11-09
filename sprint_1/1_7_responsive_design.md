@@ -20,15 +20,16 @@ Antes de meternos con la maquetación responsive vamos a mirar a lo que podría 
 
 Se dice que un diseño es líquido, o más correctamente, que una maquetación es líquida cuando definimos todos los anchos de los contenedores en términos de porcentajes de la vista del navegador, así pueden expandirse y contraerse cuando la ventana del navegador cambie de tamaño.
 
-Muchas webs se maquetaban así cuando el tema de las pantallas y dispositivos no era todavía un problema y cuando empezaron a salir las primeras pantallas diferentes (800x600 y 1024x768) esta maquetación por porcentajes te permitía tener ese margen entre unas dimensiones y otras.
+Muchas webs se maquetaban así cuando el tema de las pantallas y dispositivos no era todavía un problema. Cuando empezaron a salir las primeras pantallas diferentes (800x600 y 1024x768) esta maquetación por porcentajes te permitía tener ese margen entre unas dimensiones y otras.
 
-Con el paso del tiempo, hemos visto que el problema ya no se resuelve teniendo algo de margen y a día de hoy tenemos pantallas que van desde los 320px de ancho hasta los 2560x1440. Aquí es donde entra el diseño responsive.
+Con el paso del tiempo, hemos visto que el problema ya no se resuelve teniendo algo de margen ya que a día de hoy tenemos pantallas que van desde los 320px de ancho hasta los 2560x1440. Aquí es donde entra el diseño responsive.
 
 
 ## ¿Qué es responsive?
 El responsive, o Responsive Web Design (RWD) es un concepto de desarrollo orientado a que los sitios web se vean y comporten correctamente en todos los dispositivos y pantallas.
 
-Responsive no es solo móvil, tablet y escritorio, también es un navegador que ocupe la mitad de la pantalla por alguna razón (por ejemplo: estamos escribiendo un artículo en nuestro editor de textos y tenemos al lado una web donde consultamos información).
+	NOTA:
+	Responsive no es solo móvil, tablet y escritorio, también es un navegador que ocupe la mitad de la pantalla por alguna razón (por ejemplo: estamos escribiendo un artículo en nuestro editor de textos y tenemos al lado una web donde consultamos información).
 
 Esto se consigue combinando varios enfoques:
 - Maquetaremos ciertas zonas usando porcentajes
@@ -83,7 +84,7 @@ donde el `<body>` estará a 16px, el `<main>` a los mismos 16px, el `<section>` 
 * ¿A cuántos em está el `<section>`?
 * ¿A cuántos em está el `<p>`?
 * * *
-EJERCICIO 2:
+EJERCICIO 2:  
 Vamos a ver cómo funcionan en un ejemplo unas unidades flexibles como los `em` y qué pueden hacer por nosotros:
 En el siguiente [codepen](https://codepen.io/adalab/pen/vWXwZd) hay un contenedor con clase `.icon`. Y él y todas sus hijas están en `em`.
 Probar a diferentes valores de pixels para el font-size del elemento `.icon`:
@@ -95,16 +96,16 @@ Probar a diferentes valores de pixels para el font-size del elemento `.icon`:
 * * *
 
 ## Max-width, min-width (y height). Width: 100%.
-Estas propiedades que permiten "limitar" anchos y altos se pueden aplicar a casi cualquier contenedor (que admitan dimensiones) de manera que podamos tener elementos que se dimensionen a base de porcentajes pero sobre los que tengamos un poco de control para que en determinados escenarios no se hagan demasiado pequeños ni demasiado grandes.
+Estas propiedades que permiten "limitar" anchos y altos se pueden aplicar a casi cualquier contenedor (que admita dimensiones) de manera que podamos tener elementos que se dimensionen a base de porcentajes pero sobre los que tengamos un poco de control para que en determinados escenarios no se hagan demasiado pequeños ni demasiado grandes.
 
 * * *
-EJERCICIO 3:
+EJERCICIO 3:  
 Ya que ayer vimos flexbox, en este [codepen](https://codepen.io/adalab/pen/LORKzX) tenemos dos columnas, una (.aside) que ocupa el 50% del ancho hasta 320px y la otra (.main) que ocupa el resto:
 
 * Hacer la ventana del navegador tan pequeña para que las dos columnas ocupen lo mismo
 * y agrandar hasta que .aside se quede en 320px de ancho mientras .main ocupa el resto del espacio
 * * *
-EJERCICIO 4:
+EJERCICIO 4:  
 En el siguiente [codepen](https://codepen.io/adalab/pen/MOjMPr) hay un módulo con una noticia sobre Bill Murray. Nada nuevo, ¿no?
 
 * ¿Qué pasa si duplico el párrafo de texto?
@@ -115,12 +116,12 @@ En el siguiente [codepen](https://codepen.io/adalab/pen/MOjMPr) hay un módulo c
 Las mediaqueries son las instrucciones que nos permiten aplicar una serie de reglas CSS cuando se cumplan una o varias condiciones. Tienen este aspecto:
 ```css
 @media all and (min-width:500px) {
-	/* CSS que aplicaremos */
+	/* Reglas CSS que aplicaremos */
 }
 ```
 En el ejemplo superior le decimos que aplique unos CSS cuando estemos en una ventana de navegador de al menos 500px
 * * *
-EJERCICIO 5:
+EJERCICIO 5:  
 Crea un index.html que contenga:
 ```html
 <!DOCTYPE html>
@@ -174,7 +175,7 @@ Con la etiqueta `meta` viewport le decimos a estos dispositivos cómo tienen que
 2) la escala inicial siempre será el 100%
 
 * * *
-EJERCICIO 6:
+EJERCICIO 6:  
 Vamos a añadir al `<head>` de nuestra página el tag meta viewport quedando toda nuestra página así:
 ```html
 <!DOCTYPE html>
@@ -202,7 +203,7 @@ Vamos a añadir al `<head>` de nuestra página el tag meta viewport quedando tod
 ```
 ¿Qué tal ahora? ¿Si nos vamos a las herramientas de desarrollo, abrimos el simulador y probamos con diferentes dispositivos/anchos? ¿Cambia ahora de rojo a azul?
 * * *
-EJERCICIO 7:
+EJERCICIO 7:  
 Vamos a hacer algo más "real". En un html tendremos un contenedor con:
 1. Un título
 2. Uno o dos párrafos de texto
@@ -238,7 +239,7 @@ Un ejemplo sería la típica página que tiene una primera sección con una imag
 En el CSS esto se representa escribiendo primero los CSS que se verán en las pantallas/ventanas de navegador más pequeñas. Posteriormente añadiremos, dentro de mediaqueries, los ajustes necesarios para los tamaños mayores de pantalla o ventana.
 
 	NOTA:
-	Responsive no es solo tema de dispositivos. Claro que hay móviles de 320, tablets de 768 y pantallas desde 1336 a 2560 de ancho. Pero responsive también es un tipo en una pantalla más modesta trabajando con una ventana de navegador a 473px de ancho y el resto con otra aplicación como un editor de textos o un reproductor de vídeo porque está enganchado a GoT...
+	Recordemos que responsive no es solo tema de dispositivos. Claro que hay móviles de 320, tablets de 768 y pantallas desde 1336 a 2560 de ancho. Pero responsive también es un tipo en una pantalla más modesta trabajando con una ventana de navegador a 473px de ancho y el resto con otra aplicación como un editor de textos o un reproductor de vídeo porque está enganchado a GoT...
 
 ### Entonces, ¿cuántos breakpoints hay? ¿hay unos más estándar que otros?
 Pues sí y no. Pero sí.
@@ -255,7 +256,7 @@ De postre, tenemos unas unidades flexibles que no dependen de un tamaño de fuen
 
 A efectos prácticos actuan como un porcentaje en función del ancho/alto del viewport/ventana del navegador. Entonces, el 100% de la altura de nuestra ventana de navegador sería 100vh.
 * * *
-EJERCICIO 8:
+EJERCICIO 8:  
 En el siguiente [codepen](https://codepen.io/adalab/pen/BmQaQa) variad las dimensiones en vw y vh para:
 * hacer que el contenedor `.box` ocupe el 50% de ancho y el 100% de alto
 * hacer que el contenedor `.box` ocupe el 10% de ancho y el 10% de alto
@@ -288,17 +289,15 @@ En el siguiente [codepen](https://codepen.io/adalab/pen/BmQaQa) variad las dimen
 ### Ejercicios de refuerzo de Media queries
 
 * * *
-EJERCICIO 1
-
+EJERCICIO 1:  
 Hacer una web que, en función del ancho de la ventana del navegador, cambie su color de fondo:
 - Si el tamaño de la ventana es menor de 480px que tenga el fondo rojo
 - Si el tamaño de la ventana está entre 480px y 768px que tenga el fondo amarillo
 - Si el tamaño de la ventana es mayor de 768px que tenga el fondo verde
 
 * * *
-EJERCICIO 2
-
-Dado el siguiente los siguientes diseños, maquetarlos aplicando las mediaqueries necesarias.
+EJERCICIO 2:  
+Dados los siguientes diseños, maquetar la web aplicando las mediaqueries necesarias.
 
 Aspecto de la web a pantalla completa
 
