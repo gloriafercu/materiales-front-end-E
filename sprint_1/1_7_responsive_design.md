@@ -285,11 +285,29 @@ En el siguiente [codepen](https://codepen.io/adalab/pen/BmQaQa) variad las dimen
 
 
 
-
-### Ejercicios
-
 ### Ejercicios de refuerzo de Media queries
 
-Si alguien quiere, puede realizar los siguientes ejercicios para practicar con media queries.
+* * *
+EJERCICIO 1
 
-[Ejercicios de refuerzo media query](https://docs.google.com/document/d/1Xco0LqASXIQS6dUIxhuU5loG2CyWYB8gRBaEA4nqR7k/edit)
+Hacer una web que, en función del ancho de la ventana del navegador, cambie su color de fondo:
+- Si el tamaño de la ventana es menor de 480px que tenga el fondo rojo
+- Si el tamaño de la ventana está entre 480px y 768px que tenga el fondo amarillo
+- Si el tamaño de la ventana es mayor de 768px que tenga el fondo verde
+
+* * *
+EJERCICIO 2
+
+Dado el siguiente los siguientes diseños, maquetarlos aplicando los Mediaqueries necesarios.
+
+Aspecto de la web a pantalla completa
+
+![Pantalla completa](assets/images/ej0201.png)
+
+Aspecto de la web en una pantalla de 1000px
+
+![Pantalla completa](assets/images/ej0202.png)
+
+Aspecto de la web en una pantalla de 480px
+
+![Pantalla completa](assets/images/ej0203.png)
