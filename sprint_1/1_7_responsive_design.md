@@ -1,4 +1,4 @@
-# Publicando nuestra web
+# Responsive design
 
 ## Contenidos
 
