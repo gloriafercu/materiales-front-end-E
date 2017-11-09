@@ -5,14 +5,14 @@
 - Diseño flexible
 - ¿Qué es responsive?
 - Imágenes, media, tipografía (em) flexibles
-- Mediaqueries. meta-name=”viewport”. Viewport.
+- Mediaqueries. Viewport.
 - Max-width, min-width (y height). Width: 100%.
 - Mobile first.
 - Bonus: vh
 
 ## Introducción
 
-Durante esta sesión aprenderemos a usar las media queries para modificar el contenido de nuestra página en función de la disposición de la pantalla, el tipo de dispositivo en el que se va a mostrar o el tamaño de la ventana de visualización de este último.
+Durante esta sesión aprenderemos a usar las mediaqueries para modificar el contenido de nuestra página en función de la disposición de la pantalla, el tipo de dispositivo en el que se va a mostrar o el tamaño de la ventana de visualización de este último.
 
 
 ## ¿Qué es diseño flexible?
@@ -28,7 +28,7 @@ Con el paso del tiempo, hemos visto que el problema ya no se resuelve teniendo a
 ## ¿Qué es responsive?
 El responsive, o Responsive Web Design (RWD) es un concepto de desarrollo orientado a que los sitios web se vean y comporten correctamente en todos los dispositivos y pantallas.
 
-Responsive no es solo móvil, tablet y escritorio, también es un navegador que ocupe la mitad de la pantalla por alguna razón (por ejemplo: estamos escribiendo un artículo en nuestor editor de textos y tenemos al lado una web donde consultamos información).
+Responsive no es solo móvil, tablet y escritorio, también es un navegador que ocupe la mitad de la pantalla por alguna razón (por ejemplo: estamos escribiendo un artículo en nuestro editor de textos y tenemos al lado una web donde consultamos información).
 
 Esto se consigue combinando varios enfoques:
 - Maquetaremos ciertas zonas usando porcentajes
@@ -111,7 +111,7 @@ En el siguiente [codepen](https://codepen.io/adalab/pen/MOjMPr) hay un módulo c
 * ¿Y si duplico otra vez?
 * * *
 
-## Mediaqueries. meta-name=”viewport”. Viewport.
+## Mediaqueries. Viewport: &lt;meta name="viewport"&gt;.
 Las mediaqueries son las instrucciones que nos permiten aplicar una serie de reglas CSS cuando se cumplan una o varias condiciones. Tienen este aspecto:
 ```css
 @media all and (min-width:500px) {
@@ -155,7 +155,7 @@ Veremos que el div `.box` ocupará el ancho disponible y tendrá 100px de alto, 
 	}
 }
 ```
-Si ahora redimensionamos la ventana del navegador veremos que a partir de 550px de ancho nuesto elemento `.box` se vuelve azul.
+Si ahora redimensionamos la ventana del navegador veremos que a partir de 550px de ancho nuestro elemento `.box` se vuelve azul.
 
 	NOTA:
 	A cada una de estas medidas que ponemos en los mediaqueries las llamamos breakpoints, o puntos de ruptura.
@@ -167,15 +167,15 @@ Aquí es donde entra en juego una etiqueta que la conocíamos por otros motivos 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
-Los dispositivos móviles (teléfonos y tablets) muestran la página de una forma curiosa: salvo que se le indique lo contrario intentarán mostrarla al máximo tamaño posible, haciendo suficiente zoom para permitir que las páginas no adaptadas se puedan ver (aunque diminutas) por eso en nuestro ejemplo las mediaqueries no "funcionan".
+Los dispositivos móviles (teléfonos y tablets) utilizan este "viewport" para mostrar la página de una forma curiosa: salvo que se le indique lo contrario intentarán mostrarla al máximo tamaño posible, haciendo suficiente zoom para permitir que las páginas no adaptadas se puedan ver (aunque diminutas) por eso en nuestro ejemplo las mediaqueries no "funcionan".
 
-Con la etiqueta `meta` viewport le decimos a estos dispositivos cómo tienen que comportarse. El ejemplo anterior es el más típico y le dice al viewport de un dispositivo movil que:
+Con la etiqueta `meta` viewport le decimos a estos dispositivos cómo tienen que comportarse. El ejemplo anterior es el más típico y le dice al viewport de un dispositivo móvil que:
 1) el ancho del viewport debe coincidir con el ancho del dispositvo
 2) la escala inicial siempre será el 100%
 
 * * *
 EJERCICIO 6:
-Vamos a añadir al `<head>` de nuesta página el tag meta viewport quedando toda nuestra página así:
+Vamos a añadir al `<head>` de nuestra página el tag meta viewport quedando toda nuestra página así:
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -235,12 +235,12 @@ La maquetación mobile first da prioridad a los dispositivos con menos capacidad
 
 Un ejemplo sería la típica página que tiene una primera sección con una imagen de fondo enorme: con la maquetación mobile first colocaríamos primero un fondo adaptado a una pantalla más pequeña con el consiguiente ahorro en nuestra tarifa de datos. Si alguien la carga desde escritorio, donde suele tener una conexión con tarifa plana, pasaríamos a mostrar una imagen de fondo mucho más grande, acorde a la pantalla que esté usando. Pero nunca obligamos a quien va en el metro a descargarse una imagen descomunal de chopocientos megapixels en su móvil con una tarifa de datos que se paga con sangre.
 
-En el CSS esto se representa escribiendo primero los CSS que se verán en las pantallas/ventanas de navegador más pequeñas. Posteriormente añadiremos, dentro de mediaqueries, los ajustes necesarios para los tamaños mayores de pantalla o ventanta.
+En el CSS esto se representa escribiendo primero los CSS que se verán en las pantallas/ventanas de navegador más pequeñas. Posteriormente añadiremos, dentro de mediaqueries, los ajustes necesarios para los tamaños mayores de pantalla o ventana.
 
 	NOTA:
-	Responsive no es solo tema de dispositivos. Claro que hay móviles de 320, tablets de 768 y pantalas desde 1336 a 2560 de ancho. Pero responsive también es un tipo en una pantalla más modesta trabajando con una ventana de navegador a 473px de ancho y el resto con otra aplicación como un editor de textos o un reproductor de vídeo porque está enganchado a GoT...
+	Responsive no es solo tema de dispositivos. Claro que hay móviles de 320, tablets de 768 y pantallas desde 1336 a 2560 de ancho. Pero responsive también es un tipo en una pantalla más modesta trabajando con una ventana de navegador a 473px de ancho y el resto con otra aplicación como un editor de textos o un reproductor de vídeo porque está enganchado a GoT...
 
-### Entonces, ¿cuántos breakpoints hay? ¿hay unos más estandar que otros?
+### Entonces, ¿cuántos breakpoints hay? ¿hay unos más estándar que otros?
 Pues sí y no. Pero sí.
 Realmente hay una serie de anchos que se tienen más en cuenta que otros. por ejemplo, un tablet suele tener de 768px (en vertical) a 1024px (en horizontal). En ordenadores de escritorio hay una serie de anchos que se suelen repetirse en los diseños (1280, 1500, 1600)...
 
