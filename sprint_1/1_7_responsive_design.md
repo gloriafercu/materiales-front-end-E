@@ -298,7 +298,7 @@ Hacer una web que, en función del ancho de la ventana del navegador, cambie su 
 * * *
 EJERCICIO 2
 
-Dado el siguiente los siguientes diseños, maquetarlos aplicando los Mediaqueries necesarios.
+Dado el siguiente los siguientes diseños, maquetarlos aplicando las mediaqueries necesarias.
 
 Aspecto de la web a pantalla completa
 
