@@ -8,7 +8,7 @@
 - Mediaqueries. Viewport.
 - Max-width, min-width (y height). Width: 100%.
 - Mobile first.
-- Bonus: vh
+- Bonus: vw y vh
 
 ## Introducción
 
