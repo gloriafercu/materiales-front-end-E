@@ -2,7 +2,7 @@
 
 En este ejercicio vamos a maquetar una versión simplificada de la Home de la página web de Adalab.
 
-Antes de empezar, tenéis que crear un nuevo repositorio en GitHub desde GitHub Classroom usando [este enlace](https://classroom.github.com/classrooms/22891503-adalab-classroom). Una vez creado, lo clonaremos en nuestro ordenador y en la carpeta creada empezaremos a trabajar en el ejercicio.
+Antes de empezar, tenéis que crear un nuevo repositorio en GitHub desde GitHub Classroom usando [este enlace](https://classroom.github.com/a/5zjUiWhC). Una vez creado, lo clonaremos en nuestro ordenador y en la carpeta creada empezaremos a trabajar en el ejercicio.
 
 ![Web desktop](assets/images/desktop.png
 "Captura de la web para desktop")
