@@ -1,0 +1,20 @@
+/*
+  Este archivo lo he llamado main.css porque sería el estilo principal (y único)
+  La idea es ponerle a todos los archivos nombres que describan su función
+*/
+
+body {
+  background-color: #f3f4f5;
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: black;
+}
+
+p {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  color: #757575;
+}
