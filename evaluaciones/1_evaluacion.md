@@ -12,10 +12,10 @@ La web siplificada que hemos preparado, consta de estos elementos:
   - en la cabecera está el logo de Adalab como enlace a la home a la izquierda
   - también en la cabecera, pero alineado a la derecha, está un menú de opciones en línea. Al pasar el ratón sobre las opciones, éstas cambian de color y aparece una línea debajo
   - al clickar la opción "contacto" del menú, enlaza a otra página con un formulario
-1. Debajo del header hay una sección con una imagen que ocupa todo el ancho de la pantalla
+2. Debajo del header hay una sección con una imagen que ocupa todo el ancho de la pantalla
   - sobre la imagen, hay un texto que dice "Creando Diversidad Digital"
-1. El pie de página consta del texto de copyright y enlace a la política de cookies
-1. La página del formulario tiene la misma cabecera y pie de página que la Home
+3. El pie de página consta del texto de copyright y enlace a la política de cookies
+4. La página del formulario tiene la misma cabecera y pie de página que la Home
   - Tiene un párrafo explicativo
   - Tiene un formulario con los campos: nombre, apellidos, correo electrónico, teléfono y mensaje
   - Tiene un botón para enviar el formulario
