@@ -13,12 +13,15 @@
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-{{purpose_info}}
+Los formularios son una parte muy importante de la web ya que permiten a nuestros usuarios enviarnos datos.
 
 
 ## ¿En qué casos se utiliza?
 
-{{usecase_info}}
+Se utilizan para que los usuarios de una web envíen sus datos. Por ejemplo:
+1. en los típicos formuarios de registro de una web
+2. en una encuesta de satisfacción
+3. para realizar una búsqueda, por ejemplo en Google, la caja donde escribimos la información es un formulario
 
 
 ## Contenido
@@ -108,7 +111,7 @@ Ejemplo de uso:
 
 Para introducir un campo de texto, utilizaremos la etiqueta HTML de `input` con el atributo `type="email"`.
 
-La diferencia de esta etiqueta frente a una con el atributo `type="text"` es que en, este caso, si tenemos activada la validación de nuestro formulario, este dará un error si el campo donde tenemos el `type="email"` not contiene el símbolo de arroba (`@`).
+La diferencia de esta etiqueta frente a una con el atributo `type="text"` es que en, este caso, si tenemos activada la validación de nuestro formulario, este dará un error si el campo donde tenemos el `type="email"` no contiene el símbolo de arroba (`@`).
 
 Otro de los beneficios de usar `email` frente a `text` es que, si abrimos la página del formulario desde un móvil, el móvil detectará que ese campo sirve para introducir un email y modificará el tipo de teclado añadiendo teclas específicas.
 
@@ -443,15 +446,14 @@ Ejemplo de uso:
 <input id="female" type="radio" value="female" name="gender" />
 ```
 
+#### Required
+
+Este atributo se usa para indicar al navegador que es un campo obligatorio del formulario. Por tanto, al enviar el formulario (acción de `submit`) el navegador indicará al usuario si no lo ha rellenado que es un campo obligatorio.
+
 ## Más información
 
 - [Guía de formularios de MDN](https://developer.mozilla.org/es/docs/Learn/HTML/Forms)
 - [Guía de formularios de MDN (inglés y más completa)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms)
-
-
-## Resumen de la sesión
-
-{{summary_info}}
 
 
 ### Ejercicios
