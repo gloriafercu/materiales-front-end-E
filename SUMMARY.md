@@ -24,6 +24,7 @@
 * [1.R.1 Repaso](sprint_1/1_repaso_1.md)
 * [1.6 Flebox](sprint_1/1_6_posicionamiento_con_flexbox.md)
 * [1.7 Diseño responsive](sprint_1/1_7_responsive_design.md)
+* [1.8 Formularios](sprint_1/1_8_formularios.md)
 * [Ejercicio de evaluación - Sprint 1](evaluaciones/1_evaluacion.md)
 
 ## Proyectos
