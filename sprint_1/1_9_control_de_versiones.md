@@ -106,7 +106,7 @@ Un conflicto ocurre cuando el sistema se encuentra con dos versiones del mismo b
 
 **<<<<<<<**: Indica el inicio de la zona de conflicto, en la línea siguiente muestra el primer bloque en conflicto.  
 **=======**: Separa las dos versiones, seguidamente muestra el bloque alternativo que está dando conflicto.  
-**>>>>>>>**: Indica el finald e la zona de conflicto
+**>>>>>>>**: Indica el final e la zona de conflicto
 
 Aquí puede pasar que queramos la primera opción, la segunda, las dos, o una mezcla de las dos.
 
