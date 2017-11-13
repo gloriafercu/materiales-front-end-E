@@ -19,12 +19,12 @@ Lo más sencillo es crear el proyecto de cero desde nuestro servicio de Git, en 
 2. Creamos un nuevo repositorio
 3. Rellenamos el nombre y la descripción
 4. Ahora podemos elegir tres acciones (se pueden elegir las tres, alguna o ninguna):
-	1. Añadir un archivo Readme.md
-	2. Añadir un archivo .gitignore
+	1. Añadir un archivo `readme.md`
+	2. Añadir un archivo `.gitignore`
 	3. Añadir una licencia
 5. Una vez creado solo faltaría clonarlo a nuestro ordenador para trabajar con él, hay dos formas:
-	1. Desde la terminal voy a la carpeta donde quiero clonar el proyecto y, con la url que me da github para clonar, se escribe: `git clone url-que-me-da-github`.
-	2. Si quiero clonarlo y usar un nombre específico para la carpeta de mi repositorio sigo el paso uno pero se escribe: `git clone url-que-me-da-github nuevo-nombre-de-carpeta`
+	1. Desde la terminal voy a la carpeta donde quiero clonar el proyecto y, con la url que me da github para clonar, se escribe: `git clone url-del-repositorio-que-me-da-github`.
+	2. Si quiero clonarlo y usar un nombre específico para la carpeta de mi repositorio sigo el paso uno pero se escribe: `git clone url-del-repositorio-que-me-da-github nuevo-nombre-de-carpeta`
 
 ##### Readme.md
 Este archivo `readme.md` es un documento escrito en [markdown](https://es.wikipedia.org/wiki/Markdown) que se presenta en la página principal del repositorio y tiene como objeto aportar una primera documentación o presentación del proyecto.  
@@ -58,12 +58,13 @@ Github nos ofrece un enlace donde nos intenta orientar sobre qué licencia elegi
 #### Desde un proyecto existente
 ¿Cómo? ¿Que ya teníamos un proyecto local y queremos subirlo a GitHub? Bueno, tampoco es tan malo:
 
-1. Inicializamos el repositorio local Git con `git init` (se hace desde la terminal y tenemos que asegurarnos de estar en la carpeta correcta).
-2. Vamos a Github.com y creamos un repositorio nuevo (esta vez no añadiremos ni licencia, ni readme, ni .gitignore) y GitHub nos redirigirá a una página con las instrucciones a seguir
-3. Como ya hemos inicializado nuestro proyecto Git simplemente añadiremos el repositorio remoto (el readme.md lo podemos crear cómodamente desde nuestro editor de código). Usaremos `git remote add origin url-que-me-da-github`
-4. Añadimos los archivos con `git add -A`
-5. Hacemos un primer commit `git commit -m "First commit"`
-6. Y subimos, esta primera vez, con `git push -u origin master`
+1. **IMPORTANTE**: Antes de inicializar un repositorio debemos estar en la carpeta correcta, si no, crearemos un repositorio en la carpeta donde estemos. **Desde la terminal, con `cd`, nos iremos dentro de la carpeta de nuestro proyecto.**
+2. Inicializamos el repositorio local Git con `git init` (se hace desde la terminal y tenemos que asegurarnos de estar en la carpeta correcta).
+3. Vamos a Github.com y creamos un repositorio nuevo (esta vez no añadiremos ni licencia, ni `readme.md`, ni `.gitignore`) y GitHub nos redirigirá a una página con las instrucciones a seguir
+4. Como ya hemos inicializado nuestro proyecto Git simplemente añadiremos el repositorio remoto (el `readme.md` lo podemos crear cómodamente desde nuestro editor de código). Usaremos `git remote add origin url-del-repositorio-que-me-da-github`
+5. Añadimos los archivos con `git add -A`
+6. Hacemos un primer commit `git commit -m "First commit"`
+7. Y subimos, esta primera vez, con `git push -u origin master`
 
 ![Instrucciones para añadir el repositorio remoto](assets/images/1-9-new-repo-instructions.png)
 
