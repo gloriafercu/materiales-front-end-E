@@ -1,245 +1,329 @@
 # Formularios
 
-## Contenidos
-
-- Elementos de formulario: tag form, tipos de input (text, number, email, checkbox, radio), textarea, select, submit.
-- Validaciones con atributos: input type, required, pattern (específicas para móviles)
-- Envío de formulario a back-end para probar method / action.
-- Ejemplos: formspree.io
-
-
 ## Introducción
 
+Durante esta sesión vamos a ver cómo trabajar con formularios en HTML para poder enviar información a través de una página web. Nadie se mete a programador web porque su sueño sea hacer formularios, pero son una parte fundamental de la web y al final es la forma en la que enviamos información y sin ellos no podríamos ser capaces de enviar información por Internet más que navegar entre páginas.
 
-## ¿Para qué sirve lo que vamos a ver en esta sesión?
-
-Los formularios son una parte muy importante de la web ya que permiten a nuestros usuarios enviarnos datos.
-
-
-## ¿En qué casos se utiliza?
-
-Se utilizan para que los usuarios de una web envíen sus datos. Por ejemplo:
-1. en los típicos formuarios de registro de una web
-2. en una encuesta de satisfacción
-3. para realizar una búsqueda, por ejemplo en Google, la caja donde escribimos la información es un formulario
-
-
-## Contenido
-
-# Guía de referencia de formularios
-
-## Índice
-
-- [Introducción](#introducción)
-- [Etiquetas](#etiquetas)
-  - [Formulario](#formulario)
-  - [Campos](#campos)
-    - [Texto](#texto)
-    - [Correo electrónico](#email)
-    - [Password](#password)
-    - [Área de texto](#área_de_texto)
-    - [Número](#numero)
-    - [Teléfono](#teléfono)
-    - [Fecha y hora](#fecha_y_hora)
-    - [URL](#url)
-    - [Búsqueda](#search)
-  - [Etiquetas](#etiquetas)
-    - [Label](#label)
-    - [Legend](#legend)
-  - [Opciones](#opciones)
-    - [Checkbox](#checkbox)
-    - [Radio](#radio)
-    - [Select](#select)
-    - [Datalist](#datalist)
-  - [Botones](#botones)
-    - [Button](#button)
-    - [Submit](#submit)
-    - [Reset](#reset)
-  - [Otros](#otros)
-    - [Archivos](#archivos)
-    - [Campos ocultuos](#campos-ocultos)
-    - [Imágenes](#imágenes)
-    - [Color](#color)
-    - [Range](#range)
-  - [Grupos](#grupos)
-    - [Fieldset](#fieldset)
-    - [Legend](#legend)
-- [Atributos](#atributos)
-  - [Inputs](#inputs)
-- [Más información](#más-información)
-
-## Introducción
-
-Los formularios son las estructuras utilizadas en la web para obtener información por parte de un usuario. Los primeros años de la web, estos formularios sólo permitian introducir algunos campos de texto y poco más, todo ello de forma trivial.
+Los primeros años de la web, estos formularios sólo permitían introducir algunos campos de texto y poco más, todo ello de forma trivial.
 
 Hoy en día podemos enviar archivos como datos de un formulario, seleccionar colores o, incluso, validar los formularios antes de enviarlos.
 
-## Etiquetas
+## ¿Para qué sirven?
 
-### Formulario
+Como hemos comentado los formularios sirven para enviar información al servidor, ya sea para actualizar datos de alguna cuenta, realizar una búsqueda en algún sitio web, cambiar los datos de nuestro perfil...Cualquier gestión de este tipo se hace a través de formularios y prácticamente cualquier web que no sea de consulta de información contiene uno como mínimo.
 
-Para crear un formulario en HTML, utilizaremos la etiqueta `form`. Esta etiqueta tiene dos atributos específicos:
+## ¿Cómo funcionan?
 
-- `action`: la ruta de un programa que será el encargado de procesar la información que recopilada en el formulario. Normalmente suele ser una ruta a un archivo de un servidor.
-- `method`: sirve para especificar la manera en la que se transmitirán los datos de nuestro formulario. Los valores posibles para este atributo son `post` y `get`. Como norma general utilizaremos la el valor `post` para enviar datos sensibles (contraseñas, dni, cuentas bancarias, número de tarjeta, etc) y `get` para el resto de casos.
+Los formularios funcionan de la siguiente manera:
+
+1. El usuario rellena la información y pulsa el botón enviar para enviar esa información al servidor que será el que se encargue de procesarla. La envía de la misma manera que enviamos una petición para ver una página, pero en este caso junto con la petición envía todos los datos que el usuario ha introducido.
+2. El servidor procesa la información recibida usando el código encargado de procesarlo (este código ha sido programado por un programador back-end). Lo normal es que en ese código se validen que los campos son correctos y se procesen los datos (se guarde información de un usuario en la base de datos, se compruebe si los datos de acceso de un usuario son correctos, se guarde una imagen en el servidor, etc.)
+3. El servidor devuelve una respuesta al usuario, esta respuesta suele ser una página web nueva, es decir, devuelve una nueva página y el usuario es redirigido a esa página en la que es normal poner un mensaje del estilo "tu información se ha guardado correctamente" o "ha habido un error".
+
+Hoy en día todo este proceso de comunicarse con el servidor y enviar la información de un formulario se puede hacer usando JavaScript. Más adelante veremos cómo hacerlo y cómo utilizar este lenguaje para validar que la información es correcta y mandar información al servidor sin tener que recargar o cambiar la página y de manera casi instantánea.
+
+## ¿En qué casos se utilizan?
+
+Como hemos comentado, cualquier página que no sirva simplemente para mostrar información es muy probable que tenga como mínimo un formulario. Los ejemplos más típicos de usos de formularios son:
+
+* Como campo de búsqueda. La barra de búsqueda que hay en la página de Google, por ejemplo.
+* Para iniciar sesión o registrarse en una web. Los formularios de inicio de sesión de Facebook o Twitter.
+* Para chats. Como el campo de enviar mensaje de la versión de WhatsApp para web
+* Los procesos de compra. Todos los formularios para introducir tu dirección, el número de tarjeta, etc...
+
+Esos son unos pocos ejemplos, pero hay miles y probablemente a ti te haya venido a la cabeza más de uno antes de leer esta sección.
+
+
+## Nuestro primer formulario en HTML
+
+Ahora que ya sabemos un poco qué es y para qué sirven los formularios vamos a ver cómo escribir el HTML necesario para generarlos.
+
+En HTML antes de escribir un campo de formulario, por norma general (aunque no es estrictamente necesario), se escribe previamente la etiqueta `<form>` que será la que utilicemos para envolver los campos. Esta etiqueta suele ir siempre acompañada de dos atributos `method` y `action` y es invisible, no muestra nada en la pantalla. Se escribe de la siguiente forma:
 
 ```html
-<!-- Usamos la acción /login porque queremos comprobar el formulario con el código para comprobar un inicio de sesión-->
-<!-- Usamos la el método 'post' porque al ser datos de inicio de sesión (password, mail, etc) se considera información sensible -->
-<form action="/login" method="post">
-  <!-- Aquí irían los campos de nuestro formulario (inputs, botones, áreas de texto, etc.)-->
+<form action="/signup" method="post">
+  <!-- Aquí iría el contenido del formulario -->
 </form>
 ```
 
-**Nota: Es importante tener en cuenta que, a partir de la versión 4.01 de HTML, es totalmente válido crear elementos de formulario fuera de una etiqueta `form`**
+El atributo `method` sirve para especificar el método que utilizaremos para enviar nuestra información. No vamos a profundizar mucho en este tema pero es importante que sepamos que hay dos métodos distintos para enviar información a través de un formulario y esos métodos son POST y GET.
 
-### Campos
+Como norma general utilizaremos la el valor `post` para enviar datos sensibles (contraseñas, dni, cuentas bancarias, número de tarjeta, etc) y `get` para el resto de casos.
 
-Definimos como campos los tipos de datos en los que el usuario tiene que introducir una información mediante la introducción o modificación de texto. Este término no es una convención, es decir, no todo el mundo clasifica los elementos que mostraremos a continuación dentro de este campo. En nuestro caso nos servirá para poder agruparlos según el criterio anterior.
+El atributo `action` se usa para indicar la dirección del servidor donde se envían los datos del formulario. Es, por tanto, el puente de comunicación de nuestro front-end con el back-end donde se reciben y manipulan los datos del usuario.
 
-#### Texto
+Bien, ya tenemos el envoltorio para nuestro formulario. Ahora es el momento de introducir los campos que queremos que rellene la persona que va a visitar nuestra página web. Para ello, tenemos distintos tipos de campos pero el más común suele ser el de texto, así que empezaremos con ese.
 
-Para introducir un campo de texto, utilizaremos la etiqueta HTML de `input` con el atributo `type="text"`.
+Para crear un campo de texto, utilizaremos la etiqueta `<input>` de HTML. Esta etiqueta tiene un atributo especial llamado `type` con el cual definiremos qué tipo de campo será (texto, mail, contraseña, etc.). Para este caso usaremos `type="text"` para que cree un campo de texto donde podamos introducir texto normal, como nuestro nombre, apellidos, etc.
+
+Junto con el atributo `type`, tenemos otro atributo especial llamado `name` que se utiliza en los formularios para definir cuál será el nombre del campo. De esta forma cuando el usuario pulse el botón de enviar del formulario, llegará la información que ha introducido en este campo asociado al nombre que hayamos establecido. Por ejemplo, si tenemos un input con el atributo `name="lastname"`. Al servidor le llegará un dato llamado _lastname_ que contendrá la información que el usuario haya introducido en ese campo. Podemos usar cualquier valor para `name`, como por ejemplo `type="nombrecito"`. Pero debemos coordinarnos con la gente de back-end ya que debemos usar el mismo nombre para que luego no haya problemas. Por ejemplo, si usamos un nombre distinto en back-end y front-end fácilmente podemos hacer que el formulario deje de funcionar porque creemos que un campo no se ha enviado y es que en realidad hemos usado otro nombre.
+
+```html
+<form action="/signup" method="post">
+  <input type="text" name="firstname">
+  <input type="text" name="lastname">
+</form>
+```
+
+  NOTA: La etiqueta input es una etiqueta sin contenido, por lo que no es necesario escribir la etiqueta de cierre. Otro detalle que podemos apreciar es que los campos se muestran en línea ya que por defecto los navegadores lo muestran con `display: inline;`. Podemos asignarles `display: block` para hacer que se muestren en vertical, uno debajo de otro.
+
+###### Resultado obtenido con el código superior
+
+<form action="/signup" method="post">
+  <input type="text" name="firstname">
+  <input type="text" name="lastname">
+</form>
+
+***
+
+Ya tenemos nuestro formulario con los dos campos necesarios para que funcione, pero nos falta lo más importante, poder enviar el formulario. Para esto vamos a usar también una etiqueta input pero en este caso va a ser del tipo `submit` (`type="submit"`). Si introducimos esta etiqueta en nuestro formulario se mostrará un botón que, al ser pulsado, enviará el formulario. Para establecer qué texto queremos que vaya dentro del botón, usaremos el atributo `value`. Otra cosa a destacar es que el botón tiene una serie de estilos CSS aplicados por defecto pero que podemos modificar añadiendole unos nuevos que sobreescriban a los anteriores.
+
+![Ejemplo de formulario con botón de enviar](assets/images/1-8-submit.png)
+
+```html
+<form action="/signup" method="post">
+  <input type="text" name="firstname">
+  <input type="text" name="lastname">
+  <input type="submit" value="Enviar info">
+</form>
+```
+
+
+###### Resultado obtenido con el código superior
+
+<form action="/signup" method="post">
+  <input type="text" name="firstname">
+  <input type="text" name="lastname">
+  <input type="submit" value="Enviar info">
+</form>
+
+***
+
+Hay dos cosas que, aunque no son obligatorias, nos faltan aquí y son bastante importantes de cara a la experiencia del usuario. Como se puede ver, no sabemos qué debemos meter en cada campo y no tenemos un ejemplo del texto que podemos introducir, lo que hace muy difícil saber que se nos está pidiendo. Para solucionar este problema tenemos el atributo `placeholder` y la etiqueta `<label>`.
+
+La etiqueta label se utiliza para mostrar el título del campo, describe qué información debemos introducir en él. La manera más indicada de utilizar una etiqueta `<label>` es incluirla justo antes del `<input>` al que acompaña. Una de las cualidades de esta etiqueta es que si pulsas sobre ella nos colocamos en el campo al que acompaña.
+
+![Ejemplo de cómo se muestran los labels](assets/images/1-8-labels.png)
+
+Para decirle al navegador que nuestra etiqueta `<label>` está relacionada con un determinado `<input>` debemos hacer dos cosas, asignar un id al input para identificarla de manera unívoca y añadir el atributo `for` a `<label>` con el id que hemos puesto al input, quedando como resultado el código que mostramos a continuación:
+
+```html
+<form action="/signup" method="post">
+  <label for="nombrecito">Nombre</label>
+  <input id="nombrecito" type="text" name="firstname">
+  <label for="apellidito">Apellido</label>
+  <input id="apellidito" type="text" name="lastname">
+  <input type="submit" value="Enviar info">
+</form>
+```
+
+  NOTA: Es importante apreciar que dentro del input el atributo `name` y el `id` pueden ser distintos, pero el `for` del label siempre debe coincidir con el `id` del input.
+
+###### Resultado obtenido con el código superior
+
+<form action="/signup" method="post">
+  <label for="nombrecito">Nombre</label>
+  <input id="nombrecito" type="text" name="firstname">
+  <label for="apellidito">Apellido</label>
+  <input id="apellidito" type="text" name="lastname">
+  <input type="submit" value="Enviar info">
+</form>
+
+***
+
+El atributo `placeholder` se puede asignar a un input y sirve para establecer el texto que se mostrará en el campo cuando este esté vacío. Es una buena práctica usarlo como pista para que la persona que está rellenando el formulario sepa qué información debe introducir. Por ejemplo, podemos darle pistas sobre cómo debe escribir los datos para que no pase un error típico que escribir el nombre y el apellido en el mismo campo (poner Jon Nieve puede ser una opción).
+
+![Ejemplo de placeholder para un campo de texto](assets/images/1-8-placeholder.png)
+
+```html
+<form action="/signup" method="post">
+  <label for="nombrecito">Nombre</label>
+  <input placeholder="Jon" id="nombrecito" type="text" name="firstname">
+  <label for="apellidito">Apellido</label>
+  <input placeholder="Nieve" id="apellidito" type="text" name="lastname">
+  <input type="submit" value="Enviar info">
+</form>
+```
+
+###### Resultado obtenido con el código superior
+
+<form action="/signup" method="post">
+  <label for="nombrecito">Nombre</label>
+  <input placeholder="Jon" id="nombrecito" type="text" name="firstname">
+  <label for="apellidito">Apellido</label>
+  <input placeholder="Nieve" id="apellidito" type="text" name="lastname">
+  <input type="submit" value="Enviar info">
+</form>
+
+***
+
+Bien, continuemos introduciendo campos. Este ejemplo tiene se empieza a parecer a un formulario de registro, así que vamos a continuar como si se tratase de uno. En un formulario de este tipo, lo normal después del nombre es escribir el mail, para esto utilizaremos también la etiqueta `<input>` pero esta vez utilizaremos `type="email"` para definir el campo como una dirección de correo.
+
+```html
+<form action="/signup" method="post">
+  <input type="text" name="firstname">
+  <input type="text" name="lastname">
+  <input type="email" name="mail">
+  <input type="submit" value="Enviar info">
+</form>
+```
+
+###### Resultado obtenido con el código superior
+
+<form action="/signup" method="post">
+  <input type="text" name="firstname">
+  <input type="text" name="lastname">
+  <input type="mail" name="mail">
+  <input type="submit" value="Enviar info">
+</form>
+
+***
+
+A simple vista, parece que no hay diferencia entre los tipos `email` y `text` pero sí que la hay, lo que pasa es que es difícilmente perceptible. La diferencia entre ambos es que cuando usamos el tipo `email`, al pulsar el botón de enviar en el formulario, se comprobará primero que el mail introducido es una dirección de correo válida y si es así se enviará y si no es correcta se mostrará un mensaje como el que aparece en la imagen que se muestra a continuación.
+
+![Validación de email](assets/images/1-8-form-email-validation.png)
+
+Otra diferencia entre el tipo `email` y el tipo `text` es que si abrimos la página web del formulario desde un móvil, al pulsar sobre el campo del tipo `email` se abrirá un teclado diferente al que se muestra cuando pulsamos en el campo del tipo `text`. Este teclado es especial para escribir direcciones de correo electrónico y, por ejemplo, facilita escribir el símbolo `@`.
+
+![Teclado que se muestra en móvil para los campos del tipo "email"](assets/images/1-8-form-email-validation.png)
+
+Bien, tenemos el nombre y el email, vamos con el siguiente, el teléfono. Para el campo teléfono sucede lo mismo que para el del email. En vez de usar `type="text"` utilizaremos `type="tel"`. En este caso no nos validará el teléfono antes de enviarlo porque hay teléfonos muy raros y en muchos casos también van acompañados de guiones o puntos y es complejo de gestionar. Aún así si utilizamos `type="tel"` si que nos mostrará un teclado numérico en el teléfono para facilitarnos el trabajo a la hora de escribir la información como se puede ver en la captura de pantalla.
+
+![Captura de pantalla del teclado que se muestra en un campo del tipo teléfono](assets/images/1-8-form-email-validation.png)
+
+```html
+<form action="/signup" method="post">
+  <input type="text" name="firstname">
+  <input type="text" name="lastname">
+  <input type="email" name="mail">
+  <input type="tel" name="telephone">
+  <input type="submit" value="Enviar info">
+</form>
+```
+
+###### Resultado obtenido con el código de arriba
+
+<form action="/signup" method="post">
+  <input type="text" name="firstname">
+  <input type="text" name="lastname">
+  <input type="mail" name="mail">
+  <input type="tel" name="telephone">
+  <input type="submit" value="Enviar info">
+</form>
+
+***
+
+Tenemos prácticamente todo pero nos quedaría algo bastante importante, la contraseña. Para crear un campo para nuestra contraseña continuamos con el mismo procedimiento que en los anteriores campos, esta vez usando `type="password"` como atributo para definir el tipo de campo. Los campos tipo password tienen una diferencia frente al resto y es que sustituyen el texto que contienen por asteriscos (\*) para aumentar la seguridad y que la contraseña no sea visible.
+
+![El contenido de los campos del tipo contraseña se sustituye por asteriscos](assets/images/1-8-password.png)
+
+Otra peculiaridad de los campos del tipo `password` es que su contenido se borra si se recarga la página, mientras que en un campo de texto normal el contenido se mantiene tras la recarga.
+
+```html
+<form action="/signup" method="post">
+  <input type="text" name="firstname">
+  <input type="text" name="lastname">
+  <input type="email" name="mail">
+  <input type="tel" name="telephone">
+  <input type="password" name="password">
+  <input type="submit" value="Enviar info">
+</form>
+```
+
+###### Resultado obtenido con el código de arriba
+
+<form action="/signup" method="post">
+  <input type="text" name="firstname">
+  <input type="text" name="lastname">
+  <input type="mail" name="mail">
+  <input type="tel" name="telephone">
+  <input type="submit" value="Enviar info">
+</form>
+
+* * *
+EJERCICIO:
+
+Sin que sirva de precedente, vamos a realizar este ejercicio directamente en Codepen. Esto nos permitirá comprobar cuales son los datos que se envían en el formulario ya que cuando creamos un formulario en Codepen, al enviarlo nos muestra una ventana con la información que le llegaría al servidor. Esto nos permite comprobar que funciona correctamente y ver qué es lo que llegaría en cada caso. Es importante que dejemos el atributo `action` de la etiqueta `<form>` vacío y que el método sea del tipo `post`.
+
+![Codepen Form Result](sprint_1/assets/images/1-8-codepen-form-result.png)
+
+Vamos a crear un formulario de envío con los siguientes campos:
+
+- Nombre
+- Apellido
+- Email
+- Calle
+- Ciudad
+- Provincia
+- País
+- DNI
+- Teléfono
+- Contraseña
+- Confirmar contraseña
+- Botón de enviar
+
+Todos los elementos deberán de tener un atributo `placeholder` e ir acompañados de un `label` para definir qué se debe introducir en cada uno de ellos
+* * *
+
+
+## Atributos básicos
+
+Además de los atributos que hemos visto hasta ahora, existen otra serie de atributos comunes a todos los campos de un formulario que permiten cambiar su comportamiento o añadirles información.
+
+### Required
+
+El atributo required sirve para establecer que un campo es obligatorio y debe ser rellenado antes de enviarse el formulario. Por defecto muchos navegadores antes de enviar un formulario comprueban que los campos con el atributo required están asignados antes de enviarlos y, en caso de no estarlo, muestran un mensaje de error informando al usuario de que estos campos son obligatorios. Para establecer un campo como obligatorio sólo debemos de añadirle el atributo `required`.
+
+![Error cuando un elemento es obligatorio y está vacío](assets/images/1-8-required-form.png)
+
+  NOTA: El atributo required sólo puede ser verdadero o falso, por lo tanto no tendrá un valor asignado. Simplemente si una etiqueta tiene el atributo `required` (sin más) indicará que este elemento es obligatorio y si no lo tiene indicará que no lo es.
+
+```html
+<!-- Atributo obligatorio -->
+<input type="text" name="firstname" required>
+
+<!-- Atributo no obligatorio -->
+<input type="text" name="firstname">
+```
+
+### Value
+
+El atributo value sirve para definir el valor inicial de un campo, su contenido. De esta forma, si creamos un input de texto con un atributo `value="Calle Méndez Álvaro"`, por defecto dentro del campo se verá escrito _"Calle Méndez Álvaro"_.
+
+Este valor es opcional excepto cuando el atributo `type` de la etiqueta es `radio` o `checkbox` (los veremos más adelante).
 
 Ejemplo de uso:
 
 ```html
-<input type="text" name="username"/>
+<label for="address">Dirección:</label>
+<input id="address" type="text" name="apellidos" value="Calle Méndez Álvaro">
 ```
 
-#### Correo electrónico
+### Disabled
 
-Para introducir un campo de texto, utilizaremos la etiqueta HTML de `input` con el atributo `type="email"`.
+El atributo `disabled` sirve para desactivar un campo de un formulario.
 
-La diferencia de esta etiqueta frente a una con el atributo `type="text"` es que en, este caso, si tenemos activada la validación de nuestro formulario, este dará un error si el campo donde tenemos el `type="email"` no contiene el símbolo de arroba (`@`).
-
-Otro de los beneficios de usar `email` frente a `text` es que, si abrimos la página del formulario desde un móvil, el móvil detectará que ese campo sirve para introducir un email y modificará el tipo de teclado añadiendo teclas específicas.
-
-Ejemplo de uso:
+  NOTA: En el caso de disabled pasa como con el atributo `required`, con añadir el atributo sin ningún valor es suficiente para indicar que un elemento está desactivado.
 
 ```html
-<input type="email" name="emailaccount"/>
+<input id="address" type="text" name="apellidos" value="Calle Méndez Álvaro" disabled>
 ```
 
-#### Password
+* * *
+EJERCICIO:
 
-Para introducir un campo de texto, utilizaremos la etiqueta HTML de `input` con el atributo `type="password"`.
+Vamos a añadir un atributo `required` a todos los campos del ejercicio anterior excepto al apellido.
 
-La diferencia principal de esta etiqueta frente a una con el atributo `type="text"` es que en, este caso, el contenido del campo se verá sustituido por asteriscos para aumentar la seguridad y prevenir que el valor se muestre como tal en la pantalla.
+Además añadiremos un valor por defecto a la ciudad y al país para poner Madrid y España.
 
-Otras diferencias con la etiqueta `type="text"` es que el contenido en los campos tipo `password` se borra si se recarga la página, mientras que en un campo de texto normal el contenido se mantiene tras la recarga.
+Para comprobar que funciona correctamente intentaremos enviar el formulario sin rellenar ningún campo y ver si nos muestra el error.
+* * *
 
-Usar `type="password"` también permitirá saber a los dispositivos y navegadores que es una contraseña y de esta forma realizar acciones del estilo preguntar si deseas guardar la contraseña o ofrecer la posibilidad de autocompletar ese campo.
-
-Ejemplo de uso:
-
-```html
-<input type="password" name="userpassword"/>
-```
-
-#### Área de texto
-
-Para crear un área de texto utilizaremos la etiqueta `textarea`. Esta etiqueta tiene dos atributos específicos:
-
-- `rows`: Nos permitirá definir el número de filas (altura) que tendrá por defecto la etiqueta.
-- `columns`: Nos permitirá definir el número de columnas (anchura) que tendrá por defecto la etiqueta.
-
-Ejemplo de uso:
-
-```html
-<textarea name="comments" rows="8" cols="80"></textarea>
-```
-
-#### Número
-
-Para introducir un campo para un número, utilizaremos la etiqueta HTML de `input` con el atributo `type="number"`. Esta etiqueta sirve para campos en los que sólo queramos que se introduzcan números (códigos postales, cantidad de productos, números de domicilio, etc).
-
-Ejemplo de uso:
-
-```html
-<input type="number" name="age"/>
-```
-
-#### Teléfono
-
-Para introducir un campo para un teléfono, utilizaremos la etiqueta HTML de `input` con el atributo `type="tel"`.
-
-Uno de los beneficios de usar `tel` frente a `text` es que, si abrimos la página del formulario desde un móvil, el móvil detectará que ese campo sirve para introducir un teléfono y mostrará un teclado numérico en vez del teclado por defecto.
-
-Algunos navegadores actuales validarán esta etiqueta comprobando si el texto introducido cumple una serie de características comunes a todos los números de teléfono globales.
-
-Ejemplo de uso:
-
-```html
-<input type="tel" name="mobilephone"/>
-```
-
-#### Fecha y hora
-
-HTML presenta una gran cantidad de alternativas para introducir información relacionada con una fecha o una hora
-
-##### Fecha
-
-```html
-<input type="date" name="birthdate">
-```
-
-##### Fecha local
-
-```html
-<input type="datetime-local" name="meetinghour">
-```
-
-##### Semana
-
-```html
-<input type="week" name="yearweek">
-```
-
-#### URL
-
-Para introducir un campo para que el usuario introduzca la dirección de una página web (URL), utilizaremos la etiqueta HTML de `input` con el atributo `type="url"`.
-
-Uno de los beneficios de usar `url` frente a `text` es que, si abrimos la página del formulario desde un móvil, el móvil detectará que ese campo sirve para introducir la dirección de una web y mostrará un teclado adaptado en vez del teclado por defecto.
-
-Algunos navegadores actuales validarán esta etiqueta comprobando si el texto introducido es una URL válida.
-
-Ejemplo de uso:
-
-```html
-<input type="url" name="twitterurl"/>
-```
-
-#### Búsqueda
-
-Para crear una etiqueta en la que los usuarios introducirán campos de búsqueda, utilizaremos la etiqueta HTML de `input` con el atributo `type="search"`.
-
-A día de hoy este tipo de etiqueta funciona exactamente igual que un input tipo `text`, pero probablemente en el futuro se introduzcan mejoras en los navegadores o atributos específicios para esta etiqueta que expandan sus ventajas.
-
-La regla para elegir entre usar `type="text"` o `type="search"` es pensar para qué se utilizará el campo. Si es para introducir conceptos relacionados con una búsqueda (como por ejemplo en un foro), utilizaremos la segunda opción. Para el resto de campos utilizaremos el tipo `text`.
-
-Ejemplo de uso:
-
-```html
-<input type="text" name="username"/>
-```
-
-### Etiquetas
-
-Las etiquetas `label` sirven para describir la información que queremos que el usuario escriba en un determinado campo. Por ejemplo, si tenemos un campo para un teléfono, introduciremos una etiqueta `label` que acompañará al `input` para el teléfono y que tendrá como contenido un mensaje del estilo _"Introduce tu teléfono móvil"_.
-
-Las etiquetas `label` van acompañadas de un atributo `for` donde introduciremos cómo valor el nombre del id del campo al que queremos asociar dicha etiqueta.
-
-Ejemplo de uso:
-
-```html
-<label for="postal-code">Código postal:</label>
-<input id="postal-code" type="text" name="postalcode" value="">
-```
+## Otras etiquetas
 
 ### Opciones
 
-En la actualidad, disponemos de múltiples formas de introducir información mediante opciones. A diferencia de los campos, las etiquetas de opciones nos permitirán elegir entre ninguna, una o más opciones y según el caracter de los datos que queremos obtener usaremos un tipo determinado u otro.
+En la actualidad, disponemos de múltiples formas de introducir información mediante opciones. A diferencia de los campos, las etiquetas de opciones nos permitirán elegir entre ninguna, una o más opciones y según el carácter de los datos que queremos obtener usaremos un tipo determinado u otro.
 
 #### Checkbox
 
@@ -293,173 +377,131 @@ Un ejemplo muy claro es el caso de la selección de una talla para zapatos. En e
 </select>
 ```
 
-#### Datalist
+
+### Área de texto
+
+Para crear un área de texto utilizaremos la etiqueta `textarea`. Esta etiqueta tiene dos atributos específicos:
+
+- `rows`: Nos permitirá definir el número de filas (altura) que tendrá por defecto la etiqueta.
+- `columns`: Nos permitirá definir el número de columnas (anchura) que tendrá por defecto la etiqueta.
+
+Ejemplo de uso:
 
 ```html
-<label for="provinces-input">Provincia:</label>
-<input id="provinces-input" list="provinces" name="datalist">
-<datalist id="provinces">
-    <option>Álava</option>
-    <option>Albacete</option>
-    <option>Alicante</option>
-    <option>Almería</option>
-    <option>Asturias</option>
-    <!-- más provicias ... -->
-</datalist>
+<textarea name="comments" rows="8" cols="80"></textarea>
 ```
 
-### Botones
-#### Button
+### Número
+
+Para introducir un campo para un número, utilizaremos la etiqueta HTML de `input` con el atributo `type="number"`. Esta etiqueta sirve para campos en los que sólo queramos que se introduzcan números (códigos postales, cantidad de productos, números de domicilio, etc).
+
+#### Atributos
+
+* `min="0"` sirve para indicar el mínimo valor posible que podemos introducir en el campo.
+* `max="10"` sirve para indicar el número máximo que podemos introducir en el campo.
+* `step="2"` sirve para definir cómo será el incremento de los campos.
+
+Ejemplo de uso:
 
 ```html
-<input type="button" value="Generar contraseña aleatoria">
+<input type="number" name="age"/>
 ```
 
-**Nota: En el caso de los botones es una mala práctica añadir el atributo `name` porque el valor del botón no se enviará con el formulario y por tanto ese atributo no servirá de nada.**
+### Campos ocultos
 
-#### Submit
+En determinados casos es necesario incluir en nuestro formulario un campo oculto para enviar información al servidor que en vez de escribir el usuario, rellenaremos usando JavaScript. Por ejemplo, algunos servicios de soporte de aplicaciones web recogen información de nuestro sistema operativo (Windows, Linux, Mac...), nuestro navegador (Firefox, Chrome, Safari...) y nuestro tipo de dispositivo (ordenador, móvil, tablet, etc) y lo envian mediante el uso de etiquetas ocultas en el formulario.
 
-```html
-<input type="submit" value="Enviar formulario">
-```
-
-#### Reset
-
-```html
-<input type="reset" value="Restaurar valores por defecto">
-```
-
-#### Imágenes
-
-```html
-<input type="image" src="images/send-button.png" alt="Enviar formulario">
-```
-
-### Otros
-
-#### Archivos
-
-```html
-<input type="file" name="file" />
-```
-
-#### Campos ocultos
+Por defecto las etiquetas ocultas se muestran con el atributo `display: none;` asignado y por tanto no son visibles por el usuario. Dada su función esto es totalmente lógico.
 
 ```html
 <input type="hidden" name="productid" value="xm234jq">
 ```
 
-#### Color
+* * *
+EJERCICIO:
 
-```html
-<input type="color" name="backgroundcolor">
-```
+En este ejercicio vamos a crear el formulario de Facebook. Para crearlo utilizaremos lo que hemos visto hasta ahora de formularios. El formulario en sí será el que se muestra en la imagen inferior. El objetivo es crear sólo el HTML pero si te atreves puedes probar también a realizar un CSS similar.
 
-#### Range
+![Formulario de Facebook](assets/images/1-8-facebook-form.png)
 
-```html
-<input type="range" min="-10" max="10" step="1" name="temperature">
-```
+Además de lo que se ve, vamos a crear los siguientes campos:
 
-### Grupos
+- Un campo oculto que muestre el navegador que estamos usando (pondremos el valor directamente en el HTML usando el atributo `value`)
+- Un campo numérico donde podamos introducir nuestra altura en centímetros y que tenga como máximo 250 cm y como mínimo 50cm y por defecto tenga un valor de 150 cm
+- Un área de texto donde escribir un comentario para tu perfil
+- Un tipo de campo que se pueda activar y desactivar y en el que el usuario indique que ha aceptado los términos y condiciones de Facebook
+* * *
 
-A veces los formularios poseen gran cantidad de campos a rellenar y es dificil seguir la pista de cuales van a ser esos datos o dónde estará colocado cada uno. Cómo solución a este problema, HTML nos brinda las etiquetas `fieldset` y `legend` que nos permitirán agrupar elementos de un formulario tal y como deseemos.
+## Agrupando partes del formulario por contexto
 
-#### Fieldset
+A veces los formularios poseen gran cantidad de campos a rellenar y es difícil seguir la pista de cuáles van a ser esos datos o dónde estará colocado cada uno. Cómo solución a este problema, HTML nos brinda las etiquetas `fieldset` y `legend` que nos permitirán agrupar elementos de un formulario tal y como deseemos.
 
-Utilizaremos esta etiqueta para crear secciones dentro de nuestro nos permite dar nombre a las distintas secciones de un formulario.
+### Fieldset
 
-```html
-<fieldset>
-    <!-- Suele acompañar siempre a fieldset para definir el nombre de la sección -->
-    <legend>Datos personales: </legend>
-
-    <input type="text" name="name" value="">
-    <input type="text" name="surnames" value="">
-    <input type="tel" name="phone" value="">
-    <input type="number" name="postalcode" value="">
-</fieldset>
-```
-
-#### Legend
-
-Esta etiqueta nos permite asignar el nombre de una sección de nuestro formulario creada con `fieldset`. Se colocará siempre dentro de una etiqueta de este tipo será la que defina el nombre o el tipo de contenido que se agrupa.
-
-Como convención, la etiqueta `legend` se suele colocar la primera dentro del contenido del `fieldset`.
+Utilizaremos esta etiqueta para crear secciones dentro de nuestro formulario.
 
 ```html
 <fieldset>
-    <legend>Datos personales: </legend>
-
-    <input type="text" name="name" value="">
-    <input type="text" name="surnames" value="">
-    <input type="tel" name="phone" value="">
-    <input type="number" name="postalcode" value="">
+    <input type="text" name="name">
+    <input type="text" name="surnames">
+    <input type="tel" name="phone">
+    <input type="number" name="postalcode">
 </fieldset>
 ```
 
-## Atributos
+### Legend
 
-### Inputs
+Esta etiqueta nos permite asignar el nombre de una sección de nuestro formulario creada con `fieldset`. Se colocará siempre dentro del `fieldset`para indicar el nombre o el tipo de contenido que se agrupa.
 
-#### Name
-
-Este atributo nos permitirá definir la clave a la que se asignará el valor que se introduzca en el campo. De esta forma, cuando analicemos los datos del formulario, sabremos que podemos obtener la información de este campo buscando por el valor asignado en `name`. Ejemplo: Si tenemos un campo para el nombre con el atributo `name="surnames"`, cuando enviemos la información del formulario al servidor, este tendrá una clave `surnames` a la que irá asociada los apellidos que haya introducido el usuario.
-
-Ejemplo de uso:
+Como convención, la etiqueta `legend` se suele colocar la primera dentro del contenido del `fieldset`. Ésta, la coloquemos donde la coloquemos, siempre se mostrará en la parte superior izquierda del `fieldset` pisando el recuadro que dibuja este, pero siempre podemos modificar su posición utilizando CSS.
 
 ```html
-<label for="surnames">Apellidos:</label>
-<input id="surnames" type="text" name="surnames" value="">
+<fieldset>
+    <legend>Datos personales:</legend>
 
-<!--
-  Cuando enviemos el formulario, el servidor recibirá una información con una
-  clave "apellidos" que tendrá asociada los apellidos que haya introducido el usuario
--->
-
+    <input type="text" name="name">
+    <input type="text" name="surnames">
+    <input type="tel" name="phone">
+    <input type="number" name="postalcode">
+</fieldset>
 ```
 
-#### Value
+## Restaurar el formulario a los valores por defecto
 
-El atributo value sirve para definir el valor inicial de un campo, su contenido. De esta forma, si creamos un input de texto con un atributo `value="Calle Méndez Álvaro"`, por defecto dentro del campo se verá escrito _"Calle Méndez Álvaro"_.
+Muchas veces habrás visto en algunos formularios que existe un botón que directamente reestablece todos los campos a su valor por defecto, o dicho de otra forma, que borra la información que hemos introducido y la deja como estaba al cargar la página.
 
-Este valor es opcional excepto cuando el atributo `type` de la etiqueta es `radio` o `checkbox`.
-
-Ejemplo de uso:
+Para crear un botón en nuestro formulario que realice esta acción de establecer todos los campos a su valor por defecto utilizaremos un `<input>` del tipo reset:
 
 ```html
-<label for="address">Dirección:</label>
-<input id="address" type="text" name="apellidos" value="Calle Méndez Álvaro">
-
-<!--
-  Aparece el campo relleno con "Calle Méndez Álvaro" por defecto
--->
-
-<!-- En el caso de los checkbox y los radio siempre ponemos el valor -->
-
-<label for="terms">Acepto los términos y condiciones de la página</label>
-<input id="male" type="checkbox" name="terms" value="accept" />
-
-<label for="male">Hombre</label>
-<input id="male" type="radio" value="male" name="gender" />
-<label for="female">Mujer</label>
-<input id="female" type="radio" value="female" name="gender" />
+<input type="reset" value="Restaurar valores por defecto">
 ```
 
-#### Required
+Este botón siempre borrará toda la información de los campos que haya dentro de la etiqueta `<form>` que lo contenga.
 
-Este atributo se usa para indicar al navegador que es un campo obligatorio del formulario. Por tanto, al enviar el formulario (acción de `submit`) el navegador indicará al usuario si no lo ha rellenado que es un campo obligatorio.
+- Ejercicio
 
-## Más información
+## Estilos CSS de un formulario
+
+Los estilos de los formularios varían mucho entre navegadores pero todos ellos aplican múltiples estilos a estos. A algunos elementos de formularios no se les puede aplicar estilos, como a los `<option>`, es por eso que al final en muchas empresas los desarrolladores crean, utilizando otras etiquetas, sus propios campos customizados para adaptar los estilos a sus necesidades. Nosotros vamos a ceñirnos a estos pero en el futuro veremos cómo crear usando HTML, CSS y JavaScript un componente de formulario customizado.
+
+Una cosa que sí que debemos tener en cuenta es que en móvil por defecto se aplican una serie de estilos a nuestros botones e inputs que modifican bastante su estilo aplicando bordes redondeados y un fondo con degradado. Esto es un problema que viene de los comienzos de la "era mobile", cuando las webs no se adaptaban a dispositivos móviles y era difícil visualizarlas correctamente y se decidió aplicar un estilo por defecto a los campos y botones para que fuesen más intuitivos. Hoy en día los desarrolladores tienen en cuenta esto y, más que ser útil, termina siendo molesto pero tiene solución. Para que estos estilos no se apliquen a nuestros campos lo que debemos hacer es añadirles el atributo `appearance: none;` de la siguiente forma:
+
+```css
+input {
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  appearance:         none;
+}
+```
+
+  NOTA: El prefijo `-webkit-` y `-moz-` es específico para aplicar esto a los navegadores Safari y Chrome y Mozilla Firefox respectivamente
+
+
+## Bonus
+
+### Más atributos y etiquetas
+
+Existen muchos otros tipos distintos de etiquetas para formularios y atributos, pero en este caso solo hemos querido mostrar los principales ya que sino no daría tiempo a ver todos. El resto tienen muchas cosas en común y pueden
 
 - [Guía de formularios de MDN](https://developer.mozilla.org/es/docs/Learn/HTML/Forms)
 - [Guía de formularios de MDN (inglés y más completa)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms)
-
-
-### Ejercicios
-
-### Ejercicios del formulario de Facebook
-
-Hacer este ejercicio sin JavaScript
-
-[Ejercicios del formulario de Facebook](https://docs.google.com/document/d/1lf_84PxiPouwTNEwS7Pr0g11tE5ZJzrQ2Fda3wESIlA/edit#heading=h.jwlhjqodikk)
