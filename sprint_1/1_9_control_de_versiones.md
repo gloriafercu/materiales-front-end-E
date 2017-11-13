@@ -65,7 +65,7 @@ Github nos ofrece un enlace donde nos intenta orientar sobre qué licencia elegi
 5. Hacemos un primer commit `git commit -m "First commit"`
 6. Y subimos, esta primera vez, con `git push -u origin master`
 
-![Instrucciones para añadir el repositorio remoto](assets/1-9-new-repo-instructions.png)
+![Instrucciones para añadir el repositorio remoto](assets/images/1-9-new-repo-instructions.png)
 
 ### Compartir con mi equipo
 Otras de las bondades de Git es que hace que trabajar en grupo sea seguro y más fácil ya que nos evita todo el envío de archivos por email, o que alguien a sobreescrito el archivo de alguien, y así.
