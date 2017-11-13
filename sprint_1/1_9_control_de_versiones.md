@@ -70,7 +70,7 @@ Github nos ofrece un enlace donde nos intenta orientar sobre qué licencia elegi
 ### Compartir con mi equipo
 Otras de las bondades de Git es que hace que trabajar en grupo sea seguro y más fácil ya que nos evita todo el envío de archivos por email, o que alguien a sobreescrito el archivo de alguien, y así.
 
-Desde la página de nuestro repositorio accedemos a `settigns` y desde allí a `Collaborators & teams` donde podremos añadir a nuestro colaboradores favoritos, o a los que nos toquen ;)
+Desde la página de nuestro repositorio accedemos a `settings` y desde allí a `Collaborators & teams` donde podremos añadir a nuestro colaboradores favoritos, o a los que nos toquen ;)
 
 ### Modificar archivos y registrar el cambio
 Ya lo hemos ido viendo estos días:
@@ -114,7 +114,7 @@ La manera de afrontar este conflicto es elegir lo que queremos que ponga en ese 
 
 Los conflictos más pequeños los resolveremos sobre la marcha, en los más complicados tendremos que hablar quién los haya hecho para decidir qué hacer.
 
-### Entonces, ¿Cómo se supone que tengo que trabajar con Git?
+### Entonces, ¿cómo se supone que tengo que trabajar con Git?
 Lo normal es que antes de empezar a trabajar comprobemos si tenemos la última versión. También puede no hacerse y seguir trabajando en lo que se estuviese trabajando.
 En cualquier caso, podemos comprobar si hay una versión nueva del proyecto con `git fetch` o comprobar y descargar una versión nueva con `git pull`.
 
