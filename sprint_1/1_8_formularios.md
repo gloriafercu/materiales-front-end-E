@@ -245,7 +245,7 @@ EJERCICIO:
 
 Sin que sirva de precedente, vamos a realizar este ejercicio directamente en Codepen. Esto nos permitirá comprobar cuales son los datos que se envían en el formulario ya que cuando creamos un formulario en Codepen, al enviarlo nos muestra una ventana con la información que le llegaría al servidor. Esto nos permite comprobar que funciona correctamente y ver qué es lo que llegaría en cada caso. Es importante que dejemos el atributo `action` de la etiqueta `<form>` vacío y que el método sea del tipo `post`.
 
-![Codepen Form Result](sprint_1/assets/images/1-8-codepen-form-result.png)
+![Codepen Form Result](assets/images/1-8-codepen-form-result.png)
 
 Vamos a crear un formulario de envío con los siguientes campos:
 
