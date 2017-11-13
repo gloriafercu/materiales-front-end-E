@@ -26,7 +26,7 @@ La web realizada tiene que ser **responsive**, es decir, funcionar correctamente
 
 - por debajo de 900px
   - el texto "Creando Diversidad Digital" se ve más pequeño
-  - el pie de página y la imagen central son más pequeñas (en altura)
+  - el pie de página y la imagen central son más pequeñas (puede hacerse con mediaqueries o con otras herramientas)
 
 Ejemplo de web para tablet:
 ![Web tablet](assets/images/tablet.png "Captura de la web para tablet")
@@ -34,7 +34,7 @@ Ejemplo de web para tablet:
 - por debajo de 500px
     - el menú de la cabecera se coloca bajo el logo
     - el texto "Creando Diversidad Digital" se ve aún más pequeño
-    - el pie de página y la imagen central son aún más pequeñas (en altura)
+    - el pie de página y la imagen central son aún más pequeñas (puede hacerse con mediaqueries o con otras herramientas)
 
 Ejemplo de web para móvil:
 ![Web mobile](assets/images/mobile.png "Captura de la web para móvil")
