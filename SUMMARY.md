@@ -26,7 +26,7 @@
 * [1.7 Diseño responsive](sprint_1/1_7_responsive_design.md)
 * [1.8 Formularios](sprint_1/1_8_formularios.md)
 * [1.9 Control de versiones](sprint_1/1_9_control_de_versiones.md)
-* [1.10 Herramientas avanzadas]((sprint_1/1_10_herramientas_web_mas_avanzadas.md))
+* [1.10 Herramientas avanzadas](sprint_1/1_10_herramientas_web_mas_avanzadas.md)
 * [Ejercicio de evaluación - Sprint 1](evaluaciones/1_evaluacion.md)
 
 ## Proyectos
