@@ -185,11 +185,11 @@ A simple vista, parece que no hay diferencia entre los tipos `email` y `text` pe
 
 Otra diferencia entre el tipo `email` y el tipo `text` es que si abrimos la página web del formulario desde un móvil, al pulsar sobre el campo del tipo `email` se abrirá un teclado diferente al que se muestra cuando pulsamos en el campo del tipo `text`. Este teclado es especial para escribir direcciones de correo electrónico y, por ejemplo, facilita escribir el símbolo `@`.
 
-![Teclado que se muestra en móvil para los campos del tipo "email"](assets/images/1-8-form-email-validation.png)
+![Teclado que se muestra en móvil para los campos del tipo "email"](assets/images/1-8-form-email-keyboard.jpg)
 
 Bien, tenemos el nombre y el email, vamos con el siguiente, el teléfono. Para el campo teléfono sucede lo mismo que para el del email. En vez de usar `type="text"` utilizaremos `type="tel"`. En este caso no nos validará el teléfono antes de enviarlo porque hay teléfonos muy raros y en muchos casos también van acompañados de guiones o puntos y es complejo de gestionar. Aún así si utilizamos `type="tel"` si que nos mostrará un teclado numérico en el teléfono para facilitarnos el trabajo a la hora de escribir la información como se puede ver en la captura de pantalla.
 
-![Captura de pantalla del teclado que se muestra en un campo del tipo teléfono](assets/images/1-8-form-email-validation.png)
+![Captura de pantalla del teclado que se muestra en un campo del tipo teléfono](assets/images/1-8-form-telephone-keyboard.jpg)
 
 ```html
 <form action="/signup" method="post">
