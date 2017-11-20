@@ -1,4 +1,4 @@
-# Proyecto 2: Curriculum Interactivo
+# Proyecto 2: Currículum Interactivo
 
 ## Índice
 
@@ -14,20 +14,20 @@
 
 ## Resumen ([TL;DR](https://spanish.stackexchange.com/questions/15317/hay-alg%C3%BAn-equivalente-en-castellano-al-ingl%C3%A9s-tldr))
 
-En este proyecto vamos a realizar una librería de componentes que posteriormente emplearemos en realizar una web para crear un curriculum de forma interactiva a partir de una plantilla. Para ello, pensaremos primero cómo queremos enfocar el proyecto y diseñaremos una estructura básica y a partir de ahí sacaremos los componentes que se utilicen en ella. Lo bueno de este proyecto es que será algo más que una mera vista o escaparate, será una herramienta de la que os podréis beneficiar, algo parecido a una aplicación, en la que interactuamos con el medio para obtener el resultado deseado.
+En este proyecto vamos a realizar una librería de componentes que posteriormente emplearemos en realizar una web para crear un currículum de forma interactiva a partir de una plantilla. Para ello, pensaremos primero cómo queremos enfocar el proyecto y diseñaremos una estructura básica y a partir de ahí sacaremos los componentes que se utilicen en ella. Lo bueno de este proyecto es que será algo más que una mera vista o escaparate, será una herramienta de la que os podréis beneficiar, algo parecido a una aplicación, en la que interactuamos con el medio para obtener el resultado deseado.
 
 
 ## Objetivos
 
 1. Aprender los conceptos básicos y globales de programación (variables, estructuras de datos, condicionales, funciones, etc.)
-1. Comprender qué es el DOM y saber obtener información de él e interactuar con este.
+1. Comprender qué es el DOM y saber obtener información de él e interactuar con éste
 1. Obtener recursos y conocimientos para construir una marca personal
 1. Exponer en la sesión final y seguir adquiriendo habilidades de desarrollo personal
 
 
 ## Caso de uso
 
-Con esta web podréis mostrar que a parte de maquetar, podeis crear algo con lo que interactuar y sacar algo que vaya más de una página que solo muestra información. Esto os permitirá mostrar vuestras habilidades a la hora de trabajar con JavaScript en GitHub, algo que en las empresas se valora bastante a la hora de escoger candidatos para puestos de programador front-end.
+Con esta web podréis mostrar que, a parte de maquetar, podéis crear algo con lo que interactuar y sacar algo que vaya más allá de una página que sólo muestra información. Esto os permitirá mostrar vuestras habilidades a la hora de trabajar con JavaScript en GitHub, algo que en las empresas se valora bastante a la hora de escoger candidatos para puestos de programador front-end.
 
 
 ## Especificaciones
@@ -59,8 +59,8 @@ La web deberá tener las siguientes características:
 - Los campos se rellenarán a través de un formulario
 - Crearemos pestañas o colapsables para mostrar las distintas partes del formulario
 - Para seleccionar los años en los distintos campos, utilizaremos un desplegable cuyas opciones se generarán a través de JavaScript con años desde 1950 hasta el año actual
-- En el caso de experiencia laboral, deberemos añadir una función que permita cambiar el orden de cada elemento para hacer que se muestre antes o despues. Cada uno de los elementos también tendrá un botón para ser eliminado.
-- Cada vez que se cambie un campo deberá de actualizarse la vista del resultado final del curriculum
+- En el caso de experiencia laboral, deberemos añadir una función que permita cambiar el orden de cada elemento para hacer que se muestre antes o después. Cada uno de los elementos también tendrá un botón para ser eliminado.
+- Cada vez que se cambie un campo deberá de actualizarse la vista del resultado final del currículum
 - Los campos deberán tener restricciones para su formato indicado. Campo de teléfono para el móvil, mail para el correo, etc.
 
 
@@ -70,7 +70,7 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 
 ### Primero. Arranque del proyecto (kickoff)
 
-- 2 días de trabajo.
+- 2 sesiones de trabajo.
 - Organizar el trabajo a realizar usando Trello, e ir asignando tareas y responsables.
 - Crear la infraestructura necesaria: repositorio en github con acceso para todos los miembros del equipo.
 - Establecer la estructura del contenido de la web, buscar referencias y esbozar un diseño visual de la web.
@@ -78,18 +78,18 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 
 ### Segundo. Primera versión simple de la web
 
-- 1 semana de trabajo.
+- 5 sesiones de trabajo.
 - Terminar el diseño del sitio
-- Desarrollar una primera versión básica de la web, con la maquetación de la estructura básica (para web y móvil) y la funcionalidad de meter contenido en el curriculum mediante el uso de los `prompt` de JavaScript. Para considerar terminado este hito, debéis tener publicada la web en GitHub pages.
+- Desarrollar una primera versión básica de la web, con la maquetación de la estructura básica (para web y móvil) y la funcionalidad de meter contenido en el currículum mediante el uso de los `prompt` de JavaScript. Para considerar terminado este hito, debéis tener publicada la web en GitHub pages.
 
 ### Tercero. Implementación de la parte interactiva
 
-- 1 semana de trabajo
-- Hacer que el contenido sea editable y dinámico e implementar todas las funcionalidades descritas en las especificaciones. Para estar terminado, debe estar la web pública en internet y ser visible por cualquier persona con acceso a este.
+- 5 sesiones de trabajo
+- Hacer que el contenido sea editable y dinámico e implementar todas las funcionalidades descritas en las especificaciones. Para estar terminado, debe estar la web pública en Internet y ser visible por cualquier persona.
 
 ### Cuarto. Presentación final
 
-- 2 días de trabajo.
+- 2 sesiones de trabajo.
 - El último día del sprint presentaréis la versión final de este proyecto. Para ello tendréis que dejarlo publicado y acabado con tiempo, y organizaros para preparar la presentación.
 
 
@@ -141,7 +141,7 @@ Para este proyecto hemos preparado un listado de recursos que os pueden servir d
 
 ### Inspiración
 
-En esta sección tenéis un listado de páginas para inspiraros a la hora de crear la web de vuestro equipo. También un listado de paletas de colores a usar. De dónde puedes sacar imágenes libres de derechos, etc.
+En esta sección tenéis un listado de páginas para inspiraros a la hora de crear vuestro proyecto. También un listado de paletas de colores a usar. De dónde puedes sacar imágenes libres de derechos, etc.
 
 - Páginas de inspiración para curriculums
   - [Curriculums en Behance](https://www.behance.net/search?content=projects&sort=appreciations&time=month&search=resume) - diseños de curriculums
