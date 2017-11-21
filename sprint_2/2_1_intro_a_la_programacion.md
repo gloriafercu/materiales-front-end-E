@@ -294,6 +294,19 @@ En el futuro veremos cómo mostrar este código directamente en la página, pero
 
 ## Ejercicios
 
+### El precio de la fruta
+
+Vamos a comprar fruta a la frutería, y nos llevamos
+- 2 kilos de kiwis a 5€/kg
+- 3 kilos de peras conferencia a 2€/kg
+- medio kilo de uvas a 4€/kg
+Hagamos un pequeño programa en JavaScript para que calcule el precio total, y lo saque en una ventana de alerta.
+
+### ¡Págame, tía!
+
+Nos vamos de cena de Navidad, ¡qué alegría! Somos en total 9 personas y la cuenta del restaurante japonés es de 128€. Ana tiene que pagar 2€ más que los demás porque ha pedido un chupito de sake. ¿Cuánto tenemos que pagar cada una? ¿Y Ana? Hagamos un pequeño programa en JavaScript para calcularlo.
+
+
 ### Calcular cuál va a ser el siguiente año bisiesto
 
 Vamos a escribir un pequeño programa que nos permita saber cuál será el siguiente año bisiesto. Para aportar un poco de información, sabemos que los años bisiestos se producen cada cuatro años a partir del año 0. El primer año bisiesto fue 4, el segundo 8 y así progresivamente. La idea de este ejercicio es que, si estuviésemos en el año 3, al ejecutarlo apareciese una ventana de alerta con el texto "4", ya que el año 4 sería el siguiente año bisiesto.
@@ -408,7 +421,9 @@ En este caso el código es mucho más verboso y más largo pero se entiende much
 
 #### Utilizar variables para mejorar nuestro código
 
-Vamos a reescribir los ejercicios del año bisiesto y del cálculo de horas vividas utilizando variables para que sean más semánticos y por tanto aumentemos la calidad de estos.
+Vamos a reescribir los ejercicios de la fruta y de la cena de Navidad utilizando variables para que sean más semánticos y por tanto aumentemos su calidad.
+
+También vamos a reescribir los ejercicios del año bisiesto y del cálculo de horas vividas.
 
 ## Prompt
 
