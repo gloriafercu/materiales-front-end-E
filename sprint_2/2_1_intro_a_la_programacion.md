@@ -17,7 +17,7 @@
 
 ## Antes de comenzar
 
-A lo largo de este documento se mostrarán ejemplos de código. Te recomendamos sin lugar a dudas, que pruebes dichos ejemplos (más adelante te enseñaremos cómo hacerlo). La idea de estas pequeñas partes de código es que juegues con ellas en el navegador y así puedas ver cómo funcionan y probar qué pasaría si modificas alguna parte de ellos. Todo esto hará que se interiorice mejor el aprendizaje, se trata de descubrir los horizontes de la programación, saber que se puede hacer y que no y cómo funciona el lenguaje de JavaScript en concreto.
+A lo largo de este documento se mostrarán ejemplos de código. Te recomendamos sin lugar a dudas, que pruebes dichos ejemplos (más adelante te enseñaremos cómo hacerlo). La idea de estas pequeñas partes de código es que juegues con ellas en el navegador y así puedas ver cómo funcionan y probar qué pasaría si modificas alguna parte de ellos. Todo esto hará que se interiorice mejor el aprendizaje, se trata de descubrir los horizontes de la programación, saber qué se puede hacer y qué no y cómo funciona el lenguaje de JavaScript en concreto.
 
 ## ¿Qué es programar?
 
@@ -49,7 +49,7 @@ Algunos ejemplos en los que se ve claramente estos pasos:
 - Cámara de un teléfono:
   1. Recibimos unos datos captados por el sensor de la cámara de fotos del teléfono
   1. El teléfono realiza una serie de operaciones para convertir esos datos en una imágen y corregir los desperfectos
-  1. Obtenemos la imágen como resultado
+  1. Obtenemos la imagen como resultado
 
 Podemos hacer este tipo de cosas y otras más complejas pero visuales como esta [demo](https://codepen.io/trhino/pen/JFmiK?limit=all&page=2&q=canvas). En este caso los datos que recibe son colores y a partir de esos colores, se realizan operaciones que muestran círculos con tamaño y posición aleatoria y el resultado es la vista de partículas.
 
@@ -57,7 +57,7 @@ Si pensamos en cualquier aplicación, veremos que todas ellas siguen este patró
 
 Hasta ahora hemos estado trabajando con HTML y CSS y, aunque mucha gente se refiere a ellos como lenguajes de programación, realmente son un lenguaje de marcado y un lenguaje de estilos respectivamente. Estos lenguajes encapsulan datos y estilos que el navegador web traduce en páginas. Por lo tanto, tenemos que tener claro que HTML y CSS no son lenguajes de programación y no permiten programar sino estructurar una información y darle estilos.
 
-Queda claro con esto que programar es decir a un ordenador lo que tiene que hacer paso a paso, esto es lo más parecido a la magia que vamos a tener en nuestra vida, pero no es otra cosa que operaciones realizadas por máquinas que son muy tontas pero muy precisas. ¿Y por qué digo que son tontas? porque pueden realizar mil operaciones por segundo pero no saben nada, es decir, lo único que saben es realizar esas operaciones pero no saben otra cosa que unos y ceros. Todo lo demás son operaciones que hemos realizado los humanos para facilitar que esas máquinas binarias entiendan las instrucciones que les ordenamos.
+Queda claro con esto que programar es decir a un ordenador lo que tiene que hacer paso a paso, esto es lo más parecido a la magia que vamos a tener en nuestra vida, pero no es otra cosa que operaciones realizadas por máquinas que son muy tontas pero muy precisas. ¿Y por qué digo que son tontas? Porque pueden realizar mil operaciones por segundo pero no saben nada, es decir, lo único que saben es realizar esas operaciones pero no saben otra cosa que unos y ceros. Todo lo demás son operaciones que hemos realizado los humanos para facilitar que esas máquinas binarias entiendan las instrucciones que les ordenamos.
 
 ## ¿Qué es JavaScript?
 
@@ -71,7 +71,7 @@ En lo que a nosotros nos respecta y enfocándonos en la web, JavaScript va a ser
 
 Vamos a dejar a un lado la explicación y vamos a ponernos manos a la obra. Para ello vamos a crear nuestro primer código JavaScript y este lo que hará será mostrar en la pantalla el mensaje _"Hello world"_.
 
-Lo primero que debemos hacer es crear un archivo HTML, la web solo interpreta JavaScript si está enlazado a un HTML. Como en este caso no queremos ninguna etiqueta ni ningún estilo, crearemos el html más simple del mundo:
+Lo primero que debemos hacer es crear un archivo HTML, la web sólo interpreta JavaScript si está enlazado a un HTML. Como en este caso no queremos ninguna etiqueta ni ningún estilo, crearemos el html más simple del mundo:
 
 ```html
 <!DOCTYPE html>
@@ -86,7 +86,7 @@ Lo primero que debemos hacer es crear un archivo HTML, la web solo interpreta Ja
 </html>
 ```
 
-Hasta aquí todo normal, ahora viene la parte interesante. ¿Cómo utilizamos un código JavaScript dentro de esta página? Por norma general, de momento enlazaremos JavaScript al final de la web, antes del cierre de la etiqueta `body`. Más adelante veremos el por qué, pero de momento tienes que confiar en nosotros. Al igual que sucedía con CSS, podemos introducir JavaScript de dos formas en nuestra página, escribiendo el código directamente dentro de esta o escribiendo código en un archivo distinto y enlazándolo. Para hacerlo de la primera manera, simplemente creamos una etiqueta `<script>` y metemos el código JavaScript dentro de ella:
+Hasta aquí todo normal, ahora viene la parte interesante. ¿Cómo utilizamos un código JavaScript dentro de esta página? Por norma general, de momento enlazaremos JavaScript al final de la web, antes del cierre de la etiqueta `body`. Más adelante veremos el por qué, pero de momento tienes que confiar en nosotros. Al igual que sucedía con CSS, podemos introducir JavaScript de dos formas en nuestra página, escribiendo el código directamente dentro de ésta o escribiendo código en un archivo distinto y enlazándolo. Para hacerlo de la primera manera, simplemente creamos una etiqueta `<script>` y metemos el código JavaScript dentro de ella:
 
 ```html
 <!DOCTYPE html>
@@ -148,11 +148,11 @@ La primera línea del archivo JavaScript (`'use strict';`) debemos ponerla siemp
 
 La otra línea (`alert('Hello world!');`) describe una acción o _statement_. En programación un _statement_ es la unidad mínima que expresa una acción a llevar a cabo, en este caso, por el navegador. Básicamente le decimos "Hey navegador, haz esto." En este caso le estamos diciendo que muestre una ventana con el mensaje que le ponemos entre los paréntesis.
 
-A lo largo de este bloque veremos que programar no es otra cosa que pensar en los pasos para resolver un problema y traducirlo a ordenes con un lenguaje que entienda el navegador (JavaScript). Por tanto, lo que tenemos que hacer es practicar la lógica, familiarizarnos con la sintaxis de JavaScript y aprender a traducir pasos a este lenguaje para ir poco a poco mejorando y cogiendo soltura.
+A lo largo de este bloque veremos que programar no es otra cosa que pensar en los pasos para resolver un problema y traducirlo a órdenes con un lenguaje que entienda el navegador (JavaScript). Por tanto, lo que tenemos que hacer es practicar la lógica, familiarizarnos con la sintaxis de JavaScript y aprender a traducir pasos a este lenguaje para ir poco a poco mejorando y cogiendo soltura.
 
-De momento para la sintaxis utilizada en `alert('Hello world!');`, solo comentaremos que `alert()` permite mostrar un mensaje en el navegador con el texto que va entre los paréntesis. Para escribir un texto en JavaScript y que lo entienda como tal, debemos escribirlo entre comillas simples (`''`) o comillas dobles (`""`). Podéis utilizar la que queráis de estas, ya que ambas funcionan exactamente igual. El único requisito es que siempre debe coincidir el estilo de la comilla de apertura con la de cierre.
+De momento para la sintaxis utilizada en `alert('Hello world!');`, solo comentaremos que `alert()` permite mostrar un mensaje en el navegador con el texto que va entre los paréntesis. Para escribir un texto en JavaScript y que lo entienda como tal, debemos escribirlo entre comillas simples (`''`) o comillas dobles (`""`). Podéis utilizar la que queráis de éstas, ya que ambas funcionan exactamente igual. El único requisito es que siempre debe coincidir el estilo de la comilla de apertura con la de cierre.
 
-Otro aspecto a destacar del código, es que escribimos cada orden en una línea y ponemos un punto y coma al final de esta. En JavaScript se pueden escribir varias órdenes en una misma linea si se separan por un punto y coma (`;`), por ejemplo `'use strict';alert('Hello world!');` sería válido. Esto es totalmente desaconsejable y evitaremos hacerlo. Escribiremos como máximo una orden por línea y siempre añadiremos el punto y coma al final de esta para evitar posibles problemas.
+Otro aspecto a destacar del código, es que escribimos cada orden en una línea y ponemos un punto y coma al final de ésta. En JavaScript se pueden escribir varias órdenes en una misma línea si se separan por un punto y coma (`;`), por ejemplo `'use strict';alert('Hello world!');` sería válido. Esto es totalmente desaconsejable y evitaremos hacerlo. Escribiremos como máximo una orden por línea y siempre añadiremos el punto y coma al final de esta para evitar posibles problemas.
 
 ## Ejercicios con alert
 
@@ -175,7 +175,7 @@ La idea de este ejercicio es mostrar un mensaje de alerta en el navegador y que,
 
 Los datos con los que trabajan las aplicaciones se representan mediante valores. Por tanto un valor no es más que la representación de un dato sobre la que podemos aplicar las reglas comentadas anteriormente. Si queremos mostrar la temperatura en una pantalla, necesitaremos el valor numérico (por ejemplo, 27) que represente el dato de esa temperatura y sobre ese valor aplicaremos las reglas para obtener el resultado deseado (sacar la media de temperatura, calcular el día que más calor ha hecho, etc.).
 
-Se aprecia con esto que la base de la información de nuestra aplicación reside en los valores, estos serán los encargados de representar los datos y serán sobre los que apliquemos los mecanismos necesarios para llegar al punto deseado, el resultado.
+Se aprecia con esto que la base de la información de nuestra aplicación reside en los valores. Éstos serán los encargados de representar los datos y serán sobre los que apliquemos los mecanismos necesarios para llegar al punto deseado, el resultado.
 
 En JavaScript existen por defecto seis tipos distintos de datos, todos ellos los veremos a lo largo del curso, pero por el momento vamos a centrarnos en dos: `number` (número) y `string` (cadena de caracteres).
 
@@ -183,7 +183,7 @@ Cada uno de ellos, según sus características, se utilizará para representar u
 
 ### String
 
-_String_ traducido al español significa cadena y cómo su nombre indica es el tipo de valor utilizado para representar cadenas de caracteres, que viene a ser básicamente texto. Cualquier tipo de texto, ya sean caracteres sueltos ("a", "b", "0") o en conjunto ("hola", "las 13:40", "2312312") estará incluido dentro de este tipo de valor.
+_String_ traducido al español significa cadena y como su nombre indica es el tipo de valor utilizado para representar cadenas de caracteres, que viene a ser básicamente texto. Cualquier tipo de texto, ya sean caracteres sueltos ("a", "b", "0") o en conjunto ("hola", "las 13:40", "2312312") estará incluido dentro de este tipo de valor.
 
 En los ejercicios anteriores, siempre que hemos escrito entre comillas (`''`) un texto, lo que hemos hecho es incluir en el código un _string_, decirle al programa encargado de ejecutar nuestro código que eso es un texto y que debe utilizarlo como tal.
 
@@ -240,7 +240,7 @@ En JavaScript, los operadores de suma (`+`), resta (`-`), multiplicación (`*`) 
 
 **Nota:** El espacio entre los números no es necesario, podríamos poner `4+4` y funcionaría perfectamente. La finalidad de ese espacio es ayudar a visualizar mejor el código y la mayoría de los programadores en JavaScript suelen utilizarlos, por tanto, nosotros también lo haremos así.
 
-El orden en el que se ejecutan los operadores también es igual que el utilizado en matemáticas. De izquierda a derecha y evaluandolos en el siguiente orden:
+El orden en el que se ejecutan los operadores también es igual que el utilizado en matemáticas. De izquierda a derecha y evaluándolos en el siguiente orden:
 
 1. Términos entre paréntesis.
 2. Multiplicación y división.
@@ -271,7 +271,7 @@ El operador de módulo tiene el mismo orden de precedencia que los operadores de
 
 ## El código como una caja negra
 
-JavaScript, al igual que otros lenguajes de programación, ejecuta el código de manera similar a una caja negra. Todas las operaciones se ejecutan pero si no indicamos de forma explícita que muestre algo (como cuando lo hacemos con el `alert`) no se mostrará nada en la pantalla y será como si ese código no se haya ejecutado, aunque lo haya hecho.
+JavaScript, al igual que otros lenguajes de programación, ejecuta el código de manera similar a una caja negra. Todas las operaciones se ejecutan pero si no indicamos de forma explícita que muestre algo (como cuando lo hacemos con el `alert`) no se mostrará nada en la pantalla y será como si ese código no se hubiera ejecutado, aunque lo haya hecho.
 
 Podéis probar esto escribiendo el siguiente código en un archivo de JavaScript:
 
@@ -296,7 +296,7 @@ En el futuro veremos cómo mostrar este código directamente en la página, pero
 
 ### Calcular cuál va a ser el siguiente año bisiesto
 
-Vamos a escribir un pequeño programa que nos permita saber cuál será el siguiente año bisiesto. Para aportar un poco de información, sabemos que los años bisiestos se producen cada cuatro años a partir del año 0. El primer año bisiesto fue 4, el segundo 8 y así progresivamente. La idea de este ejercicio es que, si estuviesemos en el año 3, al ejecutarlo apareciese una ventana de alerta con el texto "4", ya que el año 4 sería el siguiente año bisiesto.
+Vamos a escribir un pequeño programa que nos permita saber cuál será el siguiente año bisiesto. Para aportar un poco de información, sabemos que los años bisiestos se producen cada cuatro años a partir del año 0. El primer año bisiesto fue 4, el segundo 8 y así progresivamente. La idea de este ejercicio es que, si estuviésemos en el año 3, al ejecutarlo apareciese una ventana de alerta con el texto "4", ya que el año 4 sería el siguiente año bisiesto.
 
 **Nota:** En este caso tenemos que escribir nosotros el año en el que estamos para saber cuando será el siguiente año bisiesto pero en los siguientes párrafos veremos cómo introducir un dato desde el navegador para poder utilizarlo desde nuestro código. Esto nos permitirá hacer un programa más lógico, porque podremos mostrar cuál será el siguiente año bisiesto a partir del año que hemos introducido.
 
@@ -391,7 +391,7 @@ Para finalizar, una de las cualidades fundamentales que las variables nos aporta
 (620 - 72 - 24) / 4
 ```
 
-¿Sabrías decir para qué sirve el código anterior? Yo probablemente en el momento de crearlo si pero pasada una semana estaría en la misma situación que tú. ¿Por qué? porque el código no es descriptivo y no sabemos qué representa cada número. En ese caso estaríamos realizando un mal código porque si estamos trabajando en una empresa y nos cambiamos y le toca trabajar con esto a otra persona probablemente tarde mucho tiempo en poder entenderlo para modificarlo o incluso no pueda y la empresa se vaya a pique (cosa que ha pasado en varias ocasiones en la realidad). Tenemos que tener en cuenta que el código se escribe para que otra persona (o nosotros mismos dentro de un tiempo) pueda entenderlo. Veamos cómo las variables nos pueden ayudar en esto:
+¿Sabrías decir para qué sirve el código anterior? Yo probablemente en el momento de crearlo sí pero pasada una semana estaría en la misma situación que tú. ¿Por qué? Porque el código no es descriptivo y no sabemos qué representa cada número. En ese caso estaríamos realizando un mal código porque si estamos trabajando en una empresa y nos cambiamos y le toca trabajar con esto a otra persona probablemente tarde mucho tiempo en poder entenderlo para modificarlo o incluso no pueda y la empresa se vaya a pique (cosa que ha pasado en varias ocasiones en la realidad). Tenemos que tener en cuenta que el código se escribe para que otra persona (o nosotros mismos dentro de un tiempo) pueda entenderlo. Veamos cómo las variables nos pueden ayudar en esto:
 
 ```js
 var headerHeight = 72;
@@ -415,24 +415,24 @@ Vamos a reescribir los ejercicios del año bisiesto y del cálculo de horas vivi
 Como hemos comentado antes, existen diversas formas de poder introducir datos para utilizarlos dentro de nuestro código. Una de ellas es `prompt`. Prompt es un comando de JavaScript que muestra una ventana con un texto y un campo donde podemos introducir una información para luego guardarla en una variable y poder trabajar con ella.
 
 ```js
-var firstname = prompt('¿Cuál es tu nombre?');
-alert(firstname)
+var firstName = prompt('¿Cuál es tu nombre?');
+alert(firstName);
 ```
 
 ```js
-var firstname = prompt('¿Cuál es tu nombre?');
-var lastname = prompt('¿Cuál es tu apellido?');
-alert('Mi nombre es ' + firstname + ' ' + lastname)
+var firstName = prompt('¿Cuál es tu nombre?');
+var lastName = prompt('¿Cuál es tu apellido?');
+alert('Mi nombre es ' + firstName + ' ' + lastName);
 ```
 
-Quizás te haya explotado la cabeza al ver en el ejemplo el uso del símbolo de `+` con dos strings
+Quizás te haya explotado la cabeza al ver en el ejemplo el uso del símbolo de `+` con dos strings.
 
 En el caso de los `string`s, la única forma de operar con ellos es usar el operador de concatenación (`+`). Este operador nos permitirá unir – concatenar – dos o más cadenas de caracteres para obtener una nueva. Algunos ejemplos:
 
 ```js
 "Fecha de conexión: " + "jueves 15"  // Devuelve "Fecha de conexión: jueves 15"
 'H' + 'o' + 'l' + 'a'                // Devuelve "Hola"
-"Faltan " + "3" + " dias"            // Devuelve "Faltan 3 días"
+"Faltan " + "3" + " días"            // Devuelve "Faltan 3 días"
 ```
 
 **Nota:** Aunque el símbolo utilizado para concatenar strings (`+`) es el mismo que el utilizado para sumar números, JavaScript es capaz de saber que operación llevar a cabo en función de los datos que le pasemos. Si le pasamos `string`s concatenará los números y si pasamos `number`s los sumará. Si intentamos sumar un número y un texto siempre convertirá primero el número a string y posteriormente juntará ambos textos (ej: `5 + "5"` devuelve `"55"`)
@@ -442,21 +442,26 @@ En el caso de los `string`s, la única forma de operar con ellos es usar el oper
 
 #### Hello world de verdad
 
-Utilizando `promt` vamos a crear un programa que pregunte por el nombre y posteriormente muestre el mensaje "Hola nombre, encantado de conocerte". Donde _nombre_ será el nombre que ha introducido el usuario previamente.
+Utilizando `prompt` vamos a crear un programa que pregunte por el nombre y posteriormente muestre el mensaje "Hola nombre, encantado de conocerte". Donde _nombre_ será el nombre que ha introducido el usuario previamente.
 
 #### Calculador de pagos para comidas
 
 Vamos a crear una aplicación usando `prompt` que primero pregunte cuanto ha sido la cuenta, luego cuantos comensales hay y por último muestre una alerta que diga `"Cada comensal debe pagar: __"`
 
-**Nota:** Prompt guarda los datos como texto (`string`), por lo que si introducimos un número, lo guardará como si fuese un texto y no podremos operar con él, para que esto no suceda, utilizaremos `parseInt(numero)` donde número será la variable o texto que queremos convertir en número.
-
+**Nota:** Prompt guarda los datos como texto (`string`), por lo que si introducimos un número, lo guardará como si fuese un texto y no podremos operar con él. Para poder hacerlo utilizaremos `parseInt(numero)` donde número será la variable o texto que queremos convertir en número.
+Ejemplo:
+```js
+var numberAsAString = "4";
+var number = parseInt(numberAsAString);
+alert(number + 1);
+```
 
 ## Resumen
 
-Como hemos visto durante esta clase, programar es simplemente dar órdenes al ordenador para conseguir un resultado a partir de unos datos previos. Para trabajar con el navegador lo que haremos será aprender a darle esas órdenes en código.
+Como hemos visto durante esta sesión, programar es simplemente dar órdenes al ordenador para conseguir un resultado a partir de unos datos previos. Para trabajar con el navegador lo que haremos será aprender a darle esas órdenes en código.
 
 Aparte de ver qué es programar también hemos visto algunos de los tipos de valores que se usan en JavaScript, como los _strings_ y los _numbers_ y cómo operar con ellos para obtener distintos resultados.
 
 Por último hemos visto cómo utilizar `prompt` y `alert` para obtener y mostrar información del usuario.
 
-Con esto hemos iniciado nuestro viaje en el mundo de la programación y hemos empezado a aprender las bases pero ya podemos crear pequeños programas que tienen utilidad, todo en el primer dia con este lenguaje de programación.
+Con esto hemos iniciado nuestro viaje en el mundo de la programación y hemos empezado a aprender las bases pero ya podemos crear pequeños programas que tienen utilidad, todo en el primer día con este lenguaje de programación.
