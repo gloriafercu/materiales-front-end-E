@@ -18,10 +18,15 @@
 * [1.R.2 Repaso](sprint_1/1_repaso_2.md)
 * [Ejercicio de evaluación - Sprint 1](evaluaciones/1_evaluacion.md)
 
+## Sprint 2. Programando la web
+
+* [1.1. Intro a la programación](sprint_2/2_1_intro_a_la_programacion.md)
+
 ## Proyectos
 
 * [Guía de diseño](proyectos/P1_anexo_diseno.md)
 * [Proyecto 1. Web grupal](proyectos/P1_proyecto_sprint_1.md)
+* [Proyecto 2. Currículum Interactivo](proyectos/P2_proyecto_sprint_2.md)
 
 ## Guías
 
