@@ -20,7 +20,7 @@
 
 ## Sprint 2. Programando la web
 
-* [1.1. Intro a la programación](sprint_2/2_1_intro_a_la_programacion.md)
+* [2.1. Intro a la programación](sprint_2/2_1_intro_a_la_programacion.md)
 
 ## Proyectos
 
