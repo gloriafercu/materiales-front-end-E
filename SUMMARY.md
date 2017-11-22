@@ -10,7 +10,7 @@
 * [1.4 Herramientas básicas](sprint_1/1_4_herramientas_basicas_de_desarrollo_web.md)
 * [1.5 Publicando nuestra web](sprint_1/1_5_publicando_nuestra_web.md)
 * [1.R.1 Repaso](sprint_1/1_repaso_1.md)
-* [1.6 Flebox](sprint_1/1_6_posicionamiento_con_flexbox.md)
+* [1.6 Flexbox](sprint_1/1_6_posicionamiento_con_flexbox.md)
 * [1.7 Diseño responsive](sprint_1/1_7_responsive_design.md)
 * [1.8 Formularios](sprint_1/1_8_formularios.md)
 * [1.9 Control de versiones](sprint_1/1_9_control_de_versiones.md)
