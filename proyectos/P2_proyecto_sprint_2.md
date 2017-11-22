@@ -150,3 +150,11 @@ En esta sección tenéis un listado de páginas para inspiraros a la hora de cre
   - https://color.hailpixel.com/ para crear paletas de forma sencilla
 - Páginas de inspiración para elementos de nuestra web:
   - [Inspiration UI](http://inspirationui.com/) - Inspiración para componentes web
+
+### Ejemplo similar
+Si en este punto algo no ha quedado del todo claro aquí tenéis un ejemplo similar con un generador de firmas de email para nuestra empresa.
+Este es un ejemplo real en el que a través de un formulario actualizamos lo que luego será la firma de email para los empleados de esta empresa.
+
+Está subido a Github y utiliza GitHub Pages para tenerlo online.
+
+- [Generador de firmas de email](https://chucheria.github.io/EmailSignatureGenerator/index.html)
