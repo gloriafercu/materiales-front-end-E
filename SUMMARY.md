@@ -21,7 +21,7 @@
 ## Sprint 2. Programando la web
 
 * [2.1 Intro a la programación](sprint_2/2_1_intro_a_la_programacion.md)
-* [2.2 Estructuras de controls](sprint_2/2_2_estructuras_de_control.md)
+* [2.2 Estructuras de control](sprint_2/2_2_estructuras_de_control.md)
 
 ## Proyectos
 
