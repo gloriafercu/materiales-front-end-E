@@ -3,7 +3,7 @@
 ## Contenidos
 
 - Ramas (branch, merge y checkout)
-- Git flow
+- Flujo
 - Pull requests en GitHub (reviews de equipo)
 
 
