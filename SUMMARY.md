@@ -28,6 +28,7 @@
 * [Guía de diseño](proyectos/P1_anexo_diseno.md)
 * [Proyecto 1. Web grupal](proyectos/P1_proyecto_sprint_1.md)
 * [Proyecto 2. Currículum Interactivo](proyectos/P2_proyecto_sprint_2.md)
+* [Anexo al Proyecto 2](proyectos/P2_anexo_1.md)
 
 ## Guías
 
