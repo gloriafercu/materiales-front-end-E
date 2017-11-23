@@ -84,7 +84,7 @@ Los puntos más importantes de esta sesión son los siguientes:
     - `>=` (_greater than or equal_ o _mayor o igual que_) comprueba si el número a la izquierda del operador es mayor o igual que el que está a su derecha
   - Pueden combinarse utilizando operadores lógicos:
     - `&&` (_AND_) Devuelve verdadero **SOLO** si ambas condiciones son verdaderas (ej: `8 === 9 && 'hola' !== 'adios'` devolvería falso porque una de las condiciones no se cumple)
-    - `||` (_OR_) Devuelve verdadero si una o más condiciones se cumplen (ej: `8 === 8 && 'hola' !== 'adios'` devolvería verdadero porque una de las condiciones se cumple)
+    - `||` (_OR_) Devuelve verdadero si una o más condiciones se cumplen (ej: `8 === 9 || 'hola' !== 'adios'` devolvería verdadero porque una de las condiciones se cumple)
     - `!` (_NOT_) Devuelve el valor contrario (ej: `!true` devuelve `false`)
     - Los operadores de comparación se ejecutan siempre después de los operadores numéricos, es decir, si tenemos `5 * 1 - 4 !== '3'`, primero se hará la multiplicación, luego la resta y finalmente se hara la operación de comparación.
 
