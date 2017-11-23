@@ -8,6 +8,8 @@
 
 ## Introducción
 
+Utilizando aplicaciones y webs, muchas veces nos encontramos con casos en los que no se nos permite por ejemplo añadir un elemento más al carrito de la compra si hemos superado el límite.
+
 En esta sesión nos centraremos en las estructuras de control del flujo de nuestra aplicación. Reciben ese nombre porque se encargan de determinar que acciones llevará a cabo la aplicación en función de una serie de datos y cuántas veces se ejecutará cada una. Gracias a ellas diremos que pasos queremos que siga la aplicación en cada momento para que se cumpla el objetivo que deseamos alcanzar.
 
 Durante esta sesión veremos cómo controlar qué parte de nuestro código se ejecuta y cuál no, gracias a los condicionales. Esto nos permitirá realizar acciones en función de datos. Por ejemplo, mostrar un nombre o un mensaje de "usuarios no registrado" si no hay un nombre guardado. Es decir, con un condicional podemos establecer las normas al estilo si sucede esto haz esto otro y sino haz una orden alternativa. El condicional es una de las estructuras de control más básicas e importantes de la programación.
@@ -83,8 +85,8 @@ Los puntos más importantes de esta sesión son los siguientes:
     - `<=` (_less than or equal_ o _menor o igual que_) comprueba si el número a la izquierda del operador es menor o igual que el que está a su derecha
     - `>=` (_greater than or equal_ o _mayor o igual que_) comprueba si el número a la izquierda del operador es mayor o igual que el que está a su derecha
   - Pueden combinarse utilizando operadores lógicos:
-    - `&&` (_AND_) Devuelve verdadero **SOLO** si ambas condiciones son verdaderas (ej: `8 === 9 && 'hola' !== 'adios'` devolvería falso porque una de las condiciones no se cumple)
-    - `||` (_OR_) Devuelve verdadero si una o más condiciones se cumplen (ej: `8 === 9 || 'hola' !== 'adios'` devolvería verdadero porque una de las condiciones se cumple)
+    - `&&` (_AND_) Devuelve verdadero **SOLO** si ambas condiciones son verdaderas (ej: `8 === 8 && 'hola' !== 'adios'` devolvería falso porque una de las condiciones no se cumple)
+    - `||` (_OR_) Devuelve verdadero si una o más condiciones se cumplen (ej: `8 === 8 && 'hola' !== 'adios'` devolvería verdadero porque una de las condiciones se cumple)
     - `!` (_NOT_) Devuelve el valor contrario (ej: `!true` devuelve `false`)
     - Los operadores de comparación se ejecutan siempre después de los operadores numéricos, es decir, si tenemos `5 * 1 - 4 !== '3'`, primero se hará la multiplicación, luego la resta y finalmente se hara la operación de comparación.
 
@@ -100,7 +102,7 @@ Los puntos más importantes de esta sesión son los siguientes:
     - `if...else if`: `if (condicion1) { // código } else if (condicion2) { // código }`
 
 - Bucle `for`:
-  - Podemos incrementar o decrementar el valor de una variable usando `++` o `--`. Si tenemos una variable `i` que es igual 1, y ejecutamos `i++`, `i` pasará a tener un valor de 2. `++` es la abreviación de `i = i + 1`
+  - Podemos incrementar o decrementar el valor de una variable usando `++` o `--`. Si tenemos una variable `i` que es igual 1, y ejecutamos `i++`, `i` pasará a tener un valor de 1. `++` es la abreviación de `i = i + 1`
   - Sirve para ejecutar un mismo código un número determinado de veces. _Haz esto x veces_
   - Su estructura es la siguiente `for (inicialización; condición; actualización) { // código }`:
     - _inicialización_ será una declaración y asignación de variable (ej: `var i = 1`)
@@ -108,7 +110,7 @@ Los puntos más importantes de esta sesión son los siguientes:
     - _actualización_ será la operación que se realizará antes de cada iteración del bucle sin contar la primera (ej: `++i`)
     - Ejemplo: `for (var i = 0; i < 20; i++)`
   - El orden de ejecución de un bucle `for` es el siguiente:
-    1. Se ejecuta el código de inicialización (`var i = 0`)
+    1. Se ejecuta el código de inicialización (`var i = 1`)
     1. Se comprueba que la condición se cumple (`i < 20`)
     1. Si se cumple se ejecuta el código que hay dentro del bloque entre las llaves (`{}`), si no se cumple se termina el bucle
     1. Se ejecuta la operación del bucle (`i++`)
@@ -145,7 +147,7 @@ Te habrá pasado varias veces de ir por la calle y que alguien te pregunte "perd
 
 - El primer año de un perro equivale a 15 años de humano
 - El segundo año de un perro equivale a nueve años de humano
-- A partir del tercero, cada año de humano equivale a 5 años de perro.
+- A partir del tercero, cada año de perro equivale a 5 años de humano.
 
 **Nota:** Prueba que el código funciona correctamente con distintos años (1,2, 12...). Imagina el alcance de los daños si la próxima vez que te pare una persona para preguntarte por el conversor... ¡no funciona correctamente!
 
