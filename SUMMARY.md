@@ -23,6 +23,7 @@
 * [2.1 Intro a la programación](sprint_2/2_1_intro_a_la_programacion.md)
 * [2.2 Estructuras de control](sprint_2/2_2_estructuras_de_control.md)
 * [2.3 Funciones](sprint_2/2_3_funciones.md)
+* [2.4 Objetos](sprint_2/2_4_objetos.md)
 
 ## Proyectos
 
