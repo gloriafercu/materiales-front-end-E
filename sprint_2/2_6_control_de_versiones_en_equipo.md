@@ -196,3 +196,9 @@ EJERCICIO 5:
 Vamos a hacer un Pull Request con revisión de código en vivo, para ello 1 voluntaria sale a hacer parte del ejercicio y el profesor hace la revisión de código, en directo.
 
 ***
+
+
+## Recursos externos
+
+- [Ayuda de Github sobre los Pull Requests (Inglés)](https://help.github.com/articles/about-pull-requests/)
+- [6.2 GitHub - Participando en Proyectos](https://git-scm.com/book/es/v2/GitHub-Participando-en-Proyectos)
