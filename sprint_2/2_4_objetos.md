@@ -136,8 +136,6 @@ Vamos a crear un contador con los datos del contador que comentamos en la introd
 
 Con la ayuda de `alert` Probaremos a usar varios métodos distintos y comprobar el estado actual para ver si funciona correctamente.
 
-### Crear un objeto para un usuario
-
 ### Estructura de datos para un usuario
 
 Vamos a crear un objeto para almacenar la información de un usuario y una variable llamada `job` donde guardaremos el valor `developer`. A continuación seguiremos los siguiente pasos
