@@ -145,9 +145,9 @@ Vamos a crear un objeto para almacenar la información de un usuario y una varia
   Usando la notación con punto o la notación con corchetes (`[]`) (ej: `obj.prop` o `obj["prop"]`):
     1. Añadiremos una propiedad llamada `firstname` y le asignaremos un valor.
     2. Añadiremos una propiedad llamada `lastname` y le asignaremos un valor.
-    2. Añadiremos una propiedad llamada `age` y le asignaremos un valor numérico.
-    3. Añadiremos una propiedad `job` a la que asignaremos el valor de la variable `job`
-    4. Comprobaremos que al obtener el valor de cada una de las propiedades que hemos definido hasta ahora, este es correcto
-    5. Cambiaremos el nombre del usuario por otro distinto
-    6. Aumentaremos en 1 la edad del usuario
-    4. Comprobaremos de nuevo que todo sigue funcionando correctamente
+    3. Añadiremos una propiedad llamada `age` y le asignaremos un valor numérico.
+    4. Añadiremos una propiedad `job` a la que asignaremos el valor de la variable `job`
+    5. Comprobaremos que al obtener el valor de cada una de las propiedades que hemos definido hasta ahora, este es correcto
+    6. Cambiaremos el nombre del usuario por otro distinto
+    7. Aumentaremos en 1 la edad del usuario
+    8. Comprobaremos de nuevo que todo sigue funcionando correctamente
