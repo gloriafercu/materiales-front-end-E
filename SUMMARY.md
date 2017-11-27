@@ -24,6 +24,7 @@
 * [2.2 Estructuras de control](sprint_2/2_2_estructuras_de_control.md)
 * [2.3 Funciones](sprint_2/2_3_funciones.md)
 * [2.4 Objetos](sprint_2/2_4_objetos.md)
+* [2.5 Arrays](sprint_2/2_5_arrays.md)
 
 ## Proyectos
 
