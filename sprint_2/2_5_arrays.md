@@ -21,9 +21,9 @@
     - [`slice`](#slice)
     - [`splice`](#splice)
     - [`unshift`](#unshift)
-  - [Iterar sobre un array](#iterar-sobre-un-array)
-  - [Arrays anidados](#arrays-anidados)
-  - [Combinando objetos con arrays](#combinando-objetos-con-arrays)
+  - [Iterar sobre un array](#iterando-sobre-los-elementos-de-un-array)
+  - [Arrays anidados](#trabajar-con-arrays-anidados)
+  - [Combinando objetos con arrays](#combinando-arrays-con-objetos)
 - [Recursos externos adicionales](#recursos-externos-adicionales)
 
 ## Introducción
