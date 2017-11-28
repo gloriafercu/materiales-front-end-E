@@ -515,8 +515,8 @@ var scores = [4, 2, 7, 8, 6, 7, 9, 1, 2, 6, 7];
 var result = 0;
 
 // La i empieza en 0 porque el índice de los arrays empieza en 0 también
-for (var i = 0; i < arr.length; i++) {
-  result += arr[i];
+for (var i = 0; i < scores.length; i++) {
+  result += scores[i];
   // Sumamos a result el valor actual del array en cada iteración del bucle
   // result += arr[i] es igual a result = result + arr[i]
 }
