@@ -94,7 +94,7 @@ Los objetos, de la forma en la que los vamos a ver en esta sesión se utilizan p
   - `obj.prop1 = 4` donde prop1 será una palabra clave y tendrá como valor 4.
 - Para obtener el valor de una propiedad también tendremos dos métodos:
   - `obj["prop1"]` devolverá el valor de la propiedad _prop1_
-  - `obj["prop1"]` devolverá el valor de la propiedad _prop1_
+  - `obj.prop1` devolverá el valor de la propiedad _prop1_
 - Cuando asignamos un objeto a una variable, realmente no estamos guardando su valor en la caja de la variable, como sucede con los números o los strings. En este caso lo que sucede es que se crea un objeto y la variable sería como una dirección que apunta a ese objeto. Por lo tanto, si guardamos ese mismo objeto en otra variable lo que estaremos haciendo es crear una nueva dirección que apunte al mismo objeto.
 - Por convención, los métodos suelen tener como nombre un verbo (`show`, `hide`, `reset`, etc.) y las características (propiedades) suelen tener un sustantivo (`color`, `size`, `type`, `content`, `text`, etc)
 - Los strings y los números también tienen propiedades y métodos, como sucede con los objetos, pero tienen sus diferencias. Algunos de los métodos y propiedades son:
