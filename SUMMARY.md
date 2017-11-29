@@ -25,6 +25,7 @@
 * [2.3 Funciones](sprint_2/2_3_funciones.md)
 * [2.4 Objetos](sprint_2/2_4_objetos.md)
 * [2.5 Arrays](sprint_2/2_5_arrays.md)
+* [2.6 Control de versiones](sprint_2/2_6_control_de_versiones_en_el_equipo.md)
 * [2.R.1 Repaso](sprint_2/2_repaso_1.md)
 
 ## Proyectos
