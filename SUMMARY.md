@@ -28,7 +28,7 @@
 * [2.R.1 Repaso](sprint_2/2_repaso_1.md)
 * [2.6 Control de versiones](sprint_2/2_6_control_de_versiones_en_equipo.md)
 * [2.7 JavaScript en la web](sprint_2/2_7_javascript_en_la_web.md)
-
+* [Ejercicio de evaluación - Sprint 2](evaluaciones/2_evaluacion.md)
 
 ## Proyectos
 
