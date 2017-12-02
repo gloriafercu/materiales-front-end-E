@@ -5,6 +5,7 @@
 - [Introducción](#introducción)
 - [Escuchando eventos desde JavaScript](#escuchando-eventos-desde-javascript)
 - [El parámetro event](#el-parámetro- event)
+- [Dejando de escuchar eventos](#dejando-de-escuchar-eventos)
 
 ## Introducción
 
@@ -43,9 +44,8 @@ Dado este HTML:
     <title>Ejemplo de alerta</title>
   </head>
   <body>
-    <button type="button" name="button" class=".alert">Alerta</button>
-    <script type="text/javascript" src="js/index.js">
-    </script>
+    <button type="button" name="button" class="alert">Alerta</button>
+    <script type="text/javascript" src="js/index.js"></script>
   </body>
 </html>
 ```
@@ -84,7 +84,22 @@ button.addEventListener('click', function(){
 Esta versión tiene sólo 2 líneas y es un poco más enrevesada, pero funciona igual que la anterior. Simplemente hemos definido la función de *callback* como una función anónima.
 
 > NOTA:
-> Es muy importante entender que la función (anónima o no) sólo se ejecutará cuando suceda el evento. Si el evento nunca sucede, la función nunca se ejecutará.
+> Es muy importante entender que la función (anónima o no) sólo se ejecutará cuando suceda el evento. Si el evento nunca sucede, la función nunca se ejecutará. Nosotros nunca ejecutamos la función: es el navegador quien la ejecuta cuando sucede el evento.
+
+Existen otras formas de escuchar eventos que veréis por Internet, y que aunque siguen funcionando **no es recomendable** usar. Se basan es el uso del atributo `onclick` (en realidad, on + evento), que pueden usarse desde el HTML:
+
+```html
+<button type="button" name="button" class="alert" onclick="showAlert()">Alerta</button>
+```
+O desde JavaScript:
+
+```javascript
+var button = document.querySelector('.alert');
+button.onclick = function(){
+  alert('Alerta');
+}
+```
+A partir de ahora usad **siempre, siempre, siempre** la forma correcta, es decir, el `addEventListener`.
 
 * * *
 
@@ -100,67 +115,169 @@ Crear una página HTML con un input de tipo texto para introducir tu nombre y un
 
 * * *
 
+A parte del evento click, podéis ver [el listado completo de eventos que podemos escuchar del DOM en MDN](https://mdn.mozilla.org/en-US/docs/Web/Events). Aquí vamos a listar los más usados:
+- Eventos de ratón
+  - `click`: botón izquierdo del ratón
+  - `mouseover`: pasar el ratón sobre un elemento
+  - `mouseout`: sacar el ratón de un elemento
+- Eventos de teclado
+  - `keypress`: pulsar una tecla
+- Sobre elementos
+  - `focus`: poner el foco (seleccionar) sobre un elemento, por ejemplo un input
+  - `blur`: quitar el foco de un elemento
+  - `change`: al cambiar el contenido de un input (hay que quitar el foco para que se considere un cambio) o de un select
+- Formularios
+  - `submit`: pulsar el botón submit del formulario
+  - `reset`: pulsar el botón reset del formulario
+- De la ventana
+  - `resize`: se ha cambiado el tamaño de la ventana
+  - `scroll`: se ha hecho scroll en la ventana o un elemento
+
+  * * *
+
+  EJERCICIO:
+
+  Crear una página HTML con un párrafo con `lorem ipsum`. Al poner el ratón sobre el párrafo, vamos a añadir un nuevo párrafo a la página con `lorem ipsum`.
+
+  * * *
+
+  EJERCICIO:
+
+  Crear una página HTML con formulario con un select que tiens un listado de colores. Al cambiar el contenido del select, aparece una ventana de alerta donde aparece el texto 'Me gustan los colores'.
+
+  * * *
+
 ## El parámetro event
 
+Cuando registramos un callback para escuchar un evento, a nuestro callback (la función escuchadora) es el navegador quien la ejecuta, como hemos visto antes. Al ejecutarla, le pasa unos argumentos que podremos recoger si definimos parámetros en nuesta función de callback. El primero de ellos es un objeto que se suele denominar [`event`](https://developer.mozilla.org/en-US/docs/Web/API/Event) y que contiene información acerca del evento. Ese objeto tendrá una propiedad `currentTarget` que nos permite acceder al elemento sobre el que ha sucedido el evento. Esto, a primera vista, puede parecer poco útil pero si registramos la misma función de callback para varios elementos nos puede ser muy útil.
+
+Vamos a ver un ejemplo: tenemos un listado de elementos y queremos que al clickar en un elemento salga su información en un alert.
+
+Partimos de este HTML:
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Click en varios elementos</title>
+    <script type="text/javascript" src="js/index.js"></script>
+  </head>
+  <body>
+    <ul class="fruits">
+      <li>Fresa</li>
+      <li>Plátano</li>
+      <li>Kiwi</li>
+    </ul>
+  </body>
+</html>
+```
+Vamos a por el JavaScript.
+
+```javascript
+var fruits = document.querySelectorAll('.fruits li');
+for (var i = 0; i < fruits.length; i++) {
+  fruits[i].addEventListener('click', showAlertWithFruit);
+}
+
+```
+
+Empezamos accediendo a los elementos mediante `querySelectorAll` que los almacena en un array. Luego usamos un bucle para recorrer el array e ir aplicando a cada elemento el `addEventListener` para que al hacer click se ejecute la función `showAlertWithFruit`. Ahora vamos a ver la función.
+
+```javascript
+function showAlertWithFruit(event){
+  alert(event.currentTarget.innerHTML);
+}
+
+```
+En la función declaramos el parámetro `event` que sabemos que el navegador nos enviará cuando ejecute la función. Desde el evento accedemos al elemento sobre el que ha sucedido el evento mediante `event.currentTarget` y, en este caso, accedemos a contenido de ese elemento con `innerHTML` (recordad que esta propiedad nos servía para meter contenido en un elemento pero también para consultarlo).
 
 
-- Hablar del parámetro event, event.target
+* * *
 
-- De-registrar un escuchador
+EJERCICIO:
 
-- Cómo se hacía antes y está deprecado
+Crear una página HTML con formulario con un select que tiens un listado de colores. Al cambiar el contenido del select, aparece una ventana de alerta donde aparece el texto 'Me gusta el <color>' con el color seleccionado. Podemos acceder al índice de la opción seleccionada de un select mediante la propiedad `selectedIndex` y al listado de opciones (array) podemos acceder mediante la propiedad `options`.
 
-- Algunos eventos más y referencia a MDN
+* * *
 
+EJERCICIO:
 
-## Como eliminar una escucha a un evento
+Crear una página vacía que al pulsar la tecla 'r' se ponga el fondo rojo y al pulsar la 'a' ponga el fondo de la web azul. Vamos a ecuchar evento de teclado (directamente sobre el elemento `document`). En el objeto evento podemos [consultar la propiedad `key`](https://mdn.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code) para saber qué tecla se ha pulsado.
 
-- removeEventListener
+* * *
 
-## Eventos que ver durante la sesión
+EJERCICIO:
 
-## on click
+Vamos a partir de un HTML con un botón 'Empezar'. Al hacer click, vamos a pintar en el HTML un listado de películas que tenemos en JavaScript:
+```javascript
+var movies = [
+  'Inception',
+  'The butterfly effect',
+  'Eternal sunshine of the spotless mind',
+  'Blue velvet',
+  'Split'];
+```
+Después vamos a escuchar eventos sobre cada elemento de la lista, de forma que al hacer click sobre el nombre de una peli aparezca una alerta con el nombre de esa película.
 
-- Por qué no usar onclick y on change, deprecado
-- Como saber donde has pulsado ?
+* * *
 
-## on change
+Cuando accedemos a un elemento mediante `currentTarget` muchas veces nos interesa que ese elemento tenga cierta información para realcionarlo con la estructura de datos de nuestra página. Esta información la podemos almacenar en un elemento mediante los atributos `data-`. Por ejemplo, podemos añadir a un elemento el atributo `data-id="0"` para relacionarlo con el elemento 0 de un array. Al elemento relacionado con el segundo elemento, le podemos poner un atributo `data-id="a"` y así sucesivamente.
 
-- Por qué no usar onclick y on change, deprecado
+Vamos a ver un ejemplo. Partimos del ejemplo anterior de la fruta usando atributos `data-`:
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Click en varios elementos</title>
+    <script type="text/javascript" src="js/index.js"></script>
+  </head>
+  <body>
+    <ul class="fruits">
+      <li data-id="0">Fresa</li>
+      <li data-id="1">Plátano</li>
+      <li data-id="2">Kiwi</li>
+    </ul>
+  </body>
+</html>
+```
+En nuestro JavaScript tenemos un array con el listado de precios de las frutas, de forma que el primero corresponde a la fresa, el segundo al plátano y el tercero al kiwi.
+```javascript
+var prices = [10, 2, 5];
 
+function showAlertWithFruit(event){
+  var id = event.currentTarget.getAttribute('data-id');
+  alert(event.currentTarget.innerHTML + ' a ' + prices[id]);
+}
 
-- on scroll
-- on submit ?
-- on resize ?
-- on keypress ?
-- on blur?
-- on focus?
+```
+Desde la función de callback accedemos al elemento mediante `currentTarget` y consultamos el valor de su atributo `data-id`. Luego usamos ese id para indexar el array de precios para mostrar en la alerta el precio de la fruta.
 
-- En el futuro se utilizará pointerup y pointerdown
+* * *
 
+EJERCICIO:
 
+Partimos del ejercicio anterior de las películas. Ahora tenemos un array de películas con más información de cada una en un objeto. Vamos a modificar el código para mostrar título, director y año de la película.
+```javascript
+var movies = [
+  {title: 'Inception', director: 'Christopher Nolan', year: 2010},
+  {title: 'The butterfly effect', director: 'Eric Bress, J. Mackye Gruber', year: 2004},
+  {title: 'Eternal sunshine of the spotless mind', director: 'Michel Gondry', year: 2004},
+  title:'Blue velvet', director: 'David Lynch', year: 1986,
+  title:'Split', director: 'M. Night Shyamalan', year: 2016];
+```
+
+* * *
+
+## Dejando de escuchar eventos
+
+Puede llegar un punto en que queramos dejar de escuchar eventos sobre un elemento. Para eso usaremos la función `removeEventListener` pasándole los mismo parámetros que al registrarlo. Para poder hacer esto no podremos haber usado una función anónima porque será imposible de volver a referenciar.
+
+```javascript
+var button = document.querySelector('.alert');
+button.removeEventListener('click', showAlert);
+```
 
 ## Recursos externos
 
-### {{resource.name}}
-
-{{resource.description}}
-
-- [{{resource.link_name}}]({{resource.url}})
-
-
-## Resumen de la sesión
-
-{{summary_info}}
-
-
-## Ejercicios
-
-### {{exercise.name}}
-
-{{exercise.info}}
-
-- [{{exercise.link_name}}]({{exercise.url}})
-
-
-[What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+- [What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
