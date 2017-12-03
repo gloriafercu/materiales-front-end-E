@@ -190,7 +190,7 @@ function showAlertWithFruit(event){
 }
 
 ```
-Aquí podéis jugar con el ejemplo en codepen](https://codepen.io/adalab/pen/QOYOKy?editors=1010).
+[Aquí podéis jugar con el ejemplo en codepen](https://codepen.io/adalab/pen/QOYOKy?editors=1010).
 
 En la función declaramos el parámetro `event` que sabemos que el navegador nos enviará cuando ejecute la función. Desde el evento accedemos al elemento sobre el que ha sucedido el evento mediante `event.currentTarget` y, en este caso, accedemos a contenido de ese elemento con `innerHTML` (recordad que esta propiedad nos servía para meter contenido en un elemento pero también para consultarlo).
 
