@@ -10,20 +10,14 @@
 - Media queries y el &.
 - Estructura de un proyecto SASS típico y como dividir archivos usando `@import`
 
-
 ## Introducción
+Con CSS podemos personalizar al pixel el aspecto de nuestra página y como hemos visto tiene una serie de reglas y de formas de hacer todo esto. Sin embargo el sector ha ido madurando y nos encontramos con que necesitaríamos poder trabajar con las hojas de estilos de una manera más ágil, permitiendo el uso de variables, pudiendo dividir los archivos en bloques más pequeños, pudiendo crear bloques de estilos que se repitan o incluso pequeñas funciones simples. Esto es posible con los preprocesadores CSS.
 
-{{intro_info}}
-
-
-## ¿Para qué sirve lo que vamos a ver en esta sesión?
-
-{{purpose_info}}
+## ¿Qué es un preprocesador CSS?
+Coge un código escrito en un lenguaje parecido al css pero
 
 
-## ¿En qué casos se utiliza?
 
-{{usecase_info}}
 
 
 ## Contenido
@@ -76,6 +70,15 @@
 
 {{summary_info}}
 
+
+## ¿Para qué sirve lo que vamos a ver en esta sesión?
+
+{{purpose_info}}
+
+
+## ¿En qué casos se utiliza?
+
+{{usecase_info}}
 
 ## Ejercicios
 
