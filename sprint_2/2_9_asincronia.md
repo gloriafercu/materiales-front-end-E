@@ -33,7 +33,7 @@ JavaScript permite realizar tareas de forma asíncrona y concurrente, esto quier
 
 Si mantenemos el caso anterior, en el caso de JavaScript se hará lo siguiente. Se ejecutará el paso 1 para mostrar un mensaje en la pantalla, se realizará luego el paso 2, que hará una petición al servidor y aquí es donde recae la diferencia. Como hemos dicho antes, en JavaScript no puede quedarse una orden esperando hasta que se ejecute la actual cuando se trata de tareas de larga duración. Para resolver esto, el navegador delega algunas tareas en otros procesos y mientras continúa con las siguientes. Así que se ejecutarán el resto de tareas hasta que llegue la petición del servidor, cuando se ejecutará el código con el resultado.
 
-En los videos que enlazamos a continuación, se explica de forma más detallada qué es la asincronía y cómo funciona esta en JavaScript.
+En los videos que enlazamos a continuación, se explica de forma más detallada qué es la asincronía y cómo funciona ésta en JavaScript.
 
 - [Asincronía en JavaScript - Parte 1 - Sincronía y Concurrencia](https://www.youtube.com/watch?v=PndHsDpEfhU)
 - [Asincronía en JavaScript - Parte 2 - Event loop](https://www.youtube.com/watch?v=rgmej4Jx43WM)
@@ -41,29 +41,29 @@ En los videos que enlazamos a continuación, se explica de forma más detallada 
 * * *
 Ejercicio:
 
-Usando la herramienta [loupe](http://latentflip.com/loupe/?code=!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D) que se utiliza en el video
-
-Realizar en JavaScript las siguientes tareas para ver en qué orden se reproducen:
+Usando la herramienta [loupe](http://latentflip.com/loupe/?code=!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D) que se utiliza en el video (no hace falta del el video). Realizar en JavaScript las siguientes tareas para ver en qué orden se reproducen:
 
 TAREAS A
 
 1. Crear una función `funA` que contenga un `console.log('hola')`
 2. Crear otra función `funB` que ejecute `funA`
-3. Ejecutar la función `funA`
+3. Ejecutar la función `funB`
 
 TAREAS B
 
 1. En un if comprobar si "Hello" y "hello" son iguales
-2. Si lo son, ejecutar un console.log que diga "lo son"
-3. Si no lo son, ejecutar un console.log que diga "no lo son"
+2. Si lo son, ejecutar un `console.log` que diga "lo son"
+3. Si no lo son, ejecutar un `console.log` que diga "no lo son"
 
 TAREAS C
 
-1. Crear una función `pulsado()` que guarde en una variable "pulsado" y luego muestre esa variable con un `console.log`
-2. Crear un botón que realice un `console.log` al pulsar un botón (podemos editar el HTML en el panel inferior izquierdo)
-3. Añadir un console.log al final que muestre "empezamos"
+1. Crear una función `pulsado()` que guarde en una variable el texto "pulsado" y luego muestre esa variable con un `console.log`
+2. Crear un botón que llame a la función anterior. Podemos editar el HTML en el panel inferior izquierdo. Usaremos una sitaxis propia del programa en lugar de `addEventListener`:
+`$.on("button", "click", pulsado);`
 
-¿Sabrías explicar por qué se ejecutan en ese orden? En caso de no ser así consulta y debate con el resto de tus compañeras
+3. Añadir un `console.log` al final que muestre el texto "empezamos"
+
+¿Sabrías explicar por qué se ejecutan en ese orden? En caso de no ser así consulta y debate con el resto de tus compañeras.
 
 * * *
 
@@ -83,23 +83,55 @@ Otros ejemplos de uso podrían ser cerrar la sesión de una web transcurridos X 
 
 En JavaScript podemos crear código para que se ejecute cada determinado tiempo, para ello utilizamos `setInterval()`.
 
+Esta función recibe 2 parámetro:
+- la función a ejecutar cada cierto tiempo (sin paréntesis como hacíamos en el addEventListener)
+- el tiempo en milisegundos
+
+Vamos a ver un ejemplo: un contendor que se incrementa cada segundo y se muestra en pantalla.
+
+```html
+<p class="time">0</p>
+```
+En el HTML tenemos un párrafo con la clase `time`.
+
+```javascript
+var counter = 0;
+
+function incrementAndShowCounter(){
+  counter++;
+  var time = document.querySelector('.time');
+  time.innerHTML = counter;
+}
+
+setInterval(incrementAndShowCounter, 1000);
+```
+
+En JavaScript definimos una variable global que será nuestro contador. También una función que incrementa el contedor y lo muestra en el HTML, que será la que ejecutemos cada cierto tiempo. Finalmente ejecutamos la llamada a `setInterval` pasando como primer parámetro la función y luego 1000 para indicar que se ejecute cada segundo.
+
+Podéis [jugar con el código de este ejemplo en Codepen](https://codepen.io/adalab/pen/POLdmN?editors=1010#0).
+
 Para obtener más información acerca de `setInterval`, consultaremos la documentación de MDN:
 
 - [Documentación de setInterval en MDN](https://developer.mozilla.org/es/docs/Web/API/WindowTimers/setInterval)
 
 * * *
+EJERCICIO
 
-Realizar un temporizador que empiece en 1 y cada segundo se incremente.
+Realizar un temporizador que empiece en 0 y cada 2 segundos se incremente.
 
 * * *
+EJERCICIO
 
-Todos sabemos lo que pasó en Canal Sur hace unos años, en mitad de las campanadas pusieron anuncios y aguaron la noche a millones de personas. Para estar preparados, vamos a crear un contador de uvas, Este contador empezará en 0 y cada segundo incrementará en 1, así hasta 12, en ese momento terminará la cuenta y se dejará de contar más.
+Todos sabemos lo que pasó en Canal Sur hace unos años, en mitad de las campanadas pusieron anuncios y aguaron la noche a millones de personas. Para estar preparados, vamos a crear un contador de uvas. Este contador empezará en 0 y cada segundo incrementará en 1, así hasta 12, en ese momento terminará la cuenta y se dejará de contar más.
 
 La cuenta se mostrará en la pantalla con números y si lo deseas puedes añadir una imagen de una uva cada vez que pase un segundo.
 
-* * *
+> PISTA: la función se puede seguir ejecutando con setInterval pero para que se pare en 12 basta con dejar de pintar en el HTML en el momento adecuado.
 
-Vamos a realizar el típico mensaje que aparece en los posts con el texto: "escrito hace 30 segundos", la idea es que al principio empiece en "escrito hace 1 segundo" y cuando lleve más de 59 segundos ponga "escrito hace 1 min".
+* * *
+EJERCICIO
+
+Vamos a realizar el típico mensaje que aparece en un blog con la información de hace cuanto se escribió un post. Por ejemplo, con el texto: "escrito hace 30 segundos". Al principio escribiremos en pantalla "escrito hace 1 segundo" e iremos aumentando el número de segundos. Cuando lleve más de 59 segundos queremos que ponga "escrito hace 1 min".
 
 * * *
 
@@ -108,37 +140,74 @@ Vamos a realizar el típico mensaje que aparece en los posts con el texto: "escr
 
 El método `setTimeout()` es muy similar a `setInterval()` pero a diferencia de este solo ejecuta una vez la función que le pasemos. Sirve entonces para retrasar determinados milisegundos una operación.
 
+Por ejemplo, vamos a crear un texto de aviso de que algo se ha guardado correctamente. Este mensaje se borrará pasados 3 segundos.
+
+```html
+<p class="msg">Se ha guardado correctamente</p>
+```
+En HTML sólo tenemos un párrafo con el mensaje de confirmación y la clase `msg`.
+
+```javascript
+function removeMsg(){
+  var msg = document.querySelector('.msg');
+  msg.innerHTML = '';
+}
+
+setTimeout(removeMsg, 3000);
+```
+
+En JavaScript definimos la función que elimina el mensaje de la pantalla. Luego llamamos a `setTimeout` para que ejecute esa función pasados 3 segundos.
+
+Podéis [jugar con este ejemplo el Codepen](https://codepen.io/adalab/pen/EbMeOM).
+
 Para obtener más información acerca de `setTimeout()`, consultaremos la documentación de MDN:
 
 - [Documentación de setTimeout en MDN](https://developer.mozilla.org/es/docs/Web/API/WindowTimers/setTimeout)
 
 * * *
+EJERCICIO
 
-EJERCICIO:
-
-Con JavaScript, crear un código para mostrar una ventana en nuestro navegador una vez transcurridos 15 segundos que ponga "su sesión ha expirado" (creada usando HTML y CSS)
-
-* * *
-
-EJERCICIO:
-
-Crear un HTML que muestre un mensaje y, usando JavaScript, borrar el mensaje pasados 10 segundos .
+Con JavaScript, crear un código para mostrar una ventana en nuestro navegador una vez transcurridos 15 segundos que ponga "su sesión ha expirado" (creada usando HTML y CSS).
 
 * * *
 
 
 ### Cancelar eventos de setInterval y setTimeout
 
-En algunas ocasiones querremos dejar de realizar una tarea que hemos configurado con setInterval para que se realice cada determinado tiempo o cancelar una tarea programada con setTimeout, para ello utilizaremos los métodos `clearTimeout` y `clearInterval`:
+En algunas ocasiones querremos dejar de realizar una tarea que hemos configurado con `setInterval` para que se realice cada determinado tiempo o cancelar una tarea programada con `setTimeout`. Para ello utilizaremos los métodos `clearTimeout` y `clearInterval`.
 
+Vamos a partir del ejemplo anterior del contedor que se actualizaba cada segundo. Queremos que a los 10 segundos se pare, eliminando la ejecución de la función con setInterval.
+
+```javascript
+
+var counter = 0;
+
+function incrementAndShowCounter(){
+  counter++;
+  var time = document.querySelector('.time');
+  time.innerHTML = counter;
+  if(counter === 10){
+    clearInterval(temp);
+  }
+}
+
+var temp = setInterval(incrementAndShowCounter, 1000);
+```
+Hemos hecho sólo un par de cambios en JavaScript. En primer lugar hemos guardado el identificador del temporizador en una variable `temp` para que luego sea accesible desde la función. El segundo cambio es que ahora en la función hacemos una comprobación y si el contador llega a 10 ejecutamos el `clearInterval` y la función deja de ejecutarse cada segundo.
+
+Podéis [jugar con este ejemplo el Codepen](https://codepen.io/adalab/pen/ooVPOg).
+
+Para obtener más información:
 - [clearInterval](https://www.w3schools.com/jsref/met_win_clearinterval.asp)
 - [clearTimeout](https://www.w3schools.com/jsref/met_win_cleartimeout.asp)
 
 * * *
+EJERCICIO
 
 Crear un cronómetro que vaya aumentando en segundos y cuando se pulse el botón de parar deje de aumentar. Cuando pulsemos el de continuar, vuelva a empezar de nuevo.
 
 * * *
+EJERCICIO
 
 Crear una página con un botón que transcurridos 10 segundos te pregunte: "¿te has dormido?". Si pulsas en el botón la cuenta volverá a cero y otra vez, si transcurren 10 segundos sin pulsar volverá a preguntar de nuevo "¿te has dormido?"
 
