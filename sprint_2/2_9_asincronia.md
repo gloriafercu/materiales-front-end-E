@@ -58,7 +58,7 @@ TAREAS B
 TAREAS C
 
 1. Crear una función `pulsado()` que guarde en una variable el texto "pulsado" y luego muestre esa variable con un `console.log`
-2. Crear un botón que llame a la función anterior. Podemos editar el HTML en el panel inferior izquierdo. Usaremos una sitaxis propia del programa en lugar de `addEventListener`:
+2. Crear un botón que llame a la función anterior. Podemos editar el HTML en el panel inferior izquierdo. Usaremos una sintaxis propia del programa en lugar de `addEventListener`:
 `$.on("button", "click", pulsado);`
 
 3. Añadir un `console.log` al final que muestre el texto "empezamos"
@@ -87,7 +87,7 @@ Esta función recibe 2 parámetro:
 - la función a ejecutar cada cierto tiempo (sin paréntesis como hacíamos en el addEventListener)
 - el tiempo en milisegundos
 
-Vamos a ver un ejemplo: un contendor que se incrementa cada segundo y se muestra en pantalla.
+Vamos a ver un ejemplo: un contador que se incrementa cada segundo y se muestra en pantalla.
 
 ```html
 <p class="time">0</p>
@@ -106,7 +106,7 @@ function incrementAndShowCounter(){
 setInterval(incrementAndShowCounter, 1000);
 ```
 
-En JavaScript definimos una variable global que será nuestro contador. También una función que incrementa el contedor y lo muestra en el HTML, que será la que ejecutemos cada cierto tiempo. Finalmente ejecutamos la llamada a `setInterval` pasando como primer parámetro la función y luego 1000 para indicar que se ejecute cada segundo.
+En JavaScript definimos una variable global que será nuestro contador. También una función que incrementa el contador y lo muestra en el HTML, que será la que ejecutemos cada cierto tiempo. Finalmente ejecutamos la llamada a `setInterval` pasando como primer parámetro la función y luego 1000 para indicar que se ejecute cada segundo.
 
 Podéis [jugar con el código de este ejemplo en Codepen](https://codepen.io/adalab/pen/POLdmN?editors=1010#0).
 
@@ -176,7 +176,7 @@ Con JavaScript, crear un código para mostrar una ventana en nuestro navegador u
 
 En algunas ocasiones querremos dejar de realizar una tarea que hemos configurado con `setInterval` para que se realice cada determinado tiempo o cancelar una tarea programada con `setTimeout`. Para ello utilizaremos los métodos `clearTimeout` y `clearInterval`.
 
-Vamos a partir del ejemplo anterior del contedor que se actualizaba cada segundo. Queremos que a los 10 segundos se pare, eliminando la ejecución de la función con setInterval.
+Vamos a partir del ejemplo anterior del contador que se actualizaba cada segundo. Queremos que a los 10 segundos se pare, eliminando la ejecución de la función con setInterval.
 
 ```javascript
 
