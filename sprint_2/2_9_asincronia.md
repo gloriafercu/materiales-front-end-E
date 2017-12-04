@@ -41,7 +41,7 @@ En los videos que enlazamos a continuación, se explica de forma más detallada 
 * * *
 Ejercicio:
 
-Usando la herramienta [loupe](http://latentflip.com/loupe/?code=!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D) que se utiliza en el video, realizar en JavaScript las siguientes tareas para ver en qué orden se reproducen:
+Usando la herramienta [loupe](http://latentflip.com/loupe/?code=!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D) que se utiliza en el video (ver el vídeo), realizar en JavaScript las siguientes tareas para ver en qué orden se reproducen:
 
 TAREAS A
 
