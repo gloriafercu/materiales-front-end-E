@@ -29,7 +29,7 @@ Algunas pistas para esta tercera parte:
 
 - primero haced funcionar un combo para una única línea
 - investigad cómo funciona el evento `change` de los elementos tipo `select` ([documetación de MDN](https://developer.mozilla.org/en-US/docs/Web/Events/change))
-- desde el objeto `event` de la función de callback, podemos acceder al `select` que ha provocado el evento mediante `event.target`; incluso al índice (como en un array) de la opción seleccionada con `event.target.selectedIndex`
+- desde el objeto `event` de la función de callback, podemos acceder al `select` que ha provocado el evento mediante `event.currentTarget`; incluso al índice (como en un array) de la opción seleccionada con `event.currentTarget.selectedIndex`
 
 #### ¡A por ello!
 
