@@ -14,9 +14,25 @@
 Con CSS podemos personalizar al pixel el aspecto de nuestra página y como hemos visto tiene una serie de reglas y de formas de hacer todo esto. Sin embargo el sector ha ido madurando y nos encontramos con que necesitaríamos poder trabajar con las hojas de estilos de una manera más ágil, permitiendo el uso de variables, pudiendo dividir los archivos en bloques más pequeños, pudiendo crear bloques de estilos que se repitan o incluso pequeñas funciones simples. Esto es posible con los preprocesadores CSS.
 
 ## ¿Qué es un preprocesador CSS?
-Coge un código escrito en un lenguaje parecido al css pero
+Un preprocesador CSS es un lenguaje parecido al CSS pero que nos permite tener acceso a funcionalidades que no tiene el css y, tras el procesado, generar un CSS válido.
+
+De esta manera ya no trabajaremos directamente el css sino con este preprocesador que, automáticamente, generará nuestros CSS finales.
+
+Actualmente hay varios preprocesadores, realmente lo que los diferencia son las sintaxis de cada uno pero vienen a hacer un poco lo mismo. Los preprocesadores CSS más famosos son:
+
+* [SASS (el que vamos a ver en Adalab)](http://sass-lang.com)
+* [LESS](http://lesscss.org)
+* [Stylus](http://learnboost.github.io/stylus/)
+
+Nosotros vamos a usar SASS, concretamente SCSS, que es la sintaxis nueva :)
+
+## Vale, ¿y esto cómo funciona?
+Pues esto se instala y se ejecuta por terminal, pero para no sufrir vamos a empezar usando una aplicación que se va a encargar de procesar nuestro archivo de SCSS y a generar los CSS correspondientes.
+
+Luego, `live server`, se ocupará de recargar el navegador cuando el css haya sido generado.
 
 
+- Básico: variables e imports.
 
 
 
