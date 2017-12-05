@@ -36,7 +36,7 @@ Si mantenemos el caso anterior, en el caso de JavaScript se hará lo siguiente. 
 En los videos que enlazamos a continuación, se explica de forma más detallada qué es la asincronía y cómo funciona ésta en JavaScript.
 
 - [Asincronía en JavaScript - Parte 1 - Sincronía y Concurrencia](https://www.youtube.com/watch?v=PndHsDpEfhU)
-- [Asincronía en JavaScript - Parte 2 - Event loop](https://www.youtube.com/watch?v=rgmej4Jx43WM)
+- [Asincronía en JavaScript - Parte 2 - Event loop](https://www.youtube.com/watch?v=rgmej4Jx4WM)
 
 * * *
 Ejercicio:
