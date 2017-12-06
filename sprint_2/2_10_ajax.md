@@ -11,7 +11,7 @@
 
 ## Introducción
 
-En esta sesión vamos a aprender a utilizar AJAX que es el puente entre el cliente (navegador) y el servidor, entre el front-end y el back-end de nuestra aplicación. Las peticiones AJAX nos permiten acceder a datos y realizar acciones de negocio, que se ejecutan en el servidor pero se inician en el front-end.
+En esta sesión vamos a aprender a utilizar AJAX que es el puente entre el cliente (navegador) y el servidor, entre el front-end y el back-end de nuestra aplicación. Las peticiones AJAX nos permiten acceder y manipular datos en el servidor, pero iniciando el proceso en el front-end.
 
 AJAX viene de Asynchronous JavaScript And XML porque cuando se creó servía para hacer peticiones al servidor desde JS y normalmente el formato de datos que nos devolvía era XML (una forma de escribir los datos para poder enviarlos). Pero actualemente no es así y AJAX ahora utiliza otros tipos de datos, desde texto hasta JSON que veremos más adelante. Pero el hecho de que sea *asíncrono* sí es importante. Aunque sea una palabra que asusta, asíncrono simplemente significa trabajar con eventos (como hemos visto en las sesiones anteriores), es decir, que cuando sucede un evento se ejecuta una función. Se llama asíncrono porque nosotros no ejecutamos el código de forma síncrona (una instrucción detrás de otra) sino que el código se ejecuta cuando sucede un evento.
 
@@ -112,6 +112,7 @@ EJERCICIO 2
 Sigamos jugando un poco con el [Dog API](https://dog.ceo/dog-api/):
 
 a) Vamos a modificar el ejemplo anterior para que las fotos de nuestra página salgan sólo perros de la raza *Chihuahua*.
+
 b) Vamos a encapsular toda la lógica para crear una petición en una función. Añadimos un botón a la página con el título 'Enséñame otro Chihuahua' de forma que al pulsarlo se haga otra petición al servidor de una imagen aleatoria y aparezca una nueva imagen de Chihuaua.
 
 ***
