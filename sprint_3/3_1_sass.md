@@ -124,80 +124,243 @@ a {
 ```
 De esta manera tenemos un poco lo mejor de dos mundos.
 
-### Nesting o anidado
+### Nesting o anidado, y el símbolo &
+Una maravilla que nos permite hacer SASS es anidar nuestros estilos.
 
-### El símbolo &
+Si queremos indicar que todos los `<p>` dentro de un elemento `.content` van a ser de color azul y si llevan enlace, este, se motrará en rojos, podemos escribir:  
+```scss
+.content {
+	p {
+		color: blue;
+		a {
+			color: red;
+		}
+	}
+}
+```
+Esto nos generará el siguiente CSS:  
+```css
+.content p {color:blue;}
+.content p a {color:red;}
+```
+El anidado nos permite anidar bloques asimilandose un poco a la jerarquía visual de HTML. Esto nos permite ver algunos bloques más claros o agrupar clases que nos interese ver juntas, pero cuidado, anidar genera estilos más específicos y hay que usarlo con mucho cuidado. Con el uso iremos viendo cuándo usarlo y cuándo no ;)
+
+#### Referenciando al selector padre o madre: &
+Pero no todo es tener cuidado, una de las ventajas que nos ofrece el anidado es poder referenciar al selector padre o madre. Por jemplo: Queremos que los enlaces de nuestra página sean rojos, y el hover en azul, pero los enlaces del footer deben ser naranjas con el hover en verde:
+```scss
+a {
+	color: red;
+	&:hover {
+		color: blue;
+	}
+	.footer & {
+		color: orange;
+		&:hover {
+			color: green;
+		}
+	}
+}
+```
+Esto generaría el siguiente CSS  
+```css
+a {color: red;}
+a:hover {color: blue;}
+.footer a {color: orange;}
+.footer a:hover {color: green;}
+```
+En este [codepen](https://codepen.io/adalab/pen/JOqQGG) podeis verlo funcionando.
+
 ### Mediaqueries
+Esta posibilidad de anidar selectores nos permite una flexibilidad extra ya que hasta ahora solo podíamos meter selectores completos dentro de nuestras Mediaqueries pero con SASS podemos incluir mediaqueries en nuestros selectores y hacer cosas como:
+```SCSS
+.wrapper {
+	margin: 0 25px;
+	@media all and (min-width:768px) {
+		margin: 0 40px;
+	}
+	@media all and (min-width:1280px) {
+		margin: 0 auto;
+		max-widh: 1200px;
+	}
+}
+```
+y que generaría el siguiente CSS:  
+```css
+.wrapper {
+	margin: 0 25px;
+}
+@media all and (min-width:768px) {
+	.wrapper {
+		margin: 0 40px;
+	}
+}
+@media all and (min-width:1280px) {
+	.wrapper {
+		margin: 0 auto;
+		max-width: 1200px;
+	}
+}
+
+```
+
+
 ### imports y cómo organizar nuestro proyecto
+Bueno, ¿qué más podemos hacer con SASS? Importar archivos. Esto es otra ventaja importante ya que nos permite modularizar nuestros estilos y trabajar en pequeños parciales que luego se unirán en el archivo final. Esto es gracias al `@import`.
+
+Espera, CSS ya tiene un sistema de ´@import´ que todas sabemos que se colocan al principio del archivo css, ¿No? Pues sí, pero el ´@import´ de SASS lo puedes poner donde quieras del documento lo que nos permite plantear una estructura de componentes para levar un orden en nuestros desarrollos. Hay muchas maneras de plantearlo así que os vamos a proponer una:
+```
+scss
+  |- core
+  |  |- _functions.scss
+  |  |- _mixins.scss
+  |  `- _variables.scss
+  |
+  |- components
+  |  |- _buttons.scss
+  |  |- _forms.scss
+  |  |- _hero.scss
+  |  |- _newsletter.scss
+  |  `- _typography.scss
+  |
+  |- layout
+  |  |- _header.scss
+  |  |- _footer.scss
+  |  |- _grid.scss
+  |
+  `- pages
+     |- _about-us.scss
+     |- _contact.scss
+     `- _home.scss
+```
+Tendríamos cuatro bloques de archivos: los de **settings** como son las variables y nuestros mixins y funciones, el bloque principal de **layout** con la estructura del site y los componentes principales como header y footer, los diferentes **componentes** como puede ser un boque de noticias, el formulario de contacto o los botones, y por último el bloque de **páginas** donde tendríamos los ajustes particulares de cada página.
+
+En nuesto `main.scss` llamaríamos a todos estos archivos en orden:
+```scss
+// Core
+@import 'core/functions';
+@import 'core/mixins';
+@import 'core/variables';
+
+// Layout
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/grid';
+
+// Components
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/hero';
+@import 'components/newsletter';
+@import 'components/typography';
+
+// Pages
+@import 'pages/about-us';
+@import 'pages/contact';
+@import 'pages/home';
+```
+
+> **NOTA 1:**  
+> Si ponemos un archivo con un guión bajo delante Sass no lo procesará para convertirlo a CSS. La idea es que todos los nombres de archivos que vayamos a importar los escribamos con un guión bajo delante. Estos archivos a menudo se suelen llamar `parciales`, porque son partes del código final.
+
+> **NOTA 2:**  
+> Es importante saber que el orden de los imports es importante y que tal como se carguen será como se importen y como se ejecuten para convertirse a CSS
+
+Una ventaja directa de trabajar con parciales es la cantidad de conflictos de git que nos vamos a ahorrar ;)
+***
+EJERCICIO 2:  
+Vamos a crearnos un proyecto con nuestra estructura de imports de SASS. Recordad que iremos haciendo parciales conforme los vayamos necesitando y que en cada carpeta estarán solo los que necesitemos.
+Para el ejercicio querremos:
+- Un header de 75 de alto en móvil, 100 en tablet(768) y 110 en desktop(1280)
+- Una home con 2 bloques:
+	- Una sección principal que ocupe la mitad del alto de la pantalla con un texto en el centro
+	- Una sección con un título y un botón rojo, con bordes de 5px de radio y 45px de altura
+> Por ejemplo: En la carpeta `core` siempre tendremos nuestras variables pero si no tenemos mixins o funciones pues no tendremos esos parciales.
+***
 ### Mixins y funciones
+Vale, ¿qué es esto de mixins y funciones? Lo mejor!
 
+#### Mixins
+Los **mixins** son bloques de código que vamos a querer reutilizar y/o personalizar, por ejemplo:
+```scss
+@mixin absoluteCentered() {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
 
+.container {
+	position: relative;
+}
+.content {
+	@include absoluteCentered();
+}
+```
+y esto generaría:
+```css
+.container {
+	position: relative;
+}
+.content {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+```
 
+o algo "personalizable" tipo:
+```scss
+@mixin t($fontSize, $lineHeight) {
+	font-size: $fontSize;
+	line-height: $lineHeight;
+}
+.main__title {
+	@include t(32px, 40px);
+}
+.main__content p{
+	@include t(18px, 24px);
+}
+```
+que generaría el siguiente CSS:
+```css
+.main__title {
+	font-size: 32px;
+	line-height: 40px;
+}
+.main__content p{
+	font-size: 18px;
+	line-height: 24px;
+}
+```
+#### Funciones
+SASS viene con un un [juego de funciones](http://sass-lang.com/documentation/Sass/Script/Functions.html) y además podemos crear las nuestras propias.
+Por ejemplo, vamos a crear una función para poder escribir nuestos `line-height` en porcentajes sabiendo las medidas en pixels de `line-height` y `font-size`, Supongamos que tenemos un párrafo con la fuente a 18px y 24px de alto de línea:
+```scss
+@function lh($lineHeight, $fontSize) {
+  @return ($lineHeight * 100% / $fontSize);
+}
+p {
+	font-size: 18px;
+	line-height: lh(24, 18);
+}
+```
+y generará:
+```css
+p {
+	font-size: 18px;
+	line-height: 133.33%
+}
+```
 
-## Contenido
+## BONUS: Autoprefixer
+Para entender **Autoprefixer**, primero tenemos que entender que son los vendor-prefixers, son prefijos que utilizan los navegadores en propiedades experimentales o que no son estándar. Esto lo hacen para permitir a los desarrolladores probar funcionalidades de CSS antes de que se estandaricen. El caso es que al final un montón de navegadores antiguos necesitan estos prefijos en las propiedades para que estas funcionen correctamente.
 
-## ¿Qué es Sass?
+Pero, escribir todos los prefijos es un un trabajo muy tedioso y estar pendiente de cuál necesitamos para cada navegador sería muy agotador. Por suerte tenemos **Autoprefixer** que hace este trabajo por nosotros y nos permite que nos olvidemos de ese problema pudiendo especificar cuántos navegadores o versiones de navegador queremos que controle y, una vez que se genere nuestro CSS, colocará los prefijos necesarios en cada caso.
 
-- Sass es un CSS vitaminado, ¿y qué significa que está vitaminado? que tendremos herramientas avanzadas para trabajar en CSS como variables (`$light-green` en vez de `#62BA35`), funciones como `darken` o `percentage`, importar otros archivos Sass para unificarlos todos en uno (mejor carga, más fácil de enlazar, etc).
+> Por dejar claro, autoprefixer sería un post-procesador. Como hemos visto, Sass lo que hace es convertir un código con una sintaxis a CSS. Autoprefixer, en cambio, parte de un código CSS y lo postprocesa para convertirlo en un CSS con una serie de propiedades añadidas
 
-## ¿Cómo funciona Sass?
-
-- ¿Pero cómo funciona esto? Creamos un archivo Sass, ejecutamos un programa o un código que nos lo convierta a CSS y ese CSS generado será el que utilicemos.
-- Hay mil formas de convertir Sass a CSS, usando un comando del terminal, código escrito en JavaScript, plugins de nuestro editor...En nuestro caso usaremos una aplicación llamada Koala para que lo haga por nosotros cada vez que guardemos el archivo.
-- ¿Y podemos meter sass directamente en nuestras páginas? En realidad no, lo que haremos será crear código con Sass para convertirlo a CSS y ese CSS generado será el que enlacemos en nuestra página.
-- Hoy en día, en muchas de las empresas punteras, no se usa CSS sino que se suele usar herramientas como Sass ya que facilita mucho el trabajo con el código.
-- ¿Qué tenemos que hacer para empezar a trabajar con Sass? Muy simple, cambiar la extensión del archivo de `.css` a `.scss` y ya sería un archivo Sass. A partir de ahí, podemos ir metiendo variable de forma gradual.
-- En esta clase vamos a ver dos utilidades de Sass, variables e imports y cómo usar ambas para estructurar nuestro código:
-  - Variables en Sass
-      - Iguales que en JavaScript, se escriben siempre precedidas por un símbolo de dolar `$` y se asignan mediante dos puntos.
-      - Son muy útiles para colores, medidas, nombres de fuentes, etc. Importante pensar en abstracción (`$primary-color` en vez de `$blue`)
-      - Crearemos
-  - Imports
-      - Como su nombre indica, permiten importar variables desde otro archivo. se usan con `@import` y la ruta del archivo CSS o Sass que queramos importar (se pueden importar ambos)
-      - Si ponemos un archivo con un guión bajo delante Sass no lo procesará para convertirlo a CSS. La idea es que todos los nombres de archivos que vayamos a importar los escribamos con un guión bajo delante. Estos archivos a menudo se suelen llamar _partials_. Porque son partes del código final.
-      - Es importante saber que el orden de los imports es importante y que tal como se carguen será como se importen y como se ejecuten para convertirse a CSS
-  - Reglas anidadas
-  - Estructura
-      - Dividimos en:
-          - configuración
-          - estilos generales
-          - tipografía
-          - componentes
-              - boton
-              - media
-          - layouts
-              - header
-              - footer
-          - helpers
-      - Importante la cascada de CSS. Si tenemos estilos que van abajo, estos sobrescribirán a los que aparezcan más arriba si tienen la misma especificidad
-
-## Autoprefixer
-
-- Para entender Autoprefixer, primero tenemos que entender que son los vendor prefixers. Los vendor-prefixers son prefijos que utilizan los navegadores en propiedades experimentales o que no son estandar. Esto lo hacen para permitir a los desarrolladores probar funcionalidades de CSS antes de que se estandaricen. El caso es que al final un montón de navegadores antiguos necesitan estos prefijos en las propiedades para que estas funcionen correctamente.
-
-- Pero, escribir todos los prefijos es un un trabajo muy tedioso y estar pendiente de cual necesitamos para cada navegador sería muy agotador. Por suerte tenemos Autoprefixer que hace este trabajo por nosotros y nos permite que nos olvidemos de ese problema.
-
-- Por dejar claro, autoprefixer sería un post-procesador. Como hemos visto, Sass lo que hace es convertir un código con una sintaxis a CSS. Autoprefixer, en cambio, parte de un código CSS y lo postprocesa para convertirlo en un CSS con una serie de propiedades añadidas
-
-
-## Resumen de la sesión
-
-{{summary_info}}
-
-
-## ¿Para qué sirve lo que vamos a ver en esta sesión?
-
-{{purpose_info}}
-
-
-## ¿En qué casos se utiliza?
-
-{{usecase_info}}
-
-## Ejercicios
-
-### {{exercise.name}}
-
-{{exercise.info}}
-
-- [{{exercise.link_name}}]({{exercise.url}})
+***
+EJERCICIO 3:  
+Configurar Autoprefixer para que tenga en cuenta las 5 últimas versiones de los navegadores.
+***
