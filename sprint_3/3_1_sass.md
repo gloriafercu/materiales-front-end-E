@@ -365,5 +365,5 @@ Pero, escribir todos los prefijos es un un trabajo muy tedioso, y estar pendient
 
 ***
 EJERCICIO 3:  
-Configurar Autoprefixer para que tenga en cuenta las 5 últimas versiones de los navegadores.
+Configurar Autoprefixer en Koala para que tenga en cuenta las 5 últimas versiones de los navegadores (pista: se hace en la parte de css).
 ***
