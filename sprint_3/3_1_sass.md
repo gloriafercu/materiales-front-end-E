@@ -231,7 +231,7 @@ scss
      |- _contact.scss
      `- _home.scss
 ```
-Tendríamos cuatro bloques de archivos: los de **settings** como son las variables, nuestros mixins y funciones; el bloque principal de **layout** con la estructura del site y los componentes principales como header y footer; los diferentes **componentes** como puede ser un boque de noticias, el formulario de contacto o los botones; y por último el bloque de **páginas** donde tendríamos los ajustes particulares de cada página.
+Tendríamos cuatro bloques de archivos: los de **core** como son las variables, nuestros mixins y funciones; el bloque principal de **layout** con la estructura del site y los componentes principales como header y footer; los diferentes **componentes** como puede ser un boque de noticias, el formulario de contacto o los botones; y por último el bloque de **páginas** donde tendríamos los ajustes particulares de cada página.
 
 En nuesto `main.scss` llamaríamos a todos estos archivos en orden:
 ```scss
