@@ -39,7 +39,7 @@ Seguimos con el repaso de JavaScript. ¡A darle caña!
 
 ### 0. Preparando
 
-Para empezar vamos a aprender cómo usar realizar los ejercicios en vuestro equipo local. Para ello debes clonar (hacer una copia) de este repositorio en tu equipo desde el terminal de comandos.
+Para empezar vamos a aprender cómo realizar los ejercicios en vuestro equipo local. Para ello debes clonar (hacer una copia) de este repositorio en tu equipo desde el terminal de comandos.
 
 `git clone https://github.com/Adalab/lista-de-tareas.git`
 
