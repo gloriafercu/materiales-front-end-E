@@ -30,6 +30,7 @@
 * [2.7 JavaScript en la web](sprint_2/2_7_javascript_en_la_web.md)
 * [2.8 Eventos](sprint_2/2_8_eventos.md)
 * [2.9 Asincronía](sprint_2/2_9_asincronia.md)
+* [2.10 AJAX](sprint_2/2_10_ajax.md)
 * [Ejercicio de evaluación - Sprint 2](evaluaciones/2_evaluacion.md)
 
 ## Proyectos
