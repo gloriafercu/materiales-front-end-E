@@ -31,6 +31,7 @@
 * [2.8 Eventos](sprint_2/2_8_eventos.md)
 * [2.9 Asincronía](sprint_2/2_9_asincronia.md)
 * [2.10 AJAX](sprint_2/2_10_ajax.md)
+* [2.R.2 Repaso](sprint_2/2_repaso_2.md)
 * [Ejercicio de evaluación - Sprint 2](evaluaciones/2_evaluacion.md)
 
 ## Proyectos
