@@ -1,4 +1,4 @@
-# Proyecto 3: Un caso real con código heredado
+# Proyecto 3: Diseminación de proyectos sociales
 
 ## Índice
 
@@ -13,39 +13,66 @@
 
 ## Resumen ([TL;DR](https://spanish.stackexchange.com/questions/15317/hay-alg%C3%BAn-equivalente-en-castellano-al-ingl%C3%A9s-tldr))
 
-En este proyecto vamos a trabajar con un caso muy típico que se suele producir en el mundo de la programación, un trabajo que nos viene dado, con código heredado, es decir escrito por otra persona y sobre el que tenemos que escribir. Además, en este caso el diseño estará cerrado y solo implementaremos la lógica (mediante JavaScript), la adaptación de la web a responsive y las animaciones. Esta web
+En este proyecto vamos a trabajar con un caso real una web de diseminación de proyectos sociales. En colaboración con 2 organizaciones sociales, Federación de Mujeres Progresistas y Fundación San Juan del Castillo, hemos definido proyectos sociales que necesitan de diseminación y vamos a construir con ellos una web. Será, por tanto, una web real para diseminar estos proyectos que pondrá accesible para que todo el mundo conozca estos proyectos. Trabajaremos, por tanto, con un "*cliente ficticio*" pero un cliente al fin al cabo al que tenemos que entender y crear algo que le aporte valor.
 
 ## Objetivos
 
-1. Aprender a usar Sass para facilitar el mantenimiento y la modificación de estos.
+1. Aprender a trabajar en relación con un cliente, entender sus necesidades y crear algo de valor para él
+1. Aprender a usar SASS
 1. Ser capaces de usar una herramienta de automatización de tareas y entender cómo funciona
 1. Emplear un sistema de grid para maquetar la página
-1. Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares a partir de estos.
+1. Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares a partir de estos
+1. Utilizar JavaScript para realizar componentes interactivos
 1. Exponer en la sesión final y seguir adquiriendo habilidades de desarrollo personal
 1. Aprender a buscar información en la documentación de otras librerías
-
-
-## Caso de uso
-
-La idea fundamental de este proyecto es que aprendamos a trabajar en una situación real, con un proyecto heredado. De esta forma practicaremos una situación real y desarrollaremos nuestra capacidad de adaptarnos a proyectos ya existentes. Esto nos preparará para, de cara al futuro, entrar en equipos nuevos de desarrollo con mayor rapidez, mejorar nuestra capacidad de modificación de código creado por otras personas y concienciarnos de la importancia de crear buen código visto desde la otra parte, la persona que lo recibe.
-
 
 ## Especificaciones
 
 Se desarrollará una página web con las siguientes características:
-- Uso de HTML, CSS mediante Sass, JavaScript, animaciones y tansiciones
+- Uso de HTML, CSS mediante SASS, JavaScript, animaciones y transiciones
 - Uso de mediaqueries para que el diseño sea adaptable al dispositivo
 - Desarrollo usando la estrategia mobile first
-- Uso de git para el control de versiones del proyecto
-- Publicación del resultado en Internet usando GitHub pages
+- Uso de git para el control de versiones del proyecto, con ramas y pull-requests para revisar los cambios de las compañeras
+- Publicación del resultado en Internet usando GitHub Pages
 
 La web deberá tener las siguientes características:
 - Deberá tener transiciones y animaciones para mejorar interacciones con la web
 - Deberá estar escrita con buen código y usando los estilos y herramientas que nos vienen dados
 - Deberá cumplir los requisitos establecidos al inicio del proyecto (briefing)
-- Deberá tener los estilos escritos con Sass
-- Corregir los estilos que no sigan las lineas visuales del sistema empleados (colores, bordes, etc.)
+- Deberá tener los estilos escritos con SASS
+- Deberá contener un componente interactivo que usa JavaScript
 
+## Relación con el cliente
+
+El día de arranque de los proyectos, tendremos una reunión presencial con la organización que propone los proyectos. Será de 15', así que tendremos que tener preparadas algunas preguntas que resolver sobre los materiales y entender mejor qué se quiere diseminar.
+
+Durante el transcurso del proyecto, tendremos la información de contacto de una persona de la organización. Podremos hacerle alguna consulta puntual, pero no debería ser algo que bloquee nuestro trabajo ya que la respuesta puede llegar más tarde de lo que esperamos. Por tanto, deberemos hacer un número limitado de consultas y sobre temas muy concretos. Por ejemplo, no es necesario validar con el cliente la paleta de colores de la web pero sí cuál es la estructura o el mensaje principal.
+
+Al final del sprint, un miembro de la organización participará en la presentación de los proyectos en la retro, que será como "la entrega final" del producto.  
+
+## Forma de trabajo
+
+Durante todo el proyecto, vamos a seguir una metodología de trabajo real. Para ello vamos a utilizar más a fondo 2 herramientas que ya conocemos: Trello y los pull-requests (PR).
+
+### Trello
+
+Seguiremos estas directrices:
+- usaremos una columna para la documentación del proyecto: enlace al repo, enlace a los materiales proporcionados, documentación de conversaciones con el cliente, etc.
+- usaremos la columna "Por hacer" para definir todas las tareas del proyecto
+- definiremos tareas pequeñas y concretas, por ejemplo, "maquetar componente botón", "añadir botón de ayuda a la página"
+- usaremos las etiquetas de colores de Trello para estimar la duración de cada tarea de la columna "Por hacer", es decir, lo que nos va a costar hacerla. Por ejemplo, podemos usar <1h, 1h, 2h, 5h, 10h, 100h. Una tarea simple la marcamos con el color correspondiente a <1h; a una tareas super-compleja le pondremos 100h y habrá que dividirla en tareas más pequeñas
+- cada tarea, al pasarla a la columna "En proceso", tendrá asignado al menos 1 responsable
+- una persona puede estar sólo en una tarea en estado "En proceso" a la vez
+- si una tarea se deja a medias se pasa a columna "Bloqueada"
+
+### Pull-requests
+Seguiremos estas directrices:
+- para cada nueva funcionalidad (que puede equivaler a una tarea) crearemos una nueva rama
+- cuando esté terminada crearemos un pull-request (PR) y pediremos revisión de al menos 2 compañeras
+- cuando 2 hayan aprobado el PR, la última en aprobarlo megeará la rama a master y borrará la rama
+- para aprobar un PR debemos bajarnos el código de la compañera, y probar que funciona bien; si no entendemos algo, nos sentamos con ella y que nos lo explique
+- si hay problemas en el PR (errores, falta funcionalidad, no se puede mergear por conflictos) se añadirán commits al PR hasta que se solucionen
+- la responsable de  solucionar estos problemas será la creadora del PR, aunque puede pedir ayuda al resto de compañeras
 
 ## Hitos
 
@@ -53,27 +80,25 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 
 ### Primero. Arranque del proyecto (kickoff)
 
-- 2 días de trabajo.
-- Organizar el trabajo a realizar usando Trello, e ir asignando tareas y responsables.
-- Crear la infraestructura necesaria: repositorio en github con acceso para todos los miembros del equipo.
-- Entender los requisitos del proyecto y las técnicas y herramientas empleadas.
-- Analizar el código y entender su estructura para poder adaptarla a nuestras necesidades y conocimientos.
-- Analizar los componentes empleados en la web y el estilo visual de esta.
-
+- 2 días de trabajo
+- Organizar el trabajo a realizar usando Trello, e ir asignando tareas y responsables
+- Crear la infraestructura necesaria: repositorio en GitHub con acceso para todos los miembros del equipo
+- Entender los requisitos del proyecto y las técnicas y herramientas empleadas
+- Analizar los materiales que nos han pasado y plantear un diseño y el estilo visual
 
 ### Segundo. Refactorización y maquetación de la web
 
-- 1 semana de trabajo.
-- Modularizar y refactorizar el código
-- Maquetar la parte de la web que esté por finalizar
-- Entender y generar los componentes empleados en la web
+- 1 semana de trabajo
+- Definir los componentes que necesitamos para crear la web, diferenciando los interactivos
+- Maquetar los componentes identificados
 - Hacer la web responsive y aprender a usar una librería para el grid
 
 ### Tercero. Implementación de la parte interactiva
 
 - 1 semana de trabajo
-- Implementar animaciones y la parte del JavaScript
-- Optimizar el código
+- Implementar animaciones
+- Definir e implementar los componentes interactivos que usan JavaScript
+- Revisar el código
 
 ### Cuarto. Presentación final
 
