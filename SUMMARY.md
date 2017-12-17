@@ -34,6 +34,10 @@
 * [2.R.2 Repaso](sprint_2/2_repaso_2.md)
 * [Ejercicio de evaluación - Sprint 2](evaluaciones/2_evaluacion.md)
 
+## Sprint 3. Herramientas de maquetación
+
+* [3.1 SASS](sprint_2/2_1_sass.md)
+
 ## Proyectos
 
 * [Guía de diseño](proyectos/P1_anexo_diseno.md)
