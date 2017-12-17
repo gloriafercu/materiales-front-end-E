@@ -4,8 +4,9 @@
 
 1. Resumen
 1. Objetivos
-1. Casos de uso
 1. Especificaciones
+1. Relación con el cliente
+1. Metodología de trabajo
 1. Hitos
 1. Entrega
 1. Consejos
@@ -50,7 +51,7 @@ Durante el transcurso del proyecto, tendremos la información de contacto de una
 
 Al final del sprint, un miembro de la organización participará en la presentación de los proyectos en la retro, que será como "la entrega final" del producto.  
 
-## Forma de trabajo
+## Metodología de trabajo
 
 Durante todo el proyecto, vamos a seguir una metodología de trabajo real. Para ello vamos a utilizar más a fondo 2 herramientas que ya conocemos: Trello y los pull-requests (PR).
 
