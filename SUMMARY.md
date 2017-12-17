@@ -44,6 +44,7 @@
 * [Proyecto 1. Web grupal](proyectos/P1_proyecto_sprint_1.md)
 * [Proyecto 2. Currículum Interactivo](proyectos/P2_proyecto_sprint_2.md)
 * [Anexo al Proyecto 2](proyectos/P2_anexo_1.md)
+* [Proyecto 3. Diseminación de proyectos sociales](proyectos/P3_proyecto_sprint_3.md)
 
 ## Guías
 
