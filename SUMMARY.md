@@ -36,7 +36,7 @@
 
 ## Sprint 3. Herramientas de maquetación
 
-* [3.1 SASS](sprint_2/2_1_sass.md)
+* [3.1 SASS](sprint_3/3_1_sass.md)
 
 ## Proyectos
 
