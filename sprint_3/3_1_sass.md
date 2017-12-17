@@ -275,8 +275,11 @@ Para el ejercicio querremos:
 	- Una sección con un título y un botón rojo, con bordes de 5px de radio y 45px de altura
 
 > Por ejemplo: En la carpeta `core` siempre tendremos nuestras variables pero si no tenemos mixins o funciones pues no tendremos esos parciales.
-
 ***
+
+Y hasta aquí el contenido de la sesión, pero si quieres saber más tenemos contenido extra...
+## CONTENIDO EXTRA
+
 ### Mixins y funciones
 Vale, ¿qué es esto de mixins y funciones? ¡Lo mejor!
 
@@ -356,7 +359,7 @@ p {
 }
 ```
 
-## BONUS: Autoprefixer
+### Autoprefixer
 Para entender **Autoprefixer**, primero tenemos que entender qué son los vendor-prefixers. Son prefijos que utilizan los navegadores en propiedades experimentales o que no son estándar. Esto lo hacen para permitir a los desarrolladores probar funcionalidades de CSS antes de que se estandaricen. El caso es que al final un montón de navegadores antiguos necesitan estos prefijos en las propiedades para que éstas funcionen correctamente.
 
 Pero, escribir todos los prefijos es un un trabajo muy tedioso, y estar pendiente de cuál necesitamos para cada navegador sería muy agotador. Por suerte tenemos **Autoprefixer** que hace este trabajo por nosotros. Nos permite olvidarnos de ese problema pudiendo especificar cuántos navegadores o versiones de navegador queremos que controle y, una vez que se genere nuestro CSS, colocará los prefijos necesarios en cada caso.
@@ -364,6 +367,6 @@ Pero, escribir todos los prefijos es un un trabajo muy tedioso, y estar pendient
 > Por dejar claro, autoprefixer sería un post-procesador. Como hemos visto, SASS lo que hace es convertir un código con una sintaxis a CSS. Autoprefixer, en cambio, parte de un código CSS y lo post-procesa para convertirlo en un CSS con una serie de propiedades añadidas.
 
 ***
-EJERCICIO 3:  
+EJERCICIO 1 de bonus:  
 Configurar Autoprefixer en Koala para que tenga en cuenta las 5 últimas versiones de los navegadores (pista: se hace en la parte de css).
 ***
