@@ -1,5 +1,5 @@
 # Animaciones CSS
-CSS es un lenguage de estilo y con él decimos cómo tiene que verse nuestro HTMl. Hasta ahora hemos visto algunas de las cosas que podemos hacer con estilos e incluso como aplicarlas cuando se cumplen ciertas condiciones gracias a las mediaqueries. Todavía nos falta el aspecto más vistoso que le da más vida al apartado grafico: transiciones y animaciones.
+CSS es un lenguaje de estilo y con él decimos cómo tiene que verse nuestro HTMl. Hasta ahora hemos visto algunas de las cosas que podemos hacer con estilos e incluso como aplicarlas cuando se cumplen ciertas condiciones gracias a las mediaqueries. Todavía nos falta el aspecto más vistoso que le da más vida al apartado gráfico: transiciones y animaciones.
 
 ## Transiciones
 Las transiciones son "transiciones" entre dos estados de un elemento, bueno, entre propiedades de un selector. Por ejemplo, con el `:hover` de un enlace podemos tener un efecto donde aplicamos unos estilos al enlace y otros cuando el usuario ponga el cursor por encima. Por si no lo tenemos en la cabeza es esto:  
@@ -51,14 +51,14 @@ Dado este [botón](https://codepen.io/adalab/pen/XVXGVN?editors=1100):
 - Añade transiciones para que el coloreado y el sombreado no sean tan bruscos
 - Añade transiciones para modificar alguna propiedad (tamaño, redondeado, color de fuente...)
 ***
-Con este tipo de efectos podemos limar pequeños detalles o resolver interacciónes más complejas, solo cambiando clases:
+Con este tipo de efectos podemos limar pequeños detalles o resolver interacciones más complejas, solo cambiando clases:
 
 En este [Codepen](https://codepen.io/adalab/pen/goPZep) usamos javascript para que al hacer click en el botón "Menú" se aplique una clase al elemento `.page`, que se elimina al hacer click en la X de "Cerrar".
 
 ***
 EJERCICIO 2:
 
-¿Cómo os véis para hacer un botón central que al hacer click haga salir un "popup" desde abajo de la página?
+¿Cómo os veis para hacer un botón central que al hacer click haga salir un "popup" desde abajo de la página?
 ***
 
 ## Animaciones
