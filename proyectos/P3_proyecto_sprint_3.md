@@ -1,4 +1,4 @@
-# Proyecto 3: Diseminación de proyectos sociales
+# Proyecto 3: Web de diseminación de proyectos sociales
 
 ## Índice
 
@@ -18,7 +18,7 @@ En este proyecto vamos a colaborar con 2 organizaciones sociales, Federación de
 
 ## Objetivos
 
-1. Aprender a usar SASS
+1. Aprender a usar Sass
 1. Ser capaces de usar una herramienta de automatización de tareas y entender cómo funciona
 1. Emplear un sistema de grid para maquetar la página
 1. Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares a partir de estos
@@ -29,7 +29,7 @@ En este proyecto vamos a colaborar con 2 organizaciones sociales, Federación de
 ## Especificaciones
 
 Se desarrollará una página web con las siguientes características:
-- Uso de HTML, CSS mediante SASS, JavaScript, animaciones y transiciones
+- Uso de HTML, CSS mediante Sass, JavaScript, animaciones y transiciones
 - Uso de mediaqueries para que el diseño sea adaptable al dispositivo
 - Desarrollo usando la estrategia mobile first
 - Uso de git para el control de versiones del proyecto, con ramas y pull-requests para revisar los cambios de las compañeras
@@ -39,7 +39,7 @@ La web deberá tener las siguientes características:
 - Deberá tener transiciones y animaciones para mejorar interacciones con la web
 - Deberá estar escrita con buen código y usando los estilos y herramientas que nos vienen dados
 - Deberá cumplir los requisitos establecidos al inicio del proyecto (briefing)
-- Deberá tener los estilos escritos con SASS
+- Deberá tener los estilos escritos con Sass
 - Deberá contener un componente interactivo que usa JavaScript
 
 ## Relación con el cliente
