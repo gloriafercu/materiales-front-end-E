@@ -34,12 +34,17 @@
 * [2.R.2 Repaso](sprint_2/2_repaso_2.md)
 * [Ejercicio de evaluación - Sprint 2](evaluaciones/2_evaluacion.md)
 
+## Sprint 3. Web avanzada
+
+* [3.1 SASS](sprint_3/3_1_sass.md)
+
 ## Proyectos
 
 * [Guía de diseño](proyectos/P1_anexo_diseno.md)
 * [Proyecto 1. Web grupal](proyectos/P1_proyecto_sprint_1.md)
 * [Proyecto 2. Currículum Interactivo](proyectos/P2_proyecto_sprint_2.md)
 * [Anexo al Proyecto 2](proyectos/P2_anexo_1.md)
+* [Proyecto 3. Diseminación de proyectos sociales](proyectos/P3_proyecto_sprint_3.md)
 
 ## Guías
 

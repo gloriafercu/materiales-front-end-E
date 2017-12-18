@@ -14,11 +14,10 @@
 
 ## Resumen ([TL;DR](https://spanish.stackexchange.com/questions/15317/hay-alg%C3%BAn-equivalente-en-castellano-al-ingl%C3%A9s-tldr))
 
-En este proyecto vamos a trabajar con un caso real una web de diseminación de proyectos sociales. En colaboración con 2 organizaciones sociales, Federación de Mujeres Progresistas y Fundación San Juan del Castillo, hemos definido proyectos sociales que necesitan de diseminación y vamos a construir con ellos una web. Será, por tanto, una web real para diseminar estos proyectos que pondrá accesible para que todo el mundo conozca estos proyectos. Trabajaremos, por tanto, con un "*cliente ficticio*" pero un cliente al fin al cabo al que tenemos que entender y crear algo que le aporte valor.
+En este proyecto vamos a colaborar con 2 organizaciones sociales, Federación de Mujeres Progresistas y Fundación San Juan del Castillo, y les vamos a ayudar con el desarrollo de una web para la difusión y sensibilización sobre temáticas en las que trabajan. Esta web será un ejercicios para el aprendizaje, y por lo tanto no será necesariamente publicado por las misas, si bien las utilizarán como punto de partida para futuras acciones de sensibilización. Lo importante durante este proyecto es que nos centremos en coger soltura con las metodologías establecidas, así como que aprendamos a tomar decisiones prácticas sobre el contenido de la web y otros elementos que nos permitan terminar el trabajo con éxito. También empezaremos a tener presentes las necesidades del cliente, si bien es un ejercicio libre en el que lo importante es que practiquemos y no que el producto se adapte 100% a sus necesidades.
 
 ## Objetivos
 
-1. Aprender a trabajar en relación con un cliente, entender sus necesidades y crear algo de valor para él
 1. Aprender a usar Sass
 1. Ser capaces de usar una herramienta de automatización de tareas y entender cómo funciona
 1. Emplear un sistema de grid para maquetar la página
@@ -45,9 +44,9 @@ La web deberá tener las siguientes características:
 
 ## Relación con el cliente
 
-El día de arranque de los proyectos, tendremos una reunión presencial con la organización que propone los proyectos. Será de 15', así que tendremos que tener preparadas algunas preguntas que resolver sobre los materiales y entender mejor qué se quiere diseminar.
+El día de arranque de los proyectos, tendremos una reunión presencial con la organización que propone los proyectos. Será de 15' por grupo, con el objetivo de llevarnos algunas directrices generales sobre cómo tratar el tema.
 
-Durante el transcurso del proyecto, tendremos la información de contacto de una persona de la organización. Podremos hacerle alguna consulta puntual, pero no debería ser algo que bloquee nuestro trabajo ya que la respuesta puede llegar más tarde de lo que esperamos. Por tanto, deberemos hacer un número limitado de consultas y sobre temas muy concretos. Por ejemplo, no es necesario validar con el cliente la paleta de colores de la web pero sí cuál es la estructura o el mensaje principal.
+Durante el transcurso del proyecto, tendremos la información de contacto de una persona de la organización. Podremos hacerle alguna consulta puntual siempre y cuando sea de suma importancia para la continuidad del proyecto.
 
 Al final del sprint, un miembro de la organización participará en la presentación de los proyectos en la retro, que será como "la entrega final" del producto.  
 
