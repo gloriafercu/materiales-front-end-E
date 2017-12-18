@@ -62,6 +62,47 @@ EJERCICIO 2:
 ***
 
 ## Animaciones
+Mientras las transiciones nos permiten pasar de un estado a otro, las animaciones nos dejan variar los valores de las propiedades CSS en el tiempo.
+Para ello definimos una secuencia de estados y cómo se va a controlar la animación.
+
+Primero definimos unos keyframes con la regla `@keyframes` y dentro definiremos las distintas posiciones de nuestra animación. La primera será al 0% y la última al 100% (en lugar de 0% y 100% podremos usar `from` y `to`):
+```css
+@keyframes intro {
+	from {
+		opacity: 0;
+		transform: scale(10) rotate(-150deg);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+```
+y luego se la aplicamos a nuestro selector con el atajo 'animation' o con sus subpropiedades:
+- `animation-delay`: Determina el tiempo  hasta que empieza la animación
+- `animation-direction`: Especifica si la animación mantendrá a dirección, o alternarla en cada repetición o si se resetea al punto inicial
+- `animation-duration`: Marca el tiempo que durará la animación
+- `animation-iteration-count`: Dice las veces que se va a repetir la animaciòn
+- `animation-name`: Especifica el identificador de la animación
+- `animation-play-state`: Permite pausar una animación
+- `animation-timing-function`: Funciona igual que con las transiciones
+- `animation-fill-mode`: Espedifica si los valores de la animación se aplicarán al elemento animado una vez termine o antes de empezar.
+
+Por ahora vamos a ver como aplicar nuestra animación sencilla:
+```css
+.hi {
+	font-size: 100px;
+	color: #3CDBC0;
+	animation-name: intro;
+	animation-duration: 5s;
+	animation-iteration-count: 1;
+}
+```
+
+[El resultado en Codepen](https://codepen.io/adalab/pen/qpbwwG)
+
+Vamos a probar [una menos... powerpoint](https://codepen.io/adalab/pen/jYWjVj)
+
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations
 {{intro_info}}
