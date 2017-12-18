@@ -47,7 +47,8 @@ Y el programa nos detecta los archivos procesables, en este caso `main.scss` y n
 Con clic derecho seleccionamos dónde queremos que se coloque el CSS procesado, por ejemplo en nuestra carpeta `css`, y lo llamaremos con su nombre correcto, en este caso `main.css`:  
 ![Koala App 04](assets/images/3-1/koala-04.png)  
 ![Koala App 05](assets/images/3-1/koala-05.png)  
-Con esto ya estaría aunque podemos tocar alguna cosa más, como el estilo de procesado. Hay 4: nested, expanded, compact, compressed. Por ahora usaremos `expanded` y ya habrá tiempo de ver los otros [estilos de procesado](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#Output_Style).
+Con esto ya estaría aunque podemos tocar alguna cosa más, como el estilo de procesado. Hay 4: nested, expanded, compact, compressed. Por ahora usaremos `expanded` y ya habrá tiempo de ver los otros [estilos de procesado](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#Output_Style).  
+
 ![Koala App 06](assets/images/3-1/koala-06.png)  
 
 Ahora ya tenemos listo nuestro proyecto. Cada vez que guardemos los cambios en nuestro `main.scss` se generará un nuevo `main.css` y **live server** se encargará de recargar el navegador.
