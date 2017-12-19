@@ -37,6 +37,7 @@
 ## Sprint 3. Web avanzada
 
 * [3.1 SASS](sprint_3/3_1_sass.md)
+* [3.2 Sistemas de diseño](sprint_3/3_2_maquetacion_por_componentes.md)
 
 ## Proyectos
 
