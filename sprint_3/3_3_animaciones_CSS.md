@@ -1,5 +1,5 @@
 # Animaciones CSS
-CSS es un lenguaje de estilo y con él decimos cómo tiene que verse nuestro HTMl. Hasta ahora hemos visto algunas de las cosas que podemos hacer con estilos e incluso como aplicarlas cuando se cumplen ciertas condiciones gracias a las mediaqueries. Todavía nos falta el aspecto más vistoso que le da más vida al apartado gráfico: transiciones y animaciones.
+CSS es un lenguaje de estilo y con él decimos cómo tiene que verse nuestro HTML. Hasta ahora hemos visto algunas de las cosas que podemos hacer con estilos e incluso como aplicarlas cuando se cumplen ciertas condiciones gracias a las mediaqueries. Todavía nos falta el aspecto más vistoso que le da más vida al apartado gráfico: transiciones y animaciones.
 
 ## Transiciones
 Las transiciones son "transiciones" entre dos estados de un elemento, bueno, entre propiedades de un selector. Por ejemplo, con el `:hover` de un enlace podemos tener un efecto donde aplicamos unos estilos al enlace y otros cuando el usuario ponga el cursor por encima. Por si no lo tenemos en la cabeza es esto:  
@@ -18,7 +18,7 @@ Las transiciones de especifican con la propiedad `transition` que es un atajo de
 * `transition-property`: la propiedad sobre la que queremos aplicar la transición
 * `transition-duration`: la duración de la transición en segundos o milisegundos
 * `transition-timing-function`: una función de tiempo para determinar cómo aplicar la transición, hay unas [palabras clave para algunas funciones](https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function#Keywords_for_common_timing_functions)
-* `transition-delay`: Un tiempo de retardo antes de empezar la transición
+* `transition-delay`: un tiempo de retardo antes de empezar la transición
 
 No hace falta especificarlas todas y podemos usar el atajo o no. En los ejemplos lo usamos con la propiedad, la función de tiempo y la duración de la transición:
 ```css
@@ -51,7 +51,7 @@ Dado este [botón](https://codepen.io/adalab/pen/XVXGVN?editors=1100):
 - Añade transiciones para que el coloreado y el sombreado no sean tan bruscos
 - Añade transiciones para modificar alguna propiedad (tamaño, redondeado, color de fuente...)
 ***
-Con este tipo de efectos podemos limar pequeños detalles o resolver interacciones más complejas, solo cambiando clases:
+Con este tipo de efectos podemos limar pequeños detalles o resolver interacciones más complejas, sólo cambiando clases.
 
 En este [Codepen](https://codepen.io/adalab/pen/goPZep) usamos javascript para que al hacer click en el botón "Menú" se aplique una clase al elemento `.page`, que se elimina al hacer click en la X de "Cerrar".
 
@@ -81,14 +81,14 @@ Primero definimos unos keyframes con la regla `@keyframes` y dentro definiremos 
 }
 ```
 y luego se la aplicamos a nuestro selector con el atajo 'animation' o con sus subpropiedades:
-- `animation-delay`: Determina el tiempo  hasta que empieza la animación
-- `animation-direction`: Especifica si la animación mantendrá a dirección, o alternarla en cada repetición o si se resetea al punto inicial
-- `animation-duration`: Marca el tiempo que durará la animación
-- `animation-iteration-count`: Dice las veces que se va a repetir la animaciòn
-- `animation-name`: Especifica el identificador de la animación
-- `animation-play-state`: Permite pausar una animación
-- `animation-timing-function`: Funciona igual que con las transiciones
-- `animation-fill-mode`: Espedifica si los valores de la animación se aplicarán al elemento animado una vez termine o antes de empezar.
+- `animation-delay`: determina el tiempo  hasta que empieza la animación
+- `animation-direction`: especifica si la animación mantendrá la dirección, o alternarla en cada repetición, o si se resetea al punto inicial
+- `animation-duration`: marca el tiempo que durará la animación
+- `animation-iteration-count`: dice las veces que se va a repetir la animación
+- `animation-name`: especifica el identificador de la animación
+- `animation-play-state`: permite pausar una animación
+- `animation-timing-function`: funciona igual que con las transiciones
+- `animation-fill-mode`: especifica si los valores de la animación se aplicarán al elemento animado una vez termine o antes de empezar
 
 Por ahora vamos a ver como aplicar nuestra animación sencilla:
 ```css
@@ -122,7 +122,7 @@ Tenéis la documentación completa de las sub propiedades de `animation` en la M
 
 ***
 EJERCICIO 3:  
-Vamos a hacer algo más del día a día: Partiendo de un contenedor que ocupe el 100% de la pantalla (en alto y ancho) con una imagen de fondo y un título centrado...
+Vamos a hacer algo más del día a día: partiendo de un contenedor que ocupe el 100% de la pantalla (en alto y ancho) con una imagen de fondo y un título centrado...
 Tendremos que hacer que el título tenga una animación que lo haga entrar suavemente desde la parte superior del navegador y quedarse en el centro de su contenedor.
 
 ![Ejemplo](assets/images/3-3/title-animation.png)
