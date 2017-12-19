@@ -58,7 +58,9 @@ En este [Codepen](https://codepen.io/adalab/pen/goPZep) usamos javascript para q
 ***
 EJERCICIO 2:
 
-¿Cómo os veis para hacer un botón central que al hacer click haga salir un "popup" desde abajo de la página?
+¿Cómo os veis para hacer un botón central que al hacer click haga que "popup" entre despacito desde abajo de la ventana del navegador y se coloque en el centro?
+
+![Ejemplo](assets/images/3-3/popup-transition.png)
 ***
 
 ## Animaciones
@@ -103,39 +105,25 @@ Por ahora vamos a ver como aplicar nuestra animación sencilla:
 
 Vamos a probar [una menos... powerpoint](https://codepen.io/adalab/pen/jYWjVj)
 
+Tenéis la documentación completa de las sub propiedades de `animation` en la MDN: [CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations)
 
-https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations
-{{intro_info}}
+### Ejemplos de animaciones (más o menos curradas)
+- [Pure CSS Animated Checkbox](https://codepen.io/north-of-rapture/pen/rWqega?limit=all&page=2&q=css+animation)
+- [CSS Animated Hamburger Icon](https://codepen.io/elijahmanor/pen/Igpoe?q=css+animation&limit=all&type=type-pens)
+- [CSS Animate](https://codepen.io/mdd/pen/xEuyG?q=css+animation&limit=all&type=type-pens) (Y ha escrito un [post sobre cómo se hace](https://webdesign.tutsplus.com/tutorials/a-beginners-introduction-to-css-animation--cms-21068))
+- [CSS Animation Material Design](https://codepen.io/Michiel/pen/EBtga?limit=all&page=3&q=css+animation)
+- [CSS Animation with steps()](https://codepen.io/Guilh/pen/yldGp?limit=all&page=4&q=css+animation)
+- [Mr JeellyFish pure CSS animation](https://codepen.io/FabioG/pen/QjLreK?q=css+animation&limit=all&type=type-pens)
+- [WWDC 2015 CSS](https://codepen.io/donovanh/pen/pvMeeB?q=css+animation&limit=all&type=type-pens)
+- [Cloudy Spiral CSS animation](https://codepen.io/hakimel/pen/aIhkf?q=css+animation&limit=all&type=type-pens)
 
+> **NOTA**:  
+> Animar es un trabajo en sí mismo y aunque, de entrada, nadie nos va a pedir que seamos animadores profesionales está bien conocer las posibilidades que nos da CSS para tener un repertorio más amplio de opciones a la hora de desarrollar una web. Otra cosa es que nos guste y CSS es suficientemente potente para hacer locuras.
 
-## ¿Para qué sirve lo que vamos a ver en esta sesión?
+***
+EJERCICIO 3:  
+Vamos a hacer algo más del día a día: Partiendo de un contenedor que ocupe el 100% de la pantalla (en alto y ancho) con una imagen de fondo y un título centrado...
+Tendremos que hacer que el título tenga una animación que lo haga entrar suavemente desde la parte superior del navegador y quedarse en el centro de su contenedor.
 
-{{purpose_info}}
-
-
-## ¿En qué casos se utiliza?
-
-{{usecase_info}}
-
-
-## Recursos externos
-
-### {{resource.name}}
-
-{{resource.description}}
-
-- [{{resource.link_name}}]({{resource.url}})
-
-
-## Resumen de la sesión
-
-{{summary_info}}
-
-
-## Ejercicios
-
-### {{exercise.name}}
-
-{{exercise.info}}
-
-- [{{exercise.link_name}}]({{exercise.url}})
+![Ejemplo](assets/images/3-3/title-animation.png)
+***
