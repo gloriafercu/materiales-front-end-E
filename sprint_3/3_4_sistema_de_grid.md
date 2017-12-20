@@ -11,16 +11,16 @@
 
 ## Introducción
 
-Un sistema de grid o rejilla, nos permite disponer los elementos de una página y que estén alineados. Va a existir una rejilla imaginaria de filas y columnas, a partir de la cual vamos a crear colocar los elementos de nuestra web. El uso de un sistema de grid tiene sentido si acompaña un diseño que usa también una rejilla.
+Un sistema de grid o rejilla, nos permite disponer los elementos de una página y que estén alineados. Va a existir una rejilla imaginaria de filas y columnas, a partir de la cual vamos a colocar los elementos de nuestra web. El uso de un sistema de grid tiene sentido si acompaña un diseño que usa también una rejilla.
 
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-Un sistema de grid nos sirve para posicionar los elementos de la página alineados. Es usada en un montón de webs, por ejemplo, este ejemplo de Google.
+Un sistema de grid nos sirve para posicionar los elementos de la página alineados. Se usa en un montón de webs, por ejemplo, este ejemplo de Google.
 
 ![Grid de Google Plus](assets/images/3-4/grid-example.png)
 
-Podemos ver que los elementos están dispuestos en filas y columnas. Hay 4 columnas que se ven claramente, con un elemento que se expande en 2. Aunque a simple vista parecen no estar alineados en filas, todas las cajas son tienen una altura proporcional a una base.
+Podemos ver que los elementos están dispuestos en filas y columnas. Hay 4 columnas que se ven claramente, con un elemento que se expande en 2. Aunque a simple vista parecen no estar alineados en filas, todas las cajas tienen una altura proporcional a una base.
 
 Vamos a ver 2 herramientas que nos facilitan crear una composición basada en grid: CSS grid y Bootstrap.
 
@@ -89,7 +89,7 @@ A la hora de posicionar los elementos en el grid, también podemos usar la palab
 
 EJERCICIO 2
 
-Vamos a modificar el ejercicio anterior para usar span en vez de punto inicial y final.
+Vamos a modificar el ejercicio anterior para usar `span` en vez de punto inicial y final.
 
 ***
 
