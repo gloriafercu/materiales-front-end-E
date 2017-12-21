@@ -12,6 +12,9 @@
 
 En esta sesión usaremos herramientas para automatización de tareas en nuestro flujo de trabajo en front-end. Estas herramientas son muy útiles porque nos ayudarán a ser más eficientes en nuestro trabajo y nos ahorrarán tareas repetitivas.
 
+> **NOTA:**  
+> En esta sesión vamos a dar un repaso por encima a un flujo de trabajo con gulp y node pero no tendremos que configurarnos todavía nuestro entorno de trabajo, os proporcionaremos una base ya configurada sobre la que trabajar lo que queda de sprint :)
+
 
 ## ¿En qué casos se utiliza?
 
@@ -19,6 +22,7 @@ En nuestro flujo de trabajo realizamos algunas tareas repetitivas. Por ejemplo, 
 
 ## Gulp
 
+![Gulp](assets/images/3-5/logo-gulp.png)  
 Gulp es una herramienta de automatización de tareas que está hecha con JavaScript. Gulp se ejecuta desde la terminal de comandos de nuestro sistema ya que no tiene interfaz gráfica. Primero vamos a ver cómo instalarla y después la configuraremos para ayudarnos con algunas tareas.
 
 ### Node y npm
@@ -47,7 +51,7 @@ El `-g` indica que se instala de forma global y se puede usar la utilidad de gul
 
 Ahora que ya tenemos todo instalado, vamos a utilizar gulp en nuestro proyecto. Vamos a crear un nuevo proyecto, para ello creamos una nueva carpeta (podemos hacerlos desde la terminal con `mkdir <nombre_carpeta>`). Y nos movemos dentro de la carpeta con `cd <nombre_carpeta>`.
 
-Para indicar que en este proyecto vamos a usar npm, necesitamos crear un fichero llamado `package.json` que indica la configuración de npm del proyecto. Es un fichero en formato JSON que si recordáis tiene el aspecto de un objeto de JavaScript que tiene solo atributos pero no métodos (funciones). La forma más sencilla de crear este fichero es ejecutando desde la terminal
+Para indicar que en este proyecto vamos a usar npm, necesitamos crear un fichero llamado `package.json` que indica la configuración de npm del proyecto. Es un fichero en formato JSON que si recordáis tiene el aspecto de un objeto de JavaScript que tiene solo propiedades pero no métodos (funciones). La forma más sencilla de crear este fichero es ejecutando desde la terminal:
 
 `npm init`
 
@@ -154,7 +158,7 @@ gulp.task('default', function () {
 // Tarea que observa cambios en 'scss'
 // En su primera ejecución lanzará también la tarea previa
 gulp.task('watch', ['default'], function () {
-  gulp.watch('scss/*.scss', ['default']);  // Lanza la tarea 'default' cuando observa cambios en cualquer scss
+  gulp.watch('scss/*.scss', ['default']);  // Lanza la tarea 'default' cuando observa cambios en cualquier scss
 });
 ```
 
@@ -167,9 +171,13 @@ Ahora vamos a trabajar con un proyecto que ya tiene configurado gulp. Primero te
 
 https://github.com/Adalab/testing-gulp
 
-Luego probamos a ejecutar la tarea por defecto `gulp` y la tarea `gulp watch`. Observamos el resultado en la carpeta CSS. Investigad un poco el código y probad a comentar cosas para averiguar qué hacen las 2 nuevas funcionalidades que hemos añadido que hemos añadido.
+Luego probamos a ejecutar la tarea por defecto `gulp` y la tarea `gulp watch`. Observamos el resultado en la carpeta CSS. Investigad un poco el código y probad a comentar cosas para averiguar qué hacen las 2 nuevas funcionalidades que hemos añadido.
 
 ***
+
+### Bueno, ¿y ahora?
+Ahora os hemos preparado un proyecto que os podéis descargar y donde integrar vuestros proyecto y ejercicios en Adalab: Adalab web starter kit
+
 
 ### BONUS: Más plugins de gulp
 
