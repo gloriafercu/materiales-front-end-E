@@ -176,7 +176,8 @@ Luego probamos a ejecutar la tarea por defecto `gulp` y la tarea `gulp watch`. O
 ***
 
 ### Bueno, ¿y ahora?
-Ahora os hemos preparado un proyecto que os podéis descargar y donde integrar vuestros proyecto y ejercicios en Adalab: [Adalab Web Starter Kit](https://github.com/Adalab/Adalab-web-starter-kit)
+Ahora os hemos preparado un proyecto que os podéis descargar y donde integrar vuestros proyecto y ejercicios en Adalab:  
+[Adalab Web Starter Kit](https://github.com/Adalab/Adalab-web-starter-kit)
 
 
 ### BONUS: Más plugins de gulp
