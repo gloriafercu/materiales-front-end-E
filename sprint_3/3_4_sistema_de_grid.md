@@ -111,7 +111,7 @@ Para poder usarlo en nuestro proyecto, tendremos varias opciones:
 1. Descargar el código fuente (CSS, JS), y enlazarlo desde nuestro HTML
 2. Enlazar el código alojado en un servidor de Internet, lo que suele llamarse CDN
 
-Usando esta segunda opción, simplemente pegamos el snippet que [Bootstrap nos da en su página de inicio](https://getbootstrap.com/). Si sólo queremos usar el CSS usamos esto en nuestro `header`:
+Usando esta segunda opción, simplemente pegamos el snippet que [Bootstrap nos da en su página de inicio](https://getbootstrap.com/). Si sólo queremos usar el CSS usamos esto en nuestro `head`:
 
 ```hmtl
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
