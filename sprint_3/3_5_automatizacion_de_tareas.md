@@ -3,7 +3,7 @@
 ## Contenidos
 
 - [Introducción](#introducción)
-- [¿En qué casos se utiliza?](#¿en-que-casos-se-utiliza)
+- [¿En qué casos se utiliza?](#¿en-qué-casos-se-utiliza)
 - [Gulp](#gulp)
 - [Recursos externos](#recursos-externos)
 
@@ -18,30 +18,82 @@ En esta sesión usaremos herramientas para automatización de tareas en nuestro 
 
 ## ¿En qué casos se utiliza?
 
-En nuestro flujo de trabajo realizamos algunas tareas repetitivas. Por ejemplo, convertir el Sass en CSS. Otra tarea habitual es optimizar nuestros ficheros CSS/JS antes de subirlos a producción, para que la web vaya más rápida para los usuarios. Con una herramienta como gulp, vamos a poder hacer que nuestro código Sass se convierta en CSS al guardar el fichero; y ejecutar una tarea para que nos guarde el CSS/JS con código optimizado y poder subirlo a producción.
+En nuestro flujo de trabajo realizamos algunas tareas repetitivas. Por ejemplo, convertir el Sass en CSS, lo que implica añadir cada nuevo proyecto a Koala, especificar la carpeta de destino para el CSS, etc.
+
+Otra tarea habitual que se suele hacer es optimizar los ficheros CSS y JavaScript antes de subir la web al servidor (a GitHub en nuestro caso). Esta optimización se realiza para que el navegador pueda cargar y ejecutar los archivos más rápido y mostrar la página con más rapidez.
+
+Con una herramienta como gulp, vamos a poder hacer que nuestro código Sass se convierta en CSS al guardar el fichero; y ejecutar una tarea para que nos guarde el CSS/JS con código optimizado que más tarde subiremos a nuestro servidor (de nuevo, GitHub en nuestro caso).
 
 ## Gulp
 
-![Gulp](assets/images/3-5/logo-gulp.png)  
-Gulp es una herramienta de automatización de tareas que está hecha con JavaScript. Gulp se ejecuta desde la terminal de comandos de nuestro sistema ya que no tiene interfaz gráfica. Primero vamos a ver cómo instalarla y después la configuraremos para ayudarnos con algunas tareas.
+![Gulp](assets/images/3-5/logo-gulp.png)
 
-### Node y npm
+Gulp es una herramienta de automatización de tareas que está programada con JavaScript. Gulp, a diferencia de Koala, no tiene interfaz gráfica sino que se ejecuta desde la terminal de comandos, al igual que sucede con Git. Primero vamos a ver cómo instalarla y después la configuraremos para ayudarnos con algunas tareas.
 
-Para poder usar *gulp* en nuestro ordenador, necesitamos tener instalado *node.js*. Node es una plataforma que nos permite programar un servidor (back-end) con JavaScript. Para instalar node en ubuntu usamos:
+Bien, sabemos que decir que gulp lo usaremos a través de la consola, que no tiene interfaz gráfica y que la configuración te la tienes que hacer tu mismo hace difícil el venderlo como algo mejor, pero la clave de gulp reside en esa última característica, la de configurarlo a través de JavaScript. La clave de usar una herramienta de automatización de tareas como gulp es que podemos configurarla a nuestra manera y añadir procesos y tareas a medida que las necesitemos e ir mejorando poco a poco estos para adaptarlos a nuestras necesidades, esto es lo que hace que lo que ofrece Koala se quede corto y es el motivo principal por el que en la mayoría de las empresas tienen automatizadas las tareas con herramientas como Gulp. En esta sesión veremos alguna novedad como poder visualizar nuestra página directamente desde el móvil sin tener que subirla al servidor, pero esto es solo la punta del iceberg, existen cientos de utilidades que podremos utilizar con Gulp y que nos facilitarán mucho la tarea de desarrollar páginas web.
 
-`apt-get install nodejs`
+### Node
 
-Para el resto de sistemas (Windows, MacOS) seguimos las [instrucciones de instalación en su web oficial](https://nodejs.org/en/).
+Para poder usar *gulp* en nuestro ordenador, necesitamos tener instalado *Node.js*. Node es una plataforma que nos permite ejecutar código JavaScript en nuestro ordenador o un servidor, ya sea para programar un back-end o para programar pequeños programas de código que nos sirvan de herramientas llamados scripts y todo ello usando código JavaScript, fantástico ¿no?.
 
-Para compoobar que lo tenemos instalado correctamente, ejecutamos desde la terminal este comando y si todo está bien, debería mostrarse la versión de node que tenemos instalada:
+Bien, antes de instalar Node en nuestro ordenador vamos a comprobar antes si por casualidad lo tenemos ya instalado. Para ello como suele ser común, escribiremos en la terminal el nombre del comando, seguido de `-v` como hemos hecho anteriormente con git, por ejemplo:
 
-`node --version`
+```shell
+node --version
+```
 
-Node viene con un gestor de paquetes llamando *npm* (node package manager). Npm nos permite instalar paquetes, es decir, pequeñas librerías de código que usamos para construir aplicaciones. Una de estas librerías será el propio gulp. Para comprobar que está bien instalado, ejecutamos en la terminal este comando que debería devolver la versión de npm que tenemos instalada:
+Una vez hecho esto nos aparecerá un mensaje en la terminal. Si nos aparece un mensaje del estilo `El comando no existe` o `command not found` es que no tenemos instalado Node en nuestro ordenador. Si por el contrario, se muestra la versión de node que tenemos instalada, por ejemplo `v8.9.3`, sabremos que lo tenemos instalado y por tanto podemos saltarnos el paso de la instalación.
+
+#### Instalar Node en Ubuntu
+
+Para instalar la última versión estable de Node en Ubuntu, tenemos que ejecutar estas dos líneas de código en nuestra terminal:
+
+```shell
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+#### Instalar Node en Mac
+
+Para instalar Node en Mac ejecutaremos el siguiente código para comprobar si tenemos instalado [Homebrew](https://brew.sh/index_es.html), que es una herramienta muy útil que nos permite instalar software en nuestro ordenador de forma muy sencilla.
+
+Para comprobar si tenemos instalado Homebrew, escribimos en la terminal lo siguiente:
+
+```shell
+brew --version
+```
+
+Igual que nos ha sucedido antes con Node, una vez ejecutado el comando nos aparecerá un mensaje en la terminal. Si nos aparece un mensaje del estilo `El comando no existe` o `command not found` es que no tenemos instalado Node en nuestro ordenador. Si por el contrario, se muestra un mensaje con una versión y un texto, sabremos que lo tenemos instalado.
+
+Si tenemos instalado Homebrew podemos saltarnos este comando, sino tenemos que ejecutarlo para instalarlo:
+
+```shell
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+Tras realizarlo y que haga todo el proceso, volvemos a comprobar con `brew --version` si hemos instalado correctamente Homebrew. En caso de tener todo correcto, continuamos con el siguiente paso y si no sale lo que esperamos, es el momento de pedir ayuda :).
+
+Por último, ahora que tenemos instalado Homebrew, instalar Node será tan sencillo como hacer lo siguiente:
+
+```shell
+brew install node@8
+```
+
+#### Instalar Ubuntu en otro sistema operativo distinto de Ubuntu o Mac
+
+Para el resto de sistemas seguimos las [instrucciones de instalación en su web oficial](https://nodejs.org/en/).
+
+---
+
+Una vez instalado Node, cerramos la terminal y volvemos a abrirla y comprobamos si Node se ha instalado correctamente usando el comando `node --version`. Esta vez debería aparecernos la versión que hemos instalado de Node. Si nos aparece otro mensaje es que no se ha instalado correctamente, es el momento de pedir ayuda :).
+
+### npm
+
+Node viene con un gestor de paquetes llamado *npm*. Npm nos permite instalar paquetes, es decir, pequeñas librerías de código que usamos para construir aplicaciones o para usar como herramientas. Una de estas herramientas será el propio gulp. Para comprobar que está bien instalado, ejecutamos en la terminal este comando que debería devolver la versión de npm que tenemos instalada:
 
 `npm --version`
 
-Ahora ya estamos en disposición de instalar gulp con npm. Para ello ejecutamos esto en la terminal (si da error de permisos, tendremos que poner `sudo` delante del comando):
+Si tras ejecutarlo nos devuelve un número de versión, es que todo está correcto y podemos continuar con la instalación de gulp. Para ello ejecutamos esto en la terminal (si da error de permisos, tendremos que poner `sudo` delante del comando):
 
 `npm -g install gulp-cli`
 
@@ -49,13 +101,13 @@ El `-g` indica que se instala de forma global y se puede usar la utilidad de gul
 
 ### Usando gulp en nuestro proyecto
 
-Ahora que ya tenemos todo instalado, vamos a utilizar gulp en nuestro proyecto. Vamos a crear un nuevo proyecto, para ello creamos una nueva carpeta (podemos hacerlos desde la terminal con `mkdir <nombre_carpeta>`). Y nos movemos dentro de la carpeta con `cd <nombre_carpeta>`.
+Ahora que ya tenemos todo instalado, vamos a utilizar gulp en nuestro proyecto. Vamos a crear un nuevo proyecto, para ello creamos una nueva carpeta (podemos hacerlo desde la terminal con `mkdir <nombre_carpeta>`). Y nos movemos dentro de la carpeta con `cd <nombre_carpeta>`.
 
 Para indicar que en este proyecto vamos a usar npm, necesitamos crear un fichero llamado `package.json` que indica la configuración de npm del proyecto. Es un fichero en formato JSON que si recordáis tiene el aspecto de un objeto de JavaScript que tiene solo propiedades pero no métodos (funciones). La forma más sencilla de crear este fichero es ejecutando desde la terminal:
 
 `npm init`
 
-Al hacerlo, nos irá pidiendo información sobre el proyecto: nombre, descripción, etc. Podemos escribir esta información o dar a *enter* para aceptar la información que viene por defecto. Si abrimos esta carpeta desde Atom, veremos que la pinta del `package.json` es algo así:
+Al hacerlo, nos irá pidiendo información sobre el proyecto: nombre, descripción, etc. Podemos escribir esta información o pulsar la tecla `Enter` para aceptar la información que viene por defecto y que aparece entre paréntesis al lado de donde escribimos. Una vez haya terminado de hacer preguntas, creará el archivo `package.json` en nuestra carpeta, si lo abrimos veremos que la pinta del `package.json` es algo así:
 
 ```json
 {
@@ -81,11 +133,11 @@ Con esto, instalamos gulp para nuestro proyecto e indicamos que se use sólo en 
     "gulp": "^3.9.1"
   }
 ```
-Además notaremos que se ha creado una carpeta en el proyecto `node_modules` donde se instalan los paquetes de npm. Normalmente no queremos que esta carpeta forme parte de nuestro control de versiones, así que la incluiremos en nuestro `.gitignore`.
+Además notaremos que se ha creado una carpeta en el proyecto `node_modules` donde se instalarán los paquetes de npm. Normalmente no queremos que esta carpeta forme parte de nuestro control de versiones, así que la incluiremos en nuestro `.gitignore`.
 
-El `package.json` se usa saber qué paquetes (dependencias) tiene el proyecto. ¿Para qué? Porque si alguien se clona tu proyecto no va a tener todo el código de las dependencias (la carpeta `node_modules`) pero en el `package.json` está toda esa información. Simplemente ejecutando `npm install` se instalarán todas esas dependencias y en `node_modules`.
+El `package.json` se usa para saber qué paquetes (dependencias) tiene el proyecto. ¿Para qué? Porque si alguien se clona tu proyecto no va a tener todo el código de las dependencias (la carpeta `node_modules`) pero en el `package.json` está toda esa información. Simplemente ejecutando `npm install` se instalarán todas esas dependencias y se añadirán a la carpeta `node_modules`.
 
-Ahora sólo nos falta el fichero de configuración de gulp llamado `gulpfile.js`. Vamos a crear un fichero con ese nombre y meter este código de configuración (si miráis con atención ¡es JavaScript!):
+Ahora sólo nos falta crear el fichero de configuración de gulp llamado `gulpfile.js`. Vamos a crear un fichero con ese nombre y meter este código de configuración (si miráis con atención ¡es JavaScript!):
 
 ```javascript
 var gulp = require('gulp');
@@ -95,11 +147,13 @@ gulp.task('default', function() {
 });
 ```
 
-Para ejecutar simplemente ejecutaremos el comando
+>NOTA: No vamos a entrar por el momento en detalle ni explicaciones, simplemente queremos que lo probéis y os vayáis familiarizando
+
+Para probar el código anterior, en la terminal escribiremos el siguiente comando:
 
 `gulp`
 
-Como resultado aparecerá el mensaje 'Hola gulp' en nuestra terminal.
+Como resultado aparecerá el mensaje 'Hola gulp' en nuestra terminal. Lo que hace el comando `gulp` es buscar el archivo `gulpfile.js` en la ruta en la que estamos situados desde la terminal y si existe ejecutará la función asociada a la tarea `'default'` de gulp, que en este caso hace un `console.log`
 
 Pero esto no es muy útil. Vamos a usar ahora otro gulpfile más complejo que nos permita convertir Sass a CSS. Pero primera tendremos que instalar otro paquete que nos permite hacer esto:
 
@@ -112,19 +166,19 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 gulp.task('default', function () {
-  gulp.src('scss/index.scss')// Leo el archivo scss
-    .pipe(sass())// Compilo el resultado a CSS
-    .pipe(gulp.dest('css'));// Lo escribo en el directorio destino
+  gulp.src('scss/index.scss') // Leo el archivo scss
+    .pipe(sass()) // Convierto el contenido del archivo index.scss a CSS
+    .pipe(gulp.dest('css')); // El CSS generado lo guardamos en la carpeta css
 });
 ```
 
-Lo que hace es coger `scss/index.scss` y pasarlo a la carpeta `css`. Para probarlo, creamos en nuestro proyecto una carpeta `css` vacía y otra `scss` con este fichero llamado `index.scss`:
+Lo que hace es coger `scss/index.scss` y generar a partir de él un archivo CSS en la carpeta `css`. Para probarlo, creamos en nuestro proyecto una carpeta `css` vacía y otra `scss` con un fichero llamado `index.scss` en el que escribiremos lo siguiente:
 
 ```scss
 $primary-color: magenta;
 
 body {
-  background: magenta;
+  background: $primary-color;
 }
 ```
 
@@ -141,30 +195,33 @@ body {
 
 Hasta ahora hemos creado una tarea que convierte nuestro Sass a CSS, pero sólo una vez. Si volvemos a modificar el fichero Sass tendremos que volver a ejecutar el comando `gulp` para convertirlo a CSS. ¿Pero esto es un poco rollo, no?
 
-Escribiendo en la terminal `gulp` en realidad hemos ejecutado la tarea por defecto (`default`) del `gulpfile`. Si veis en el `gulpfile`, creamos una tarea con `gulp.task` y el primer parámetro es una cadena con el nombre de la tarea. La tarea por defecto tiene el nombre especial `default`. Pero podemos ejecutar otras tareas con `gulp nombre_tarea`.
+Escribiendo en la terminal `gulp` en realidad hemos ejecutado la tarea por defecto (`default`) del archivo `gulpfile.js`. Si veis en el `gulpfile`, creamos una tarea con `gulp.task` y el primer parámetro es una cadena con el nombre de la tarea. La tarea por defecto tiene el nombre especial `default`. Pero podemos ejecutar otras tareas con `gulp nombre_tarea`.
 
-Vamos a crear una tarea `watch` que está todo el rato observando nuestros ficheros Sass y al modificarlos que se conviertan automáticamente a CSS. Para eso, usamos este `gulpfile`:
+Vamos a crear una tarea `watch` que está todo el rato observando nuestros ficheros Sass y al modificarlos genera a partir de su contenido un archivo CSS. Para eso, usamos este `gulpfile`:
 
 ```javascript
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 gulp.task('default', function () {
-  gulp.src('scss/index.scss')// Leo el archivo scss
-    .pipe(sass())// Compilo el resultado a CSS
-    .pipe(gulp.dest('css'));// Lo escribo en el directorio destino
+  gulp.src('scss/index.scss') // Leo el archivo scss
+    .pipe(sass()) // Convierto el contenido del archivo index.scss a CSS
+    .pipe(gulp.dest('css')); // El CSS generado lo guardamos en la carpeta css
 });
 
 // Tarea que observa cambios en 'scss'
-// En su primera ejecución lanzará también la tarea previa
+// En su primera ejecución lanzará también las tareas que pasamos como segundo parámetro en la función, default en este caso
 gulp.task('watch', ['default'], function () {
   gulp.watch('scss/*.scss', ['default']);  // Lanza la tarea 'default' cuando observa cambios en cualquier scss
 });
 ```
 
-Ahora ejecutamos nuestra nueva tarea `gulp watch`. La terminal se quedará esperando hasta que queramos pararla haciendo `Ctrl + C` en el teclado. Probad a modificar el fichero Sass y ver que el CSS se modifica automáticamente.
+Ahora ejecutamos nuestra nueva tarea `gulp watch`. Una vez ejecutada, lo primero que hará será ejecutar `default` porque le hemos dicho que lo ejecute antes de comenzar `watch`. Tras ejecutar `default`, el proceso se quedará corriendo en la terminal y si realizamos algún cambio en alguno de los archivos Sass de nuestro proyecto veremos cómo en la terminal aparecen unos mensajes que muestran que se ha vuelto a ejecutar la tarea de default. Si en algún momento queremos parar este proceso, podremos pulsar `Ctrl + C` en el teclado y el proceso terminará en ese momento.
+
+Prueba a modificar el fichero Sass y ver que el CSS se modifica automáticamente. Igual que Koala pero con un toque más de programadora pro, ¿verdad?
 
 ***
+
 EJERCICIO 1
 
 Ahora vamos a trabajar con un proyecto que ya tiene configurado gulp. Primero tendremos que clonarlo en nuestro ordenador y en la carpeta ejecutar `npm install` para instalar las dependencias.
@@ -186,7 +243,7 @@ Hasta ahora hemos usado plugins de gulp para trabajar con Sass y CSS. Plugins so
 
 #### Plugins para JavaScript
 
-También existen tareas de gulp que nos permiten mejorar nuestro flujo de trabajo con JavaScript. Algo habitual es tener varios ficheros JavaScript en un proyecto, pero en producción siempre es mejor que el navegador cargue uno solo. Para eso existe una tarea para concetenar (`concat`) todos los ficheros JS en uno solo. También suele ser habitual minificar el código (eliminar espacios, cambiar nombres de variables a una letra, etc.) para que vaya más rápido. Exite un
+También existen tareas de gulp que nos permiten mejorar nuestro flujo de trabajo con JavaScript. Algo habitual es tener varios ficheros JavaScript en un proyecto, pero en producción siempre es mejor que el navegador cargue uno solo. Para eso existe una tarea para concatenar (`concat`) todos los ficheros JS en uno solo. También suele ser habitual minificar el código (eliminar espacios, cambiar nombres de variables a una letra, etc.) para que vaya más rápido. Existe un
 
 Podéis ver un ejemplo de cómo trabajar con esto en este repositorio que preparó un voluntario del curso: https://github.com/luisddm/gulp-adalab
 
