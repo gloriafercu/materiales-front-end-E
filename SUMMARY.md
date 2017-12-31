@@ -41,6 +41,7 @@
 * [3.3 Animaciones CSS](sprint_3/3_3_animaciones_CSS.md)
 * [3.4 Sistema de Grid](sprint_3/3_4_sistema_de_grid.md)
 * [3.5 Automatización de tareas](sprint_3/3_5_automatizacion_de_tareas.md)
+* [Ejercicio de evaluación - Sprint 3](evaluaciones/3_evaluacion.md)
 
 ## Proyectos
 
