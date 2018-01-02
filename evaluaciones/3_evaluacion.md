@@ -26,14 +26,14 @@ En primer lugar vamos a realizar la maquetación sobre un diseño dado:
 4. Las imágenes e iconos están generados ya al clonar el repositorio por primera vez
 5. De igual manera, está incluído el starter kit de Adalab con gulp
 
-Url del proyecto: https://zpl.io/awnYgWg
+URL del proyecto: https://zpl.io/awnYgWg
 
 ***
 **Zeplin** es una aplicación para poder compartir un diseño con desarrolladores sin necesidad de que usen aplicaciones como Sketch, Illustrator o Photoshop, y con mucha más información que unos pantallazos.
 
 Podéis ver un pequeño [tutorial en Youtube](https://www.youtube.com/watch?time_continue=12&v=tbKZAGthUgQ).
 
-Se puede acceder al diseño directamente desde el navegador para lo que necesitaréis una cuenta de zeplin (que se puede conseguir de forma gratuita desde su página) y enviar usuario y email a Carlos por mensaje directo desde Slack para que os invite.
+Se puede acceder al diseño directamente desde el navegador para lo que necesitaréis una cuenta de zeplin (que se puede conseguir de forma gratuita desde su página) y enviar usuario y email a Carlos (@chuck) por mensaje directo desde Slack para que os invite.
 ***
 
 ### 2. Interacción
@@ -45,7 +45,7 @@ En total, tenemos 4 interacciones que resolver:
 
 
 ### 3. Petición AJAX
-Para finalizar el ejercicio hemos preparado un pequeño servicio que devuelve tres razones extras para el módulo de razones para comprar: https://three-random-reasons-axqaqqmtck.now.sh/  
+Para finalizar el ejercicio hemos preparado un pequeño servicio que devuelve tres razones extras para el módulo de razones para comprar: https://three-random-reasons-izwfjpgbqm.now.sh/
 
 Cada vez que pulsemos el botón de "More reasons" se deberán pedir 3 nuevas razones y añadirlas al módulo cuando el servidor nos devuelva la respuesta, que será del tipo:
 
