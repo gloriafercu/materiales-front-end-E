@@ -1,4 +1,4 @@
-# Scope y ámbito
+# Scope y hoisting
 
 ## Contenidos
 
