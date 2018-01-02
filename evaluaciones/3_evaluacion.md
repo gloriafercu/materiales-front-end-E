@@ -1,12 +1,12 @@
 ## Ejercicio de evaluación - Sprint 3
 
-Como siempre, antes de empezar, tenéis que crear un nuevo repositorio desde GitHub Classroom. Para ello tenéis que aceptar usar un enlace distinto para [el grupo de mañana](https://classroom.github.com/a/yc9q-SOY) y para [el grupo de tarde](https://classroom.github.com/a/gAkpAoZW). Una vez creado, lo clonamos en nuestro ordenador y en la carpeta creada empezaremos a trabajar en el ejercicio. Esta vez el repositorio incluirá algunos archivos:  
+Como siempre, antes de empezar, tenéis que crear un nuevo repositorio desde GitHub Classroom. Para ello tenéis que aceptar usar un enlace distinto para [el grupo de mañana](https://classroom.github.com/a/hNE-HTW8) y para [el grupo de tarde](https://classroom.github.com/a/nvTgwUex). Una vez creado, lo clonamos en nuestro ordenador y en la carpeta creada empezaremos a trabajar en el ejercicio. Esta vez el repositorio incluirá algunos archivos:  
 * Base con Gulp
 * Imágenes para resolver el Ejercicio
 
 El deadline para la entrega es:
-- el 12 de diciembre de 2017 a las 14:30 para el grupo de mañana
-- el 12 de diciembre de 2017 a las 21:30 para el grupo de tarde
+- el 10 de enero de 2018 a las 14:30 para el grupo de mañana
+- el 10 de enero de 2018 a las 21:30 para el grupo de tarde
 
 El ejercicio consiste en desarrollar una página web de acuerdo a un diseño dado. Habrá que resolver varios puntos:
 - Usar CSS Grid
