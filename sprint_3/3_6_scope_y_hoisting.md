@@ -114,25 +114,25 @@ A continuación seleccionaremos el archivo JavaScript que queremos depurar dentr
 
 >Vista con un archivo abierto.Pestaña de _Sources_ de las herramientas de desarollo de Chrome
 
-![Pestaña de _Sources_ con un archivo abierto](assets/images/3-6/empty-devtools-sources-tab.png)
+![Pestaña de _Sources_ con un archivo abierto](assets/images/3-6/devtools-sources-tab.png)
 
 Para comprobar cuál es el scope en un momento determinado de la ejecución de nuestro código, simplemente pulsamos en el número de una línea de código para generar una parada en el código (breakpoint), al pulsar sobre el número aparecerá un marcador azul para indicarnos que hemos generado una parada.
 
->Pestaña de _Sources_ de las herramientas de desarollo de Chrome
+>Código con un breakpoint para parar la ejecución en una línea determinada
 
-![Pestaña de _Sources_ de las herramientas de desarollo de Chrome]()
+![Código con un breakpoint para parar la ejecución en una línea determinada](sprint_3/assets/images/3-6/how-to-add-breakpoint-sources.png)
 
 Despues de generar una parada en el código, recargamos la página. Al recargarla ejecutará el código JavaScript hasta la linea en la que hemos puesto el breakpoint, donde se parará hasta que le digamos que continue.
 
->Pestaña de _Sources_ de las herramientas de desarollo de Chrome
+>Vista del código parado en un punto determinado
 
-![Pestaña de _Sources_ de las herramientas de desarollo de Chrome]()
+![Vista del código parado en un punto determinado](assets/images/3-6/javascript-execution-paused.png)
 
 En este momento podemos ver a la derecha un panel con una sección que tiene el nombre de scope. Dentro de esta podremos ver otras dos subsecciones, local y global. Local hará referencia al scope local (si se está ejecutando una función, será al scope de la función) y global hará referencia al scope global, a todas las variables y funciones disponibles a lo largo de todo nuestro código (tanto las que hemos creado nosotros como las que genera por defecto el navegador). El scope que se muestra será el que haya justo en el momento antes de ejecutar la linea de código en la que hemos realizado la parada.
 
->Pestaña de _Sources_ de las herramientas de desarollo de Chrome
+>Vista de la sección scope en el panel de info de Sources
 
-![Pestaña de _Sources_ de las herramientas de desarollo de Chrome]()
+![Vista de la sección scope en el panel de info de Sources](assets/images/3-6/scope-section.png)
 
 Y hasta aquí sería la descripción de qué es el scope o ámbito en JavaScript. Si no te ha quedado todo perfectamente claro y no lo has pillado a la primera no te preocupes, este concepto es algo que a veces cuesta más, la idea es explicarlo y que, a base de consultarlo y volver de vez en cuando a esta explicación se llegue a un punto de entendimiento del concepto. Por el momento, con entender que el scope determina el alcance de nuestras variables y funciones y como funciona a grandes rasgos es más que suficiente. La práctica y repaso a base de constancia con el código harán el resto para entender a fondo de qué se trata.
 
