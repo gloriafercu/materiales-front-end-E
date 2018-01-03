@@ -120,7 +120,7 @@ Para comprobar cuál es el scope en un momento determinado de la ejecución de n
 
 >Código con un breakpoint para parar la ejecución en una línea determinada
 
-![Código con un breakpoint para parar la ejecución en una línea determinada](sprint_3/assets/images/3-6/how-to-add-breakpoint-sources.png)
+![Código con un breakpoint para parar la ejecución en una línea determinada](assets/images/3-6/how-to-add-breakpoint-sources.png)
 
 Despues de generar una parada en el código, recargamos la página. Al recargarla ejecutará el código JavaScript hasta la linea en la que hemos puesto el breakpoint, donde se parará hasta que le digamos que continue.
 
