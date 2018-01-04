@@ -205,18 +205,138 @@ Partiendo el ejemplo anterior en codepen, vamos a modificarlo para que en lugar 
 
 ## Promesas
 
-Las promesas al rescate
+Hasta ahora hemos trabajado siempre con callbacks para hacer llamadas al servidor. Nos hemos dado cuenta en los ejemplos anteriores que si queremos hacer algo complejo como peticiones encadenadas o en paralelo, el código es bastante complejo.
 
-### ¿Qué son?
+Las promesas nos ofrecen una alternativa a los callbacks para intentar escribir código más claro y limpio. Es decir, podemos hacer las mismas cosas que con callbacks pero de una forma más elegante.
 
-### Uso simple
+Para ver algunos ejemplos de promesas vamos a utilizar `fetch`, una forma alternativa a `XMLHttpRequest` para hacer peticiones al servidor que es más simple y trabaja con promesas. Más información en este [tutorial de MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
 
-### Uso encadenado
+### Usando promesas
 
-### Uso en paralelo
+Vamos a realizar el ejemplo inicial de la sesión de pedir al API de Dog CEO el listado de razas con las que trabaja pero usando promesas ([aquí el codepen](https://codepen.io/adalab/pen/WdZegK?editors=1010)).
 
-### Gestión de errores
+```js
+fetch('https://dog.ceo/api/breeds/list')
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(json){
+    var breeds = json.message;
+    var listHTML = '';
+    for (var i = 0; i < breeds.length; i++) {
+      listHTML += '<li>' + breeds[i] + '</li>';
+    }
+    var ul = document.querySelector('ul');
+    ul.innerHTML = listHTML;
+  });
+```
+
+En primer lugar, vemos que a `fetch` sólo le pasamos un parámetro que es la URL de donde queremos hacer la petición, así de sencillo. Al ejecutar `fetch`, este método devuelve una promesa, es decir, algo sobre lo que podemos hacer `.then()`. Una promesa se llama así porque mientras se ejecuta el fetch (se hace la petición al servidor, responde y nos llega la respuesta) podemos trabajar con la respuesta en otra variable `response` donde 'nos prometen' que estará la respuesta del servidor cuando llegue. Es decir, que seguimos trabajando de forma asíncrona (en respuesta a eventos) pero las promesas nos ocultan esa complejidad.
+
+Entonces, sobre una promesa podemos hacer un `.then()` pero ¿para qué? Para poder indicar qué hacer cuando se complete esa promesa. Al método `then` le tenemos que pasar una función (en este caso es anónima, pero puede ser una normal con nombre) que toma como parámetro el resultado de la promesa cuando esté resuelta. En este caso el parámetro `response` representa a la respuesta del servidor, y sobre él ejecutamos el método `.json()` que devuelve otra promesa (sic). Esto es porque el método `json` trabaja de forma asíncrona y el resultado de convertir la respuesta a JSON se lo pasamos como promesa al siguiente `.then()`. Así que encadenamos otro `then` al que le pasamos como parámetro una función que toma como parámetro `json` con la respuesta ya convertida a JSON. En este último then, recogemos la información que necesitamos del objeto `json.message` y pintamos en pantalla.
+
+Como veis, en este caso en lugar de tener 2 callbacks tenemos 2 `then` cuyas funciones van recibiendo como parámetro los datos que pasan de una llamada asíncrona a la siguiente.
+
+> NOTA: es muy importante no olvidar devolver (con return) al final de los then la promesa para encadenar con el siguiente then. En el último no hace falta porque ya no encadenamos más.
+
+### Peticiones encadenadas con promesas
+
+Ahora vamos a realizar el ejemplo anterior que encadenaba 2 peticiones al servidor pero usando promesas ([código en este codepen](https://codepen.io/adalab/pen/baoNZq#0)).
+
+```js
+fetch('https://dog.ceo/api/breeds/list')
+  .then(function(breedsResponse){
+    return breedsResponse.json();
+  })
+  .then(function(breedsJSON){
+    var breeds = breedsJSON.message;
+    return fetch('https://dog.ceo/api/breed/' + breeds[0] + '/images/random');
+  })
+  .then(function(imageResponse){
+    return imageResponse.json();
+  })
+  .then(function(imageJSON){
+    var img = document.querySelector('img');
+    img.src = imageJSON.message;
+  });
+
+```
+
+Ahora hemos encadenado hasta 4 promesas: petición al servidor, convertir a JSON al respuesta, segunda petición y convertir la segunda respuesta a JSON. Como hemos indicado antes, es importante que al final de los `then` devolvamos una promesa para pasar los datos al siguiente `then`.
+
+***
+
+EJERCICIO 3
+
+Vamos a seguir con el API de organizaciones de GitHub pero ahora vamos a acceder a él usando promesas. Vamos a acceder a la URL de los eventos de una comunidad (en la propiedad 'events_url') del [JSON de la comunidad Adalab](https://api.github.com/orgs/Adalab). Y vamos a realizar una petición nueva a esta URL para pintar en pantalla el tipo (propiedad 'type') del primer evento del array. ¡A darle caña!
+
+***
+
+
+### Peticiones en paralelo con promesas
+
+Ahora vamos a realizar el ejemplo de las peticiones en paralelo pero usando promesas. Para ello, usamos el método `Promise.all` que toma como parámetro un array de promesas y devuelve otra promesa que se resuelve cuando todas las del array se han resuelto. Por tanto, sobre el resultado podremos hacer un `then` que recibe como parámetro un array con todos los resultados de las promesas anteriores, es decir, donde tendremos todos los JSON de la respuesta del servidor. [Veamos el ejemplo de codepen](https://codepen.io/adalab/pen/xpXGaG?editors=1010).
+
+```js
+function createPromise(){
+  return fetch('https://dog.ceo/api/breeds/image/random')
+    .then(function(response){
+      return response.json();
+    });
+}
+
+var promises = [createPromise(), createPromise()];
+
+Promise.all(promises)
+  .then(function(responses){
+    for (var i = 0; i < responses.length; i++) {
+      var img = document.querySelector('.dog' + (i + 1));
+      img.src = responses[i].message;
+    }
+  });
+
+```
+Hemos creado una función `createPromise` que crea las promesas de las peticiones al servidor con `fetch` y parsea a JSON en el `then`. Luego creamos el array de promesas ejecutando 2 veces la función anterior. Sobre ese array ejecutamos el `Promise.all` que cuando todas las peticiones al servidor hayan terminado, ejecutará la función del `then` a la que le llegan todos los resultados mediante el parámetro  `responses`. Luego recorremos eses array para ir pintando las imágenes en los `img` del HTML.
+
+***
+
+EJERCICIO 4
+
+Vamos a hacer como antes y, partiendo el ejemplo anterior con promesas, vamos a modificarlo para que en lugar de pedir 2 imágenes en parelelo pida 10. Y luego 25 :)
+
+***
+
+### BONUS: Gestión de errores con promesas
+
+Otra de las ventajas de las promesas es que facilitan la gestión de errores. Este es un tema que no hemos hasta ahora con JavaScript, pero vamos a ver cómo se hace con promesas porque facilitan mucho la vida.
+
+```js
+fetch('https://dog.ceo/api/breeds/list')
+  .then(function(breedsResponse){
+    return breedsResponse.json();
+  })
+  .then(function(breedsJSON){
+    var breeds = breedsJSON.message;
+    return fetch('https://dog.ceo/api/breed/' + breeds[0] + '/images/random');
+  })
+  .then(function(imageResponse){
+    return imageResponse.json();
+  })
+  .then(function(imageJSON){
+    var img = document.querySelector('img');
+    img.src = imageJSON.message;
+  })
+  .catch(function(error){
+    console.log('Ha sucedido un error: ' + error);
+  });
+
+```
+
+Cuando usamos promesas podemos encadenar el final de los `then` un `catch` que también recibe una función, que tiene como parámetro información del error que puede haber sucedido en cualquiera de los `then` anteriores. En el ejemplo anterior, este error puede deberse a algún error del servidor o que nos devuelva un JSON con una estructura que no esperábamos y lo parseemos mal.
+
 
 ## Recursos externos
 
-- [{{resource.link_name}}]({{resource.url}})
+- [Exploring JS: promises](http://exploringjs.com/es6/ch_promises.html)
+- [MDN: using promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
+- [We have a problem with promises](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
