@@ -60,7 +60,7 @@ En este ejemplo registramos un callback `showBreeds` que se ejecuta cuando la pe
 
 ## Callbacks anidados
 
-Ahora vamos a partir del ejemplo anterior para pedir al servidor una foto de una raza concreta de perro. Para ello, por tanto, necesitamos conocer primero el listado de razas (como en el ejemplo anterior) y luego, con esta información, pedir al servidor una foto de una raza concreta. Por tanto son dos callbacks encadenados, es decir, que la segunda petición depende de los datos que llegan en la primera. Vamos a ver un [ejemplo de esta codepen](https://codepen.io/adalab/pen/BJZxNK#0):
+Ahora vamos a partir del ejemplo anterior para pedir al servidor una foto de una raza concreta de perro. Para ello, por tanto, necesitamos conocer primero el listado de razas (como en el ejemplo anterior) y luego, con esta información, pedir al servidor una foto de una raza concreta. Por tanto son dos callbacks encadenados, es decir, que la segunda petición depende de los datos que llegan en la primera. Vamos a ver un [ejemplo de este codepen](https://codepen.io/adalab/pen/BJZxNK#0):
 
 ```js
 var request, request2;
@@ -308,7 +308,7 @@ Vamos a hacer como antes y, partiendo el ejemplo anterior con promesas, vamos a 
 
 ### BONUS: Gestión de errores con promesas
 
-Otra de las ventajas de las promesas es que facilitan la gestión de errores. Este es un tema que no hemos hasta ahora con JavaScript, pero vamos a ver cómo se hace con promesas porque facilitan mucho la vida.
+Otra de las ventajas de las promesas es que facilitan la gestión de errores. Este es un tema que no hemos visto hasta ahora con JavaScript, pero vamos a ver cómo se hace con promesas porque facilitan mucho la vida.
 
 ```js
 fetch('https://dog.ceo/api/breeds/list')
