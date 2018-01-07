@@ -3,6 +3,7 @@
 ## Contenidos
 
 - [Introducción](#introducción)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
 - [¿En qué casos se utiliza?](#¿en-qué-casos-se-utiliza)
 - [Repasando los callbacks](#repasando-los-callbacks)
 - [Callbacks anidados](#callbacks-anidados)
@@ -13,7 +14,7 @@
 
 ## Introducción
 
-En esta sesión vamos a ahondar más en el concepto de asoncronía y los callbacks que vimos en el sprint anterior. Primero revisaremos algunos ejemplos con callbacks anidados (callbacks que dependen de otro callback anterior). Depués veremos una alternativa a los callbacks, las promesas y cómo podemos encadenar el resultado de varias peticiones realizadas con una nueva función `fetch`.
+En esta sesión vamos a ahondar más en el concepto de asincronía y los callbacks que vimos en el sprint anterior. Primero revisaremos algunos ejemplos con callbacks anidados (callbacks que dependen del resultado de otro callback anterior). Después veremos una alternativa a los callbacks, las promesas y cómo podemos encadenar el resultado de varias peticiones realizadas con una nueva función `fetch`.
 
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
@@ -22,9 +23,9 @@ La asincronía es algo inherente a las aplicaciones del navegador, porque siempr
 - realizar una acción cuando se hayan completado varios procesos asíncronos que dependen uno del otro
 - realizar una acción cuando se hayan completado varios procesos asíncronos que se ejecutan en paralelo
 
-Veamos algunos ejemplos en la web de procesos dependientes:
+Veamos algunos casos de ejemplo donde es necesario ejecutar procesos en paralelo en una web:
 - cuando hago una petición a un servidor (AJAX) de la cual necesito algunos datos para realizar una segunda petición; por ejemplo, pido los datos de un pokemon al servidor y obtengo un identificador que necesito para pedir datos sobre sus evoluciones
-- hago una petición al servidor y cuando llegan los datos, quiero almecenarlos en el navegador y cuando estén guardados, mostrar un mensaje; por ejemplo, pido los datos de un pokemon, los almaceno en `localStorage` y cuando estén guardados muestro un mensaje en la página de "Datos guardados correctamente"
+- hago una petición al servidor y cuando llegan los datos, quiero almacenarlos en el navegador y cuando estén guardados, mostrar un mensaje; por ejemplo, pido los datos de un pokemon, los almaceno en `localStorage` y cuando estén guardados muestro un mensaje en la página de "Datos guardados correctamente"
 
 Veamos algunos ejemplos en la web de procesos que se ejecutan en paralelo:
 - cuando buscamos en una app de transporte cuál es la ruta más rápida entre dos puntos y necesitamos obtener información de distintas APIs web (taxis, EMT, Uber, Cabify...) y esperar a recibir la respuesta de todas para reflejar cual será la opción más rápida entre ellas.
@@ -33,7 +34,7 @@ Para realizar estos procesamientos complejos, vamos a ver 2 formas de afrontarlo
 
 ## Repasando los callbacks
 
-Pero, ¿qué eran los *callbacks*? Pues las funciones de callback eran esas que registrábamos con `addEventListener` para ser ejecutadas cuando sucede un evento. Es el navegador quien las ejecuta, no nosotros, y les pasa como argumento un objeto `event` con información sobre el evento que ha sucedido. Vamos a recordar cómo hacíamos una petición AJAX ([ejemplo en este codepen](https://codepen.io/adalab/pen/PEjeOG?editors=1010)):
+Pero, ¿qué eran los *callbacks*? Pues las funciones de callback eran esas que registrábamos con `addEventListener` para ser ejecutadas cuando sucede un evento, por ejemplo al pulsar un botón (`'click'`). Es el navegador quien las ejecuta, no nosotros, y les pasa como argumento un objeto `event` con información sobre el evento que ha sucedido. Vamos a recordar cómo hacíamos una petición AJAX ([ejemplo en este codepen](https://codepen.io/adalab/pen/PEjeOG?editors=1010)):
 
 ```js
 var request = new XMLHttpRequest();
@@ -102,17 +103,26 @@ En este caso trabajamos con 2 peticiones al servidor, y por tanto hemos declarad
   - la URL es `/api/breed/{breed-name}/images/random` donde `breed-name` es el nombre de la raza de la que queremos la imagen, en este caso, hemos cogido la primera del array de razas que es 'affenpinscher'
   - la función de callback es `showPicture`, que recoge la URL de la imagen del objeto `request2` y la pinta en el DOM
 
-Hemos declarado 2 variables con scope global para poder acceder a la petición desde ambas funciones de callback y recoger el resultado de la petición. También podríamos haber declarado el segundo callback `showPicture` dentro del primero (podemos declarar funciones dentro de funciones 😱) y declarar `request2` dentro del ámbito de `getBreedsAndRequest`. ¡Espero que esto no os líe!
+Hemos declarado 2 variables con scope global para poder acceder a la petición desde ambas funciones de callback y recoger el resultado de la petición. También podríamos haber declarado el segundo callback `showPicture` dentro del primero (podemos declarar funciones dentro de funciones 😱) y declarar `request2` dentro del ámbito de `getBreedsAndRequest`. ¡Espero que esto no os lie!
 
 ***
 
 EJERCICIO 1: LISTADO DE REPOS DE ADALAB
 
-Vamos a serguir explorando el API de GitHub que ya descubrimos en [la sesión anterior sobre AJAX](../sprint_2/2_10_ajax.md) explorando la parte del [API para acceder a la info sobre organizaciones](https://developer.github.com/v3/orgs/). La URL de este API es `https://api.github.com/orgs/orgname`, donde `orgname` es el nombre de la organización en GitHub. Por ejemplo, aquí tenéis la URL para obtener información de la organización Adalab `https://api.github.com/orgs/Adalab`. Si ponéis esta URL en una nueva pestaña del navegador podréis observar qué datos nos devuelve el API.
+Vamos a seguir explorando el API de GitHub que ya descubrimos en [la sesión anterior sobre AJAX](../sprint_2/2_10_ajax.md) explorando la parte del [API para acceder a la info sobre organizaciones](https://developer.github.com/v3/orgs/). La URL de este API es `https://api.github.com/orgs/orgname`, donde `orgname` es el nombre de la organización en GitHub. Por ejemplo, aquí tenéis la URL para obtener información de la organización Adalab `https://api.github.com/orgs/Adalab`. Si ponéis esta URL en una nueva pestaña del navegador podréis observar qué datos nos devuelve el API.
 
-En este ejercicio vamos a acceder a la información de la organización Adalab como primera petición al servidor. Recogeremos la información de la URL donde consultar la información de los repositorios de Adalab en la respuesta del servidor (en la propiedad `repos_url`) y haremos una nueva petición a esa URL. En el segundo callback pintaremos en nuestra web el nombre de todos los repositorios de la organización en una lista (propiedad `name` de cada objeto repositorio).
+El objetivo de este ejercicio es mostrar en una web el listado completo de los repositorios de Adalab que hay creados en GitHub. El resultado final debería ser similar a este:
+
+![Resultado del ejercicio](assets/images/3-8/resultado-ejercicio-1-listado-de-repos.png)
+
+Para ello vamos a hacer lo siguiente:
+
+1. acceder a la información de la organización Adalab como primera petición al servidor.
+1. recogeremos la información de la URL donde consultar la información de los repositorios de Adalab en la respuesta del servidor (en la propiedad `repos_url`) y haremos una nueva petición a esa URL.
+1. en el segundo callback pintaremos en nuestra web el nombre de todos los repositorios de la organización en una lista (propiedad `name` de cada objeto repositorio).
 
 ***
+
 
 ## Callbacks en paralelo
 
@@ -199,13 +209,13 @@ Ahora en la función de callback que hemos llamado `saveData` lo que hacemos es
 
 EJERCICIO 2: PINTANDO VARIAS IMÁGENES A LA VEZ
 
-Partiendo el ejemplo anterior en codepen, vamos a modificarlo para que en lugar de pedir 2 imágenes en parelelo pida 10, y el resultado sólo se pinte en la pantalla cuando las 10 imágenes hayan llegado del servidor. Ahora sí que se nota el efecto de que se pintan todas a la vez, ¿verdad? Vamos a probar también con 25 imágenes, para ver bien este efecto.
+Partiendo el ejemplo anterior en codepen, vamos a modificarlo para que en lugar de pedir 2 imágenes en paralelo pida 10, y el resultado sólo se pinte en la pantalla cuando las 10 imágenes hayan llegado del servidor. Ahora sí que se nota el efecto de que se pintan todas a la vez, ¿verdad? Vamos a probar también con 25 imágenes, para ver bien este efecto.
 
 ***
 
 ## Promesas
 
-Hasta ahora hemos trabajado siempre con callbacks para hacer llamadas al servidor. Nos hemos dado cuenta en los ejemplos anteriores que si queremos hacer algo complejo como peticiones encadenadas o en paralelo, el código es bastante complejo.
+Hasta ahora hemos trabajado siempre con callbacks para hacer llamadas al servidor. Nos hemos dado cuenta en los ejemplos anteriores que si queremos hacer algo complejo como peticiones encadenadas o en paralelo, el código es bastante complejo y poco intuitivo.
 
 Las promesas nos ofrecen una alternativa a los callbacks para intentar escribir código más claro y limpio. Es decir, podemos hacer las mismas cosas que con callbacks pero de una forma más elegante.
 
@@ -268,7 +278,7 @@ Ahora hemos encadenado hasta 4 promesas: petición al servidor, convertir a JSON
 
 EJERCICIO 3: PETICIONES ENCADENADAS CON PROMESAS
 
-Vamos a seguir con el API de organizaciones de GitHub pero ahora vamos a acceder a él usando promesas. Vamos a acceder a la URL de los eventos de una comunidad (en la propiedad 'events_url') del [JSON de la comunidad Adalab](https://api.github.com/orgs/Adalab). Y vamos a realizar una petición nueva a esta URL para pintar en pantalla el tipo (propiedad 'type') del primer evento del array. ¡A darle caña!
+Vamos a seguir con el API de organizaciones de GitHub pero ahora vamos a acceder a él usando promesas. Vamos a acceder a la URL de los eventos de una comunidad (en la propiedad `events_url`) del [JSON de la comunidad Adalab](https://api.github.com/orgs/Adalab). Y vamos a realizar una petición nueva a esta URL para pintar en pantalla el tipo (propiedad `type`) del primer evento del array. Si el código es correcto, debería de verse en la pantalla la palabra _"PushEvent"_. ¡A darle caña!
 
 ***
 
@@ -302,7 +312,7 @@ Hemos creado una función `createPromise` que crea las promesas de las peticione
 
 EJERCICIO 4: PINTANDO VARIAS IMÁGENES A LA VEZ CON PROMESAS
 
-Vamos a hacer como antes y, partiendo del ejemplo anterior con promesas, vamos a modificarlo para que en lugar de pedir 2 imágenes en parelelo pida 10. Y luego 25 :)
+Vamos a hacer como antes y, partiendo del ejemplo anterior del CodePen con promesas, vamos a modificarlo para que en lugar de pedir 2 imágenes en paralelo pida 10. Y luego 25 :)
 
 ***
 
