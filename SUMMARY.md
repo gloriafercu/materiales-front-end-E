@@ -43,6 +43,8 @@
 * [3.5 Automatización de tareas](sprint_3/3_5_automatizacion_de_tareas.md)
 * [3.R.1 Repaso](sprint_3/3_repaso_1.md)
 * [3.6 Scope y hoisting](sprint_3/3_6_scope_y_hoisting.md)
+* 3.7 (Pendiente)
+* [3.8 Asincronía avanzada](sprint_3/3_8_asincronia_avanzada.md)
 * [Ejercicio de evaluación - Sprint 3](evaluaciones/3_evaluacion.md)
 
 ## Proyectos
