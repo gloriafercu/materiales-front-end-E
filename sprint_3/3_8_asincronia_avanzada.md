@@ -302,7 +302,7 @@ Hemos creado una función `createPromise` que crea las promesas de las peticione
 
 EJERCICIO 4
 
-Vamos a hacer como antes y, partiendo el ejemplo anterior con promesas, vamos a modificarlo para que en lugar de pedir 2 imágenes en parelelo pida 10. Y luego 25 :)
+Vamos a hacer como antes y, partiendo del ejemplo anterior con promesas, vamos a modificarlo para que en lugar de pedir 2 imágenes en parelelo pida 10. Y luego 25 :)
 
 ***
 
