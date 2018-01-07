@@ -18,16 +18,16 @@ En esta sesión vamos a ahondar más en el concepto de asoncronía y los callbac
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-La asincronía es algo inherente a las aplicaciones del navegador, porque siempre vamos a querer ejecutar acciones (código) cuando el usuario realice una acción o suceda un evento. En esta sesión aprenderemos trabajar en casos de asincronía compleja, como por ejemplo:
-- quiero realizar una acción cuando se hayan completado varios procesos asíncronos que dependen uno del otro
-- quiero realizar una acción cuando se hayan completado varios procesos asíncronos que se ejecutan en paralelo
+La asincronía es algo inherente a las aplicaciones del navegador, porque siempre vamos a querer ejecutar acciones (código) cuando el usuario realice una acción o suceda un evento. En esta sesión aprenderemos cómo trabajar en casos de asincronía compleja, como por ejemplo:
+- realizar una acción cuando se hayan completado varios procesos asíncronos que dependen uno del otro
+- realizar una acción cuando se hayan completado varios procesos asíncronos que se ejecutan en paralelo
 
 Veamos algunos ejemplos en la web de procesos dependientes:
 - cuando hago una petición a un servidor (AJAX) de la cual necesito algunos datos para realizar una segunda petición; por ejemplo, pido los datos de un pokemon al servidor y obtengo un identificador que necesito para pedir datos sobre sus evoluciones
 - hago una petición al servidor y cuando llegan los datos, quiero almecenarlos en el navegador y cuando estén guardados, mostrar un mensaje; por ejemplo, pido los datos de un pokemon, los almaceno en `localStorage` y cuando estén guardados muestro un mensaje en la página de "Datos guardados correctamente"
 
 Veamos algunos ejemplos en la web de procesos que se ejecutan en paralelo:
-- cuando pido varios datos a un API en varias peticiones, pero los necesito todos para pintar la página; por ejemplo, hago 5 peticiones de datos de 5 pokemon y cuando tenga los datos de todas, los muestro en la página
+- cuando buscamos en una app de transporte cuál es la ruta más rápida entre dos puntos y necesitamos obtener información de distintas APIs web (taxis, EMT, Uber, Cabify...) y esperar a recibir la respuesta de todas para reflejar cual será la opción más rápida entre ellas.
 
 Para realizar estos procesamientos complejos, vamos a ver 2 formas de afrontarlos: 1) mediante callbacks (como hemos hecho hasta ahora) y 2) mediante promesas, una característica de JavaScript que nos facilita la vida para hacer estas cosas.
 
@@ -91,9 +91,9 @@ request.send();
 ```
 
 En este caso trabajamos con 2 peticiones al servidor, y por tanto hemos declarado 2 variables donde creamos esas nuevas peticiones (`new XMLHttpRequest`). Vamos a ver la estructura de cada petición:
-- la primera petición
+- la primera petición (`getBreedsAndRequest`)
   - se crea en la variable `request`
-  - se prepara y envía (`open`, `addEventListener`, `send`) en el ámbito (scope) global
+  - se prepara (`open`, `addEventListener`) y envía (`send`) en el ámbito (scope) global
   - la URL es como en el ejemplo anterior `/api/breeds/list`
   - tiene una función de callback `getBreedsAndRequest` en la que recogemos el listado de razas del objeto `request` en una variable `breeds` que es de tipo array
 - la segunda petición
@@ -106,7 +106,7 @@ Hemos declarado 2 variables con scope global para poder acceder a la petición d
 
 ***
 
-EJERCICIO 1
+EJERCICIO 1: LISTADO DE REPOS DE ADALAB
 
 Vamos a serguir explorando el API de GitHub que ya descubrimos en [la sesión anterior sobre AJAX](../sprint_2/2_10_ajax.md) explorando la parte del [API para acceder a la info sobre organizaciones](https://developer.github.com/v3/orgs/). La URL de este API es `https://api.github.com/orgs/orgname`, donde `orgname` es el nombre de la organización en GitHub. Por ejemplo, aquí tenéis la URL para obtener información de la organización Adalab `https://api.github.com/orgs/Adalab`. Si ponéis esta URL en una nueva pestaña del navegador podréis observar qué datos nos devuelve el API.
 
@@ -116,7 +116,7 @@ En este ejercicio vamos a acceder a la información de la organización Adalab c
 
 ## Callbacks en paralelo
 
-Ya hemos visto la utilidad de tener callbacks anidados, en los que una petición depende de las anteriores. Ahora vamos por qué usar callbacks en paralelo, es decir, que se ejecutan a la vez pero que queremos hacer alguan acción cuando todos se han completado.
+Ya hemos visto la utilidad de tener callbacks anidados, en los que una petición depende de las anteriores. Ahora vamos por qué usar callbacks en paralelo, es decir, que se ejecutan a la vez pero que queremos hacer alguna acción cuando todos se han completado.
 
 Partimos de este [ejemplo en codepen](https://codepen.io/adalab/pen/ypodPN?editors=1010) con dos peticiones AJAX al API de fotos de perros que se hacen en paralelo:
 
@@ -191,13 +191,13 @@ requestAndShowDogPicture('.dog2');
 
 Ahora en la función de callback que hemos llamado `saveData` lo que hacemos es
 - almacenar en el selector de la imagen y su `src` en `imageData`
-- incrementar el contador `requestsCompleted`
+- incrementar en uno el contador `requestsCompleted`
 - comprobar si hemos llegado al número total de requests y si es así, invocar la función que pinta en el DOM todas las imágenes
 
 
 ***
 
-EJERCICIO 2
+EJERCICIO 2: PINTANDO VARIAS IMÁGENES A LA VEZ
 
 Partiendo el ejemplo anterior en codepen, vamos a modificarlo para que en lugar de pedir 2 imágenes en parelelo pida 10, y el resultado sólo se pinte en la pantalla cuando las 10 imágenes hayan llegado del servidor. Ahora sí que se nota el efecto de que se pintan todas a la vez, ¿verdad? Vamos a probar también con 25 imágenes, para ver bien este efecto.
 
@@ -233,9 +233,9 @@ fetch('https://dog.ceo/api/breeds/list')
 
 En primer lugar, vemos que a `fetch` sólo le pasamos un parámetro que es la URL de donde queremos hacer la petición, así de sencillo. Al ejecutar `fetch`, este método devuelve una promesa, es decir, algo sobre lo que podemos hacer `.then()`. Una promesa se llama así porque mientras se ejecuta el fetch (se hace la petición al servidor, responde y nos llega la respuesta) podemos trabajar con la respuesta en otra variable `response` donde 'nos prometen' que estará la respuesta del servidor cuando llegue. Es decir, que seguimos trabajando de forma asíncrona (en respuesta a eventos) pero las promesas nos ocultan esa complejidad.
 
-Entonces, sobre una promesa podemos hacer un `.then()` pero ¿para qué? Para poder indicar qué hacer cuando se complete esa promesa. Al método `then` le tenemos que pasar una función (en este caso es anónima, pero puede ser una normal con nombre) que toma como parámetro el resultado de la promesa cuando esté resuelta. En este caso el parámetro `response` representa a la respuesta del servidor, y sobre él ejecutamos el método `.json()` que devuelve otra promesa (sic). Esto es porque el método `json` trabaja de forma asíncrona y el resultado de convertir la respuesta a JSON se lo pasamos como promesa al siguiente `.then()`. Así que encadenamos otro `then` al que le pasamos como parámetro una función que toma como parámetro `json` con la respuesta ya convertida a JSON. En este último then, recogemos la información que necesitamos del objeto `json.message` y pintamos en pantalla.
+Entonces, sobre una promesa podemos hacer un `.then()` pero ¿para qué? Para poder indicar qué hacer cuando se complete esa promesa. Al método `then()` le tenemos que pasar una función (en este caso es anónima, pero puede ser una normal con nombre) que toma como parámetro el resultado de la promesa cuando esté resuelta. En este caso el parámetro `response` representa a la respuesta del servidor, y sobre él ejecutamos el método `.json()` que devuelve otra promesa. Esto es porque el método `json` trabaja de forma asíncrona y el resultado de convertir la respuesta a JSON se lo pasamos como promesa al siguiente `.then()`. Así que encadenamos otro `then()` al que le pasamos como parámetro una función que toma como parámetro `json` con la respuesta ya convertida a JSON. En este último then, recogemos la información que necesitamos del objeto `json.message` y pintamos en pantalla.
 
-Como veis, en este caso en lugar de tener 2 callbacks tenemos 2 `then` cuyas funciones van recibiendo como parámetro los datos que pasan de una llamada asíncrona a la siguiente.
+Como veis, en este caso en lugar de tener 2 callbacks tenemos 2 `then()` cuyas funciones van recibiendo como parámetro los datos que pasan de una llamada asíncrona a la siguiente.
 
 > NOTA: es muy importante no olvidar devolver (con return) al final de los then la promesa para encadenar con el siguiente then. En el último no hace falta porque ya no encadenamos más.
 
@@ -262,11 +262,11 @@ fetch('https://dog.ceo/api/breeds/list')
 
 ```
 
-Ahora hemos encadenado hasta 4 promesas: petición al servidor, convertir a JSON al respuesta, segunda petición y convertir la segunda respuesta a JSON. Como hemos indicado antes, es importante que al final de los `then` devolvamos una promesa para pasar los datos al siguiente `then`.
+Ahora hemos encadenado hasta 4 promesas: petición al servidor, convertir a JSON al respuesta, segunda petición y convertir la segunda respuesta a JSON. Como hemos indicado antes, es importante que al final de los `then()` devolvamos una promesa para pasar los datos al siguiente `then()`.
 
 ***
 
-EJERCICIO 3
+EJERCICIO 3: PETICIONES ENCADENADAS CON PROMESAS
 
 Vamos a seguir con el API de organizaciones de GitHub pero ahora vamos a acceder a él usando promesas. Vamos a acceder a la URL de los eventos de una comunidad (en la propiedad 'events_url') del [JSON de la comunidad Adalab](https://api.github.com/orgs/Adalab). Y vamos a realizar una petición nueva a esta URL para pintar en pantalla el tipo (propiedad 'type') del primer evento del array. ¡A darle caña!
 
@@ -275,7 +275,7 @@ Vamos a seguir con el API de organizaciones de GitHub pero ahora vamos a acceder
 
 ### Peticiones en paralelo con promesas
 
-Ahora vamos a realizar el ejemplo de las peticiones en paralelo pero usando promesas. Para ello, usamos el método `Promise.all` que toma como parámetro un array de promesas y devuelve otra promesa que se resuelve cuando todas las del array se han resuelto. Por tanto, sobre el resultado podremos hacer un `then` que recibe como parámetro un array con todos los resultados de las promesas anteriores, es decir, donde tendremos todos los JSON de la respuesta del servidor. [Veamos el ejemplo de codepen](https://codepen.io/adalab/pen/xpXGaG?editors=1010).
+Ahora vamos a realizar el ejemplo de las peticiones en paralelo pero usando promesas. Para ello, usamos el método `Promise.all` que toma como parámetro un array de promesas y devuelve otra promesa que se resuelve cuando todas las del array se han resuelto. Por tanto, sobre el resultado podremos hacer un `then()` que recibe como parámetro un array con todos los resultados de las promesas anteriores, es decir, donde tendremos todos los JSON de la respuesta del servidor. [Veamos el ejemplo de codepen](https://codepen.io/adalab/pen/xpXGaG?editors=1010).
 
 ```js
 function createPromise(){
@@ -296,11 +296,11 @@ Promise.all(promises)
   });
 
 ```
-Hemos creado una función `createPromise` que crea las promesas de las peticiones al servidor con `fetch` y parsea a JSON en el `then`. Luego creamos el array de promesas ejecutando 2 veces la función anterior. Sobre ese array ejecutamos el `Promise.all` que cuando todas las peticiones al servidor hayan terminado, ejecutará la función del `then` a la que le llegan todos los resultados mediante el parámetro  `responses`. Luego recorremos eses array para ir pintando las imágenes en los `img` del HTML.
+Hemos creado una función `createPromise` que crea las promesas de las peticiones al servidor con `fetch` y parsea a JSON en el `then()`. Luego creamos el array de promesas ejecutando 2 veces la función anterior. Sobre ese array ejecutamos el `Promise.all` que cuando todas las peticiones al servidor hayan terminado, ejecutará la función del `then()` a la que le llegan todos los resultados mediante el parámetro  `responses`. Luego recorremos eses array para ir pintando las imágenes en los `img` del HTML.
 
 ***
 
-EJERCICIO 4
+EJERCICIO 4: PINTANDO VARIAS IMÁGENES A LA VEZ CON PROMESAS
 
 Vamos a hacer como antes y, partiendo del ejemplo anterior con promesas, vamos a modificarlo para que en lugar de pedir 2 imágenes en parelelo pida 10. Y luego 25 :)
 
@@ -332,7 +332,7 @@ fetch('https://dog.ceo/api/breeds/list')
 
 ```
 
-Cuando usamos promesas podemos encadenar el final de los `then` un `catch` que también recibe una función, que tiene como parámetro información del error que puede haber sucedido en cualquiera de los `then` anteriores. En el ejemplo anterior, este error puede deberse a algún error del servidor o que nos devuelva un JSON con una estructura que no esperábamos y lo parseemos mal.
+Cuando usamos promesas podemos encadenar el final de los `then()` un `catch` que también recibe una función, que tiene como parámetro información del error que puede haber sucedido en cualquiera de los `then()` anteriores. En el ejemplo anterior, este error puede deberse a algún error del servidor o que nos devuelva un JSON con una estructura que no esperábamos y lo parseemos mal.
 
 
 ## Recursos externos
@@ -340,3 +340,4 @@ Cuando usamos promesas podemos encadenar el final de los `then` un `catch` que t
 - [Exploring JS: promises](http://exploringjs.com/es6/ch_promises.html)
 - [MDN: using promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
 - [We have a problem with promises](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
+- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
