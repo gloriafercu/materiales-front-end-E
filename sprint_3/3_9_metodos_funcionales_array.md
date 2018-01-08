@@ -9,13 +9,13 @@
   - [`map`](#map)
   - [`filter`](#filter)
   - [`reduce`](#reduce)
-  - [BONUS: `sort`](#bonus:-sort)
+  - [BONUS: `sort`](#bonus-sort)
 - [Recursos externos](#recursos-externos)
 
 ## Introducción
 
 En esta sesión vamos a ver cómo trabajar con arrays de forma eficiente en JavaScript. Hasta ahora hemos trabajado con arrays y conocemos algunos métodos del objeto array, como `push` para meter nuevos elementos en el array
-o `join` para unir todos los elementos de un array en una cadena. Y cuando queremos acceder todos los elementos de un array, usamos un bucle para recorrerlo. Pero en esta sesión vamos a aprender a realizar acciones con varios elementos de un array pero sin necesidad de bucles, usando los denominados *métodos funcionales* de array.  Se llaman métodos funcionales porque está alineadas con una forma de programar que da mucha importancia a las funciones... ¡nuestras amigas las funciones!
+o `join` para unir todos los elementos de un array en una cadena. Y cuando queremos acceder todos los elementos de un array, usamos un bucle para recorrerlo. Pero en esta sesión vamos a aprender a realizar acciones con varios elementos de un array pero sin necesidad de bucles, usando los denominados *métodos funcionales* de array. Se llaman métodos funcionales porque están alineados con una forma de programar que da mucha importancia a las funciones... ¡nuestras amigas las funciones!
 
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
@@ -68,7 +68,7 @@ var capitalNames = names.map(function(name){
 console.log(capitalNames);
 ```
 
-En este caso ejecutamos el método `map` sobre el array de nombres `names`. A `map` le pasamos un único parámetro que es una función que se va a aplicar sobre cada elemento del array. Esta función (que hemos decidido hacer anónima en este caso) toma como parámetro el elemento del array al que hemos llamado `name`. Nosotros no ejecutamos esta función, sino que sólo se la pasamos como parámetro a `map`, justo de la misma forma que hacíamos con los callbacks, y será `map` quien la ejecute pasándoles como argumento cada elemento del array. Dentro de la función como tenemos el elemento del arra (el nombre, en primer lugar 'María') ejecutamos directamente el método `toUppercase` y devolvemos (`return`) el resultado para que pase al array de resultados `capitalNames`. En este caso nosotros no hemos tenido que crear el array `capitalNames` a mano sino que `map` lo crea sólo directamente porque así es como funciona: devuelve un array del mismo tamaño que el original con el resultado de aplicar una función a cada elemento del array.
+En este caso ejecutamos el método `map` sobre el array de nombres `names`. A `map` le pasamos un único parámetro que es una función que se va a aplicar sobre cada elemento del array. Esta función (que hemos decidido hacer anónima en este caso) toma como parámetro el elemento del array, al que hemos llamado `name`. Nosotros no ejecutamos esta función, sino que solo se la pasamos como parámetro a `map`, justo de la misma forma que hacíamos con los callbacks, y será `map` quien la ejecute pasándoles como argumento cada elemento del array. Dentro de la función tenemos el elemento del array (el nombre, por ejemplo, en primer lugar 'María') sobre el que ejecutamos directamente el método `toUppercase` (pasar a mayúscula). Devolvemos (`return`) el resultado para que pase al array de resultados `capitalNames`. En este caso nosotros no hemos tenido que crear el array `capitalNames` a mano sino que `map` lo crea solo directamente porque así es como funciona: devuelve un array del mismo tamaño que el original con el resultado de aplicar una función a cada elemento del array.
 
 > NOTA: es importante recordar que el array resultante de aplicar map va a ser siempre de la misma longitud que el array original.
 
@@ -106,9 +106,9 @@ var users = [
 
 ### filter
 
-El siguiente método funcional que vamos a ver es `filter`. `Filter` nos ayuda a, como su propio nombre indica, filtrar un array y elegir algunos de sus elementos dado un criterio. La forma de uso el muy parecida a `map` ya que toma como único argumento una función que se aplica sobre cada elemento del array. Si el resultado de aplicar la función sobre un elemento es `true` el elemento se mantiene en el array de resultados, pero si es `false`, no. Por tanto, el array que crea `filter` siempre va a tener una longitud igual o menor que el original ya que va a tener como máximo los elementos del original y como mínimo estará vacío.
+El siguiente método funcional que vamos a ver es `filter`. `Filter` nos ayuda a, como su propio nombre indica, filtrar un array y elegir algunos de sus elementos dado un criterio. La forma de uso es muy parecida a `map` ya que toma como único argumento una función que se aplica sobre cada elemento del array. Si el resultado de aplicar la función sobre un elemento es `true` el elemento se mantiene en el array de resultados, pero si es `false`, no. Por tanto, el array que crea `filter` siempre va a tener una longitud igual o menor que el original: va a tener como máximo los elementos del original y como mínimo estará vacío.
 
-[Partimos de un ejemplo](https://codepen.io/adalab/pen/vppJVQ?editors=0011) en el que, dado un listado de nombres queremos quedarnos sólo con los que tienen más de 5 letras, es decir, 6 o más. Primero vamos a solucionarlo con un bucle:
+[Partimos de un ejemplo](https://codepen.io/adalab/pen/vppJVQ?editors=0011) en el que, dado un listado de nombres queremos quedarnos solo con los que tienen más de 5 letras, es decir, 6 o más. Primero vamos a solucionarlo con un bucle:
 
 ```js
 var names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
@@ -136,19 +136,21 @@ var longNames = names.filter(function(name){
 console.log(longNames);
 ```
 
-En este caso hemos ejecutado el método `filter` sobre el array `names` y le pasamos como parámetro una función que es la que se ejecuta sobre cada elemento del array. Esta función (anónima) define un parámetro que hemos llamado `name` que representa el elemento del array, por ejemplo, 'María'. Dentro de la función comparamos la longitud (`length`) del nombre y devolvemos el resultado de esa comparación, es decir, devolvemos `true` (si la longitud del nombre es mayor que 5) o `false` (si no lo es).
+En este caso hemos ejecutado el método `filter` sobre el array `names` y le pasamos como parámetro una función que es la que se ejecuta sobre cada elemento del array. Esta función (anónima) define un parámetro que hemos llamado `name` que representa el elemento del array, por ejemplo, 'María'. Dentro de la función comparamos la longitud (`length`) del nombre con 5, y devolvemos el resultado de esa comparación. Es decir, devolvemos `true` (si la longitud del nombre es mayor que 5) o `false` (si no lo es).
 
 ***
 
-EJERCICIO 4: Sólo los premium
+EJERCICIO 4: Solo los premium
 
-Seguimos con nuestra app de moda y vamos a utilizar el listado de usuarios del ejercicio 3. Pero ahora queremos tener un listado de usuarios (en un array `premiumUsers`) que sólo tenga los usuarios premium. ¿Sabremos hacerlo con `filter`?
+Seguimos con nuestra app de moda y vamos a utilizar el listado de usuarios del ejercicio 3. Pero ahora queremos tener un listado de usuarios (en un array `premiumUsers`) que solo tenga los usuarios premium. ¿Sabremos hacerlo con `filter`?
 
 ***
 
 EJERCICIO 5: Los pares pueden entrar
 
-Tenemos un listado de las contraseñas (PIN de 4 números) de los usuarios de nuestra web. Pero queremos que sólo puedan entrar los que han elegido una contraseña que es un número par para hacer [A/B testing](https://es.wikipedia.org/wiki/Test_A/B). ¿Nos ayudas a encontrarlas usando `filter`? Recuerda que el resto de la división entera (módulo `%`) de número par es 0.
+Tenemos un listado de las contraseñas (PIN de 4 números) de los usuarios de nuestra web. Pero queremos que solo puedan entrar los que han elegido una contraseña que es un número par para hacer [A/B testing](https://es.wikipedia.org/wiki/Test_A/B). ¿Nos ayudas a encontrarlas usando `filter`?
+
+> PISTA: Recuerda que el resto de la división entera (módulo `%`) de número par es 0.
 
 ```js
 var pins = [2389, 2384, 2837, 5232, 8998];
@@ -203,13 +205,19 @@ var result = scores.reduce(function(acc, number){
 console.log(result);
 ```
 
-En este caso ejecutamos el método `reduce` sobre el array `scores` y le pasamos como parámetros 1) una función y 2) un valor. 1) La función se ejecuta por cada elemento del array y toma como parámetros: a) un *acumulador* `acc`, que acumula el resultado de un elemento al siguiente; y b) el elemento del array, por ejemplo, 4. 2) El valor (segundo parámetro, en este caso 0) es el valor inicial del acumulador. La función lo que hace es sumar al acumulador el valor del número actual y devuelve el resultado, resultado que se convierte en el acumulador del siguiente número. Vamos a ver cómo funciona internamente:
+En este caso ejecutamos el método `reduce` sobre el array `scores` y le pasamos como parámetros 1) una función y 2) un valor.
+
+1) La función se ejecuta por cada elemento del array y toma como parámetros: a) un *acumulador* `acc`, que acumula el resultado de un elemento al siguiente; y b) el elemento del array, por ejemplo, 4.
+
+2) El valor (segundo parámetro, en este caso 0) es el valor inicial del acumulador.
+
+La función lo que hace es sumar al acumulador el valor del número actual y devuelve el resultado, resultado que se convierte en el acumulador del siguiente número. Vamos a ver cómo funciona internamente:
 1. Se ejecuta la función sobre el primer valor del array (4) que tiene como argumentos `acc` con valor 0 (valor inicial del acumnulador) y `number`que es 4, y devueve la suma `4 + 0` que es 4 y se convierte en el valor del acumulador
 2. Para el segundo valor, los argumentos son `acc` que vale 4 y `number` que es 2, y devuelve la suma que es 6 y se convierte en el acumulador
-3. La función toma como argumentos `acc=4` y `number=7` y devuelve 11
+3. La función toma como argumentos `acc=6` y `number=7` y devuelve 13
 4. Y así sucesivamente hasta llegar al último elemento del array, que sumará al acumulado 7 y devolverá el resultado final, que es la suma de todos los números del array (59).
 
-> NOTA: el segundo parámetro de reduce (el valor del acumulador) es opcional y si no lo pasamos se toma como valor inicial el primer elemento del array, que en nuestro ejemplo anterior también es válido porque comenzaríamos a aplicar la función a partir del segundo elemento.
+> NOTA: el segundo parámetro de `reduce` (el valor del acumulador) es opcional y si no lo pasamos se toma como valor inicial el primer elemento del array. En nuestro ejemplo anterior sería válido no indicar segundo parámetro y comenzaríamos a aplicar la función a partir del segundo elemento que toma como acumulador el primero.
 
 Esta forma de trabajar es bastante compleja y requiere de mucha práctica, así que vamos a trabajar unos ejercicios.
 
@@ -229,7 +237,7 @@ EJERCICIO 8: El ganador de la carrera
 
 Ya hemos conseguido los nombres de los competidores y nos gustaría que usases `reduce` para averiguar quién ha ganado.
 
-> PISTA: en este caso el acumulador puede ser no sólo un número sino cualquier valor, como por ejemplo un objeto que sea nuestro candidato a ganador antes de comporbar el resto del array ;)
+> PISTA: en este caso el acumulador puede ser no sólo un número sino cualquier valor. Por ejemplo un objeto que sea nuestro candidato a ganador :)
 
 ```js
 var users = [
@@ -252,11 +260,12 @@ Para ordenar valores que son cadenas, no es necesario usar ninguna función de o
 
 ```js
 var names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
+
 names.sort();
 console.log(names);
 ```
 
-Si queremos indicar otro tipo de orden, tendremos que pasar al método `sort` una función que sepa qué hacer para ordenar 2 elementos. La función toma 2 parámetros (`a` y `b`) que son 2 elementos cualquiera del array y tenemos que devolver:
+Si queremos indicar otro tipo de orden, tendremos que pasar al método `sort` una función que sepa qué hacer para ordenar 2 elementos. Esta función toma 2 parámetros (`a` y `b`) que son 2 elementos cualquiera del array y tenemos que devolver:
 - un número negativo si queremos que `a` se posicione antes que `b` en el array
 - un número positivo si queremos que `b` se posicione antes que `a` en el array
 - cero si queremos se comporten como valores iguales y en la ordenación aparezcan juntos
@@ -265,12 +274,13 @@ Vamos a ver un ejemplo de la función de ordenación para ordenar números:
 
 ```js
 var times = [56, 9, 45, 28, 35];
+
 times.sort(function(a, b){
   return a - b;
 });
 console.log(times);
 ```
-De esta forma, si un número `a` es mayor que otro `b` el resutlado es positivo y `b` se posiciona antes en el resultado. Lo contrario ocurre cuando `a` es menor que `b`. Si son iguales, el resutaldo es 0.
+De esta forma, si un número `a` es mayor que otro `b` el resultado es positivo y `b` se posiciona antes en el resultado. Lo contrario ocurre cuando `a` es menor que `b`. Si son iguales, el resutaldo es 0.
 
 ***
 
@@ -278,7 +288,7 @@ EJERCICIO 9: Clasificación de la carrera
 
 Volviendo a nuestra carrera de escobas, queremos tener el array del ejercicio 8 ordenado para poder tener una clasificación de la carrera: ¿nos ayudar a hacerlo usando `sort`?
 
-> PISTA: la función que le pasamos a sort toma como parámetros 2 elementos del array, así que para acceder a una propiedad de un objeto en la función podemos hacerlo con el operador punto así: a.time
+> PISTA: la función que le pasamos a sort toma como parámetros 2 elementos del array, así que para acceder a una propiedad de un objeto en la función podemos hacerlo con el operador punto así: `a.time`
 
 ***
 
