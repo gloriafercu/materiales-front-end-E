@@ -88,9 +88,9 @@ Estamos creando una aplicación web, y lo primero que queremos hacer es saludar 
 
 EJERCICIO 3: Gracias por confiar en nosotros
 
-Seguimos desarrollando nuestra aplicación web que romperá el mercado. Pero antes, queremos agradecera nuestro usuarios premium (de pago) su ayuda en el saludo de la aplicación. Por tanto, a los usuarios premium queremos saludarles así *'Bienvenida Yolanda. Gracias por confiar en nosotros.'*, y mantener el saludo simple *'Bienvenida Yolanda'* para el resto de usuarios.
+Seguimos desarrollando nuestra aplicación web que romperá el mercado. Pero antes, queremos agradecer a nuestros usuarios premium (de pago) su ayuda en el saludo de la aplicación. Por tanto, a los usuarios premium queremos saludarles así *'Bienvenida Yolanda. Gracias por confiar en nosotros.'*, y mantener el saludo simple *'Bienvenida Yolanda'* para el resto de usuarios.
 
-Vamos a partir de este array con el listado de usuarios que incluy tanto su nombre como si son usuarios premium o no. ¿Podremos hacerlo con `map`?
+Vamos a partir de este array con el listado de usuarios que incluye tanto su nombre como si son usuarios premium o no. ¿Podremos hacerlo con `map`?
 
 ```js
 var users = [
@@ -106,7 +106,7 @@ var users = [
 
 ### filter
 
-El siguiente método funcional que vamos a ver es `filter`. `Filter` nos ayuda a, como su propio nombre indica, filtrar un array y elegir algunos de sus elementos dado un criterio. La forma de uso el muy parecida a `map` ya que toma como único argumento una función que se aplica sobre cada elemento del array. Si el resultado de aplicar la función sobre un elemento es `true` el elemento se mantiene en el array de resultados, pero si es `false` no. Por tanto, el array que crea `filter` siempre va a tener una longitud igual o menor que el original ya que va a tener como máximo los elementos del original y como mínimo estará vacío.
+El siguiente método funcional que vamos a ver es `filter`. `Filter` nos ayuda a, como su propio nombre indica, filtrar un array y elegir algunos de sus elementos dado un criterio. La forma de uso el muy parecida a `map` ya que toma como único argumento una función que se aplica sobre cada elemento del array. Si el resultado de aplicar la función sobre un elemento es `true` el elemento se mantiene en el array de resultados, pero si es `false`, no. Por tanto, el array que crea `filter` siempre va a tener una longitud igual o menor que el original ya que va a tener como máximo los elementos del original y como mínimo estará vacío.
 
 [Partimos de un ejemplo](https://codepen.io/adalab/pen/vppJVQ?editors=0011) en el que, dado un listado de nombres queremos quedarnos sólo con los que tienen más de 5 letras, es decir, 6 o más. Primero vamos a solucionarlo con un bucle:
 
@@ -148,7 +148,7 @@ Seguimos con nuestra app de moda y vamos a utilizar el listado de usuarios del e
 
 EJERCICIO 5: Los pares pueden entrar
 
-Tenemos un listado de las contraseñas (PIN de 4 números) de los usuarios de neustra web. Pero queremos que sólo puedan entrar los que han elegido una contraseña que es un número par para hacer A/B testing. ¿Nos ayudas a encontrarlas usando `filter`? Recuerda que el resto de la división entera (módulo `%`) de número par es 0.
+Tenemos un listado de las contraseñas (PIN de 4 números) de los usuarios de nuestra web. Pero queremos que sólo puedan entrar los que han elegido una contraseña que es un número par para hacer A/B testing. ¿Nos ayudas a encontrarlas usando `filter`? Recuerda que el resto de la división entera (módulo `%`) de número par es 0.
 
 ```js
 var pins = [2389, 2384, 2837, 5232, 8998];
@@ -158,7 +158,7 @@ var pins = [2389, 2384, 2837, 5232, 8998];
 
 EJERCICIO 6: Los usuarios que pueden entrar
 
-Ya hemos conseguido las contraseñas pertenecientes a cada usuario. ¿Podrías darnos un array con los usuarios que pueden acceder a la aplicación, es decir, lo que tienen como PIN un número par?
+Ya hemos conseguido las contraseñas pertenecientes a cada usuario. ¿Podrías darnos un array con los usuarios que pueden acceder a la aplicación, es decir, los que tienen como PIN un número par?
 
 ```js
 var users = [
