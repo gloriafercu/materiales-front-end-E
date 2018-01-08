@@ -148,7 +148,7 @@ Seguimos con nuestra app de moda y vamos a utilizar el listado de usuarios del e
 
 EJERCICIO 5: Los pares pueden entrar
 
-Tenemos un listado de las contraseñas (PIN de 4 números) de los usuarios de neustra web. Pero queremos que sólo puedan entrar los que han elegido una contraseña que es un número par para hacer A/B testing. ¿Nos ayudas a encontrarlas usando `filter`? Recuerda que el resto de la división entera (módulo `%`) de número par es 0.
+Tenemos un listado de las contraseñas (PIN de 4 números) de los usuarios de neustra web. Pero queremos que sólo puedan entrar los que han elegido una contraseña que es un número par para hacer [A/B testing](https://es.wikipedia.org/wiki/Test_A/B). ¿Nos ayudas a encontrarlas usando `filter`? Recuerda que el resto de la división entera (módulo `%`) de número par es 0.
 
 ```js
 var pins = [2389, 2384, 2837, 5232, 8998];
@@ -174,12 +174,123 @@ var users = [
 
 ### reduce
 
+El método `reduce` es un método funcional complejo que nos permite realizar cálculos o acciones que requieran utilizar varios elementos de un array. A diferencia de `map` o `filter` el resultado de `reduce` no es un array sino un valor del tipo que queramos. Se basa en aplicar una función a todos los elementos de un array (como las anteriores) y sa va trabajando con resultados parciales hasta que se llega al resultado final. Se usa cuando queremos obtener un resultado que depende de varios de los elementos del array, por ejemplo, calcular la media de un listado de números.
+
+Vamos a empezar con un [ejemplo de la sesión 2.5 sobre arrays](../sprint_2/2_5_arrays.md) que calcula la suma de un listado de números:
+
+```js
+var scores = [4, 2, 7, 8, 6, 7, 9, 1, 2, 6, 7];
+var result = 0;
+
+for (var i = 0; i < scores.length; i++) {
+  result += scores[i];
+}
+
+console.log(result);
+```
+
+En la variable `result`, que comienza siendo 0, vamos acumulando la suma de todos los números del array accediendo a cada uno como `scores[i]` dentro del bucle.
+
+Vamos a ver cómo haríamos este mismo ejempo con `reduce`:
+
+```js
+var scores = [4, 2, 7, 8, 6, 7, 9, 1, 2, 6, 7];
+
+var result = scores.reduce(function(acc, number){
+  return acc + number;
+}, 0);
+
+console.log(result);
+```
+
+En este caso ejecutamos el método `reduce` sobre el array `scores` y la pasamos como parámetros 1) una función y 2) un valor. 1) La función se ejecuta por cada elemento del array y toma como parámetros: a) un *acumulador* `acc`, que acumula el resultado de un elemento al siguiente; y b) el elemento del array, por ejemplo, 4. 2) El valor (segundo parámetro, en este caso 0) es el valor inicial del acumulador. La función lo que hace es sumar al acumulador el valor del número actual y devuelve el resultado, resultado que se convierte en el acumulador del siguiente número. Vamos a ver cómo funciona internamente:
+1. Se ejecuta la función sobre el primer valor del array (4) que tiene como argumentos `acc` con valor 0 (valor inicial del acumnulador) y `number`que es 4, y devueve la suma `4 + 0` que es 4 y se convierte en el valor del acumulador
+2. Para el segundo valor, los argumentos son `acc` que vale 4 y `number` que es 2, y devuelve la suma que es 6 y se convierte en el acumulador
+3. La función toma como argumentos `acc=4` y `number=7` y devuelve 11
+4. Y así sucesivamente hasta llegar al último elemento del array, que sumará al acumulado 7 y devolverá el resultado final, que es la suma de todos los números del array (59).
+
+> NOTA: el segundo parámetro de reduce (el valor del acumulador) es opcional y si no lo pasamos se toma como valor inicial el primer elemento del array, que en nuestro ejemplo anterior también es válido porque comenzaríamos a aplicar la función a partir del segundo elemento.
+
+Esta forma de trabajar es bastante compleja y requiere de mucha práctica, así que vamos a trabajar unos ejercicios.
+
+***
+
+EJERCICIO 7: La media de la carrera
+
+Hemos organizado una carrera de escobas para que podáis exprimir a fondo vuestra flamante Nimbus 2000. Tenemos los tiempos en este array y nos gustaría conocer la media: ¿nos ayudas a calcularla usando `reduce`?
+
+```js
+var times = [56, 9, 45, 28, 35];
+```
+
+***
+
+EJERCICIO 8: El ganador de la carrera
+
+Ya hemos conseguido los nombres de los competidores y nos gustaría que usases `reduce` para averiguar quién ha ganado.
+
+> PISTA: en este caso el acumulador puede ser no sólo un número sino cualquier valor, como por ejemplo un objeto que sea nuestro candidato a ganador antes de comporbar el resto del array ;)
+
+```js
+var users = [
+  {name: 'Gregory Goyle', time: 56},
+  {name: 'Nymphadora Tonks', time: 9},
+  {name: 'Luna Lovegood', time: 45},
+  {name: 'Cedric Diggory', time: 28},
+  {name: 'Cho Chang', time: 35}
+];
+```
+
+***
 
 
 ### BONUS: sort
 
+Para terminar, vamos a ver un último método que nos permite ordenar los elementos de un array. Es diferente de los anteriores en que, en lugar de devolver un nuevo array, modifica directamente el array original. Vamos a ver [algunos ejemplos](https://codepen.io/adalab/pen/jYYzZe?editors=0011).
 
+Para ordenar valores que son cadenas, no es necesario usar ninguna función de ordenación ya que por defecto las ordena en orden alfabético.
+
+```js
+var names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
+names.sort();
+console.log(names);
+```
+
+Si queremos indicar otro tipo de orden, tendremos que pasar al método `sort` una función que sepa qué hacer para ordenar 2 elementos. La función toma 2 parámetros (`a` y `b`) que son 2 elementos cualquiera del array y tenemos que devolver:
+- un número negativo si queremos que `a` se posicione antes que `b` en el array
+- un número positivo si queremos que `b` se posicione antes que `a` en el array
+- cero si queremos se comporten como valores iguales y en la ordenación aparezcan juntos
+
+Vamos a ver un ejemplo de la función de ordenación para ordenar números:
+
+```js
+var times = [56, 9, 45, 28, 35];
+times.sort(function(a, b){
+  return a - b;
+});
+console.log(times);
+```
+De esta forma, si un número `a` es mayor que otro `b` el resutlado es positivo y `b` se posiciona antes en el resultado. Lo contrario ocurre cuando `a` es menor que `b`. Si son iguales, el resutaldo es 0.
+
+***
+
+EJERCICIO 9: Clasificación de la carrera
+
+Volviendo a nuestra carrera de escobas, queremos tener el array del ejercicio 8 ordenado para poder tener una clasificación de la carrera: ¿nos ayudar a hacerlo usando `sort`?
+
+> PISTA: la función que le pasamos a sort toma como parámetros 2 elementos del array, así que para acceder a una propiedad de un objeto en la función podemos hacerlo con el operador punto así: a.time
+
+***
+
+EJERCICIO 10: Poniendo orden en nuestros usuarios
+
+Vamos a volver al listado de usuarios del ejercicio 6, porque nos ha dado la manía de tenerlos ordenados. ¿Podrías ordenarlos por orden alfabético? ¿Y por su número de PIN?
+
+***
 
 ## Recursos externos
 
-- [{{resource.link_name}}]({{resource.url}})
+- [Array `map` en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+- [Array `filter` en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [Array `reduce` en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+- [Array `sort` en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
