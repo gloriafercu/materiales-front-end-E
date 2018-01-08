@@ -45,6 +45,7 @@
 * [3.6 Scope y hoisting](sprint_3/3_6_scope_y_hoisting.md)
 * 3.7 (Pendiente)
 * [3.8 Asincronía avanzada](sprint_3/3_8_asincronia_avanzada.md)
+* [3.9 Métodos funcionales de array](sprint_3/3_9_metodos_funcionales_array.md)
 * [Ejercicio de evaluación - Sprint 3](evaluaciones/3_evaluacion.md)
 
 ## Proyectos
