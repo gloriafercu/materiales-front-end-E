@@ -46,6 +46,7 @@
 * 3.7 (Pendiente)
 * [3.8 Asincronía avanzada](sprint_3/3_8_asincronia_avanzada.md)
 * [3.9 Métodos funcionales de array](sprint_3/3_9_metodos_funcionales_array.md)
+* [3.10 DOM avanzado](sprint_3/3_10_dom_avanzado.md)
 * [Ejercicio de evaluación - Sprint 3](evaluaciones/3_evaluacion.md)
 
 ## Proyectos
