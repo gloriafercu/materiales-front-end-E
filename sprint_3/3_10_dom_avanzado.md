@@ -84,7 +84,7 @@ console.log('Hay ' + classItems.length + ' items con clase .item');
 
 #### `.getElementsByTagName`
 
-También podemos selecionarlos por etiquetas, en el mismo ejemplo:
+También podemos seleccionarlos por etiquetas, en el mismo ejemplo:
 
 ```js
 var tagItems = document.getElementsByTagName('li');
@@ -95,7 +95,7 @@ console.log('Hay ' + tagItems.length + ' <li>');
 
 #### `.children`
 
-Podemos selecciónar todas las hijas que tenga cierto elemento:
+Podemos seleccionar todas las hijas que tenga cierto elemento:
 
 ```js
 var items = document.querySelector('.items');
