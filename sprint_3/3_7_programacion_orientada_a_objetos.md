@@ -2,283 +2,257 @@
 
 ## Contenidos
 
-- Cadena de prototipos
-- Instancias con new
-- `this`, cómo llamarlo, bind / call?
+- [Introducción](#introducción)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
+- [¿En qué casos se utiliza?](#¿en-qué-casos-se-utiliza)
+- [Tipos de objetos](#tipos-de-objetos)
+  - [Objetos literales](#objetos-literales)
+  - [Objetos "normales"](#objetos-normales)
+    - [Prototipos](#prototipos)
+- [Contexto `this`](#contexto-this)
+- [Creando un objeto para un componente de la web](#creando-un-objeto-para-un-componente-de-la-web)
+- [Recursos externos](#recursos-externos)
 
 ## Introducción
 
-{{intro_info}}
-
+En esta sesión vamos a profundizar en algunos conceptos avanzados de JavaScript. En primer lugar exploraremos el contexto de las funciones y qué representa el `this` que ya hemos visto en alguna ocasión. También veremos cómo se trabaja con objetos en JavaScript, cómo crearlos y definir prototipos para que tener datos y comportamientos compartidos entre varios objetos.
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-{{purpose_info}}
+En una aplicación web sencilla como las que hemos hecho hasta ahora, tenemos variables y funciones en el ámbito global y se trabaja sin ningún problema. Pero cuando el código empieza a crecer, puede convertirse en algo inmanejable hacer algún cambio (por ejemplo, ¿dónde estaba la función de callback de este botón?). Para estructurar mejor nuestro código JS tenemos la posibilidad de trabajar con objetos. Los objetos al final son abstracciones de objetos del mundo real, que tienen
+- **atributos**, que son datos del cualquier tipo: cadenas, números, arrays, booleanos, objetos, etc.
+- **métodos**, que establecen comportamientos y son funciones
 
+Por ejemplo, si en nuestra web tenemos un carrito de la compra con varios artículos, podemos crear
+- un objeto artículo `Article` que tenga como atributos el nombre, descripción, precio y y métodos para mostrarlo en pantalla de varias formas
+- un objeto carrito `ShoppingCart` que tenga como atributo un listado de artículos, y métodos para añadir/eliminar artículos, calcular el precio total, etc.
 
 ## ¿En qué casos se utiliza?
 
-{{usecase_info}}
+Como ya hemos adelantado, cuando trabajamos con una base de código grande y compleja, los objetos nos ayudan a estructurar nuestro código. Por tanto, en grandes empresas y grandes proyectos se utilizan objetos. También en la mayoría de librerías JavaScript que usamos el código está estructurado en un objeto, el cual creamos al comienzo y vamos ejecutando sus métodos para ayudarnos en nuestras tareas.
 
+## Tipos de objetos
 
-## Contenido
+En JavaScript podemos trabajar con 2 tipos de objetos: los objetos literales y los objetos "normales".
 
-## Prototipos
+### Objetos literales
 
-- Al crear un objeto `var empty = {}` sin ningún método ni propiedad y ejecutar `console.log(empty.toString);` la consola devuelve una función. Esto se debe a que el objeto hereda las propiedades de su prototipo
+Los **objetos literales**, que definimos con `{}`, donde podemos definir datos como `name` y comportamiento como `jump`
 
-- En javascript, los objetos además además de poseer propiedades, la mayoria tambien posee un prototipo.
+```js
+var person = {
+  name: 'María',
+  jump: function(){
+    console.log('Jump');
+  }
+};
 
-- Un prototipo es un objeto que se usa como fallback source of properties.
+console.log(person.name); //María
+```
 
-- Cuando un objeto recibe una petición para una propiedad que no posee, se busca dicha propiedad entre las propiedades del prototipo al que pertenece el objeto, si este tampoco posee la propiedad buscada se buscara esta en el prototipo de este prototipo y asi sucesivamente.
+Los objetos literales son muy útiles para transmitir información, de hecho, el formato JSON está basado en este tipo de objetos. Tienen la ventaja de ser muy simples, pero si queremos tener varios objetos similares tenemos que crear uno a uno a mano.
 
-- Un prototipo es otro objeto que se usa como fallback source of properties.
+### Objetos "normales"
 
-- La estructura de relación entre los diferentes prototipos tiene forma de árbol y al principio de esta estructura se encuentra el prototipo Objeto `Object.prototype`
+El otro tipo de **objetos**, los "normales", son objetos que creamos a partir de una función *constructora* usando `new`, por ejemplo, cuando hacemos `new XMLHttpRequest()`. Estas funciones se escriben por convención con la primera letra en mayúscula. A la función constructora le pasamos unos parámetros que estarán relacionados con los atributos del objeto. Esta función constructora tendremos que ejecutarla con `new` delante y pasarle los parámetros que queremos del objeto. Sólo declarar la función sin ejecutarla, como ya sabemos, no hace nada. Vamos a ver un ejemplo y lo explicamos después:
 
-- Muchos objetos no tienen como prototipo directo a `Object.prototype`, sino que en cambio tienen otro objeto como prototipo que provee al objeto sus propiedades por defecto. A menudo, estos prototipos a su vez poseen otro prototipo por lo que el objeto que creamos recibe indirectamente los metodos de su propio prototipo y de la cadena de prototipos que influya sobre este.
+```js
+function Person(name) {
+  this.name = name;
+};
 
-- Cuando se crea un objeto derivado de un prototipo este comparte las propiedades de dicho prototipo. En caso de que el objeto tenga una propiedad con el mismo nombre que el prototipo esta será sobreescrita con el valor que se la haya otorgado.
+var maria = new Person('María');
+console.log(maria.name); //María
 
-- Metodos importantes:
+var carmen = new Person('Carmen');
+console.log(carmen.name); //Carmen
+```
 
-    - `Object.getPrototypeOf(<objeto>);` devuelve el prototipo de `<objeto>`
-    - `Object.create(<prototype>)` permite crear un objeto con un prototipo `<prototype>` especifico
+En este ejemplo definimos un nuevo tipo de objeto `Person` que es nuestra función constructora. Toma como parámetro `name` que es el nombre de la persona, es decir, los datos que nos interesa almacenar sobre la persona. Luego con `this.name` declaramos un atributo de este tipo de objeto con el nombre name. Es similar a declarar una variable `var` pero que sólo tiene sentido dentro de `Person`. A este atributo le asignamos el valor que nos llega por parámetros (el `name` a la derecha del `=`).
 
+Una vez definida la función constructora, vamos a crear un nuevo objeto de tipo `Person` poniendo el `new` delante y ejecutando la función constructura pasándoles como argumento el nombre de la persona, "María". Podemos fácilmente crear una nueva persona que tenga un nombre diferente.
 
-## Constructores
+Estos objetos con más complejos que los literales, pero nos permiten reutilizar más el código si vamos a crear varios objetos del mismo tipo.
 
-- Una forma mas conveniente de crear varios objetos que deriven de un prototipo común es usando un *constructor*. En JavaScript, cuando se llama a una función tras el comando `new` esta es considerada como un constructor. Este constructor tiene asociado su keyword `this` a un nuevo objeto y mientras no devuelva explicitamente otro objeto como valor, dicho nuevo objeto sera devuelto por la función.
+#### Prototipos
 
-- Un objeto creado con `new` se suele decir que es la *instancia* de su constructor.
+Los prototipos son una forma que tenemos de compartir atributos (datos) y métodos (comportamiento) entre distintos objetos de la misma clase. En el constructor definimos atributos, pero puede que queramos definir algunos más después. Y también puede que queramos definir métodos en nuestro tipo de objetos `Person`. [Vamos a ver cómo hacerlo](https://codepen.io/adalab/pen/govvEa) con la propiedad especial `prototype`.
 
-- Como norma general y por convención los nombres de los constructores deben empezar por mayúscula para asi poder distinguirlos facilmente de otras funciones
+```js
+function Person(name) {
+  this.name = name;
+};
 
-- Los constructores, asi como el resto de funciones, automáticamente obtienen una propiedad llamada `prototype`, que por defecto contiene como valor un objeto plano y vacio que deriva de `Object.prototype`. Toda instancia de un constructor se creará con este objeto como su propio prototipo.
+Person.prototype.jump = function() {
+  console.log('Jump, ' + this.name);
+}
 
-- Es importante diferenciar la forma en que un prototipo es asociado a un constructor (mediante su propiedad `prototype`) de la forma en que los objetos tienen un prototipo (que puede obtenerse mediante `Object.getPrototypeOf`).
+var maria = new Person('María');
+maria.jump(); //Jump, María
 
-- El prototipo actual de un constructor es `Function.prototype` dado que los constructores son funciones. Su propiedad `prototype` será el prototipo de las instancias creadas a traves de ese constructor pero nunca sera su propio prototipo.
+var carmen = new Person('Carmen');
+carmen.jump(); //Jump, Carmen
+```
 
-## Sobreescribir propiedades derivadas
+Vemos que sobre nuestra función constructora `Person` llamamos a la propiedad `prototype` y definimos una nueva propiedad (en este caso un método porque es una función) `jump`. Esta función hace un `console.log` pero crea la cadena usando `this.name` que es el nombre que le hemos dado a la persona al hacer el `new`. Es decir, desde el método `jump` puedo acceder a los atributos como `name` escribiendo `this.name`. De igual forma, si desde un método quiero ejecutar otro método del mismo objeto también podré hacerlo mediante `this`. Para definir un nuevo método lo haremos de la misma forma, pero tendremos que hacerlo antes de crear los objetos con `new` si queremos que los objetos tengan este nuevo método.
 
-- Cuando añades una propiedad a un objeto, este esta propiedad presente en el objeto o no, la propiedad se añade al objeto en si mismo, que de ahora en adelante pasará a ser suya propia. Si existe una propiedad con el mismo nombre en el prototipo, esta propiedad dejará de afectar al objeto. En este proceso la propiedad del prototipo en si no se verá afectada.
+```js
+Person.prototype.sayHi = function(){
+  console.log('Hi, ' + this.name);
+}
+```
 
-- Sobreescribir propiedades que existen en un prototipo es, normalmente, muy util. Por ejemplo, podemos modificar una propiedad de una instancia y que el resto de instancias del mismo tipo no se vean afectadas.
+## Contexto `this`
 
-- Esta furmula se utiliza por ejemplo en el metodo `toString`. `Function.prototype` y `Array.prototype` obtienen el metodo `toString` de `Object.prototype`, pero lo sobreescriben con sus propios métodos para obtener el comportamiento deseado.
+Un concepto muy importante de los objetos, y de las funciones también, es el contexto o `this`. En los objetos, `this` representa a la instancia concreta del objeto en cuestión. Es decir, cuando creamos a la persona de nombre María desde dentro del objeto si llamo a `this` es para acceder a algo de la persona María, que pueden ser sus atributos o métodos.
 
-## Interferencia de prototipos
+Pero el contexto `this` en las funciones es mucho más peliagudo y puede modificarse. Es decir, una misma función puede tener comportamientos diferentes si se ejecuta en contextos distintos. No es necesario que en este punto entendamos perfectamente cómo funciona, pero sí que es algo complejo y que si uso `this` dentro de una función luego cuando la ejecute tengo que tener mucho cuidado de darle el contexto adecuado. En el pasado hemos usado `this` en algunas funciones de callback para acceder al elemento sobre el que había sucedido un evento (usábamos si recuerdas, `event.currentTarget` o `this`).
 
-- Un prototipo se puede usar en cualquier momento para añadir propiedades y metodos a todos los objetos que se basen en el. Esto puede ser util, pero existen algunas situaciones en las que esto puede causar problemas. Por ejemplo si tenemos alguna propiedad en un prototipo y creamos varios objetos basados en él, dichas propiedades serán relacionadas con el objeto pudiendo crear comportamientos indeseados, como por ejemplo en un `for..in`.
+Al ejecutar una función si queremos que se ejecute en un contexto determinado muy concreto (queremos indicar explícitamente el valor de `this`), podemos usando el método `bind` que crea una nueva función en el contexto indicado. Ahora no vamos a usarlo pero queremos que te suene este concepto en el futuro.
 
-- Cuando ejecutamos el bucle `for...in` podemos observar que ciertas propiedades y metodos (como `toString`) de objetos como `Object.prototype` no se utilizan pero si comprobamos si existen con el operador `in` nos dice que si. Esto se debe a que JavaScript distingue entre propiedades *numerables* y propiedades *no-numerables*.
 
-- Todas las propiedades que creamos simplemente asignandolas un valor son numerables. Sin embargo las propiedades estandar de `Object.prototype` son todas no-numerables y por lo tanto esto es lo que hace que no aparezcan, por ejemplo, en los bucles `for...in`.
+## Creando un objeto para un componente de la web
 
-- Es posible definir nuestras propias propiedades no-numerables usando la funcion `Object.defineProperty`, que nos permite controlar el tipo de propiedad que estamos creando.
+Vamos a ver ahora algunos ejemplos de cómo usar objetos que representen componentes de nuestra web.
 
-- Para crear una propiedad no numerable debemos hacer lo siguiente:
+Primero vamos a crear un [objeto de tipo botón](https://codepen.io/adalab/pen/JMprQz) que nos permita crear botones con distintos iconos y textos en objetos `<button>` del DOM.
 
----
-    Object.defineProperty(<Objeto>, <NombreProp>, { enumerable: true, value: "valor"} )
----
+```js
 
-- Otro problema que tenemos es que las propiedades no-numerables siguen apareciendo si ejecutamos el siguiente código:`console.log("toString" in map)`. Este problema es facil de solucionar. En vez de usar `in`, se debe usar el método `hasOwnProperty`, este metodo nos dice si el objeto en si posee una propiedad, sin mirar sus prototipos:
+function Button (selector, text, icon){
+  this.element = document.querySelector(selector);
+  this.text = text;
+  this.icon = icon;
+}
 
----
-    var obj = {};
-    console.log(obj.hasOwnProperty('toString'));
-    // → false
----
+Button.prototype.render = function(){
+  this.element.innerHTML =
+    '<i class="fa fa-' + this.icon + '"></i>' + this.text;
+}
 
-- Sabiendo esto y para evitar que las posibles modificaciones a alguno de los prototipos en los que esten basados nuestros objetos afecten al comportamiento de nuestro programa, es bueno escrir de esta forma nuestros `for...in` loops:
 
----
-    for (var prop in obj) {
-        if (obj.hasOwnProperty(prop)) {
-            // ...this is a own property
-        }
-    }
----
+var favButton = new Button('.fav-button', 'Marcar como favorito', 'star');
+favButton.render();
 
-## Objetos sin prototipo
+var shareButton = new Button('.people-button', 'Compártelo', 'users');
+shareButton.render();
+```
 
-- Podemos declarar objetos que no posean prototipo. Utilizando el método Object.create para crear objetos con un prototipo especifico podemos pasar como argumento para el prototipo el valor `null` y de esta forma crear un objeto nuevo sin prototipos.
+La función constructora de botones que tiene como parámetros
+1. el elemento del DOM donde está el objeto `<button>`
+2. el texto del botón
+3. un icono del botón nombrado con el [nombre de clase de Font Awesome](http://fontawesome.io/icons/) (la librería CSS está importada en el pen para que funcione ;)
 
-- `var obj = Object.create(null)`
+En la función constructora almacenamos los parámetros de texto e icono, pero en lugar de guardar el selector CSS guardamos directamente el elemento del DOM.
 
-- Esto nos sirve, para estar seguro de que codigos externos no afectan al nuestro, y para ahorrarnos el usar `hasOwnProperty`, ya que podemos estar seguros de que todas las propiedades del objeto serán propias
+Luego definimos un método `render` que accede a ese elemento del DOM (el `<button>`) y modifica su contenido para meter el text y el icono.
 
-## Polimorfismo
+Finalmente definimos 2 nuevos objetos botón, uno de favorito y otro de compartir, para comprobar que funciona como esperamos.
 
-- El polimorfismo es una propiedad de la programación orientada a objetos que permite enviar mensajes sintácticamente iguales a objetos de tipos distintos.
+***
 
-- El unico requisito que deben cumplir los que se utilizan de manera polimórfica es saber responder al mensaje que se les envia.
+EJERCICIO 1: hagamos botones
 
-- Un ejemplo en Javascript muy famoso es el metodo `toString`, varios de los prototipos estandar como `Array.prototype` definen su propia version del método `toString` para poder asi crear un string que contenga información más util que `[object Object]`.
+Partiendo del codepen anterior, crear 3 nuevos botones para entender cómo funciona:
+- botón de alerta
+- botón de información
+- botón de error
 
-- TODO: Once you are talking in terms of interfaces, who says that only one kind of object may implement this interface? Having different objects expose the same interface and then writing code that works on any object with the interface is called polymorphism.
+***
 
-## Getters y setters
+EJERCICIO 2: personaliza los botones
 
-- Existe un principio extendido entre bastantes programadores de nunca incluir propiedades que no sean metodos en las interfaces, es decir, que no se puedan acceder directamente a las propiedades (que no sean metodos) desde fuera de un objeto.
+Partiendo del ejercicio anterior, vamos a añadir un nuevo atributo a los botones que sea el color de letra. Para eso:
+- añade un nuevo parámetro a la función constructora
+- almacena el parámetro en el objeto usando `this`
+- modifica el método `render` para que aparezca del color deseado (con el atributo `style` podría ser sencillo)
+- modifica la creación de los objetos (`new`) para pasar el nuevo parámetro que es un color
 
-- Muchas veces para llevar a cabo esta acción se implementan metodos como setSomething o getSomething por los cuales mediante las funciones que asignemos nos permitiran acceder a un propiedad interna del objeto
+***
 
-- Javascript otorga una via para especificar propiedades que externas al objeto parecen propiedades normales pero nos permiten asignarles metodos internamente.
+Vamos a ver un segundo ejemplo de uso de objetos: [un carrusel de imágenes](https://codepen.io/adalab/pen/qpxoJO).
 
-- Para asignar las funciones a ejecutar para una propiedad segun si esta es leida o escrita se utiliza la notación `get` o `set` en los objetos literales y la funcion `Object.defineProperty` en objetos previamente creados
+En la parte de JS empezamos creando una función constructora `Carousel` que toma dos parámetros: un selector CSS para acceder a la imagen y un array de `sources` que es un array con el listado de URL de las imágenes a mostrar en el carrusel. En el constructor definimos un atributo `current` que representa el estado actual del carrusel, es decir, qué imagen está siendo mostrada en este momento por medio de un índica. Empezaremos con el índice 0 para empezar con la primera foto del array. También definimos un parámetro `sources` para almacenar el array de imágenes. Y un tercer atributo `img` donde guardamos directamente la referencia a la imagen en el DOM. También definimos un método `render` que se encarga de modificar la imagen del DOM y asignarle como `src` la imagen del array `sources` en el índice `current`, es decir, la primera imagen del array.
 
----
-    // Objeto literal
-    var obj = {
-        elements: [1,2,3],
-        get total() {
-            return this.elements.length;
-        },
-        set total(value) {
-            return console.log('Error: By default this property can't be changed');
-        }
-    };
+```js
+function Carousel(imgSelector, sources) {
+  this.current = 0;
+  this.sources = sources;
+  this.img = document.querySelector(imgSelector);
+}
 
-    console.log(obj.total);
-    // → 3
-    obj.total = 5;
-    // → Error: By default this property can't be changed
+Carousel.prototype.render = function() {
+  this.img.src = this.sources[this.current];
+}
+```
 
-    // Objeto previamente definido
-    function Constructor(elems) {
-        this.elements = elems;
-    }
+También vamos a añadir al objeto carrusel métodos para mostrar la siguiente foto `next` o la anterior `prev`. El método `next` incrementa en 1 la posición actual y luego usa un truco matemático con el módulo para que si llegamos al final de array comience desde el principio. Luego llamamos a método `render` para que este cambio se vea reflejado en la página. Muy similar es `prev` que primero resta uno a la posición actual, y volvemos a hacer el mismo truco con el operador módulo (además suma la longitud del array para que el resultado nunca sea negativo) y también ejecuta `render`.
 
-    Object.defineProperty(Constructor.prototype, "total", {
-      get: function() { return this.elements.length; }
-    });
+```js
+Carousel.prototype.next = function() {
+  this.current = (this.current + 1 ) % this.sources.length;
+  this.render();
+}
 
-    var obj = new Constructor([1,2,3]);
-    console.log(obj.elements);
-    // → 3
-    obj.elements = 100; // Esto no ejecuta ninguna acción
-    console.log(obj.elements);
-    // → 3
----
+Carousel.prototype.prev = function() {
+  this.current = (this.sources.length + this.current - 1 ) % this.sources.length;
+  this.render();
+}
+```
+Con nuestro objeto ya creado, vamos a crear un par de carruseles para probarlo. Primero un carrusel de gatetes. Para empezar, necesitamos definir nuestros elementos HTML, que son 2 botones de navegación por el carrusel y la imagen en el centro.
 
-- Tambien se puede definir una propiedad `set` en el objeto usado como argumento en `defineProperty`, para especificar un metodo que ejecutar cuando se intente modificar el valor de la propiedad. Cuando `get` esta definido pero `set` no, escribir sobre el valor de la propiedad es ignorado.
+```html
+<div>
+  <button type="button" name="button" class="prev-cat">Prev</button>
+  <img class="cat" src="" alt="">
+  <button type="button" name="button" class="next-cat">Next</button>
+</div>
+```
 
-## Herencia
+En la parte de JavaScript definimos un array `cats` con el listado de imágenes de gatos que queramos. Luego creamos un nuevo objeto carrusel `catCarousel` que toma como parámetro el selector de la imagen '.cat' y el array de imágenes `cats`. Luego llamamos a `render` para mostrar la primera imagen.
 
-- En JavaScript existe un patrón denominado *herencia* que nos permite crear tipos de datos ligeramente diferentes de datos preexistentes con relativamente poco esfuerzo
+Ya solo nos falta hacer que al clickar en los botones el carrusel pase a la siguiente imagen o a la previa. Para eso usamos nuestro viejo conocido `addEventListener` y en el evento 'click' le pedimos que ejecute la función correspondiente (`prev` o `next`) de nuestro objeto `catCarousel`. Pero tenemos uno de esos problemas raros de contexto que mencionábamos antes que se solucionan con `bind` ya que no somos nosotros quiénes llamamos a la función `catCarousel.next()` sino que es el navegador quien la llama cuando sucede el evento (es un callback). Así que pasamos a `bind` el objeto `catCarousel` para que sea el `this` dentro de esta función cuando el navegador la ejecute.
 
-- Normalmente, un nuevo constructor llama a otro constructor anterior usando el metodo `call` de manera que le transmite el nuevo objeto como valor de `this`. Una vez que se ha hecho la llamada al constructor podemos asumir que todos los campos que el viejo tipo de objeto se supone que contienen han sido añadidos.  
+```js
+var cats = [  ]; // Cat images
+var catCarousel = new Carousel('.cat', cats);
+catCarousel.render();
 
-    function RTextCell(text) {
-      TextCell.call(this, text);
-    }
+document.querySelector('.prev-cat').addEventListener('click', catCarousel.prev.bind(catCarousel));
+document.querySelector('.next-cat').addEventListener('click', catCarousel.next.bind(catCarousel));
+```
 
-- Despues de eso declaramos el prototipo del nuevo constructor como objeto del prototipo del anterior para que de esta manera las instancias del tipo nuevo de constructor puedan acceder a las propiedades del prototipo anterior.
+De esta forma ya tenemos funcionando nuestro carrusel. En el codepen también hemos creado un carrusel de fotos de perros para que veas que se puede reutilizar nuestra función constructora para crear todos los carruseles que queramos.
 
-- Finalmente añadimos o sobreescribimos las propiedades que deseemos modificar añadiendolas a nuestro nuevo prototipo
+***
 
-- La herencia en programación suele tener bastante controversia ya que a menudo es confundida con el polimorfismo y vendida como algo más potente de lo que realmente es. Mientras que la encapsulación y el polimorfismo tienden a separar el código en partes simples y poco enrevesadas, la herencia, por otro lado entrelaza tipos de datos creando mayor interdependencia y enredos dentro del código.
+EJERCICIO 3: carrusel de loros
 
-- La herencia por lo tanto ha de ser utilizada con precaución y en partes pequeñas del código y no como un principio de ordenación de nuesto código
+Partiendo del codepen anterior, vamos a crear un nuevo carrusel, esta vez con fotos de loros 😱 Para hacerlo, sigue estos pasos:
+- crea el HTML necesario para implementar el carrusel: los botones y la imagen
+- ya en JS, crea un array con un listado de imágenes de loros
+- crea una nueva instancia (`new`) de carrusel y llama a su método `render`
+- añade como callback del click de los botones los métodos correspondiente
+- disfruta de tu carrusel recién creado :)
 
-- Es preferible extender los tipos mediante composición, almacenando objetos como propiedades de otros objetos envolviendolos dentro de si mismos y accediendo a sus metodos mediante los metodos propios del objeto.
+***
 
-## El operador `instanceof`
+EJERCICIO 4: carrusel con cosas
 
-- A veces es util saber el constructor del que deriva un objeto. Para ello javascript ofrece el operador binario `instanceof`:
+Para terminar, vamos a añadir un par de cosas molonas a nuestro carrusel:
 
-    function Constructor(foo) {
-        this.foo = foo;
-    }
+**Indicador de estado**
 
-    function ChildConstructor(foo) {
-        Constructor.call(this, foo);
-    }
+Para saber en qué estado está el carrusel, es decir, por qué foto vamos, podemos pintar un indicador de estado sencillo basado en texto. Por ejemplo, '1/5' si estamos en la primera foto de un total de 5. Al pasar a ls siguiente '2/5' y así. Para modificar el aspecto visual del carrusel tendrás que modificar su método `render` que es el que accede al DOM, y necesitarás el atributo `current` y la longitud de `sources` para saber qué pintar.
 
-    console.log(new Constructor(foo) instanceof Constructor);
-    // → true
-    console.log(new ChildConstructor(foo) instanceof Constructor);
-    // → true
-    console.log(new Constructor(foo) instanceof Object);
-    // → false
+**Temporizador**
 
-- El operador `instanceof` puede ver a traves de los tipos heredados. `ChildConstructor` es una instancia de `Constructor` porque `ChildConstructor.prototype` deriva de `Constructor.prototype`.
+Para rizar el rizo, vamos a hacer un carrusel especial que esté temporizado. Para eso, vamos a modificar la función constructora para añadir un parámetro más que sea un booleano que indique si es un carrusel temporizado. Si lo es, en el propio constructor usaremos a nuestro viejo conocido `setInterval` para que pase a la siguiente foto cada 3 segundos. Para eso, la función de callback del `setInterval` tendrá que llamar primero al método `next` para pasar a la siguiente imagen y luego a `render` para reflejar los cambios en la página. *¡Verás como queda de molón!*
 
-- El operador puede aplicarse a constructores estandar como `Array`
+***
 
-- Casi todos los objetos son instancias de `Object`
+## Recursos externos
 
-## `This` y su alcance
-
-- Cada llamada a una función tiene su propio valor de `this`, por lo tanto en una función anidada dentro de otra, el valor de `this` no es el mismo que el valor this de la función que contiene a esta. En las funciones que no son definidas como métodos dentro de un objeto, la palabra clave `this` hace referencia al objeto global. Esto significa que no podemos utilizar `this` en una función dentro de un objeto para referirnos al this del objeto en si ya que ambas hacen referencia a distintos objetos.
-
-- Afortunadamente EcmaScript 6 añade una solución para este problema. Pero mientras llega lo normal es crear una variable que haga referencia a `this` de esta forma: `var self = this` y a partir de ahi referirse a self, que es una variable normal y por tanto visible para las funciones internas.
-
-- Otra solución es usar el método `bind`:
-
-    var test = {
-        prop: 10,
-        addPropTo: function(array) {
-            return array.map(function(elt) {
-                return this.prop + elt;
-            }.bind(this));
-        }
-    };
-
-    console.log(test.addPropTo([5]));
-    // → [15]
-
-- Por último, algunos métodos de las funciones de orden superior permiten recibir un argumento opcional secundario que puede ser usado para proveer un
-`this` para las llamadas de la función de iteración. Por lo que podemos obtener el mismo resultado que en el código anterior de una manera más simple:
-
-    var test = {
-        prop: 10,
-        addPropTo: function(array) {
-        return array.map(function(elt) {
-          return this.prop + elt;
-          }, this); // ← no bind
-        }
-    };
-    console.log(test.addPropTo([5]));
-    // → [15]
-
-Este código solo funciona en métodos de funciones de orden mayor que soportan tal parametro *context*. Cuando no se da esta regla, se debe utilizar una de las anteriores soluciones.
-
-Otra solución es usar el método `call` para llamar a la función dada como argumento dentro de otra de esta manera:
-
-    Grid.prototype.forEach = function(f, context) {
-      for (var y = 0; y < this.height; y++) {
-        for (var x = 0; x < this.width; x++) {
-          var value = this.space[x + y * this.width];
-          if (value != null)
-            f.call(context, value, new Vector(x, y));
-        }
-      }
-    };
-
-
-    ## Recursos externos
-
-    ### {{resource.name}}
-
-    {{resource.description}}
-
-    - [{{resource.link_name}}]({{resource.url}})
-
-
-    ## Resumen de la sesión
-
-    {{summary_info}}
-
-
-    ## Ejercicios
-
-    ### {{exercise.name}}
-
-    {{exercise.info}}
-
-    - [{{exercise.link_name}}]({{exercise.url}})
+- [Object oriented JS - MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS)
+- [Object prototypes - MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
+- [Método `bind` de las funciones en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
