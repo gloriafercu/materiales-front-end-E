@@ -21,15 +21,49 @@ Siempre que queramos interactuar desde JavaScript con nuestras páginas vamos a 
 
 ### ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-Para tener más opciones a la hora de interactuar con nuestro código HTML ya que `classList` e `innerHTML` se nos van cortos.
+Lo que vamos a ver en esta sesión cobra especial importancia en tres campos: rendimiento de una página web, prevención de posibles errores y mantenimiento y simplicidad del código.
+
+#### Mejorar el rendimiento
+
+En cuanto a rendimiento, hasta ahora cuando utilizábamos `innerHTML` lo que hacía JavaScript, a grandes rasgos, era lo siguiente:
+
+1. Leer el texto y parsearlo (convertirlo a html, como hacemos con JSON.parse)
+2. Crear cada uno de los elementos HTML en el momento
+3. Añadir esos elementos como contenido a un elemento del DOM (un `p`, un `div` lo que fuese)
+
+Con lo que vamos a ver en esta sesión el primer paso de parsear el texto no será necesario porque no utilizaremos texto para crear componentes sino JavaScript, lo cual reducirá drásticamente el tiempo que tarda en ejecutarse el código y, por tanto, mejorará el rendimiento de nuestra aplicación. Esto en pequeñas apps no va a ser fundamental pero en aplicaciones más grandes y complejas que requieren de pintar muchos elementos es clave para que no se note un retardo a medida que utilizamos las web.
+
+Además en esta sesión veremos cómo crear elementos por un lado y posteriormente añadirlos, es decir, con `innerHTML` se creaban en el momento (se convertía el texto en componentes HTML) y se añadían en el momento, por lo tanto se tenían que ejecutar esos dos pasos en el momento. Con lo que vamos a ver en esta sesión seremos capaces de crearlos antes y simplemente añadirlos, con lo cual en el momento de añadirlos solo se realizará un paso, porque tendremos creados previamente los componentes. Para ejemplificar esto, imaginemos que tenemos un código JavaScript que al pulsar en un botón añade tres párrafos a la página, si lo hago con `innerHTML`, en el momento que pulso el botón se convierte el texto de `innerHTML` en tres párrafos y se añaden. si por el contrario lo hacemos con la alternativa que planteamos en esta sesión podremos crear los párrafos en el elemento en el momento en el que se empieza a ejecutar JavaScript y cuando el usuario pulse el botón lo único que se hará será añadir esos elementos, pero estos ya estarán creados previamente.
+
+#### Prevención de posibles errores
+
+Cuando cambiamos el contenido de un elemento con `innerHTML`, ya sea añadiendo (`+=`) o reasignando (`=`) lo que estamos haciendo es obligar al navegador a crear de nuevo todos los items contenidos dentro del elemento modificado, es decir, el navegador creará todos los hijos de ese elemento de nuevo.
+
+Esto puede derivar en un mal funcionamiento de nuestra página, porque sucederán cosas como las siguientes:
+
+* Los eventos asignados a alguno de los elementos que había en el contenido se perderán y si, por ejemplo, tenemos un botón al que le hemos añadido un evento click, ese evento dejará de funcionar
+* Si teníamos guardada en una variable de JavaScript la referencia a uno de los elementos (usando algo como `var btn = document.querySelector('.btn')`, por ejemplo) esa variable ya no será válida porque el elemento al que hace referencia ya no será el que se está mostrando en la pantalla.
+
+Imagina la repercusión de este problema en aplicaciones complejas que tienen que estar repintando varias partes de su código varias veces, se puede montar un cristo bastante bueno e `innerHTML` nos puede perjudicar bastante en este caso frente a las alternativas que propondremos a continuación.
+
+#### Mantenimiento y simplicidad del código
+
+Utilizar HTML como strings en JavaScript puede ser bastante molesto, se nos puede olvidar un más en alguna concatenación, tenemos que poner todo en una línea o usar `+` o escapar saltos de línea (usando `\` antes del salto) para poder poner el código en varios renglones, no se puede indentar...
+
+Todo esto dificulta hace que cuando empieza a crecer nuestros strings con código HTML sea bastante engorroso y además complica el beneficiarnos de funciones para crear elementos. Si por el contrario utilizamos JavaScript para realizar esa misma tarea podremos beneficiarnos de indentación y separación en líneas, simplicidad a la hora de crear un elemento y reutilización de código mediante funciones, lo cual hará que nuestro código sea más fácil de mantener y más sencillo de entender.
+
+---
+
+Aparte de esto existen otras mejoras en temas de seguridad y otros aspectos avanzados que hacen que `innerHTML` no sea el candidato indicado en proyectos de gran envergadura o mayor exigencia en cuanto a rendimiento y seguridad.
+
+Y ahora estarás pensando «¿y por qué entonces he aprendido `innerHTML`?» Gracias a haber trabajado con `innerHTML` ahora estás preparada para seguir avanzando y profundizar un poquito más en formas avanzadas de trabajar con el DOM, que son las que veremos hoy.
 
 ### ¿En qué casos se utiliza?
 
-Al final se trata de conocer las diferentes opciones que tenemos de acceso al DOM así que no es tanto cuándo los vamos a usar sino conocer las opciones cuando necesitemos acceder/modificar el DOM. Algunos ejemplos son:
-- Necesito añadir un elemento a un bloque HTML sin reescribirlo completamente (como pasaba con `innerHTML`)
-- Quiero crear un elemento HTML desde cero y añadirlo al DOM
-- Quiero seleccionar el contenedor madre de elemento HTML, o la(s) hija(s)
-- En algún punto necesito eliminar elementos HTML (o reemplazarlos)
+Lo que vamos a ver hoy te servirá para generar un código más adecuado para proyectos más exigentes, como podría ser una librería de JavaScript, el código de una aplicación compleja o proyectos en los que necesites tener más posibilidades aparte de modificar el contenido de un elemento por completo (añadir algo antes o después, eliminarlo, seleccionar un elemento madre o hija, etc.)
+
+Si que es verdad que parece que hemos pintado como algo malo `innerHTML`, pero no es así, `innerHTML` nos seguirá sirviendo en el futuro para hacer código sencillo que podamos desarrollar de forma rápida y hacer pequeñas pruebas y prototipos ya que facilita bastante la creación de código, además hasta ahora nos ha permitido poder trabajar con el DOM en JavaScript de forma sencilla y hacer menos dura la manipulación del contenido de nuestra página.
+
 
 ## Qué hemos visto hasta ahora
 
@@ -47,11 +81,12 @@ Además sabemos cómo seleccionar elementos HTML:
 
 Y cómo modificar el DOM con:
 * `innerHTML` para consultar/modificar el contenido HTML de un elemento
-* `remove()` para eliminar elementos del DOM
+* `.remove()` para eliminar elementos del DOM
 
-Por último, también sabemos trabajar con atributos
-	- Consultando su valor con `getAttribute`
-	- Modificando su valor con `setAttribute`
+Por último, también sabemos trabajar con atributos:
+* Consultando su valor con `.getAttribute()`
+* Modificando su valor con `.setAttribute()`
+* Modificando la propiedad del elemento que lleva el mismo nombre (`href`, `src`, `style`...)
 
 ## Nuevas formas de seleccionar, crear, añadir y borrar elementos
 
@@ -93,6 +128,10 @@ console.log('Hay ' + tagItems.length + ' <li>');
 ```
 [Ejemplo en Codepen](https://codepen.io/adalab/pen/opEGVR)
 
+---
+
+Tanto `getElementsByClassName` como `getElementsByTagName` se pueden sustituir por `querySelectorAll`, la ventaja que tienen los dos primeros es que aumentan el rendimiento en más de un 100% frente al tercero, por lo tanto solo será necesario que usemos estos en contextos en los que el rendimiento es fundamental. Dicho esto siempre será más descriptivo usarlos si lo que queremos es obtener un array con todos los elementos con una etiqueta o clase determinada
+
 #### `.children`
 
 Podemos seleccionar todas las hijas que tenga cierto elemento:
@@ -115,7 +154,7 @@ for (var i = 0; i < childrenItems.length; i++) {
 [Ejemplo en Codepen](https://codepen.io/adalab/pen/JMMPxg)
 
 ### `.parentElement`
-A veces nos interesará seleccionar un elemento e ir directamente a por su contenedor madre/padre:
+A veces nos interesará seleccionar un elemento e ir directamente a por su contenedor madre:
 
 ```js
 var item1 = document.querySelector('.item--1');
@@ -132,7 +171,8 @@ console.log('La madre de nuestro elemento es un <' + mother.nodeName.toLowerCase
 ### Crear elementos
 
 Hasta ahora insertábamos HTML creando una cadena de texto (a las bravas o a las bravas usando un `for`) e inyectándolo con innerHTML.
-Otra opción que tenemos es crear un elemento con `.createElement()` y añadirle contenido con `.createTextNode`, vamos a verlo:  
+Otra opción que tenemos es crear un elemento con `.createElement()` y añadirle contenido con `.createTextNode()`, vamos a verlo:
+
 > Usaremos `.appendChild()` para añadir el contenido al elemento  
 
 ```js
@@ -218,7 +258,7 @@ Esto lo colocaría en el sitio que queremos según este esquema ya que lo aplica
 [Ejemplo en Codepen](https://codepen.io/adalab/pen/BJYJyV)
 
 ### Borrar elementos del DOM
-Sabemos cómo borrar un elemento, pero ¿y si queremos borrar una de las hijas/hijos de nuestro contenedor? Tenemos `.removeChild()` para ello:
+Sabemos cómo borrar un elemento, pero ¿y si queremos borrar una de las hijas de nuestro contenedor? Tenemos `.removeChild()` para ello:
 ```js
 var itemList = document.querySelector('.items');
 var item2 = itemList.querySelector('.item--2');
