@@ -43,7 +43,7 @@
 * [3.5 Automatización de tareas](sprint_3/3_5_automatizacion_de_tareas.md)
 * [3.R.1 Repaso](sprint_3/3_repaso_1.md)
 * [3.6 Scope y hoisting](sprint_3/3_6_scope_y_hoisting.md)
-* 3.7 (Pendiente)
+* [3.7 Programación orientada a objetos](sprint_3/3_7_programacion_orientada_a_objetos.md)
 * [3.8 Asincronía avanzada](sprint_3/3_8_asincronia_avanzada.md)
 * [3.9 Métodos funcionales de array](sprint_3/3_9_metodos_funcionales_array.md)
 * [3.10 DOM avanzado](sprint_3/3_10_dom_avanzado.md)
