@@ -1,29 +1,673 @@
-# Básicos de ES6
+# Básicos de ES2015 (ES6)
+
+[codepen-string-interpolation]: https://codepen.io/adalab/pen/wpPZvN?editors=0010
+[codepen-const]: https://codepen.io/adalab/pen/QaOPwe?editors=0010
+[codepen-let-and-scope]: https://codepen.io/adalab/pen/vpWMLr?editors=0010
 
 ## Contenidos
-- let/const y su scope
-- for..of
-- destructuring
-- spread operator
-- Arrow functions: this léxico, y todas las variedades a la hora de escribirla (con/sin paréntesis, con/sin llaves, return implícito)
+- [Introducción](#introducción)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
+- [¿Cómo podemos utilizar las novedades de ES2015](#¿cómo-podemos-utilizar-las-novedades-de-ES2015)
+- [¿En qué casos se utiliza lo que vamos a aprender?](#¿en-qué-casos-se-utiliza-lo-que-vamos-a-aprender)
+- [Interpolación de cadenas](#interpolación-de-cadenas)
+- [Las variables `let` y `const` y su _scope_](#las-variables-let-y-const-y-su-scope)
+- [Bucle `for...of`](#bucle-forof)
+- [_Destructuring_](#destructuring)
+- [_Spread operator_](#spread-operator)
+- [_Arrow functions_ y el `this` léxico](#arrow-functions-y-el-this-léxico)
+
 
 ## Introducción
 
-{{intro_info}}
+Hasta el momento hemos visto las bases del lenguaje JavaScript. En esta sesión veremos cómo se escribe JavaScript actualmente, la nueva sintaxis de ES2015 (ES6) y cómo nos permite escribir código más claro y escueto.
 
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-{{purpose_info}}
+JavaScript se basa en un estándar que se llama ECMAScript. Este estándar reúne las reglas acerca de la sintaxis y el funcionamiento del lenguaje. Hasta ahora todo el código que hemos utilizado, a excepción de las promesas y `fetch`, está recogido en la quinta versión de este estándar, que se conoce como ES5. Hoy veremos algunas de las novedades en la sintaxis y el funcionamiento de la nueva versión, la sexta, llamada ES2015 por el año en que se publicó; también se conoce informalmente con el nombre de ES6, que era el nombre que tenía antes de publicarse.
+
+Entre algunas de las mejoras que ofrece esta nueva versión, destacan la facilidad a la hora de iterar sobre los elementos de un array o un objeto y obtener una propiedad o índice determinado; la mejora a la hora de trabajar con variables y operaciones dentro de cadenas/`string`s; o la posibilidad de crear variables que estén solo disponibles dentro de un bucle `for` o un `if`.
+
+[Harold Abelson](https://es.wikipedia.org/wiki/Hal_Abelson), autor de uno de los libros más famosos de programación, decía: _“Programs must be written for people to read, and only incidentally for machines to execute.”_, que viene a significar algo así como que el código debe escribirse para que las personas puedan leerlo y ya de paso que las máquinas lo ejecuten. Aprendiendo ES6 buscamos en parte esto: esta sintaxis en muchos casos no nos va a permitir hacer nada que no pudiésemos hacer usando otra alternativa, pero la clave aquí es que nos permitirá hacerlo de forma sencilla y que hará que la persona que lee el código pueda entenderlo con facilidad y rapidez.
 
 
-{{ main content and exercises }}
+## ¿Cómo podemos utilizar las novedades de ES2015?
+
+Las últimas versiones de los navegadores web como Chrome incluyen estas funcionalidades, así que se pueden usar desde ya para desarrollar. Sin embargo, cuando hagamos una web para el público, generalmente no debemos dar por hecho que tendrán la última versión de Chrome o Firefox instalada, porque pueden usar otro navegador como Internet Explorer 11, por ejemplo, que no soporta la mayoría de las características de ES6.
+
+Para estos casos, utilizaremos un programa que, al igual que hace Koala para convertir SCSS a CSS, convertirá ES6 a ES5. Este programa se llama [Babel](https://babeljs.io/). De esta forma podremos utilizar las mejoras de ES6 en nuestro código sin preocuparnos de que no funcione en navegadores antiguos.
+
+
+## ¿En qué casos se utiliza lo que vamos a aprender?
+
+La máxima a la hora de sacar nuevas versiones de JavaScript es _"don't break the Web"_, que significa que no se elimina ni se rompe nada anterior. Por tanto, las distintas versiones de JavaScript son **retrocompatibles** y todo lo que funcionaba con la versión ES5 funciona también con ES2015.
+
+Aunque ES5 sigue funcionando perfectamente, actualmente se escribe en ES6 prácticamente todo el JavaScript nuevo. Hay una gran apuesta por esta versión: lo usan empresas como Cabify, Wallapop, JobandTalent, GitHub, Slack, etc., y una gran variedad de recursos como librerías también se desarrollan así.
+
+En las clases **a partir de ahora escribiremos todo con la nueva sintaxis** y la utilizaremos siempre que sea posible. Cuando salgáis al mercado laboral, muchas de vosotras trabajaréis con esta versión. Como a otras os tocará trabajar con la anterior porque los requisitos del proyecto lo piden, os hemos enseñado ES5 antes de ES6 para que sepáis manejaros con ambas sintaxis, la nueva y la ya existente.
+
+
+A continuación, vamos a ver algunas de las novedades y posibilidades de la sintaxis. ¡Manos a la obra!
+
+
+## Interpolación de cadenas
+
+ES6 nos facilita insertar variables y operaciones dentro de cadenas de texto. Para eso escribiremos las cadenas entre acentos graves o _backticks_ (`` `This is a string` ``), en vez de entre comillas, y las expresiones o variables entre `${` y `}` (`${expressionOrVariable}`).
+
+```js
+var name = 'Ada';
+var surname = 'Lovelace';
+
+console.log(`My name is ${name} ${surname}.`):
+// 'My name is Ada Lovelace.'
+```
+
+También podemos evaluar operaciones directamente:
+
+```js
+var firstItemPrice = 5;
+var secondItemPrice = 3;
+
+console.log(`Total amount: ${firstItemPrice + secondItemPrice}€`);
+// Total amount: 8€
+```
+
+O incluso llamar a funciones:
+
+```js
+function sumPrices(price1, price2) {
+  return price1 + price2;
+}
+
+var firstItemPrice = 5;
+var secondItemPrice = 3;
+
+console.log(`Total amount: ${sumPrices(firstItemPrice, secondItemPrice)}€`);
+// Total amount: 8€
+```
+
+La interpolación de cadenas también nos permite escribir cadenas de varias líneas sin escapar los saltos de línea, como era necesario en ES5:
+
+```js
+var element = document.querySelector('#element');
+var textToShow = 'Hey, this is important.';
+
+// ES5
+element.innerHTML = '\
+<div class="popup">\
+  <span>' + textToShow + '</span>\
+</div>';
+
+// ES6
+element.innerHTML = `
+<div class="popup">
+  <span>${textToShow}</span>
+</div>`;
+```
+
+[&blacktriangleright; Interpolación de cadenas en Codepen][codepen-string-interpolation]
+
+
+* * *
+
+**EJERCICIO 1: SALUDOS CON ES2015**
+
+Vamos a familiarizarnos con ES2015 para conocernos mutuamente. Crearemos un programa que nos pregunte nuestro nombre usando `prompt()` y que muestre la siguiente frase: _"Hola, NOMBRE, encantado de conocerte"_. `NOMBRE` será el nombre introducido por el usuario y usaremos la interpolación de cadenas para ello.
+
+* * *
+
+**EJERCICIO 2: INTERPOLACIÓN USANDO INNERHTML**
+
+El objetivo de este ejercicio es pintar tres elementos dentro de una lista. Cada uno de ellos contendrá una imagen. Los datos de las imágenes y del texto los obtendremos a partir del siguiente array:
+
+```js
+var dogs = [
+  {
+    image: 'https://dog.ceo/api/img/schipperke/n02104365_8156.jpg',
+    name: 'Dina'
+  },
+  {
+    image: 'https://dog.ceo/api/img/collie-border/n02106166_355.jpg',
+    name: 'Bobby'
+  },
+  {
+    image: 'https://dog.ceo/api/img/schipperke/n02104365_8156.jpg',
+    name: 'Lana'
+  }
+];
+```
+En este caso para añadir cada uno de los elementos utilizaremos la propiedad `innerHTML` y la interpolación de cadenas.
+
+* * *
+
+
+## Las variables `let` y `const` y su _scope_
+
+ES6 tiene nuevas maneras de declarar variables que mantienen mejor el control sobre dónde se pueden usar.
+
+Cuando declaramos una variable con `var`, la variable está disponible en todo el ámbito (_scope_) de la función, o en el ámbito global si no está dentro de una función. Eso significa que, aunque la declaremos dentro de una estructura de control, por ejemplo, podemos usarla después, como se puede ver en el siguiente ejemplo:
+
+```js
+var healthyPerson = true;
+
+if (healthyPerson) {
+  var dailyFruits = 5;
+  console.log(`Como ${dailyFruits} piezas de fruta al día.`);
+}
+
+// Podemos usarla después
+dailyFruits += 1;
+console.log(dailyFruits); // 6
+```
+
+Esto puede causar conflictos de nombres de variables. Nos puede pasar, por ejemplo, que declaremos más abajo en el código una variable `var` con el mismo nombre y que ya contenga valor que no hemos previsto, por haberse usado más arriba o en una librería externa que usemos.
+
+Cuando declaramos variables con `let` o `const`, las variables solo están disponibles **dentro** del ámbito de bloque (entre `{` y `}`) donde se hayan declarado:
+
+```js
+let healthyPerson = true;
+
+if (healthyPerson) {
+  let dailyFruits = 5;
+  console.log(`Como ${dailyFruits} piezas de fruta al día.`);
+}
+
+// Si intentamos usarla después...
+dailyFruits += 1; // ReferenceError: dailyFruits no está definida.
+console.log(dailyFruits); // (esta línea no se ejecutará)
+```
+
+Si intentamos usar una variable declarada con `let` o `const` fuera del bloque donde se ha declarado, entonces nos dará un error y nos avisará de que esa variable no existe en ese contexto.
+
+Por otra parte, `const` nos permite declarar una variable cuyo valor nunca cambia una vez lo asignemos. Una "variable" que nunca varía recibe el nombre de **constante**.
+
+```js
+const DAYS_PER_WEEK = 7; // Es común escribir las constantes en mayúscula
+const HOURS_PER_DAY = 24;
+
+const hoursPerWeek = HOURS_PER_DAY * DAYS_PER_WEEK;
+
+console.log(`Una semana tiene ${hoursPerWeek} horas.`); // 'Una semana tiene 168 horas.'
+
+// Si intentamos modificar su valor...
+hoursPerWeek = 151; // TypeError: Asignación no válida a la constante "hoursPerWeek"
+```
+
+> Es una convención entre programadores utilizar nombres en UPPER_SNAKE_CASE para [valores constantes](https://eslint.org/docs/developer-guide/code-conventions#naming), que normalmente se declaran en la parte superior del fichero.
+
+
+Sin embargo, hay que tener en cuenta que si el valor asignado a una constante es un array o un objeto, sus miembros o propiedades **internas** sí pueden cambiar.
+
+```js
+const person = {
+  name: 'Augusta Ada',
+  surname: 'Lovelace'
+};
+
+// Podemos cambiar las propiedades de un objeto
+person.name = 'Ada';
+console.log(`${person.name} ${person.surname}`); // 'Ada Lovelace'
+
+// Pero no podemos cambiar el objeto asignado
+person = {
+  name: 'Grace',
+  surname: 'Hopper'
+}
+// TypeError: Asignación no válida a la constante `person'
+```
+
+[&blacktriangleright; Constantes `const` en Codepen][codepen-const]
+
+[&blacktriangleright; Variables `let` y ámbitos en Codepen][codepen-let-and-scope]
+
+
+* * *
+
+**EJERCICIO 3: DEJAMOS DE USAR VAR**
+
+Vamos a re-hacer los ejercicios 1 y 2 usando `const` y `let` en vez de `var`. Y todos los ejercicios a partir de ahora los vamos a hacer de esta forma. __Siempre__.
+
+* * *
+
+
+## Bucle `for...of`
+
+El bucle `for...of` de ES6 nos permite recorrer un objeto iterable, como son los arrays, por ejemplo, sin tener que escribir las condiciones de un `for` normal. Además, nos permite usar nombres mucho más reconocibles para los valores dentro del array.
+
+
+```js
+const bestAnimatedFeature2016Nominees = ['Zootopia', 'Kubo and the Two Strings', 'La tortue rouge', 'Ma vie de Courgette', 'Moana'];
+
+// bucle for en ES5
+for (let index = 0; index < bestAnimatedFeature2016Nominees.length; index++) {
+  console.log (`"${bestAnimatedFeature2016Nominees[index]}" was nominated to 89th Academy Awards`);  
+}
+
+// bucle for...of en ES6
+for (const movie of bestAnimatedFeature2016Nominees) {
+  console.log (`"${movie}" was nominated to 89th Academy Awards`);
+}
+```
+
+> **Nota**: si quisiéramos modificar los valores del array, tendríamos que hacer un bucle `for` como ya sabíamos. Esta nueva manera solo nos permite leer los datos.
+
+* * *
+
+**EJERCICIO 4: TENEMOS MUCHO EN COMÚN**
+
+Vamos a hacer un pequeño programa que le pregunte al usuario cuáles son sus dos películas o libros favoritos. Una vez tengamos esa información guardada en un array, lo recorreremos y mostraremos este mensaje por cada obra: "¡A mí también me encantó "OBRA"! Tenemos mucho en común, humano.", donde OBRA será el nombre de la obra.
+
+* * *
+
+**EJERCICIO 5: A STORY `of` ADALABERS**
+
+Estamos en una clase de Adalab, y queremos saber conocer algunas estadísticas sobre las adalabers de esa clase. Estos son sus datos:
+
+- María, 29 años, diseñadora
+- Lucía, 31 años, ingeniera química
+- Susana, 34 años, periodista
+- Rocío, 25 años, actriz
+- Inmaculada, 21 años, diseñadora
+
+En primer lugar, vamos a crear una estructura de datos en JavaScript para manejar estos datos. Usaremos arrays y objetos para crearla.
+
+Después, vamos a crear varias funciones en JavaScript que nos permitan calcular de forma automática estadísticas sobre las adalabers. Todas ellas toman como parámetro un listado de adalabers similar a nuestra estructura de datos anterior.
+
+1. Una función `countAdalabers` que devuelve el número de adalabers en el listado
+2. Una función `averageAge` que devuelve la media de edad de listado
+3. Una función `theYoungest` que devuelve el nombre de la adalaber más joven
+4. Una función `countDesigners` que devuelve el número de adalabers que son diseñadoras
+
+Según vayáis creando las funciones, debéis ir probando que funcionan invocándolas con nuestra estrucutra de datos como argumento. Al final, modificad la estructura de datos para añadir, modificar o quitar adalabers. Y probad que las funciones siguen devolviendo el valor correcto.
+
+* * *
+
+
+## _Destructuring_
+
+La sintaxis _destructuring_ de ES6 nos facilita recoger valores de una estructura de datos, como los arrays o los objetos. Simulando la sintaxis de un array o de un objeto, en cada caso, podemos declarar varias variables a la vez, ¡y en una sola línea! Vemos unos ejemplos a continuación:
+
+
+### _Destructuring_ de arrays
+
+Vamos a ver un par de ejemplos con arrays. Tenemos un array de tres valores, y queremos coger los dos primeros en las variables `x` e `y`:
+
+```js
+const coordinates = [150, 35, 12]; // x = 150, y = 35, z = 12
+
+// cómo lo habríamos hecho en ES5
+const x = coordinates[0];
+const y = coordinates[1];
+console.log(`The point is at (${x}, ${y})`); // The point is at (150, 35)
+
+// cómo mejora con ES6
+const [x, y] = coordinates;
+console.log(`The point is at (${x}, ${y})`); // The point is at (150, 35)
+```
+
+Como vemos, es más sencillo de escribir que manejar los índices como en ES5. Ahora supongamos que del array solo nos interesa la tercera coordenada, la que sería la coordenada `z`, pero no nos interesan los valores de antes. Sencillo: dejamos las posiciones vacías y le damos nombre solo a la tercera posición:
+
+```js
+const coordinates = [150, 35, 12];
+
+// cómo lo habríamos hecho en ES5
+const z = coordinates[2];
+console.log(`The z-index is ${z}`); // The z-index is 12
+
+// cómo mejora con ES6
+const [, , z] = coordinates;
+console.log(`The z-index is ${z}`); // The z-index is 12
+```
+
+* * *
+
+**EJERCICIO 6: Otra vez la carrera de escobas**
+
+Partiendo de este array con los resultados de una carrera de escobas, vamos a sacar del array e imprimir en la consola el podium, es decir, los tiempos del primero, segundo y tercer clasificado usando destructuring del array.
+
+```js
+var users = [
+  {name: 'Nymphadora Tonks', time: 9},
+  {name: 'Cedric Diggory', time: 28},
+  {name: 'Cho Chang', time: 35},
+  {name: 'Luna Lovegood', time: 45},
+  {name: 'Gregory Goyle', time: 56}
+];
+```
+* * *
+
+### _Destructuring_ de objetos
+
+Vamos ahora con los objetos. En los objetos, los valores no se identifican por su posición, sino que las propiedades tienen su propio nombre, así que tendremos que tener en cuenta esto al asignar los valores con _destructuring_.
+
+Queremos coger el valor de una propiedad de un objeto y guardarla en una variable con el mismo nombre:
+
+```js
+const person = {
+  name: 'Marie',
+  lastName: 'Smith',
+  age: 39,
+  languages: ['English', 'French']
+};
+
+const {lastName} = person;
+console.log(`Hello Mrs. ${lastName}`); // Hello Mrs. Smith
+```
+
+¿Y si quisiéramos cambiarle el nombre a la variable porque el nombre de la propiedad no es apropiado?
+
+```js
+const {name: personName} = person;
+console.log(`Hello ${personName}`); // Hello Marie
+```
+
+> Este caso es típico: si guardamos el nombre como `name` en este contexto (`window`), estaríamos sobrescribiendo `window.name`, que es una propiedad existente del objeto `window` en los navegadores.
+
+
+Ahora un _destructuring_ dentro de otro. Si queremos el segundo valor del array que está en una propiedad, haríamos:
+
+```js
+const {languages} = person;
+const [, secondLanguage] = languages;
+console.log(`${secondLanguage} is my second language`); // French is my second language
+```
+
+Pero también podemos hacerlo todo en uno sin pasar por el paso intermedio de definir `languages` primero, aunque pueda parecer un lío:
+
+```js
+const {languages: [, secondLanguage]} = person;
+console.log(`${secondLanguage} is my second language`); // French is my second language
+```
+
+
+* * *
+
+**EJERCICIO 7**
+
+Revisa el ejercicio 6 para acceder al tiempo de los ganadores usando destructuring de array y de objeto. Ahora vamos a imprimir en la consola el nombre del ganador y su tiempo.
+
+* * *
+
+#### Bonus: intercambiando variables
+
+En ES5, si queremos pasar el valor de una variable `a` a la variable `b`, y el valor de la variable `b` a la variable `a`, ¿cómo lo haríamos?
+
+```js
+let a = 'Quiero llamarme b';
+let b = 'Quiero llamarme a';
+
+// no hay más código de ejemplo
+// ¡intenta resolverlo tú! ;)
+```
+
+¿Ya lo has resuelto? Si le has dedicado un poquito de tiempo, verás que es un tanto complicado. [**SPOILER ALERT**] Necesitamos una variable auxiliar que nos sirva de puente. En ES6 podemos usar _destructuring_ para no tener que pasar por ninguna variable intermedia.
+
+```js
+let a = 'Quiero llamarme b';
+let b = 'Quiero llamarme a';
+
+[b, a] = [a, b];
+
+console.log(a); // 'Quiero llamarme a'
+console.log(b); // 'Quiero llamarme b'
+```
+
+
+## _Spread operator_
+
+El operador _spread_ (`...`) de ES6 convierte un array o un objeto en el conjunto de valores que contiene, por lo que nos permite usarlos como si estuvieran escritos en el propio código. Una de las ventajas que nos ofrece el operador _spread_ es que no tenemos por qué saber qué hay en el array u objeto en cada momento.
+
+### _Spreading_ de array
+
+Veamos un par de ejemplos con arrays. Tenemos un array y queremos añadirle un nuevo valor:
+
+```js
+const names = ['Smith', 'White', 'Black', 'Pinkman'];
+
+const newNames = [...names, 'Williams'];
+
+console.log(newNames)); // ['Smith', 'White', 'Black', 'Pinkman', 'Williams']
+```
+
+Ahora pongamos que queremos mezclar dos arrays distintos que tenemos:
+
+```js
+const myBooks = ['1984', 'Brave New World'];
+const myBrotherBooks = ['We', 'Fahrenheit 451'];
+
+const books = [...myBooks, ...myBrotherBooks];
+
+console.log(books); // [`1984`, 'Brave New World', 'We', 'Fahrenheit 451']
+```
+
+El operador _spread_ también nos puede ser útil para pasar todos los valores de un array como parámetros a una función:
+
+```js
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+console.log(...vowels);
+```
+
+#### _Rest parameters_
+
+Pero cuando declaramos una función propia también nos sirve para almacenar los parámetros sobrantes (_rest parameters_) en una sola variable:
+
+```js
+function showFavoriteFruits(first, ...rest) {
+  const restOfFruits = rest.join(' and ');
+  console.log(`My favourite fruit is the ${first}, although I like ${restOfFruits} also.`);
+}
+
+const myFavoriteFruits = ['orange', 'banana', 'pear'];
+showFavoriteFruits(...myFavoriteFruits); // 'My favourite fruit is the orange, although I like banana and pear also.'
+```
+
+### _Spreading_ de objeto
+
+Podemos usar el operador _spread_ también con las propiedades de los objetos. Por ejemplo, para añadir una propiedad nueva o sobreescribirla si ya existe. En este ejemplo copiamos el objeto `person` y lo guardamos en `twinSister`. El objeto `person` sigue existiendo y los dos son independientes:
+
+```js
+const person = {
+  name: 'Marie',
+  lastName: 'Smith',
+  age: 39
+};
+
+const twinSister = {...person, name: 'Juliette'};
+
+console.log(twinSister); // { name: 'Juliette', lastName: 'Smith', age: 39, languages: ['English', 'French'] }
+```
+
+> Cuidado: si alguna de las propiedades del objeto original es un array u otro objeto, esa propiedad no se clonaría, sino que se compartiría. Para evitar errores, solo copiaremos de esta manera objetos "planos".
+
+
+* * *
+
+**EJERCICIO 8**
+
+Partiendo del listado de participantes de la carrera de escobas del ejercicio 6. Vamos a realizar varios ejercicios:
+1. Añadir un último participantes que ha llegado tarde: el señor Argus Filch ha hecho un tiempo de 78. Añádelo al array usando el `spreading` de array.
+2. Sacamos el objeto del ganador de la carrera usando destructuring del array, y añadimos a ese objeto una nueva propiedad `win` con valor 1. Lo hacemos usando `spreading` del objeto.
+
+* * *
+
+
+## _Arrow functions_ y el `this` léxico
+
+Las _arrow functions_ ("funciones flecha") de ES6 son una notación simplificada para declarar funciones. En especial, vienen muy bien cuando queremos declarar funciones anónimas dentro de una expresión, como puede ser en _callbacks_ de acceso al DOM o a una API. La sintaxis básica es la siguiente:
+
+```js
+// ES5
+const button = document.querySelector('.btn-submit');
+button.addEventListener('click', function() {
+  console.log('Hello from an anonymous function');
+});
+
+// ES6
+const button = document.querySelector('.btn-submit');
+button.addEventListener('click', () => {
+  console.log('Hello from an anonymous function');
+});
+```
+
+También podemos asignar esas funciones a variables que declaremos:
+
+```js
+// ES5
+const printSomething = function() {
+  console.log('Hmmm... something!');
+}
+
+// ES6
+const printSomething = () => {
+  console.log('Hmmm... something!');
+};
+```
+
+### Paréntesis opcionales
+
+No podemos quitar los paréntesis si no se especifican parámetros o si son múltiples, pero sí cuando la función solo tenga un parámetro:
+
+```js
+const printWaitingTime = minutes => {
+  console.log(`Please, wait ${minutes} minutes`);
+};
+
+// equivale a
+const printWaitingTime = (minutes) => {
+  console.log(`Please, wait ${minutes} minutes`);
+};
+```
+
+### Llaves y _return_ implícito
+
+Escribir o no las llaves (`{}`) significa dos cosas distintas. Solo podremos no escribirlas cuando la función tenga una sola sentencia; es decir, cuando se ejecute una sola orden dentro (un `console.log()`, un cambio en un elemento HTML, un incremento en un contador, etc.). Cuando no escribimos las llaves, el valor que devuelve esa sentencia será el _return_ de la función. Eso nos permite escribir en menos líneas funciones muy sencillas:
+
+```js
+// ES5
+function rectArea(x, y) {
+  return x * y;
+}
+
+// ES6
+const rectArea = (x, y) => {
+  return x * y;
+};
+
+const rectArea = (x, y) => x * y;
+```
+
+En el caso de que quisiéramos devolver un objeto, entonces tendríamos que rodearlo con paréntesis para que las llaves no se malinterpreten:
+
+```js
+const makePersonObject = (name, lastName, currentAge) => ({
+  name,
+  lastName,
+  birthDate: new Date().getFullYear() - currentAge,
+});
+
+makePersonObject('Emma', 'Watson', 27); // { name: "Emma", lastName: "Watson", birthDate: 1990 }
+```
+
+### El `this` léxico
+
+Ya vimos en la sesión 3.7 que en todas las funciones se define automáticamente una variable `this` que puede resultar un poco problemática, porque lo entendemos traducido del inglés como "esto que está aquí". `this`, sin embargo, tiene distinto valor según desde qué contexto **se ejecute** la función. Existe una inconveniencia con esto en los _callbacks_, una función que pasas a otra parte del código (_aquello_) para que se ejecute en asíncrono (_allá_). Al declarar una función que use `this`, puede parecer que estemos usando el `this` del contexto (_esto_) desde el que escribimos (_aquí_) la función, pero en realidad no es así:
+
+```js
+function Person() {
+  this.age = 0;
+  this.growUp = function() {
+    this.age++;
+  };
+}
+
+var person = new Person();
+console.log(person.age); // 0, la edad inicial
+
+person.growUp(); // ejecutamos la función sobre el objeto "person": "this" === "person"
+console.log(person.age); // 1, creció después de ejecutar "growUp"
+
+setInterval(person.growUp, 1000); // callback que ejecuta *el navegador* por mí: "this" !== "person", "this" === "window"
+setTimeout(function() {
+  console.log(person.age) // 1, ¡no creció! (!)
+}, 3000);
+```
+
+Una solución a esto en ES5 es guardar la referencia en una variable antes (el ejemplo lo ilustra). En ES6 se resuelve este problema: en las _arrow functions_, el `this` tiene un valor léxico, que quiere decir que el valor de `this` no depende de dónde se ejecute, sino de dónde se escriba (_aquí_).
+
+```js
+// ES5, sin this léxico
+function Person() {
+  var _this = this; // declaramos una variable que podremos usar (ámbito) dentro de las funciones que declaremos
+  this.age = 0;
+  this.growUp = function() {
+    _this.age++;
+    // "this" aquí referenciaría al contexto desde el que *se ejecuta* la función
+    // Como la ejecuta el navegador por nosotros (es un callback), el contexto es el contexto global, "window"
+  }
+
+  setInterval(this.growUp, 1000);
+}
+
+// ES6 con this léxico
+function Person() {
+  this.age = 0;
+  this.growUp = () => {
+    this.age++;
+    // Como es una arrow function, "this" referencia al contexto desde el que **declaramos** la función,
+    // no importa que la ejecute luego el navegador por nosotros como callback
+  }
+
+  setInterval(this.growUp, 1000);
+}
+
+const person = new Person();
+setTimeout(() => {
+  console.log(person.age); // 2, creció, :)
+}, 3000);
+```
+
+Así ES6 resuelve un problema y nos ahorra más de un dolor de cabeza.
+
+
+* * *
+
+**EJERCICIO 9: A STORY `of` ADALABERS RELOADED**:
+
+Vamos a rehacer las funciones del ejercicio 5 usando arrow functions. __¡Al lío!__
+
+* * *
 
 
 ## Recursos externos
 
-### {{resource.name}}
+### Mozilla Developer Network
 
-{{resource.description}}
+Páginas donde se explica en más profundidad las diferentes características de ES6 (en inglés)
 
-- [{{resource.link_name}}]({{resource.url}})
+- [Template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) (interpolación de cadenas)
+- [`let` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+- [`const` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+- [`for...of` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+- [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- [Spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
+- [Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+### You Don't Know JS
+
+Una serie de libros para entender JavaScript en profundidad (en inglés)
+
+- [You Don't Know JS: ES6 & Beyond](https://github.com/getify/You-Dont-Know-JS/blob/master/es6 & beyond/README.md)
+
+### Mozilla Hacks: ES6 in Depth
+
+Lista de artículos de colaboradores de Mozilla explicando las novedades de ECMAScript 6
+
+- [ES6 in Depth](https://hacks.mozilla.org/category/es6-in-depth/)
+
+### Compatibilidad de ES6
+
+Para comprobar la compatibilidad de las características de ES2015/ES6 en los diferentes navegadores
+
+- [Can I Use](http://caniuse.com/)
+- También, aunque más engorrosa, la [ECMAScript 6 Compatibility Table](https://kangax.github.io/compat-table/es6/), que incluye distintos motores de JavaScript
