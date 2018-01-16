@@ -52,6 +52,7 @@
 ## Sprint 4. React
 
 * [4.1 Básicos de ES6](sprint_4/4_1_basicos_es6.md)
+* [4.2 Clases de ES6](sprint_4/4_2_clases_es6.md)
 
 ## Proyectos
 
