@@ -1,10 +1,11 @@
-# Proyecto 4: Un caso real con código heredado
+# Proyecto 4: Un caso de código heredado
 
 ## Índice
 
 1. Resumen
 1. Objetivos
 1. Casos de uso
+1. Metodología de trabajo
 1. Especificaciones
 1. Hitos
 1. Entrega
@@ -13,38 +14,64 @@
 
 ## Resumen ([TL;DR](https://spanish.stackexchange.com/questions/15317/hay-alg%C3%BAn-equivalente-en-castellano-al-ingl%C3%A9s-tldr))
 
-En este proyecto vamos a trabajar con un caso muy típico que se suele producir en el mundo de la programación, un trabajo que nos viene dado, con código heredado, es decir escrito por otra persona y sobre el que tenemos que escribir. Además, en este caso el diseño estará cerrado y solo implementaremos la lógica (mediante JavaScript), la adaptación de la web a responsive y las animaciones. Esta web
+En este proyecto vamos a trabajar con un caso muy típico que se suele producir en el mundo de la programación, un trabajo que nos viene dado, con código heredado, es decir escrito por otra persona y sobre el que tenemos que trabajar.  En este caso es un poco especial porque vais a trabajar con código heredado pero vuestro: el código del proyecto del segundo sprint (el currículum interactivo). __¡Sorpresa!__
 
 ## Objetivos
 
-1. Aprender a usar React para facilitar el mantenimiento y la modificación de estos.
-1. Ser capaces de usar una herramienta de automatización de tareas y entender cómo funciona
-1. Emplear un sistema de grid para maquetar la página
-1. Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares a partir de estos.
+1. Lidiar con código heredado y ser capaces de refactorizarlo
+1. Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares a partir de estos
+1. Aprender a usar React para crear una aplicación web sencilla
 1. Exponer en la sesión final y seguir adquiriendo habilidades de desarrollo personal
-1. Aprender a buscar información en la documentación de otras librerías
+1. Aprender a buscar información en la documentación de librerías externas
 
 
 ## Caso de uso
 
-La idea fundamental de este proyecto es que aprendamos a trabajar en una situación real, con un proyecto heredado. De esta forma practicaremos una situación real y desarrollaremos nuestra capacidad de adaptarnos a proyectos ya existentes. Esto nos preparará para, de cara al futuro, entrar en equipos nuevos de desarrollo con mayor rapidez, mejorar nuestra capacidad de modificación de código creado por otras personas y concienciarnos de la importancia de crear buen código visto desde la otra parte, la persona que lo recibe.
+La idea fundamental de este proyecto es que aprendamos a trabajar con un proyecto heredado. De esta forma desarrollaremos nuestra capacidad de adaptarnos a proyectos ya existentes. Esto nos preparará para, de cara al futuro, entrar en equipos nuevos de desarrollo con mayor rapidez, mejorar nuestra capacidad de modificación de código creado por otras personas y concienciarnos de la importancia de crear buen código visto desde la otra parte, la persona que lo recibe.
 
+## Metodología de trabajo
+
+Durante todo el proyecto, vamos a seguir una metodología de trabajo real. Para ello vamos a utilizar más a fondo 2 herramientas que ya conocemos: Trello y los pull-requests (PR).
+
+### Trello
+
+Seguiremos estas directrices:
+- usaremos una columna para la documentación del proyecto: enlace al repo, enlace a los materiales proporcionados, documentación de conversaciones con el cliente, etc.
+- usaremos la columna "Por hacer" para definir todas las tareas del proyecto
+- definiremos tareas pequeñas y concretas, por ejemplo, "maquetar componente botón", "añadir botón de ayuda a la página"
+- usaremos las etiquetas de colores de Trello para estimar la duración de cada tarea de la columna "Por hacer", es decir, lo que nos va a costar hacerla. Por ejemplo, podemos usar <1h, 1h, 2h, 5h, 10h, 100h. Una tarea simple la marcamos con el color correspondiente a <1h; a una tareas super-compleja le pondremos 100h y habrá que dividirla en tareas más pequeñas
+- cada tarea, al pasarla a la columna "En proceso", tendrá asignado al menos 1 responsable
+- una persona puede estar sólo en una tarea en estado "En proceso" a la vez
+- si una tarea se deja a medias se pasa a columna "Bloqueada"
+
+### Pull-requests
+Seguiremos estas directrices:
+- para cada nueva funcionalidad (que puede equivaler a una tarea) crearemos una nueva rama
+- cuando esté terminada crearemos un pull-request (PR) y pediremos revisión de al menos 1 compañera
+- cuando se haya aprobado el PR, la última en aprobarlo mergeará la rama a master y borrará la rama
+- para aprobar un PR debemos bajarnos el código de la compañera, y probar que funciona bien; si no entendemos algo, nos sentamos con ella y que nos lo explique
+- si hay problemas en el PR (errores, falta funcionalidad, no se puede mergear por conflictos) se añadirán commits al PR hasta que se solucionen
+- la responsable de  solucionar estos problemas será la creadora del PR, aunque puede pedir ayuda al resto de compañeras
 
 ## Especificaciones
 
-Se desarrollará una página web con las siguientes características:
-- Uso de HTML, CSS mediante Sass, JavaScript, animaciones y tansiciones
+Se partirá de un proyecto funcional y se realizará una refactorización del código incluyendo el uso de React. _Refactorizar_ código consiste en modificar un código para mejorar su estructura pero sin añadir nuevas funcionalidades. En este caso el objetivo principal será la refactirización pero sí podremos añadir pequeñas mejoras sobre la base de código.
+
+De cara a la refactorización, el proyecto debe utilizar estas tecnologías:
+- Uso de Sass para los estilos
+- Uso de ES6 y React para la estructuración del JS de la aplicación
 - Uso de mediaqueries para que el diseño sea adaptable al dispositivo
+- Utilizar una librería para el grid si fuese necesario
 - Desarrollo usando la estrategia mobile first
-- Uso de git para el control de versiones del proyecto
+- Uso de git para el control de versiones del proyecto, con ramas y pull-requests para revisar los cambios de las compañeras
 - Publicación del resultado en Internet usando GitHub pages
 
-La web deberá tener las siguientes características:
-- Deberá tener transiciones y animaciones para mejorar interacciones con la web
-- Deberá estar escrita con buen código y usando los estilos y herramientas que nos vienen dados
-- Deberá cumplir los requisitos establecidos al inicio del proyecto (briefing)
-- Deberá tener los estilos escritos con Sass
-- Corregir los estilos que no sigan las lineas visuales del sistema empleados (colores, bordes, etc.)
+La webapp deberá tener las siguientes nuevas características:
+- Deberá usar transiciones y/o animaciones para mejorar interacciones con la web
+- Deberá permitir almacenar la información del usuario usando `localStorage` o `sessionStorage` para que no se pierda al recargar la página; nos permitirá cargar un CV que ya hayamos rellenado o empezar uno desde cero
+- Podrá incluir otras pequeñas mejoras: incluir foto en el CV, modificar el contenido sel CV según voy escribiendo en un campo, etc.
+
+BONUS: Los distintos pasos de para crear el CV (1. elegir estilos, 2. datos personales, 3. experiencia laboral, etc.) podrían implementarse con una navegación entre distintas páginas de la aplicación usando React router.
 
 
 ## Hitos
@@ -55,24 +82,29 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 
 - 2 días de trabajo.
 - Organizar el trabajo a realizar usando Trello, e ir asignando tareas y responsables.
-- Crear la infraestructura necesaria: repositorio en github con acceso para todos los miembros del equipo.
+- Crear la infraestructura necesaria: repositorio en github con acceso para todos los miembros del equipo. En este proyecto haremos un _fork_ del proyecto que nos hayan asignado.
 - Entender los requisitos del proyecto y las técnicas y herramientas empleadas.
 - Analizar el código y entender su estructura para poder adaptarla a nuestras necesidades y conocimientos.
 - Analizar los componentes empleados en la web y el estilo visual de esta.
 
 
-### Segundo. Refactorización y maquetación de la web
+### Segundo. Refactorización y primera versión con React
 
 - 1 semana de trabajo.
-- Modularizar y refactorizar el código
-- Maquetar la parte de la web que esté por finalizar
-- Entender y generar los componentes empleados en la web
-- Hacer la web responsive y aprender a usar una librería para el grid
+- Modularizar y refactorizar el código CSS con Sass
+- Modularizar y refactorizar el código JS con ES6
+- Entender y generar los componentes React para una primera versión funcional de la aplicación
 
-### Tercero. Implementación de la parte interactiva
+
+### Tercero. Añadir las mejoras
 
 - 1 semana de trabajo
-- Implementar animaciones y la parte del JavaScript
+- Implementar las mejoras:
+  - transiciones y animaciones
+  - guardado en local
+  - estado en la aplicación con React
+  - librería para el grid (si fuese necesario)
+  - paginación y rutas con React router
 - Optimizar el código
 
 ### Cuarto. Presentación final
@@ -83,7 +115,7 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 
 ## Entrega
 
-El formato de entrega de este proyecto será mediante la subida de este a la plataforma de GitHub. Para subirlo, se creará un repositorio en la organización de Adalab. El nombre del repositorio deberá estar compuesto de las siguientes partes, todo ello separado por guiones:
+El formato de entrega de este proyecto será mediante la subida de este a la plataforma de GitHub. Para subirlo, se creará un repositorio en la organización de Adalab (en este proyecto es hacer un _fork_ de un proyecto existente). El nombre del repositorio deberá estar compuesto de las siguientes partes, todo ello separado por guiones:
 - Nombre de la promoción en minúsculas
 - "s" minúscula seguida del número del sprint
 - Nombre del equipo en minúsculas
