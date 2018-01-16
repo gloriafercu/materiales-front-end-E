@@ -68,8 +68,8 @@ Seguiremos estas directrices:
 ### Pull-requests
 Seguiremos estas directrices:
 - para cada nueva funcionalidad (que puede equivaler a una tarea) crearemos una nueva rama
-- cuando esté terminada crearemos un pull-request (PR) y pediremos revisión de al menos 2 compañeras
-- cuando 2 hayan aprobado el PR, la última en aprobarlo megeará la rama a master y borrará la rama
+- cuando esté terminada crearemos un pull-request (PR) y pediremos revisión de al menos 1 compañera
+- cuando se haya aprobado el PR, la última en aprobarlo mergeará la rama a master y borrará la rama
 - para aprobar un PR debemos bajarnos el código de la compañera, y probar que funciona bien; si no entendemos algo, nos sentamos con ella y que nos lo explique
 - si hay problemas en el PR (errores, falta funcionalidad, no se puede mergear por conflictos) se añadirán commits al PR hasta que se solucionen
 - la responsable de  solucionar estos problemas será la creadora del PR, aunque puede pedir ayuda al resto de compañeras
