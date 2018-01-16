@@ -7,7 +7,7 @@
 ## Contenidos
 - [Introducción](#introducción)
 - [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [¿Cómo podemos utilizar las novedades de ES2015](#¿cómo-podemos-utilizar-las-novedades-de-ES2015)
+- [¿Cómo podemos utilizar las novedades de ES2015](#¿cómo-podemos-utilizar-las-novedades-de-es2015)
 - [¿En qué casos se utiliza lo que vamos a aprender?](#¿en-qué-casos-se-utiliza-lo-que-vamos-a-aprender)
 - [Interpolación de cadenas](#interpolación-de-cadenas)
 - [Las variables `let` y `const` y su _scope_](#las-variables-let-y-const-y-su-scope)
