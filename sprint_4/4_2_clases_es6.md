@@ -328,7 +328,7 @@ Vamos a mejorar ¡aún más! nuestra calculadora geométrica sencilla. En el pro
   - Un atributo para el número de lados (`numberOfSides`)
   - Dos atributos más: para la longitud de la base (`base`) y de la altura (`height`)
   - Un método para calcular el perímetro (`perimeter`) (multiplicar la longitud del lado base por el número de lados)
-  - Un método para calcular el área (`area`) (elevar al cuadrado el lado)
+  - Un método para calcular el área (`area`) (multiplicar base por altura)
 
 La subclase `Square` tendrá:
 
