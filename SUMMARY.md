@@ -55,6 +55,7 @@
 * [4.2 Clases de ES6](sprint_4/4_2_clases_es6.md)
 * [4.3 Introducción a React](sprint_4/4_3_intro_react.md)
 * [4.4 Componentes en React](sprint_4/4_4_componentes_react.md)
+* [4.5 Eventos en React](sprint_4/4_5_eventos_react.md)
 
 ## Proyectos
 
