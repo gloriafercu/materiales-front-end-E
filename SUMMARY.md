@@ -59,6 +59,7 @@
 * [4.6 Estado en React](sprint_4/4_6_estado_react.md)
 * [4.7 Métodos del ciclo de vida de componentes en React](sprint_4/4_7_ciclo_vida_componentes_react.md)
 * [4.8 React router](sprint_4/4_9_react_router.md)
+* [Ejercicio de evaluación - Sprint 4](evaluaciones/4_evaluacion.md)
 
 ## Proyectos
 
