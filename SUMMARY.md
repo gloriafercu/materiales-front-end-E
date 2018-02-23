@@ -61,6 +61,7 @@
 * [4.8 React router](sprint_4/4_9_react_router.md)
 * [Ejercicio de evaluación - Sprint 4](evaluaciones/4_evaluacion.md)
 * [Ejercicio de evaluación - Sprint 4 bis](evaluaciones/4_evaluacion-bis.md)
+* [Anexo: publicar mi app en GitHub Pages](sprint_4/S4_anexo.md)
 
 ## Proyectos
 
