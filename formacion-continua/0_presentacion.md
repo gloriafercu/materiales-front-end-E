@@ -52,9 +52,9 @@ Para gestionar las dudas durante la semana habrá un canal de dudas para la form
 ### Ejercicios cortos voluntarios
 En paralelo a la prueba técnica prepararemos una serie de ejercicios cortos **y totalmente voluntarios**, centrados en maquetación.
 
-En este caso habrá un repositorio del que habrá que hacer un fork y que se irá actualizando semanalmente con más ejercicios.
+En este caso habrá un repositorio del que habrá que hacer un `fork` y que se irá actualizando semanalmente con más ejercicios. En el `Readme.md` de este repositorio estarán las instrucciones de trabajo.
 
-
+[Repositorio de ejercicios cortos](https://github.com/Adalab/clarke-ejercicios-cortos-formacion-continua)
 
 Para estos ejercicios habrá un canal de dudas y Carlos estará disponible de Lunes a Martes en horario de 19 a 21 para el grupo que esté en remoto, es decir: si me toca ir el lunes, el martes, de 19 a 21 podré preguntar las dudas de los ejercicios cortos por slack.
 
