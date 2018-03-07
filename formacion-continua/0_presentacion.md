@@ -56,6 +56,6 @@ En este caso habrá un repositorio del que habrá que hacer un `fork` y que se i
 
 [Repositorio de ejercicios cortos](https://github.com/Adalab/clarke-ejercicios-cortos-formacion-continua)
 
-Para estos ejercicios habrá un canal de dudas y Carlos estará disponible de Lunes a Martes en horario de 19 a 21 para el grupo que esté en remoto, es decir: si me toca ir el lunes, el martes, de 19 a 21 podré preguntar las dudas de los ejercicios cortos por slack.
+Para estos ejercicios habrá un canal de dudas y Carlos estará disponible durante la semana para responder dudas por dicho canal.
 
-Si individualmente o en grupo se necesitase hacer un pequeño live coding o un hangout pues lo organizamos.
+Además, de Lunes a Martes en horario de 19 a 21 podremos hacer una videoconferencia individual o grupal para el grupo que esté en remoto, es decir: si me toca ir el lunes, el martes, de 19 a 21 podremos resolverlas casi en vivo, acordándolo previamente. Usaremos hangouts, skype o la herramienta que nos venga mejor.
