@@ -73,8 +73,9 @@
 * [Proyecto 4. Un caso de código heredado](proyectos/P4_proyecto_sprint_4.md)
 * [Anexo al Proyecto 4](proyectos/P4_anexo_1.md)
 
-## Pruebas técnicas
-
+## Formación continua
+* [Presentación](formacion-continua/0_presentacion.md)
+### Pruebas técnicas
 * [Prueba técnica #1](formacion-continua/1_prueba_tecnica.md)
 
 ## Guías
