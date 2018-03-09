@@ -25,7 +25,7 @@ Así que vamos a proponer un pequeño juego de rol para simular esta prueba téc
 Cada semana, el miércoles, colgaremos en GitBook un ejercicio diferente que se realizará individualmente y se entregará el sábado siguiente.
 Ya divididas en grupos, nos reuniremos cada Lunes/Martes con los voluntarios asignados a cada grupo. Ellos elegirán a una alumna que tendrá el rol de **entrevistada**. El resto de compañeras serán el **equipo de front** de la empresa, teniendo el voluntario el rol de **entrevistador**.
 
-Estas pruebas técnicas se trabajarán como cualquiera de las evaluaciones del curso base. En el enunciado de cada prueba habrá un link para crear el repositorio de trabajo, en este caso tendréis que añadir a vuestro voluntario para que tenga acceso.
+Estas pruebas técnicas se trabajarán como cualquiera de las evaluaciones del curso base. En el enunciado de cada prueba habrá un link para crear el repositorio de trabajo, en este caso **tendréis que añadir a vuestro voluntario para que tenga acceso**.
 
 Hemos pautado la sesión presencial de lunes/martes de la siguiente manera:  
 
@@ -49,8 +49,8 @@ Para terminar la sesión, el entrevistador se reúne con el equipo de front para
 Para gestionar las dudas durante la semana habrá un canal de dudas para la formación continua de la promoción Clarke donde estaréis todas las alumnas y los voluntarios, de manera que las dudas estén visibles para todas.
 
 
-### Ejercicios cortos voluntarios
-En paralelo a la prueba técnica prepararemos una serie de ejercicios cortos **y totalmente voluntarios**, centrados en maquetación.
+### Ejercicios cortos opcionales
+En paralelo a la prueba técnica prepararemos una serie de ejercicios cortos **y totalmente opcionales**, centrados en maquetación.
 
 En este caso habrá un repositorio del que habrá que hacer un `fork` y que se irá actualizando semanalmente con más ejercicios. En el `Readme.md` de este repositorio estarán las instrucciones de trabajo.
 
