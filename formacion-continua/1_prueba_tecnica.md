@@ -23,3 +23,10 @@ Tenéis que crear un nuevo repositorio en GitHub desde GitHub Classroom usando [
 ## Inspiración
 
 - http://pokedex.org
+
+## Guión exposición
+Os proponemos un guión para presentar el ejercicio pero el entrevistador podrá variarlo o redirigirlo en cualquier momento:
+- Descripción breve de la API
+- Cómo se ha planteado el ejercicio
+- Estructura de componentes
+- En este caso el html/css no es importante pero si se ha resuelto, contar muy brevemente cómo se han resuelto.
