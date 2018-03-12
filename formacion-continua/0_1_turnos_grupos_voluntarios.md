@@ -43,7 +43,7 @@ GitHub: [https://github.com/nato522](https://github.com/nato522)
 
 ### Grupo 4
 Voluntario: **Maurice	Dominguez**  
-GitHub:
+GitHub: [https://github.com/madoos](https://github.com/madoos)
 
 | Alumnas |
 |--- |
