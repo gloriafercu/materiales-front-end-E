@@ -78,6 +78,7 @@
 * [Turnos, grupos y voluntarios](formacion-continua/0_1_turnos_grupos_voluntarios.md)
 ### Pruebas técnicas
 * [Prueba técnica #1](formacion-continua/1_prueba_tecnica.md)
+* [Prueba técnica #2](formacion-continua/2_prueba_tecnica.md)
 
 ## Guías
 
