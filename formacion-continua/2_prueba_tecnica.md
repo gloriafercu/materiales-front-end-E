@@ -12,7 +12,7 @@ En esta prueba vamos a continuar con el Pokedex que construimos en la prueba ant
 Vamos a serguir explorando el API de pokemon [PokeAPI](https://pokeapi.co/)
 
 La app debe tener las siguientes nuevas características:
-- En el listado principal debe aparecer si el pokemon es una evolunción de otro, de cual es
+- En el listado principal debe aparecer, si el pokemon es una evolunción de otro, de cuál proviene
 - Usaremos el router de React para que, al clickar sobre la tarjeta de un pokemon, aparezca una pantalla de detalle con más información detallada de ese pokemon. Os proponemos: altura, peso, habilidades, imágenes del pokemon y sus evoluciones
 - Usar algún tipo de transición a vuestra elección al mostrar/ocultar el componente de detalle de pokemon
 
