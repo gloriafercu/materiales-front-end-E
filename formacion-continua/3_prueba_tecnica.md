@@ -1,4 +1,4 @@
-# Prueba técnica 3: ¿Cómo ha ido el día?
+# Prueba técnica 3: ¿Cómo ha ido el día? (Parte 1)
 
 
 ## Resumen
@@ -18,6 +18,9 @@ Tendremos una serie de reglas:
 - Esta vez no es necesario gestionar los huecos (si me dejo X días sin añadir)
 - Hay dos vistas, el **editor** y el **calendario**
 - Los datos se guardarán en el [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) del navegador ;)
+- Navegación:
+  - Se accede al editor con el botón `+` que aparece fijo en la parte superior de la pantalla
+  - Los botónes guardar/cancelar devuelven a la vista de calendario
 
 
 ## Entrega
