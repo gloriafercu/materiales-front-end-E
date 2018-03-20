@@ -16,11 +16,12 @@ Tendremos una serie de reglas:
 - En el caso de un buen día, :), se podrá añadir un mensaje
 - Una vez guardado un día ya no se puede editar
 - Esta vez no es necesario gestionar los huecos (si me dejo X días sin añadir)
-- Hay dos vistas, el **editor** y el **calendario**
-- Los datos se guardarán en el [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) del navegador ;)
 - Navegación:
+  - Hay dos vistas, el **editor** y el **calendario**
   - Se accede al editor con el botón `+` que aparece fijo en la parte superior de la pantalla
-  - Los botónes guardar/cancelar devuelven a la vista de calendario
+  - Los botones guardar/cancelar devuelven a la vista de calendario
+- Los datos se guardarán en el [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) del navegador ;)
+
 
 
 ## Entrega
@@ -34,4 +35,5 @@ Tenéis que crear un nuevo repositorio en GitHub desde GitHub Classroom usando [
 ## Guión exposición
 Os proponemos un guión para presentar el ejercicio pero el entrevistador podrá variarlo o redirigirlo en cualquier momento:
 - Descripción breve de la API Local Storage
+- Estructura de datos que vamos a guardar
 - Estructura de componentes y uso del router
