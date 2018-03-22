@@ -17,10 +17,14 @@ Tendremos una serie de reglas:
 - Una vez guardado un día ya no se puede editar
 - Esta vez no es necesario gestionar los huecos (si me dejo X días sin añadir)
 - Navegación:
-  - Hay dos vistas, el **editor** y el **calendario**
+  - Hay dos vistas, la vista de **edición** y la del **listado de días**
   - Se accede al editor con el botón `+` que aparece fijo en la parte superior de la pantalla
-  - Los botones guardar/cancelar devuelven a la vista de calendario
+  - Los botones guardar/cancelar devuelven a la vista de listado
 - Los datos se guardarán en el [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) del navegador ;)
+
+## Aclaraciones
+- En ningún momento se piden las funcionalidades de un calendario.
+- Los datos se guardan en el Local storage con el objeto de poder recuperarlos cuando cargue la app, o si recargo o cierro el navegador.
 
 
 
