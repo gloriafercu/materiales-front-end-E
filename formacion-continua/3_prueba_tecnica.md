@@ -8,7 +8,10 @@ En esta prueba vamos a crear una pequeña webapp en React basada en el [Life Cal
 Se trata de un calendario en el que cada día vas apuntado qué tal ha ido el día eligiendo un [smiley](https://en.wikipedia.org/wiki/Smiley).
 La idea es poder ver un periodo de tiempo en contexto para que los días malos no puedan a los buenos.
 
-![Pokedex](assets/life-calendar.png)
+## Guía gráfica
+Esta imagen es una guía para hacernos una idea de cómo debería quedar.
+![Life Calendar](assets/life-calendar.png)
+
 
 ## Especificaciones
 Tendremos una serie de reglas:
