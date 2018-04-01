@@ -20,7 +20,7 @@ También se puede consultar un pequeño prototipo online:
 * [768px](https://sketch.cloud/s/Wdvqq/all/pages/tablet/play)
 * [1440px](https://sketch.cloud/s/Wdvqq/all/pages/desktop/play)
 
-## Requisitios
+## Requisitos
 Hay que cumplir todo esto:
 - Hay que usar el HTML tal y como se entrega
 - Se entregan, además, 3 imágenes: la imagen de fondo, el icono de la hamburguesa y el icono de cerrar
