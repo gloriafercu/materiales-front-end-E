@@ -208,8 +208,12 @@ Y que generaría el siguiente CSS:
 Bueno, ¿qué más podemos hacer con SASS? Importar archivos. Esto es otra ventaja importante ya que nos permite modularizar nuestros estilos y trabajar en pequeños parciales que luego se unirán en el archivo final. Esto es gracias al `@import`.
 
 Espera, CSS ya tiene un sistema de ´@import´ que todas sabemos que se colocan al principio del archivo CSS, ¿no? Pues sí, pero el ´@import´ de SASS lo puedes poner donde quieras del documento lo que nos permite plantear una estructura de componentes para llevar un orden en nuestros desarrollos. Hay muchas maneras de plantearlo así que os vamos a proponer una.
+
 ```
 scss
+	|
+	|- main.scss/index.scss (archivo principal)
+	|
   |- core
   |  |- _functions.scss
   |  |- _mixins.scss
@@ -232,6 +236,7 @@ scss
      |- _contact.scss
      `- _home.scss
 ```
+
 Tendríamos cuatro bloques de archivos: los de **core** como son las variables, nuestros mixins y funciones; el bloque principal de **layout** con la estructura del site y los componentes principales como header y footer; los diferentes **componentes** como puede ser un boque de noticias, el formulario de contacto o los botones; y por último el bloque de **páginas** donde tendríamos los ajustes particulares de cada página.
 
 En nuesto `main.scss` llamaríamos a todos estos archivos en orden:
