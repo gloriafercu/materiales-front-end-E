@@ -4,37 +4,37 @@ Hasta ahora hemos visto una pequeña introducción a unos elementos básicos de 
 
 ## Más etiquetas HTML
 
-La etiquetas html nos premiten estructurar nuestro contenido según su función o carga semántica. Vamos a ver más etiquetas:
+La etiquetas HTML nos premiten estructurar nuestro contenido según su función o carga semántica. Vamos a ver más etiquetas:
 
 * para **definir nuestra página**
 * para agrupar en **seciones**
 * para identificar semánticamente el **contenido**
 * para crear **tablas de datos**
 
-	NOTA:
-	Todavía no lo hemos dicho expresamente pero lo normal es anidarlas, meter etiquetas dentro de etiquetas:
+		NOTA:
+		Todavía no lo hemos dicho expresamente pero lo normal es anidarlas, meter etiquetas dentro de etiquetas.
 
-	```html
-	<html>
-		<body>
-			<header>
-				<h1>Título</h1>
-			</header>
-			<main>
-				<section>
-					<h2>Subtítulo</h2>
-					<p>Contenido y más contenido</p>
-					<p>Contenido con <a href="">enlaces</a></p>
-					<ul>
-						<li>lista</li>
-						<li>de</li>
-						<li>cosas</li>
-					</ul>
-				</section>
-			</main>
-		</body>
-	</html>
-	```
+```html
+<html>
+	<body>
+		<header>
+			<h1>Título</h1>
+		</header>
+		<main>
+			<section>
+				<h2>Subtítulo</h2>
+				<p>Contenido y más contenido</p>
+				<p>Contenido con <a href="">enlaces</a></p>
+				<ul>
+					<li>lista</li>
+					<li>de</li>
+					<li>cosas</li>
+				</ul>
+			</section>
+		</main>
+	</body>
+</html>
+```
 
 ## Secciones
 Normalmente no vamos a querer meter nuestro contenido en la página y ya está, querremos darle una estructura y agruparlo en bloques. Para ello tenemos la etiqueta `<section>`.
@@ -180,10 +180,7 @@ Desde que empezamos a separar el contenido y el diseño esta etiqueta ha quedado
 ### Contenedores generales
 Aparte de las secciones tenemos un par de contenedores sin propósito específico que nos sirven para hacer agrupaciones sin carga semántica. Son el `<div>` y el `<span>`. Mientras que el **div** es para bloques de contenido el **span** está indicado para partes del texto. Los iremos viendo más adelante.
 
-
-
-
-## Tablas
+### Tablas
 Hubo un tiempo en el que las tablas eran la base sobre la que se maquetaba cualquier página web. Hoy se utilizan para lo que son: presentar datos tabulados.
 
 La tabla básica tiene una estructura bastante simple y tiene tres etiquetas principales:
@@ -218,12 +215,14 @@ y en código quedaría así:
 En principio, en las tablas siempre tiene que haber igual número de celdas en cada fila.
 
 * * *
-EJERCICIO 1:
+EJERCICIO 1
+
 Hacer una tabla con la comida de cada día de la semana usando `<th>`.
-* * *
 
 * * *
-EJERCICIO 2: Buscar información sobre todos estos elementos en  la [MDN](https://developer.mozilla.org/es/docs/Web/HTML/Elemento)
+EJERCICIO 2
+
+Buscar información sobre todos estos elementos en  la [MDN](https://developer.mozilla.org/es/docs/Web/HTML/Elemento)
 
 * Definición de página
 	* doctype
@@ -360,8 +359,18 @@ Y el css sería:
 ```
 [Codepen de ejemplo](https://codepen.io/oneeyedman/pen/wrLBQQ)
 
-#### Los selectores se pueden mezclar
+* * *
+
+JUEGO
+
+Para practicar los selectores, desde los más sencillos a los más complejos, te recomendamos [practicar con este divertido juego](https://flukeout.github.io/).
+
+* * *
+
+#### Las clases se pueden mezclar
 De los ejemplos de las pseudo clases vemos que los selectores se pueden mezclar. Esto nos ayuda a contemplar casos particulares sin tener que usar las ID.
+
+Un elemento HTML puede tener tantas clases como queramos y las indicamos en su atributo `class` separadas cada una por un espacio.
 
 Por ejemplo, si tenemos una lista de botones como la anterior:
 ```html
@@ -377,6 +386,7 @@ Por ejemplo, si tenemos una lista de botones como la anterior:
 	</li>
 </ul>
 ```
+
 Hemos eliminado el atributo id y hemos añadido una clase extra para cada tipo de botón. De esta manera tenemos por cada "botón" una clase general `.button` donde colocaremos los estilos comunes a todos los botones y luego una particular (`.button--new`, `.button--rename` y `.button--delete`) donde solo pondremos los ajustes particulares.
 Digamos que queremos que los botones tengan una caja con bordes redondeados pero que el de añadir usuario sea verde, el de renombrar sea azul y el de borrar sea, claramente, rojo muerte.
 ```css
@@ -405,7 +415,8 @@ Digamos que queremos que los botones tengan una caja con bordes redondeados pero
 Hay una serie de estilos que se heredan, es decir, que se transmiten a los hijos. Entonces, si aplicamos una de estas propiedades a un elemento, todos los elementos anidados la heredarán también.
 
 * * *
-EJERCICIO
+EJERCICIO 3
+
 El color es una de la propiedades que se heredan así que si tenemos esta estructura:
 ```html
 <article>
@@ -425,8 +436,7 @@ El color es una de la propiedades que se heredan así que si tenemos esta estruc
 ```
 y al `<aside>` con clase `.links` le aplicamos una regla que ponga el texto rojo, ¿qué quedará en rojo?
 * * *
-*
-[Más info sobre herencia en la MDN](https://developer.mozilla.org/es/docs/Web/CSS/inheritance)
+* [Más info sobre herencia en la MDN](https://developer.mozilla.org/es/docs/Web/CSS/inheritance)
 
 
 ### Cascada y especificidad de selectores
@@ -442,14 +452,15 @@ La cascada depende de 4 factores:
 
 [En la MDN viene perfectamente explicado](https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Cascada_y_herencia).
 
-Dos enlaces sobre la especificidad más... amenos
+Dos enlaces sobre la especificidad más... a menos
 
 * [CSS Specifity Wars](https://stuffandnonsense.co.uk/archives/css_specificity_wars.html)
 * [CSS SPECIFITY](http://cssspecificity.com/#)
 
 
 * * *
-EJERCICIO:
+EJERCICIO 4
+
 Partiendo de este [Codepen de ejemplo](https://codepen.io/oneeyedman/pen/vWEBex):
 1. Por qué los enlaces son verdes y no rojos
 2. Hacer que los enlaces sean rojos

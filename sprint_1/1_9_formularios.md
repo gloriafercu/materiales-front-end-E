@@ -241,7 +241,7 @@ Otra peculiaridad de los campos del tipo `password` es que su contenido se borra
 </form>
 
 * * *
-EJERCICIO:
+EJERCICIO 1
 
 Sin que sirva de precedente, vamos a realizar este ejercicio directamente en Codepen. Esto nos permitirá comprobar cuales son los datos que se envían en el formulario ya que cuando creamos un formulario en Codepen, al enviarlo nos muestra una ventana con la información que le llegaría al servidor. Esto nos permite comprobar que funciona correctamente y ver qué es lo que llegaría en cada caso. Es importante que dejemos el atributo `action` de la etiqueta `<form>` vacío y que el método sea del tipo `post`.
 
@@ -310,7 +310,7 @@ El atributo `disabled` sirve para desactivar un campo de un formulario.
 ```
 
 * * *
-EJERCICIO:
+EJERCICIO 2
 
 Vamos a añadir un atributo `required` a todos los campos del ejercicio anterior excepto al apellido.
 
@@ -418,7 +418,7 @@ Por defecto las etiquetas ocultas se muestran con el atributo `display: none;` a
 ```
 
 * * *
-EJERCICIO:
+EJERCICIO 3
 
 En este ejercicio vamos a crear el formulario de Facebook. Para crearlo utilizaremos lo que hemos visto hasta ahora de formularios. El formulario en sí será el que se muestra en la imagen inferior. El objetivo es crear sólo el HTML pero si te atreves puedes probar también a realizar un CSS similar.
 
@@ -496,12 +496,26 @@ input {
 
   NOTA: El prefijo `-webkit-` y `-moz-` es específico para aplicar esto a los navegadores Safari y Chrome y Mozilla Firefox respectivamente
 
+* * *
+EJERCICIO 4
 
-## Bonus
+Crea un formulario similar al de la imagen, que es el de registro de GMail.
+
+![Formulario GMail](assets/images/1-r-2-gmail-signup-form.png)
+
+Modifica el formulario anterior para que se hagan las siguientes validaciones:
+
+- Todos los campos excepto sexo son obligatorios
+- La dirección de correo actual debe ser una dirección de correo válida
+- El teléfono debe ser un número de teléfono válido en España (PISTA: mirad cómo usar el atributto `pattern`)
+- Día y año (de la fecha de nacimiento) deben ser numéricos
+* * *
+
+## BONUS
 
 ### Más atributos y etiquetas
 
-Existen muchos otros tipos distintos de etiquetas para formularios y atributos, pero en este caso solo hemos querido mostrar los principales ya que sino no daría tiempo a ver todos. El resto tienen muchas cosas en común y pueden
+Existen muchos otros tipos distintos de etiquetas para formularios y atributos, pero en este caso solo hemos querido mostrar los principales ya que sino no daría tiempo a ver todos. El resto tienen muchas cosas en común y pueden consultarse las guías de MDN.
 
 - [Guía de formularios de MDN](https://developer.mozilla.org/es/docs/Learn/HTML/Forms)
 - [Guía de formularios de MDN (inglés y más completa)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms)

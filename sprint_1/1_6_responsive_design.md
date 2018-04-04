@@ -68,7 +68,8 @@ Para el tema de la tipografía hay varias escuelas y formas de afrontarlo según
 
 ![Cómo funcionan los em](assets/images/em.png)
 * * *
-EJERCICIO 1:  
+EJERCICIO 1:
+
 En la web de [Calculadora de em](https://vasilis.nl/nerd/code/emcalc/) crear una estructura como:
 ```html
 <body>
@@ -84,7 +85,8 @@ donde el `<body>` estará a 16px, el `<main>` a los mismos 16px, el `<section>` 
 * ¿A cuántos em está el `<section>`?
 * ¿A cuántos em está el `<p>`?
 * * *
-EJERCICIO 2:  
+EJERCICIO 2:
+
 Vamos a ver cómo funcionan en un ejemplo unas unidades flexibles como los `em` y qué pueden hacer por nosotros:
 En el siguiente [codepen](https://codepen.io/adalab/pen/vWXwZd) hay un contenedor con clase `.icon`. Y él y todas sus hijas están en `em`.
 Probar a diferentes valores de pixels para el font-size del elemento `.icon`:
@@ -99,13 +101,15 @@ Probar a diferentes valores de pixels para el font-size del elemento `.icon`:
 Estas propiedades que permiten "limitar" anchos y altos se pueden aplicar a casi cualquier contenedor (que admita dimensiones) de manera que podamos tener elementos que se dimensionen a base de porcentajes pero sobre los que tengamos un poco de control para que en determinados escenarios no se hagan demasiado pequeños ni demasiado grandes.
 
 * * *
-EJERCICIO 3:  
+EJERCICIO 3:
+
 Ya que ayer vimos flexbox, en este [codepen](https://codepen.io/adalab/pen/LORKzX) tenemos dos columnas, una (.aside) que ocupa el 50% del ancho hasta 320px y la otra (.main) que ocupa el resto:
 
 * Hacer la ventana del navegador tan pequeña para que las dos columnas ocupen lo mismo
 * y agrandar hasta que .aside se quede en 320px de ancho mientras .main ocupa el resto del espacio
 * * *
-EJERCICIO 4:  
+EJERCICIO 4:
+
 En el siguiente [codepen](https://codepen.io/adalab/pen/MOjMPr) hay un módulo con una noticia sobre Bill Murray. Nada nuevo, ¿no?
 
 * ¿Qué pasa si duplico el párrafo de texto?
@@ -121,7 +125,8 @@ Las mediaqueries son las instrucciones que nos permiten aplicar una serie de reg
 ```
 En el ejemplo superior le decimos que aplique unos CSS cuando estemos en una ventana de navegador de al menos 500px
 * * *
-EJERCICIO 5:  
+EJERCICIO 5:
+
 Crea un index.html que contenga:
 ```html
 <!DOCTYPE html>
@@ -175,7 +180,8 @@ Con la etiqueta `meta` viewport le decimos a estos dispositivos cómo tienen que
 2) la escala inicial siempre será el 100%
 
 * * *
-EJERCICIO 6:  
+EJERCICIO 6:
+
 Vamos a añadir al `<head>` de nuestra página el tag meta viewport quedando toda nuestra página así:
 ```html
 <!DOCTYPE html>
@@ -203,7 +209,8 @@ Vamos a añadir al `<head>` de nuestra página el tag meta viewport quedando tod
 ```
 ¿Qué tal ahora? ¿Si nos vamos a las herramientas de desarrollo, abrimos el simulador y probamos con diferentes dispositivos/anchos? ¿Cambia ahora de rojo a azul?
 * * *
-EJERCICIO 7:  
+EJERCICIO 7:
+
 Vamos a hacer algo más "real". En un html tendremos un contenedor con:
 1. Un título
 2. Uno o dos párrafos de texto
@@ -251,52 +258,29 @@ Luego tendremos breakpoints menores que nos los da el contenido: desde el tamañ
 
 De esta manera nos aseguramos de que en cualquier ventana de navegador nuestra página se va a ver correcta. Quizás no se vea de una manera ideal, pero no se va a ver descolocada.
 
-## Bonus: vw y vh
+## BONUS: vw y vh
 De postre, tenemos unas unidades flexibles que no dependen de un tamaño de fuente como los `em` sino que dependen de las dimensiones del viewport o de la ventana del navegador. Son los `vw` y `vh` (viewport width y viewport height).
 
 A efectos prácticos actuan como un porcentaje en función del ancho/alto del viewport/ventana del navegador. Entonces, el 100% de la altura de nuestra ventana de navegador sería 100vh.
 * * *
-EJERCICIO 8:  
+EJERCICIO BONUS 1:
+
 En el siguiente [codepen](https://codepen.io/adalab/pen/BmQaQa) variad las dimensiones en vw y vh para:
 * hacer que el contenedor `.box` ocupe el 50% de ancho y el 100% de alto
 * hacer que el contenedor `.box` ocupe el 10% de ancho y el 10% de alto
 * hacer que el contenedor `.box` ocupe el 100% de ancho y el 80% de alto
 
-
-
-
-## Recursos externos
-
-### Curso de Responsive Design
-
-[Curso de Responsive Design](https://www.youtube.com/playlist?list=PLQCgNGUqLK4mW7LxW3jJdRjCnErL5rszl)
-
-### Media queries
-
-[CSS: Media queries (video)](https://www.youtube.com/watch?v=y6zYUe7MdLQ)
-
-### Por qué mobile first es importante hoy en día
-
-[Mobile first es importante hoy](https://www.youtube.com/watch?v=SEXm5OM-U3s)
-
-### Cómo aplicar mobile first y responsive design
-
-[Cómo aplicar el mobile first y el responsive design](https://www.youtube.com/watch?v=KjHRa_Qzus8&index=8&list=PL6hPvfzEEMDaKYAabXoDL7A-fZcwxvIqe)
-
-
-
-
-### Ejercicios de refuerzo de Media queries
-
 * * *
-EJERCICIO 1:  
+EJERCICIO 8:  
+
 Hacer una web que, en función del ancho de la ventana del navegador, cambie su color de fondo:
 - Si el tamaño de la ventana es menor de 480px que tenga el fondo rojo
 - Si el tamaño de la ventana está entre 480px y 768px que tenga el fondo amarillo
 - Si el tamaño de la ventana es mayor de 768px que tenga el fondo verde
 
 * * *
-EJERCICIO 2:  
+EJERCICIO 9:
+
 Dados los siguientes diseños, maquetar la web aplicando las mediaqueries necesarias.
 
 Aspecto de la web a pantalla completa
@@ -310,3 +294,17 @@ Aspecto de la web en una pantalla de 1000px
 Aspecto de la web en una pantalla de 480px
 
 ![Pantalla completa](assets/images/ej0203.png)
+* * *
+EJERCICIO 10:
+
+`em` es una unidad que depende del tamaño de fuente de su contenedor, ya sea porque se especifica o porque se hereda de otro.
+Suponiendo [este ejemplo](https://codepen.io/adalab/pen/MOEWmP) donde ya está ajustada la cabecera, el footer, y la proporción que queremos de título y texto en el post, hay que hacer los ajustes necesarios solo en `.main` para que nuestro post se adecúe a mobile, tablet, desktop y desktop full.
+
+Para ello hemos preparado una "pista" para la versión mobile en la línea 97 del CSS. Quedaría ajustar el tamaño de la fuente de `.main` para las sucesivas resoluciones (ya hay preparadas unas mediaqueries donde poner los tamaños de letra).
+* * *
+
+## Recursos externos
+- [Curso de Responsive Design](https://www.youtube.com/playlist?list=PLQCgNGUqLK4mW7LxW3jJdRjCnErL5rszl)
+- [CSS: Media queries (video)](https://www.youtube.com/watch?v=y6zYUe7MdLQ)
+- [Por qué mobile first es importante hoy](https://www.youtube.com/watch?v=SEXm5OM-U3s)
+- [Cómo aplicar el mobile first y el responsive design](https://www.youtube.com/watch?v=KjHRa_Qzus8&index=8&list=PL6hPvfzEEMDaKYAabXoDL7A-fZcwxvIqe)

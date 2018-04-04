@@ -1,6 +1,6 @@
-# Posicionamiento con flexbox
+# Flexbox
 
-## Flexbox
+## Introducción
 
 Durante esta sesión veremos cómo distribuir los elementos en una página usando Flexbox.
 
@@ -14,6 +14,20 @@ Vamos a seguir esta guía y a ir planteando unos ejercicios para cada propiedad 
 
 	NOTA:
 	Habrá que ver cómo hacer que uno o varios elementos ocupen el 100% del alto de la ventana del navegador y averiguar cómo encaja en el ejercicio la propiedad ´min-height´
+
+## ¿Para qué sirve lo que vamos a ver en esta sesión?
+
+Flexbox es una herramienta imprescindible en la maquetacion actual y nos permite tener elementos html que se ajusten a las diferentes pantallas de los diferentes dispositivos.
+
+
+## ¿En qué casos se utiliza?
+
+Pues hay casos muy evidentes, como hacer un pié fijo cuando hay poco contenido, o un panel lateral con una parte fija y otra flexible. Pero también hay otros más simples como un menú horizontal, un listado de iconos de redes sociales o una noticia donde queremos que a veces la imagen vaya arriba o tras el texto.
+Básicamente lo podemos/querremos usar en cualquier estructura que se distribuya en vertical u horizontal y sobre la que querramos controlar el espaciado, orden o alineamiento.
+
+## Resumen de la sesión
+
+El objetivo es aprender a montar un contenedor con flexbox y a dominar las diferentes opciones que tenemos de distribuir sus elementos.
 
 * * *
 EJERCICIO 1: FLEX y FLEX DIRECTION
@@ -108,17 +122,6 @@ En la imágen, es importante observar que la cabecera estará por debajo de la v
 Es importante utilizar flexbox para los elementos del header de la página y el footer. Si tenéis cualquier duda, preguntad.
 * * *
 
-## ¿Para qué sirve lo que vamos a ver en esta sesión?
-
-Flexbox es una herramienta imprescindible en la maquetacion actual y nos permite tener elementos html que se ajusten a las diferentes pantallas de los diferentes dispositivos.
-
-
-## ¿En qué casos se utiliza?
-
-Pues hay casos muy evidentes, como hacer un pié fijo cuando hay poco contenido, o un panel lateral con una parte fija y otra flexible. Pero también hay otros más simples como un menú horizontal, un listado de iconos de redes sociales o una noticia donde queremos que a veces la imagen vaya arriba o tras el texto.
-Básicamente lo podemos/querremos usar en cualquier estructura que se distribuya en vertical u horizontal y sobre la que querramos controlar el espaciado, orden o alineamiento.
-
-
 ## Recursos externos
 
 ### Teoría para aprender flexbox
@@ -138,8 +141,3 @@ Básicamente lo podemos/querremos usar en cualquier estructura que se distribuya
 ### Guía completa de Flexbox (inglés)
 
 [Guía completa de Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-
-
-## Resumen de la sesión
-
-El objetivo es aprender a montar un contenedor con flexbox y a dominar las diferentes opciones que tenemos de distribuir sus elementos.

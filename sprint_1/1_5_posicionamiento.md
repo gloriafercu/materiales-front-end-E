@@ -1,8 +1,27 @@
-# Posicionando elementos en una web
+# Posicionamiento
 
 ## Introducción
 
-En esta sesión veremos tres recursos fundamentales para modificar la apariencia de nuestra web: visualización (o display), modelo de cajas y posicionamiento. Todos ellos permiten modificar cómo se muestran los elementos de la página ya sea modificando su tamaño, su posición o ambos a la vez.
+En esta sesión veremos dos recursos fundamentales para modificar la apariencia de nuestra web: visualización (o display) y posicionamiento. Ambos permiten modificar cómo se muestran los elementos de la página ya sea modificando su tamaño, su posición o ambos a la vez.
+
+## ¿Para qué sirve lo que vamos a ver en esta sesión?
+
+1. Para saber las diferentes opciones que tenemos de colocarlos según el diseño que nos manden.
+
+## ¿En qué casos se utiliza?
+
+Cuando tengamos que darle un aspecto determinado al contenido, es decir, siempre :)
+Algunos casos concretos son:
+1. Un listado de elementos distribuidos por columnas
+1. El típico módulo que lleva el corazón de "like" en una esquina
+1. Una galería donde las flechas de anterior/siguiente estén, una cada lado, y centradas verticalmente
+1. El típico módulo de precios "desde 5€ al mes" donde el diseñador ha desplegado toda su creatividad compositiva con un diseño con elementos a diferentes tamaños.
+1. El menú que se mantiene en la parte superior del navegador al hacer scroll
+1. El menú que aparece por uno de los laterales
+
+## Objetivos de la sesión
+1. Aprender los principales modos de presentación de los elementos HTML: inline, inline-block y block
+1. Conocer los modos de posicionamiento: static, relative, absolute y fixed.
 
 ## Visualización (display)
 
@@ -102,45 +121,18 @@ Por último, aquí tenemos un Codepen con la recopilación de los distintos tipo
 [Elementos inline, inline-block y block en Codepen](https://codepen.io/adalab/pen/QOjVye)
 
 * * *
-    EJERCICIO:
-    Usar la etiqueta `<mark>` dentro de varios párrafos y explicar para qué sirve y cómo funciona.
+EJERCICIO 1
+
+Usar la etiqueta `<mark>` dentro de varios párrafos y explicar para qué sirve y cómo funciona.
 * * *
-    EJERCICIO:
-    Dentro de un párrafo de texto incluir una imagen de 100x100 y explicar cómo se distribuye el contenido.
+EJERCICIO 2
+
+Dentro de un párrafo de texto incluir una imagen de 100x100 y explicar cómo se distribuye el contenido.
 * * *
-    EJERCICIO:
-    Entre dos párrafos añadir una imagen de 200x200 y explicar cómo se distribuye el contenido.
+EJERCICIO 3
+
+Entre dos párrafos añadir una imagen de 200x200 y explicar cómo se distribuye el contenido.
 * * *
-
-## Modelo de caja: margen, borde, padding y ancho/alto
-
-En HTML cada elemento se representa visualmente como una caja, el modelo de caja es una especificación que define las características específicas de esa caja y como infieren en el resto de elementos de la página. Básicamente el modelo de caja es el que le dice al navegador cómo debe pintar cada caja (elemento).
-
-Cada elemento a parte de altura y anchura puede tener otros atributos relacionados que influyen en su tamaño y su posición, estos atributos son el padding o relleno, los márgenes y los bordes:
-
-Si pensamos en el conjunto global, una página sería como un conjunto de cajas una dentro de otra, por lo tanto si pensamos en cada elemento a partir de ahora como un rectángulo nos será mucho más fácil visualizar cómo se compone la estructura de una web y cómo podemos pensar en ella combinando elementos que contienen otros elementos a su vez.
-
-[Modelo de cajas en la MDN](https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Modelo_cajas)
-
-Por defecto, el modelo de caja del navegador es el content-box, donde a las dimensiones de la caja se le suman el borde y el padding:
-
-    EJEMPLO:
-    Si tengo una caja de 100x100px, con un borde de 2px y con un padding de 16px, tendría una caja de 2+16+100+16+2: 136x136px.
-
-Con la propiedad `box-sizing` podemos cambiar el modelo de caja para un elemento (o para todos). Y podríamos asignarle `border-box`, que es el otro modelo existente.
-En `border-box` tanto el borde como padding están incluídos en el ancho/alto del elemento, de manera que en el caso anterior nuestra caja tendría 100x100px pero el espacio para el contenido de nuestra caja no sería de 100x100 sino de 100-(2+2+16+16): 64x64px.
-
-[Ejemplo de modelo de caja en Codepen](https://codepen.io/oneeyedman/pen/LzwNBQ)
-
-* * *
-    EJERCICIO:
-    Hacer un `div` de 100x100px usando las propiedades `width` y `height`, incluir dentro una imagen de 100x100px y probar:
-    - Añadir un padding de 10px
-    - Añadir un borde de 5px
-    - Cambiar el modelo de caja a `border-box`
-    Explicar qué ha pasado?
-* * *
-
 
 ## Posicionamiento
 Aparte de modificar esa distribución, podremos hacer que cambien su comportamiento a la hora de hacer scroll en la página y que modifiquen la posición de otros objetos al modificar la suya propia.
@@ -161,63 +153,96 @@ La propiedad `position` tiene cuatro valores posibles:
 - Video para entender [position: absolute](https://www.youtube.com/watch?v=wpuP2kCN6QE)
 
 * * *
-    EJERCICIO:
-    Hacer un botón con un icono alineado a la izquierda y centrado verticalmente.
+EJERCICIO 4
+
+Hacer un botón con un icono alineado a la izquierda y centrado verticalmente.
 * * *
-    EJERCICIO:
-    Hacer un enlace de descarga con una etiqueta del tipo de archivo que siempre esté a la derecha
+EJERCICIO 5
+
+Hacer un enlace de descarga con una etiqueta del tipo de archivo que siempre esté a la derecha.
 * * *
-    EJERCICIO:
-    Hacer una página que tenga una cabecera que se mantenga fija.
+EJERCICIO 6
+
+Hacer una página que tenga una cabecera que se mantenga fija.
 * * *
+EJERCICIO 7
 
-## ¿Para qué sirve lo que vamos a ver en esta sesión?
+Define un documento HTML con un div padre (divPadre), dentro del cual existan otras 3 cajas contenedoras div (div1, div2 y div3), cada una de ellas con unas dimensiones de 300x300px, 40 píxeles de margin en todas direcciones, 30 píxeles de padding en todas direcciones y un background color diferente. Usando posicionamiento relativo genera un desplazamiento de los div de la siguiente manera:S
 
-1. Para comprender cómo se comportan los contenedores cuando les cambiamos propiedades de apariencia como margen, borde, padding y ancho/alto.
-1. Para saber las diferentes opciones que tenemos de colocarlos según el diseño que nos manden.
+a) El div 1 deberá desplazarse 100 píxeles a la derecha y 50 píxeles hacia abajo respecto a lo que sería su posición normal.
 
+b) El div 2 deberá desplazarse 150 píxeles a la izquierda y 320 píxeles hacia arriba respecto a lo que sería su posición normal.
 
-## ¿En qué casos se utiliza?
+c) El div 3 deberá desplazarse 180 píxeles a la derecha y 240 píxeles hacia arriba respecto a lo que sería su posición normal.
 
-Cuando tengamos que darle un aspecto determinado al contenido, es decir, siempre :)
-Algunos casos concretos son:
-1. Un listado de elementos distribuidos por columnas
-1. El típico módulo que lleva el corazón de "like" en una esquina
-1. Una galería donde las flechas de anterior/siguiente estén, una cada lado, y centradas verticalmente
-1. El típico módulo de precios "desde 5€ al mes" donde el diseñador ha desplegado toda su creatividad compositiva con un diseño con elementos a diferentes tamaños.
-1. El menú que se mantiene en la parte superior del navegador al hacer scroll
-1. El menú que aparece por uno de los laterales
+* * *
+EJERCICIO 8
+
+Define un documento HTML con 3 cajas contenedoras div (div1, div2 y div3), la primera con unas dimensiones de 500x500px y un background color amarillo. La segunda con dimensiones 300x300px y un background color verde. La tercera con dimensiones 150x150px y background color azul. Usando posicionamiento absoluto establece para el div2 y el div3 el mismo origen que para el div1, de modo que el efecto generado sea ver un cuadrado amarillo dentro del cual hay un cuadrado verde dentro del cual hay un cuadrado azul.
+
+Haz que las cajas estén centradas vertical y horizontalmente. Pon 40px de padding y 2px de borde al div1, 75px de padding al div 2 y 20px de borde de puntos al div3. Para esto usad box-sizing border-box
+* * *
+EJERCICIO 9
+
+Define un documento HTML con varios div que contengan suficiente texto como para que la página se muestre con scroll (barras de desplazamiento). El primero de los div debe contener el texto “Esta página web utiliza cookies. Si continúa navegando acepta el uso de cookies.”, un valor height (altura) de 100 píxeles y color de fondo amarillo. Usando posicionamiento fixed, fija este div en la parte superior de la página de modo que se continúe visualizando aún cuando hagamos scroll.
+* * *
+EJERCICIO 10
+
+Crea una lista de cinco elementos que se muestre en línea y con espacios entre cada elemento de 12 píxeles.
+
+Vista de la lista sin estilos
+![Menu sin estilos](assets/1_5_ejercicio_10_menu_sin_estilo.png)
+
+Vista de la lista con estilos
+![Menu con estilos](assets/1_5_ejercicio_10_menu_con_estilo.png)
+* * *
+EJERCICIO 11
+
+Crea un texto que ocupe el 86% de la pantalla y esté centrado dentro del body. Usaremos la propiedad max-width para dar un ancho máximo de 600px. [Más info acerca de max-width](https://developer.mozilla.org/es/docs/Web/CSS/max-width).
+* * *
+EJERCICIO 12
+
+Crea una composición similar a la de la imagen.
+
+![Muestra](assets/1_5_ejercicio_12_muestra.png)
+
+Las dimensiones de esta composición serían las siguientes:
+- El body tendrá un borde de 8px
+- El contenido estará centrado dentro del body e irá dentro de un div que tendrá 106px de margen superior
+- En el primer texto irá el nombre del autor con una fuente de 18px y un margen inferior de 40px
+- El titular irá después con un tamaño de fuente de 32px y un margen inferior de 32px
+- Cada párrafo tendrá un tamaño de fuente de 18px y un margen inferior de 27px
+- El enlace tendrá un padding superior e inferior de 8px y otro izquierdo y derecho de 16px y un margen izquierdo de -16px
+* * *
+EJERCICIO 13
+
+La web que vamos a crear consta de las siguientes características:
+1. Toda la web usa una tipografía sin serifa (sans-serif)
+1. Tiene como título "Tecnologías web"
+1. Tiene un párrafo que describe qué son las tecnologías web
+1. Al final del párrafo, tiene un listado de tecnologías compuesto por: HTML, CSS y JavaScript, cada una de las cuales aparece subrayada para indicar que se puede interactuar
+1. Al poner el ratón sobre cualquiera de ellas
+  1. el cursor cambia para indicar que estamos obteniendo ayuda
+  1. aparece un tooltip (recuadro flotante de 400px por 200px) de color blanco, con el nombre de la tecnología como título del tooltip y una breve descripción de la misma
+* * *
+EJERCICIO 14
+
+Vamos a crear una web simple, con las siguientes características:
+1. Una cabecera que consta únicamente de un título
+1. Un cuerpo principal que consta de un montón de párrafos, tantos como para que la página tenga scroll
+1. Un pie de página con
+  1. El nombre de la empresa
+  1. Un listado de redes sociales de la empresa (en formato texto o imagen) que aparezcan en línea
+1. Un texto para indicar que el sitio web usa cookies con un enlace para ver más info, que aparece en la esquina inferior derecha de la pantalla y que sigue ahí al hacer scroll
+* * *
 
 ## Recursos externos
 
-- Video para entender [float](https://www.youtube.com/watch?v=AoAy4jCFDDw)
-
-- Recursos extra
-    - [Libro Introducción a CSS - 5.1. Tipos de elementos](https://librosweb.es/libro/css/capitulo_5/tipos_de_elementos.html)
-    - [Libro Introducción a CSS - 4. Modelo de cajas](https://librosweb.es/libro/css/capitulo_4.html)
-    - [Libro de Introducción a CSS - 4.1. Anchura y altura](https://librosweb.es/libro/css/capitulo_4/anchura_y_altura.html)
-    - [Libro Introducción a CSS - 5.2. Posicionamiento](http://librosweb.es/libro/css/capitulo_5/posicionamiento.html)
-    - [Libro Introducción a CSS - 5.3. Posicionamiento normal (static)](http://librosweb.es/libro/css/capitulo_5/posicionamiento_normal.html)
-    - [Libro de Introducción a CSS - 5.4 Posicionamiento relativo](http://librosweb.es/libro/css/capitulo_5/posicionamiento_relativo.html)
-    - [Libro de Introducción a CSS - 5.5 Posicionamiento absoluto](http://librosweb.es/libro/css/capitulo_5/posicionamiento_absoluto.html)
-    - [Libro de Introducción a CSS - 5.6 Posicionamiento fijo](http://librosweb.es/libro/css/capitulo_5/posicionamiento_fijo.html)
-    - [Libro de Introducción a CSS - 5.7 Posicionamiento flotante](http://librosweb.es/libro/css/capitulo_5/posicionamiento_flotante.html)
-
-
-## Resumen de la sesión
-Los objetivos de la sesión son:
-
-1. Aprender los principales modos de presentación de los elementos HTML: inline, inline-block y block
-1. Saber que hay dos modelos de caja, en qué se diferencian y cómo aplicar uno u otro.
-1. Conocer los modos de posicionamiento: static, relative, absolute y fixed.
-
-
-## Ejercicios
-
-### Ejercicios de posicionamiento
-
-Si alguien quiere y tiene tiempo, puede realizar los ejercicios de este [documento](https://docs.google.com/document/d/1gHr6tzosUXrBsVVubabaxprAxkT9HyjjpBfEAu9o6IQ/edit) después de ver los videos. Si no sabeis realizar alguno no pasa nada pero intentadlo, buscad info en internet y probad, probad y probad, es la mejor forma de aprender. Si no encontráis info en internet podéis preguntarnos cualquier duda.
-
-### Ejercicios para practicar con display
-
-Para practicar lo aprendido durante esta sesión lo mejor sería realizar los ejercicios del siguiente documento. [documento](https://docs.google.com/document/d/1Kzac6nQ-IGgrrHO24HQDcecsO0tkQ7RvSqfbjXeBqqw/edit?usp=sharing). Si no sabeis realizar alguno no pasa nada pero intentadlo, buscad info en internet y probad, probad y probad, es la mejor forma de aprender. Si no encontráis info en internet podéis preguntarnos cualquier duda.
+- [Cómo funciona float](https://www.youtube.com/watch?v=AoAy4jCFDDw)
+- [Libro Introducción a CSS - 5.1. Tipos de elementos](https://librosweb.es/libro/css/capitulo_5/tipos_de_elementos.html)
+- [Libro Introducción a CSS - 5.2. Posicionamiento](http://librosweb.es/libro/css/capitulo_5/posicionamiento.html)
+- [Libro Introducción a CSS - 5.3. Posicionamiento normal (static)](http://librosweb.es/libro/css/capitulo_5/posicionamiento_normal.html)
+- [Libro de Introducción a CSS - 5.4 Posicionamiento relativo](http://librosweb.es/libro/css/capitulo_5/posicionamiento_relativo.html)
+- [Libro de Introducción a CSS - 5.5 Posicionamiento absoluto](http://librosweb.es/libro/css/capitulo_5/posicionamiento_absoluto.html)
+- [Libro de Introducción a CSS - 5.6 Posicionamiento fijo](http://librosweb.es/libro/css/capitulo_5/posicionamiento_fijo.html)
+- [Libro de Introducción a CSS - 5.7 Posicionamiento flotante](http://librosweb.es/libro/css/capitulo_5/posicionamiento_flotante.html)

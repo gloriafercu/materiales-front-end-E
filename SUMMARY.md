@@ -73,16 +73,6 @@
 * [Proyecto 4. Un caso de código heredado](proyectos/P4_proyecto_sprint_4.md)
 * [Anexo al Proyecto 4](proyectos/P4_anexo_1.md)
 
-## Formación continua
-* [Presentación](formacion-continua/0_presentacion.md)
-* [Turnos, grupos y voluntarios](formacion-continua/0_1_turnos_grupos_voluntarios.md)
-### Pruebas técnicas
-* [Prueba técnica #1](formacion-continua/1_prueba_tecnica.md)
-* [Prueba técnica #2](formacion-continua/2_prueba_tecnica.md)
-* [Prueba técnica #3](formacion-continua/3_prueba_tecnica.md)
-* [Prueba técnica #4](formacion-continua/4_prueba_tecnica.md)
-* [Prueba técnica #5](formacion-continua/5_prueba_tecnica.md)
-
 ## Guías
 
 * [Guía paso a paso de git](guias/empezar_con_git.md)

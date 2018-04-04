@@ -148,6 +148,12 @@ Vamos a crear la composición del ejercicio 3 con Bootstrap para ver las diferen
 
 ***
 
+EJERCICIO 5
+
+Vamos a crear el layout para páginas con las que habitualmente trabajaremos, usando CSS grid y/o el sistema de grid de Bootstrap. Para ello, os proponemos replicar [el experimento de Jo Franchetti de este artículo en Medium](https://medium.com/samsung-internet-dev/common-responsive-layouts-with-css-grid-and-some-without-245a862f48df), donde replica layouts típicos usando CSS grid. Realizad al menos el primer ejemplo *"Large Image followed by articles"* usando Sass y el sistema de grid que elijáis.
+
+***
+
 ## Recursos externos
 
 - [Frontazo - pensando en grid](https://vimeo.com/98141102)

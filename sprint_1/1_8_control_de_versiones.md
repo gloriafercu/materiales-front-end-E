@@ -1,7 +1,6 @@
 # Control de versiones
 
-SP. Repaso de git, concepto de remoto, push/pull, git remote, .gitignore, carpeta .git, git clone
-Flujo de trabajo en equipo con servidor remoto: hago pull antes de añadir cosas, gestión de conflictos
+## Introducción
 
 Hasta ahora hemos hecho una primera aproximación a Git, nada menor.
 
@@ -13,7 +12,7 @@ Y más, porque actualmente estamos trabajando en grupo sobre el mismo proyecto y
 ## Repaso del proceso de creación de un proyecto Git
 
 ### Inicio de proyecto
-#### Desde GitHUb
+#### Desde GitHub
 Lo más sencillo es crear el proyecto de cero desde nuestro servicio de Git, en este caso, GitHub:
 1. Vamos a nuestro perfil
 2. Creamos un nuevo repositorio
@@ -128,3 +127,19 @@ Github, como otros servicios de control de versiones tienen un sistema de ticket
 
 ## ¿Qué vamos a hacer hoy?
 Hoy vamos a resolver dudas sobre git y hacer pruebas si lo necesitamos :)
+
+## BONUS: Paquete de Atom para Git
+
+Desde hace algunas versiones, Atom trae por defecto un paquete para integración con Git y GitHub que nos ayuda con las tareas de control de versiones de nuestro día a día.
+
+En el explorador (menú de la izquierda), aparecen...
+- de color amarillo los ficheros modificados desde el último commit local
+- de color verde los ficheros nuevos respecto al último commit local
+
+También en el panel principal, el editor del fichero que estamos editando, aparece a la izquierda del número de línea una franja de color
+- amarillo para las líneas modificadas desde el último commit
+- verde las líneas nuevas desde el último commit
+
+Este paquete también facilita una herramienta gráfica para resolver conflictos, que ayuda a elegir la versión del código que nos interesa mantener.
+
+Podéis leer más sobre las posibilidades de este paquete esta [web de GitHub](https://github.atom.io/).

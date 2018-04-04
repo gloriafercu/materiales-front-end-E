@@ -1,7 +1,7 @@
 # Publicando nuestra web
 
 ## Contenidos
-
+- Introducción a la terminal de comandos
 - Git
   - ¿Qué es y para qué sirve?
   - Comandos básicos
@@ -14,7 +14,11 @@
 
 ## Introducción
 
-Vamos a aprender cómo funciona el control de versiones y cómo utilizarlo para ir, poco a poco, añadiéndolo a nuestro flujo de trabajo. En esta sesión vamos a ver las dos herramientas que utilizaremos para gestionar las versiones de nuestro proyecto, Git y GitHub.
+La terminal es una herramienta fundamental para el desarrollo front-end. Su finalidad es ejecutar comandos mediante instrucciones. Estos comandos serían similares a las interacciones que haríamos en una aplicación normal (clics, escribir en campos, cambiar de sección, etc.) pero en este caso se hacen escribiendo órdenes en la ventana. Muchas de las herramientas para programación están hechas sin interfaz por ser más sencillas, aprender a usar la terminal nos ayudará en el futuro a poder usar esas herramientas y mejorar nuestro flujo de trabajo gracias a ellas.
+
+La terminal parece muy agresiva al principio pero poco a poco le iremos pillando cariño. Te permite hacer prácticamente todo lo que puedes hacer con la interfaz gráfica del sistema operativo y bastantes cosas más.
+
+También vamos a aprender cómo funciona el control de versiones y cómo utilizarlo para ir, poco a poco, añadiéndolo a nuestro flujo de trabajo. En esta sesión vamos a ver las dos herramientas que utilizaremos para gestionar las versiones de nuestro proyecto, Git y GitHub.
 
 Git será la herramienta que utilizaremos para realizar un control de versiones sobre nuestros archivos. Es una herramienta que se utiliza a través de la línea de comandos de nuestro ordenador, es decir, para trabajar con Git escribiremos comandos en nuestra Terminal.
 
@@ -22,8 +26,15 @@ GitHub es la plataforma social más famosa a la hora de publicar y colaborar en 
 
 Otra cosa que veremos durante la sesión es el servicio de GitHub Pages que ofrece GitHub. Este servicio nos permite publicar nuestro código como si se tratase de un sitio web y que la gente pueda verlo en internet desde cualquier parte del mundo. Al final de esta sesión veremos cómo habilitarlo para poder mostrar al mundo nuestra primera página web.
 
+## Resumen de la sesión
+
+En esta sesión se intenta acercar el control de versiones para que lo acabemos incluyendo en nuestro flujo de trabajo.
+
+Además presentamos la plataforma GitHub y su servicio de hosting: GitHub Pages.
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
+
+En la terminal hoy solo vamos a aprender a movernos por las carpetas y crear algún archivo pero más adelante será una herramienta fundamental al trabajar en grupo y con control de versiones.
 
 Por ahora solo hemos empezado a arañar el mundo front-end pero el uso de un control de versiones nos ofrece algo que antes no teníamos:
 
@@ -55,7 +66,41 @@ Por último, GitHub Pages, al ser un servicio gratuito y sencillo para publicar 
 
 Es importante saber que todos los servicios de GitHub son gratuitos siempre y cuando nuestro código sea público. En caso de querer hacerlo privado deberemos pagar por el servicio. Por el momento como queremos darle visibilidad al código y que otras personas puedan verlo, no tendremos ningún problema en que nuestro código sea público.
 
-## Recursos
+## Terminal
+
+#### Introducción a la Terminal y comandos básicos de GNU/Linux
+
+- [Curso de introducción a GNU/Linux - ¿Qué es la Terminal? ](https://www.youtube.com/watch?v=5b7j-Keeokc)
+- [Curso de introducción a GNU/Linux - Comandos Básicos](https://www.youtube.com/watch?v=esbup7hKv6E)
+
+* * *
+EJERCICIO 1
+
+Ir a nuestra carpeta de documentos y crear la siguiente estructura de carpetas y archivos (vacíos):
+```txt
+nombre
+    datos
+        mis-datos.txt
+    proyecto
+        ruta-del-proyecto.txt
+```
+- En el archivo **mis-datos.txt** vamos a escribir el Nombre y la comida favorita.
+- En el archivo **ruta_del-proyecto.txt** pondremos la ruta del nuestro proyecto desde nuestra carpeta de `Documentos`
+- Mover los dos archivos a la carpeta principal, que sería **nombre**
+* * *
+EJERCICIO 2
+
+Desde la terminal, vamos a crear un nuevo proyecto en nuestra carpeta de proyectos que se llame **Rutas relativas**, con las carpetas `images` y `styles`. Y los archivos index.html (en la raíz del proyecto), style.css (en la carpeta styles) y imagen-de-prueba.png (os la proporcionaremos por classroom e irá dentro de la carpeta images).
+
+Ahora, en index.html se tiene que ver la imagen de dos formas:
+1. Con un `<img>`
+2. Como fondo de un div del mismo tamaño que la imagen
+
+¿Cómo es la ruta de ambas imágenes? ¿Absoluta? ¿Relativa?
+¿Es diferente en los dos casos? ¿por qué?
+* * *
+
+## Git
 
 ### Introducción a Git
 
@@ -197,7 +242,8 @@ git commit -m "Fix typo in article title"
 ```
 
 * * *
-EJERCICIO:
+EJERCICIO 3
+
 Vamos a crear nuestro primer proyecto con Git, al que llamaremos `testing-git`. Dentro de él, crearemos un archivo HTML con un título en el que ponga "Testing Git" y un `h1` con el mismo texto. Además, crearemos un archivo para los estilos (`main.css`) dónde añadiremos un estilo para que la familia de texto que se use en la web sea `sans-serif`. Organizaremos el proyecto siguiendo la estructura de siempre:
 ```txt
 testing-git
@@ -208,16 +254,15 @@ testing-git
 ```
 Una vez creado el proyecto con el HTML y el CSS indicado. Inicializa el repositorio Git en nuestro proyecto y haz el primer commit con el mensaje `Initial commit`
 * * *
+EJERCICIO 4
 
-* * *
-EJERCICIO:
 Modificar el archivo `index.html` para que en el título de la página ponga "My first Git project" y en el texto de la cabecera aparezca una sonrisa `:)`. Añadir los cambios y hacer un commit para guardarlos.
 
 **Nota:** El mensaje del commit deberá explicar de forma clara los cambios que hemos realizado
-* * *
 
 * * *
-EJERCICIO:
+EJERCICIO 5
+
 Vamos a realizar un tercer cambio dónde añadiremos un archivo `README.md` en la raíz de nuestro proyecto. Este archivo se utiliza para poner información acerca de nuestro código y, por defecto, GitHub lo muestra en la página principal de nuestro proyecto. Dentro de ese archivo escribiremos el siguiente texto:
 
 ```markdown
@@ -240,12 +285,13 @@ En el video que mostramos a continuación se hace un pequeño tour alrededor de 
 - [5.- Curso Git - Empezando con GitHub (sólo hasta el min 21:34)](https://www.youtube.com/watch?v=Qn186NyDqOk)
 
 * * *
-EJERCICIO:
+EJERCICIO 6
+
 Crear una cuenta en GitHub y ponernos una foto de perfil
-* * *
 
 * * *
-EJERCICIO:
+EJERCICIO 7
+
 Vamos a:
 1. Crear un proyecto vacío en GitHub. Le pondremos como nombre `testing-git`.
 1. Añadimos el repositorio que acabamos de crear como repositorio remoto en nuestro proyecto usando `git remote` como se muestra en el video.
@@ -262,7 +308,8 @@ Como hemos comentado previamente, GitHub ofrece un servicio llamado [GitHub Page
 Un hosting es un servicio de almacenamiento de datos para poder tener tu web en un servidor y que esté disponible en internet y esto es lo que ofrece exactamente GitHub Pages.
 
 * * *
-EJERCICIO:
+EJERCICIO 8
+
 Desde la página de nuestro proyecto `testing-git` en GitHub, activar GitHub Pages.
 
 **Pista:** Hay que ir a la pestaña _settings_ del proyecto ;)
@@ -279,10 +326,3 @@ Como recurso extra para aprender Git, el libro de "Pro Git" es uno de los mejore
 
 - [Enlace a la página del libro Pro Git (versión inglesa y más actual)](https://git-scm.com/book/en/v2)
 - [Enlace a la página del libro Pro Git (versión española, menos actual y no disponible para descargar)](https://git-scm.com/book/es/v2)
-
-
-## Resumen de la sesión
-
-En esta sesión se intenta acercar el control de versiones para que lo acabemos incluyendo en nuestro flujo de trabajo.
-
-Además presentamos la plataforma GitHub y su servicio de hosting: GitHub Pages.

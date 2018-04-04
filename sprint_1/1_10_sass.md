@@ -95,7 +95,8 @@ body {
 ```
 **¡Vamos a ponerlo en práctica!**
 ***
-EJERCICIO 1:  
+EJERCICIO 1
+
 En el siguiente [codepen](https://codepen.io/adalab/pen/aVrxYY) tenemos un ejemplo en css que vamos a reescribir a SCSS y modificar un poco.
 1. Lo primero es configurarlo para usar SCSS: en la rueda de CSS, desplegar las opciones y elegir SCSS como preprocesador
 2. Convertir a variables los valores de las líneas indicadas
@@ -272,7 +273,8 @@ En nuesto `main.scss` llamaríamos a todos estos archivos en orden:
 
 Una ventaja directa de trabajar con parciales es la cantidad de conflictos de git que nos vamos a ahorrar ;)
 ***
-EJERCICIO 2:  
+EJERCICIO 2
+
 Vamos a crearnos un proyecto con nuestra estructura de imports de SASS. Recordad que iremos haciendo parciales conforme los vayamos necesitando y que en cada carpeta estarán solo los que necesitemos.
 Para el ejercicio querremos:
 - Un header de 75 de alto en móvil, 100 en tablet (768px) y 110 en desktop (1280px)
@@ -284,7 +286,8 @@ Para el ejercicio querremos:
 ***
 
 Y hasta aquí el contenido de la sesión, pero si quieres saber más tenemos contenido extra...
-## CONTENIDO EXTRA
+
+## BONUS
 
 ### Mixins y funciones
 Vale, ¿qué es esto de mixins y funciones? ¡Lo mejor!
@@ -373,6 +376,7 @@ Pero, escribir todos los prefijos es un un trabajo muy tedioso, y estar pendient
 > Por dejar claro, autoprefixer sería un post-procesador. Como hemos visto, SASS lo que hace es convertir un código con una sintaxis a CSS. Autoprefixer, en cambio, parte de un código CSS y lo post-procesa para convertirlo en un CSS con una serie de propiedades añadidas.
 
 ***
-EJERCICIO 1 de bonus:  
+EJERCICIO BONUS 1
+
 Configurar Autoprefixer en Koala para que tenga en cuenta las 5 últimas versiones de los navegadores (pista: se hace en la parte de css).
 ***
