@@ -47,83 +47,184 @@ Los condicionales se usan para realizar o no un código en función de una condi
   - Mostrar todas las fechas hasta la actualidad en un campo de un formulario
 
 
-## Recursos externos
+## Booleanos
 
-### Videos de Ada Lovelace en YouTube
+Los booleanos son tipos de datos de JavaScript que guardan información del tipo verdadero o falso. Solo pueden tener los valores `true` o `false`. Por ejemplo:
+```js
+var filled = false; //Este booleano es falso
 
-En este canal tenemos varios viídeos que explican muy bien lo que necesitamos aprender en esta sesión con ejemplos y de forma bastante sencilla:
+var solved = true; //Este booleano es verdadero
+```
 
-- [Operadores de comparación](https://www.youtube.com/watch?v=ICZXkflN-CA&index=11&list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o)
-- [Operadores lógicos](https://www.youtube.com/watch?v=S6qx7TCM4hU&list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o&index=12)
-- [Condicionales. Sentencias If-Else](https://www.youtube.com/watch?v=9hUlwVjBSco&list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o&index=20)
-- [Repeticiones. Bucle for](https://www.youtube.com/watch?v=IYp2N_V_sMc&list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o&index=22)
+### Comparaciones
+Podemos obtener también un booleano como resultado de una operación booleana, por ejemplo, una comparación. Vamos a ver algunos operadores de comparación que devuelven booelanos.
 
+#### Igualdad
 
-### Introducción a JavaScript de Libros Web
+El operador comparación de igualdad es `===` (_strict equal_ o _estrictamente igual_) comprueba si dos valores son iguales y son del mismo tipo. Usaremos siempre esta versión para comparar si algo es igual. Existe también una versión `==` que solo compara el valor (no el tipo de datos) pero que NO debemos usar.
 
-- [Operadores](http://librosweb.es/libro/javascript/capitulo_3/operadores.html)
-- [Estructuras de control de flujo](http://librosweb.es/libro/javascript/capitulo_3/estructuras_de_control_de_flujo.html)
+Ejemplo:
+```js
+var letucce = 'lechuga';
 
-**Nota:** De las estructuras de control de flujo, no vamos a ver el `for...in` de momento y muestra algunas cosas con arrays que por el momento tampoco veremos hasta dentro de un par de sesiones. Lo veremos en el sprint 3.
+(lettuce === 'lechuga'); //El resutaldo es true
+(lettuce === 'lettuce'); //El resutaldo es false
+```
 
+El operador de comparación de desigualdad es `!==` (_strict not equal_ o _estrictamente diferente_) comprueba si dos valores son diferentes en valor y tipo. Usaremos siempre esta versión para comparar si algo es distinto. Existe también una versión `!=` que solo compara el valor (no el tipo de datos) pero que NO debemos usar.
 
-## Resumen de la sesión
+Ejemplo:
+```js
+var result = 5;
 
-Los puntos más importantes de esta sesión son los siguientes:
+(result !== 4 + 5); //El resutaldo es true
+(result !== 0 + 5); //El resutaldo es false
+```
 
-- Booleanos
-  - Guardan información del tipo verdadero o falso (ej: `var filled = false;`, `var solved = false`, etc.)
-  - Pueden ser solo `true` o `false`
-  - Se pueden obtener del resultado de una operación booleana
-  - Operadores de comparación (todos ellos devuelven un booleano, `true` o `false`):
-    - `==` (_equal_ o _igual_) comprueba si dos valores son iguales aunque no sean del mismo tipo (ej: `5 == '5'` numero y string)
-    - `!=` (_not equal_ o _diferente_) comprueba si dos valores son diferentes (ej: `5 - 1 != '3'` devolvería falso)
-    - `===` (_strict equal_ o _estrictamente igual_) comprueba si dos valores son iguales y son del mismo tipo (ej: `"lechuga" === "lechuga"`). Usaremos siempre esta versión para comparar si algo es igual.
-    - `!==` (–strict not equal_ o _estrictamente diferente_) comprueba si dos valores son diferentes en valor y tipo (ej: `5 != '5'` devolvería verdadero). Usaremos siempre esta versión para comparar si algo es distinto.
-    - `<` (_less than_ o _menor que_) comprueba si el número a la izquierda del operador es menor que el que está a su derecha
-    - `>` (_greater than_ o _mayor que_) comprueba si el número a la izquierda del operador es mayor que el que está a su derecha
-    - `<=` (_less than or equal_ o _menor o igual que_) comprueba si el número a la izquierda del operador es menor o igual que el que está a su derecha
-    - `>=` (_greater than or equal_ o _mayor o igual que_) comprueba si el número a la izquierda del operador es mayor o igual que el que está a su derecha
-  - Pueden combinarse utilizando operadores lógicos:
-    - `&&` (_AND_) Devuelve verdadero **SOLO** si ambas condiciones son verdaderas (ej: `8 === 9 && 'hola' !== 'adios'` devolvería falso porque una de las condiciones no se cumple)
-    - `||` (_OR_) Devuelve verdadero si una o más condiciones se cumplen (ej: `8 === 9 || 'hola' !== 'adios'` devolvería verdadero porque una de las condiciones se cumple)
-    - `!` (_NOT_) Devuelve el valor contrario (ej: `!true` devuelve `false`)
-    - Los operadores de comparación se ejecutan siempre después de los operadores numéricos, es decir, si tenemos `5 * 1 - 4 !== '3'`, primero se hará la multiplicación, luego la resta y finalmente se hara la operación de comparación.
+#### Desigualdad
 
-- Condicionales:
-  - Sirven para ejecutar un código u otro (o ninguno) en función de si se cumple o no una condición
-  - En ellos se establece una condición y el código en caso de que se cumpla o no, si esa condición se cumple se ejecuta un código y sino otro o ninguno. _Si esta condición es verdadera, haz esto y sino esto otro_
-  - La condición que escribamos siempre se va a convertir en `true` o `false`
-  - Podemos pensar en ellos como un _"Si...haz..."_ (`if`), _"Si...haz...sino...haz"_ (`if...else`) o _"Si...haz...sino si...haz"_ (`if...else if`)
-  - Son excluyentes, es decir, en un condicional sólo se va a ejecutar el código de un bloque (if, else if o else). En ningún momento se ejecutará el código de dos bloques ya que si se cumple una condición se ejecuta el código de su bloque y se ignoran las posteriores
-  - Su estructura es:
-    - `if`: `if (condicion) { // código si es true }`
-    - `if...else`: `if (condicion) { // código si es true } else { // código si es false }`
-    - `if...else if`: `if (condicion1) { // código } else if (condicion2) { // código }`
+Existen los operadores de desigualdad para comparar números:
+- `<` (_less than_ o _menor que_) comprueba si el número a la izquierda del operador es menor que el que está a su derecha
+- `>` (_greater than_ o _mayor que_) comprueba si el número a la izquierda del operador es mayor que el que está a su derecha
+- `<=` (_less than or equal_ o _menor o igual que_) comprueba si el número a la izquierda del operador es menor o igual que el que está a su derecha
+- `>=` (_greater than or equal_ o _mayor o igual que_) comprueba si el número a la izquierda del operador es mayor o igual que el que está a su derecha
 
-- Bucle `for`:
-  - Podemos incrementar o decrementar el valor de una variable usando `++` o `--`. Si tenemos una variable `i` que es igual 1, y ejecutamos `i++`, `i` pasará a tener un valor de 2. `++` es la abreviación de `i = i + 1`
-  - Sirve para ejecutar un mismo código un número determinado de veces. _Haz esto x veces_
-  - Su estructura es la siguiente `for (inicialización; condición; actualización) { // código }`:
-    - _inicialización_ será una declaración y asignación de variable (ej: `var i = 1`)
-    - _condición_ será la condición que debe cumplirse para que se ejecute el bloque de código dentro delo for (ej: `i < 20`)
-    - _actualización_ será la operación que se realizará antes de cada iteración del bucle sin contar la primera (ej: `++i`)
-    - Ejemplo: `for (var i = 0; i < 20; i++)`
-  - El orden de ejecución de un bucle `for` es el siguiente:
-    1. Se ejecuta el código de inicialización (`var i = 0`)
-    1. Se comprueba que la condición se cumple (`i < 20`)
-    1. Si se cumple se ejecuta el código que hay dentro del bloque entre las llaves (`{}`), si no se cumple se termina el bucle
-    1. Se ejecuta la operación del bucle (`i++`)
-    1. Vuelta al paso 2
+Ejemplo:
+```js
+var result = 5;
+
+(result >= 4 + 5); //El resutaldo es false
+(result >= 0 + 5); //El resutaldo es true
+(result >= 4 - 5); //El resutaldo es true
+```
+> NOTA
+>
+> Los operadores de comparación se ejecutan siempre después de los operadores numéricos, es decir, si tenemos `5 * 1 - 4 !== '3'`, primero se hará la multiplicación, luego la resta y finalmente se hara la operación de comparación.
 
 
-## Ejercicios
+### Operaciones con booleanos
+Cuando trabajamos con un valor booleano, podemos realizar algunas operaciones útiles con este valor.
 
-### Control de acceso
+#### Negación
+
+El operador `!` (_NOT_) devuelve el valor contrario al valor dado. Por ejemplo:
+```js
+var filled = false; //Este booleano es falso
+
+var opposite = !filled; //Este booleano es verdadero
+```
+
+#### _AND_
+
+El operador `&&` (_AND_) devuelve verdadero **SOLO** si ambas condiciones son verdaderas. Por ejemplo:
+
+```js
+var name = 'María';
+var age = 35;
+
+(name === 'María' && age >= 30); //El resutaldo es true
+(name === 'Marta' && age >= 30); //El resutaldo es false
+(name === 'María' && age >= 40); //El resutaldo es false
+(name === 'Marta' && age >= 40); //El resutaldo es false
+```
+
+#### _OR_
+
+El perador  `||` (_OR_) devuelve verdadero si una o más condiciones se cumplen. Por ejemplo:
+
+```js
+var name = 'María';
+var age = 35;
+
+(name === 'María' || age >= 30); //El resutaldo es true
+(name === 'Marta' || age >= 30); //El resutaldo es true
+(name === 'María' || age >= 40); //El resutaldo es true
+(name === 'Marta' || age >= 40); //El resutaldo es false
+```
+
+
+## Condicionales
+
+Los condicionales son estructuras de control de JavaScript que sirven para ejecutar un código u otro (o ninguno) en función de si se cumple o no una condición.
+
+En ellos se establece una condición y el código en caso de que se cumpla o no, si esa condición se cumple se ejecuta un código y sino otro o ninguno. _Si esta condición es verdadera, haz esto y sino esto otro_. La condición que escribamos siempre se va a convertir en `true` o `false`.
+
+La estructura simple de un condicional es la siguiente:
+- usamos la palabra `if` para definirlo
+- después indicamos entre paréntesis `( )` una condición
+- a continuación definimos un bloque de código entre llaves `{ }` que se va a ejercutar si se cumple la condición
+
+Podemos pensar en ellos como un _"Si...haz..."_.
+
+```js
+var age = 35;
+
+if (age > 30) {
+  alert('Tienes más de 30 años'); //Esta línea se ejecuta solo si se cumple la condición
+}
+```
+
+Existe otra estructura para el condicional cuando queremos que ejecutar un código diferente cuando no se cumpla la condición. Partiendo de la estructura simple, añadimos:
+- usamos la palabra `else` para definir qué hacer cuando NO se cumple la condición
+- a continuación definimos un bloque de código entre llaves `{ }` que se va a ejecutar si NO se cumple la condición
+
+Podemos pensar en ello como un _"Si...haz...sino haz..."_.
+
+```js
+var age = 35;
+
+if (age > 30) {
+  alert('Tienes más de 30 años'); //Esta línea se ejecuta solo si se cumple la condición
+} else {
+  alert('Como mucho tienes 30 años'); //Esta línea se ejecuta solo si se NO cumple la condición
+}
+```
+
+***
+EJERCICIO 1: Control de acceso
 
 En este ejercicio vamos a crear un control de acceso que muestre una ventana para que el usuario introduzca su nombre. Posteriormente, si el nombre es el tuyo o el de tu compañera muestre el mensaje "Bienvenida, (tu nombre aqui)". Si el nombre es diferente al tuyo deberá mostrar "Lo siento pero el usuario que has introducido no está registrado".
 
-### Completa las condiciones
+***
+
+Podemos complicar incluso más la estructura del condicional cuando queremos que se ejecute un código si NO se cumple la primera condición pero SOLO si se cumple una segunda condición. En este caso, a la estructura del condicinal simple le añadimos:
+- usamos la palabra `else` para definir qué hacer cuando NO se cumple la condición
+- usamos la palabra `if` para definir una nueva comprobación
+- después indicamos entre paréntesis `( )` una segunda condición
+- a continuación definimos un segundo bloque de código entre llaves `{ }` que se va a ejercutar si se cumple esta segunda condición
+
+Podemos pensar en ello como un _"Si...haz...sino si...haz..."_.
+
+```js
+var age = 35;
+
+if (age > 30) {
+  alert('Tienes más de 30 años'); //Esta línea se ejecuta solo si se cumple la condición
+} else if (age >= 20) {
+  alert('Tienes entre 20 y 30 años'); //Esta línea se ejecuta solo si se NO cumple la primera condición y SÍ se cumple la segunda
+}
+```
+
+Si necesitamos una estructura más complicada, siempre podemos poner un `else` al final para ejecutar código cuando no se ha cumplido  ninguna de las condiciones. Además, podemos incluir todas las condiciones que queramos con `else if`.
+
+```js
+var age = 35;
+
+if ( age > 30 ){
+  alert('Tienes más de 30 años'); //Esta línea se ejecuta solo si se cumple la condición
+} else if ( age >= 20) {
+  alert('Tienes entre 20 y 30 años'); //Esta línea se ejecuta solo si se NO cumple la primera condición y SÍ se cumple la segunda
+} else if ( age >= 10) {
+  alert('Tienes entre 10 y 19 años'); //Esta línea se ejecuta solo si se NO cumplen la primeras condiciones y SÍ se cumple la última
+} else {
+  alert('Eres un niño entre 0 y 9 años'); //Esta línea se ejecuta solo si se NO cumplen ninguna de las condiciones anteriores
+}
+```
+
+> NOTA: Los bloques de un condional son excluyentes, es decir, solo se va a ejecutar el código de un bloque (if, else if o else). En ningún momento se ejecutará el código de dos bloques ya que si se cumple una condición se ejecuta el código de su bloque y se ignoran las posteriores condiciones.
+
+***
+EJERCICIO 2: Completa las condiciones
 
 Escribe las condiciones para el siguiente ejercicio y utilizando `prompt` haz una prueba para ver que estas se cumplen.
 
@@ -140,8 +241,8 @@ if (/* condicion 1 */) {
   alert('el número no es 123123125')
 }
 ```
-
-### Conversor de edad de perro a humano
+***
+EJERCICIO 3: Conversor de edad de perro a humano
 
 Te habrá pasado varias veces de ir por la calle y que alguien te pregunte "perdona, tienes a mano un conversor de edad de perros a humanos" y tener que contestar con vergüenza que no y que esa persona te mire raro... ¡hasta ahora! Vamos a crearla para evitar esto que pasa tan a menudo. Para ello, las reglas son las siguientes:
 
@@ -149,13 +250,69 @@ Te habrá pasado varias veces de ir por la calle y que alguien te pregunte "perd
 - El segundo año de un perro equivale a nueve años de humano
 - A partir del tercero, cada año de perro equivale a 5 años de humano.
 
-**Nota:** Prueba que el código funciona correctamente con distintos años (1,2, 12...). Imagina el alcance de los daños si la próxima vez que te pare una persona para preguntarte por el conversor... ¡no funciona correctamente!
+> NOTA: Prueba que el código funciona correctamente con distintos años (1,2, 12...). Imagina el alcance de los daños si la próxima vez que te pare una persona para preguntarte por el conversor... ¡no funciona correctamente!
 
-### Previsión para ver la _Luna del cazador_
+***
 
-Cada tres años se produce una luna llena completamente iluminada por el Sol durante unos minutos. Esta luna es conocida como la “Luna del cazador”. Este año se pudo ver esta luna el 5 de octubre y mucha gente se la perdió. Para que no nos pase los siguientes años vamos a crear un código que muestre en pantalla cuando serán las 15 próximas lunas.
+## Bucles
 
-### Crea tu árbol de Navidad
+Sirve para ejecutar un mismo código un número determinado de veces. _Haz esto x veces_.
+
+En el este sprint del curso vamos a aprender el bucle `for` que tiene la siguiente estructura:
+- podemos identificarlo por usar al comienzo la palabra `for`
+- después irá la _configuración_ del bucle entre paréntesis `( )` que tiene 3 partes, separadas por punto y coma `;`:
+  - _inicialización_ será una declaración y asignación de variable (ej: `var i = 1`)
+  - _condición_ será la condición que debe cumplirse para que se ejecute el bloque de código (ej: `i < 20`)
+  - _actualización_ será la operación que se realizará al final de cada iteración del bucle (ej: `++i`, que es la abreviación de `i = i + 1`)
+- al definimos un _bloque de código_ entre llaves `{ }` que se va a ejercutar si se cumple la condición
+
+```js
+for (var i = 0; i < 20; i++) {
+  alert('Me encantan los bucles 💪');
+}
+```
+
+En este ejemplo de código, hacemos aparecer una ventana de alerta 20 veces con el texto `Me encantan los bucles 💪`. Funciona de la siguiente forma:
+  1. Se ejecuta el código de inicialización (`var i = 0`)
+  1. Se comprueba que la condición se cumple (`i < 20`), en este caso el resultado de `true`
+  1. Como la condición se cumple, se ejecuta el código que hay dentro del bloque entre las llaves (`{}`), es decir el `alert`
+  1. Se ejecuta la actualización del bucle (`i++`) y la variable `i` pasa a valer 1
+  1. Vuelta al paso 2
+  1. Cuando la variable `i` llega al valor de 20, la condición ya no se cumple (20 no es menor que 20) y el bucle acaba
+
+Otro aspecto interesante de los bucles `for` es que dentro del bloque de código que se repite (el que va entre llaves `{ }`) podemos usar la variable `i`. Por ejemplo:
+
+  ```js
+  for (var i = 0; i < 20; i++) {
+    alert('Voy por la vuelta ' + i);
+  }
+  ```
+Este ejemplo hará aparecer 20 ventanas de alertas con el texto:
+- Voy por la vuelta 0
+- Voy por la vuelta 1
+- Voy por la vuelta 2
+
+...
+- Voy por la vuelta 19
+
+***
+EJERCICIO 4
+
+Partiendo el ejemplo anterior, crea un bucle que muestre 10 ventanas de alerta con el texto `Voy por la vuelta X` siendo el número de vuelta desde 1 hasta 10 (no desde 0 hasta 9).
+***
+EJERCICIO 5
+
+Vamos a partir de una variable `result` con valor 0. Construiremos un bucle que se ejecute 10 veces y sume 2 a la variable `result` en cada iteración del bucle. Al acabar el bucle, mostraremos una venta de alerta con `El resultado es: X`, siendo X el valor de la variable `result`.
+
+> NOTA: Este tipo de variable como `result` que se va actualizando y al final tiene el resultado de varias operaciones se llama _aculumador_. Puede ser de tipo numérico pero también de tipo cadena.
+
+***
+EJERCICIO 6: Previsión para ver la _Luna del cazador_
+
+Cada tres años se produce una luna llena completamente iluminada por el Sol durante unos minutos. Esta luna es conocida como la “Luna del cazador”. En el año 2017 se pudo ver esta luna el 5 de octubre y mucha gente se la perdió. Para que no nos pase los siguientes años vamos a crear un código que muestre en pantalla cuando serán las 15 próximas lunas.
+
+***
+EJERCICIO 7: Crea tu árbol de Navidad
 
 Para que no nos pille el toro esta Navidad, vamos a crear un código que muestre un árbol de navidad con triángulos (▲). Nosotros le diremos la altura y creará un triángulo con un número igual de lineas que la altura que le hemos pasado. Por ejemplo si le pasamos 5, creará este árbol:
 
@@ -166,8 +323,8 @@ Para que no nos pille el toro esta Navidad, vamos a crear un código que muestre
 ▲▲▲▲
 ▲▲▲▲▲
 ```
-
-#### Bonus 1
+***
+EJERCICIO BONUS 1
 
 Intenta ponerle una estrella y un tronco al árbol para que quede mucho más mono. Sería algo así:
 
@@ -180,8 +337,8 @@ Intenta ponerle una estrella y un tronco al árbol para que quede mucho más mon
 ▲▲▲▲▲
 |
 ```
-
-#### Bonus 2
+***
+EJERCICIO BONUS 2
 
 Intenta cambiar el código para que aparezca el árbol completo.
 
@@ -194,3 +351,22 @@ Intenta cambiar el código para que aparezca el árbol completo.
 ▲▲▲▲▲▲▲▲▲
     |
 ```
+***
+
+## Recursos externos
+
+### Videos de Ada Lovelace en YouTube
+
+En este canal tenemos varios viídeos que explican muy bien lo que necesitamos aprender en esta sesión con ejemplos y de forma bastante sencilla:
+
+- [Operadores de comparación](https://www.youtube.com/watch?v=ICZXkflN-CA&index=11&list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o)
+- [Operadores lógicos](https://www.youtube.com/watch?v=S6qx7TCM4hU&list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o&index=12)
+- [Condicionales. Sentencias If-Else](https://www.youtube.com/watch?v=9hUlwVjBSco&list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o&index=20)
+- [Repeticiones. Bucle for](https://www.youtube.com/watch?v=IYp2N_V_sMc&list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o&index=22)
+
+### Introducción a JavaScript de Libros Web
+
+- [Operadores](http://librosweb.es/libro/javascript/capitulo_3/operadores.html)
+- [Estructuras de control de flujo](http://librosweb.es/libro/javascript/capitulo_3/estructuras_de_control_de_flujo.html)
+
+> **Nota:** De las estructuras de control de flujo, no vamos a ver el `for...in` de momento y muestra algunas cosas con arrays que por el momento tampoco veremos hasta dentro de un algunas sesiones.
