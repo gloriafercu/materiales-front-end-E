@@ -20,7 +20,7 @@ Durante esta sesión veremos cuáles son las principales características de est
 
 Las funciones son muy útiles a la hora de crear un código único para usarlo en distintas partes de nuestro código. El beneficio de esto es que si en el futuro queremos modificar algo de ese código lo haremos en un único sitio aunque se utilice en decenas de sitios diferentes. A diferencia de los bucles, estas no se ejecutan varias veces en el mismo momento sino que se ejecutan en distintos momentos y con distintas características gracias a los parámetros.
 
-Otra de las ventajas de las funciones es que devuelven un valor, es decir realizan una operación y pueden devolver un dato. Ese dato podemos asignárselo a una variable o usarlo dentro de otra operación. O incluso podemos prescindir de él si no nos interesa para nada.
+Otra de las ventajas de las funciones es que devuelven un valor, es decir, realizan una operación y pueden devolver un dato. Ese dato podemos asignárselo a una variable o usarlo dentro de otra operación. O incluso podemos prescindir de él si no nos interesa para nada.
 
 Por último las funciones son una forma de abstraer la complejidad de un código y simplificarlo en una línea. Por ejemplo, si tenemos un código que muestra una ventana en nuestra web, desactiva el scroll, muestra un fondo oscuro y cambia el texto de un título por otro tendremos como 6 ó 7 líneas de código que lo que están haciendo realmente es mostrar un mensaje en una ventana (llamado normalmente _modal_). En este caso las funciones son útiles para sustituir esas 6 ó 7 líneas por una que ponga `showModal` dejando claro qué hace el código de esa línea. Además, usar funciones simplifica el código para que cuando alguien lo lea no necesite leerlo entero para entender qué hace, y si quiere comprobar a bajo nivel cómo funciona pueda navegar hasta el código donde se define de la función para explorarlo.
 
@@ -40,69 +40,132 @@ Por último las funciones son una forma de abstraer la complejidad de un código
 Se utilizan para abstraer la lógica, dejando un código más fácil de entender, y para reutilizar el código en distintas partes de nuestro programa.
 
 ### Declaración y uso de funciones
-Para utilizar una función debemos declararla en algún sitio de nuestro código
+Para utilizar una función debemos declararla en algún sitio de nuestro código.
 
 La estructura para declarar una función es
+- primero la palabra reservarda `function` seguida del nombre de la función
+- después entre paréntesis `( )` los parámetros de la función separados por comas `,` y que si no tiene parámetros estará vacío
+- un bloque de código entre llaves `{ }` con las instrucciones de código de la función
 
 ```javascript
-function nombre(parámetros) {
-	/* código */
+//Función sin parámetros
+function hi () {
+	alert('Hola');
+}
+
+//Función con parámetros
+function sum (a, b) {
+	alert(a + b);
 }
 ```
 
-Para utilizar una función simplemente usamos el nombre de la función seguida de paréntesis donde pasaremos los parámetros o argumentos `nombreFuncion(argumentos)`.
+Si añadimos las declaraciones anteriores de funciones a nuestra página, no veremos ningún efecto. Esto es porque solo estamos declarando las funciones, es decir, diciendo que existen pero nada más.
 
-Se pueden crear funciones sin nombre, estas funciones se llaman _funciones anónimas_ y su estructura es
+Para utilizar (también se le puede llamar *ejecutar* o *invocar*) una función simplemente usamos el nombre de la función seguida de paréntesis donde pasaremos los parámetros o argumentos separados por comas `,`.
 
 ```javascript
-function (parámetros) {
-	/* código */
-}
+hi(); //Muestra alerta con la palabra 'Hola'
+
+sum(2, 3); //Muestra alerta con un 5
 ```
+>NOTA: Esta sintaxis para utilizar funciones te suena, ¿verdad? Hasta ahora hemos estado ejecutando algunas funciones ya declaradas en el navegador como `alert` o `prompt`.
 
-Estas funciones se suelen emplear cuando las pasamos como argumento o cuando se las asignamos a una variable:
+Se pueden crear funciones sin nombre, estas funciones se llaman _funciones anónimas_. Estas funciones se suelen emplear para cosas que veremos en el curso más adelante, como asignarlas a una propiedad de un objeto o pasarlas como un callback. Un ejemplos de función anónima:
 
 ```javascript
-var miFuncion = function (parámetros) {
-	/* código */
-}
+var sum = function (a, b) {
+	console.log(a + b);
+};
 ```
 
 ### Parámetros y valores de retorno
 
-Los parámetros son datos que definimos en una función y que, a la hora de ejecutarla, serán sustituidas por los argumentos que le pasemos.
-
-Las funciones pueden tener 0, 1 o más parámetros separados por comas.
+Los *parámetros* son los datos que definimos en una función y que, a la hora de ejecutarla, serán sustituidos por los *argumentos* que le pasemos. Por tanto, en la declaración de la función le llamamos parámetros y en la ejecución le llamamos argumentos. Las funciones pueden tener 0, 1 o más parámetros separados por comas `,`.
 
 Una función puede devolver un valor utilizando la palabra clave `return` seguida del valor que queremos devolver. Si queremos devolver una variable `result`, utilizaremos `return result;` en el código.
 
 ```javascript
-function nombre(parámetros) {
-	var variable = '0';
+function sum(a, b) {
+	var result = a + b;
 
-	return variable;
+	return result;
 }
 
-var operacion = nombre();
+var sumResult = sum(3, 4);//sumResult vale 7
 ```
 
-Por defecto, si en una función no asignamos un valor de retorno usando `return`, la función devolverá el valor `undefined`
+Por defecto, si en una función no indicamos un valor de retorno usando `return`, la función devolverá el valor `undefined`. El valor _undefined_ en JavaScript indica que una variable ha sido declarada pero no posee ningún valor, en este caso determina que la función no tiene asignado ningún valor de retorno y por eso devuelve `undefined`.
 
-### En valor `undefined`
-El valor _undefined_ en JavaScript indica que una variable ha sido declarada pero no posee ningún valor, en este caso determina que la función no tiene asignado ningún valor de retorno y por eso devuelve `undefined`.
+Cuando ejecutamos una instrucción `return` dentro de una función, termina la ejecución de la función. Todo el código que se fuese a ejecutar después de ese `return` será ignorado, como si no existiese. Por tanto, debemos evitar escribir líneas de código después de un `return` y normalmente será la útlima línea de código de una función.
 
-Cuando ejecutamos un `return` dentro de una función, termina la ejecución de la función. Todo el código que se fuese a ejecutar después de ese return será ignorado, será como si no existiese. Por tanto, debemos evitar escribir líneas de código después de un `return`.
+***
+EJERCICIO 1: Función multiplicación
 
-### Ámbito de las variables
+Crea una función que reciba como argumento dos valores y devuelva como valor de retorno la multiplicación de ambos. Haz tres pruebas con distintos números para comprobar que funciona correctamente y muestra el resultado usando `alert`.
+
+***
+EJERCICIO 2: Función media
+
+Crea una función que reciba 4 parámetros, cada uno con un número, y devuelva como valor la media de todos ellos. Haz tres pruebas con distintos números para comprobar que funciona correctamente y muestra el resultado usando `alert`.
+
+***
+
+## La consola de JavaScript
+
+En las herramientas para desarrolladores de Chrome (las DevTools) la segunda pestaña es una consola JavaScript. Una consola nos permite escribir instrucciones JavaScript que al dar al Enter se ejecutan. En la consola puedes probar a hacer sumas, declarar variables, funciones, etc.
+
+Con la consola también podemos interactuar desde nuestro programa JavaScript, es decir, desde el código que escribimos en nuestro fichero `.js`. Una de las cosas que podemos hacer es escribir datos que comúnmente se denomina *loguear* datos. Lo hacemos mediantes una función `console.log()` en la que lo que pongamos entre paréntesis será lo que se escriba en la consola. A priori puede parecer que esto no tiene mucha utilidad ya que en nuestra página web no veremos nada, solo si abrimos las herramientas de desarrolladores. Pero con el tiempo le irás comprobando lo útil que es, por ejemplo, para depurar (resolver) errores en el código.
+
+```js
+console.log('Hola');
+
+var num = 56;
+console.log(num);
+```
+
+> Prueba a abrir la consola y escribe instrucciones para que veas cómo puedes ejercutar JS. También prueba a escribir datos en la consola desde tu programa con `console.log`
+
+***
+EJERCICIO 3: Ticket con IVA
+
+Crea una función que reciba como parámetro un número, que representará un precio, y devuelva un texto en el que ponga el precio sin IVA, el IVA (21%) y el total. Por ejemplo, si introducimos un 10, la función devolverá `"Precio sin IVA: 10, IVA: 2,1 y Total: 12,1"`.
+
+Para probar que funciona, ejecuta la función recogiendo el resultado en una variable e imprímela en la consola para comprobarlo.
+
+***
+EJERCICIO 4: Calculador de modelo de caja
+
+Como hemos visto en las clases anteriores, en CSS tenemos dos tipos de cálculo para las dimensiones de un elemento: `border-box` y `content-box`. Vamos a realizar un calculador al que le pasaremos 4 parámetros y nos devolverá el ancho del contenido, en caso de ser _border-box_ o el ancho total de la caja, en caso de ser _content-box_.
+
+La función tendrá 4 parametros: el primero será un booleano para especificar si es border-box o no, el segundo será el ancho del contenido o de la caja entera, el tercero el padding y el cuarto el borde.
+
+Para probar que funciona, ejecuta la función recogiendo el resultado en una variable e imprímela en la consola para comprobarlo.
+
+***
+
+### Funciones en todas partes
+
 Se pueden ejecutar funciones dentro de otras funciones.
 
 Se pueden pasar funciones como argumentos para otras funciones, devolver funciones como valores de otras funciones y guardar funciones en variables.
+
+### BONUS: Ámbito de las variables
 
 Una variable creada dentro del cuerpo de una función sólo será accesible desde dentro de esa función.
 
 A esto se le llama ámbito (en inglés, _scope_) y permite que no se generen conflictos entre funciones con variables que tienen un nombre idéntico.
 
 Desde dentro de una función podemos utilizar las variables que se hayan definido fuera de cualquier función.
+
+***
+EJERCICIO BONUS 1: Convertir el código del árbol de navidad en un función
+
+Vamos a convertir el código del ejercicio del árbol de navidad de la sesión 2.2 en una función. Esta función tendrá tres parametros: número de líneas, si lleva estrella y si lleva tronco. La función debe devolver un string que represente el árbol de navidad.
+
+Si vemos que alguna de las partes del código se puede sacar a otra función, podemos hacerlo. La idea es que el código quede lo más sencillo posible para que otra persona que no haya visto el enunciado ni el código pueda entenderlo sin problemas.
+
+Probaremos a realizar tres árboles con argumentos distintos para que veamos si funciona correctamente.
+***
 
 ## Recursos externos
 
@@ -121,32 +184,3 @@ Si prefieres un recurso escrito para aprender, aquí tienes la explicación de l
 
 - [Funciones](http://librosweb.es/libro/javascript/capitulo_4/funciones.html)
 - [Ámbito de las variables](http://librosweb.es/libro/javascript/capitulo_4/ambito_de_las_variables.html)
-
-
-## Ejercicios
-
-### Función suma
-
-Crea una función que reciba como argumento dos valores y devuelva como valor de retorno la suma de ambos. Haz tres pruebas con distintos números para comprobar que funciona correctamente y muestra el resultado usando `alert`.
-
-### Función media
-
-Crea una función que reciba 4 parámetros, cada uno con un número, y devuelva como valor la media de todos ellos. Haz tres pruebas con distintos números para comprobar que funciona correctamente y muestra el resultado usando `alert`.
-
-### Ticket con IVA
-
-Crea una función que reciba como parámetro un número, que representará un precio, y devuelva un texto en el que ponga el precio sin IVA, el IVA (21%) y el total. Por ejemplo, si introducimos un 10, la función devolverá `"Precio sin IVA: 10, IVA: 2,1 y Total: 12,1"`
-
-### Calculador de modelo de caja
-
-Como hemos visto en las clases anteriores, en CSS tenemos dos tipos de cálculo para las dimensiones de un elemento: `border-box` y `content-box`. Vamos a realizar un calculador al que le pasaremos 4 parámetros y nos devolverá el ancho del contenido, en caso de ser _border-box_ o el ancho total de la caja, en caso de ser _content-box_.
-
-La función tendrá 4 parametros: el primero será un booleano para especificar si es border-box o no, el segundo será el ancho del contenido o de la caja entera, el tercero el padding y el cuarto el borde.
-
-### Convertir el código del árbol de navidad en un función
-
-Vamos a convertir el código del ejercicio del árbol de navidad de la sesión 2.2 en una función. Esta función tendrá tres parametros: número de líneas, si lleva estrella y si lleva tronco. La función debe devolver un string que represente el árbol de navidad.
-
-Si vemos que alguna de las partes del código se puede sacar a otra función, podemos hacerlo. La idea es que el código quede lo más sencillo posible para que otra persona que no haya visto el enunciado ni el código pueda entenderlo sin problemas.
-
-Probaremos a realizar tres árboles distintos para que veamos si funciona correctamente.
