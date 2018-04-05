@@ -36,7 +36,8 @@ Cuando iniciamos un repositorio git se crea una primera rama, y se llama `master
 Vamos a ver el trabajo en ramas a través de un ejemplo, como un mini proyecto de grupo, porque al fin y al cabo, git va de trabajar en grupo:
 
 ***
-EJERCICIO 1:  
+EJERCICIO 1:
+
 1. Vamos crear un repositorio por grupo, dentro del equipo de Adalab y lo llamaremos `clarke-s2-gX`, donde `X` será el número del grupo, de 1 a 4 :)
 2. Crearemos una primera versión de nuestra web (solo en HTML) que tendrá:
 	1. Un `<header>` con un `<h1>` con el nombre del grupo
@@ -88,7 +89,8 @@ git push -u origin nombre-de-la-rama
 La primera vez usaremos el git push con `-u`.
 
 ***
-EJERCICIO 2:  
+EJERCICIO 2:
+
 1. Vamos a crear una rama `footer`, a movernos a ella y a modificar un poco nuestro proyecto. Añadiremos a nuestro footer el enlace a la web de Adalab, quedando así:
 ```html
 <footer>
@@ -115,7 +117,8 @@ Esto nos mezclará nuestra versión local de la rama `nombre-de-la-rama` con la 
 
 
 ***
-EJERCICIO 3:  
+EJERCICIO 3:
+
 Vamos a fusionar nuestra rama `footer` con `master` para que nuestra web tenga el enlace que hemos añadido anteriormente.
 Para ello:
 1. Nos movemos a la rama `footer`
@@ -135,7 +138,8 @@ Para ello:
 ![Resultado del ejercicio 3](assets/images/2-6/ramas-2.png)
 ***
 
-EJERCICIO 4:  
+EJERCICIO 4:
+
 Ahora que hemos hecho un primer acercamiento a las ramas, vamos a hacer lo mismo pero con dos equipos por cada grupo. Cada equipo estará encargado de un trabajo diferente que tendrá que realizar en una rama y posteriormente mezclar en la rama principal.
 
 ![Resultado del ejercicio 4](assets/images/2-6/ramas-3.png)

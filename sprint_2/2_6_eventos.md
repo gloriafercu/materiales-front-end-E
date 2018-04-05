@@ -9,7 +9,7 @@
 
 ## Introducción
 
-Ya hemos apendido a modificar cosas en nuestra página web mediante JavaScript: cambiar contenidos, estilos, etc. Pero siempre nuestro script (código JavaScript) se ejecutaba al cargar la página. En esta sesión vamos a aprender a hacer nuestra web interactiva, es decir, que haya modificaciones también de contenidos o estilos pero en respuesta a la interacción del usuario. La forma de modelar esa interacción del usuario en la web es mediante *eventos*. Un evento representa una interacción, que normalmente es del usuario, tras la cual podemos realizar una acción. Vamos a ver algunos ejemplos de acciones que implican eventos:
+Ya hemos aprendido a modificar cosas en nuestra página web mediante JavaScript: cambiar contenidos, estilos, etc. Pero siempre nuestro script (código JavaScript) se ejecutaba al cargar la página. En esta sesión vamos a aprender a hacer nuestra web interactiva, es decir, que haya modificaciones también de contenidos o estilos pero en respuesta a la interacción del usuario. La forma de modelar esa interacción del usuario en la web es mediante *eventos*. Un evento representa una interacción, que normalmente es del usuario, tras la cual podemos realizar una acción. Vamos a ver algunos ejemplos de acciones que implican eventos:
 - mostrar una alerta cuando el usuario hace click en un botón
 - cambiar el tamaño de una cabecera fija cuando el usuario llega a un punto de scroll
 - abir una sección oculta de un formulario cuando hago click sobre un botón
@@ -104,13 +104,13 @@ A partir de ahora usad **siempre, siempre, siempre** la forma correcta, es decir
 
 * * *
 
-EJERCICIO:
+EJERCICIO 1
 
 Crear una página HTML con un párrafo en el que ponga Hola y un botón. Usando JavaScript, cambiar ese texto por "Hello" cuando se pulse el botón.
 
 * * *
 
-EJERCICIO:
+EJERCICIO 2
 
 Crear una página HTML con un input de tipo texto para introducir tu nombre y un botón. Al clickar el botón, que aparezca una ventana de alerta que diga 'Hola <nombre>', con el nombre que aparece en el input de texto.
 
@@ -136,13 +136,13 @@ Aparte del evento click, podéis ver [el listado completo de eventos que podemos
 
   * * *
 
-  EJERCICIO:
+  EJERCICIO 3
 
   Crear una página HTML con un párrafo con `lorem ipsum`. Al poner el ratón sobre el párrafo, vamos a añadir un nuevo párrafo a la página con `lorem ipsum`.
 
   * * *
 
-  EJERCICIO:
+  EJERCICIO 4
 
   Crear una página HTML con un select que tiene un listado de colores. Cuando el usuario cambia la opción seleccionada  en el select, debe aparecer una ventana de alerta con el texto 'Me gustan los colores'.
 
@@ -197,19 +197,19 @@ En la función declaramos el parámetro `event` que sabemos que el navegador nos
 
 * * *
 
-EJERCICIO:
+EJERCICIO 5
 
 Crear una página HTML con formulario con un select que tiens un listado de colores. Al cambiar el contenido del select, aparece una ventana de alerta donde aparece el texto 'Me gusta el <color>' con el color seleccionado. Podemos acceder al índice de la opción seleccionada de un select mediante la propiedad `selectedIndex` y al listado de opciones (array) podemos acceder mediante la propiedad `options`.
 
 * * *
 
-EJERCICIO:
+EJERCICIO 6
 
 Crear una página vacía que al pulsar la tecla 'r' se ponga el fondo rojo y al pulsar la 'a' ponga el fondo de la web azul. Vamos a ecuchar evento de teclado (directamente sobre el elemento `document`). En el objeto evento podemos [consultar la propiedad `key`](https://mdn.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code) para saber qué tecla se ha pulsado.
 
 * * *
 
-EJERCICIO:
+EJERCICIO 7
 
 Vamos a partir de un HTML con un botón 'Empezar'. Al hacer click, vamos a pintar en el HTML un listado de películas que tenemos en JavaScript:
 ```javascript
@@ -258,7 +258,7 @@ Desde la función de callback accedemos al elemento mediante `currentTarget` y c
 
 * * *
 
-EJERCICIO:
+EJERCICIO 8
 
 Partimos del ejercicio anterior de las películas. Ahora tenemos un array `movies` con más información de cada peli en un objeto JavaScript. Vamos a modificar el código para que, al hacer click sobre el nombre de la película en el listado, mostremos una alerta con el título, director y año de la película.
 

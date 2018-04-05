@@ -14,7 +14,6 @@
 	- [BONUS: Reemplazar](#bonus-reemplazar)
 
 
-
 ## Introducción
 
 Siempre que queramos interactuar desde JavaScript con nuestras páginas vamos a necesitar saber cómo consultar/modificar los elementos que las componen. Hasta ahora hemos visto muy en la superficie cómo hacerlo pero ya vamos necesitando tener más opciones.

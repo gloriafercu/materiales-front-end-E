@@ -11,7 +11,6 @@
 - El código como una caja negra
 - Variables
 - Prompt
-- Ejercicios
 - Resumen
 
 
@@ -105,7 +104,7 @@ Hasta aquí todo normal, ahora viene la parte interesante. ¿Cómo utilizamos un
 </html>
 ```
 
-**Nota:** Como puedes ver, dentro del archivo de JavaScript hemos escrito un mensaje precedido del texto `//`. Esta combinación escrita al principio de una linea, marca esa línea como un comentario de JavaScript, esto funciona igual que los comentarios en CSS y HTML. De esta forma podemos ponernos anotaciones sin que se ejecuten o produzca un error en el código. En JavaScript existen también comentarios multilínea, estos son mensajes envueltos entre `/*` (al comienzo) y `*/` (al final) (ejemplo: `/* Este es un comentario */`). Este tipo de comentarios se utiliza cuando queremos escribir mensajes que ocupen más de una línea dentro de nuestro código.
+> **Nota:** Como puedes ver, dentro del archivo de JavaScript hemos escrito un mensaje precedido del texto `//`. Esta combinación escrita al principio de una linea, marca esa línea como un comentario de JavaScript, esto funciona igual que los comentarios en CSS y HTML. De esta forma podemos ponernos anotaciones sin que se ejecuten o produzca un error en el código. En JavaScript existen también comentarios multilínea, estos son mensajes envueltos entre `/*` (al comienzo) y `*/` (al final) (ejemplo: `/* Este es un comentario */`). Este tipo de comentarios se utiliza cuando queremos escribir mensajes que ocupen más de una línea dentro de nuestro código.
 
 En el caso de enlazar un JavaScript externo, utilizaremos también la etiqueta `<script>` pero esta vez le añadiremos un atributo HTML `src=""` en el que escribiremos como valor la ruta del archivo JavaScript que hemos creado. El resultado sería el siguiente (imaginando que el archivo `main.js` está en la misma carpeta que la página HTML que hemos creado):
 
@@ -144,7 +143,7 @@ alert('Hello world!');
 
 Si has realizado los pasos anteriores y has copiado el código correctamente se mostrará una ventana en tu navegador con el mensaje "Hello world". Si es así, ¡enhorabuena! acabas de crear tu primer código JavaScript.
 
-En este momento estarás pensando «si, lo he escrito pero no tengo ni idea de cómo funciona». No te preocupes, vamos a entender cómo funciona ahora mismo.
+En este momento estarás pensando «sí, lo he escrito pero no tengo ni idea de cómo funciona». No te preocupes, vamos a entender cómo funciona ahora mismo.
 
 La primera línea del archivo JavaScript (`'use strict';`) sirve para mejorar la rapidez de ejecución del código y hará que el navegador nos muestre errores que, de no ponerlo, no lo haría y por tanto nuestro código será más estable o, dicho de otra forma, menos propenso a fallos. Como norma general, escribiremos siempre esta linea al comienzo de todos nuestros archivos JavaScript y para que funcione correctamente deberá ser la primera línea del documento (sin contar los comentarios y las líneas en blanco).
 
@@ -161,15 +160,15 @@ Otro aspecto a destacar del código, es que escribimos cada orden en una línea 
 
 Puede que en este punto aún sigas perdida y no te haya quedado muy claro cómo usar realmente JavaScript pero no te preocupes, de momento sólo debes entender que programar no es otra cosa que pensar en los pasos para resolver un problema y traducirlo a órdenes con un lenguaje que entienda el navegador (JavaScript). Por tanto, lo que tenemos que hacer es practicar la lógica, familiarizarnos con la sintaxis de JavaScript y aprender a traducir pasos a este lenguaje para ir poco a poco mejorando y cogiendo soltura.
 
-## Ejercicios con alert
-
-### Mensaje de navegador obsoleto
+***
+EJERCICIO 1: Mensaje de navegador obsoleto
 
 En este ejercicio y con lo poquito que hemos visto hasta ahora de JavaScript, vamos a crear un código que muestre una ventana con el mensaje "Esta página no es compatible con la versión actual de tu navegador. Por favor actualízalo a la versión más reciente.". Para ello utilizaremos `alert` tal y como hemos visto en los ejemplos anteriores.
 
 Una vez que lo hayáis realizado podéis enviárselo a algún amigo o familiar y decirle que os diga que le parecen los colores de vuestra nueva web para que pase un rato divertido intentando actualizar el navegador :).
 
-### Presentando con alert
+***
+EJERCICIO 2: Presentando con alert
 
 La idea de este ejercicio es mostrar un mensaje de alerta en el navegador y que, cuando le demos a aceptar, aparezca otro y así hasta tres mensajes. Como idea podéis poner algo así como lo siguiente:
 
@@ -177,6 +176,7 @@ La idea de este ejercicio es mostrar un mensaje de alerta en el navegador y que,
 - Mensaje 2: "Nací el \_\_\_\_ de \_\_\_\_, en \_\_\_\_"
 - Mensaje 3: "Me gusta \_\_\_\_ y \_\_\_\_"
 
+***
 
 ## Tipos de datos
 
@@ -300,9 +300,8 @@ alert(10 + 10 + 10); // Muestra 30 en la ventana de alerta
 En el futuro veremos cómo mostrar este código directamente en la página sin que tenga que aparecer la ventana, pero de momento trabajaremos así para no añadir demasiada complejidad al proceso de aprendizaje.
 
 
-## Ejercicios
-
-### El precio de la fruta
+***
+EJERCICIO 3: El precio de la fruta
 
 Imagina que vamos a la frutería y compramos lo siguiente:
 
@@ -312,24 +311,25 @@ Imagina que vamos a la frutería y compramos lo siguiente:
 
 Con lo que hemos visto durante los ejemplos y textos anteriores y usando JavaScript, vamos a calcular el precio total como si lo hiciesemos en una hoja de toda la vida pero de manera mucho más guay. El resultado debe mostrarse en una ventana de alerta.
 
-### ¡Págame, tía!
+***
+EJERCICIO 4: ¡Págame, tía!
 
 Nos vamos de cena de Navidad, ¡qué alegría! Somos en total 9 personas y la cuenta del restaurante japonés es de 128€. Ana tiene que pagar 2€ más que los demás porque ha pedido un chupito de sake. ¿Cuánto tenemos que pagar cada una? ¿Y Ana? Hagamos un pequeño programa en JavaScript para calcularlo.
 
-
-### Calcular cuál va a ser el siguiente año bisiesto
+***
+EJERCICIO 5: Calcular cuál va a ser el siguiente año bisiesto
 
 Vamos a escribir un pequeño programa que nos permita saber cuál será el siguiente año bisiesto. Para aportar un poco de información, sabemos que los años bisiestos se producen cada cuatro años a partir del año 0. El primer año bisiesto fue 4, el segundo 8 y así progresivamente. La idea de este ejercicio es que, si estuviésemos en el año 3, al ejecutarlo apareciese una ventana de alerta con el texto "4", ya que el año 4 sería el siguiente año bisiesto.
 
 **Nota:** En este caso tenemos que escribir nosotros el año en el que estamos para saber cuando será el siguiente año bisiesto pero en los siguientes párrafos veremos cómo introducir un dato desde el navegador para poder utilizarlo desde nuestro código. Esto nos permitirá hacer un programa más lógico, porque podremos mostrar cuál será el siguiente año bisiesto a partir del año que hemos introducido.
 
-
-### Calcular el número total de horas que hemos vivido
+***
+EJERCICIO 6: Calcular el número total de horas que hemos vivido
 
 En este caso vamos a crear un código que nos diga cuantas horas en total hemos vivido. Por ejemplo, si alguien tiene 60 años, este código debería de mostrar un mensaje con el número "525600".
 
 **Nota:** En este caso no tendremos en cuenta los años bisiestos para no complicar mucho el ejercicio.
-
+***
 
 ## Variables
 
@@ -364,7 +364,7 @@ var officeAddress;
 officeAddress = 'Calle Leganitos, 24';
 ```
 
-**Nota:** Es importante que creemos una variable siempre antes de asignarle un valor.
+> **Nota:** Es importante que creemos una variable siempre antes de asignarle un valor.
 
 Cosas importantes a tener en cuenta a la hora de asignar una variable:
 
@@ -403,7 +403,7 @@ var expenses = 5342;
 var benefits = earnings - expenses;
 ```
 
-En el momento en el que se ejecuta el código, las variables se sustituyen por los valores que almacenan. En el ejemplo anterior, la linea final se convertiría en `var benefits = 12020 - 5342`
+En el momento en el que se ejecuta el código, las variables se sustituyen por los valores que almacenan. En el ejemplo anterior, la linea final se convertiría en `var benefits = 12020 - 5342`.
 
 
 Con esto tendríamos la información necesaria para poder trabajar con variables sin problemas.
@@ -428,13 +428,13 @@ var sectionSize = remainingSpace / sections;
 En este caso el código es mucho más verboso y más largo pero se entiende mucho mejor para que sirve - establecer la altura de una sección en función de la altura de la pantalla sin tener en cuenta la cabecera y la subcabecera. La idea es que nuestro código sea así, semántico y que se entienda perfectamente qué queremos hacer en cada momento. Por eso, a partir de ahora, todos nuestro ejercicios en JavaScript deberán intentar parecerse a este lo máximo posible para adquirir esta buena práctica muy bien valorada en las empresas.
 
 
-### Ejercicios
-
-#### Utilizar variables para mejorar nuestro código
+***
+EJERCICIO 7: Utilizar variables para mejorar nuestro código
 
 Vamos a reescribir los ejercicios de la fruta y de la cena de Navidad utilizando variables para que sean más semánticos y por tanto aumentemos su calidad.
 
 También vamos a reescribir los ejercicios del año bisiesto y del cálculo de horas vividas.
+***
 
 ## Prompt
 
@@ -464,24 +464,45 @@ En el caso de los `string`s, la única forma de operar con ellos es usar el oper
 **Nota:** Aunque el símbolo utilizado para concatenar strings (`+`) es el mismo que el utilizado para sumar números, JavaScript es capaz de saber que operación llevar a cabo en función de los datos que le pasemos. Si le pasamos `string`s concatenará los números y si pasamos `number`s los sumará. Si intentamos sumar un número y un texto siempre convertirá primero el número a string y posteriormente juntará ambos textos (ej: `5 + "5"` devuelve `"55"`)
 
 
-### Ejercicios
+***
+EJERCICIO 8: Hello world de verdad
 
-#### Hello world de verdad
+Utilizando `prompt` vamos a crear un programa que pregunte por el nombre y posteriormente muestre el mensaje "Hola _nombre_, encantado de conocerte". Donde _nombre_ será el nombre que ha introducido el usuario previamente.
 
-Utilizando `prompt` vamos a crear un programa que pregunte por el nombre y posteriormente muestre el mensaje "Hola nombre, encantado de conocerte". Donde _nombre_ será el nombre que ha introducido el usuario previamente.
-
-#### Calculador de pagos para comidas
+***
+EJERCICIO 9: Calculador de pagos para comidas
 
 Vamos a crear una aplicación usando `prompt` que primero pregunte cuanto ha sido la cuenta, luego cuantos comensales hay y por último muestre una alerta que diga `"Cada comensal debe pagar: __"`
 
-**Nota:** Prompt guarda los datos como texto (`string`), por lo que si introducimos un número, lo guardará como si fuese un texto y no podremos operar con él. Para poder hacerlo utilizaremos `parseInt(numero)` donde número será la variable o texto que queremos convertir en número.
+> **Nota:** Prompt guarda los datos como texto (`string`), por lo que si introducimos un número, lo guardará como si fuese un texto y no podremos operar con él. Para poder hacerlo utilizaremos `parseInt(numero)` donde número será la variable o texto que queremos convertir en número.
 Ejemplo:
 
-```js
+>```js
 var numberAsAString = "4";
 var number = parseInt(numberAsAString); // se guarda en la variable number el número 4
 alert(number + 1);
 ```
+
+***
+EJERCICIO 10: Generador de historias de usuario
+
+Vamos a crear un generador de historias de usuario. Una historia de usuario es una descripción simple de una característica nueva que queremos que tenga un programa pero enfocado desde el usuario que necesita esa nueva característica.
+
+Para definirlas seguimos una estructura muy simple:
+
+    Yo como un <usuario>,
+    necesito <funcionalidad>
+    con la finalidad de <razón>.
+
+Vamos a poner un ejemplo
+
+    Yo como un cliente de Netflix
+    necesito más episodios de Stranger Things
+    con la finalida de que mi vida no sea un infierno.
+
+Pues vamos a crear un generador de historias de usuario usando JavaScript. Para ello, vamos a pedir los datos que necesitamos para definir la historia usando `prompt`: usuario, funcionalidad y razón. Con esta información, vamos a crear una ventana de alerta con la historia de usuario completa. ¡Vamos a ello!
+
+***
 
 ## Resumen
 
