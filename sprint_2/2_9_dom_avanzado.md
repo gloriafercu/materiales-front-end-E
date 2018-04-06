@@ -26,13 +26,13 @@ Lo que vamos a ver en esta sesión cobra especial importancia en tres campos: re
 
 En cuanto a rendimiento, hasta ahora cuando utilizábamos `innerHTML` lo que hacía JavaScript, a grandes rasgos, era lo siguiente:
 
-1. Leer el texto y parsearlo (convertirlo a html, como hacemos con JSON.parse)
+1. Leer el texto y parsearlo (convertirlo a html, como veremos con `JSON.parse`)
 2. Crear cada uno de los elementos HTML en el momento
 3. Añadir esos elementos como contenido a un elemento del DOM (un `p`, un `div` lo que fuese)
 
 Con lo que vamos a ver en esta sesión el primer paso de parsear el texto no será necesario porque no utilizaremos texto para crear componentes sino JavaScript, lo cual reducirá drásticamente el tiempo que tarda en ejecutarse el código y, por tanto, mejorará el rendimiento de nuestra aplicación. Esto en pequeñas apps no va a ser fundamental pero en aplicaciones más grandes y complejas que requieren de pintar muchos elementos es clave para que no se note un retardo a medida que utilizamos las web.
 
-Además en esta sesión veremos cómo crear elementos por un lado y posteriormente añadirlos, es decir, con `innerHTML` se creaban en el momento (se convertía el texto en componentes HTML) y se añadían en el momento, por lo tanto se tenían que ejecutar esos dos pasos en el momento. Con lo que vamos a ver en esta sesión seremos capaces de crearlos antes y simplemente añadirlos, con lo cual en el momento de añadirlos solo se realizará un paso, porque tendremos creados previamente los componentes. Para ejemplificar esto, imaginemos que tenemos un código JavaScript que al pulsar en un botón añade tres párrafos a la página, si lo hago con `innerHTML`, en el momento que pulso el botón se convierte el texto de `innerHTML` en tres párrafos y se añaden. si por el contrario lo hacemos con la alternativa que planteamos en esta sesión podremos crear los párrafos en el elemento en el momento en el que se empieza a ejecutar JavaScript y cuando el usuario pulse el botón lo único que se hará será añadir esos elementos, pero estos ya estarán creados previamente.
+Además en esta sesión veremos cómo crear elementos por un lado y posteriormente añadirlos al DOM, es decir, con `innerHTML` se creaban (se convertía el texto en componentes HTML) y se añadían en el momento. Con lo que vamos a ver en esta sesión seremos capaces de crearlos antes y simplemente añadirlos, con lo cual en el momento de añadirlos solo se realizará un paso, porque tendremos creados previamente los componentes. Para ejemplificar esto, imaginemos que tenemos un código JavaScript que al pulsar en un botón añade tres párrafos a la página, si lo hago con `innerHTML`, en el momento que pulso el botón se convierte el texto de `innerHTML` en tres párrafos y se añaden. Si por el contrario lo hacemos con la alternativa que planteamos en esta sesión, podremos crear los párrafos en el elemento en el momento en el que se empieza a ejecutar JavaScript y cuando el usuario pulse el botón lo único que se hará será añadir esos elementos ya creados previamente.
 
 #### Prevención de posibles errores
 
@@ -49,7 +49,7 @@ Imagina la repercusión de este problema en aplicaciones complejas que tienen qu
 
 Utilizar HTML como strings en JavaScript puede ser bastante molesto, se nos puede olvidar un más en alguna concatenación, tenemos que poner todo en una línea o usar `+` o escapar saltos de línea (usando `\` antes del salto) para poder poner el código en varios renglones, no se puede indentar...
 
-Todo esto dificulta hace que cuando empieza a crecer nuestros strings con código HTML sea bastante engorroso y además complica el beneficiarnos de funciones para crear elementos. Si por el contrario utilizamos JavaScript para realizar esa misma tarea podremos beneficiarnos de indentación y separación en líneas, simplicidad a la hora de crear un elemento y reutilización de código mediante funciones, lo cual hará que nuestro código sea más fácil de mantener y más sencillo de entender.
+Todo esto hace que cuando empiezan a crecer nuestros strings con código HTML sea bastante engorroso y además complica el beneficiarnos de funciones para crear elementos. Si por el contrario utilizamos JavaScript para realizar esa misma tarea podremos beneficiarnos de indentación y separación en líneas, simplicidad a la hora de crear un elemento y reutilización de código mediante funciones, lo cual hará que nuestro código sea más fácil de mantener y más sencillo de entender.
 
 ---
 
@@ -103,54 +103,7 @@ Vamos a partir de un pequeño HTML para los siguientes ejemplos:
 </div>
 ```
 
-### Seleccionar elementos
 
-#### `.getElementsByClassName`
-
-Selecciona elementos con una cierta clase y siempre devuelve un array, aunque solo haya uno:
-
-```js
-var classItems = document.getElementsByClassName('item');
-console.log('Hay ' + classItems.length + ' items con clase .item');
-// Devuelve "Hay 3 items con clase .item"
-```
-[Ejemplo en Codepen](https://codepen.io/adalab/pen/xpYXmQ)
-
-#### `.getElementsByTagName`
-
-También podemos seleccionarlos por etiquetas, en el mismo ejemplo:
-
-```js
-var tagItems = document.getElementsByTagName('li');
-console.log('Hay ' + tagItems.length + ' <li>');
-// Devuelve "Hay 3 <li>"
-```
-[Ejemplo en Codepen](https://codepen.io/adalab/pen/opEGVR)
-
----
-
-Tanto `getElementsByClassName` como `getElementsByTagName` se pueden sustituir por `querySelectorAll`, la ventaja que tienen los dos primeros es que aumentan el rendimiento en más de un 100% frente al tercero, por lo tanto solo será necesario que usemos estos en contextos en los que el rendimiento es fundamental. Dicho esto siempre será más descriptivo usarlos si lo que queremos es obtener un array con todos los elementos con una etiqueta o clase determinada
-
-#### `.children`
-
-Podemos seleccionar todas las hijas que tenga cierto elemento:
-
-```js
-var items = document.querySelector('.items');
-var childrenItems = items.children;
-
-console.log('.items tiene ' + childrenItems.length + ' hijas: ');
-for (var i = 0; i < childrenItems.length; i++) {
-  console.log(i + ') ' + childrenItems[i].outerHTML);
-}
-/* Devuelve:
-".items tiene 3 hijas: "
-"0) <li class='item item--1'>Item 1</li>"
-"1) <li class='item item--2'>Item 2</li>"
-"2) <li class='item item--3'>Item 3</li>"
-*/
-```
-[Ejemplo en Codepen](https://codepen.io/adalab/pen/JMMPxg)
 
 ### `.parentElement`
 A veces nos interesará seleccionar un elemento e ir directamente a por su contenedor madre:
@@ -266,6 +219,33 @@ itemList.removeChild(item2);
 ```
 [Ejemplo en Codepen](https://codepen.io/adalab/pen/MrQrwM)
 
+***
+EJERCICIO 1: Castigo
+
+La hemos fastidiado. Otra vez. Y el profe nos ha castigado, ¡y encima sin tener la razón! Nos ha pedido que escribamos 100 veces en la pizarra una frase. ¿Podremos hacer un poco de trampa para que nos ayude JavaScript? Vamos a crear todos los elementos HTML como hemos aprendido en esta sesión, es decir, sin `innerHTML` ;)
+
+1. Repítelo 100 veces
+
+¡Es hora de actuar! En la pizarra (nuestra página web) tenemos que escribir 100 veces la frase "He aprendido bien cómo funcionan los bucles". Cada frase en una línea diferente. ¿Podremos conseguirlo? Primero dale a la web aspecto de pizarra: el fondo de negro, las letras en blanco, tipografía que simula el pintado con tiza tipo [*chalkboard*](http://www.fontspace.com/category/chalkboard), etc. Y luego, ¡a escribir!
+
+2. Un combo por frase
+
+¡Seguimos con nuestra pizarra! Ahora vamos a añadir un combo (elemento `select` de HTML) al final de cada línea de texto. En el combo podremos seleccionar un color de los siguientes: blanco, azul, rojo, verde, amarillo, rosa. Por defecto, el combo tendrá seleccionado el color blanco que es el color del texto de los párrafos.
+
+3. Vamos a darle color
+
+Ahora viene lo bueno: vamos a añadir el comportamiento a la web para que al modificar un combo se cambie el color del texto de esa línea al color indicado en el combo. Por ejemplo, si modificamos el color del combo de la línea 3 a rosa, el texto de la línea 3 se convierte en rosa.
+
+Algunas pistas para esta tercera parte:
+
+- primero haced funcionar un combo para una única línea
+- investigad cómo funciona el evento `change` de los elementos tipo `select` ([documetación de MDN](https://developer.mozilla.org/en-US/docs/Web/Events/change))
+- desde el objeto `event` de la función de callback, podemos acceder al `select` que ha provocado el evento mediante `event.currentTarget`; incluso al índice (como en un array) de la opción seleccionada con `event.currentTarget.selectedIndex`
+
+**¡A por ello!**
+
+***
+
 ### BONUS: Reemplazar
 Vale, ¿y si quiero reemplazar un elemento por otro? Podemos borrarlo e insertar otro elemento en su lugar o usar el atajo `.replaceChild()`.
 ```js
@@ -280,6 +260,61 @@ var items = oldItem.parentElement;
 items.replaceChild(newItem, oldItem);
 ```
 [Ejemplo en Codepen](https://codepen.io/adalab/pen/LeQzLg)
+
+
+### Seleccionar elementos
+
+#### `.getElementsByClassName`
+
+Selecciona elementos con una cierta clase y siempre devuelve un array, aunque solo haya uno:
+
+```js
+var classItems = document.getElementsByClassName('item');
+console.log('Hay ' + classItems.length + ' items con clase .item');
+// Devuelve "Hay 3 items con clase .item"
+```
+[Ejemplo en Codepen](https://codepen.io/adalab/pen/xpYXmQ)
+
+#### `.getElementsByTagName`
+
+También podemos seleccionarlos por etiquetas, en el mismo ejemplo:
+
+```js
+var tagItems = document.getElementsByTagName('li');
+console.log('Hay ' + tagItems.length + ' <li>');
+// Devuelve "Hay 3 <li>"
+```
+[Ejemplo en Codepen](https://codepen.io/adalab/pen/opEGVR)
+
+---
+
+Tanto `getElementsByClassName` como `getElementsByTagName` se pueden sustituir por `querySelectorAll`, la ventaja que tienen los dos primeros es que aumentan el rendimiento en más de un 100% frente al tercero, por lo tanto solo será necesario que usemos estos en contextos en los que el rendimiento es fundamental. Dicho esto siempre será más descriptivo usarlos si lo que queremos es obtener un array con todos los elementos con una etiqueta o clase determinada.
+
+#### `.children`
+
+Podemos seleccionar todas las hijas que tenga cierto elemento:
+
+```js
+var items = document.querySelector('.items');
+var childrenItems = items.children;
+
+console.log('.items tiene ' + childrenItems.length + ' hijas: ');
+for (var i = 0; i < childrenItems.length; i++) {
+  console.log(i + ') ' + childrenItems[i].outerHTML);
+}
+/* Devuelve:
+".items tiene 3 hijas: "
+"0) <li class='item item--1'>Item 1</li>"
+"1) <li class='item item--2'>Item 2</li>"
+"2) <li class='item item--3'>Item 3</li>"
+*/
+```
+[Ejemplo en Codepen](https://codepen.io/adalab/pen/JMMPxg)
+
+
+## Resumen de la sesión
+
+El objetivo de la sesión es tener un abanico más amplio de opciones a la hora de manipular el DOM y potenciar la consulta de recursos como la MDN.
 
 
 ## Recursos externos
@@ -298,14 +333,3 @@ items.replaceChild(newItem, oldItem);
 - [`.insertAdjacentHTML()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML)
 - [`.removeChild()`](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
 - [`.replaceChild()`](https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild)
-
-
-
-## Resumen de la sesión
-
-El objetivo de la sesión es tener un abanico más amplio de opciones a la hora de manipular el DOM y potenciar la consulta de recursos como la MDN.
-
-
-## Ejercicios
-
-Como ejercicio, si veis que alguna de estas nuevas opciones mejora algún ejercicio anterior o el ejercicio de evaluación ;) seguro que alguno de ellos os sirve con esas *Razones para comprar* ;)
