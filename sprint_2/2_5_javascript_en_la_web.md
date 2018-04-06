@@ -448,24 +448,3 @@ EJERCICIO 12
 Vamos a crear un div en HTML que contenga tres párrafos con un texto aleatorio. Con la ayuda de JavaScript vamos a obtener su tamaño usando la propiedad [`offsetHeight`](https://developer.mozilla.org/es/docs/Web/CSS/opacity). Posteriormente y usando el atributo HTML [style](https://www.w3schools.com/Tags/att_global_style.asp) vamos a configurar que su altura será un tercio de la actual.
 
 * * *
-
-### BONUS: Trabajar con varios elementos
-
-Para seleccionar un elemento, utilizaremos querySelector, pero ¿y si queremos modificar más de uno?. Bien en ese caso utilizaremos `querySelectorAll`, que nos permitirá guardar en una variable una lista de elementos. Esta lista funciona de manera similar a un array con ligeras diferencias y podemos hacer lo siguiente con ella:
-
-```js
-// Guardamos una lista de todos los parrafos
-var paragraphs = document.querySelectorAll('p');
-
-// Modificamos el primer párrafo
-paragraphs[0].innerHTMl = 'Soy el primero';
-
-// Muestra el número de parráfos que hay en nuestra web
-alert(paragraphs.length)
-
-// Iteramos sobre todos los párrafos para asignarles a todos un color
-for (var i = 0; i < paragraphs.length; i++) {
-  paragraphs[i].style.color = 'red';
-}
-
-```

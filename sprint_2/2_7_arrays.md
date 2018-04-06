@@ -349,6 +349,27 @@ Según vayáis creando las funciones, debéis ir probando que funcionan invocán
 
 ***
 
+### Trabajar con varios elementos del DOM
+
+Como hemos visto en sesiones anteriores, para seleccionar un elemento del DOM utilizaremos `querySelector`, pero ¿y si queremos modificar más de uno?. Bien en ese caso utilizaremos `querySelectorAll`, que nos permitirá guardar en una variable una lista de elementos. Esta lista funciona de manera similar a un array y podemos hacer lo siguiente con ella:
+
+```js
+// Guardamos una lista de todos los parrafos
+var paragraphs = document.querySelectorAll('p');
+
+// Modificamos el primer párrafo
+paragraphs[0].innerHTMl = 'Soy el primero';
+
+// Muestra el número de parráfos que hay en nuestra web
+alert(paragraphs.length)
+
+// Iteramos sobre todos los párrafos para asignarles a todos un color
+for (var i = 0; i < paragraphs.length; i++) {
+  paragraphs[i].style.color = 'red';
+}
+
+```
+
 ### Métodos de array
 
 A continuación veremos algunos de los métodos básicos que más se utilizan para trabajar con arrays.
