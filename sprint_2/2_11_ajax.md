@@ -4,10 +4,10 @@
 
 - [Introducción](#introducción)
 - [¿En qué casos se utiliza?](#¿en-qué-casos-se-utiliza)
-- [Peticiones al servidor con XMLHttpRequest](#peticiones-al-servidor-con-xmlhttpRequest)
+- [Promesas](#promesas)
 - [El formato JSON](#el-formato-json)
-- [Un poquito de HTTP](#un-poquito-de-http)
-
+- [Peticiones encadenadas](#peticiones-encadenadas)
+- [Peticiones en paralelo](#peticiones-en-paralelo)
 
 ## Introducción
 
