@@ -30,7 +30,7 @@ Lo que podemos hacer desde JavaScript es responder a estos eventos. ¿Cómo? Cre
 
 ## Escuchando eventos desde JavaScript
 
-Vamos a ver cómo traducimos lo anterior a JavaScript. En primer lugar, lo llamamos escuchar eventos porque en JavaScript decimos que "si sucede un evento sobre este elemento, ejecuta esta función". Técnicamente, registramos una función *escuchadora* que se ejecuta cuando sucede un evento. También se la suele llamar función de *callback* o sólo *callback*.
+Vamos a ver cómo traducimos lo anterior a JavaScript. En primer lugar, lo llamamos escuchar eventos porque en JavaScript decimos que "si sucede un evento sobre este elemento, ejecuta esta función". Técnicamente, registramos una función *escuchadora* que se ejecuta cuando sucede un evento. También se la suele llamar *función de callback* o sólo *callback*.
 
 Vamos a ver el ejemplo de mostrar una alerta pulsando un botón.
 
@@ -199,7 +199,7 @@ En la función declaramos el parámetro `event` que sabemos que el navegador nos
 
 EJERCICIO 5
 
-Crear una página HTML con formulario con un select que tiens un listado de colores. Al cambiar el contenido del select, aparece una ventana de alerta donde aparece el texto 'Me gusta el <color>' con el color seleccionado. Podemos acceder al índice de la opción seleccionada de un select mediante la propiedad `selectedIndex` y al listado de opciones (array) podemos acceder mediante la propiedad `options`.
+Crear una página HTML con formulario con un select que tiene un listado de colores. Al cambiar el contenido del select, aparece una ventana de alerta donde aparece el texto 'Me gusta el <color>' con el color seleccionado. Podemos acceder al índice de la opción seleccionada de un select mediante la propiedad `selectedIndex` y al listado de opciones (array) podemos acceder mediante la propiedad `options`.
 
 * * *
 
