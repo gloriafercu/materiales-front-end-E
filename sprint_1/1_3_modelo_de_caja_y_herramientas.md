@@ -1,4 +1,18 @@
-# Modelo de cala y herramientas
+
+# Modelo de caja y herramientas
+<!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Introducción](#introduccin)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
+- [Modelo de caja](#modelo-de-caja)
+- [DevTools](#devtools)
+- [BONUS: Colores](#bonus-colores)
+- [BONUS: Background](#bonus-background)
+- [BONUS: Usando fuentes de Google Fonts](#bonus-usando-fuentes-de-google-fonts)
+- [BONUS: Paquetes de Atom que nos hacen la vida más fácil](#bonus-paquetes-de-atom-que-nos-hacen-la-vida-ms-fcil)
+- [Recursos externos](#recursos-externos)
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -17,14 +31,27 @@ El navegador Google Chrome nos ofrece una serie de herramientas llamadas Chrome 
 2. Para entender cómo se aplican las imágenes de fondo
 3. Para entender cómo se aplican los ajustes que realicemos a través del las Dev Tools
 
-
-## ¿En qué casos se utiliza?
+### ¿En qué casos se utiliza?
 
 * Cuando tengamos que darle un aspecto determinado al contenido, es decir, siempre :)
 * Cuando tengamos un problema en nuestra página para detectar dónde está el error.
-## Visualización (display)
 
-La propiedad CSS `display`, se encarga de definir cómo se va a visualizar un elemento HTML, como va a colocarse en la página y cómo se colocarán el resto de elementos respecto a este. Según el valor que tenga asignado display, un elemento puede ocupar el ancho entero de su contenedor, ocupar solo el espacio que necesite para mostrar su contenido, mostrarse como si fuese una casilla de una tabla o directamente ocultarse.
+## Modelo de caja
+En HTML cada elemento se representa visualmente como una caja, lo podemos ver fácilmente añadiendo un borde a un elemento html y viendo cómo lo pinta el navegador, por ejemplo:  
+
+```html
+<h1>Encabezado 1</h1>
+```  
+
+![Caja básica](assets/images/1-3/caja-basica.png)
+
+El modelo de caja es una especificación que define las características específicas de esa caja y como infieren en el resto de elementos de la página; es el que le dice al navegador cómo debe pintar cada caja (elemento).
+
+Antes de entrar en profundidad con los modelos de caja tenemos que ver las formas básicas de visualización de los elementos HTML:
+
+### Visualización (display)
+
+La propiedad CSS `display`, se encarga de definir cómo se va a visualizar un elemento HTML, cómo va a colocarse en la página y cómo se colocarán el resto de elementos respecto a este. Según el valor que tenga asignado display, un elemento puede ocupar el ancho entero de su contenedor, ocupar solo el espacio que necesite para mostrar su contenido, mostrarse como si fuese una casilla de una tabla o directamente ocultarse.
 
 Los navegadores web aplican por defecto un valor `display` a todos los elementos HTML de nuestra web. Hay muchos valores distintos para `display` pero, por el momento, nosotros solo veremos cuatro:
 
@@ -33,7 +60,7 @@ Los navegadores web aplican por defecto un valor `display` a todos los elementos
 * inline-block
 * none
 
-### Block
+#### Block
 
 Los elementos en bloque se muestran ocupando el ancho completo de su contenedor, en otras palabras, si tenemos un elemento en bloque dentro de una etiqueta `aside`, este ocupará el ancho completo del `aside`, si por lo contrario el elemento está directamente dentro del `body`, este ocupará el ancho del `body` y así siempre. Los elementos en bloque siempre empiezan en una nueva línea y nunca van a tener más elementos a su misma altura dentro del mismo contenedor, estarán más arriba o más abajo.
 
@@ -41,13 +68,13 @@ Como hemos comentado antes, los navegadores asignan automáticamente un modo de 
 
 [Elementos en bloque en Codepen](https://codepen.io/adalab/pen/WXQgrq)
 
-Este codepen representa cómo funcionan los elementos en bloque. En el resultado se ha puesto un fondo azul para que se vea el ancho total de cada elemento. Como se puede ver, en el caso del enlace, este ocupa el ancho de su contenido (del texto) mientras que los párrafos ocupan el ancho total del contenedor. El texto de los párrafos cabría perfectamente uno al lado del otro pero al ser bloques y ocupar ambos todo el ancho del contenedor, se muestran cada uno en una línea.
+Este Codepen representa cómo funcionan los elementos en bloque. En el resultado se ha puesto un fondo azul para que se vea el ancho total de cada elemento. Como se puede ver, en el caso del enlace, este ocupa el ancho de su contenido (del texto) mientras que los párrafos ocupan el ancho total del contenedor. El texto de los párrafos cabría perfectamente uno al lado del otro pero al ser bloques y ocupar ambos todo el ancho del contenedor, se muestran cada uno en una línea.
 
 Usando CSS podemos hacer que un elemento que no se muestra en bloque cambie y se muestre de esta manera. Para ello aplicaremos `display: block` en el elemento. De esta forma, si queremos hacer que una clase imaginaria `.block` se muestre en bloque, utilizaremos el siguiente código:
 
 ```css
 .block {
-    display: block;
+  display: block;
 }
 ```
 
@@ -55,9 +82,10 @@ A continuación se muestra la lista completa de elementos HTML que, por defecto,
 
 `<address>`, `<article>`, `<aside>`, `<blockquote>`, `<canvas>`, `<dd>`, `<div>`, `<dl>`, `<dt>`, `<fieldset>`, `<figcaption>`, `<figure>`, `<footer>`, `<form>`, `<h1>-<h6>`, `<header>`, `<hr>`, `<li>`, `<main>`, `<nav>`, `<noscript>`, `<ol>`, `<output>`, `<p>`, `<pre>`, `<section>`, `<table>`, `<tfoot>`, `<ul>` y `<video>`.
 
-**Nota:** Como es difícil memorizar la lista completa de elementos que se muestran en bloque, podemos hacernos la siguiente pregunta para saber si un elemento se mostrará en bloque o no: _"¿Tendría sentido meter este elemento dentro de un párrafo?"_. Si la respuesta es "no", es muy probable que el elemento sea un bloque; si por lo contrario, la respuesta es sí, probablemente sea un elemento en línea. Por ejemplo, no tendría sentido meter una lista, un `aside` o un `div` dentro de un párrafo y por eso los navegadores muestran estos como bloques.
+> **Nota:**  
+> Como es difícil memorizar la lista completa de elementos que se muestran en bloque, podemos hacernos la siguiente pregunta para saber si un elemento se mostrará en bloque o no: _"¿Tendría sentido meter este elemento dentro de un párrafo?"_. Si la respuesta es "no", es muy probable que el elemento sea un bloque; si por lo contrario, la respuesta es sí, probablemente sea un elemento en línea. Por ejemplo, no tendría sentido meter una lista, un `aside` o un `div` dentro de un párrafo y por eso los navegadores muestran estos como bloques.
 
-### Inline
+#### Inline
 
 Los elementos en línea o _inline_ son aquellos que ocupan lo que ocupa su contenido. En estos, el tamaño será exactamente el tamaño de su contenido. Por ejemplo, si tenemos un enlace con el texto "púlsame", el ancho de ese enlace será el propio ancho del texto.
 
@@ -67,7 +95,8 @@ Debido a que los elementos en línea solo ocupan el ancho de su contenido, estos
 
 Al ocupar solo el ancho de su contenido, los elementos en línea permiten colocar un elemento al lado del otro siempre y cuando ambos quepan en la misma fila, como sucede con los elementos en línea. Aquí también se respetarán los espacios entre los elementos en línea como si se tratasen de palabras normales y corrientes.
 
-**Nota:** Las imágenes son un tipo especial de elemento en línea que por sus características actúa como una mezcla de elemento en línea y elemento en bloque, ya que pueden tener márgenes y padding verticales y se les pueden asignar un ancho y un alto.
+> **Nota:**  
+> Las imágenes son un tipo especial de elemento en línea que por sus características actúa como una mezcla de elemento en línea y elemento en bloque, ya que pueden tener márgenes y padding verticales y se les pueden asignar un ancho y un alto.
 
 Como norma general, los elementos `inline` no deberían contener otros elementos de bloque.
 
@@ -77,7 +106,7 @@ Usando CSS podemos cambiar la visualización de un elemento para hacer que se mu
 
 ```css
 .inline {
-    display: inline;
+  display: inline;
 }
 ```
 
@@ -85,9 +114,10 @@ A continuación se muestra la lista completa de elementos HTML que, por defecto,
 
 `<a>`, `<b>`, `<big>`, `<i>`, `<small>`, `<tt>`, `<abbr>`, `<acronym>`, `<cite>`, `<code>`, `<dfn>`, `<em>`, `<kbd>`, `<strong>`, `<samp>`, `<time>`, `<var>`, `<bdo>`, `<br>`, `<img>`, `<map>`, `<object>`, `<q>`, `<script>`, `<span>`, `<sub>`, `<sup>`, `<button>`, `<input>`, `<label>`, `<select>` y `<textarea>`
 
-**Nota:** Aquí podemos usar la misma pregunta que comentamos en la sección de elementos en bloque para deducir si un elemento está en línea: _"¿Tendría sentido meter este elemento dentro de un párrafo?"_. Si la respuesta es "sí", es muy probable que sea un elemento en línea.
+> **Nota:**  
+> Aquí podemos usar la misma pregunta que comentamos en la sección de elementos en bloque para deducir si un elemento está en línea: _"¿Tendría sentido meter este elemento dentro de un párrafo?"_. Si la respuesta es "sí", es muy probable que sea un elemento en línea.
 
-### inline-block
+#### inline-block
 
 En este caso y como su nombre indica, el comportamiento de los elementos `inline-block` es una mezcla entre el comportamiento de los elementos en línea y los elementos en bloque.
 
@@ -97,7 +127,7 @@ Los elementos `inline-block` ocupan por defecto el ancho de su contenido y se co
 
 Para hacer que un elemento se comporte como `inline-block`, utilizaremos `display: inline-block;`, como hemos visto en los ejemplos con `inline` y `block`.
 
-### Elementos ocultos
+#### Elementos ocultos
 
 A veces queremos que un elemento esté oculto, por ejemplo, el típico mensaje de aviso de cookies que aparece cada vez que entramos en una página. Con JavaScript, haremos que este mensaje se muestre o se oculte dependiendo si hemos visitado antes la página o no, pero desde JavaScript lo que haremos será añadir o quitar una clase CSS, los estilos los gestionaremos siempre desde el CSS.
 
@@ -133,10 +163,8 @@ EJERCICIO 3
 Entre dos párrafos añadir una imagen de 200x200 y explicar cómo se distribuye el contenido.
 * * *
 
-
-## Modelo de caja: margen, borde, padding y ancho/alto
-
-En HTML cada elemento se representa visualmente como una caja, el modelo de caja es una especificación que define las características específicas de esa caja y como infieren en el resto de elementos de la página. Básicamente el modelo de caja es el que le dice al navegador cómo debe pintar cada caja (elemento).
+### Dimensiones: margen, borde, padding y ancho/alto
+Una vez vistos los modos principales de visualización podemos entrar al modelo de caja. Recordemos que el modelo de caja es el que le dice al navegador cómo debe pintar cada caja.
 
 Cada elemento tiene una *altura* (height) y *anchura* (width). Además, puede tener otros atributos relacionados que influyen en su tamaño y su posición, que son el padding o relleno, los márgenes y los bordes:
 - el *borde* de un elemento es una línea que puede tener distinto grosor y que encuadra el contenido del elemento
@@ -159,7 +187,7 @@ En `border-box` tanto el borde como padding están incluidos en el ancho/alto de
 Mira y entiende este [ejemplo de modelo de caja en Codepen](https://codepen.io/adalab/pen/qoJNyN).
 
 * * *
-EJERCICIO 1:
+EJERCICIO 4:
 
 Hacer un `div` de 100x100px usando las propiedades `width` y `height`, incluir dentro una imagen de 100x100px y probar:
 - Añadir un padding de 10px
@@ -167,12 +195,32 @@ Hacer un `div` de 100x100px usando las propiedades `width` y `height`, incluir d
 - Cambiar el modelo de caja a `border-box` y explica qué ha pasado
 * * *
 
-## Modelo de caja: overflow
-Ahora que ya entendemos un poco cómo funcionan los contenedores en html ¿qué pasa cuando el contenido no cabe en nuestro contenedor?
+### Overflow
+Por defecto, nuestros contenedores tomarán el tamaño del contenido pero desde el momento en que definimos un tamaño para el contenedor puede pasar que el contenido no quepa ¿Y entonces, qué?
 
-Por defecto, nuestros contenedores tomarán el tamaño del contenido (siempre que )
+Pueden pasar dos cosas, que el contenido se pueda adaptar, como pasa con el texto o que el contenido simplemente se salga de nuestro contenedor (tb puede pasar con el texto):
 
-## Modelo de caja: Background
+![Overflow básico](assets/images/1-3/overflow-basico.png)
+
+[Mira este ejemplo en Codepen](https://codepen.io/adalab/pen/WzLBwq)
+
+Podemos controlar cómo se comporta un contenedor en los casos en que el contenido se salga, tenemos 3 opciones:
+1. No hacer nada y lidiar con las consecuencias
+2. Ocultar todo lo que se salga
+3. Incluir scroll en el contenedor
+
+Podéis leer sobre la propiedad _overflow_ en la MDN:
+* [overflow](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
+* [overflow-y](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-y)
+
+* * *  
+EJERCICIO 5:
+
+Con estos enlaces, ¿sabrías resolver los casos de [este Codepen](https://codepen.io/adalab/pen/KobLGM)?
+
+* * *
+> **Nota:**  
+> Recordad que para que el overflow se active, el contenedor tiene que tener definidas dimensiones (o ser un elemento de bloque y que el contenido sobrepase el ancho del contenedor)
 
 ## DevTools
 Desde que aparecieron las Devtools en todos los navegadores decentes, la vida del frontend es mucho más tranquila. Estas herramientas nos permiten saber qué está pasando en un módulo concreto (medidas, posicionamiento, CSS aplicados) o qué está cargando nuestra web (hojas de estilos, imágenes, vídeos/audios, JavaScript).
@@ -211,7 +259,7 @@ Por ejemplo, podemos ver información del modelo de caja:
 Podemos colocarlo arriba, abajo, a la derecha o sacarlo a una nueva ventana.
 
 * * *
-EJERCICIO 2
+EJERCICIO 6
 
 Entrar en [Wikipedia.org](Wikipedia.org) y:
 * Cambiar el color de los enlaces a naranja
@@ -235,7 +283,7 @@ Podemos seleccionar qué tipo de archivos queremos que se muestren y ver la dire
 Otro recurso muy interesante que nos ofrece Network es que nos permite ver cuántos segundos tarda en cargarse nuestra página y tomar capturas de pantalla de cada momento para simular que será lo que verá un usuario durante el momento de la carga.
 
 * * *
-EJERCICIO 3
+EJERCICIO 7
 
 Entrar en [Wikipedia.org](Wikipedia.org) y
 * Averiguar el peso total de la página principal de Wikipedia
@@ -334,6 +382,13 @@ p {
 
 Para más información, consultad [la guía de colores de MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value).
 
+## BONUS: Background
+Una vez entendido que cada elemento se puede ver como una caja, veamos cómo añadir un fondo a dicha "caja":
+
+Gracias a la propiedad _background_ podemos rellenar el fondo de nuestro contenedor con una imagen, con un color, o ambos:
+
+![Ejemplos de background](assets/images/1-3/ejemplos-de-background.png)
+
 ## BONUS: Usando fuentes de Google Fonts
 
 Para utilizar fuentes tipográficas de un sitio externo como Google Fonts, tenemos que seguir 2 sencillos pasos:
@@ -414,9 +469,11 @@ Podéis aprender más en la propia [web de Emmet](https://emmet.io/).
 - [Explicación detallada sobre las DevTools](https://developers.google.com/web/tools/chrome-devtools/?hl=es)
 - [Videos de las herramientas para desarrolladores de Chrome - inglés](http://discover-devtools.codeschool.com/chapters/1?locale=en)
 
-*Nota:* Estos videos están en inglés y no poseen subtítulos pero son muy buenos. Están realizados por el propio equipo de Google que fué el que en su día desarrolló las herramientas que explican en los videos.
+> **Nota:**  
+> Estos videos están en inglés y no poseen subtítulos pero son muy buenos. Están realizados por el propio equipo de Google que fué el que en su día desarrolló las herramientas que explican en los videos.
 
 - [Shortcuts del inspector](https://developers.google.com/web/tools/chrome-devtools/shortcuts?hl=es)
 - [Usando las herramientas de desarrollador](https://es.khanacademy.org/computing/computer-programming/html-css/web-development-tools/a/using-the-browser-developer-tools)
 
-*Nota:* Los dos videos de esta sección del curso de Khan Academy se pueden abrir en Youtube. Si los abrís en Youtube, activar los subtítulos y cambiáis la configuración a Auto-translate, podréis ver el video sin problemas ya que el traductor funciona muy bien.
+> **Nota:**  
+> Los dos videos de esta sección del curso de Khan Academy se pueden abrir en Youtube. Si los abrís en Youtube, activar los subtítulos y cambiáis la configuración a Auto-translate, podréis ver el video sin problemas ya que el traductor funciona muy bien.
