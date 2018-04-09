@@ -349,6 +349,29 @@ Según vayáis creando las funciones, debéis ir probando que funcionan invocán
 
 ***
 
+EJERCICIO 4: Mi lista de tareas
+
+Hemos creado una aplicación para gestionar un listado de tareas: ¡somos gente muy ocupada! Para eso, hemos pedido los datos de tareas a un servidor y nos ha devuelto la información un objeto JSON (u objeto literal) con el listado de tareas y su estado. Nuestra misión es pintar todas las tareas en pantalla, de forma que las tareas ya realizadas aparezcan tachadas. Vamos a partir de este array de datos en nuestro fichero JavaScript:
+
+```js
+var tasks = [
+  {name: 'Recoger setas en el campo', completed: true},
+  {name: 'Comprar pilas', completed: true},
+  {name: 'Poner una lavadora de blancos', completed: true},
+  {name: 'Aprender cómo funcionan los objetos de JavaScript', completed: false}
+];
+```
+
+a) **Vamos a por una tarea.** Primero vamos a pintar una tarea, solo una, en una lista. A continuación vamos a modificarlo para que, dado que es una tarea completada, el texto debe aparecer tachado.
+
+b) **Listado de tareas.** ¡Seguimos con nuestras tareas! Ahora vamos a pintar en pantalla todas la tareas que tenemos en el listado, cada una de las tareas completadas  debe aparecer tachada.
+
+c) **Vamos a darle dinamismo.** Ahora viene lo bueno: vamos a añadir la lógica necesaria para completar tareas. Para ello vamos a añadir un `input` de tipo `checkbox` al final de cada tarea que nos falte por completar. El checkbox de las tareas completadas debe aparecer marcado. Además, cuando el usuario marque la tarea como completada marcando el checkbox, deben suceder varias cosas:
+- la tarea debe mostrarse como completada (tachada)
+- debemos modificar su estado (propiedad `completed`) en el array `tasks`
+
+***
+
 ### Trabajar con varios elementos del DOM
 
 Como hemos visto en sesiones anteriores, para seleccionar un elemento del DOM utilizaremos `querySelector`, pero ¿y si queremos modificar más de uno?. Bien en ese caso utilizaremos `querySelectorAll`, que nos permitirá guardar en una variable una lista de elementos. Esta lista funciona de manera similar a un array y podemos hacer lo siguiente con ella:
