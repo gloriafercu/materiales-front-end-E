@@ -256,7 +256,7 @@ Dado que nos permite controlar qué está pasando con una web, podemos ver los r
 Por otro lado nos permite investigar qué cambios queremos hacer sin guarrear nuestro CSS o HTML y corregir de forma más rápida y sencilla los errores de nuestro código.
 
 Por ejemplo, podemos ver información del modelo de caja:
-![HTML y Moodelo de caja en las DevTools](assets/html-inspector-modelo-de-caja.png)
+![HTML y Moodelo de caja en las DevTools](assets/images/1-3/html-inspector-modelo-de-caja.png)
 
 Podemos colocarlo arriba, abajo, a la derecha o sacarlo a una nueva ventana.
 
