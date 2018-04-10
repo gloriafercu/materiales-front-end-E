@@ -1,7 +1,7 @@
 
 # Modelo de caja y herramientas
-<!-- TOC depthFrom:2 depthTo:2 withLinks:1 updateOnSave:1 orderedList:0 -->
 
+<!-- TOC START min:2 max:2 link:true update:true -->
 - [Introducción](#introduccin)
 - [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
 - [Modelo de caja](#modelo-de-caja)
@@ -12,7 +12,9 @@
 - [BONUS: Paquetes de Atom que nos hacen la vida más fácil](#bonus-paquetes-de-atom-que-nos-hacen-la-vida-ms-fcil)
 - [Recursos externos](#recursos-externos)
 
-<!-- /TOC -->
+<!-- TOC END -->
+
+
 
 ## Introducción
 
@@ -150,15 +152,15 @@ Por último, aquí tenemos un Codepen con la recopilación de los distintos tipo
 [Elementos inline, inline-block y block en Codepen](https://codepen.io/adalab/pen/QOjVye)
 
 * * *
-EJERCICIO 1
+EJERCICIO 1:
 
 Usar la etiqueta `<mark>` dentro de varios párrafos y explicar para qué sirve y cómo funciona.
 * * *
-EJERCICIO 2
+EJERCICIO 2:
 
 Dentro de un párrafo de texto incluir una imagen de 100x100 y explicar cómo se distribuye el contenido.
 * * *
-EJERCICIO 3
+EJERCICIO 3:
 
 Entre dos párrafos añadir una imagen de 200x200 y explicar cómo se distribuye el contenido.
 * * *
@@ -175,11 +177,11 @@ Si pensamos en el conjunto global, una página sería como un conjunto de cajas 
 
 Puedes leer una [explicación más completa sobre el modelo de caja en la documentación de la MDN](https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Modelo_cajas).
 
-***
+* * *
 EJEMPLO:
 
 Si tengo una caja de 100x100px, con un borde de 2px y con un padding de 16px, tendría una caja de 2+16+100+16+2: 136x136px.
-***
+* * *
 
 Con la propiedad `box-sizing` podemos cambiar el modelo de caja para un elemento (o para todos). Y podríamos asignarle `border-box`, que es el otro modelo existente.
 En `border-box` tanto el borde como padding están incluidos en el ancho/alto del elemento, de manera que en el caso anterior nuestra caja tendría 100x100px pero el espacio para el contenido de nuestra caja no sería de 100x100 sino de 100-(2+2+16+16): 64x64px.
@@ -259,7 +261,7 @@ Por ejemplo, podemos ver información del modelo de caja:
 Podemos colocarlo arriba, abajo, a la derecha o sacarlo a una nueva ventana.
 
 * * *
-EJERCICIO 6
+EJERCICIO 6:
 
 Entrar en [Wikipedia.org](Wikipedia.org) y:
 * Cambiar el color de los enlaces a naranja
@@ -273,6 +275,34 @@ Entrar en [Wikipedia.org](Wikipedia.org) y:
     * ¿Qué hay de raro con esa separación?
 * * *
 
+#### Cambiando css con el Inspector: el atributo style
+Con el inspector no solo podemos consultar información sino cambiarla para hacer pruebas rápidas, en este ejemplo hemos aumentado el padding de la "caja" con el logo de **Atom** de `2em 1em` a `4em 1m`:
+![Ejemplo de edición desde el inspector](assets/images/1-3/edicion-con-el-inspector.png)
+
+Esta edición rápida es posible gracias al atributo `style=""` que es otra forma de aplicar estilos y que se puede añadir a cualquier etiqueta html.
+
+> **Nota:**  
+> En principio no se deben aplicar estilos usando este atributo, en su lugar usaremos selectores css desde la hoja de estilos correspondiente.
+
+Es una forma de aplicar estilos que ha quedado para usar principalmente desde programación (ya lo veremos más adelante) pero desde el inspector nos permite hacer cambios rápidos.
+
+Usando este atributo los estilos se escriben en línea, seguidos y separados por `;`:
+```html
+<h1 style="color:black;font-size:3.2em;">Encabezado 1</h1>
+```
+
+* * *
+EJERCICIO 7:
+
+¿Sabriamos ir a la web https://duckduckgo.com, buscar el logo con el id "logo_homepage_link" y aplicarle estos estilos desde nuestro inspector?
+```
+background-color: black;
+border-radius: 10px;
+width: 250px;
+```
+* * *
+
+
 ### Devtools: Network
 Sirve para ver qué recursos carga nuestra página y ver si se ha producido algún error cargando esos recursos. Network muestra tanto las imágenes como otros recursos que se cargan (CSS, JavaScript, fuentes, etc.)
 
@@ -283,7 +313,8 @@ Podemos seleccionar qué tipo de archivos queremos que se muestren y ver la dire
 Otro recurso muy interesante que nos ofrece Network es que nos permite ver cuántos segundos tarda en cargarse nuestra página y tomar capturas de pantalla de cada momento para simular que será lo que verá un usuario durante el momento de la carga.
 
 * * *
-EJERCICIO 7
+
+EJERCICIO 8:
 
 Entrar en [Wikipedia.org](Wikipedia.org) y
 * Averiguar el peso total de la página principal de Wikipedia
@@ -300,7 +331,7 @@ Para empezar, vamos a ver los distintos formatos que podemos usar para indicar c
 #### Colores con palabras clave
 
 La primera forma de indicar un color es mediante la palabra clave que indica el nombre del color. Hay un montón de palabras clave para colores que podemos usar que podéis ver en [la tabla de este artículo de MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords).
-***
+* * *
 EJEMPLO:
 
 ```css
@@ -308,13 +339,13 @@ p {
   color: fuchsia;
 }
 ```
-***
+* * *
 
 #### Colores en hexadecimal
 
 De forma equivalente a las palabras clave, podemos expresar un color con formato hexadecimal. En este formato declaramos un color con una almohadilla `#` y sus 3 componentes RGB - R (rojo), G (verde), B (azul). Cada uno de los componentes se representa con 2 dígitos en hexadecimal, es decir, cada dígito puede tener 16 valores, entre 0 - 9 y A - F. Por ejemplo, el color fucsia se compone de una componente máxima de rojo (ff), nada de verde (00) y máxima de azul (ff).
 
-***
+* * *
 EJEMPLO:
 
 ```css
@@ -322,11 +353,11 @@ p {
   color: #ff00ff;
 }
 ```
-***
+* * *
 
 Suele ser habitual expresar algunos colores comunes de forma simplificada. Si los dígitos de cada componente son iguales (por ejemplo, `ff`) puede escribirse el color de una forma simplificada escribiendo sólo una vez el dígito repetido. Por ejemplo, el fucsia puede simplificarse porque todos los componentes tienen el dígito repetido.
 
-***
+* * *
 EJEMPLO:
 
 ```css
@@ -334,13 +365,13 @@ p {
   color: #f0f;
 }
 ```
-***
+* * *
 
 #### rgb y rgba
 
 Como hemos visto en el caso anterior, los colores podemos expresarlos con sus componentes RGB (Red, Green, Blue). En CSS existe la posibilidad de, en lugar de usar 2 dígitos hexadecimales, expresar el color usando el valor decimal (número normal) de cada componente RGB, que tendrá un valor entre 0 y 255 (los mismos valores que podíamos indicar con 2 dígitos hexadecimales).
 
-***
+* * *
 EJEMPLO:
 
 ```css
@@ -348,11 +379,11 @@ p {
   color: rgb(255, 0, 255);
 }
 ```
-***
+* * *
 
 Existe además la posibilidad de indicar un nivel de opacidad al color con el formato RGBA que añade el canal alpha o transparencia. Este último componente tiene valores decimales entre 0 (totalmente transparente) y 1 (totalmente opaco).
 
-***
+* * *
 EJEMPLO:
 
 ```css
@@ -360,13 +391,13 @@ p {
   color: rgba(255, 0, 255, 0.7);
 }
 ```
-***
+* * *
 
 #### hsl y hsla
 
 Igual que el RGB nos permite expresar colores a partir de sus componentes de color rojo/verde/azul, existe otro sistema, HSL, que nos permite expresarlos a través de H (hue - matiz), S (saturation - saturación), L (lightness - luminosidad). El matiz se expresa con un valor numérico y tanto saturación como luminosidad con un valor en %. En este caso, también existe la posibilidad de añadir un canal alpha para indicar transparencia.
 
-***
+* * *
 EJEMPLO:
 
 ```css
@@ -378,7 +409,7 @@ p {
   color: hsl(300, 100%, 50%, 0.7)
 }
 ```
-***
+* * *
 
 Para más información, consultad [la guía de colores de MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value).
 
@@ -388,6 +419,80 @@ Una vez entendido que cada elemento se puede ver como una caja, veamos cómo añ
 Gracias a la propiedad _background_ podemos rellenar el fondo de nuestro contenedor con una imagen, con un color, o ambos:
 
 ![Ejemplos de background](assets/images/1-3/ejemplos-de-background.png)
+
+
+La propiedad background se construye con estos posibles valores:
+- url de la imagen
+- posición de la imagen dentro del contenedor (horizontal y vertical)
+- modo de repetición de la imagen
+- color de fondo
+
+```css
+  .box {
+    background: url('url-de-la-imagen') left top no-repeat #ffcc00;
+  }
+```
+
+> **Nota:**  
+> El orden no tiene que ser necesariamente ese, pero os proponemos usarlo.
+
+Realmente, la propiedad _background_ es una versión acortada de estas propiedades:
+* **background-image:**: [Ver detalle en la MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
+* **background-position:** [Ver detalle en la MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position)
+* **background-repeat:** [Ver detalle en la MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat)
+* **background-color:** [Ver detalle en la MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-color)
+
+* * *
+EJERCICIO 9:  
+
+¿Sabrias replicar los ejemplos de fondo usando [este Codepen](codepen.io/adalab/pen/JLwQpz)?
+* * *
+
+### Cuando usar las propiedades de background o la versión acortada
+Usar estas dos propiedades produce el mismo resultado pero no son lo mismo:
+```css
+.box {
+	background-color: green;
+}
+.box {
+	background: green;
+}
+```
+Mientras que en el primer caso estamos diciendo que el color de fondo sea `green`, en el segundo estamos diciendo eso y que el resto de valores pasen a su valor por defecto.
+* * *
+EJEMPLO:  
+
+¿sabrías adelantar el resultado de aplicar esta clase?:
+```css
+.box {
+	background-image: url('https://fillmurray.com/150/1500');
+	background: red;
+}
+```
+- [ ] Se verá a Bill Murray de fondo
+- [ ] Se verá a Bill Murray de fondo pero lo que no rellene la imagen será de color rojo
+- [ ] Solo se verá un color rojo de fondo
+- [ ] Otra
+
+* * *
+Cuando usamos un acortador estamos definiendo TODAS las opciones, aunque no las usemos, por eso siempre deberíamos usar las propiedades que necesitemos, y solo usar los acortadores cuando realmente estemos usando la mayoria de las propiedades que acortan :)
+
+Si solo queremos cambiar el color de fondo deberíamos usar
+`background-color`.
+Si por el contrario queremos poner una imagen, en una posicion y con una repeticion, deberíamos usar el acortador `background` ya que realmente se escribe menos:
+
+```css
+.box {
+	background-image: url('https://fillmurray.com/150/150');
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+```
+```css
+.box {
+	background: url('https://fillmurray.com/150/150') left top no-repeat;
+}
+```
 
 ## BONUS: Usando fuentes de Google Fonts
 
@@ -408,18 +513,21 @@ p{
 
 En la propia URL añadimos `family=` y escribimos el nombre de la tipografía a usar. Si tiene espacios, los sustituimos por `+`. Si queremos importar varias fuentes, podemos cargar todas en el mismo enlace a Google Fonts poniendo los nombres separados por `|`.
 
-Ejemplo:
+* * *
+EJEMPLO:  
+
 `https://fonts.googleapis.com/css?family=Tangerine|Inconsolata|Droid+Sans`
 
 Para cada tipo de fuente se importa por defecto la fuente normal, pero puede que queramos usar la fuente con otro peso (como negrita) o estilo (como cursiva). Para esto, añadimos al final del nombre de la fuente `:` y separados por `,` los estilos o pesos extra que necesitemos. El peso puede expresarse también como valor numérico que indica el grosor (400 es normal, 700 es negrita).
 
-Ejemplos:
+* * *
+EJEMPLOS:  
 ```
 https://fonts.googleapis.com/css?family=Tangerine:bold
 https://fonts.googleapis.com/css?family=Tangerine:bold,italic
 https://fonts.googleapis.com/css?family=Tangerine:400,700
 ```
-
+* * *
 Para más información consultad la [guía de inicio de Google Fonts](https://developers.google.com/fonts/docs/getting_started).
 
 ## BONUS: Paquetes de Atom que nos hacen la vida más fácil
