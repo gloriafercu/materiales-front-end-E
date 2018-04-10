@@ -1,17 +1,15 @@
 # Programación orientada a objetos
 
-## Contenidos
-
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [¿En qué casos se utiliza?](#¿en-qué-casos-se-utiliza)
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
+- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
 - [Tipos de objetos](#tipos-de-objetos)
-  - [Objetos literales](#objetos-literales)
-  - [Objetos "normales"](#objetos-normales)
-    - [Prototipos](#prototipos)
 - [Contexto `this`](#contexto-this)
 - [Creando un objeto para un componente de la web](#creando-un-objeto-para-un-componente-de-la-web)
 - [Recursos externos](#recursos-externos)
+
+<!-- TOC END -->
 
 ## Introducción
 

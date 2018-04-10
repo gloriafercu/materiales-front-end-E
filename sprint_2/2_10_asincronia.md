@@ -1,13 +1,12 @@
 # Asincronía
 
-## Contenidos
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Qué es la asincronía?](#qu-es-la-asincrona)
+- [¿Por qué es importante entender la asincronía?](#por-qu-es-importante-entender-la-asincrona)
+- [Ejecutar código pasado un cierto intervalo de tiempo](#ejecutar-cdigo-pasado-un-cierto-intervalo-de-tiempo)
 
-- [Introducción](#introducción)
-- [¿Qué es la asincronía?](#¿qué-es-la-asincronía)
-- [¿Por qué es importante entenderla?](#¿por-qué-es-importante-entenderla)
-- [setTimeout](#settimeout)
-- [setInterval](#setinterval)
-
+<!-- TOC END -->
 
 ## Introducción
 

@@ -1,13 +1,17 @@
 # AJAX
 
-## Contenidos
-
-- [Introducción](#introducción)
-- [¿En qué casos se utiliza?](#¿en-qué-casos-se-utiliza)
-- [Promesas](#promesas)
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
+- [Fetch](#fetch)
+- [BONUS: XMLHttpRequest](#bonus-xmlhttprequest)
 - [El formato JSON](#el-formato-json)
 - [Peticiones encadenadas](#peticiones-encadenadas)
 - [Peticiones en paralelo](#peticiones-en-paralelo)
+- [Recursos externos](#recursos-externos)
+
+<!-- TOC END -->
+
 
 ## Introducción
 
@@ -15,16 +19,28 @@ En esta sesión vamos a aprender a utilizar AJAX que es el puente entre el clien
 
 AJAX viene de Asynchronous JavaScript And XML porque cuando se creó servía para hacer peticiones al servidor desde JS y normalmente el formato de datos que nos devolvía era XML (una forma de escribir los datos para poder enviarlos). Pero actualemente no es así y AJAX ahora utiliza otros tipos de datos, desde texto hasta JSON que veremos más adelante. Pero el hecho de que sea *asíncrono* sí es importante. Aunque sea una palabra que asusta, asíncrono simplemente significa trabajar con eventos (como hemos visto en las sesiones anteriores), es decir, que cuando sucede un evento se ejecuta una función. Se llama asíncrono porque nosotros no ejecutamos el código de forma síncrona (una instrucción detrás de otra) sino que *el código se ejecuta cuando sucede un evento*.
 
-El uso de AJAX, por tanto, nos permite acceder a información en un servidor que normalmente se accede mediante un API. API viene de Application Programming Interface, es decir, es una interfaz que está pensada para ser accedida desde una aplicación de código. Dicho de otra forma, el servidor define una forma de pedirle datos que está pensado para que desde una aplicación le pidan datos y él sepa enviárselos. Hay otra interfaces, como una página web, que están pensadas para ser usadas por personas. Pero las APIs están pensadas para ser usadas desde la programación, en nuestro caso desde JavaScript. Durante esta sesión vamos a ver varios ejemplos de APIs.
+El uso de AJAX, por tanto, nos permite acceder a información en un servidor que normalmente se accede mediante un API. Veremos un API como una URL (dirección de Internet) donde podemos consultar o guardar datos de un servicio. Veremos más detalles sobre APIs en la próxima sesión.
 
 
 ## ¿En qué casos se utiliza?
 
-Algunos ejemplos de uso de AJAX en nuestra webapp (aplicación web):
+Algunos ejemplos de uso de AJAX que podemos encontrar en una webapp (aplicación web):
 
 - Cuando realizamos una búsqueda de pisos en Airbnb, hacemos una petición AJAX al servidor, y cuando nos devuelve los datos de los pisos lo pintamos en el HTML
 - Cuando en nuestra app de tareas marcamos una tearea como terminada, se envía una petición al servidor para que almacene en base de datos que esa tarea ha sido completada; así, al abrir la app en nuestro móvil aparecerá como completada
 - En GMail, el listado de nuestros correos se obtiene de una petición al servidor; cuando marcamos un correo como leído se envía la info al servidor; o cuando enviamos un correo, éste se envía a un servidor para que lo lleve a su destinatario
+
+En esta sesión aprenderemos también cómo trabajar en casos de asincronía compleja, como por ejemplo:
+- realizar una acción cuando se hayan completado varios procesos asíncronos que dependen uno del otro (*peticiones encadenadas*)
+- realizar una acción cuando se hayan completado varios procesos asíncronos que se ejecutan en paralelo (*peticiones en paralelo*)
+
+Veamos algunos casos de ejemplo donde es necesario ejecutar *peticiones encadenadas* en una web:
+- cuando hago una petición a un servidor de la cual necesito algunos datos para realizar una segunda petición; por ejemplo, en una web sobre perros, hago una primera petición al servidor sobre las razas disponibles y después hago una segunda petición para pedir información de perros de una raza concreta
+- hago una petición al servidor y cuando llegan los datos, quiero almacenarlos en el navegador y cuando estén guardados, mostrar un mensaje; por ejemplo, pido los datos de un perro al servidor, cuando llegan los almaceno en `localStorage` y cuando estén guardados muestro un mensaje en la página de "Datos guardados correctamente"
+
+Veamos algunos ejemplos en la web de *peticiones que se ejecutan en paralelo*:
+- cuando buscamos en una app de transporte cuál es la ruta más rápida entre dos puntos y necesitamos obtener información de distintas APIs web (taxis, EMT, Uber, Cabify...) y esperar a recibir la respuesta de todas para reflejar cual será la opción más rápida entre ellas
+
 
 ## Fetch
 
@@ -247,6 +263,33 @@ Partiendo el ejemplo anterior en codepen, vamos a modificarlo para que en lugar 
 
 ***
 
+### BONUS: Gestión de errores con promesas
+
+Otra de las ventajas de las promesas es que facilitan la gestión de errores. Este es un tema que no hemos visto hasta ahora con JavaScript, pero vamos a ver cómo se hace con promesas porque facilitan mucho la vida.
+
+```js
+fetch('https://dog.ceo/api/breeds/list')
+  .then(function(breedsResponse){
+    return breedsResponse.json();
+  })
+  .then(function(breedsJSON){
+    var breeds = breedsJSON.message;
+    return fetch('https://dog.ceo/api/breed/' + breeds[0] + '/images/random');
+  })
+  .then(function(imageResponse){
+    return imageResponse.json();
+  })
+  .then(function(imageJSON){
+    var img = document.querySelector('img');
+    img.src = imageJSON.message;
+  })
+  .catch(function(error){
+    console.log('Ha sucedido un error: ' + error);
+  });
+
+```
+
+Cuando usamos promesas podemos encadenar el final de los `then()` un `catch` que también recibe una función, que tiene como parámetro información del error que puede haber sucedido en cualquiera de los `then()` anteriores. En el ejemplo anterior, este error puede deberse a algún error del servidor o que nos devuelva un JSON con una estructura que no esperábamos y lo parseemos mal.
 
 ## Recursos externos
 

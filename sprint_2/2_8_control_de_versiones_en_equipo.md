@@ -1,10 +1,13 @@
 # Control de versiones en equipo
 
-## Contenidos
-- Ramas (branch, merge y checkout)
-- Flujo de trabajo con ramas
-- Pull requests y reviews de equipo en GitHub
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
+- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
+- [Ramas](#ramas)
+- [Recursos externos](#recursos-externos)
 
+<!-- TOC END -->
 
 ## Introducción
 Normalmente vamos a tener una versión de nuestro proyecto sobre la que vamos a querer aplicar modificaciones o ampliar características. Si trabajamos con git como hasta ahora, nuestro proyecto no se podrá tocar hasta que dichas modificaciones terminen. Para solucionar esta situación tenemos las ramas, que nos permiten afrontar desarrollos paralelos como nuevas características, tareas de mantenimiento o integrar un nuevo diseño.

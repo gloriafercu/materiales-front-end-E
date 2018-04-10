@@ -1,12 +1,14 @@
 # Funciones
 
-## Contenidos
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
+- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
+- [Funciones](#funciones-1)
+- [La consola de JavaScript](#la-consola-de-javascript)
+- [Recursos externos](#recursos-externos)
 
-- Funciones
-- Declaración y uso de funciones
-- Parámetros y valores de retorno
-- En valor `undefined`
-- Ámbito de las variables
+<!-- TOC END -->
 
 
 ## Introducción

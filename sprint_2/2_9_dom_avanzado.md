@@ -1,17 +1,13 @@
 # DOM avanzado
 
-## Contenidos
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [Qué hemos visto hasta ahora](#qu-hemos-visto-hasta-ahora)
+- [Nuevas formas de seleccionar, crear, añadir y borrar elementos](#nuevas-formas-de-seleccionar-crear-aadir-y-borrar-elementos)
+- [Resumen de la sesión](#resumen-de-la-sesin)
+- [Recursos externos](#recursos-externos)
 
-* [Introducción](#introducción)
-	- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión?)
-	- [¿En qué casos se utiliza?](#¿En-qué-casos-se-utiliza?)
-* [Qué hemos visto hasta ahora](#qué-hemos-visto-hasta-ahora)
-* [Nuevas formas de seleccionar, crear, añadir y borrar elementos](#nuevas-formas-de-seleccionar,-crear,-añadir-y-borrar-elementos)
-	- [Seleccionar elementos](#seleccionar-elementos)
-	- [Crear elementos](#crear-elementos)
-	- [Añadir elementos al DOM](#añadir-elementos-al-dom)
-	- [Borrar elementos del DOM](#borrar-elementos-del-dom)
-	- [BONUS: Reemplazar](#bonus-reemplazar)
+<!-- TOC END -->
 
 
 ## Introducción

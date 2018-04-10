@@ -1,10 +1,15 @@
 # Estructuras de control
 
-## Contenidos
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
+- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
+- [Booleanos](#booleanos)
+- [Condicionales](#condicionales)
+- [Bucles](#bucles)
+- [Recursos externos](#recursos-externos)
 
-- Tipos de valor booleanos
-- Condicionales
-- Bucles
+<!-- TOC END -->
 
 ## Introducción
 

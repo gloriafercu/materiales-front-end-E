@@ -1,14 +1,13 @@
 # Objetos
 
-## Contenidos
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
+- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
+- [Objetos literales](#objetos-literales)
+- [Recursos externos](#recursos-externos)
 
-- Objetos para almacenar datos estructurados por clave/valor
-- Propiedades
-- Acceso a datos en un objeto
-- Asignación de datos en un objeto
-- Métodos
-- Asignación por referencia
-- Primitivos con sus métodos y propiedades
+<!-- TOC END -->
 
 
 ## Introducción

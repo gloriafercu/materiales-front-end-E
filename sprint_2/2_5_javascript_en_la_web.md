@@ -1,16 +1,13 @@
 # JavaScript en la web
 
-## Contenidos
-
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [¿En qué casos se utiliza lo que vamos a aprender?](#¿en-qué-casos-se-utiliza-lo-que-vamos-a-aprender)
-- [Introducción al DOM](#introducción-al-dom)
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
+- [¿En qué casos se utiliza lo que vamos a aprender?](#en-qu-casos-se-utiliza-lo-que-vamos-a-aprender)
+- [Introducción al DOM](#introduccin-al-dom)
 - [Trabajar con el DOM](#trabajar-con-el-dom)
-  - [Obtener información del contenido de un elemento y modificarlo](#obtener-información-del-contenido-de-un-elemento-y-modificarlo)
-  - [Obtener información sobre las clases y añadir o quitar clases](#obtener-información-sobre-las-clases-y-añadir-o-quitar-clases)
-  - [Obtener información sobre los atributos de un elemento y modificarlos](#obtener-información-sobre-los-atributos-de-un-elemento-y-modificarlos)
-  - [Trabajar con varios elementos](#trabajar-con-varios-elementos)
+
+<!-- TOC END -->
 
 
 ## Introducción

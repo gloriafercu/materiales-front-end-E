@@ -1,17 +1,17 @@
 # Introducción a la programación
 
-## Contenidos
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Antes de comenzar](#antes-de-comenzar)
+- [¿Qué es programar?](#qu-es-programar)
+- [¿Qué es JavaScript?](#qu-es-javascript)
+- [Nuestro primer código en JavaScript](#nuestro-primer-cdigo-en-javascript)
+- [Tipos de datos](#tipos-de-datos)
+- [El código como una caja negra](#el-cdigo-como-una-caja-negra)
+- [Variables](#variables)
+- [Prompt](#prompt)
+- [Resumen](#resumen)
 
-- Antes de comenzar
-- ¿Qué es programar?
-- ¿Qué es JavaScript?
-- Nuestro primer código en JavaScript
-- Ejercicios con alert
-- Tipos de datos
-- El código como una caja negra
-- Variables
-- Prompt
-- Resumen
+<!-- TOC END -->
 
 
 ## Antes de comenzar

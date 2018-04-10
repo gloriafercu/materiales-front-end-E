@@ -1,20 +1,15 @@
 # Arrays
 
-## Contenidos
-
-- [Introducción](#introducción)
-- [¿Qué es un Array?](#¿qué-es-un-array)
-- [¿Para qué sirven?](#¿para-qué-sirven)
-- [¿En qué casos se utilizan?](#¿en-qué-casos-se-utilizan)
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Qué es un array?](#qu-es-un-array)
+- [¿Para qué sirven?](#para-qu-sirven)
+- [¿En qué casos se utilizan?](#en-qu-casos-se-utilizan)
 - [Trabajando con arrays](#trabajando-con-arrays)
-  - [Declaración de un array](#declaración-de-un-array)
-  - [Obtener información de un array](#obtener-información-de-un-array)
-  - [Modificar un array](#modificar-un-array)
-  - [Propiedades y métodos de los arrays](#propiedades-y-métodos-de-los-arrays)
-  - [Iterar sobre un array](#iterando-sobre-los-elementos-de-un-array)
-  - [Arrays anidados](#trabajar-con-arrays-anidados)
-  - [Combinando objetos con arrays](#combinando-arrays-con-objetos)
+- [Modificar un array](#modificar-un-array)
 - [Recursos externos adicionales](#recursos-externos-adicionales)
+
+<!-- TOC END -->
 
 ## Introducción
 

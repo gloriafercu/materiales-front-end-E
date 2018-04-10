@@ -1,16 +1,13 @@
 # Métodos funcionales de array
 
-## Contenidos
-
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [¿En qué casos se utiliza?](#¿en-qué-casos-se-utiliza)
-- [Métodos funcionales de array](#métodos-funcionales-de-array)
-  - [`map`](#map)
-  - [`filter`](#filter)
-  - [`reduce`](#reduce)
-  - [BONUS: `sort`](#bonus-sort)
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
+- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
+- [Métodos funcionales de array](#mtodos-funcionales-de-array-1)
 - [Recursos externos](#recursos-externos)
+
+<!-- TOC END -->
 
 ## Introducción
 

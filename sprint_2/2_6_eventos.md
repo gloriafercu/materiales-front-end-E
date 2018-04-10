@@ -1,11 +1,13 @@
 # Eventos
 
-## Contenidos
-
-- [Introducción](#introducción)
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
 - [Escuchando eventos desde JavaScript](#escuchando-eventos-desde-javascript)
-- [El parámetro event](#el-parámetro-event)
+- [El parámetro event](#el-parmetro-event)
 - [Dejando de escuchar eventos](#dejando-de-escuchar-eventos)
+- [Recursos externos](#recursos-externos)
+
+<!-- TOC END -->
 
 ## Introducción
 
