@@ -1,15 +1,15 @@
 # Publicando nuestra web
 
-## Contenidos
-- Introducción a la terminal de comandos
-- Git
-  - ¿Qué es y para qué sirve?
-  - Comandos básicos
-- GitHub
-  - ¿Qué es y para qué sirve?
-  - Crear una cuenta en GitHub
-  - Crear un repositorio en GitHub
-  - GitHub pages
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [Resumen de la sesión](#resumen-de-la-sesin)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
+- [¿En qué casos se utilizan?](#en-qu-casos-se-utilizan)
+- [Terminal](#terminal)
+- [Git](#git)
+- [Recursos extra](#recursos-extra)
+
+<!-- TOC END -->
 
 
 ## Introducción
@@ -69,11 +69,11 @@ Es importante saber que todos los servicios de GitHub son gratuitos siempre y cu
 ## Terminal
 
 #### Introducción a la Terminal y comandos básicos de GNU/Linux
-
+La terminal o consola es una de nuestras herramientas principales en el desarrollo front.
 - [Curso de introducción a GNU/Linux - ¿Qué es la Terminal? ](https://www.youtube.com/watch?v=5b7j-Keeokc)
 - [Curso de introducción a GNU/Linux - Comandos Básicos](https://www.youtube.com/watch?v=esbup7hKv6E)
 
-* * *
+***
 EJERCICIO 1
 
 Ir a nuestra carpeta de documentos y crear la siguiente estructura de carpetas y archivos (vacíos):
@@ -87,7 +87,7 @@ nombre
 - En el archivo **mis-datos.txt** vamos a escribir el Nombre y la comida favorita.
 - En el archivo **ruta_del-proyecto.txt** pondremos la ruta del nuestro proyecto desde nuestra carpeta de `Documentos`
 - Mover los dos archivos a la carpeta principal, que sería **nombre**
-* * *
+***
 EJERCICIO 2
 
 Desde la terminal, vamos a crear un nuevo proyecto en nuestra carpeta de proyectos que se llame **Rutas relativas**, con las carpetas `images` y `styles`. Y los archivos index.html (en la raíz del proyecto), style.css (en la carpeta styles) y imagen-de-prueba.png (os la proporcionaremos por classroom e irá dentro de la carpeta images).
@@ -98,7 +98,7 @@ Ahora, en index.html se tiene que ver la imagen de dos formas:
 
 ¿Cómo es la ruta de ambas imágenes? ¿Absoluta? ¿Relativa?
 ¿Es diferente en los dos casos? ¿por qué?
-* * *
+***
 
 ## Git
 
@@ -241,7 +241,7 @@ Un ejemplo de un buen commit:
 git commit -m "Fix typo in article title"
 ```
 
-* * *
+***
 EJERCICIO 3
 
 Vamos a crear nuestro primer proyecto con Git, al que llamaremos `testing-git`. Dentro de él, crearemos un archivo HTML con un título en el que ponga "Testing Git" y un `h1` con el mismo texto. Además, crearemos un archivo para los estilos (`main.css`) dónde añadiremos un estilo para que la familia de texto que se use en la web sea `sans-serif`. Organizaremos el proyecto siguiendo la estructura de siempre:
@@ -253,14 +253,14 @@ testing-git
     index.html
 ```
 Una vez creado el proyecto con el HTML y el CSS indicado. Inicializa el repositorio Git en nuestro proyecto y haz el primer commit con el mensaje `Initial commit`
-* * *
+***
 EJERCICIO 4
 
 Modificar el archivo `index.html` para que en el título de la página ponga "My first Git project" y en el texto de la cabecera aparezca una sonrisa `:)`. Añadir los cambios y hacer un commit para guardarlos.
 
 **Nota:** El mensaje del commit deberá explicar de forma clara los cambios que hemos realizado
 
-* * *
+***
 EJERCICIO 5
 
 Vamos a realizar un tercer cambio dónde añadiremos un archivo `README.md` en la raíz de nuestro proyecto. Este archivo se utiliza para poner información acerca de nuestro código y, por defecto, GitHub lo muestra en la página principal de nuestro proyecto. Dentro de ese archivo escribiremos el siguiente texto:
@@ -272,7 +272,7 @@ Dummy project to learn Git basics
 ```
 
 **Nota:** El mensaje del commit deberá explicar de forma clara los cambios que hemos realizado
-* * *
+***
 
 ### GitHub
 
@@ -284,12 +284,12 @@ En el video que mostramos a continuación se hace un pequeño tour alrededor de 
 
 - [5.- Curso Git - Empezando con GitHub (sólo hasta el min 21:34)](https://www.youtube.com/watch?v=Qn186NyDqOk)
 
-* * *
+***
 EJERCICIO 6
 
 Crear una cuenta en GitHub y ponernos una foto de perfil
 
-* * *
+***
 EJERCICIO 7
 
 Vamos a:
@@ -298,7 +298,7 @@ Vamos a:
 1. Hacer _push_ para mandar la info del proyecto al repositorio remoto y, de esta forma, almacenar los datos del proyecto en GitHub. Comprobar tras hacerlo que, al abrir la página del proyecto en GitHub, se muestran los cambios que hemos realizado en nuestro ordenador.
 1. Realizar un cambio en el CSS del proyecto para que el texto de la cara sonriente se muestre centrado vertical y horizontalmente en la página.
 1. Una vez que estemos conforme con nuestro tipo sonriente, haremos un commit para añadir el cambio a nuestro repositorio y otro push, para sincronizar los cambios de nuestro repositorio local con los del remoto y, de esta forma, subir los cambios a GitHub.
-* * *
+***
 
 
 ### GitHub Pages
@@ -307,13 +307,13 @@ Como hemos comentado previamente, GitHub ofrece un servicio llamado [GitHub Page
 
 Un hosting es un servicio de almacenamiento de datos para poder tener tu web en un servidor y que esté disponible en internet y esto es lo que ofrece exactamente GitHub Pages.
 
-* * *
+***
 EJERCICIO 8
 
 Desde la página de nuestro proyecto `testing-git` en GitHub, activar GitHub Pages.
 
 **Pista:** Hay que ir a la pestaña _settings_ del proyecto ;)
-* * *
+***
 
 
 ## Recursos extra
