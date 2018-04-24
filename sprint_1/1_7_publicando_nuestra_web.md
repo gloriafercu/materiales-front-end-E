@@ -335,7 +335,7 @@ Una vez hayamos realizado ese paso, no necesitaremos hacer ningún cambio más.
 
 ### Cómo trabajar con Git
 
-Para trabajar con Git lo haremos usando comandos a través de la Terminal, como comentábamos en la introducción de esta sesión. Para ello tendremos que aprender los comandos básicos:
+Para trabajar con Git lo haremos usando comandos a través de la Terminal, como comentábamos en la introducción de esta sesión. Para ello tendremos que aprender unos comandos básicos.
 
 Una vez instalado Git en nuestro equipo tendremos que activar el control de versiones en nuestro proyecto, esto lo haremos con `git init`. Este comando lo usaremos solo una vez en la carpeta de nuestro proyecto y activa que se controle cada cambio que hacemos a nuestros archivos del proyecto.
 
@@ -345,14 +345,14 @@ En cualquier momento podremos pedir que nos diga en qué estado está el proyect
 
 Normalmente trabajaremos con cambios cortos o tareas pequeñas, y cuando hayamos terminado, querremos indicarle a Git que ya hemos terminado un paquete de cambios, para lo que tenemos dos comandos:
 1. `git add -A` para añadir los archivos que hemos modificado. Una vez añadidos Git sabrá qué cambios hemos hecho.
-2. `git commit -m "Mensaje"` nos permite crear como un paquete de cambios y "guardarlo en nuestro sistema de versiones", nos dejará escribir un mensaje corto para asociarlo a paquete o commit.
+2. `git commit -m "Mensaje"` nos permite crear como un paquete de cambios y "guardarlo en nuestro sistema de versiones", nos dejará escribir un mensaje corto para asociarlo al paquete de cambios o *commit*.
 3. Si queremos ver la lista de commits realizados en un proyecto usaremos `git log`.
 
 En el video que añadimos a continuación se explican los comandos básicos para empezar a trabajar con Git.
 
 - [3.- Curso Git - Nuestro primer proyecto](https://www.youtube.com/watch?v=vH9pkFf1D7M)
 
-**Nota:** En el video pone los mensajes de los commits en español pero nosotros los escribiremos en inglés.
+>**Nota:** En el video pone los mensajes de los commits en español pero nosotros los escribiremos en inglés.
 
 #### Mensaje del commit
 
@@ -411,7 +411,7 @@ Como hemos explicado anteriormente, GitHub es una plataforma de desarrollo colab
 ***
 EJERCICIO 6:
 
-Crear una cuenta en GitHub y ponernos una foto de perfil
+Crea una cuenta en GitHub y ponte una foto de perfil.
 
 ***
 
@@ -421,7 +421,7 @@ Para ello, nos vamos a nuestro perfil y buscamos el botón `+` para crear un nue
 ![Nuevo repositorio](assets/images/1-7/github-repo-1.png)
 
 
-Rellenamos los datos que nos piden: nombre del repositorio, descripción y marcamos que queremos inicializarlo con un **Readme.md**:
+Rellenamos los datos que nos piden: nombre del repositorio, descripción y marcamos que queremos inicializarlo con un `Readme.md`:
 ![Nuevo repositorio](assets/images/1-7/github-repo-2.png)
 
 Una vez creado, nos llevará a la página principal de nuestro repo donde podremos conseguir la url para descargarlo en nuestro equipo. Esta es una descarga especial que llamamos, clonar, que nos hace una copia local del proyecto contactada con la versión remota.
@@ -434,7 +434,7 @@ Ahora, con esta url podemos irnos a nuestra terminal y clonarlo con `git clone`:
 
 Esto nos generará una carpeta con nuestro proyecto. **Recordad que crea la carpeta pero no nos mete dentro** por lo que tendremos que usar el comando `cd` de nuestra terminal para cambiar la ruta actual.
 
-> **nota**:  
+> **Nota**:  
 > Por defecto git nos creará una carpeta con un nombre automático, si queremos un nombre específico para la carpeta de nuestro proyecto podemos declararlo tras la url que nos da GitHub:
 
 ```shell
@@ -496,8 +496,8 @@ Haz clic en el siguiente enlace [https://classroom.github.com/a/uISrxCY8](https:
 1. Clónatelo en tu equipo
 2. Crea un archivo `readme.md`
 3. Dentro, escribe tu nombre precedido de un `#`: `# NOMBRE APELLIDOS`
-4. haz add y commit
-5. Haz un push al repo remoto :)
+4. Haz `add` y `commit`
+5. Haz un `push` al repo remoto :)
 ***
 
 ## Recursos extra
