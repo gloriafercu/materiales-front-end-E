@@ -72,9 +72,9 @@ Es importante saber que todos los servicios de GitHub son gratuitos siempre y cu
 ## Terminal
 
 ### Introducción a la Terminal
-La terminal o consola es una de nuestras herramientas principales en el desarrollo front. Nos permite comunicarnos con el sistema mediante pequeñas instrucciones de texto (las llamamos comandos) sin necesidad de una interfaz gráfica.
+La terminal o consola es una de nuestras herramientas principales en el desarrollo front. Nos permite comunicarnos con el sistema mediante pequeñas instrucciones de texto (las llamamos *comandos*) sin necesidad de una interfaz gráfica.
 
-Nos permite obtener información del sistema, realizar tareas y hasta automatizarlas, y ganar en productividad.
+La terminal nos permite obtener información del sistema, realizar tareas y hasta automatizarlas, y ganar en productividad.
 
 La terminal de nuestro ordenador tiene este aspecto:
 
@@ -82,14 +82,14 @@ La terminal de nuestro ordenador tiene este aspecto:
 
 En esta ventana iremos escribiendo nuestros comandos para interactuar con el ordenador o con aplicaciones que no tengan una interfaz gráfica.
 
-Por defecto la terminal nos mostrará una linea (el prompt) a partir de la cual podremos escribir nuestros comandos.
+Por defecto la terminal nos mostrará una línea (el *prompt*) a partir de la cual podremos escribir nuestros comandos.
 
 Normalmente nuestro prompt tendra este aspecto:  
-**usuario@nombre-de-equipo: ruta por defecto $***
+**usuario@nombre-de-equipo: ruta por defecto $**
 ```shell
 ubuntu@ubuntu: ~$
 ```
-Esto nos dice que el usuario de nuestro equipo es **ubuntu**, que nuestro equipo se llama **ubuntu** y que estamos en la carpeta raíz de nuestro usuario.
+Esto nos dice que el usuario de nuestro equipo es **ubuntu**, que nuestro equipo se llama **ubuntu** y que estamos en la carpeta raíz de nuestro usuario (que se representa con `~`).
 
 
 ### Comandos básicos de GNU/Linux
@@ -99,7 +99,7 @@ Principalmente usaremos la terminal para movernos por el sistema de archivos del
 ```shell
 $ pwd
 ```
-> Muchas veces nos encontraremos los comandos que tenemos que introducir precedidos por el símbolo `$`, pero no hay que escribirlo.  
+> **NOTA**: Muchas veces nos encontraremos los comandos que tenemos que introducir precedidos por el símbolo `$`, pero no hay que escribirlo.  
 
 Devolverá la ruta absoluta de la carpeta en la que estemos, con este aspecto:
 ```shell
@@ -107,7 +107,7 @@ Devolverá la ruta absoluta de la carpeta en la que estemos, con este aspecto:
 ```
 Esto es una ruta absoluta, que se construye a partir de la carpeta raíz de nuestro equipo, representada por el carácter inicial `/`. Nos estaría indicando que nos encontramos en la carpeta `nombre-de-usuario`, que está dentro de `user`, que está en la carpeta raíz de nuestro equipo.
 
-Las rutas pueden ser absolutas, como la que nos devuelve el comando `pwd` o relativas, que usaremos más adelante.
+Las rutas pueden ser *absolutas*, como la que nos devuelve el comando `pwd`, y empiezan por `/`. También pueden ser *relativas*, que usaremos más adelante.
 Las relativas usan los caracteres especiales `..` para referirse a la carpeta madre de nuestra carpeta actual, o `.` (o nada) para referirnos a una carpeta que está dentro de nuestra carpeta actual.
 
 ```shell
@@ -144,7 +144,7 @@ También podemos escribir la ruta absoluta desde la raíz de nuestro equipo `/` 
 ```shell
 $ cd
 ```
-`cd` solo nos devuelve a la carpeta de nuestro usuario (esta el la localización por defecto donde se abrirá nuestra terminal)
+`cd` solo nos devuelve a la carpeta de nuestro usuario (esta es la localización por defecto donde se abrirá nuestra terminal)
 
 ***
 
@@ -179,6 +179,8 @@ Vamos a mover el archivo index.html de nuestra carpeta actual a la carpeta madre
 ```shell
 $ mv index.html ../index.html
 ```
+> **NOTA**: `mv` también sirve para renombrar ficheros o carpetas
+
 ### Abrir nuestra carpeta actual en el explorador de archivos desde la terminal
 A veces nos interesará abrir nuestra carpeta actual en el explorador de archivos y esto se puede hacer fácilmente desde la terminal con el comando:
 ```shell
@@ -205,11 +207,11 @@ nombre
 ***
 EJERCICIO 2:
 
-Desde la terminal, vamos a crear un nuevo proyecto en nuestra carpeta de proyectos que se llame **Rutas relativas**, con las carpetas `images` y `styles`. Y los archivos index.html (en la raíz del proyecto), style.css (en la carpeta styles) y imagen-de-prueba.png (os la proporcionaremos por classroom e irá dentro de la carpeta images).
+Desde la terminal, vamos a crear un nuevo proyecto en nuestra carpeta de proyectos que se llame `rutas-relativas`, con las carpetas `images` y `styles`. Y los archivos `index.html` (en la raíz del proyecto), `style.css` (en la carpeta `styles`) y `imagen-de-prueba.png` (os la proporcionaremos por classroom e irá dentro de la carpeta images).
 
-Ahora, en index.html se tiene que ver la imagen de dos formas:
+Ahora, en `index.html` se tiene que ver la imagen de dos formas:
 1. Con un `<img>`
-2. Como fondo de un div del mismo tamaño que la imagen
+2. Como fondo de un `div` del mismo tamaño que la imagen
 
 ¿Cómo es la ruta de ambas imágenes? ¿Absoluta? ¿Relativa?
 ¿Es diferente en los dos casos? ¿por qué?
