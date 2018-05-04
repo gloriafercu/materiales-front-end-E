@@ -1,4 +1,14 @@
 # Control de versiones
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [Repaso del proceso de creación de un proyecto Git](#repaso-del-proceso-de-creacin-de-un-proyecto-git)
+- [Oh, dios mío! He subido un commit que no quería subir!!](#oh-dios-mo-he-subido-un-commit-que-no-quera-subir)
+- [Issues](#issues)
+- [¿Qué vamos a hacer hoy?](#qu-vamos-a-hacer-hoy)
+- [BONUS: Paquete de Atom para Git](#bonus-paquete-de-atom-para-git)
+
+<!-- TOC END -->
+
 
 ## Introducción
 
@@ -122,11 +132,87 @@ Luego seguimos trabajando con normalidad, añadimos y hacemos commit cuando lo n
 
 Y subimos con `git push` cuando terminemos la tarea que nos toca.
 
+## Oh, dios mío! He subido un commit que no quería subir!!
+¿Qué pasa si hago un cambio, lo añado, hago commit y luego... querría no hacerlo hecho? Pues no pasa nada, para eso trabajamos con un control de versiones.
+
+Esto pasará de vez en cuando, unas veces por inexperiencia, otras por descuido y otras por otras razones, pero no hay miedo porque cada commit queda registrado y podemos volver a consultar uno anterior o revertir el último. Vamos a ver cómo:
+
+Si queremos ver nuestra actividad en el proyecto usaremos `git log` para tener un listado de los commits realizados:  
+
+![Ejemplo de Git log](assets/images/1-8/git-log.png)
+
+En este caso, con el último commit, hemos borrado el archivo `readme.md` y ahora vemos que ha sido un error...
+
+Nos gustaría deshacer el commit `e139ca3e275be608eed457ab08395e6347e804bf`, para ello usaremos `git commit`:
+
+```
+$ git commit e139ca3e275be608eed457ab08395e6347e804bf
+```
+
+![Git revert paso 1](assets/images/1-8/commit-revert.png)
+
+y si aceptamos el commit, ya lo tenemos:
+
+![Git revert paso 1](assets/images/1-8/commit-revert-2.png)
+
+Si ahora hacemos un `git log` podemos ver cómo queda el historial de commits:
+
+![Git revert paso 1](assets/images/1-8/commit-revert-3.png)
+
+
 ## Issues
 Github, como otros servicios de control de versiones tienen un sistema de tickets, los issues. Te permiten crear pequeñas tareas donde solicitas información, avisas de un problema o de alguna mejora.
 
 ## ¿Qué vamos a hacer hoy?
-Hoy vamos a resolver dudas sobre git y hacer pruebas si lo necesitamos :)
+Hoy vamos a repasar la creación de repositorios, gestión de conflictos y algún issue.
+Como otras veces, los haremos por parejas e iremos alternando quién va a los mandos.
+
+***
+EJERCICIO 1: Crear repositorio en GitHub
+
+Hay que crear un repositorio vacío en GitHub:
+- Qué licencia hemos elegido
+- ¿Por qué es importante añadir un README.md?
+
+***
+
+EJERCICIO 2: Clonar repositorio
+
+Clonaremos el repositorio de nuestra compañera y le añadiremos un issue para que nos añada como colaboradora con permisos de escritura.
+
+***
+
+EJERCICIO 3: Eliminar un repositorio
+
+No es tan habitual pero de tanto en tanto querremos hacer limpieza en nuestra cuenta de GitHub. Seremos capaces de borrar el repositorio que acabamos de crear? Sí, no? :)
+
+***
+
+EJERCICIO 4.1: Crear repositorio local conectar con remoto
+
+Ahora vamos a trabajar de una manera menos habitual y un poco más complicada, pero a veces pasa: crearemos un proyecto en nuestro equipo, algo sencillito, podemos elegir entre:
+- Un html básico con un "hola, mundo" centrado en la ventana del navegador
+- Un html básico con una sonrisa centrada en la ventana -> :) o :D
+
+Una vez conseguido vamos a:
+1. inicializar un repositorio local
+2. Hacer algún cambio y un commit.
+
+Y ahora, no sería genial conectarlo con un repositorio remoto y tenerlo siempre accesible? claro que sí.
+
+1. Crearemos un repo vacío SIN añadir licencia ni README.me (¿Por qué?)
+2. Seguiremos las instrucciones para conectarlo
+3. Subiremos los cambios hechos
+4. Añadiremos a nuestra compañera como colaboradora y se clonará el repositorio
+
+***
+
+EJERCICIO 4.2: Solucionar un conflicto
+
+Una vez que tenemos las dos el repositorio clonado en nuestro equipo vamos a modificar index.html a la vez. Cada miembro del equipo hará un cambio, su commit y lo subirá. El conflicto lo resolveréis entre las dos :)
+
+***
+
 
 ## BONUS: Paquete de Atom para Git
 
