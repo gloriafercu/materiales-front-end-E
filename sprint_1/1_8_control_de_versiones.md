@@ -151,7 +151,7 @@ $ git revert e139ca3e275be608eed457ab08395e6347e804bf
 
 ![Git revert paso 1](assets/images/1-8/commit-revert.png)
 
-y si aceptamos el commit, ya lo tenemos:
+y si aceptamos el revert, ya lo tenemos:
 
 ![Git revert paso 1](assets/images/1-8/commit-revert-2.png)
 
