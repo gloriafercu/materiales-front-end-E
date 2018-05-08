@@ -1,5 +1,19 @@
 # Posicionamiento
 
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
+- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
+- [Objetivos de la sesión](#objetivos-de-la-sesin)
+- [Visualización (display)](#visualizacin-display)
+- [Posicionamiento de elementos](#posicionamiento-de-elementos)
+- [Transform](#transform)
+- [Bonus: Devdocs](#bonus-devdocs)
+- [Recursos externos](#recursos-externos)
+
+<!-- TOC END -->
+
+
 ## Introducción
 
 En esta sesión veremos dos recursos fundamentales para modificar la apariencia de nuestra web: visualización (o display) y posicionamiento. Ambos permiten modificar cómo se muestran los elementos de la página ya sea modificando su tamaño, su posición o ambos a la vez.
@@ -23,10 +37,18 @@ Algunos casos concretos son:
 1. Recordar los principales modos de presentación de los elementos HTML: inline, inline-block y block
 1. Conocer los modos de posicionamiento: static, relative, absolute y fixed.
 
-## Presentación (display)
-(añadir resumen de refuerzo)
+## Visualización (display)
+Antes de meternos con el posicionamiento recordemos [los modos de presentación que vimos en la sesión 1.3]((https://github.com/Adalab/materiales-front-end-D/blob/9cf1e11cb1ebe3cddfd36f49ed6150d62dcd706e/sprint_1/1_3_modelo_de_caja_y_herramientas.md#visualizaci%C3%B3n-display)):
+La propiedad CSS `display`, se encarga de definir cómo se va a visualizar un elemento HTML, como va a colocarse en la página y cómo se colocarán el resto de elementos respecto a este. Según el valor que tenga asignado display, un elemento puede ocupar el ancho entero de su contenedor, ocupar solo el espacio que necesite para mostrar su contenido, mostrarse como si fuese una casilla de una tabla o directamente ocultarse.
 
-## Posicionamiento
+Los navegadores web aplican por defecto un valor `display` a todos los elementos HTML de nuestra web. Hay muchos valores distintos para `display` pero, por el momento, nosotros solo veremos cuatro:
+
+* **Block:** Los elementos en bloque se muestran ocupando el ancho completo de su contenedorLos elementos en bloque siempre empiezan en una nueva línea y nunca van a tener más elementos a su misma altura dentro del mismo contenedor, estarán más arriba o más abajo. Se les puede aplicar margin, padding, alto y ancho.
+* **Inline:** Los elementos en línea o inline son aquellos que ocupan lo que ocupa su contenido. En estos, el tamaño será exactamente el tamaño de su contenido y no podremos asignarle un tamaño diferente, ni tendrá efecto un margin vertical.
+* **Inline-block:** Los elementos inline-block ocupan por defecto el ancho de su contenido y se comportan como si se tratase de un elemento en línea, pero permiten tener un ancho, un alto y relleno y márgenes verticales, como sucede con los elementos en bloque.
+* **None**: Ocultar por completo cualquier elemento al que se lo apliquemos, será como si ese elemento no existiese ya que no se mostrará y el resto de elementos de la página lo ignorarán.
+
+## Posicionamiento de elementos
 Aparte de modificar esa distribución, podremos hacer que cambien su comportamiento a la hora de hacer scroll en la página y que modifiquen la posición de otros objetos al modificar la suya propia.
 
 La propiedad `position` de CSS será la que nos permita modificar la forma en la que se distribuyen los objetos a través de una página web.
@@ -39,25 +61,25 @@ La propiedad `position` tiene cuatro valores posibles:
 * `absolute`: Saca al elemento del flujo de la página, es decir, hace que su contenedor y los elementos de antes y después no lo tengan en cuenta a la hora de posicionarse y definir su tamaño y por otro lado posiciona el elemento en función de la posición del body o en su defecto del primer elemento contenedor que tenga una posición diferente a static (posicion por defecto)
 * `fixed`: Saca a un elemento del flujo normal de la página y permite posicionarlo en función de la ventana del navegador. Aparte, este tipo de elementos mantienen su posición cuando hacemos scroll en la página (como si se mantuviesen anclados en un mismo punto), de ahí su nombre fixed (fijo)
 
-- Video explicatorio de [posicionamiento web](https://www.youtube.com/watch?v=13CbCpAnvYI)
+- Video para entender el [posicionamiento web](https://www.youtube.com/watch?v=13CbCpAnvYI)
 - Video para entender [position: static](https://www.youtube.com/watch?v=whqnlupzpNk)
 - Video para entender [position: relative](https://www.youtube.com/watch?v=X6lG1biGJa8)
 - Video para entender [position: absolute](https://www.youtube.com/watch?v=wpuP2kCN6QE)
 
-* * *
-EJERCICIO 4
+***
+EJERCICIO 1:
 
 Hacer un botón con un icono alineado a la izquierda y centrado verticalmente.
-* * *
-EJERCICIO 5
+***
+EJERCICIO 2:
 
 Hacer un enlace de descarga con una etiqueta del tipo de archivo que siempre esté a la derecha.
-* * *
-EJERCICIO 6
+***
+EJERCICIO 3:
 
 Hacer una página que tenga una cabecera que se mantenga fija.
-* * *
-EJERCICIO 7
+***
+EJERCICIO 4:
 
 Define un documento HTML con un div padre (divPadre), dentro del cual existan otras 3 cajas contenedoras div (div1, div2 y div3), cada una de ellas con unas dimensiones de 300x300px, 40 píxeles de margin en todas direcciones, 30 píxeles de padding en todas direcciones y un background color diferente. Usando posicionamiento relativo genera un desplazamiento de los div de la siguiente manera:S
 
@@ -67,36 +89,86 @@ b) El div 2 deberá desplazarse 150 píxeles a la izquierda y 320 píxeles hacia
 
 c) El div 3 deberá desplazarse 180 píxeles a la derecha y 240 píxeles hacia arriba respecto a lo que sería su posición normal.
 
-* * *
-EJERCICIO 8
+***
+
+## Transform
+Otra forma interesante de modificar la posición de un elemento html es la propiedad `transform` con la que podemos realizar una serie de ajustes al elemento respecto del mismo elemento, sin embargo no saca al elemento del flujo de la página como `position: absolute` o `position: fixed`, y el resto de elementos de la página se comporta como si no hubiesemos aplicado una transformación a uno de ellos.
+
+Vamos a ver varias transformaciones:  
+* Translate
+* Scale
+* Rotate
+
+### Translate
+Permite desplazar el elemento, una cantidad dada, horizontal y/o verticalmente:
+```css
+.element {
+	transform: translate(-100px, 100px);
+}
+```
+
+### Scale
+Permite agrandar o reducir el elemento, propocionalmente o indicando las deformación horizontal y vertical independientemente:
+```css
+.element {
+	transform: scale(2);
+}
+```
+
+### Rotate
+Permite rotar el elemento:
+```css
+.element {
+	transform: rotate(45deg);
+}
+```
+
+***
+EJERCICIO 5:
+
+¿Sabrías resolver estos ejercicios de transformaciones tras leerte [la documentación de transform](http://devdocs.io/css/transform)?  
+Ejercicios de transform: [codepen.io/adalab/pen/YLKaox](https://codepen.io/adalab/pen/YLKaox)
+***
+
+`Transform` se suele usar mucho junto con posiciones fijas o absolutas para centrar elementos horizontal y verticalmente:
+
+![Ejemplo de centrado con position y transform](assets/images/1-5/absolute-horizontal-and-vertical-centering.png)
+
+## Bonus: Devdocs
+[DevDocs](http://devdocs.io/about) va a ser nuestra página de documentación de cabecera ya que agrupa documentación oficial de diferentes temas de front: lenguajes, tecnologías, preprocesadores...
+
+Os proponermos DevDocs porque es un agrupador de documentación oficial que te permite tener contenido para consultar sin conexión en tu navegador.
+
+***
+EJERCICIO 6:
 
 Define un documento HTML con 3 cajas contenedoras div (div1, div2 y div3), la primera con unas dimensiones de 500x500px y un background color amarillo. La segunda con dimensiones 300x300px y un background color verde. La tercera con dimensiones 150x150px y background color azul. Usando posicionamiento absoluto establece para el div2 y el div3 el mismo origen que para el div1, de modo que el efecto generado sea ver un cuadrado amarillo dentro del cual hay un cuadrado verde dentro del cual hay un cuadrado azul.
 
 Haz que las cajas estén centradas vertical y horizontalmente. Pon 40px de padding y 2px de borde al div1, 75px de padding al div 2 y 20px de borde de puntos al div3. Para esto usad box-sizing border-box
-* * *
-EJERCICIO 9
+***
+EJERCICIO 7:
 
 Define un documento HTML con varios div que contengan suficiente texto como para que la página se muestre con scroll (barras de desplazamiento). El primero de los div debe contener el texto “Esta página web utiliza cookies. Si continúa navegando acepta el uso de cookies.”, un valor height (altura) de 100 píxeles y color de fondo amarillo. Usando posicionamiento fixed, fija este div en la parte superior de la página de modo que se continúe visualizando aún cuando hagamos scroll.
-* * *
-EJERCICIO 10
+***
+EJERCICIO 8:
 
 Crea una lista de cinco elementos que se muestre en línea y con espacios entre cada elemento de 12 píxeles.
 
-Vista de la lista sin estilos
-![Menu sin estilos](assets/1_5_ejercicio_10_menu_sin_estilo.png)
+Vista de la lista sin estilos  
+![Menu sin estilos](assets/images/1-5/1_5_ejercicio_10_menu_sin_estilo.png)
 
-Vista de la lista con estilos
-![Menu con estilos](assets/1_5_ejercicio_10_menu_con_estilo.png)
-* * *
-EJERCICIO 11
+Vista de la lista con estilos  
+![Menu con estilos](assets/images/1-5/1_5_ejercicio_10_menu_con_estilo.png)
+***
+EJERCICIO 9:
 
-Crea un texto que ocupe el 86% de la pantalla y esté centrado dentro del body. Usaremos la propiedad max-width para dar un ancho máximo de 600px. [Más info acerca de max-width](https://developer.mozilla.org/es/docs/Web/CSS/max-width).
-* * *
-EJERCICIO 12
+Crea un texto que ocupe el 86% de la pantalla y esté centrado dentro del body. Usaremos la propiedad max-width para dar un ancho máximo de 600px. [Más info acerca de max-width](http://devdocs.io/css/max-width).
+***
+EJERCICIO 10:
 
 Crea una composición similar a la de la imagen.
 
-![Muestra](assets/1_5_ejercicio_12_muestra.png)
+![Muestra](assets/images/1-5/1_5_ejercicio_12_muestra.png)
 
 Las dimensiones de esta composición serían las siguientes:
 - El body tendrá un borde de 8px
@@ -105,8 +177,8 @@ Las dimensiones de esta composición serían las siguientes:
 - El titular irá después con un tamaño de fuente de 32px y un margen inferior de 32px
 - Cada párrafo tendrá un tamaño de fuente de 18px y un margen inferior de 27px
 - El enlace tendrá un padding superior e inferior de 8px y otro izquierdo y derecho de 16px y un margen izquierdo de -16px
-* * *
-EJERCICIO 13
+***
+EJERCICIO 11:
 
 La web que vamos a crear consta de las siguientes características:
 1. Toda la web usa una tipografía sin serifa (sans-serif)
@@ -116,8 +188,8 @@ La web que vamos a crear consta de las siguientes características:
 1. Al poner el ratón sobre cualquiera de ellas
   1. el cursor cambia para indicar que estamos obteniendo ayuda
   1. aparece un tooltip (recuadro flotante de 400px por 200px) de color blanco, con el nombre de la tecnología como título del tooltip y una breve descripción de la misma
-* * *
-EJERCICIO 14
+***
+EJERCICIO 12:
 
 Vamos a crear una web simple, con las siguientes características:
 1. Una cabecera que consta únicamente de un título
@@ -126,7 +198,7 @@ Vamos a crear una web simple, con las siguientes características:
   1. El nombre de la empresa
   1. Un listado de redes sociales de la empresa (en formato texto o imagen) que aparezcan en línea
 1. Un texto para indicar que el sitio web usa cookies con un enlace para ver más info, que aparece en la esquina inferior derecha de la pantalla y que sigue ahí al hacer scroll
-* * *
+***
 
 ## Recursos externos
 

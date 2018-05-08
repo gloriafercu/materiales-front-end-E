@@ -211,9 +211,10 @@ Podemos controlar cómo se comporta un contenedor en los casos en que el conteni
 2. Ocultar todo lo que se salga
 3. Incluir scroll en el contenedor
 
-Podéis leer sobre la propiedad _overflow_ en la MDN:
-* [overflow](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
-* [overflow-y](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-y)
+Podéis leer sobre la propiedad _overflow_::
+* [overflow](http://devdocs.io/css/overflow)
+* [overflow-x](http://devdocs.io/css/overflow-x)
+* [overflow-y](http://devdocs.io/css/overflow-y)
 
 * * *  
 EJERCICIO 5:
@@ -330,7 +331,7 @@ Para empezar, vamos a ver los distintos formatos que podemos usar para indicar c
 
 #### Colores con palabras clave
 
-La primera forma de indicar un color es mediante la palabra clave que indica el nombre del color. Hay un montón de palabras clave para colores que podemos usar que podéis ver en [la tabla de este artículo de MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords).
+La primera forma de indicar un color es mediante la palabra clave que indica el nombre del color. Hay un montón de palabras clave para colores que podemos usar que podéis ver en [la tabla de este artículo](http://devdocs.io/css/color_value#Color_keywords).
 * * *
 EJEMPLO:
 
@@ -411,7 +412,7 @@ p {
 ```
 * * *
 
-Para más información, consultad [la guía de colores de MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value).
+Para más información, consultad [la guía de colores de MDN](http://devdocs.io/css/color_value).
 
 ## BONUS: Background
 Una vez entendido que cada elemento se puede ver como una caja, veamos cómo añadir un fondo a dicha "caja":
@@ -437,15 +438,15 @@ La propiedad background se construye con estos posibles valores:
 > El orden no tiene que ser necesariamente ese, pero os proponemos usarlo.
 
 Realmente, la propiedad _background_ es una versión acortada de estas propiedades:
-* **background-image:**: [Ver detalle en la MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
-* **background-position:** [Ver detalle en la MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position)
-* **background-repeat:** [Ver detalle en la MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat)
-* **background-color:** [Ver detalle en la MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/background-color)
+* **background-image:**: [Ver detalle](http://devdocs.io/css/background-image)
+* **background-position:** [Ver detalle](http://devdocs.io/css/background-position)
+* **background-repeat:** [Ver detalle](http://devdocs.io/css/background-repeat)
+* **background-color:** [Ver detalle](http://devdocs.io/css/background-color)
 
 * * *
 EJERCICIO 9:  
 
-¿Sabrias replicar los ejemplos de fondo usando [este Codepen](codepen.io/adalab/pen/JLwQpz)?
+¿Sabrías replicar los ejemplos de fondo usando [este Codepen](codepen.io/adalab/pen/JLwQpz)?
 * * *
 
 ### Cuando usar las propiedades de background o la versión acortada
@@ -462,7 +463,7 @@ Mientras que en el primer caso estamos diciendo que el color de fondo sea `green
 * * *
 EJEMPLO:  
 
-¿sabrías adelantar el resultado de aplicar esta clase?:
+¿Sabrías adelantar el resultado de aplicar esta clase?:
 ```css
 .box {
 	background-image: url('https://fillmurray.com/150/1500');
@@ -493,6 +494,20 @@ Si por el contrario queremos poner una imagen, en una posicion y con una repetic
 	background: url('https://fillmurray.com/150/150') left top no-repeat;
 }
 ```
+### Background-size
+Desde hace tiempo hay una propiedad nueva que nos permite redimensionar la imagen de fondo y hasta definir cómo se debe ajustar a nuestro contenedor: `background-size`.
+
+Nosotros vamos a ver cómo ajustar el fondo a nuestro contenedor pero puedes consultar la [documentación completa](http://devdocs.io/css/background-size).
+
+Hay dos valores especialmente interesantes ya que permiten definir cómo se ajustará nuestra imagen de fondo al contenedor: **contain** y **cover**.  
+
+#### Contain
+Aumenta o reduce la imagen proporcionalmente todo lo que pueda sin deformarla para que quepa en nuestro contenedor.
+
+#### Cover
+Aumenta o reduce la imagen proporcionalmente para asegurarse que siempre cubre todo el área de nuestro contenedor, aunque eso signifique que parte de la imagen pueda quedar oculta.
+
+[Ejemplos de uso de Contain y Cover](https://codepen.io/adalab/pen/aGojMd)
 
 ## BONUS: Usando fuentes de Google Fonts
 
