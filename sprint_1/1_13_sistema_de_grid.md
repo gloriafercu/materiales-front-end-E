@@ -1,13 +1,13 @@
 # Sistema de grid
 
-## Contenidos
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
+- [CSS grid](#css-grid)
+- [Bootstrap](#bootstrap)
+- [Recursos externos](#recursos-externos)
 
-- Introducción
-- ¿Para qué sirve lo que vamos a ver en esta sesión?
-- CSS grid
-- Bootstrap
-- Recursos externos
-
+<!-- TOC END -->
 
 ## Introducción
 
@@ -18,7 +18,7 @@ Un sistema de grid o rejilla, nos permite disponer los elementos de una página 
 
 Un sistema de grid nos sirve para posicionar los elementos de la página alineados. Se usa en un montón de webs, por ejemplo, este ejemplo de Google.
 
-![Grid de Google Plus](assets/images/3-4/grid-example.png)
+![Grid de Google Plus](assets/images/1-13/grid-example.png)
 
 Podemos ver que los elementos están dispuestos en filas y columnas. Hay 4 columnas que se ven claramente, con un elemento que se expande en 2. Aunque a simple vista parecen no estar alineados en filas, todas las cajas tienen una altura proporcional a una base.
 
@@ -69,11 +69,11 @@ Para las filas funciona exactamente igual:
 También podemos indicar el tamaño del espaciado de elementos en el contenedor con la propiedad `grid-gap`. Podemos indicar 2 valores si queremos espaciado distinto entre filas y columnas.
 
 ***
-EJERCICIO 1
+EJERCICIO 1:
 
 Partiendo del ejemplo de codepen, conseguid una composición como la de la imagen.
 
-![Exercise 1](assets/images/3-4/exercise-1.png)
+![Exercise 1](assets/images/1-13/exercise-1.png)
 
 ***
 
@@ -87,29 +87,85 @@ A la hora de posicionar los elementos en el grid, también podemos usar la palab
 
 ***
 
-EJERCICIO 2
+EJERCICIO 2:
 
 Vamos a modificar el ejercicio anterior para usar `span` en vez de punto inicial y final.
 
 ***
 
-EJERCICIO 3
+EJERCICIO 3:
 
 Vamos a crear un grid de 12 columnas y 3 filas, la primera y la última ocupan el 20% del alto del viewport. Crearemos la composición de la imagen.
 
-![Exercise 2](assets/images/3-4/exercise-3.png)
+![Exercise 3](assets/images/1-13/exercise-3.png)
 
 ***
 
-El soporte el navegadores de CSS grid aún no es completo pero a día de hoy (diciembre de 2017) es de [más del 70% según caniuse](https://caniuse.com/#feat=css-grid). Para los casos en que aún no podamos usarlo, tenemos como alternativa usar el sistema de grid que nos ofrece Bootstrap.
+Hasta ahora hemos definido una rejilla fija donde colocar nuestros elementos pero **¿Qué pasa cuando hay más elementos que "huecos"?**  
+
+Como en muchas otras ocasiones el navegador va a intentar solucionarlo, en este caso va a intentar [ampliar el grid con la configuración que le hemos dado](https://codepen.io/adalab/pen/GdOMvr):
+- ¿Qué ha pasado con los tres últimos elementos? Pues que se ha hecho lo que se ha podido.
+
+Pero tenemos una forma de decirle a nuestro grid cómo comportarse cuando haya más elementos de la cuenta, gracias a `grid-auto-rows` y `grid-auto-columns`, funcionan como `grid-template-rows/columns` pero solo se aplica en el caso de que haya más elementos de la cuenta.
+
+- [Ejemplo en codepen de `grid-auto-rows`](https://codepen.io/adalab/pen/YLEYxg)
+
+Y lo podemos usar junto con `grid-auto-flow`, que fuerza una única dirección (columna o fila) para nuestra rejilla :)
+
+- [Ejemplo en Codepen de `grid-auto-columns` con `grid-auto-flow`](https://codepen.io/adalab/pen/zjPpma)
+
+Con estas propiedades ya podemos empezar a controlar un poco el comportamiento de nuestra rellija. Para completar un poco esta introducción a grid faltaría ver la posibilidad de definir áreas con nombres más cercanos al humano:
+
+![Grid areas](assets/images/1-13/grid-area.png)
+
+
+El grid que hay debajo es de 2x3, y para definirlo usaríamos:
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+```
+
+pero si queremos "nombrar los espacios" podemos usar, además, `grid-template-areas`:
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "header header" "main aside" "footer footer"
+}
+```
+
+De esta manera creamos un área completa asignando a dos el mismo nombre, como el header o el footer.
+
+Si ahora quisiésemos que un elemento en concreto se colocase en una de estas áreas, solo tendríamos que decírselo:
+
+```css
+.item--1 {
+  grid-area: main;
+}
+```
+
+***
+EJERCICIO 4:
+¿Seremos capaces de [colocar cada elemento en su sitio](https://codepen.io/adalab/pen/zjPjER)? ;)
+***
+
+El soporte el navegadores de CSS grid aún no es completo pero a día de hoy (mayo de 2018) es de [más del 80% según caniuse](https://caniuse.com/#feat=css-grid). Para los casos en que aún no podamos usarlo, tenemos como alternativa usar flexbox o el sistema de grid que nos ofrece Bootstrap.
 
 ## Bootstrap
 
-Boostrap es una librería de componentes gráficos que creó uno de los desarrolladores de Twitter. La librería ofrece un montón de funcionalidad, desde elementos de UI (botones, dropdowns, menús, etc.), hasta componentes interactivos con JavaScript como un carrusel de fotografías.
+Boostrap es una librería de grid y componentes gráficos que creó uno de los desarrolladores de Twitter. La librería ofrece un montón de funcionalidad, desde elementos de UI (botones, dropdowns, menús, etc.), hasta componentes interactivos con JavaScript como un carrusel de fotografías.
+
+A diferencia de otros temas, con Bootstrap os vamos a contar solo una pequeña introducción y vais a tener que enfrentaros con algo muy común como es usar una herramienta nueva y tener que revisar la documentación ;)
 
 Para poder usarlo en nuestro proyecto, tendremos varias opciones:
-1. Descargar el código fuente (CSS, JS), y enlazarlo desde nuestro HTML
-2. Enlazar el código alojado en un servidor de Internet, lo que suele llamarse CDN
+* Descargar el código fuente (CSS, JS), y enlazarlo desde nuestro HTML
+* Enlazar el código alojado en un servidor de Internet, lo que suele llamarse CDN
 
 Usando esta segunda opción, simplemente pegamos el snippet que [Bootstrap nos da en su página de inicio](https://getbootstrap.com/). Si sólo queremos usar el CSS usamos esto en nuestro `head`:
 
@@ -118,7 +174,12 @@ Usando esta segunda opción, simplemente pegamos el snippet que [Bootstrap nos d
 
 ```
 
-Entre todas las funcionalidades que nos ofrece Bootstrap, cuenta con un sistema de grid sencillo de 12 columnas. Siempre partimos de la base de 12 columnas para distribuir el espacio disponible en la web. En el CSS que hemos importado, tenemos una serie de clases que nos van a permitir construir nuestra web con un grid.
+Entre todas las funcionalidades que nos ofrece Bootstrap, cuenta con un sistema de grid sencillo de 12 columnas.
+
+> **Nota:**  
+> Lo llamamos sistema de grid pero solo dispone las columnas.
+
+Siempre partimos de la base de 12 columnas para distribuir el espacio disponible en la web. En el CSS que hemos importado, tenemos una serie de clases que nos van a permitir construir nuestra web con un grid.
 
 Como base usaremos un elemento `container` que contiene nuestro grid (como el wrapper de CSS grid) o `container-fluid` si queremos que ocupe todo el ancho y sea fluido. Luego usaremos un elemento con la clase `row` para indicar que es una nueva fila, y dentro podremos los elementos correspondientes. En cada fila podremos indicar el número de columnas a usar con las clases `col-num`, por ejemplo, `col-1`, `col-6`, `col-12`. Veamos un ejemplo.
 
@@ -142,13 +203,45 @@ Como base usaremos un elemento `container` que contiene nuestro grid (como el wr
 
 ***
 
-EJERCICIO 4
+EJERCICIO 5:
 
-Vamos a crear la composición del ejercicio 3 con Bootstrap para ver las diferencias de uso respecto a CSS grid.
+Vamos a crear la composición del **ejercicio 3** con Bootstrap para ver las diferencias de uso respecto a CSS grid.
 
 ***
 
-EJERCICIO 5
+EJERCICIO 6:
+
+Vamos a crear la típica distribución de columnas que se usa para mostrar cómo funciona un grid:
+
+![Distribución de columnas](assets/images/1-13/grid-1.png)
+
+Con suficientes divs (las cajas verdes) vamos a mostrar las columnas y opciones que nos ofrece bootstrap:
+1. 12 columnas
+2. 6 columnas
+3. 3 columnas
+4. 2 columnas
+5. 1 columnas
+
+***
+
+EJERCICIO 7:
+Ahora iremos a un paso más y, usando las 12 columnas, intentaremos replicar el siguiente hexagrama:
+
+![Distribución de columnas](assets/images/1-13/grid-2.png)
+
+***
+
+EJERCICIO 8:
+
+Vamos a acercarnos a algo más real y probemos a usar los breakpoints de Bootstrap:
+![Distribución de columnas](assets/images/1-13/grid-3.png)
+
+Los breakpoints que usaremos son Extra small, Medium y Large ;)
+
+> las imágenes de los gaticos están en [este zip](assets/images/1-13/cats.zip)
+***
+
+EJERCICIO 9:
 
 Vamos a crear el layout para páginas con las que habitualmente trabajaremos, usando CSS grid y/o el sistema de grid de Bootstrap. Para ello, os proponemos replicar [el experimento de Jo Franchetti de este artículo en Medium](https://medium.com/samsung-internet-dev/common-responsive-layouts-with-css-grid-and-some-without-245a862f48df), donde replica layouts típicos usando CSS grid. Realizad al menos el primer ejemplo *"Large Image followed by articles"* usando Sass y el sistema de grid que elijáis.
 
