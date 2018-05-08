@@ -133,7 +133,7 @@ Luego seguimos trabajando con normalidad, añadimos y hacemos commit cuando lo n
 Y subimos con `git push` cuando terminemos la tarea que nos toca.
 
 ## Oh, dios mío! He subido un commit que no quería subir!!
-¿Qué pasa si hago un cambio, lo añado, hago commit y luego... querría no hacerlo hecho? Pues no pasa nada, para eso trabajamos con un control de versiones.
+¿Qué pasa si hago un cambio, lo añado, hago commit y luego... querría no haberlo hecho? Pues no pasa nada, para eso trabajamos con un control de versiones.
 
 Esto pasará de vez en cuando, unas veces por inexperiencia, otras por descuido y otras por otras razones, pero no hay miedo porque cada commit queda registrado y podemos volver a consultar uno anterior o revertir el último. Vamos a ver cómo:
 
@@ -143,10 +143,10 @@ Si queremos ver nuestra actividad en el proyecto usaremos `git log` para tener u
 
 En este caso, con el último commit, hemos borrado el archivo `readme.md` y ahora vemos que ha sido un error...
 
-Nos gustaría deshacer el commit `e139ca3e275be608eed457ab08395e6347e804bf`, para ello usaremos `git commit`:
+Nos gustaría deshacer el commit `e139ca3e275be608eed457ab08395e6347e804bf`, para ello usaremos `git revert`:
 
 ```
-$ git commit e139ca3e275be608eed457ab08395e6347e804bf
+$ git revert e139ca3e275be608eed457ab08395e6347e804bf
 ```
 
 ![Git revert paso 1](assets/images/1-8/commit-revert.png)
