@@ -207,7 +207,7 @@ nombre
 ***
 EJERCICIO 2:
 
-Desde la terminal, vamos a crear un nuevo proyecto en nuestra carpeta de proyectos que se llame `rutas-relativas`, con las carpetas `images` y `styles`. Y los archivos `index.html` (en la raíz del proyecto), `style.css` (en la carpeta `styles`) y `imagen-de-prueba.png` (os la proporcionaremos por classroom e irá dentro de la carpeta images).
+Desde la terminal, vamos a crear un nuevo proyecto en nuestra carpeta de proyectos que se llame `rutas-relativas`, con las carpetas `images` y `styles`. Y los archivos `index.html` (en la raíz del proyecto), `style.css` (en la carpeta `styles`) y `imagen-de-prueba.jpg` (la podéis descargar desde [este enlace](assets/images/1-7/imagen-de-prueba.jpg)).
 
 Ahora, en `index.html` se tiene que ver la imagen de dos formas:
 1. Con un `<img>`
