@@ -1,15 +1,18 @@
 # Publicando nuestra web
 
-## Contenidos
-- Introducción a la terminal de comandos
-- Git
-  - ¿Qué es y para qué sirve?
-  - Comandos básicos
-- GitHub
-  - ¿Qué es y para qué sirve?
-  - Crear una cuenta en GitHub
-  - Crear un repositorio en GitHub
-  - GitHub pages
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [Resumen de la sesión](#resumen-de-la-sesin)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
+- [¿En qué casos se utilizan?](#en-qu-casos-se-utilizan)
+- [Terminal](#terminal)
+- [Git](#git)
+- [GitHub](#github)
+- [GitHub Pages](#github-pages)
+- [Github Classroom](#github-classroom)
+- [Recursos extra](#recursos-extra)
+
+<!-- TOC END -->
 
 
 ## Introducción
@@ -68,13 +71,127 @@ Es importante saber que todos los servicios de GitHub son gratuitos siempre y cu
 
 ## Terminal
 
-#### Introducción a la Terminal y comandos básicos de GNU/Linux
+### Introducción a la Terminal
+La terminal o consola es una de nuestras herramientas principales en el desarrollo front. Nos permite comunicarnos con el sistema mediante pequeñas instrucciones de texto (las llamamos *comandos*) sin necesidad de una interfaz gráfica.
 
-- [Curso de introducción a GNU/Linux - ¿Qué es la Terminal? ](https://www.youtube.com/watch?v=5b7j-Keeokc)
-- [Curso de introducción a GNU/Linux - Comandos Básicos](https://www.youtube.com/watch?v=esbup7hKv6E)
+La terminal nos permite obtener información del sistema, realizar tareas y hasta automatizarlas, y ganar en productividad.
 
-* * *
-EJERCICIO 1
+La terminal de nuestro ordenador tiene este aspecto:
+
+![Terminal de ubuntu](assets/images/1-7/terminal-ubuntu.png)
+
+En esta ventana iremos escribiendo nuestros comandos para interactuar con el ordenador o con aplicaciones que no tengan una interfaz gráfica.
+
+Por defecto la terminal nos mostrará una línea (el *prompt*) a partir de la cual podremos escribir nuestros comandos.
+
+Normalmente nuestro prompt tendra este aspecto:  
+**usuario@nombre-de-equipo: ruta por defecto $**
+```shell
+ubuntu@ubuntu: ~$
+```
+Esto nos dice que el usuario de nuestro equipo es **ubuntu**, que nuestro equipo se llama **ubuntu** y que estamos en la carpeta raíz de nuestro usuario (que se representa con `~`).
+
+
+### Comandos básicos de GNU/Linux
+#### PWD
+Principalmente usaremos la terminal para movernos por el sistema de archivos del ordenador. Así que es fundamental saber dónde estamos en cada momento. El comando `pwd` (_Print Working Directory_) se encargará de mostrarnos en qué carpeta nos encontramos.
+
+```shell
+$ pwd
+```
+> **NOTA**: Muchas veces nos encontraremos los comandos que tenemos que introducir precedidos por el símbolo `$`, pero no hay que escribirlo.  
+
+Devolverá la ruta absoluta de la carpeta en la que estemos, con este aspecto:
+```shell
+/user/nombre-de-usuario
+```
+Esto es una ruta absoluta, que se construye a partir de la carpeta raíz de nuestro equipo, representada por el carácter inicial `/`. Nos estaría indicando que nos encontramos en la carpeta `nombre-de-usuario`, que está dentro de `user`, que está en la carpeta raíz de nuestro equipo.
+
+Las rutas pueden ser *absolutas*, como la que nos devuelve el comando `pwd`, y empiezan por `/`. También pueden ser *relativas*, que usaremos más adelante.
+Las relativas usan los caracteres especiales `..` para referirse a la carpeta madre de nuestra carpeta actual, o `.` (o nada) para referirnos a una carpeta que está dentro de nuestra carpeta actual.
+
+```shell
+../carpeta-madre
+```
+
+```shell
+./carpeta-hija
+carpeta-hija
+```
+
+### LS
+El comando `ls` nos muestra un listado de los archivos y carpetas que hay en nuestra carpeta actual.
+
+### CD
+El comando `cd` (Change Directory) nos ofrece diferentes posibilidades a la hora de cambiar de carpeta:
+
+
+```shell
+cd nombre-de-carpeta
+```
+
+Nos permite entrar en la carpeta `nombre-de-carpeta` que estaría en nuestra carpeta actual.  
+
+***
+
+```shell
+$ cd /ruta/absoluta/a/una/carpeta
+```
+También podemos escribir la ruta absoluta desde la raíz de nuestro equipo `/` a la carpeta a la que queremos entrar.
+
+***
+
+```shell
+$ cd
+```
+`cd` solo nos devuelve a la carpeta de nuestro usuario (esta es la localización por defecto donde se abrirá nuestra terminal)
+
+***
+
+```shell
+$ cd ..
+```
+`..` nos permite subir un nivel, esto es, ir a la carpeta que contiene nuestra carpeta actual
+
+***
+
+```shell
+$ cd -
+```
+Este comando permite "deshacer" el último cd realizado: vuelve a la localización anterior al último cambio de carpeta.
+
+
+### MKDIR
+Nos permite crear una carpeta. PERO NO ENTRA EN LA CARPETA NUEVA.
+
+Si no especificamos una ruta se creará en la localización actual pero se puede indicar la ruta usando `/` y `..`. Por ejemplo, vamos a crear una carpeta "proyecto" en la carpeta madre de la carpeta actual:
+```shell
+$ mkdir ../proyecto
+```
+
+### CLEAR
+A veces va a pasar que hemos introducido muchos comandos y sería genial poder "limpiar" la ventana. Para eso existe el comando `clear`, que nos limpia la ventana de la terminal.
+
+### CP y MV
+Si queremos copiar o mover archivos usaremos los comandos `cp` o `mv`. El formato será `cp`/`mv` archivo-de-origen archivo_de_destino.
+
+Vamos a mover el archivo index.html de nuestra carpeta actual a la carpeta madre:
+```shell
+$ mv index.html ../index.html
+```
+> **NOTA**: `mv` también sirve para renombrar ficheros o carpetas
+
+### Abrir nuestra carpeta actual en el explorador de archivos desde la terminal
+A veces nos interesará abrir nuestra carpeta actual en el explorador de archivos y esto se puede hacer fácilmente desde la terminal con el comando:
+```shell
+$ nautilus .
+```
+
+y sí, `$ nautilus ..` nos abrirá nuestra carpeta madre en el explorador de archivos ;)
+
+
+***
+EJERCICIO 1:
 
 Ir a nuestra carpeta de documentos y crear la siguiente estructura de carpetas y archivos (vacíos):
 ```txt
@@ -87,18 +204,18 @@ nombre
 - En el archivo **mis-datos.txt** vamos a escribir el Nombre y la comida favorita.
 - En el archivo **ruta_del-proyecto.txt** pondremos la ruta del nuestro proyecto desde nuestra carpeta de `Documentos`
 - Mover los dos archivos a la carpeta principal, que sería **nombre**
-* * *
-EJERCICIO 2
+***
+EJERCICIO 2:
 
-Desde la terminal, vamos a crear un nuevo proyecto en nuestra carpeta de proyectos que se llame **Rutas relativas**, con las carpetas `images` y `styles`. Y los archivos index.html (en la raíz del proyecto), style.css (en la carpeta styles) y imagen-de-prueba.png (os la proporcionaremos por classroom e irá dentro de la carpeta images).
+Desde la terminal, vamos a crear un nuevo proyecto en nuestra carpeta de proyectos que se llame `rutas-relativas`, con las carpetas `images` y `styles`. Y los archivos `index.html` (en la raíz del proyecto), `style.css` (en la carpeta `styles`) y `imagen-de-prueba.jpg` (la podéis descargar desde [este enlace](assets/images/1-7/imagen-de-prueba.jpg)).
 
-Ahora, en index.html se tiene que ver la imagen de dos formas:
+Ahora, en `index.html` se tiene que ver la imagen de dos formas:
 1. Con un `<img>`
-2. Como fondo de un div del mismo tamaño que la imagen
+2. Como fondo de un `div` del mismo tamaño que la imagen
 
 ¿Cómo es la ruta de ambas imágenes? ¿Absoluta? ¿Relativa?
 ¿Es diferente en los dos casos? ¿por qué?
-* * *
+***
 
 ## Git
 
@@ -218,11 +335,24 @@ Una vez hayamos realizado ese paso, no necesitaremos hacer ningún cambio más.
 
 ### Cómo trabajar con Git
 
-Para trabajar con Git lo haremos usando comandos a través de la Terminal, como comentábamos en la introducción de esta sesión. Para ello tendremos que aprender los comandos básicos. En el video que añadimos a continuación se explican los comandos básicos para empezar a trabajar con Git.
+Para trabajar con Git lo haremos usando comandos a través de la Terminal, como comentábamos en la introducción de esta sesión. Para ello tendremos que aprender unos comandos básicos.
+
+Una vez instalado Git en nuestro equipo tendremos que activar el control de versiones en nuestro proyecto, esto lo haremos con `git init`. Este comando lo usaremos solo una vez en la carpeta de nuestro proyecto y activa que se controle cada cambio que hacemos a nuestros archivos del proyecto.
+
+A partir de este momento, cada vez que hagamos cambios, Git sabrá qué archivos hemos modificado.
+
+En cualquier momento podremos pedir que nos diga en qué estado está el proyecto con un `git status`, lo que nos dirá si hemos cambiado archivos.
+
+Normalmente trabajaremos con cambios cortos o tareas pequeñas, y cuando hayamos terminado, querremos indicarle a Git que ya hemos terminado un paquete de cambios, para lo que tenemos dos comandos:
+1. `git add -A` para añadir los archivos que hemos modificado. Una vez añadidos Git sabrá qué cambios hemos hecho.
+2. `git commit -m "Mensaje"` nos permite crear como un paquete de cambios y "guardarlo en nuestro sistema de versiones", nos dejará escribir un mensaje corto para asociarlo al paquete de cambios o *commit*.
+3. Si queremos ver la lista de commits realizados en un proyecto usaremos `git log`.
+
+En el video que añadimos a continuación se explican los comandos básicos para empezar a trabajar con Git.
 
 - [3.- Curso Git - Nuestro primer proyecto](https://www.youtube.com/watch?v=vH9pkFf1D7M)
 
-**Nota:** En el video pone los mensajes de los commits en español pero nosotros los escribiremos en inglés.
+>**Nota:** En el video pone los mensajes de los commits en español pero nosotros los escribiremos en inglés.
 
 #### Mensaje del commit
 
@@ -241,8 +371,8 @@ Un ejemplo de un buen commit:
 git commit -m "Fix typo in article title"
 ```
 
-* * *
-EJERCICIO 3
+***
+EJERCICIO 3:
 
 Vamos a crear nuestro primer proyecto con Git, al que llamaremos `testing-git`. Dentro de él, crearemos un archivo HTML con un título en el que ponga "Testing Git" y un `h1` con el mismo texto. Además, crearemos un archivo para los estilos (`main.css`) dónde añadiremos un estilo para que la familia de texto que se use en la web sea `sans-serif`. Organizaremos el proyecto siguiendo la estructura de siempre:
 ```txt
@@ -253,15 +383,15 @@ testing-git
     index.html
 ```
 Una vez creado el proyecto con el HTML y el CSS indicado. Inicializa el repositorio Git en nuestro proyecto y haz el primer commit con el mensaje `Initial commit`
-* * *
-EJERCICIO 4
+***
+EJERCICIO 4:
 
 Modificar el archivo `index.html` para que en el título de la página ponga "My first Git project" y en el texto de la cabecera aparezca una sonrisa `:)`. Añadir los cambios y hacer un commit para guardarlos.
 
 **Nota:** El mensaje del commit deberá explicar de forma clara los cambios que hemos realizado
 
-* * *
-EJERCICIO 5
+***
+EJERCICIO 5:
 
 Vamos a realizar un tercer cambio dónde añadiremos un archivo `README.md` en la raíz de nuestro proyecto. Este archivo se utiliza para poner información acerca de nuestro código y, por defecto, GitHub lo muestra en la página principal de nuestro proyecto. Dentro de ese archivo escribiremos el siguiente texto:
 
@@ -272,25 +402,64 @@ Dummy project to learn Git basics
 ```
 
 **Nota:** El mensaje del commit deberá explicar de forma clara los cambios que hemos realizado
-* * *
+***
 
-### GitHub
+## GitHub
 
 Como hemos explicado anteriormente, GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones de Git. Está muy enfocada a proyectos de código abierto, por lo que es de uso gratuito siempre que tus proyectos estén disponibles para todos. Pagando puedes tener proyectos privados, pero la verdadera fuerza de GitHub está en la comunidad tan grande que se ha montado sobre la idea de código abierto u open source :)
 
+***
+EJERCICIO 6:
+
+Crea una cuenta en GitHub y ponte una foto de perfil.
+
+***
+
+Hasta ahora sabemos crear un repositorio Git local pero ahora vamos a conectarlo con un repositorio remoto que crearemos en GitHub, de esta forma podremos acceder al código desde cualquier equipo y podremos colaborar con nuestras compañeras.
+
+Para ello, nos vamos a nuestro perfil y buscamos el botón `+` para crear un nuevo repositorio:
+![Nuevo repositorio](assets/images/1-7/github-repo-1.png)
+
+
+Rellenamos los datos que nos piden: nombre del repositorio, descripción y marcamos que queremos inicializarlo con un `Readme.md`:
+![Nuevo repositorio](assets/images/1-7/github-repo-2.png)
+
+Una vez creado, nos llevará a la página principal de nuestro repo donde podremos conseguir la url para descargarlo en nuestro equipo. Esta es una descarga especial que llamamos, clonar, que nos hace una copia local del proyecto contactada con la versión remota.
+
+![Nuevo repositorio](assets/images/1-7/github-repo-3.png)
+
+Ahora, con esta url podemos irnos a nuestra terminal y clonarlo con `git clone`:
+
+![Nuevo repositorio](assets/images/1-7/github-repo-4.png)
+
+Esto nos generará una carpeta con nuestro proyecto. **Recordad que crea la carpeta pero no nos mete dentro** por lo que tendremos que usar el comando `cd` de nuestra terminal para cambiar la ruta actual.
+
+> **Nota**:  
+> Por defecto git nos creará una carpeta con un nombre automático, si queremos un nombre específico para la carpeta de nuestro proyecto podemos declararlo tras la url que nos da GitHub:
+
+```shell
+$ git clone url-del-repositorio-que-me-da-github nuevo-nombre-de-carpeta
+```  
 En el video que mostramos a continuación se hace un pequeño tour alrededor de la plataforma para ver cómo funciona y las funcionalidades que ofrece. En el video pone el nombre del repositorio con mayúsculas y minúsculas, nosotros lo pondremos en minúsculas y con el texto separado por guiones, como hacemos con las carpetas de nuestros proyectos. En el video también explica ramas, pero lo ignoraremos. De momento solo vamos a trabajar con una rama (master), más adelante veremos cómo es el flujo a la hora de trabajar con varias ramas, pero vayamos poco a poco.
 
-**Nota:** Sólo veremos hasta el min 21:34. Porque en el resto del video habla de cosas que no vamos a aprender por el momento.
+> **Nota:**  
+> Sólo veremos hasta el min 21:34. Porque en el resto del video habla de cosas que no vamos a aprender por el momento.
+
+### ¿Y si ya tengo un proyecto con Git en local?
+A la hora de conectar el repo local y el remoto lo mas cómodo es empezar creando el repo en GitHub, clonándolo y seguir a partir de ahí con la conexión ya hecha. Pero puede pasar que ya tuviésemos un proyecto en local que hubiésemos inicializado con `git init`, en este caso seguiremos estos pasos:  
+
+1. Creamos un repo vacío en GitHub **SIN INICIALIZARLO CON README.ME, GITIGNORE O LICENCIA**.
+2. Esto nos llevará a una página diferente con las instrucciones para conectar un repo local con nuestro repo remoto: ![Nuevo repositorio](assets/images/1-7/github-repo-5.png)
+
+3. Copiamos la línea con `git remote add origin url-del-repositorio-que-me-da-github`
+4. Desde la terminal, nos vamos a la carpeta de nuestro proyecto que ya tiene inicializado un repo local y la ejecutamos. Esto conectará los dos repos.
+
+En el siguiente vídeo tenemos una pequeña intro a Github. Echadle un ojo hasta el minuto 21:34, ya veremos el resto de contenidos más adelante:
 
 - [5.- Curso Git - Empezando con GitHub (sólo hasta el min 21:34)](https://www.youtube.com/watch?v=Qn186NyDqOk)
 
-* * *
-EJERCICIO 6
-
-Crear una cuenta en GitHub y ponernos una foto de perfil
-
-* * *
-EJERCICIO 7
+***
+EJERCICIO 7:
 
 Vamos a:
 1. Crear un proyecto vacío en GitHub. Le pondremos como nombre `testing-git`.
@@ -298,23 +467,38 @@ Vamos a:
 1. Hacer _push_ para mandar la info del proyecto al repositorio remoto y, de esta forma, almacenar los datos del proyecto en GitHub. Comprobar tras hacerlo que, al abrir la página del proyecto en GitHub, se muestran los cambios que hemos realizado en nuestro ordenador.
 1. Realizar un cambio en el CSS del proyecto para que el texto de la cara sonriente se muestre centrado vertical y horizontalmente en la página.
 1. Una vez que estemos conforme con nuestro tipo sonriente, haremos un commit para añadir el cambio a nuestro repositorio y otro push, para sincronizar los cambios de nuestro repositorio local con los del remoto y, de esta forma, subir los cambios a GitHub.
-* * *
+***
 
 
-### GitHub Pages
+## GitHub Pages
 
 Como hemos comentado previamente, GitHub ofrece un servicio llamado [GitHub Pages](https://pages.GitHub.com) que pueden utilizar los usuarios como hosting gratuito para los proyectos que estén alojados en GitHub.
 
 Un hosting es un servicio de almacenamiento de datos para poder tener tu web en un servidor y que esté disponible en internet y esto es lo que ofrece exactamente GitHub Pages.
 
-* * *
-EJERCICIO 8
+***
+EJERCICIO 8:
 
 Desde la página de nuestro proyecto `testing-git` en GitHub, activar GitHub Pages.
 
 **Pista:** Hay que ir a la pestaña _settings_ del proyecto ;)
-* * *
+***
 
+## Github Classroom
+GitHub Classroom es un "módulo" de GitHub que permite automatizar el control de acceso y la creación de repositorios. Durante este curso lo usaremos para asignar ejercicios.
+
+Classroom permite asignar repositorios vacíos o con un código inicial.
+
+***
+EJERCICIO 9:  
+
+Haz clic en el siguiente enlace [https://classroom.github.com/a/uISrxCY8](https://classroom.github.com/a/uISrxCY8) para crear tu primer repositorio a través de GitHub Classroom, y luego:
+1. Clónatelo en tu equipo
+2. Crea un archivo `readme.md`
+3. Dentro, escribe tu nombre precedido de un `#`: `# NOMBRE APELLIDOS`
+4. Haz `add` y `commit`
+5. Haz un `push` al repo remoto :)
+***
 
 ## Recursos extra
 
