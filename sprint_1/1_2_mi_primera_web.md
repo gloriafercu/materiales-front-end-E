@@ -4,7 +4,7 @@ Hasta ahora hemos visto una pequeña introducción a unos elementos básicos de 
 
 ## Más etiquetas HTML
 
-La etiquetas HTML nos premiten estructurar nuestro contenido según su función o carga semántica. Vamos a ver más etiquetas:
+La etiquetas HTML nos permiten estructurar nuestro contenido según su función o carga semántica. Vamos a ver más etiquetas:
 
 * para **definir nuestra página**
 * para agrupar en **seciones**
@@ -49,7 +49,7 @@ Hay una serie de secciones especiales que tienen asignado un significado semánt
 * `<main>`: Indica la principal sección de contenido
 * `<footer>`: un pie o sección final de un bloque
 * `<nav>`: un bloque de navegación, para un menú.
-* `<aside >`: un bloque de contenido de menor importancia o con contenido relacionado
+* `<aside>`: un bloque de contenido de menor importancia o con contenido relacionado
 * `<article>`: un artículo
 
 Estos bloques especiales se pueden usar unos dentro de otros según tenga sentido: por ejemplo, un `<article>` puede tener cabecera y pie, mientras que una cabecera no debería tener pie.
@@ -315,7 +315,7 @@ La manera de indicar en css que se trata de una clase es escribiendo un `.` prim
 ```
 
 #### Id como selector
-Ya habíamos visto que los ID eran una palabra clave que usábamos como identificador para un único elemento. En css también los podemos usar como selector, pero a lo poder haber más de uno por página no es recomendable usarlo salvo en casos muy excepcionales.
+Ya habíamos visto que los ID eran una palabra clave que usábamos como identificador para un único elemento. En css también los podemos usar como selector, pero al no poder haber más de uno por página no es recomendable usarlo salvo en casos muy excepcionales.
 
 En una lista de acciones, por ejemplo, podemos tener unas clases para añadir estilos a los elementos del bloque y, ademas, añadir un identificador único para cada elemento.
 ```html
