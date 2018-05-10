@@ -352,7 +352,7 @@ Para este curso vamos a plantear unas que dan bastante buen resultado para empez
 
 * Los nombres de archivo irán siempre en minúsculas, sin tildes y sin caracteres especiales
 * Usaremos guiones para separar palabras: `baby-kangaroo.png`
-* Usaremos rutas relativas siempre
+* Usaremos [rutas relativas](https://es.wikipedia.org/wiki/Ruta_(informatica)#Ruta_relativa) siempre
 * Los nombres de archivo siempre en inglés: `rainy-and-windy-day.png`
 * Los archivos de estilos se llamarán `style.css` o `main.css`
 * El archivo HTML principal se llamará `index.html`
