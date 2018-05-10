@@ -354,7 +354,7 @@ Para este curso vamos a plantear unas que dan bastante buen resultado para empez
 * Usaremos guiones para separar palabras: `baby-kangaroo.png`
 * Usaremos rutas relativas siempre
 * Los nombres de archivo siempre en inglés: `rainy-and-windy-day.png`
-* Los archivos de estilos se llamarán `style.css` o `stylesheet.css`
+* Los archivos de estilos se llamarán `style.css` o `main.css`
 * El archivo HTML principal se llamará `index.html`
 
 Para la estructura del proyecto usaremos estas carpetas:
