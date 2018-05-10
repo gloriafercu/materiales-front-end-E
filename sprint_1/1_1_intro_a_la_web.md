@@ -291,6 +291,7 @@ Dentro de nuestra página esto quedaría así:
     <style>
         h1 {
         color: blue;
+        font-family: Arial, sans-serif;
         font-size: 20px;
         }
     </style>
@@ -329,6 +330,7 @@ Lo haremos con la etiqueta `<link>`, que es una de esas etiquetas que no necesit
 ```CSS
 h1 {
     color: blue;
+    font-family: Arial, sans-serif;
     font-size: 20px;
 }
 ```
