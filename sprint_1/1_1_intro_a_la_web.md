@@ -216,8 +216,6 @@ Suele servirse fresco en los meses calurosos de verano. Su color varía desde el
 El gazpacho denominado andaluz por su popularidad, suele ser definido por algunos autores culinarios como una mezcla entre sopa y ensalada. En la actualidad se lo emplea como un refresco en la mayoría de las ocasiones, el cual es servido por regla general en verano. Suele servirse fresco como una bebida/comida de aromas agradables y reconfortantes. Si bien no está demostrado, hay autores que sospechan su origen en Sevilla. Se denomina andaluz por haber trascendido así al resto de regiones de España y del mundo, pero en Andalucía se toman gazpachos blancos (un ejemplo es el gazpacho blanco cordobés) que no contienen tomate, y gazpachos rojos que sí los tienen. Los gazpachos rojos se elaboran en Andalucía Occidental, los blancos en Málaga, Córdoba y Granada y los verdes en Sierra Morena y Sierra de Huelva.
 
 ## Composición del gazpacho actual
-El gazpacho dispone de unas características organolépticas peculiares de sabor, aroma y color debido a la variedad de verduras que lo componen. El gazpacho andaluz emplea como ingredientes un conjunto de cinco hortalizas, que pueden variar en proporción según los gustos de la localidad, del cocinero o de la familia, como puede ser:
-
 El gazpacho dispone de unas características organolépticas peculiares de sabor, aroma y color debido a la variedad de verduras que lo componen. El gazpacho andaluz emplea como ingredientes un conjunto de cinco hortalizas, que pueden variar en proporción según los gustos de la localidad, del cocinero o de la familia.
 
 ### Ingredientes
@@ -229,7 +227,7 @@ El gazpacho dispone de unas características organolépticas peculiares de sabor
 
 Hay dos ingredientes que aparecen en casi todas las recetas actuales, incluidas las de notables "chefs". Estos son el pepino y la cebolla. Que si bien no se incluyen en la sopa básica, se pueden aportar como acompañamiento en forma de picada.
 
-* **Pepino**, el pepino se lleva bien con el vinagre.47​ Su sabor es fuerte y su proporción es una medida a tener en cuenta por el gazpachero. Cuando su elaboración no incluye pepino se suele tildar de "gazpacho suave". Tanto las propiedades del pepino, como las del vinagre y las del agua fría, aliviaban la sed de los segadores que trabajaban en largas jornadas, bajo condiciones de temperatura extremas y con el único alimento durante el día de su gazpacho.
+* **Pepino**, el pepino se lleva bien con el vinagre Su sabor es fuerte y su proporción es una medida a tener en cuenta por el gazpachero. Cuando su elaboración no incluye pepino se suele tildar de "gazpacho suave". Tanto las propiedades del pepino, como las del vinagre y las del agua fría, aliviaban la sed de los segadores que trabajaban en largas jornadas, bajo condiciones de temperatura extremas y con el único alimento durante el día de su gazpacho.
 * **Cebollas**, en las recetas suele ponerse una cierta cantidad. Proporciona saborizantes naturales.
 Aunque existe la posibilidad de emplear zanahorias, es una costumbre poco habitual.
 
