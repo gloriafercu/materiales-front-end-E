@@ -264,7 +264,7 @@ Podemos colocarlo arriba, abajo, a la derecha o sacarlo a una nueva ventana.
 * * *
 EJERCICIO 6:
 
-Entrar en [Wikipedia.org](Wikipedia.org) y:
+Entrar en [Wikipedia.org](http://wikipedia.org) y:
 * Cambiar el color de los enlaces a naranja
 * Sobre los idiomas destacados que aparecen sobre la imagen de la pelota de Wikipedia, añadir uno falso
 * Explicar cómo están compuestos estos módulos de idioma
@@ -317,7 +317,7 @@ Otro recurso muy interesante que nos ofrece Network es que nos permite ver cuán
 
 EJERCICIO 8:
 
-Entrar en [Wikipedia.org](Wikipedia.org) y
+Entrar en [Wikipedia.org](http://wikipedia.org) y
 * Averiguar el peso total de la página principal de Wikipedia
 * Averiguar cuánto ha tardado en cargar la página
 * Averiguar cuántas imágenes usa la página principal de Wikipedia
