@@ -32,7 +32,7 @@ El objetivo es aprender a montar un contenedor con flexbox y a dominar las difer
 * * *
 EJERCICIO 1: FLEX y FLEX DIRECTION
 
-![Ejemplo](assets/1-6-ejercicio-1.png)
+![Ejemplo](assets/1-4-ejercicio-1.png)
 
 1. Crear un contenedor flex de  500px por 500px y con 6 o más elementos.
 2. Hacer que se distribuyan en horizontal o vertical
