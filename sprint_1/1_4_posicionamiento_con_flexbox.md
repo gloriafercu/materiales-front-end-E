@@ -40,13 +40,13 @@ EJERCICIO 1: FLEX y FLEX DIRECTION
 * * *
 EJERCICIO 2: FLEX WRAP
 
-![Ejemplo](assets/1-6-ejercicio-2.png)
+![Ejemplo](assets/1-4-ejercicio-2.png)
 
 Teniendo una lista de 10 a 15 imágenes de 200x100 px, hacer un bloque flexbox donde las imágenes se distribuyan por el eje horizontal y se vayan apilando uno detrás de otro.
 * * *
 EJERCICIO 3: JUSTIFY CONTENT y ALIGN ITEMS
 
-![Ejemplo](assets/1-6-ejercicio-3.png)
+![Ejemplo](assets/1-4-ejercicio-3.png)
 
 1. Hacer un menú horizontal con un contenedor flex de 100px de alto
 2. Las opciones de menú serán:
@@ -61,7 +61,7 @@ EJERCICIO 3: JUSTIFY CONTENT y ALIGN ITEMS
 * * *
 EJERCICIO 4: ORDER
 
-![Ejemplo](assets/1-6-ejercicio-4.png)
+![Ejemplo](assets/1-4-ejercicio-4.png)
 
 1. Hacer un listado de noticias con imagen, título y párrafo de contenido
 2. Meterlas en un contenedor flex y hacer que se distribuyan a dos columnas
@@ -69,14 +69,14 @@ EJERCICIO 4: ORDER
 * * *
 EJERCICIO 5: FLEX/GROW/SHRINK/BASIS
 
-![Ejemplo](assets/1-6-ejercicio-5.png)
+![Ejemplo](assets/1-4-ejercicio-5.png)
 
 Hacer una página con `<header>`, `<main>` y `<footer>` y hacer que aunque haya poco contenido el footer siempre está abajo de la página y el main ocupe todo el espacio disponible.
 Si hubiese mucho contenido el footer debe colocarse tras el main, de forma natural.
 * * *
 EJERCICIO 6
 
-![Ejemplo](assets/1-6-ejercicio-6.png)
+![Ejemplo](assets/1-4-ejercicio-6.png)
 
 Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprendido hoy de Flexbox. Los requisitos son los siguientes:
 
@@ -86,7 +86,7 @@ Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprend
 * * *
 EJERCICIO 7
 
-![Ejemplo](assets/1-6-ejercicio-7.png)
+![Ejemplo](assets/1-4-ejercicio-7.png)
 
 Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprendido hoy de Flexbox. Los requisitos son los siguientes:
 
@@ -106,16 +106,16 @@ Además deberá tener una cabecera con un fondo que ocupe toda la pantalla y un 
 
 Ejemplo de la página cuando el texto es largo
 
-![Ejemplo](assets/1-6-ejercicio-8-1.png)
+![Ejemplo](assets/1-4-ejercicio-8-1.png)
 
 
 Ejemplo de la página cuando el texto es corto
 
-![Ejemplo](assets/1-6-ejercicio-8-2.png)
+![Ejemplo](assets/1-4-ejercicio-8-2.png)
 
 Una vez que tengamos esa estructura y una distribución visual similar a la de la imagen crearemos un elemento que se superponga sobre él. Ese elemento tendrá un fondo oscuro transparente y un div en su interior. Ese div entero estará centrado tanto vertical como horizontalmente y contendrá un titular, un texto y un par de botones. El resultado quedaría igual a la siguiente imagen.
 
-![Ejemplo](assets/1-6-ejercicio-8-3.png)
+![Ejemplo](assets/1-4-ejercicio-8-3.png)
 
 En la imágen, es importante observar que la cabecera estará por debajo de la ventana emergente.
 
