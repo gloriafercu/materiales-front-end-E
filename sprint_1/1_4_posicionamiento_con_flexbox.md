@@ -1,5 +1,15 @@
 # Flexbox
 
+- [Introducción](#introducción)
+- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
+- [¿En qué casos se utiliza?](#¿en-qué-casos-se-utiliza)
+- [Resumen de la sesión](#resumen-de-la-sesión)
+- [Recursos externos](#recursos-externos)
+    - [Teoría para aprender flexbox](#teoría-para-aprender-flexbox)
+    - [Juegos para aprender flexbox](#juegos-para-aprender-flexbox)
+    - [Página interactiva para aprender flexbox](#página-interactiva-para-aprender-flexbox)
+    - [Guía completa de Flexbox (inglés)](#guía-completa-de-flexbox-inglés)
+
 ## Introducción
 
 Durante esta sesión veremos cómo distribuir los elementos en una página usando Flexbox.
