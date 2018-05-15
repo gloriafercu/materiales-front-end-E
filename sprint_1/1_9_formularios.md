@@ -1,5 +1,20 @@
 # Formularios
 
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Para qué sirven?](#para-qu-sirven)
+- [¿Cómo funcionan?](#cmo-funcionan)
+- [¿En qué casos se utilizan?](#en-qu-casos-se-utilizan)
+- [Nuestro primer formulario en HTML](#nuestro-primer-formulario-en-html)
+- [Atributos básicos](#atributos-bsicos)
+- [Otras etiquetas](#otras-etiquetas)
+- [Agrupando partes del formulario por contexto](#agrupando-partes-del-formulario-por-contexto)
+- [Restaurar el formulario a los valores por defecto](#restaurar-el-formulario-a-los-valores-por-defecto)
+- [Estilos CSS de un formulario](#estilos-css-de-un-formulario)
+- [BONUS](#bonus)
+
+<!-- TOC END -->
+
 ## Introducción
 
 Durante esta sesión vamos a ver cómo trabajar con formularios en HTML para poder enviar información a través de una página web. Nadie se mete a programador web porque su sueño sea hacer formularios, pero son una parte fundamental de la web y al final es la forma en la que enviamos información y sin ellos no podríamos ser capaces de enviar información por Internet más que navegar entre páginas.

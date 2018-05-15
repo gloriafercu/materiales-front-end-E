@@ -1,15 +1,13 @@
 # Sistemas de diseño
 
-## Contenido
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Qué es un sistema de diseño?](#qu-es-un-sistema-de-diseo)
+- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
+- [Convertir un sistema a código](#convertir-un-sistema-a-cdigo)
+- [Ejemplos de sistemas de diseño](#ejemplos-de-sistemas-de-diseo)
 
-- [Introducción](#introducción)
-- [¿Qué es un sistema de diseño?](#¿qué-es-un-sistema-de-diseño)
-- [¿En qué casos se utiliza?](#¿en-que-casos-se-utiliza)
-- [Convertir un sistema a código](#convertir-un-sistema-a-código)
-  - [Colores](#colores)
-  - [Tipografías](#tipografías)
-  - [Clases de ayuda](#clases-de-ayuda)
-- [Ejemplos de sistemas de diseño](#ejemplos-de-sistemas-de-diseño)
+<!-- TOC END -->
 
 ## Introducción
 

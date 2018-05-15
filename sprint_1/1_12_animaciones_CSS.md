@@ -1,4 +1,13 @@
 # Animaciones CSS
+
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [Transiciones](#transiciones)
+- [Animaciones](#animaciones)
+
+<!-- TOC END -->
+
+## Introducción
 CSS es un lenguaje de estilo y con él decimos cómo tiene que verse nuestro HTML. Hasta ahora hemos visto algunas de las cosas que podemos hacer con estilos e incluso como aplicarlas cuando se cumplen ciertas condiciones gracias a las mediaqueries. Todavía nos falta el aspecto más vistoso que le da más vida al apartado gráfico: transiciones y animaciones.
 
 ## Transiciones

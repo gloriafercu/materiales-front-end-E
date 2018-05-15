@@ -1,5 +1,15 @@
 # Intro a la web
 
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Cómo funciona la web](#cmo-funciona-la-web)
+- [HTML Y CSS](#html-y-css)
+- [Índice](#ndice)
+- [El gazpacho andaluz](#el-gazpacho-andaluz)
+- [Composición del gazpacho actual](#composicin-del-gazpacho-actual)
+- [Notas finales sobre cómo organizar nuestro proyecto](#notas-finales-sobre-cmo-organizar-nuestro-proyecto)
+
+<!-- TOC END -->
+
 ## Cómo funciona la web
 
 Internet es algo que utilizamos de forma cotidiana ya sea para consultar información, hacer una reserva, comprar entradas o mandar a tu grupo de toda la vida el vídeo del pingüino que le da una colleja al otro pingüino. ¿Y cómo funciona por dentro? Pues al final de todo son dos ordenadores que se comunican, uno hace de cliente y el otro de servidor.

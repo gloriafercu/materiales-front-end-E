@@ -1,14 +1,13 @@
 # Sass
 
-## Contenidos
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Qué es un preprocesador CSS?](#qu-es-un-preprocesador-css)
+- [Vale, ¿y esto cómo funciona?](#vale-y-esto-cmo-funciona)
+- [¿Y qué puedo hacer con SASS/SCSS?](#y-qu-puedo-hacer-con-sassscss)
+- [BONUS](#bonus)
 
-- Qué es preprocesador CSS
-- Herramientas de configuración (koala o terminal)
-- Básico: variables e imports
-- Variables en Sass
-- Nested rules en SASS
-- Media queries y el &.
-- Estructura de un proyecto SASS típico y como dividir archivos usando `@import`
+<!-- TOC END -->
 
 ## Introducción
 Con CSS podemos personalizar al píxel el aspecto de nuestra página y como hemos visto tiene una serie de reglas y de formas de hacer todo esto. Sin embargo el sector ha ido madurando y nos encontramos con que necesitaríamos poder trabajar con las hojas de estilos de una manera más ágil: permitiendo el uso de variables, pudiendo dividir los archivos en bloques más pequeños, pudiendo crear bloques de estilos que se repitan o incluso pequeñas funciones simples. Esto es posible con los preprocesadores CSS.

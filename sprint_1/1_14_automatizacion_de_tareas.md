@@ -1,11 +1,12 @@
 # Automatización de tareas
 
-## Contenidos
-
-- [Introducción](#introducción)
-- [¿En qué casos se utiliza?](#¿en-qué-casos-se-utiliza)
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
 - [Gulp](#gulp)
 - [Recursos externos](#recursos-externos)
+
+<!-- TOC END -->
 
 
 ## Introducción

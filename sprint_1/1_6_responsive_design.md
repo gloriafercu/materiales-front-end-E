@@ -1,14 +1,19 @@
 # Responsive design
 
-## Contenidos
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Introducción](#introduccin)
+- [¿Qué es diseño flexible?](#qu-es-diseo-flexible)
+- [¿Qué es responsive?](#qu-es-responsive)
+- [Imágenes, media y tipografía flexibles](#imgenes-media-y-tipografa-flexibles)
+- [Max-width, min-width (y height). Width: 100%.](#max-width-min-width-y-height-width-100)
+- [Mediaqueries. Viewport: &lt;meta name="viewport"&gt;.](#mediaqueries-viewport-ltmeta-nameviewportgt)
+- [Mobile first](#mobile-first)
+- [BONUS: vw y vh](#bonus-vw-y-vh)
+- [Recursos externos](#recursos-externos)
 
-- Diseño flexible
-- ¿Qué es responsive?
-- Imágenes, media, tipografía (em) flexibles
-- Mediaqueries. Viewport.
-- Max-width, min-width (y height). Width: 100%.
-- Mobile first.
-- Bonus: vw y vh
+<!-- TOC END -->
+
+
 
 ## Introducción
 
