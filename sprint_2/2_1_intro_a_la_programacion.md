@@ -200,7 +200,7 @@ Para evitar estos errores producidos por el uso de comillas anidadas existen dos
 - Usar comillas simples siempre que el texto contenga comillas dobles o viceversa
 - Usar la barra inclinada (`\`) delante de las comillas anidadas (Ej: `'I\'m a front-end developer'`). De esta forma decimos a JavaScript que esas comillas son texto normal y no van a ser usadas para marcar el final del string y por tanto no se produce el error.
 
-**Nota:** Como sabemos que os gustan las normas y las cosas claras, a la hora de trabajar con distintos tipos de comillas, la opción recomendable es usar un único tipo a lo largo de todo el código de tu programa y usar `\` para "escapar" (convertir a un caracter normal) las comillas anidadas (ej: `What\'s up!`).
+**Nota:** Como sabemos que os gustan las normas y las cosas claras, a la hora de trabajar con distintos tipos de comillas, la opción recomendable es usar un único tipo a lo largo de todo el código de tu programa y usar `\` para "escapar" (convertir a un caracter normal) las comillas anidadas (ej: `'What\'s up!'`).
 
 Ejemplos de `string`s válidos en JavaScript:
 
