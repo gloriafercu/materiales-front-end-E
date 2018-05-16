@@ -49,7 +49,14 @@ En HTML cada elemento se representa visualmente como una caja, lo podemos ver f�
 
 El modelo de caja es una especificación que define las características específicas de esa caja y como infieren en el resto de elementos de la página; es el que le dice al navegador cómo debe pintar cada caja (elemento).
 
-Antes de entrar en profundidad con los modelos de caja tenemos que ver las formas básicas de visualización de los elementos HTML:
+Antes de entrar en profundidad con los modelos de caja tenemos que ver conceptos básicos (alto, ancho, borde, margen y padding) y las formas básicas de visualización de los elementos HTML:
+
+### Height, width, border, padding y margin
+
+Cada elemento tiene una *altura* (height) y *anchura* (width). Además, puede tener otros atributos relacionados que influyen en su tamaño y su posición, que son el padding o relleno, los márgenes y los bordes:
+- el *borde* de un elemento es una línea que puede tener distinto grosor y que encuadra el contenido del elemento
+- el *padding* es la distancia desde el contenido del elemento hasta el borde
+- el *margen* es la distancia desde borde del elemento hasta los elementos que están a su alrededor
 
 ### Visualización (display)
 
@@ -165,13 +172,8 @@ EJERCICIO 3:
 Entre dos párrafos añadir una imagen de 200x200 y explicar cómo se distribuye el contenido.
 * * *
 
-### Dimensiones: margen, borde, padding y ancho/alto
+### Dimensiones y box-sizing
 Una vez vistos los modos principales de visualización podemos entrar al modelo de caja. Recordemos que el modelo de caja es el que le dice al navegador cómo debe pintar cada caja.
-
-Cada elemento tiene una *altura* (height) y *anchura* (width). Además, puede tener otros atributos relacionados que influyen en su tamaño y su posición, que son el padding o relleno, los márgenes y los bordes:
-- el *borde* de un elemento es una línea que puede tener distinto grosor y que encuadra el contenido del elemento
-- el *padding* es la distancia desde el contenido del elemento hasta el borde
-- el *margen* es la distancia desde borde del elemento hasta los elementos que están a su alrededor
 
 Si pensamos en el conjunto global, una página sería como un conjunto de cajas una dentro de otra, por lo tanto si pensamos en cada elemento a partir de ahora como un rectángulo nos será mucho más fácil visualizar cómo se compone la estructura de una web y cómo podemos pensar en ella combinando elementos que contienen otros elementos a su vez.
 
@@ -277,7 +279,7 @@ Entrar en [Wikipedia.org](http://wikipedia.org) y:
 * * *
 
 #### Cambiando css con el Inspector: el atributo style
-Con el inspector no solo podemos consultar información sino cambiarla para hacer pruebas rápidas, en este ejemplo hemos aumentado el padding de la "caja" con el logo de **Atom** de `2em 1em` a `4em 1m`:
+Con el inspector no solo podemos consultar información sino cambiarla para hacer pruebas rápidas, en este ejemplo hemos reducido el margin-top de la "caja" con el encabezado principal de la página de  **GulpJS** de `50px` a `5px`:
 ![Ejemplo de edición desde el inspector](assets/images/1-3/edicion-con-el-inspector.png)
 
 Esta edición rápida es posible gracias al atributo `style=""` que es otra forma de aplicar estilos y que se puede añadir a cualquier etiqueta html.
@@ -289,7 +291,7 @@ Es una forma de aplicar estilos que ha quedado para usar principalmente desde pr
 
 Usando este atributo los estilos se escriben en línea, seguidos y separados por `;`:
 ```html
-<h1 style="color:black;font-size:3.2em;">Encabezado 1</h1>
+<h1 style="color:black;font-size:28px;">Encabezado 1</h1>
 ```
 
 * * *
