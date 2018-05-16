@@ -6,6 +6,7 @@
 - [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
 - [Booleanos](#booleanos)
 - [Condicionales](#condicionales)
+- [La consola de JavaScript](#la-consola-de-javascript)
 - [Bucles](#bucles)
 - [Recursos externos](#recursos-externos)
 
@@ -188,7 +189,7 @@ if (age > 30) {
 ***
 EJERCICIO 1: Control de acceso
 
-En este ejercicio vamos a crear un control de acceso que muestre una ventana para que el usuario introduzca su nombre. Posteriormente, si el nombre es el tuyo o el de tu compañera muestre el mensaje "Bienvenida, (tu nombre aqui)". Si el nombre es diferente al tuyo deberá mostrar "Lo siento pero el usuario que has introducido no está registrado".
+En este ejercicio vamos a crear un control de acceso que muestre una ventana para que el usuario introduzca su nombre. Posteriormente, si el nombre es el tuyo o el de tu compañera muestre el mensaje "Bienvenida, (tu nombre aquí)". Si el nombre es diferente al tuyo deberá mostrar "Lo siento pero el usuario que has introducido no está registrado".
 
 ***
 
@@ -237,7 +238,7 @@ Escribe las condiciones para el siguiente ejercicio y utilizando `prompt` haz un
 if (/* condicion 1 */) {
   alert('El número es 0')
 } else if (/* condicion 1 */) {
-  alert('El número no es negativo')
+  alert('El número es negativo')
 } else if (/* condicion 1 */) {
   alert('El número es múltiplo de 2 y de 3')
 } else if (/* condicion 1 */) {
@@ -259,6 +260,22 @@ Te habrá pasado varias veces de ir por la calle y que alguien te pregunte "perd
 
 ***
 
+## La consola de JavaScript
+
+En las herramientas para desarrolladores de Chrome (las DevTools) la segunda pestaña es una consola JavaScript. Una consola nos permite escribir instrucciones JavaScript que al dar al Enter se ejecutan. En la consola puedes probar a hacer sumas, declarar variables, funciones, etc.
+
+Con la consola también podemos interactuar desde nuestro programa JavaScript, es decir, desde el código que escribimos en nuestro fichero `.js`. Una de las cosas que podemos hacer es escribir datos que comúnmente se denomina *loguear* datos. Lo hacemos mediantes una función `console.log()` en la que lo que pongamos entre paréntesis será lo que se escriba en la consola. A priori puede parecer que esto no tiene mucha utilidad ya que en nuestra página web no veremos nada, solo si abrimos las herramientas de desarrolladores. Pero con el tiempo le irás comprobando lo útil que es, por ejemplo, para depurar (resolver) errores en el código.
+
+```js
+console.log('Hola');
+
+var num = 56;
+console.log(num);
+```
+
+> Prueba a abrir la consola y escribe instrucciones para que veas cómo puedes ejercutar JS. También prueba a escribir datos en la consola desde tu programa con `console.log`
+
+
 ## Bucles
 
 Sirve para ejecutar un mismo código un número determinado de veces. _Haz esto x veces_.
@@ -273,14 +290,14 @@ En el este sprint del curso vamos a aprender el bucle `for` que tiene la siguien
 
 ```js
 for (var i = 0; i < 20; i++) {
-  alert('Me encantan los bucles 💪');
+  console.log('Me encantan los bucles 💪');
 }
 ```
 
-En este ejemplo de código, hacemos aparecer una ventana de alerta 20 veces con el texto `Me encantan los bucles 💪`. Funciona de la siguiente forma:
+En este ejemplo de código, hacemos aparecer 20 veces en la consola el texto `Me encantan los bucles 💪`. Funciona de la siguiente forma:
   1. Se ejecuta el código de inicialización (`var i = 0`)
   1. Se comprueba que la condición se cumple (`i < 20`), en este caso el resultado de `true`
-  1. Como la condición se cumple, se ejecuta el código que hay dentro del bloque entre las llaves (`{}`), es decir el `alert`
+  1. Como la condición se cumple, se ejecuta el código que hay dentro del bloque entre las llaves (`{}`), es decir el `console.log`
   1. Se ejecuta la actualización del bucle (`i++`) y la variable `i` pasa a valer 1
   1. Vuelta al paso 2
   1. Cuando la variable `i` llega al valor de 20, la condición ya no se cumple (20 no es menor que 20) y el bucle acaba
@@ -289,10 +306,10 @@ Otro aspecto interesante de los bucles `for` es que dentro del bloque de código
 
   ```js
   for (var i = 0; i < 20; i++) {
-    alert('Voy por la vuelta ' + i);
+    console.log('Voy por la vuelta ' + i);
   }
   ```
-Este ejemplo hará aparecer 20 ventanas de alertas con el texto:
+Este ejemplo hará aparecer 20 veces, en la consola, el texto:
 - Voy por la vuelta 0
 - Voy por la vuelta 1
 - Voy por la vuelta 2
@@ -303,23 +320,23 @@ Este ejemplo hará aparecer 20 ventanas de alertas con el texto:
 ***
 EJERCICIO 4
 
-Partiendo el ejemplo anterior, crea un bucle que muestre 10 ventanas de alerta con el texto `Voy por la vuelta X` siendo el número de vuelta desde 1 hasta 10 (no desde 0 hasta 9).
+Partiendo el ejemplo anterior, crea un bucle que muestre 10 veces, en la consola, el texto `Voy por la vuelta X` siendo el número de vuelta desde 1 hasta 10 (no desde 0 hasta 9).
 ***
 EJERCICIO 5
 
-Vamos a partir de una variable `result` con valor 0. Construiremos un bucle que se ejecute 10 veces y sume 2 a la variable `result` en cada iteración del bucle. Al acabar el bucle, mostraremos una venta de alerta con `El resultado es: X`, siendo X el valor de la variable `result`.
+Vamos a partir de una variable `result` con valor 0. Construiremos un bucle que se ejecute 10 veces y sume 2 a la variable `result` en cada iteración del bucle. Al acabar el bucle, mostraremos en la consola el texto `El resultado es: X`, siendo X el valor de la variable `result`.
 
 > NOTA: Este tipo de variable como `result` que se va actualizando y al final tiene el resultado de varias operaciones se llama _aculumador_. Puede ser de tipo numérico pero también de tipo cadena.
 
 ***
 EJERCICIO 6: Previsión para ver la _Luna del cazador_
 
-Cada tres años se produce una luna llena completamente iluminada por el Sol durante unos minutos. Esta luna es conocida como la “Luna del cazador”. En el año 2017 se pudo ver esta luna el 5 de octubre y mucha gente se la perdió. Para que no nos pase los siguientes años vamos a crear un código que muestre en pantalla cuando serán las 15 próximas lunas.
+Cada tres años se produce una luna llena completamente iluminada por el Sol durante unos minutos. Esta luna es conocida como la “Luna del cazador”. En el año 2017 se pudo ver esta luna el 5 de octubre y mucha gente se la perdió. Para que no nos pase los siguientes años vamos a crear un código que muestre en consola cuando serán las 15 próximas lunas.
 
 ***
 EJERCICIO 7: Crea tu árbol de Navidad
 
-Para que no nos pille el toro esta Navidad, vamos a crear un código que muestre un árbol de navidad con triángulos (▲). Nosotros le diremos la altura y creará un triángulo con un número igual de lineas que la altura que le hemos pasado. Por ejemplo si le pasamos 5, creará este árbol:
+Para que no nos pille el toro esta Navidad, vamos a crear un código que muestre en consola un árbol de navidad con triángulos (▲). Nosotros le diremos la altura y creará un triángulo con un número igual de lineas que la altura que le hemos pasado. Por ejemplo si le pasamos 5, creará este árbol:
 
 ```
 ▲  
@@ -362,7 +379,7 @@ Intenta cambiar el código para que aparezca el árbol completo.
 
 ### Videos de Ada Lovelace en YouTube
 
-En este canal tenemos varios viídeos que explican muy bien lo que necesitamos aprender en esta sesión con ejemplos y de forma bastante sencilla:
+En este canal tenemos varios vídeos que explican muy bien lo que necesitamos aprender en esta sesión con ejemplos y de forma bastante sencilla:
 
 - [Operadores de comparación](https://www.youtube.com/watch?v=ICZXkflN-CA&index=11&list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o)
 - [Operadores lógicos](https://www.youtube.com/watch?v=S6qx7TCM4hU&list=PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o&index=12)

@@ -5,7 +5,6 @@
 - [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
 - [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
 - [Funciones](#funciones-1)
-- [La consola de JavaScript](#la-consola-de-javascript)
 - [Recursos externos](#recursos-externos)
 
 <!-- TOC END -->
@@ -112,22 +111,6 @@ Crea una función que reciba 4 parámetros, cada uno con un número, y devuelva 
 
 ***
 
-## La consola de JavaScript
-
-En las herramientas para desarrolladores de Chrome (las DevTools) la segunda pestaña es una consola JavaScript. Una consola nos permite escribir instrucciones JavaScript que al dar al Enter se ejecutan. En la consola puedes probar a hacer sumas, declarar variables, funciones, etc.
-
-Con la consola también podemos interactuar desde nuestro programa JavaScript, es decir, desde el código que escribimos en nuestro fichero `.js`. Una de las cosas que podemos hacer es escribir datos que comúnmente se denomina *loguear* datos. Lo hacemos mediantes una función `console.log()` en la que lo que pongamos entre paréntesis será lo que se escriba en la consola. A priori puede parecer que esto no tiene mucha utilidad ya que en nuestra página web no veremos nada, solo si abrimos las herramientas de desarrolladores. Pero con el tiempo le irás comprobando lo útil que es, por ejemplo, para depurar (resolver) errores en el código.
-
-```js
-console.log('Hola');
-
-var num = 56;
-console.log(num);
-```
-
-> Prueba a abrir la consola y escribe instrucciones para que veas cómo puedes ejercutar JS. También prueba a escribir datos en la consola desde tu programa con `console.log`
-
-***
 EJERCICIO 3: Ticket con IVA
 
 Crea una función que reciba como parámetro un número, que representará un precio, y devuelva un texto en el que ponga el precio sin IVA, el IVA (21%) y el total. Por ejemplo, si introducimos un 10, la función devolverá `"Precio sin IVA: 10, IVA: 2,1 y Total: 12,1"`.
