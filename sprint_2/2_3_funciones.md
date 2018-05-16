@@ -50,12 +50,12 @@ La estructura para declarar una función es
 
 ```javascript
 //Función sin parámetros
-function hi () {
+function hi() {
 	alert('Hola');
 }
 
 //Función con parámetros
-function sum (a, b) {
+function sum(a, b) {
 	alert(a + b);
 }
 ```

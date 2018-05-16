@@ -155,9 +155,9 @@ adalaber.isMarried = false;
 alert(adalaber.age);
 ```
 ***
-EJERCICIO 1
+EJERCICIO 1:
 
-Crea un nuevo objeto en JavaScript `adalaber1` que nos sirve para prepresentar (modelar) a una Adalaber. Tenemos estos datos:
+Crea un nuevo objeto en JavaScript `adalaber1` que nos sirva para representar (modelar) a una Adalaber. Tenemos estos datos:
 - Susana, 34 años, periodista
 
 Luego muestra una ventana de alerta para mostrar una frase como esta, accediendo a los datos del objeto:
@@ -171,7 +171,7 @@ Ahora hacemos lo mismo (crear el objeto `adalaber2` y mostrar la alerta) con una
 
 ### Métodos
 
-Los métodos son funciones asociadas a la propiedad de un objeto. Estas funciones suelen definirse como funciones anónimas como las que vimos en la sesión anterior. Para ejecutar un método, accedemos a él como a una propiedade y le pasamos los argumentos entre paréntesis `( )`.  Ejemplo:
+Los métodos son funciones asociadas a la propiedad de un objeto. Estas funciones suelen definirse como funciones anónimas como las que vimos en la sesión anterior. Para ejecutar un método, accedemos a él como a una propieda de y le pasamos los argumentos entre paréntesis `( )`.  Ejemplo:
 
 ```js
 var adalaber = {};
@@ -187,7 +187,7 @@ alert(adalaber.speak('Hola'));
 > NOTA: Por convención, los métodos suelen tener como nombre un verbo (`show`, `hide`, `reset`, etc.) y las características (propiedades) suelen tener un sustantivo (`color`, `size`, `type`, `content`, `text`, etc)
 
 ***
-EJERCICIO 2
+EJERCICIO 2:
 
 Partiendo del objeto `adalaber1` del ejercicio anterior, añade un método (una función) `run` que muestra una ventana de alerta con la frase 'Estoy corriendo'.
 
@@ -209,10 +209,10 @@ adalaber.sayHello = function (){
 alert(adalaber.sayHello());
 ```
 
-> NOTA: El concepto de `this` en JavaScript es mucho más complejo de lo que hemos aprendido aquí. Por el momento con lo que hemos visto nos sirve para empezar a trabajar con él, pero sabiendo que se trata de alberga muchas más posibilidades.
+> NOTA: El concepto de `this` en JavaScript es mucho más complejo de lo que hemos aprendido aquí. Por el momento con lo que hemos visto nos sirve para empezar a trabajar con él, pero sabiendo que alberga muchas más posibilidades.
 
 ***
-EJERCICIO 3
+EJERCICIO 3:
 
 Partiendo del objeto `adalaber1` del ejercicio anterior, añade un método (una función) `showBio` que muestra una ventana de alerta con la frase 'Mi nombre es María, tengo 34 años y soy periodista', usando el nombre, edad y estudios que están almacenados en el objeto.
 
