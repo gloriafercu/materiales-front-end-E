@@ -498,7 +498,7 @@ Vamos a poner un ejemplo
 
     Yo como un cliente de Netflix
     necesito más episodios de Stranger Things
-    con la finalida de que mi vida no sea un infierno.
+    con la finalidad de que mi vida no sea un infierno.
 
 Pues vamos a crear un generador de historias de usuario usando JavaScript. Para ello, vamos a pedir los datos que necesitamos para definir la historia usando `prompt`: usuario, funcionalidad y razón. Con esta información, vamos a crear una ventana de alerta con la historia de usuario completa. ¡Vamos a ello!
 
