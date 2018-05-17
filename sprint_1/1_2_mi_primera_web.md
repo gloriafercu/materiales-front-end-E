@@ -27,23 +27,23 @@ La etiquetas HTML nos permiten estructurar nuestro contenido según su función 
 
 ```html
 <html>
-	<body>
-		<header>
-			<h1>Título</h1>
-		</header>
-		<main>
-			<section>
-				<h2>Subtítulo</h2>
-				<p>Contenido y más contenido</p>
-				<p>Contenido con <a href="">enlaces</a></p>
-				<ul>
-					<li>lista</li>
-					<li>de</li>
-					<li>cosas</li>
-				</ul>
-			</section>
-		</main>
-	</body>
+  <body>
+    <header>
+      <h1>Título</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Subtítulo</h2>
+        <p>Contenido y más contenido</p>
+        <p>Contenido con <a href="">enlaces</a></p>
+        <ul>
+          <li>lista</li>
+          <li>de</li>
+          <li>cosas</li>
+        </ul>
+      </section>
+    </main>
+  </body>
 </html>
 ```
 
@@ -70,7 +70,6 @@ Estos bloques especiales se pueden usar unos dentro de otros según tenga sentid
 ## Contenido
 Dentro de estas secciones querremos incluir nuestros contenidos. Además de los encabezados, párrafos y listas tenemos un juego importante de etiquetas:
 
-
 ### Enlaces
 Uno de los conceptos básicos de HTML es el enlace que nos permite vincular páginas o partes de ellas de manera que la información no quede como algo aislado sino conectado:
 
@@ -95,17 +94,17 @@ En mi página voy a identificar la cabecera y el contenido principal:
 <!doctype html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<title>Mi página</title>
+  <meta charset="utf-8">
+  <title>Mi página</title>
 </head>
 <body>
-	<header id="top">
-		<h1>Título de mi página</h1>
-	</header>
-	<main id="main">
-		<h2>Texto en latín</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-	</main>
+  <header id="top">
+    <h1>Título de mi página</h1>
+  </header>
+  <main id="main">
+    <h2>Texto en latín</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </main>
 </body>
 </html>
 ```
@@ -117,20 +116,20 @@ Ahora podría añadir un enlace abajo del todo para ahorrarme el scroll poniendo
 <!doctype html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<title>Mi página</title>
+  <meta charset="utf-8">
+  <title>Mi página</title>
 </head>
 <body>
-	<header id="top">
-		<h1>Título de mi página</h1>
-	</header>
-	<main id="main">
-		<h2>Texto en latín</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-	</main>
-	<footer>
-		<p><a href="#top">Volver arriba</a></p>
-	</footer>
+  <header id="top">
+    <h1>Título de mi página</h1>
+  </header>
+  <main id="main">
+    <h2>Texto en latín</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </main>
+  <footer>
+    <p><a href="#top">Volver arriba</a></p>
+  </footer>
 </body>
 </html>
 ```
@@ -154,7 +153,7 @@ La etiqueta tiene varios atributos que debemos conocer:
 * `title=""`: Donde podemos añadir un texto complementario que el navegador mostrará en un pequeño tooltip cuando pongamos el cursor sobre el enlace. Me interesa usarlo cuando tengo un enlace tipo "descargar" y quiero asociarle el texto "Descargar archivo PDF".  
 **Ejemplo:**  
 ![Ejemplo de title=""](assets/img/title.png)
-* `target=""`: Aquí podemos especificar si se abre en ventana nueva. Esto me interesa hacerlo cuando en mi página enlazo a páginas de otros y no quiero que el usuario "pierda" mi página al hacer clic en ellos.
+* `target=""`: Aquí podemos especificar si se abre en ventana nueva. Esto nos interesa hacerlo cuando en nuestra página enlazamos a páginas de otros y no queremos que el usuario "pierda" nuestra página al hacer clic en ellos.
 
 
 ### Negritas, cursivas
@@ -205,21 +204,21 @@ En una imagen, una tabla de 3 filas y 3 columnas sería algo asi:
 y en código quedaría así:
 ```html
 <table>
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
 ```
 
@@ -331,15 +330,15 @@ Ya habíamos visto que los ID eran una palabra clave que usábamos como identifi
 En una lista de acciones, por ejemplo, podemos tener unas clases para añadir estilos a los elementos del bloque y, ademas, añadir un identificador único para cada elemento.
 ```html
 <ul class="actions">
-	<li class="action">
-		<a id="add-user" href="" class="button">Nuevo usuario</a>
-	</li>
-	<li class="action">
-		<a id="rename-user" href="" class="button">Renombrar usuario</a>
-	</li>
-	<li class="action">
-		<a id="delete-user" href="" class="button">Eliminar usuario</a>
-	</li>
+  <li class="action">
+    <a id="add-user" href="" class="button">Nuevo usuario</a>
+  </li>
+  <li class="action">
+    <a id="rename-user" href="" class="button">Renombrar usuario</a>
+  </li>
+  <li class="action">
+    <a id="delete-user" href="" class="button">Eliminar usuario</a>
+  </li>
 </ul>
 ```
 Y ahora podríamos usar el ID para cambiar el tañamo del texto de uno de los elementos. Para ello, usamos la `#` seguida de la id como selector.
@@ -455,7 +454,7 @@ CSS es, en español, Hojas de estilo en cascada. La "cascada" se refiere al proc
 
 Acabamos de ver que a veces varios selectores se aplican al mismo elemento y es el algoritmo de la cascada lo que decide que propiedades se aplicaran.
 
-La cascada depende de 4 factores:
+La cascada depende de 3 factores:
 
 1. La **importancia**: hay una palabra clave que hace que nuestra propiedad se aplique siempre.
 2. La **especificidad**: es un arma de doble filo porque cuanto más específico sea un selector más fuerza tendrán sus reglas sobre las demás, pero el reto es escribir los selectores lo menos específicos posible.
