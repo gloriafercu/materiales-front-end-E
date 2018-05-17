@@ -669,7 +669,7 @@ Puedes partir de este [CodePen](https://codepen.io/anon/pen/vRjLbK) cómo base
 
 EJERCICIO 3: Nuestro componente input
 
-En este ejercicio vamos a crear los estilos para un componente input. Este componente, como se puede ver en la imagen tendrá distintos estados (activo, hover, etc.) y distintos formatos (con icono a la derecha y con icono a la izquierda)
+En este ejercicio vamos a crear los estilos para un componente input. Este componente, como se puede ver en la imagen tendrá distintos estados (activo, hover, etc.) y distintos formatos (con y sin icono a la derecha)
 
 ![Inputs](assets/images/3-2/inputs.png)
 
