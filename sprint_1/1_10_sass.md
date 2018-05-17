@@ -144,7 +144,8 @@ Esto nos generará el siguiente CSS:
 .content p {color:blue;}
 .content p a {color:red;}
 ```
-El anidado nos permite anidar bloques asimilandose un poco a la jerarquía visual de HTML. Esto nos permite ver algunos bloques más claros o agrupar clases que nos interese ver juntas. Pero atención: anidar genera estilos más específicos y hay que usarlo con mucho cuidado. Con el uso iremos viendo cuándo usarlo y cuándo no ;)
+El anidado nos permite anidar bloques asimilandose un poco a la jerarquía visual de HTML. Esto nos permite ver algunos bloques más claros o agrupar clases que nos interese ver juntas. Pero atención: anidar genera estilos más específicos y hay que usarlo con mucho cuidado. 
+Una buena regla es, cuando vayamos añadir un cuarto nivel de anidación, pararnos a repensar si realmente es necesario. Pero con el uso iremos viendo cuándo usarlo y cuándo no ;)
 
 #### Referenciando al selector padre o madre: `&`
 ¡Pero no todo es tener cuidado! Una de las ventajas que nos ofrece el anidado es poder referenciar al selector padre o madre. Por ejemplo: queremos que los enlaces de nuestra página sean rojos, y el hover en azul, pero los enlaces del footer deben ser naranjas con el hover en verde.
@@ -268,7 +269,7 @@ En nuesto `main.scss` llamaríamos a todos estos archivos en orden:
 > Si ponemos un archivo con un guión bajo delante SASS no lo procesará para convertirlo a CSS. La idea es que todos los nombres de archivos que vayamos a importar los escribamos con un guión bajo delante. Estos archivos a menudo se suelen llamar `parciales`, porque son partes del código final.
 
 > **NOTA 2:**  
-> Es importante saber que el orden de los imports es importante y que tal como se carguen será como se importen y como se ejecuten para convertirse a CSS. ¡Recarodad la cascada de CSS!
+> Es importante saber que el orden de los imports es importante y que tal como se carguen será como se importen y como se ejecuten para convertirse a CSS. ¡Recordad la cascada de CSS!
 
 Una ventaja directa de trabajar con parciales es la cantidad de conflictos de git que nos vamos a ahorrar ;)
 ***
@@ -322,7 +323,7 @@ Y esto generará:
 }
 ```
 
-También podemos crear mixins "personalizable" con parámetros. Otro ejemplo.
+También podemos crear mixins "personalizables" con parámetros. Otro ejemplo.
 
 ```scss
 @mixin t($fontSize, $lineHeight) {
