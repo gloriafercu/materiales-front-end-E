@@ -33,7 +33,7 @@ Dado que vamos a aprender a aplicar cambios y obtener información de nuestra p�
 
 Hasta ahora hemos visto a grandes rasgos cómo funciona la web en lo que a clientes y servidores se refiere, pero es el momento de saber un poco más sobre qué es lo que sucede en nuestro navegador web una vez que este recibe una página web (enviada desde un servidor) o abrimos un html desde nuestro ordenador.
 
-En el momento en el que el navegador carga la página lo primero que hace es leer el contenido del archivo HTML (con su correspondiente CSS y JavaScript), lo procesa y genera un esquema virtual representando los elementos de nuestra página como si fuese un árbol de objetos (con sus propiedades y métodos). Cada uno de estos objetos será un nodo de ese esquema, una pequeña parte de la red de conectada con el resto de elementos (madres e hijas).
+En el momento en el que el navegador carga la página lo primero que hace es leer el contenido del archivo HTML (con su correspondiente CSS y JavaScript), lo procesa y genera un esquema virtual representando los elementos de nuestra página como si fuese un árbol de objetos (con sus propiedades y métodos). Cada uno de estos objetos será un nodo de ese esquema, una pequeña parte de la red que conecta con el resto de elementos (madres e hijas).
 
 ![Paso de HTML al DOM](assets/images/2_7html_to_dom.png)
 
@@ -260,10 +260,6 @@ var sectionB = document.querySelector('.section-b');
 
 sectionB.classList.add('hidden');
 
-/*
-También podríamos simplificarlo y poner titleElem.innerHTML += ', adalaber'
-que sería lo mismo
-*/
 ```
 
 Esto hará que el div de `section-b` pase a ser `<div class="section-b hidden"></div>`. Como se puede intuir `classList.add()` sirve para añadir una o más clases a un elemento. En el caso de que quisiéramos añadir más clases, podríamos ir pasando por separado, cada una de las clases que queremos añadir como texto:
@@ -317,7 +313,7 @@ var activableSection = document.querySelector('.activable-section');
 activableSection.classList.toggle('hidden');
 ```
 
-Mucho más sencillo, ¿verdad?. Y ahora te preguntarás qué para qué queremos entonces él `contains()`. Bien, como hemos comentado, el contains nos permite saber si un elemento contiene una clase o no, en la mayoría de las ocasiones, queremos saber esto para añadir o quitar una clase (de ahí que exista `toggle()`) pero hay casos en los que no lo queremos saber para esto. Imaginemos que queremos cambiar el contenido de un elemento en función de si contiene una clase o no, en ese tipo de casos necesitaremos usar `contains()`.
+Mucho más sencillo, ¿verdad?. Y ahora te preguntarás qué para qué queremos entonces el `contains()`. Bien, como hemos comentado, el contains nos permite saber si un elemento contiene una clase o no, en la mayoría de las ocasiones, queremos saber esto para añadir o quitar una clase (de ahí que exista `toggle()`) pero hay casos en los que no lo queremos saber para esto. Imaginemos que queremos cambiar el contenido de un elemento en función de si contiene una clase o no, en ese tipo de casos necesitaremos usar `contains()`.
 
 Y hasta aquí los métodos que necesitamos saber de `classList`, es el momento de hacer ejercicios para reforzar los conocimientos que hemos adquirido.
 
