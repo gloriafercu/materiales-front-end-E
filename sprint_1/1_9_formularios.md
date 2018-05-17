@@ -82,18 +82,9 @@ Junto con el atributo `type`, tenemos otro atributo especial llamado `name` que 
 
   NOTA: La etiqueta input es una etiqueta sin contenido, por lo que no es necesario escribir la etiqueta de cierre. Otro detalle que podemos apreciar es que los campos se muestran en línea ya que por defecto los navegadores lo muestran con `display: inline;`. Podemos asignarles `display: block` para hacer que se muestren en vertical, uno debajo de otro.
 
-###### Resultado obtenido con el código superior
-
-<form action="/signup" method="post">
-  <input type="text" name="firstname">
-  <input type="text" name="lastname">
-</form>
-
 ***
 
 Ya tenemos nuestro formulario con los dos campos necesarios para que funcione, pero nos falta lo más importante, poder enviar el formulario. Para esto vamos a usar también una etiqueta input pero en este caso va a ser del tipo `submit` (`type="submit"`). Si introducimos esta etiqueta en nuestro formulario se mostrará un botón que, al ser pulsado, enviará el formulario. Para establecer qué texto queremos que vaya dentro del botón, usaremos el atributo `value`. Otra cosa a destacar es que el botón tiene una serie de estilos CSS aplicados por defecto pero que podemos modificar añadiendole unos nuevos que sobreescriban a los anteriores.
-
-![Ejemplo de formulario con botón de enviar](assets/images/1-8-submit.png)
 
 ```html
 <form action="/signup" method="post">
@@ -103,14 +94,7 @@ Ya tenemos nuestro formulario con los dos campos necesarios para que funcione, p
 </form>
 ```
 
-
-###### Resultado obtenido con el código superior
-
-<form action="/signup" method="post">
-  <input type="text" name="firstname">
-  <input type="text" name="lastname">
-  <input type="submit" value="Enviar info">
-</form>
+![Ejemplo de formulario con botón de enviar](assets/images/1-8-submit.png)
 
 ***
 
@@ -118,7 +102,7 @@ Hay dos cosas que, aunque no son obligatorias, nos faltan aquí y son bastante i
 
 La etiqueta label se utiliza para mostrar el título del campo, describe qué información debemos introducir en él. La manera más indicada de utilizar una etiqueta `<label>` es incluirla justo antes del `<input>` al que acompaña. Una de las cualidades de esta etiqueta es que si pulsas sobre ella nos colocamos en el campo al que acompaña.
 
-![Ejemplo de cómo se muestran los labels](assets/images/1-8-labels.png)
+
 
 Para decirle al navegador que nuestra etiqueta `<label>` está relacionada con un determinado `<input>` debemos hacer dos cosas, asignar un id al input para identificarla de manera unívoca y añadir el atributo `for` a `<label>` con el id que hemos puesto al input, quedando como resultado el código que mostramos a continuación:
 
@@ -132,23 +116,13 @@ Para decirle al navegador que nuestra etiqueta `<label>` está relacionada con u
 </form>
 ```
 
+![Ejemplo de cómo se muestran los labels](assets/images/1-8-labels.png)
+
   NOTA: Es importante apreciar que dentro del input el atributo `name` y el `id` pueden ser distintos, pero el `for` del label siempre debe coincidir con el `id` del input.
-
-###### Resultado obtenido con el código superior
-
-<form action="/signup" method="post">
-  <label for="nombrecito">Nombre</label>
-  <input id="nombrecito" type="text" name="firstname">
-  <label for="apellidito">Apellido</label>
-  <input id="apellidito" type="text" name="lastname">
-  <input type="submit" value="Enviar info">
-</form>
 
 ***
 
 El atributo `placeholder` se puede asignar a un input y sirve para establecer el texto que se mostrará en el campo cuando este esté vacío. Es una buena práctica usarlo como pista para que la persona que está rellenando el formulario sepa qué información debe introducir. Por ejemplo, podemos darle pistas sobre cómo debe escribir los datos para que no pase un error típico que escribir el nombre y el apellido en el mismo campo (poner Jon Nieve puede ser una opción).
-
-![Ejemplo de placeholder para un campo de texto](assets/images/1-8-placeholder.png)
 
 ```html
 <form action="/signup" method="post">
@@ -160,15 +134,7 @@ El atributo `placeholder` se puede asignar a un input y sirve para establecer el
 </form>
 ```
 
-###### Resultado obtenido con el código superior
-
-<form action="/signup" method="post">
-  <label for="nombrecito">Nombre</label>
-  <input placeholder="Jon" id="nombrecito" type="text" name="firstname">
-  <label for="apellidito">Apellido</label>
-  <input placeholder="Nieve" id="apellidito" type="text" name="lastname">
-  <input type="submit" value="Enviar info">
-</form>
+![Ejemplo de placeholder para un campo de texto](assets/images/1-8-placeholder.png)
 
 ***
 
@@ -183,15 +149,6 @@ Bien, continuemos introduciendo campos. Este ejemplo tiene se empieza a parecer 
 </form>
 ```
 
-###### Resultado obtenido con el código superior
-
-<form action="/signup" method="post">
-  <input type="text" name="firstname">
-  <input type="text" name="lastname">
-  <input type="mail" name="mail">
-  <input type="submit" value="Enviar info">
-</form>
-
 ***
 
 A simple vista, parece que no hay diferencia entre los tipos `email` y `text` pero sí que la hay, lo que pasa es que es difícilmente perceptible. La diferencia entre ambos es que cuando usamos el tipo `email`, al pulsar el botón de enviar en el formulario, se comprobará primero que el mail introducido es una dirección de correo válida y si es así se enviará y si no es correcta se mostrará un mensaje como el que aparece en la imagen que se muestra a continuación.
@@ -204,8 +161,6 @@ Otra diferencia entre el tipo `email` y el tipo `text` es que si abrimos la pág
 
 Bien, tenemos el nombre y el email, vamos con el siguiente, el teléfono. Para el campo teléfono sucede lo mismo que para el del email. En vez de usar `type="text"` utilizaremos `type="tel"`. En este caso no nos validará el teléfono antes de enviarlo porque hay teléfonos muy raros y en muchos casos también van acompañados de guiones o puntos y es complejo de gestionar. Aún así si utilizamos `type="tel"` si que nos mostrará un teclado numérico en el teléfono para facilitarnos el trabajo a la hora de escribir la información como se puede ver en la captura de pantalla.
 
-![Captura de pantalla del teclado que se muestra en un campo del tipo teléfono](assets/images/1-8-form-telephone-keyboard.jpg)
-
 ```html
 <form action="/signup" method="post">
   <input type="text" name="firstname">
@@ -216,21 +171,9 @@ Bien, tenemos el nombre y el email, vamos con el siguiente, el teléfono. Para e
 </form>
 ```
 
-###### Resultado obtenido con el código de arriba
-
-<form action="/signup" method="post">
-  <input type="text" name="firstname">
-  <input type="text" name="lastname">
-  <input type="mail" name="mail">
-  <input type="tel" name="telephone">
-  <input type="submit" value="Enviar info">
-</form>
-
-***
+![Captura de pantalla del teclado que se muestra en un campo del tipo teléfono](assets/images/1-8-form-telephone-keyboard.jpg)
 
 Tenemos prácticamente todo pero nos quedaría algo bastante importante, la contraseña. Para crear un campo para nuestra contraseña continuamos con el mismo procedimiento que en los anteriores campos, esta vez usando `type="password"` como atributo para definir el tipo de campo. Los campos tipo password tienen una diferencia frente al resto y es que sustituyen el texto que contienen por asteriscos (\*) para aumentar la seguridad y que la contraseña no sea visible.
-
-![El contenido de los campos del tipo contraseña se sustituye por asteriscos](assets/images/1-8-password.png)
 
 Otra peculiaridad de los campos del tipo `password` es que su contenido se borra si se recarga la página, mientras que en un campo de texto normal el contenido se mantiene tras la recarga.
 
@@ -245,15 +188,7 @@ Otra peculiaridad de los campos del tipo `password` es que su contenido se borra
 </form>
 ```
 
-###### Resultado obtenido con el código de arriba
-
-<form action="/signup" method="post">
-  <input type="text" name="firstname">
-  <input type="text" name="lastname">
-  <input type="mail" name="mail">
-  <input type="tel" name="telephone">
-  <input type="submit" value="Enviar info">
-</form>
+![El contenido de los campos del tipo contraseña se sustituye por asteriscos](assets/images/1-8-password.png)
 
 * * *
 EJERCICIO 1
@@ -493,7 +428,10 @@ Para crear un botón en nuestro formulario que realice esta acción de establece
 
 Este botón siempre borrará toda la información de los campos que haya dentro de la etiqueta `<form>` que lo contenga.
 
-- Ejercicio
+* * *
+EJERCICIO 4
+
+En el formulario de facebook, añadir un botón para borrar la información.
 
 ## Estilos CSS de un formulario
 
@@ -512,17 +450,17 @@ input {
   NOTA: El prefijo `-webkit-` y `-moz-` es específico para aplicar esto a los navegadores Safari y Chrome y Mozilla Firefox respectivamente
 
 * * *
-EJERCICIO 4
+EJERCICIO 5
 
-Crea un formulario similar al de la imagen, que es el de registro de GMail.
+Crea un formulario similar al de la imagen, que es el de registro de Gmail.
 
-![Formulario GMail](assets/images/1-r-2-gmail-signup-form.png)
+![Formulario Gmail](assets/images/1-r-2-gmail-signup-form.png)
 
 Modifica el formulario anterior para que se hagan las siguientes validaciones:
 
 - Todos los campos excepto sexo son obligatorios
 - La dirección de correo actual debe ser una dirección de correo válida
-- El teléfono debe ser un número de teléfono válido en España (PISTA: mirad cómo usar el atributto `pattern`)
+- El teléfono debe ser un número de teléfono válido en España (PISTA: buscad cómo usar el atributto `pattern`)
 - Día y año (de la fecha de nacimiento) deben ser numéricos
 * * *
 
