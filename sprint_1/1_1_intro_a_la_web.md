@@ -21,19 +21,33 @@ La respuesta corta a **cómo funciona Internet** es que funciona conectando dos 
 **El cliente** es nuestro ordenador o dispositivo (tablet/móvil/etc…) y desde él nos conectamos al servidor para acceder a la información que estamos buscando.
 
 La respuesta más en detalle es que Internet es una red de ordenadores conectados con un cable, un cable muy tocho, pero un cable al fin y al cabo. Estos ordenadores se llaman servidores y, entre todos, tienen almacenada toda la información y archivos disponibles (documentos, música, películas… ).
-A estos ordenadores se les llama **servidores** y dentro de esta red, cada equipo está localizado por un conjunto de números que se llama dirección IP, formado por cuatro números separados por puntos, por ejemplo:
+A estos ordenadores se les llama **servidores** y dentro de esta red, cada ordenador está localizado por un conjunto de números que se llama dirección IP, formado por cuatro números separados por puntos, por ejemplo:
 
 ```
 216.58.211.206
 ```
 
-Identificar los servidores de esta forma está bien cuando 2 ordenadores trabajan entre sí, pero las personas necesitamos un sistema que podamos entender y usar fácilmente. Así, tenemos otro tipo de ordenadores que se ocupan de asociar esta dirección IP con una dirección que una persona de bien pueda usar sin perder la juventud en llevar la cuenta, lo que llamamos un dominio. Estos ordenadores son los **servidores DNS** ([DNS](https://es.wikipedia.org/wiki/Sistema_de_nombres_de_dominio)).
+Identificar los servidores de esta forma está bien cuando 2 ordenadores trabajan entre sí, pero las personas necesitamos un sistema que podamos entender y usar fácilmente. Así, tenemos otro tipo de ordenadores que se ocupan de asociar esta dirección IP con una dirección que una persona de bien pueda usar sin perder la juventud en llevar la cuenta, lo que llamamos un dominio. 
 
-Ahora vamos a nuestros equipos (ordenadores, móviles, tablets, etc.). Estos dispositivos son los **clientes** y están también conectados a esa red de servidores pero a través de unas empresas proveedoras de servicios: Movistar, Vodafone, etc.
+```
+google.es
+```
+
+Estos ordenadores son los **servidores DNS** ([DNS](https://es.wikipedia.org/wiki/Sistema_de_nombres_de_dominio)).
+
+Ahora vamos a nuestros dispositivos (ordenadores, móviles, tablets, etc.). Estos son los **clientes** y están también conectados a esa red de servidores pero a través de unas empresas proveedoras de servicios: Movistar, Vodafone, etc.
 
 ### Cómo se conecta todo esto?
 
-Desde nuestro cliente (ordenador, móvil, tablet) consultamos una web, por ejemplo, *www.google.es*. Esto nos conecta a través de nuestro proveedor a un servidor DNS para buscar a qué equipo corresponde la dirección "*www.google.es*" y conectarnos con ese equipo (*216.58.211.206*) y nosotros vemos en nuestro navegador la página de Google.
+Cuándo escribimos una dirección web en el navegador (Chrome, Firefox, Edge...) como por ejemplo *google.es*, pasan varias cosas:
+
+Nuestro cliente, a través de nuestro proveedor, se conecta con un servidor DNS y pregunta cuál es la IP para el dominio *google.es*.
+
+El servidor DNS responde con la IP asociada a ese dominio (en este caso *216.58.211.206*).
+
+Nuestro cliente se conecta con el servidor que tiene esa IP.
+
+El servidor responde con la información necesaría para mostrar en el navegador la página de Google.
 
     Práctica:
     Escribir en un navegador la dirección IP 216.58.211.206
@@ -162,8 +176,10 @@ En este artículo de la wikipedia puedes ampliar información sobre la [codifica
 ### Etiquetas de contenido
 El navegador lee las etiquetas en orden de escritura, de arriba a abajo, y va a intentar mostrarlas en ese orden.
 
-El buen uso de estas etiquetas hace que se añada al contenido una valoración semántica, lo que mejora la accesibilidad de nuestra página. Esto ayuda cuando se consulta la página usando algún sistema de soporte como lectores de pantalla.
-
+El buen uso de estas etiquetas hace que se añada al contenido una valoración semántica. La semantica es importante para:
+* Accesibilidad (A11y): Ayudará, por ejemplo, cuando se consulta la página usando algún sistema de soporte como lectores de pantalla.
+* SEO (Posicionamiento en buscadores o motores de búsqueda, como Google, Bing, DuckDuckGo...): Facilitará que nuestra página aparezca en las búsquedas.
+x
     EJEMPLO:
     Si marcamos un texto como encabezado le estamos asignando una importancia diferente a si lo marcamos como párrafo o elemento de una lista.
 
@@ -357,22 +373,22 @@ Añadir hoja de estilos al ejercicio anterior donde:
 * * *
 
 ## Notas finales sobre cómo organizar nuestro proyecto
-A la hora de organizar los archivos y carpetas de un proyecto es normal fijar unas pequeñas normas que pueda seguir todo el equipo de manera que no sea un caos de archivos y cualquier persona del equipo pueda orientarse rápidamente en el proyecto y/o seguirlo.
+A la hora de organizar los archivos y carpetas de un proyecto es normal fijar unas pequeñas normas que pueda seguir todo el equipo de manera que no sea un caos de archivos y cualquier persona pueda orientarse rápidamente en el proyecto y/o seguirlo.
 
-No hay una manera "buena" y cada empresa tiene las suyas. Como norma: es más importante tener unas normas que tener unas normas en concreto.
+No hay una manera "buena" y cada empresa tiene las suyas. Lo importante es tener unas normas que las personas del equipo (y aquellas que se uniran en un futuro) puedan seguir facilitando su día a día.
 Para este curso vamos a plantear unas que dan bastante buen resultado para empezar. Aquí van:
 
 * Los nombres de archivo irán siempre en minúsculas, sin tildes y sin caracteres especiales
 * Usaremos guiones para separar palabras: `baby-kangaroo.png`
-* Usaremos [rutas relativas](https://es.wikipedia.org/wiki/Ruta_(informatica)#Ruta_relativa) siempre
+* Usaremos [rutas relativas](https://es.wikipedia.org/wiki/Ruta_(informatica)#Ruta_relativa) siempre. Veremos más información sobre esto en la siguiente lección.
 * Los nombres de archivo siempre en inglés: `rainy-and-windy-day.png`
-* Los archivos de estilos se llamarán `style.css` o `main.css`
+* El archivo de estilos principal se llamará `style.css`, o `main.css` cuando se encuentre dentro de una carpeta llamada `styles`.
 * El archivo HTML principal se llamará `index.html`
 
 Para la estructura del proyecto usaremos estas carpetas:
 ```
 project-name
-|- images
+|- assets
 |- scripts
 `- styles
 ```
