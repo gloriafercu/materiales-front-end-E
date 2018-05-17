@@ -80,7 +80,8 @@ Junto con el atributo `type`, tenemos otro atributo especial llamado `name` que 
 </form>
 ```
 
-  NOTA: La etiqueta input es una etiqueta sin contenido, por lo que no es necesario escribir la etiqueta de cierre. Otro detalle que podemos apreciar es que los campos se muestran en línea ya que por defecto los navegadores lo muestran con `display: inline;`. Podemos asignarles `display: block` para hacer que se muestren en vertical, uno debajo de otro.
+> **Nota:**  
+> La etiqueta input es una etiqueta sin contenido, por lo que no es necesario escribir la etiqueta de cierre. Otro detalle que podemos apreciar es que los campos se muestran en línea ya que por defecto los navegadores lo muestran con `display: inline;`. Podemos asignarles `display: block` para hacer que se muestren en vertical, uno debajo de otro.
 
 ***
 
@@ -118,7 +119,8 @@ Para decirle al navegador que nuestra etiqueta `<label>` está relacionada con u
 
 ![Ejemplo de cómo se muestran los labels](assets/images/1-8-labels.png)
 
-  NOTA: Es importante apreciar que dentro del input el atributo `name` y el `id` pueden ser distintos, pero el `for` del label siempre debe coincidir con el `id` del input.
+> **Nota:**  
+> Es importante apreciar que dentro del input el atributo `name` y el `id` pueden ser distintos, pero el `for` del label siempre debe coincidir con el `id` del input.
 
 ***
 
@@ -190,7 +192,7 @@ Otra peculiaridad de los campos del tipo `password` es que su contenido se borra
 
 ![El contenido de los campos del tipo contraseña se sustituye por asteriscos](assets/images/1-8-password.png)
 
-* * *
+***
 EJERCICIO 1
 
 Sin que sirva de precedente, vamos a realizar este ejercicio directamente en Codepen. Esto nos permitirá comprobar cuales son los datos que se envían en el formulario ya que cuando creamos un formulario en Codepen, al enviarlo nos muestra una ventana con la información que le llegaría al servidor. Esto nos permite comprobar que funciona correctamente y ver qué es lo que llegaría en cada caso. Es importante que dejemos el atributo `action` de la etiqueta `<form>` vacío y que el método sea del tipo `post`.
@@ -213,7 +215,7 @@ Vamos a crear un formulario de envío con los siguientes campos:
 - Botón de enviar
 
 Todos los elementos deberán de tener un atributo `placeholder` e ir acompañados de un `label` para definir qué se debe introducir en cada uno de ellos
-* * *
+***
 
 
 ## Atributos básicos
@@ -226,7 +228,8 @@ El atributo required sirve para establecer que un campo es obligatorio y debe se
 
 ![Error cuando un elemento es obligatorio y está vacío](assets/images/1-8-required-form.png)
 
-  NOTA: El atributo required sólo puede ser verdadero o falso, por lo tanto no tendrá un valor asignado. Simplemente si una etiqueta tiene el atributo `required` (sin más) indicará que este elemento es obligatorio y si no lo tiene indicará que no lo es.
+> **Nota:**  
+> El atributo required sólo puede ser verdadero o falso, por lo tanto no tendrá un valor asignado. Simplemente si una etiqueta tiene el atributo `required` (sin más) indicará que este elemento es obligatorio y si no lo tiene indicará que no lo es.
 
 ```html
 <!-- Atributo obligatorio -->
@@ -253,13 +256,14 @@ Ejemplo de uso:
 
 El atributo `disabled` sirve para desactivar un campo de un formulario.
 
-  NOTA: En el caso de disabled pasa como con el atributo `required`, con añadir el atributo sin ningún valor es suficiente para indicar que un elemento está desactivado.
+> **Nota:**  
+> En el caso de disabled pasa como con el atributo `required`, con añadir el atributo sin ningún valor es suficiente para indicar que un elemento está desactivado.
 
 ```html
 <input id="address" type="text" name="apellidos" value="Calle Méndez Álvaro" disabled>
 ```
 
-* * *
+***
 EJERCICIO 2
 
 Vamos a añadir un atributo `required` a todos los campos del ejercicio anterior excepto al apellido.
@@ -267,7 +271,7 @@ Vamos a añadir un atributo `required` a todos los campos del ejercicio anterior
 Además añadiremos un valor por defecto a la ciudad y al país para poner Madrid y España.
 
 Para comprobar que funciona correctamente intentaremos enviar el formulario sin rellenar ningún campo y ver si nos muestra el error.
-* * *
+***
 
 ## Otras etiquetas
 
@@ -367,7 +371,7 @@ Por defecto las etiquetas ocultas se muestran con el atributo `display: none;` a
 <input type="hidden" name="productid" value="xm234jq">
 ```
 
-* * *
+***
 EJERCICIO 3
 
 En este ejercicio vamos a crear el formulario de Facebook. Para crearlo utilizaremos lo que hemos visto hasta ahora de formularios. El formulario en sí será el que se muestra en la imagen inferior. El objetivo es crear sólo el HTML pero si te atreves puedes probar también a realizar un CSS similar.
@@ -380,7 +384,7 @@ Además de lo que se ve, vamos a crear los siguientes campos:
 - Un campo numérico donde podamos introducir nuestra altura en centímetros y que tenga como máximo 250 cm y como mínimo 50cm y por defecto tenga un valor de 150 cm
 - Un área de texto donde escribir un comentario para tu perfil
 - Un tipo de campo que se pueda activar y desactivar y en el que el usuario indique que ha aceptado los términos y condiciones de Facebook
-* * *
+***
 
 ## Agrupando partes del formulario por contexto
 
@@ -428,10 +432,12 @@ Para crear un botón en nuestro formulario que realice esta acción de establece
 
 Este botón siempre borrará toda la información de los campos que haya dentro de la etiqueta `<form>` que lo contenga.
 
-* * *
+***
 EJERCICIO 4
 
 En el formulario de facebook, añadir un botón para borrar la información.
+
+***
 
 ## Estilos CSS de un formulario
 
@@ -447,9 +453,10 @@ input {
 }
 ```
 
-  NOTA: El prefijo `-webkit-` y `-moz-` es específico para aplicar esto a los navegadores Safari y Chrome y Mozilla Firefox respectivamente
+> **Nota:**  
+> El prefijo `-webkit-` y `-moz-` es específico para aplicar esto a los navegadores Safari y Chrome y Mozilla Firefox respectivamente
 
-* * *
+***
 EJERCICIO 5
 
 Crea un formulario similar al de la imagen, que es el de registro de Gmail.
@@ -462,7 +469,7 @@ Modifica el formulario anterior para que se hagan las siguientes validaciones:
 - La dirección de correo actual debe ser una dirección de correo válida
 - El teléfono debe ser un número de teléfono válido en España (PISTA: buscad cómo usar el atributto `pattern`)
 - Día y año (de la fecha de nacimiento) deben ser numéricos
-* * *
+***
 
 ## BONUS
 
