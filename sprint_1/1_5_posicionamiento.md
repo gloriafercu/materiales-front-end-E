@@ -38,7 +38,7 @@ Algunos casos concretos son:
 1. Conocer los modos de posicionamiento: static, relative, absolute y fixed.
 
 ## Visualización (display)
-Antes de meternos con el posicionamiento recordemos [los modos de presentación que vimos en la sesión 1.3]((https://github.com/Adalab/materiales-front-end-D/blob/9cf1e11cb1ebe3cddfd36f49ed6150d62dcd706e/sprint_1/1_3_modelo_de_caja_y_herramientas.md#visualizaci%C3%B3n-display)):
+Antes de meternos con el posicionamiento recordemos [los modos de presentación que vimos en la sesión 1.3](https://books.adalab.es/materiales-front-end-d/sprint-1.-hola-mundo/1.3.-modelo-de-caja-y-herramientas):
 La propiedad CSS `display`, se encarga de definir cómo se va a visualizar un elemento HTML, como va a colocarse en la página y cómo se colocarán el resto de elementos respecto a este. Según el valor que tenga asignado display, un elemento puede ocupar el ancho entero de su contenedor, ocupar solo el espacio que necesite para mostrar su contenido, mostrarse como si fuese una casilla de una tabla o directamente ocultarse.
 
 Los navegadores web aplican por defecto un valor `display` a todos los elementos HTML de nuestra web. Hay muchos valores distintos para `display` pero, por el momento, nosotros solo veremos cuatro:
