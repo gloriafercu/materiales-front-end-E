@@ -148,7 +148,7 @@ Que generarían este código CSS:
 
 Lo bueno de esta técnica es que si en el futuro nos da por cambiar el color que estamos usando por otro, sólo tendremos que cambiarlo en `$color-primary` y automáticamente cambiará en todos los sitios que lo utilicemos y nos sentiremos en la gloria.
 
-Bien, la otra alternativa para usar colores es, como hemos dicho el map. De esta forma se el código quedaría así:
+Bien, la otra alternativa para usar colores es, como hemos dicho el map. De esta forma el código quedaría así:
 
 ```scss
   $colors: (
@@ -530,7 +530,7 @@ Si te fijas bien, verás que en todas las clases de los botones mantenemos la cl
 
 Otra de las ventajas de aplicar estilos usando varias clases distintas es que simplemente tocando HTML y cambiando una clase por otra podemos cambiar el estilo del botón. Imagina la rapidez a la hora de desarrollar que esto nos aporta si creamos clases de este estilo para inputs, imágenes, cabecera, etc...En muchos casos incluso si se crea un buen sistema de componentes alguien sin tocar el CSS puede crear nuevas secciones de una página y contribuir al desarrollo de una web.
 
-Este principio de componer clases para obtener un estilo u otro es el que utiliza el framework de [Bootstrap](https://v4-alpha.getbootstrap.com/). Este es un framework muy famoso porque permite a gente con pocas habilidades de diseño o maquetación (por ejemplo, un desarrollador backend o un product managers) crear una interfaz de manera rápida para un producto o un prototipo. De hecho los productos o primeros prototipos de muchas empresas empezaron con Bootstrap y gracias a la rapidéz que este ofrece pudieron sacar un prototipo rápido y validar su modelo de negocio o presentarlo a inversores. Dicho esto es importante saber que Boostrap es una solución pero no es la única y que al igual que ofrece rapídez a la hora de crear una web tiene una desventaja y es que es díficil de modificar para adaptarlo a unas necesidades muy concretas y que a menudo como suele ser la opción de gente que no sabe mucho de CSS se empiezan a hacer muchas ñapas con él y se crea un código muy díficil de mantener. Tendremos que saber cuando es mejor utilizar una opción u otra en función de la rapidez (Bootstrap) o versatilidad (no Bootstrap) que busquemos.
+Este principio de componer clases para obtener un estilo u otro es el que utiliza el framework de [Bootstrap](https://v4-alpha.getbootstrap.com/). Este es un framework muy famoso porque permite a gente con pocas habilidades de diseño o maquetación (por ejemplo, un desarrollador backend o un product manager) crear una interfaz de manera rápida para un producto o un prototipo. De hecho los productos o primeros prototipos de muchas empresas empezaron con Bootstrap y gracias a la rapidéz que este ofrece pudieron sacar un prototipo rápido y validar su modelo de negocio o presentarlo a inversores. Dicho esto es importante saber que Boostrap es una solución pero no es la única y que al igual que ofrece rapídez a la hora de crear una web tiene una desventaja y es que es díficil de modificar para adaptarlo a unas necesidades muy concretas y que a menudo como suele ser la opción de gente que no sabe mucho de CSS se empiezan a hacer muchas ñapas con él y se crea un código muy díficil de mantener. Tendremos que saber cuando es mejor utilizar una opción u otra en función de la rapidez (Bootstrap) o versatilidad (no Bootstrap) que busquemos.
 
 Bien hemos visto cómo podríamos aplicar distintos estilos según el tipo de botón que queremos, pero esa es una de la muchas posibilidades que tenemos. Vamos a ver ahora posibilidades para modificar el tamaño del botón y poder hacerlo más grande, más pequeño o que ocupe el 100% del ancho del elemento que lo contiene con los siguientes estilos:
 
@@ -615,12 +615,12 @@ $color-alternate: #808e9b;
 }
 ```
 
-Bien, si nos fijamos, se puede ver claramente que el código de los tres estilos (`.btn-alternate`, `.btn-alert` y `.btn-success`) es prácticamente igual pero solo cambia la variable de color que se utiliza en cada uno. Esto hace que no podamos usar una misma clase para todos y a la vez no podamos eliminar esa repetición de código. Es en estos casos dónde los mixins cobran sentido. Si recordamos, en JavaScript cuando queríamos ejecutar un mismo código pero pasandole distintos valores utilizabamos una función ¿verdad?. Pues en este caso queremos hacer lo mismo, con distintos colores, aplicar una serie de estilos y lo haremos con mixins.
+Bien, si nos fijamos, se puede ver claramente que el código de los tres estilos (`.btn-alternate`, `.btn-alert` y `.btn-success`) es prácticamente igual pero solo cambia la variable de color que se utiliza en cada uno. Esto hace que no podamos usar una misma clase para todos y a la vez no podamos eliminar esa repetición de código. Es en estos casos dónde los mixins cobran sentido. Si recordamos, los mixins son bloques de código que vamos a querer reutilizar, y que además podemos personalizar pasandole distintos valores (argumentos) ¿verdad?.
 
 Sass tambien tiene funciones pero la diferencia entre las funciones y los mixins en Sass es que una función debe devolver un valor (1px, 100%, 1em, left, etc.) mientras que un mixin se suele utilizar para devolver estilos enteros (`a {color: red;}`, `width: 240px;`, etc.). Como en este caso queremos devolver una clase entera con sus correspondientes estilos utilizaremos mixins y lo haremos de la siguiente forma:
 
 ```sass
-// Creamos el mixin, la "funcion" que genera un código CSS
+// Creamos el mixin, que genera un código CSS
 // $color es el nombre que le damos al color que se le pasará al mixin a la hora
 // de utilizarlo para poder definir cómo se va a utilizar
 @mixin button-style($color) {
@@ -636,7 +636,7 @@ Sass tambien tiene funciones pero la diferencia entre las funciones y los mixins
   }
 }
 
-// Para utilizar el mixin, utilizamos el `@include` seguido del nombre del mixin
+// Para utilizar el mixin, utilizamos `@include` seguido del nombre del mixin
 // y entre paréntesis el color que queremos utilizar en cada caso
 .btn-success {
   @include button-style($color-success);
