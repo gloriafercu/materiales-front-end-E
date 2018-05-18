@@ -27,7 +27,7 @@ A estos ordenadores se les llama **servidores** y dentro de esta red, cada orden
 216.58.211.206
 ```
 
-Identificar los servidores de esta forma está bien cuando 2 ordenadores trabajan entre sí, pero las personas necesitamos un sistema que podamos entender y usar fácilmente. Así, tenemos otro tipo de ordenadores que se ocupan de asociar esta dirección IP con una dirección que una persona de bien pueda usar sin perder la juventud en llevar la cuenta, lo que llamamos un dominio. 
+Identificar los servidores de esta forma está bien cuando 2 ordenadores trabajan entre sí, pero las personas necesitamos un sistema que podamos entender y usar fácilmente. Así, tenemos otro tipo de ordenadores que se ocupan de asociar esta dirección IP con una dirección que una persona de bien pueda usar sin perder la juventud en llevar la cuenta, lo que llamamos un dominio.
 
 ```
 google.es
@@ -93,7 +93,7 @@ index.html
 
 Haciendo doble clic sobre el archivo se abrirá en la aplicación asignada, en este caso, el navegador web, y podremos ver el resultado. **Aquí estamos consultando un archivo de nuestro ordenador**.
 
-También podemos, con una aplicación destinada para ello, enviar nuestro archivo html a uno de estos servidores y que todo el mundo pueda consultar nuestro archivo.
+También podemos, con una aplicación destinada para ello, enviar nuestro archivo HTML a uno de estos servidores y que todo el mundo pueda consultar nuestro archivo.
 
     NOTA:
     Los archivos se nombran con el formato "nombre.extensión", donde la extensión indica qué tipo de archivo es. Por ejemplo:
@@ -124,7 +124,7 @@ Podríamos decir que hay dos tipos de etiquetas: las que definen el documento y 
 ### Etiquetas de página
 Una página web empieza con una etiqueta que indica que es una página HTML, `<html>`. Dentro va una cabecera o `<head>` (donde se definen aspectos relativos al contenido, como el título, descripción o palabras claves) y un cuerpo o `<body>` (donde incluiremos el contenido de nuestra página).
 
-Una página html con cabecera y cuerpo:
+Una página HTML con cabecera y cuerpo:
 
 ```html
 <!DOCTYPE html>
@@ -168,6 +168,7 @@ La codificación de un documento se indica en dos pasos:
 1. El archivo se guarda usando una codificación.
 2. En el `<head>` de la página se incluye una etiqueta `<meta charset="">` indicando al navegador qué juego de caracteres hemos usado al guardar el archivo.
 
+
     NOTA: Atom (y la mayoría de editores de código) ya guardan los documentos en `utf-8` por defecto. Esto es más algo a comprobar ;).
 
 #### BONUS
@@ -176,14 +177,15 @@ En este artículo de la wikipedia puedes ampliar información sobre la [codifica
 ### Etiquetas de contenido
 El navegador lee las etiquetas en orden de escritura, de arriba a abajo, y va a intentar mostrarlas en ese orden.
 
-El buen uso de estas etiquetas hace que se añada al contenido una valoración semántica. La semantica es importante para:
-* Accesibilidad (A11y): Ayudará, por ejemplo, cuando se consulta la página usando algún sistema de soporte como lectores de pantalla.
+El buen uso de estas etiquetas hace que se añada al contenido una valoración semántica. La semántica es importante para:
+* Accesibilidad (a11y): Ayudará, por ejemplo, cuando se consulta la página usando algún sistema de soporte como lectores de pantalla.
 * SEO (Posicionamiento en buscadores o motores de búsqueda, como Google, Bing, DuckDuckGo...): Facilitará que nuestra página aparezca en las búsquedas.
-x
+
+
     EJEMPLO:
     Si marcamos un texto como encabezado le estamos asignando una importancia diferente a si lo marcamos como párrafo o elemento de una lista.
 
-Vamos a ver nuestros primeros elementos en html:
+Vamos a ver nuestros primeros elementos en HTML:
 
 #### Títulos o encabezados
 Se indican con las etiquetas `<h1>` a `<h6>`, de más relevancia a menos.
@@ -302,8 +304,8 @@ Para aplicar estilos a uno o varios elementos de nuestra web, la estructura que 
 
 Para el selector se puede usar:
 
-* La etiqueta del elemento html (`h1`, `p`, `ul`, etc.)
-* Un atributo del elemento html, hay dos especiales que se usan para esto: el id y la clase (los veremos más adelante).
+* La etiqueta del elemento HTML (`h1`, `p`, `ul`, etc.)
+* Un atributo del elemento HTML, hay dos especiales que se usan para esto: el id y la clase (los veremos más adelante).
 * Otros selectores más avanzados que iremos viendo poco a poco
 
 Dentro de nuestra página esto quedaría así:
@@ -375,7 +377,7 @@ Añadir hoja de estilos al ejercicio anterior donde:
 ## Notas finales sobre cómo organizar nuestro proyecto
 A la hora de organizar los archivos y carpetas de un proyecto es normal fijar unas pequeñas normas que pueda seguir todo el equipo de manera que no sea un caos de archivos y cualquier persona pueda orientarse rápidamente en el proyecto y/o seguirlo.
 
-No hay una manera "buena" y cada empresa tiene las suyas. Lo importante es tener unas normas que las personas del equipo (y aquellas que se uniran en un futuro) puedan seguir facilitando su día a día.
+No hay una manera "buena" y cada empresa tiene las suyas. Lo importante es tener unas normas que las personas del equipo (y aquellas que se unirán en un futuro) puedan seguir facilitando su día a día.
 Para este curso vamos a plantear unas que dan bastante buen resultado para empezar. Aquí van:
 
 * Los nombres de archivo irán siempre en minúsculas, sin tildes y sin caracteres especiales
