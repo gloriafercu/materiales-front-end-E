@@ -13,16 +13,16 @@
 * [1.7 Publicando nuestra web](sprint_1/1_7_publicando_nuestra_web.md)
 
 
-* [1.8 Control de versiones](sprint_1/1_8_control_de_versiones.md)
+<!-- * [1.8 Control de versiones](sprint_1/1_8_control_de_versiones.md)
 * [1.9 Formularios](sprint_1/1_9_formularios.md)
 * [1.10 SASS](sprint_1/1_10_sass.md)
 * [1.11 Sistemas de diseño](sprint_1/1_11_sistemas_de_diseno.md)
 * [1.12 Animaciones CSS](sprint_1/1_12_animaciones_CSS.md)
 * [1.13 Sistema de Grid](sprint_1/1_13_sistema_de_grid.md)
-* [1.14 Automatización de tareas](sprint_1/1_14_automatizacion_de_tareas.md)
+* [1.14 Automatización de tareas](sprint_1/1_14_automatizacion_de_tareas.md) -->
 
 ## Sprint 2. Programando la web
-* [2.1 Intro a la programación](sprint_2/2_1_intro_a_la_programacion.md)
+<!-- * [2.1 Intro a la programación](sprint_2/2_1_intro_a_la_programacion.md)
 * [2.2 Estructuras de control](sprint_2/2_2_estructuras_de_control.md)
 * [2.3 Funciones](sprint_2/2_3_funciones.md)
 * [2.4 Objetos](sprint_2/2_4_objetos.md)
@@ -37,7 +37,7 @@
 * [2.11 AJAX](sprint_2/2_11_ajax.md)
 * [2.12 APIs](sprint_3/2_12_apis.md)
 * [2.13 Scope y hoisting](sprint_2/2_13_scope_y_hoisting.md)
-* [2.14 Métodos funcionales de array](sprint_2/2_14_metodos_funcionales_array.md)
+* [2.14 Métodos funcionales de array](sprint_2/2_14_metodos_funcionales_array.md) -->
 
 
 
@@ -47,7 +47,7 @@
 
 ## Proyectos
 
-* [Guía de diseño](proyectos/P1_anexo_diseno.md)
+<!-- * [Guía de diseño](proyectos/P1_anexo_diseno.md)
 * [Proyecto 1. Web grupal](proyectos/P1_proyecto_sprint_1.md)
 
 ## Evaluaciones
@@ -58,4 +58,4 @@
 
 ## Guías
 
-* [Guía paso a paso de git](guias/empezar_con_git.md)
+* [Guía paso a paso de git](guias/empezar_con_git.md) -->
