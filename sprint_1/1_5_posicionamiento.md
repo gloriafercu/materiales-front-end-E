@@ -85,7 +85,9 @@ Hacer un botón con un icono alineado a la izquierda y centrado verticalmente.
 ***
 EJERCICIO 2:
 
-Hacer un enlace de descarga con una etiqueta del tipo de archivo que siempre esté a la derecha.
+Hacer un enlace de descarga de un archivo (por ejemplo PDF) con una etiqueta que refleje el tipo del archivo y que siempre esté a la derecha.
+
+![Enlace de descarga de un pdf](assets/images/1-5/1_5_ejercicio_2_pdf.png)
 
 ***
 EJERCICIO 3:
