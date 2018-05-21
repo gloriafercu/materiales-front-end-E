@@ -67,18 +67,37 @@ La propiedad `position` tiene cuatro valores posibles:
 - Video para entender [position: relative](https://www.youtube.com/watch?v=X6lG1biGJa8)
 - Video para entender [position: absolute](https://www.youtube.com/watch?v=wpuP2kCN6QE)
 
+Como hemos visto, cuando posicionamos una caja con cualquier valor que no sea static y modificamos su posición horizontal y/o vertical (top, right, bottom, left) esta se puede superponer visualmente por encima de otras.
+
+Esto ocurre porque, adicionalmente a sus posiciones horizontales y verticales, las cajas se apilan a lo largo de un "eje-z".
+
+Cuando las cajas se superponen por encima de otras, se están posicionando en capas adicionales a la capa normal de renderizado (capa 0). 
+
+La posición Z de cada capa representa el orden de apilamiento. Podemos modificarlo con la propiedad **z-index**. Números más grandes significan mayor cercanía a la observadora.
+
+- Video para entender [z-index](https://www.youtube.com/watch?v=u2O_ys4X1cQ)
+
 ***
 EJERCICIO 1:
 
 Hacer un botón con un icono alineado a la izquierda y centrado verticalmente.
+
 ***
 EJERCICIO 2:
 
 Hacer un enlace de descarga con una etiqueta del tipo de archivo que siempre esté a la derecha.
+
 ***
 EJERCICIO 3:
 
-Hacer una página que tenga una cabecera que se mantenga fija.
+Define un documento HTML con una cabecera y un contenedor principal con varios p que contengan suficiente texto como para que la página se muestre con scroll (barras de desplazamiento).
+
+a) Haz una cabecera con fondo morado que se mantenga se fija arriba.
+
+b) Haz que la cabecera no tape el contenedor principal cuando no hemos hecho scroll, sin utilizar margin ni padding (PISTA: posiciona el contenedor principal).
+
+c) Haz que al hacer scroll, la cabecera se apile o superponga por encima del contenedor principal.
+
 ***
 EJERCICIO 4:
 
