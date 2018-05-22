@@ -92,7 +92,7 @@ Hacer un enlace de descarga de un archivo (por ejemplo PDF) con una etiqueta que
 ***
 EJERCICIO 3:
 
-Crear un documento HTML con una cabecera y un contenedor principal con varios parrafos que contengan suficiente texto como para que la página se muestre con scroll (barras de desplazamiento).
+Crear un documento HTML con una cabecera y un contenedor principal con varios párrafos que contengan suficiente texto como para que la página se muestre con scroll (barras de desplazamiento).
 
 a) Haz una cabecera con fondo morado que se mantenga fija arriba.
 
