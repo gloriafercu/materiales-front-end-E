@@ -49,8 +49,9 @@
 
 * [Guía de diseño](proyectos/P1_anexo_diseno.md)
 * [Proyecto 1. Web grupal](proyectos/P1_proyecto_sprint_1.md)
-<!--
-## Evaluaciones
+
+
+<!-- ## Evaluaciones
 
 * Evaluación intermedia 1
 * Evaluación final 1
