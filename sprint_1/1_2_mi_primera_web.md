@@ -472,6 +472,7 @@ Dos enlaces sobre la especificidad más... a menos
 EJERCICIO 4
 
 Partiendo de este [Codepen de ejemplo](https://codepen.io/oneeyedman/pen/vWEBex):
+
 1. Por qué los enlaces son verdes y no rojos
 2. Hacer que los enlaces sean rojos
 3. Rehacer el HTML usando `<div>` en lugar de `<ul>` y `<li>`. ¿Qué pasa?
