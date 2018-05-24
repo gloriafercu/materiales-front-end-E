@@ -31,7 +31,7 @@ El navegador Google Chrome nos ofrece una serie de herramientas llamadas Chrome 
 
 1. Para comprender cómo se comportan los contenedores cuando les cambiamos propiedades de apariencia como margen, borde, padding y ancho/alto. Y qué pasa cuando el contenido no cabe en nuestro contenedor.
 2. Para entender cómo se aplican las imágenes de fondo
-3. Para entender cómo se aplican los ajustes que realicemos a través del las Dev Tools
+3. Para entender cómo se aplican los ajustes que realicemos a través de las Dev Tools
 
 ### ¿En qué casos se utiliza?
 
