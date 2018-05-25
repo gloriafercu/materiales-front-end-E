@@ -448,7 +448,7 @@ Realmente, la propiedad _background_ es una versión acortada de estas propiedad
 * * *
 EJERCICIO 9:  
 
-¿Sabrías replicar los ejemplos de fondo usando [este Codepen](codepen.io/adalab/pen/JLwQpz)?
+¿Sabrías replicar los ejemplos de fondo usando [este Codepen](https://codepen.io/adalab/pen/JLwQpz)?
 * * *
 
 ### Cuando usar las propiedades de background o la versión acortada
