@@ -38,7 +38,7 @@ Algunos casos concretos son:
 1. Conocer los modos de posicionamiento: static, relative, absolute y fixed.
 
 ## Visualización (display)
-Antes de meternos con el posicionamiento recordemos [los modos de presentación que vimos en la sesión 1.3](https://books.adalab.es/materiales-front-end-d/sprint-1.-hola-mundo/1.3.-modelo-de-caja-y-herramientas):
+Antes de meternos con el posicionamiento recordemos [los modos de presentación que vimos en la sesión 1.3](./1_3_modelo_de_caja_y_herramientas.md):
 
 La propiedad CSS `display`, se encarga de definir cómo se va a visualizar un elemento HTML, como va a colocarse en la página y cómo se colocarán el resto de elementos respecto a este. Según el valor que tenga asignado display, un elemento puede ocupar el ancho entero de su contenedor, ocupar solo el espacio que necesite para mostrar su contenido, mostrarse como si fuese una casilla de una tabla o directamente ocultarse.
 
@@ -71,7 +71,7 @@ Como hemos visto, cuando posicionamos una caja con cualquier valor que no sea st
 
 Esto ocurre porque, adicionalmente a sus posiciones horizontales y verticales, las cajas se apilan a lo largo de un "eje-z".
 
-Cuando las cajas se superponen por encima de otras, se están posicionando en capas adicionales a la capa normal de renderizado (capa 0). 
+Cuando las cajas se superponen por encima de otras, se están posicionando en capas adicionales a la capa normal de renderizado (capa 0).
 
 La posición Z de cada capa representa el orden de apilamiento. Podemos modificarlo con la propiedad **z-index**. Números más grandes significan mayor cercanía a la observadora.
 
