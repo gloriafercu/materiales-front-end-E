@@ -48,7 +48,7 @@
 ## Proyectos
 
 * [Proyecto 1. Web grupal](proyectos/P1_proyecto_sprint_1.md)
-
+* [Anexo. Diseña tu web desde cero](proyectos/P1_anexo_diseno.md)
 
 <!-- ## Evaluaciones
 
