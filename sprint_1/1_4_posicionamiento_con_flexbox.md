@@ -19,7 +19,9 @@ Hasta que apareció Flexbox la única manera de distribuir elementos en horizont
 
 Con flexbox podemos disponer de un bloque flexible que de manera natural se ajuste dentro de unos parámetros que le indiquemos.
 
-Vamos a seguir esta guía y a ir planteando unos ejercicios para cada propiedad que veamos: [Guía visual para aprender Flexbox](http://soyfrontend.com/guia-visual-aprender-flexbox-css3/)
+Vamos a seguir esta guía y a ir planteando unos ejercicios para cada propiedad que veamos: [Guía completa de flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+<!--[Guía visual para aprender Flexbox](http://soyfrontend.com/guia-visual-aprender-flexbox-css3/)-->
 
 	NOTA:
 	Habrá que ver cómo hacer que uno o varios elementos ocupen el 100% del alto de la ventana del navegador y averiguar cómo encaja en el ejercicio la propiedad ´min-height´
