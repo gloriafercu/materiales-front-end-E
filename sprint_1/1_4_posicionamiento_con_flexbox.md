@@ -45,7 +45,7 @@ Básicamente lo podemos/querremos usar en cualquier estructura que se distribuya
 El objetivo es aprender a montar un contenedor con flexbox y a dominar las diferentes opciones que tenemos de distribuir sus elementos.
 
 * * *
-<span id="ejercicio-1">EJERCICIO 1: FLEX y FLEX DIRECTION</span>
+<p id="ejercicio-1">EJERCICIO 1: FLEX y FLEX DIRECTION</p>
 
 ![Ejemplo](assets/1-4-ejercicio-1.png)
 
@@ -53,13 +53,13 @@ El objetivo es aprender a montar un contenedor con flexbox y a dominar las difer
 2. Hacer que se distribuyan en horizontal o vertical
 3. Indicar cuál es el eje principal
 * * *
-<span id="ejercicio-2">EJERCICIO 2: FLEX WRAP</span>
+<p id="ejercicio-2">EJERCICIO 2: FLEX WRAP</p>
 
 ![Ejemplo](assets/1-4-ejercicio-2.png)
 
 Teniendo una lista de 10 a 15 imágenes de 200x100 px, hacer un bloque flexbox donde las imágenes se distribuyan por el eje horizontal y se vayan apilando uno detrás de otro.
 * * *
-<span id="ejercicio-3">EJERCICIO 3: JUSTIFY CONTENT y ALIGN ITEMS</span>
+<p id="ejercicio-3">EJERCICIO 3: JUSTIFY CONTENT y ALIGN ITEMS</p>
 
 ![Ejemplo](assets/1-4-ejercicio-3.png)
 
@@ -74,7 +74,7 @@ Teniendo una lista de 10 a 15 imágenes de 200x100 px, hacer un bloque flexbox d
 4. Todos los textos deben aparecer centrados verticalmente en el contenedor de 100px
 5. El espacio restante debe usarse para separar las opciones de menú, unas de otras
 * * *
-<span id="ejercicio-4">EJERCICIO 4: ORDER</span>
+<p id="ejercicio-4">EJERCICIO 4: ORDER</p>
 
 ![Ejemplo](assets/1-4-ejercicio-4.png)
 
@@ -82,14 +82,14 @@ Teniendo una lista de 10 a 15 imágenes de 200x100 px, hacer un bloque flexbox d
 2. Meterlas en un contenedor flex y hacer que se distribuyan a dos columnas
 3. Elegir una noticia, por ejemplo, la última, y ponerla como destacada, en primer lugar y ocupando las dos columnas
 * * *
-<span id="ejercicio-5">EJERCICIO 5: FLEX/GROW/SHRINK/BASIS</span>
+<p id="ejercicio-5">EJERCICIO 5: FLEX/GROW/SHRINK/BASIS</p>
 
 ![Ejemplo](assets/1-4-ejercicio-5.png)
 
 Hacer una página con `<header>`, `<main>` y `<footer>` y hacer que aunque haya poco contenido el footer siempre está abajo de la página y el main ocupe todo el espacio disponible.
 Si hubiese mucho contenido el footer debe colocarse tras el main, de forma natural.
 * * *
-<span id="ejercicio-6">EJERCICIO 6</span>
+<p id="ejercicio-6">EJERCICIO 6</p>
 
 ![Ejemplo](assets/1-4-ejercicio-6.png)
 
@@ -99,7 +99,7 @@ Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprend
 * El ancho del conjunto entero debe ser del 100% con un ancho máximo de 960px
 * Cada bloque debe de crearse con una etiqueta HTML5 (header, footer, aside...) y debe tener un título que esté centrado (como aparece en la imágen). El bloque central (que sería un article), en vez de tener un título, tendrá un párrafo con un texto aleatorio, podéis escribir dentro de él lo que queráis.
 * * *
-<span id="ejercicio-7">EJERCICIO 7</span>
+<p id="ejercicio-7">EJERCICIO 7</p>
 
 ![Ejemplo](assets/1-4-ejercicio-7.png)
 
@@ -113,7 +113,7 @@ Para el bloque gris de la izquierda debéis buscar una imagen cuadrada y colocar
 
 Si tenéis cualquier duda, preguntad.
 * * *
-<span id="ejercicio-8">EJERCICIO 8</span>
+<p id="ejercicio-8">EJERCICIO 8</p>
 
 Crear una página con un texto simple centrado que ocupe el 100% de la pantalla hasta un máximo de 600 píxeles. Este texto deberá tener un título, un autor y una fecha de creación organizado de la siguiente forma.
 
