@@ -88,7 +88,7 @@ Os proponemos una serie de hitos como sugerencia para dividir las fases de este 
 ### Segundo. Versión móvil de la web
 
 - 1 semana de trabajo
-- Desarrollar la versión para móvil de la web (página principal y contacto) con HTML y CSS
+- Desarrollar la versión para móvil de la web (página principal y contacto, sin el formulario de momento) con HTML y CSS
 - Crear el contenido de la web: textos e imágenes
 - Crear la infraestructura necesaria: repositorio en GitHub y con acceso para todos los miembros del equipo
 
