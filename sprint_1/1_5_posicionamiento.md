@@ -206,6 +206,7 @@ Las dimensiones de esta composición serían las siguientes:
 ###### EJERCICIO 11:
 
 La web que vamos a crear consta de las siguientes características:
+
 1. Toda la web usa una tipografía sin serifa (sans-serif)
 1. Tiene como título "Tecnologías web"
 1. Tiene un párrafo que describe qué son las tecnologías web
@@ -217,6 +218,7 @@ La web que vamos a crear consta de las siguientes características:
 ###### EJERCICIO 12:
 
 Vamos a crear una web simple, con las siguientes características:
+
 1. Una cabecera que consta únicamente de un título
 1. Un cuerpo principal que consta de un montón de párrafos, tantos como para que la página tenga scroll
 1. Un pie de página con
