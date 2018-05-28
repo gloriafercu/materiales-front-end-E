@@ -1,15 +1,18 @@
 # Posicionamiento
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
-- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
-- [Objetivos de la sesión](#objetivos-de-la-sesin)
-- [Visualización (display)](#visualizacin-display)
-- [Posicionamiento de elementos](#posicionamiento-de-elementos)
-- [Transform](#transform)
-- [Bonus: Devdocs](#bonus-devdocs)
-- [Recursos externos](#recursos-externos)
+<!-- TOC START min:5 max:7 link:true update:true -->
+  - [EJERCICIO 1:](#ejercicio-1)
+  - [EJERCICIO 2:](#ejercicio-2)
+  - [EJERCICIO 3:](#ejercicio-3)
+  - [EJERCICIO 4:](#ejercicio-4)
+  - [EJERCICIO 5:](#ejercicio-5)
+  - [EJERCICIO 6:](#ejercicio-6)
+  - [EJERCICIO 7:](#ejercicio-7)
+  - [EJERCICIO 8:](#ejercicio-8)
+  - [EJERCICIO 9:](#ejercicio-9)
+  - [EJERCICIO 10:](#ejercicio-10)
+  - [EJERCICIO 11:](#ejercicio-11)
+  - [EJERCICIO 12:](#ejercicio-12)
 
 <!-- TOC END -->
 
@@ -78,19 +81,19 @@ La posición Z de cada capa representa el orden de apilamiento. Podemos modifica
 - Video para entender [z-index](https://www.youtube.com/watch?v=u2O_ys4X1cQ)
 
 ***
-EJERCICIO 1:
+###### EJERCICIO 1:
 
 Hacer un botón con un icono alineado a la izquierda y centrado verticalmente.
 
 ***
-EJERCICIO 2:
+###### EJERCICIO 2:
 
 Hacer un enlace de descarga de un archivo (por ejemplo PDF) con una etiqueta que refleje el tipo del archivo y que siempre esté a la derecha.
 
 ![Enlace de descarga de un pdf](assets/images/1-5/1_5_ejercicio_2_pdf.png)
 
 ***
-EJERCICIO 3:
+###### EJERCICIO 3:
 
 Crear un documento HTML con una cabecera y un contenedor principal con varios párrafos que contengan suficiente texto como para que la página se muestre con scroll (barras de desplazamiento).
 
@@ -101,7 +104,7 @@ b) Haz que la cabecera no tape el contenedor principal cuando no hemos hecho scr
 c) Haz que al hacer scroll, la cabecera se apile o superponga por encima del contenedor principal.
 
 ***
-EJERCICIO 4:
+###### EJERCICIO 4:
 
 Define un documento HTML con un div padre (divPadre), dentro del cual existan otras 3 cajas contenedoras div (div1, div2 y div3), cada una de ellas con unas dimensiones de 300x300px, 40 píxeles de margin en todas direcciones, 30 píxeles de padding en todas direcciones y un background color diferente. Usando posicionamiento relativo genera un desplazamiento de los div de la siguiente manera:S
 
@@ -146,7 +149,7 @@ Permite rotar el elemento:
 ```
 
 ***
-EJERCICIO 5:
+###### EJERCICIO 5:
 
 ¿Sabrías resolver estos ejercicios de transformaciones tras leerte [la documentación de transform](http://devdocs.io/css/transform)?  
 Ejercicios de transform: [codepen.io/adalab/pen/YLKaox](https://codepen.io/adalab/pen/YLKaox)
@@ -162,17 +165,17 @@ Ejercicios de transform: [codepen.io/adalab/pen/YLKaox](https://codepen.io/adala
 Os proponermos DevDocs porque es un agrupador de documentación oficial que te permite tener contenido para consultar sin conexión en tu navegador.
 
 ***
-EJERCICIO 6:
+###### EJERCICIO 6:
 
 Define un documento HTML con 3 cajas contenedoras div (div1, div2 y div3), la primera con unas dimensiones de 500x500px y un background color amarillo. La segunda con dimensiones 300x300px y un background color verde. La tercera con dimensiones 150x150px y background color azul. Usando posicionamiento absoluto establece para el div2 y el div3 el mismo origen que para el div1, de modo que el efecto generado sea ver un cuadrado amarillo dentro del cual hay un cuadrado verde dentro del cual hay un cuadrado azul.
 
 Haz que las cajas estén centradas vertical y horizontalmente. Pon 40px de padding y 2px de borde al div1, 75px de padding al div 2 y 20px de borde de puntos al div3. Para esto usad box-sizing border-box
 ***
-EJERCICIO 7:
+###### EJERCICIO 7:
 
 Define un documento HTML con varios div que contengan suficiente texto como para que la página se muestre con scroll (barras de desplazamiento). El primero de los div debe contener el texto “Esta página web utiliza cookies. Si continúa navegando acepta el uso de cookies.”, un valor height (altura) de 100 píxeles y color de fondo amarillo. Usando posicionamiento fixed, fija este div en la parte superior de la página de modo que se continúe visualizando aún cuando hagamos scroll.
 ***
-EJERCICIO 8:
+###### EJERCICIO 8:
 
 Crea una lista de cinco elementos que se muestre en línea y con espacios entre cada elemento de 12 píxeles.
 
@@ -182,11 +185,11 @@ Vista de la lista sin estilos
 Vista de la lista con estilos  
 ![Menu con estilos](assets/images/1-5/1_5_ejercicio_10_menu_con_estilo.png)
 ***
-EJERCICIO 9:
+###### EJERCICIO 9:
 
 Crea un texto que ocupe el 86% de la pantalla y esté centrado dentro del body. Usaremos la propiedad max-width para dar un ancho máximo de 600px. [Más info acerca de max-width](http://devdocs.io/css/max-width).
 ***
-EJERCICIO 10:
+###### EJERCICIO 10:
 
 Crea una composición similar a la de la imagen.
 
@@ -200,7 +203,7 @@ Las dimensiones de esta composición serían las siguientes:
 - Cada párrafo tendrá un tamaño de fuente de 18px y un margen inferior de 27px
 - El enlace tendrá un padding superior e inferior de 8px y otro izquierdo y derecho de 16px y un margen izquierdo de -16px
 ***
-EJERCICIO 11:
+###### EJERCICIO 11:
 
 La web que vamos a crear consta de las siguientes características:
 1. Toda la web usa una tipografía sin serifa (sans-serif)
@@ -211,7 +214,7 @@ La web que vamos a crear consta de las siguientes características:
   1. el cursor cambia para indicar que estamos obteniendo ayuda
   1. aparece un tooltip (recuadro flotante de 400px por 200px) de color blanco, con el nombre de la tecnología como título del tooltip y una breve descripción de la misma
 ***
-EJERCICIO 12:
+###### EJERCICIO 12:
 
 Vamos a crear una web simple, con las siguientes características:
 1. Una cabecera que consta únicamente de un título
