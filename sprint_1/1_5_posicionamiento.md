@@ -24,7 +24,7 @@ En esta sesión veremos dos recursos fundamentales para modificar la apariencia 
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-1. Para saber las diferentes opciones que tenemos de colocarlos según el diseño que nos manden.
+Para saber las diferentes opciones que tenemos de colocar los elementos según el diseño que nos manden.
 
 ## ¿En qué casos se utiliza?
 
