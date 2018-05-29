@@ -101,7 +101,7 @@ Probar a diferentes valores de pixels para el font-size del elemento `.icon`:
 * 100px
 * * *
 
-## Max-width, min-width, max-height, min-heigh. Width: 100%.
+## Max-width, min-width, max-height, min-height. Width: 100%.
 Estas propiedades que permiten "limitar" anchos y altos se pueden aplicar a casi cualquier contenedor (que admita dimensiones, como aquellos con display block o inline-block) de manera que podamos tener elementos que se dimensionen a base de porcentajes pero sobre los que tengamos un poco de control para que en determinados escenarios no se hagan demasiado pequeños ni demasiado grandes.
 
 * * *
