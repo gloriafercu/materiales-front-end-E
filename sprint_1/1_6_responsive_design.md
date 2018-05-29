@@ -1,4 +1,6 @@
 # Responsive design
+
+## Índice de ejercicios
 <!-- TOC START min:5 max:7 link:true update:true -->
   - [EJERCICIO 1:](#ejercicio-1)
   - [EJERCICIO 2:](#ejercicio-2)
