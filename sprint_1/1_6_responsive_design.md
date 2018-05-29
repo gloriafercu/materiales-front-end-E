@@ -101,16 +101,17 @@ Probar a diferentes valores de pixels para el font-size del elemento `.icon`:
 * 100px
 * * *
 
-## Max-width, min-width (y height). Width: 100%.
-Estas propiedades que permiten "limitar" anchos y altos se pueden aplicar a casi cualquier contenedor (que admita dimensiones) de manera que podamos tener elementos que se dimensionen a base de porcentajes pero sobre los que tengamos un poco de control para que en determinados escenarios no se hagan demasiado pequeños ni demasiado grandes.
+## Max-width, min-width, max-height, min-heigh. Width: 100%.
+Estas propiedades que permiten "limitar" anchos y altos se pueden aplicar a casi cualquier contenedor (que admita dimensiones, como aquellos con display block o inline-block) de manera que podamos tener elementos que se dimensionen a base de porcentajes pero sobre los que tengamos un poco de control para que en determinados escenarios no se hagan demasiado pequeños ni demasiado grandes.
 
 * * *
 ###### EJERCICIO 3:
 
 Ya que ayer vimos flexbox, en este [codepen](https://codepen.io/adalab/pen/LORKzX) tenemos dos columnas, una (.aside) que ocupa el 50% del ancho hasta 320px y la otra (.main) que ocupa el resto:
 
-* Hacer la ventana del navegador tan pequeña para que las dos columnas ocupen lo mismo
+* Tirando con el ratón, redimensionar la ventana del navegador haciendola tan pequeña como para que las dos columnas ocupen lo mismo
 * y agrandar hasta que .aside se quede en 320px de ancho mientras .main ocupa el resto del espacio
+
 * * *
 ###### EJERCICIO 4:
 
@@ -171,6 +172,7 @@ Si ahora redimensionamos la ventana del navegador veremos que a partir de 550px 
 	A cada una de estas medidas que ponemos en los mediaqueries las llamamos breakpoints, o puntos de ruptura.
 
 3) Abramos ahora las herramientas de desarrollo de Chrome y lancemos el simulador de dispositivos móviles. Probemos varios dispositivos o resoluciones. ¿Qué pasa? ¿Cuándo se vuelve azul? ¿Cuándo se vuelve rojo?
+Si no lo tenemos claro el siguiente ejercicio nos va a ayudar a entenderlo mejor.
 * * *
 
 Aquí es donde entra en juego una etiqueta que la conocíamos por otros motivos pero que ahora tiene un contenido especial: el viewport.
@@ -250,7 +252,7 @@ Un ejemplo sería la típica página que tiene una primera sección con una imag
 En el CSS esto se representa escribiendo primero los CSS que se verán en las pantallas/ventanas de navegador más pequeñas. Posteriormente añadiremos, dentro de mediaqueries, los ajustes necesarios para los tamaños mayores de pantalla o ventana.
 
 	NOTA:
-	Recordemos que responsive no es solo tema de dispositivos. Claro que hay móviles de 320, tablets de 768 y pantallas desde 1336 a 2560 de ancho. Pero responsive también es un tipo en una pantalla más modesta trabajando con una ventana de navegador a 473px de ancho y el resto con otra aplicación como un editor de textos o un reproductor de vídeo porque está enganchado a GoT...
+	Recordemos que responsive no es solo tema de dispositivos. Claro que hay móviles de 320, tablets de 768 y pantallas desde 1336 a 2560 de ancho. Pero responsive también es un tipo en una pantalla más modesta, por ejemplo cuando una usuaria pone el navegador en la mitad de la pantalla mientras trabaja y en la otra mitad pone un reproductor de vídeo porque está enganchada a Juego de Tronos...
 
 ### Entonces, ¿cuántos breakpoints hay? ¿hay unos más estándar que otros?
 Pues sí y no. Pero sí.
@@ -287,17 +289,18 @@ Hacer una web que, en función del ancho de la ventana del navegador, cambie su 
 
 Dados los siguientes diseños, maquetar la web aplicando las mediaqueries necesarias.
 
-Aspecto de la web a pantalla completa
-
-![Pantalla completa](assets/images/ej0201.png)
-
-Aspecto de la web en una pantalla de 1000px
-
-![Pantalla completa](assets/images/ej0202.png)
-
 Aspecto de la web en una pantalla de 480px
 
 ![Pantalla completa](assets/images/ej0203.png)
+
+Aspecto de la web en una pantalla entre 480px y 1000px
+
+![Pantalla completa](assets/images/ej0202.png)
+
+Aspecto de la web a pantalla completa (por encima de 1000px)
+
+![Pantalla completa](assets/images/ej0201.png)
+
 * * *
 ###### EJERCICIO 10:
 
