@@ -125,7 +125,7 @@ El comando `cd` (Change Directory) nos ofrece diferentes posibilidades a la hora
 
 
 ```shell
-cd nombre-de-carpeta
+$ cd nombre-de-carpeta
 ```
 
 Nos permite entrar en la carpeta `nombre-de-carpeta` que estaría en nuestra carpeta actual.  
@@ -167,6 +167,14 @@ Si no especificamos una ruta se creará en la localización actual pero se puede
 $ mkdir ../proyecto
 ```
 
+### TOUCH
+Nos permite crear un nuevo archivo.
+
+Si no especificamos una ruta se creará en la localización actual pero se puede indicar la ruta usando `/` y `..`. Por ejemplo, vamos a crear una un archivo "index.html" en la carpeta madre de la carpeta actual:
+```shell
+$ touch ../index.html
+```
+
 ### CLEAR
 A veces va a pasar que hemos introducido muchos comandos y sería genial poder "limpiar" la ventana. Para eso existe el comando `clear`, que nos limpia la ventana de la terminal.
 
@@ -200,8 +208,9 @@ nombre
         ruta-del-proyecto.txt
 ```
 - En el archivo **mis-datos.txt** vamos a escribir el Nombre y la comida favorita.
-- En el archivo **ruta_del-proyecto.txt** pondremos la ruta del nuestro proyecto desde nuestra carpeta de `Documentos`
+- En el archivo **ruta_del-proyecto.txt** pondremos la ruta del archivo desde nuestra carpeta de `Documentos`
 - Mover los dos archivos a la carpeta principal, que sería **nombre**
+
 * * *
 ###### EJERCICIO 2:
 
@@ -213,6 +222,7 @@ Ahora, en `index.html` se tiene que ver la imagen de dos formas:
 
 ¿Cómo es la ruta de ambas imágenes? ¿Absoluta? ¿Relativa?
 ¿Es diferente en los dos casos? ¿por qué?
+
 * * *
 
 ## Git
@@ -233,7 +243,7 @@ Vamos a ver cómo instalar Git en nuestro ordenador. Para llevarlo a cabo, prime
 
 Para comprobar si tenemos instalado Git en nuestro ordenador, debemos abrir la Terminal y ejecutar el comando `git --version`. Esto mostrará el texto `git version` seguido de la versión de Git que tenemos instalada. Para poder trabajar de forma correcta, lo indicado sería que tuviésemos una versión igual o posterior a la `2.11.0`.
 
-Si nuestra versión es anterior, continuaremos con el proceso de instalación que aparece a continuación. Si por el contrario, tenemos instalada la versión `2.11.0` o una posterior (ej: `2.14.0`), podemos continuar con el siguiente paso.
+Si nuestra versión es anterior, continuaremos con el proceso de instalación que aparece a continuación. Si por el contrario, tenemos instalada la versión `2.11.0` o una posterior (ej: `2.14.0`), podemos continuar con el paso 2.
 
 ##### En Ubuntu
 
@@ -242,19 +252,19 @@ Si nuestra versión es anterior, continuaremos con el proceso de instalación qu
 Para instalar Git en Ubuntu, primero obtendremos la información para poder descargar la última versión disponible, para ello ejecutamos el siguiente comando:
 
 ```shell
-sudo add-apt-repository ppa:git-core/ppa
+$ sudo add-apt-repository ppa:git-core/ppa
 ```
 
 Una vez tengamos la información disponible para poder descargar la versión más reciente, actualizaremos la info que tenemos en el ordenador:
 
 ```shell
-sudo apt-get update
+$ sudo apt-get update
 ```
 
 Por último, ejecutaremos el comando para instalar Git:
 
 ```shell
-sudo apt-get install git -y
+$ sudo apt-get install git -y
 ```
 
 Con esto deberíamos tener ya instalado Git en nuestro ordenador, para estar seguros volveremos a ejecutar el comando `git --version`, esta vez debería de aparecernos un número de versión mayor que `2.11.0`.
@@ -266,7 +276,7 @@ Con esto deberíamos tener ya instalado Git en nuestro ordenador, para estar seg
 Para instalar Git en nuestro Mac, vamos a instalar primero un gestor de paquetes, llamado `Homebrew`, que nos ayudará a instalar herramientas como Git de forma sencilla. Este gestor es de código abierto, seguro y está mantenido por una gran comunidad, por lo que no tenemos por qué preocuparnos. Para instalar Homebrew, abrimos la Terminal y ejecutamos el comando que aparece en la línea que hay más abajo.
 
 ```shell
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 **Nota:** Al pulsar intro tras introducir este comando, se empezarán a imprimir líneas en nuestra Terminal y nos pedirá que pulsemos Intro para continuar con la instalación del gestor de paquetes.
@@ -274,34 +284,36 @@ Para instalar Git en nuestro Mac, vamos a instalar primero un gestor de paquetes
 Después de haber instalado `Homebrew`, podremos instalar la última versión de Git de forma simple con el siguiente comando:
 
 ```shell
-brew install git
+$ brew install git
 ```
 
 Una vez haya terminado de instalarse Git, tendremos todo listo para continuar con el siguiente paso.
 
-#### 2. Añadimos nuestro nombre a la configuración de Git
+#### 2. Creamos una cuenta en [Github](https://github.com).
+
+#### 3. Añadimos nuestro nombre a la configuración de Git
 
 Abrimos la aplicación de la terminal e introducimos el siguiente comando, tal y como se muestra abajo, sustituyendo `"John Doe"`. Una vez lo hayamos introducido, pulsamos intro para que se ejecute.
 
 **Importante:** Escribiremos nuestro nombre entre comillas para evitar problemas a la hora de ejecutar el comando.
 
 ```shell
-git config --global user.name "John Doe"
+$ git config --global user.name "John Doe"
 ```
 
-#### 3. Configuramos nuestro email para trabajar con Git
+#### 4. Configuramos nuestro email para trabajar con Git
 
 Ahora introducimos el siguiente comando para guardar la configuración de nuestro email:
 
 ```shell
-git config --global user.email "johndoe@example.com"
+$ git config --global user.email "johndoe@example.com"
 ```
 
 Sustituiremos en este caso `"johndoe@example.com"` por el email que hemos utilizado para crear nuestra cuenta de GitHub.
 
 **Nota:** Es importante que el email coincida con el que hemos utilizado en GitHub, ya que se utilizará para comprobar nuestros credenciales a la hora de subir información a un repositorio en esta plataforma.
 
-#### 4. Añadimos la configuración para que se guarde nuestra contraseña para GitHub
+#### 5. Añadimos la configuración para que se guarde nuestra contraseña para GitHub
 
 Por defecto, cada vez que intentamos conectarnos con GitHub, el servidor de GitHub nos pedirá la contraseña de nuestro usuario. Como vamos a subir y descargar cambios de GitHub de forma constante, puede ser un poco molesto tener que introducir la contraseña cada vez que queramos conectarnos con el servidor. Para evitar esto, vamos a almacenar la contraseña de forma segura en nuestro ordenador.
 
@@ -325,7 +337,7 @@ Una vez hayamos realizado ese paso, no necesitaremos hacer ningún cambio más.
 Para poder almacenar la contraseña de GitHub en Mac, simplemente ejecutamos el siguiente comando:
 
 ```shell
-git config --global credential.helper osxkeychain
+$ git config --global credential.helper osxkeychain
 ```
 
 Una vez hayamos realizado ese paso, no necesitaremos hacer ningún cambio más.
@@ -339,7 +351,7 @@ Una vez instalado Git en nuestro equipo tendremos que activar el control de vers
 
 A partir de este momento, cada vez que hagamos cambios, Git sabrá qué archivos hemos modificado.
 
-En cualquier momento podremos pedir que nos diga en qué estado está el proyecto con un `git status`, lo que nos dirá si hemos cambiado archivos.
+En cualquier momento podremos pedir que nos diga en qué estado está el proyecto con `git status`, lo que nos dirá si hemos cambiado archivos.
 
 Normalmente trabajaremos con cambios cortos o tareas pequeñas, y cuando hayamos terminado, querremos indicarle a Git que ya hemos terminado un paquete de cambios, para lo que tenemos dos comandos:
 1. `git add -A` para añadir los archivos que hemos modificado. Una vez añadidos Git sabrá qué cambios hemos hecho.
@@ -354,19 +366,21 @@ En el video que añadimos a continuación se explican los comandos básicos para
 
 #### Mensaje del commit
 
-Es importante acompañar el commit con un mensaje. Este mensaje debe ser suficientemente corto para que no sea una locura leerlo y, a la vez, explique qué cambio se ha hecho de forma clara. Normalmente trabajaremos con otros compañeros en un mismo proyecto y será fundamental que todos entiendan que se ha hecho en cada paso para poder trabajar de forma más rápida y no tener que estar preguntando qué es cada cosa. Crear mensajes claros en los commits, nos servirá también para que si volvemos nosotros mismo a ver un commit del pasado, podamos entender qué es lo que hicimos.
+Es importante acompañar el commit con un mensaje. Este mensaje debe ser suficientemente corto para que no sea una locura leerlo y, a la vez, explique que cambio se ha hecho de forma clara.
+Normalmente trabajaremos con otras compañeras en un mismo proyecto y será fundamental que todas entiendan que se ha hecho en cada paso para poder trabajar de forma más rápida y no tener que estar preguntando qué es cada cosa.
+Crear mensajes claros en los commits, nos servirá también para que si volvemos nosotros mismas a ver un commit del pasado, podamos entender qué es lo que hicimos.
 
 A la hora de escribir un mensaje para un commit hay múltiples maneras de plantearlo e infinidad de guías. Como estamos empezando tengamos en cuenta sólo la siguiente serie de normas para crear un mensaje lo suficientemente bueno:
 * Debe estar escrito en inglés
 * Tiene que ser corto. Máximo 72 caracteres
 * Debe explicar brevemente y a nivel general los cambios que se han hecho (añade el footer, corrige los enlaces del artículo, etc.)
-* No tiene que detallar los cambios hechos en el código, sino en general. Recordemos que ya tenemos un control de versiones que muestra, exactamente, qué se ha hecho. (ej: no pongáis "Añade dos <p>s", poned mejor "Añade el texto de la introducción")
+* No tiene que detallar los cambios hechos en el código, sino en general. Recordemos que ya tenemos un control de versiones que muestra, exactamente, qué se ha hecho. (ej: no pongáis "Añade dos etiquetas ps", poned mejor "Añade el texto de la introducción")
 * Usaremos el imperativo (ejemplo: `Change header styles`) para decir qué hace el commit. (Ej: Cambia los estilos del header)
 
 Un ejemplo de un buen commit:
 
 ```
-git commit -m "Fix typo in article title"
+$ git commit -m "Fix typo in article title"
 ```
 
 * * *
@@ -380,7 +394,18 @@ testing-git
     images
     index.html
 ```
-Una vez creado el proyecto con el HTML y el CSS indicado. Inicializa el repositorio Git en nuestro proyecto y haz el primer commit con el mensaje `Initial commit`
+Una vez creado el proyecto con el HTML y el CSS indicado. Inicializa el repositorio Git en el proyecto (asegurate de que estás en la carpeta testing-git), añade los archivos y haz el primer commit con el mensaje `Initial commit`
+
+```shell
+$ git init
+```
+```shell
+$ git add -A
+```
+```shell
+$ git commit -m "Initial commit"
+```
+
 * * *
 ###### EJERCICIO 4:
 
@@ -391,7 +416,7 @@ Modificar el archivo `index.html` para que en el título de la página ponga "My
 * * *
 ###### EJERCICIO 5:
 
-Vamos a realizar un tercer cambio dónde añadiremos un archivo `README.md` en la raíz de nuestro proyecto. Este archivo se utiliza para poner información acerca de nuestro código y, por defecto, GitHub lo muestra en la página principal de nuestro proyecto. Dentro de ese archivo escribiremos el siguiente texto:
+Vamos a realizar un tercer cambio dónde añadiremos un archivo `README.md` en la raíz de nuestro proyecto. Este archivo se utiliza para poner información acerca de nuestro código y, por defecto, la web GitHub lo muestra en la página principal de nuestro proyecto. Dentro de ese archivo escribiremos el siguiente texto:
 
 ```markdown
 # My first Git project
@@ -407,22 +432,22 @@ Dummy project to learn Git basics
 Como hemos explicado anteriormente, GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones de Git. Está muy enfocada a proyectos de código abierto, por lo que es de uso gratuito siempre que tus proyectos estén disponibles para todos. Pagando puedes tener proyectos privados, pero la verdadera fuerza de GitHub está en la comunidad tan grande que se ha montado sobre la idea de código abierto u open source :)
 
 * * *
+
 ###### EJERCICIO 6:
 
-Crea una cuenta en GitHub y ponte una foto de perfil.
+Pon una foto de perfil en tu cuenta de GitHub.
 
 * * *
 
-Hasta ahora sabemos crear un repositorio Git local pero ahora vamos a conectarlo con un repositorio remoto que crearemos en GitHub, de esta forma podremos acceder al código desde cualquier equipo y podremos colaborar con nuestras compañeras.
+Hasta ahora sabemos crear un repositorio Git local, ahora vamos a ver como creamos un repositorio remoto en GitHub, de esta forma podremos acceder al código desde cualquier equipo y podremos colaborar con nuestras compañeras.
 
 Para ello, nos vamos a nuestro perfil y buscamos el botón `+` para crear un nuevo repositorio:
 ![Nuevo repositorio](assets/images/1-7/github-repo-1.png)
 
-
 Rellenamos los datos que nos piden: nombre del repositorio, descripción y marcamos que queremos inicializarlo con un `Readme.md`:
 ![Nuevo repositorio](assets/images/1-7/github-repo-2.png)
 
-Una vez creado, nos llevará a la página principal de nuestro repo donde podremos conseguir la url para descargarlo en nuestro equipo. Esta es una descarga especial que llamamos, clonar, que nos hace una copia local del proyecto contactada con la versión remota.
+Una vez creado, nos llevará a la página principal de nuestro repo donde podremos conseguir la url para descargarlo en nuestro equipo. Esta es una descarga especial que llamamos, clonar, que nos hace una copia local del proyecto conectada con la versión remota.
 
 ![Nuevo repositorio](assets/images/1-7/github-repo-3.png)
 
@@ -437,7 +462,13 @@ Esto nos generará una carpeta con nuestro proyecto. **Recordad que crea la carp
 
 ```shell
 $ git clone url-del-repositorio-que-me-da-github nuevo-nombre-de-carpeta
-```  
+```
+
+Ahora tenemos un repositorio local en la carpeta en la que hemos clonado nuestro nuevo repositorio remoto.
+Si accedemos a la carpeta, dentro debería estar el archivo README.md
+Podemos crear archivos y/o realizar cambios sobre los existentes, guardarlos en local (Ctrl+S o Cmd+S), añadirlos para que Git sepa que cambios hemos hecho (`git add -A`), commitearlos con un mensaje (`git commit -m "Add main css file"`), y finalmente hacer un _push_ al repositorio remoto de Gihutb (`git push origin master`) para guadar nuestros cambios allí.
+
+
 En el video que mostramos a continuación se hace un pequeño tour alrededor de la plataforma para ver cómo funciona y las funcionalidades que ofrece. En el video pone el nombre del repositorio con mayúsculas y minúsculas, nosotros lo pondremos en minúsculas y con el texto separado por guiones, como hacemos con las carpetas de nuestros proyectos. En el video también explica ramas, pero lo ignoraremos. De momento solo vamos a trabajar con una rama (master), más adelante veremos cómo es el flujo a la hora de trabajar con varias ramas, pero vayamos poco a poco.
 
 > **Nota:**  
@@ -450,7 +481,7 @@ A la hora de conectar el repo local y el remoto lo mas cómodo es empezar creand
 2. Esto nos llevará a una página diferente con las instrucciones para conectar un repo local con nuestro repo remoto: ![Nuevo repositorio](assets/images/1-7/github-repo-5.png)
 
 3. Copiamos la línea con `git remote add origin url-del-repositorio-que-me-da-github`
-4. Desde la terminal, nos vamos a la carpeta de nuestro proyecto que ya tiene inicializado un repo local y la ejecutamos. Esto conectará los dos repos.
+4. Desde la terminal, nos vamos a la carpeta de nuestro proyecto que ya tiene inicializado un repo local y ejecutamos la línea que hemos copiado. Esto conectará los dos repos.
 
 En el siguiente vídeo tenemos una pequeña intro a Github. Echadle un ojo hasta el minuto 21:34, ya veremos el resto de contenidos más adelante:
 
@@ -492,8 +523,8 @@ Classroom permite asignar repositorios vacíos o con un código inicial.
 
 Haz clic en el siguiente enlace [https://classroom.github.com/a/uISrxCY8](https://classroom.github.com/a/uISrxCY8) para crear tu primer repositorio a través de GitHub Classroom, y luego:
 1. Clónatelo en tu equipo
-2. Crea un archivo `readme.md`
-3. Dentro, escribe tu nombre precedido de un `#`: `# NOMBRE APELLIDOS`
+2. Crea un archivo `README.md`
+3. Dentro, escribe tu nombre precedido de un `#`: `# PEPA HERRERA`
 4. Haz `add` y `commit`
 5. Haz un `push` al repo remoto :)
 * * *
