@@ -188,13 +188,16 @@ $ mv index.html ../index.html
 > **NOTA**: `mv` también sirve para renombrar ficheros o carpetas
 
 ### Abrir nuestra carpeta actual en el explorador de archivos desde la terminal
-A veces nos interesará abrir nuestra carpeta actual en el explorador de archivos y esto se puede hacer fácilmente desde la terminal con el comando:
+A veces nos interesará abrir nuestra carpeta actual en el explorador de archivos (que en Ubuntu se llama Nautilus) y esto se puede hacer fácilmente desde la terminal con el comando:
 ```shell
 $ nautilus .
 ```
 
 y sí, `$ nautilus ..` nos abrirá nuestra carpeta madre en el explorador de archivos ;)
 
+> **NOTA**: en Mac podemos abrir el explorador de archivos (Finder) con `open`
+
+> **NOTA**: igual que con `nautilus` podemos abrir el explorador de archivos en una ruta, también podemos abrir programas como Atom en una ruta. Por ejemplo, con `atom .` abrimos una ventana de Atom en la carpeta actual
 
 * * *
 ###### EJERCICIO 1:
