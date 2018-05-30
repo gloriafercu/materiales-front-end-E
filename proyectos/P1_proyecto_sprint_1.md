@@ -68,12 +68,22 @@ Podéis descargar un [archivo ZIP](assets/zip/proyecto1.zip) con los diseños e 
 * **medidas** con indicaciones de dimensiones, márgenes y paddings
 * **tipografía** con indicaciones de los tamaños, colores y fuentes de cada elemento.
 
+### Logo, iconos tipografía y paleta
 
-### Iconos y tipografía
+El logo de Adalab se puede descargar de [aquí](http://adalab.es/wp-content/uploads/2016/08/logo_adalab_80px.png)
 
 Los iconos sociales los podéis sacar de [Font Awesome](https://fontawesome.com/), donde también podéis aprender a cómo usarla.
 
 Las tipografías usadas en el diseño son Open Sans y Rubik, disponibles en Google Fonts.
+
+#### Colores
+* Verde oscuro: #99d8d
+* Verde claro: #14d9c4
+* Blanco: #ffffff
+* Negro: #000000
+* Gris oscuro: #54585a
+* Gris claro: #b8b8b9
+* Gris de fondo: #f1f1f1
 
 ## Hitos
 
