@@ -170,7 +170,7 @@ $ mkdir ../proyecto
 ### TOUCH
 Nos permite crear un nuevo archivo.
 
-Si no especificamos una ruta se creará en la localización actual pero se puede indicar la ruta usando `/` y `..`. Por ejemplo, vamos a crear una un archivo "index.html" en la carpeta madre de la carpeta actual:
+Si no especificamos una ruta se creará en la localización actual pero se puede indicar la ruta usando `/` y `..`. Por ejemplo, vamos a crear un archivo "index.html" en la carpeta madre de la carpeta actual:
 ```shell
 $ touch ../index.html
 ```
