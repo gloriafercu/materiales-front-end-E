@@ -24,7 +24,7 @@ También os damos información de estilo:
   - `#4a4a4a` (Texto del menú)
   - `#3CDBC0` (color de fondo de la página)
   - `#FFFFFFF` (Color de texto de "Creando diversidad digital")
-- El logo de adalab podéis [descargarlo de este enlace](https://github.com/Adalab/materiales-front-end-D/blob/update-evaluaciones-1/assets/images/logo_adalab_155x61.png)
+- El logo de adalab podéis [descargarlo de este enlace](https://github.com/Adalab/materiales-front-end-D/blob/master/assets/images/logo_adalab_155x61.png)
 
 La web realizada tiene que ser **responsive**, es decir, debe funcionar correctamente para los siguientes tamaños:
 
