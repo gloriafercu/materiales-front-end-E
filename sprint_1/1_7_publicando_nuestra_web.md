@@ -1,15 +1,15 @@
 # Publicando nuestra web
 
-<!-- TOC START min:6 max:7 link:true update:true -->
-- [EJERCICIO 1:](#ejercicio-1)
-- [EJERCICIO 2:](#ejercicio-2)
-- [EJERCICIO 3:](#ejercicio-3)
-- [EJERCICIO 4:](#ejercicio-4)
-- [EJERCICIO 5:](#ejercicio-5)
-- [EJERCICIO 6:](#ejercicio-6)
-- [EJERCICIO 7:](#ejercicio-7)
-- [EJERCICIO 8:](#ejercicio-8)
-- [EJERCICIO 9:](#ejercicio-9)
+<!-- TOC START min:5 max:7 link:true update:true -->
+  - [EJERCICIO 1:](#ejercicio-1)
+  - [EJERCICIO 2:](#ejercicio-2)
+  - [EJERCICIO 3:](#ejercicio-3)
+  - [EJERCICIO 4:](#ejercicio-4)
+  - [EJERCICIO 5:](#ejercicio-5)
+  - [EJERCICIO 6:](#ejercicio-6)
+  - [EJERCICIO 7:](#ejercicio-7)
+  - [EJERCICIO 8:](#ejercicio-8)
+  - [EJERCICIO 9:](#ejercicio-9)
 
 <!-- TOC END -->
 
@@ -248,7 +248,7 @@ Para comprobar si tenemos instalado Git en nuestro ordenador, debemos abrir la T
 
 Si nuestra versión es anterior, continuaremos con el proceso de instalación que aparece a continuación. Si por el contrario, tenemos instalada la versión `2.11.0` o una posterior (ej: `2.14.0`), podemos continuar con el paso 2.
 
-##### En Ubuntu
+**En Ubuntu**
 
 **Importante:** Antes de realizar los comandos que aparecen a continuación, es importante que sepas que tras ejecutarlos te pedirá que introduzcas la contraseña de tu ordenador. A medida que la escribas no aparecerá nada por seguridad, así no se verá tu contraseña. Aunque no se muestre nada, puedes teclear tu contraseña y pulsar intro y, si es correcta, procederá con la ejecución de los comandos.
 
@@ -272,7 +272,7 @@ $ sudo apt-get install git -y
 
 Con esto deberíamos tener ya instalado Git en nuestro ordenador, para estar seguros volveremos a ejecutar el comando `git --version`, esta vez debería de aparecernos un número de versión mayor que `2.11.0`.
 
-##### En Mac
+**En Mac**
 
 **Importante:** Antes de realizar los comandos que aparecen a continuación, es importante que sepas que tras ejecutarlos te pedirá que introduzcas la contraseña de tu ordenador. A medida que la escribas no aparecerá nada por seguridad, así no se verá tu contraseña. Aunque no se muestre nada, puedes teclear tu contraseña y pulsar intro y, si es correcta, procederá con la ejecución de los comandos.
 
@@ -320,7 +320,7 @@ Sustituiremos en este caso `"johndoe@example.com"` por el email que hemos utiliz
 
 Por defecto, cada vez que intentamos conectarnos con GitHub, el servidor de GitHub nos pedirá la contraseña de nuestro usuario. Como vamos a subir y descargar cambios de GitHub de forma constante, puede ser un poco molesto tener que introducir la contraseña cada vez que queramos conectarnos con el servidor. Para evitar esto, vamos a almacenar la contraseña de forma segura en nuestro ordenador.
 
-##### En Ubuntu
+**En Ubuntu**
 
 Para poder almacenar la contraseña de GitHub en Ubuntu, realizaremos los siguientes comandos uno por uno:
 
@@ -335,7 +335,7 @@ Al hacer esto, la próxima vez que introduzcamos nuestra contraseña de GitHub, 
 
 Una vez hayamos realizado ese paso, no necesitaremos hacer ningún cambio más.
 
-##### En Mac
+**En Mac**
 
 Para poder almacenar la contraseña de GitHub en Mac, simplemente ejecutamos el siguiente comando:
 
