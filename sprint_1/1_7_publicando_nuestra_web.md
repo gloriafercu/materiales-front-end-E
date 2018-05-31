@@ -91,7 +91,8 @@ Esto nos dice que el usuario de nuestro equipo es **ubuntu**, que nuestro equipo
 
 
 ### Comandos básicos de GNU/Linux
-#### PWD
+**PWD**
+
 Principalmente usaremos la terminal para movernos por el sistema de archivos del ordenador. Así que es fundamental saber dónde estamos en cada momento. El comando `pwd` (_Print Working Directory_) se encargará de mostrarnos en qué carpeta nos encontramos.
 
 ```shell
@@ -117,10 +118,12 @@ Las relativas usan los caracteres especiales `..` para referirse a la carpeta ma
 carpeta-hija
 ```
 
-#### LS
+**LS**
+
 El comando `ls` nos muestra un listado de los archivos y carpetas que hay en nuestra carpeta actual.
 
-#### CD
+**CD**
+
 El comando `cd` (Change Directory) nos ofrece diferentes posibilidades a la hora de cambiar de carpeta:
 
 
@@ -159,7 +162,8 @@ $ cd -
 Este comando permite "deshacer" el último cd realizado: vuelve a la localización anterior al último cambio de carpeta.
 
 
-#### MKDIR
+**MKDIR**
+
 Nos permite crear una carpeta. PERO NO ENTRA EN LA CARPETA NUEVA.
 
 Si no especificamos una ruta se creará en la localización actual pero se puede indicar la ruta usando `/` y `..`. Por ejemplo, vamos a crear una carpeta "proyecto" en la carpeta madre de la carpeta actual:
@@ -167,7 +171,8 @@ Si no especificamos una ruta se creará en la localización actual pero se puede
 $ mkdir ../proyecto
 ```
 
-#### TOUCH
+**TOUCH**
+
 Nos permite crear un nuevo archivo.
 
 Si no especificamos una ruta se creará en la localización actual pero se puede indicar la ruta usando `/` y `..`. Por ejemplo, vamos a crear un archivo "index.html" en la carpeta madre de la carpeta actual:
@@ -175,10 +180,12 @@ Si no especificamos una ruta se creará en la localización actual pero se puede
 $ touch ../index.html
 ```
 
-#### CLEAR
+**CLEAR**
+
 A veces va a pasar que hemos introducido muchos comandos y sería genial poder "limpiar" la ventana. Para eso existe el comando `clear`, que nos limpia la ventana de la terminal.
 
-#### CP y MV
+**CP y MV**
+
 Si queremos copiar o mover archivos usaremos los comandos `cp` o `mv`. El formato será `cp`/`mv` archivo-de-origen archivo_de_destino.
 
 Vamos a mover el archivo index.html de nuestra carpeta actual a la carpeta madre:
@@ -187,7 +194,8 @@ $ mv index.html ../index.html
 ```
 > **NOTA**: `mv` también sirve para renombrar ficheros o carpetas
 
-#### Abrir nuestra carpeta actual en el explorador de archivos desde la terminal
+**Abrir nuestra carpeta actual en el explorador de archivos desde la terminal**
+
 A veces nos interesará abrir nuestra carpeta actual en el explorador de archivos (que en Ubuntu se llama Nautilus) y esto se puede hacer fácilmente desde la terminal con el comando:
 ```shell
 $ nautilus .
@@ -242,7 +250,7 @@ Vamos a ver cómo instalar Git en nuestro ordenador. Para llevarlo a cabo, prime
 
 **Nota:** La idea es que a medida que vayáis viendo cuáles son los pasos para instalar Git, los vayáis realizando en la Terminal para configurar Git en vuestro ordenador.
 
-#### 1. Comprobar que Git está instalado y actualizado
+**1. Comprobar que Git está instalado y actualizado**
 
 Para comprobar si tenemos instalado Git en nuestro ordenador, debemos abrir la Terminal y ejecutar el comando `git --version`. Esto mostrará el texto `git version` seguido de la versión de Git que tenemos instalada. Para poder trabajar de forma correcta, lo indicado sería que tuviésemos una versión igual o posterior a la `2.11.0`.
 
@@ -292,9 +300,9 @@ $ brew install git
 
 Una vez haya terminado de instalarse Git, tendremos todo listo para continuar con el siguiente paso.
 
-#### 2. Creamos una cuenta en [Github](https://github.com).
+**2. Creamos una cuenta en [Github](https://github.com).**
 
-#### 3. Añadimos nuestro nombre a la configuración de Git
+**3. Añadimos nuestro nombre a la configuración de Git**
 
 Abrimos la aplicación de la terminal e introducimos el siguiente comando, tal y como se muestra abajo, sustituyendo `"John Doe"`. Una vez lo hayamos introducido, pulsamos intro para que se ejecute.
 
@@ -304,7 +312,7 @@ Abrimos la aplicación de la terminal e introducimos el siguiente comando, tal y
 $ git config --global user.name "John Doe"
 ```
 
-#### 4. Configuramos nuestro email para trabajar con Git
+**4. Configuramos nuestro email para trabajar con Git**
 
 Ahora introducimos el siguiente comando para guardar la configuración de nuestro email:
 
@@ -316,7 +324,7 @@ Sustituiremos en este caso `"johndoe@example.com"` por el email que hemos utiliz
 
 **Nota:** Es importante que el email coincida con el que hemos utilizado en GitHub, ya que se utilizará para comprobar nuestros credenciales a la hora de subir información a un repositorio en esta plataforma.
 
-#### 5. Añadimos la configuración para que se guarde nuestra contraseña para GitHub
+**5. Añadimos la configuración para que se guarde nuestra contraseña para GitHub**
 
 Por defecto, cada vez que intentamos conectarnos con GitHub, el servidor de GitHub nos pedirá la contraseña de nuestro usuario. Como vamos a subir y descargar cambios de GitHub de forma constante, puede ser un poco molesto tener que introducir la contraseña cada vez que queramos conectarnos con el servidor. Para evitar esto, vamos a almacenar la contraseña de forma segura en nuestro ordenador.
 
@@ -367,7 +375,7 @@ En el video que añadimos a continuación se explican los comandos básicos para
 
 >**Nota:** En el video pone los mensajes de los commits en español pero nosotros los escribiremos en inglés.
 
-#### Mensaje del commit
+**Mensaje del commit**
 
 Es importante acompañar el commit con un mensaje. Este mensaje debe ser suficientemente corto para que no sea una locura leerlo y, a la vez, explique que cambio se ha hecho de forma clara.
 Normalmente trabajaremos con otras compañeras en un mismo proyecto y será fundamental que todas entiendan que se ha hecho en cada paso para poder trabajar de forma más rápida y no tener que estar preguntando qué es cada cosa.
