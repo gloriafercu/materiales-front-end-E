@@ -117,10 +117,10 @@ Las relativas usan los caracteres especiales `..` para referirse a la carpeta ma
 carpeta-hija
 ```
 
-### LS
+#### LS
 El comando `ls` nos muestra un listado de los archivos y carpetas que hay en nuestra carpeta actual.
 
-### CD
+#### CD
 El comando `cd` (Change Directory) nos ofrece diferentes posibilidades a la hora de cambiar de carpeta:
 
 
@@ -159,7 +159,7 @@ $ cd -
 Este comando permite "deshacer" el último cd realizado: vuelve a la localización anterior al último cambio de carpeta.
 
 
-### MKDIR
+#### MKDIR
 Nos permite crear una carpeta. PERO NO ENTRA EN LA CARPETA NUEVA.
 
 Si no especificamos una ruta se creará en la localización actual pero se puede indicar la ruta usando `/` y `..`. Por ejemplo, vamos a crear una carpeta "proyecto" en la carpeta madre de la carpeta actual:
@@ -167,7 +167,7 @@ Si no especificamos una ruta se creará en la localización actual pero se puede
 $ mkdir ../proyecto
 ```
 
-### TOUCH
+#### TOUCH
 Nos permite crear un nuevo archivo.
 
 Si no especificamos una ruta se creará en la localización actual pero se puede indicar la ruta usando `/` y `..`. Por ejemplo, vamos a crear un archivo "index.html" en la carpeta madre de la carpeta actual:
@@ -175,10 +175,10 @@ Si no especificamos una ruta se creará en la localización actual pero se puede
 $ touch ../index.html
 ```
 
-### CLEAR
+#### CLEAR
 A veces va a pasar que hemos introducido muchos comandos y sería genial poder "limpiar" la ventana. Para eso existe el comando `clear`, que nos limpia la ventana de la terminal.
 
-### CP y MV
+#### CP y MV
 Si queremos copiar o mover archivos usaremos los comandos `cp` o `mv`. El formato será `cp`/`mv` archivo-de-origen archivo_de_destino.
 
 Vamos a mover el archivo index.html de nuestra carpeta actual a la carpeta madre:
@@ -187,7 +187,7 @@ $ mv index.html ../index.html
 ```
 > **NOTA**: `mv` también sirve para renombrar ficheros o carpetas
 
-### Abrir nuestra carpeta actual en el explorador de archivos desde la terminal
+#### Abrir nuestra carpeta actual en el explorador de archivos desde la terminal
 A veces nos interesará abrir nuestra carpeta actual en el explorador de archivos (que en Ubuntu se llama Nautilus) y esto se puede hacer fácilmente desde la terminal con el comando:
 ```shell
 $ nautilus .
