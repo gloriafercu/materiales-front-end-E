@@ -138,7 +138,7 @@ Y pusheamos (subimos los commits) con `git push` cuando terminemos la tarea que 
 
 Esto pasará de vez en cuando, unas veces por inexperiencia, otras por descuido y otras por otras razones, pero no hay miedo porque cada commit queda registrado y siempre podemos volver a consultar uno anterior o revertir el último. Vamos a ver cómo:
 
-Si queremos ver nuestra actividad en el proyecto usaremos `git log`, esto  unnos mostrará listado de los commits realizados:  
+Si queremos ver nuestra actividad en el proyecto usaremos `git log`, esto nos mostrará un listado de los commits realizados:  
 
 ![Ejemplo de Git log](assets/images/1-8/git-log.png)
 
