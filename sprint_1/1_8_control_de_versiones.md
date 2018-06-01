@@ -12,9 +12,11 @@
 Hasta ahora hemos hecho una primera aproximación a Git, nada menor.
 
 Primero vimos cómo crear un repositorio local con `git init` y mantener nuestros cambios con `git add -A` y `git commit -m "Mensaje del commit"`.
-Pero no solo eso, también hemos aprendido a conectar nuestro proyecto local con un repositorio remoto alojado en GitHub con `git remote add`, o , directamente a crearlo en Github y clonarlo en nuestro equipo con `git clone`.
+Pero no solo eso, también hemos aprendido a conectar nuestro proyecto local con un repositorio remoto alojado en GitHub con `git remote add`, o directamente a crearlo en Github y clonarlo en nuestro equipo con `git clone`.
 
-Y más, porque actualmente estamos trabajando en grupo sobre el mismo proyecto y sobre los mismos archivos, y publicando nuestro trabajo a través del sistema de hosting propio de GitHub: GitHub Pages.
+También vimos como publicar nuestro trabajo a través del sistema de hosting propio de GitHub: GitHub Pages.
+
+Hoy vamos a ver como trabajar en grupo sobre el mismo proyecto y sus archivos archivos.
 
 ## Repaso del proceso de creación de un proyecto Git
 
