@@ -77,7 +77,7 @@ Los iconos sociales los podéis sacar de [Font Awesome](https://fontawesome.com/
 Las tipografías usadas en el diseño son Open Sans y Rubik, disponibles en Google Fonts.
 
 #### Colores
-* Verde oscuro: ##099d8d
+* Verde oscuro: #099d8d
 * Verde claro: #14d9c4
 * Blanco: #ffffff
 * Negro: #000000
