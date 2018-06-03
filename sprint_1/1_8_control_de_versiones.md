@@ -3,6 +3,7 @@
   - [EJERCICIO 1: Crear repositorio en GitHub](#ejercicio-1-crear-repositorio-en-github)
   - [EJERCICIO 2: Clonar repositorio](#ejercicio-2-clonar-repositorio)
   - [EJERCICIO 3: Eliminar un repositorio](#ejercicio-3-eliminar-un-repositorio)
+  - [EJERCICIO 4.1: Crear un repositorio local y conectarlo con remoto](#ejercicio-41-crear-un-repositorio-local-y-conectarlo-con-remoto)
   - [EJERCICIO 4.2: Solucionar un conflicto](#ejercicio-42-solucionar-un-conflicto)
 
 <!-- TOC END -->
@@ -191,7 +192,7 @@ No es tan habitual pero de tanto en tanto querremos hacer limpieza en nuestra cu
 
 * * *
 
-EJERCICIO 4.1: Crear un repositorio local y conectarlo con remoto
+###### EJERCICIO 4.1: Crear un repositorio local y conectarlo con remoto
 
 Ahora vamos a trabajar de una manera menos habitual y un poco más complicada, pero a veces pasa: crearemos un proyecto en nuestro equipo, algo sencillito, podemos elegir entre:
 - Un html básico con un "hola, mundo" centrado en la ventana del navegador
