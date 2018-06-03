@@ -157,11 +157,11 @@ $ git revert e139ca3e275be608eed457ab08395e6347e804bf
 
 y si aceptamos el revert, ya lo tenemos:
 
-![Git revert paso 1](assets/images/1-8/commit-revert-2.png)
+![Git revert paso 2](assets/images/1-8/commit-revert-2.png)
 
 Si ahora hacemos un `git log` podemos ver cómo queda el historial de commits:
 
-![Git revert paso 1](assets/images/1-8/commit-revert-3.png)
+![Git revert paso 3](assets/images/1-8/commit-revert-3.png)
 
 
 ## Issues
