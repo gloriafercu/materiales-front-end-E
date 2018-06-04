@@ -1,19 +1,15 @@
 # Formularios
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Para qué sirven?](#para-qu-sirven)
-- [¿Cómo funcionan?](#cmo-funcionan)
-- [¿En qué casos se utilizan?](#en-qu-casos-se-utilizan)
-- [Nuestro primer formulario en HTML](#nuestro-primer-formulario-en-html)
-- [Atributos básicos](#atributos-bsicos)
-- [Otras etiquetas](#otras-etiquetas)
-- [Agrupando partes del formulario por contexto](#agrupando-partes-del-formulario-por-contexto)
-- [Restaurar el formulario a los valores por defecto](#restaurar-el-formulario-a-los-valores-por-defecto)
-- [Estilos CSS de un formulario](#estilos-css-de-un-formulario)
-- [BONUS](#bonus)
+<!-- TOC START min:5 max:7 link:true update:true -->
+  - [EJERCICIO 1](#ejercicio-1)
+  - [EJERCICIO 2](#ejercicio-2)
+  - [EJERCICIO 3](#ejercicio-3)
+  - [EJERCICIO 4](#ejercicio-4)
+  - [EJERCICIO 5](#ejercicio-5)
 
 <!-- TOC END -->
+
+
 
 ## Introducción
 
@@ -85,7 +81,7 @@ Junto con el atributo `type`, tenemos otro atributo especial llamado `name` que 
 
 ***
 
-Ya tenemos nuestro formulario con los dos campos necesarios para que funcione, pero nos falta lo más importante, poder enviar el formulario. Para esto vamos a usar también una etiqueta input pero en este caso va a ser del tipo `submit` (`type="submit"`). Si introducimos esta etiqueta en nuestro formulario se mostrará un botón que, al ser pulsado, enviará el formulario. Para establecer qué texto queremos que vaya dentro del botón, usaremos el atributo `value`. Otra cosa a destacar es que el botón tiene una serie de estilos CSS aplicados por defecto pero que podemos modificar añadiendole unos nuevos que sobreescriban a los anteriores.
+Ya tenemos nuestro formulario con los dos campos necesarios para que funcione, pero nos falta lo más importante, poder enviar el formulario. Para esto vamos a usar también una etiqueta input pero en este caso va a ser del tipo `submit` (`type="submit"`). Si introducimos esta etiqueta en nuestro formulario se mostrará un botón que, al ser pulsado, enviará el formulario. Para establecer qué texto queremos que vaya dentro del botón, usaremos el atributo `value`. Otra cosa a destacar es que el botón tiene una serie de estilos CSS aplicados por defecto pero que podemos modificar añadiéndole unos nuevos que sobreescriban a los anteriores.
 
 ```html
 <form action="/signup" method="post">
@@ -193,9 +189,9 @@ Otra peculiaridad de los campos del tipo `password` es que su contenido se borra
 ![El contenido de los campos del tipo contraseña se sustituye por asteriscos](assets/images/1-8-password.png)
 
 ***
-EJERCICIO 1
+###### EJERCICIO 1
 
-Sin que sirva de precedente, vamos a realizar este ejercicio directamente en Codepen. Esto nos permitirá comprobar cuales son los datos que se envían en el formulario ya que cuando creamos un formulario en Codepen, al enviarlo nos muestra una ventana con la información que le llegaría al servidor. Esto nos permite comprobar que funciona correctamente y ver qué es lo que llegaría en cada caso. Es importante que dejemos el atributo `action` de la etiqueta `<form>` vacío y que el método sea del tipo `post`.
+Sin que sirva de precedente, vamos a realizar este ejercicio directamente en Codepen. Esto nos permitirá comprobar cuales son los datos que se envían en el formulario ya que cuando creamos un formulario en Codepen, al enviarlo, nos muestra una ventana con la información que le llegaría al servidor. Esto nos permite comprobar que funciona correctamente y ver qué es lo que llegaría en cada caso. Es importante que dejemos el atributo `action` de la etiqueta `<form>` vacío y que el método sea del tipo `post`.
 
 ![Codepen Form Result](assets/images/1-8-codepen-form-result.png)
 
@@ -264,7 +260,7 @@ El atributo `disabled` sirve para desactivar un campo de un formulario.
 ```
 
 ***
-EJERCICIO 2
+###### EJERCICIO 2
 
 Vamos a añadir un atributo `required` a todos los campos del ejercicio anterior excepto al apellido.
 
@@ -372,7 +368,7 @@ Por defecto las etiquetas ocultas se muestran con el atributo `display: none;` a
 ```
 
 ***
-EJERCICIO 3
+###### EJERCICIO 3
 
 En este ejercicio vamos a crear el formulario de Facebook. Para crearlo utilizaremos lo que hemos visto hasta ahora de formularios. El formulario en sí será el que se muestra en la imagen inferior. El objetivo es crear sólo el HTML pero si te atreves puedes probar también a realizar un CSS similar.
 
@@ -433,7 +429,7 @@ Para crear un botón en nuestro formulario que realice esta acción de establece
 Este botón siempre borrará toda la información de los campos que haya dentro de la etiqueta `<form>` que lo contenga.
 
 ***
-EJERCICIO 4
+###### EJERCICIO 4
 
 En el formulario de facebook, añadir un botón para borrar la información.
 
@@ -457,7 +453,7 @@ input {
 > El prefijo `-webkit-` y `-moz-` es específico para aplicar esto a los navegadores Safari y Chrome y Mozilla Firefox respectivamente
 
 ***
-EJERCICIO 5
+###### EJERCICIO 5
 
 Crea un formulario similar al de la imagen, que es el de registro de Gmail.
 
