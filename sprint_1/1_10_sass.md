@@ -1,13 +1,8 @@
 # Sass
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Qué es un preprocesador CSS?](#qu-es-un-preprocesador-css)
-- [Vale, ¿y esto cómo funciona?](#vale-y-esto-cmo-funciona)
-- [¿Y qué puedo hacer con SASS/SCSS?](#y-qu-puedo-hacer-con-sassscss)
-- [BONUS](#bonus)
-
-<!-- TOC END -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO BONUS 1](#ejercicio-bonus-1)
 
 ## Introducción
 Con CSS podemos personalizar al píxel el aspecto de nuestra página y como hemos visto tiene una serie de reglas y de formas de hacer todo esto. Sin embargo el sector ha ido madurando y nos encontramos con que necesitaríamos poder trabajar con las hojas de estilos de una manera más ágil: permitiendo el uso de variables, pudiendo dividir los archivos en bloques más pequeños, pudiendo crear bloques de estilos que se repitan o incluso pequeñas funciones simples. Esto es posible con los preprocesadores CSS.
@@ -94,7 +89,7 @@ body {
 ```
 **¡Vamos a ponerlo en práctica!**
 ***
-EJERCICIO 1
+#### EJERCICIO 1
 
 En el siguiente [codepen](https://codepen.io/adalab/pen/aVrxYY) tenemos un ejemplo en css que vamos a reescribir a SCSS y modificar un poco.
 1. Lo primero es configurarlo para usar SCSS: en la rueda de CSS, desplegar las opciones y elegir SCSS como preprocesador
@@ -144,7 +139,7 @@ Esto nos generará el siguiente CSS:
 .content p {color:blue;}
 .content p a {color:red;}
 ```
-El anidado nos permite anidar bloques asimilandose un poco a la jerarquía visual de HTML. Esto nos permite ver algunos bloques más claros o agrupar clases que nos interese ver juntas. Pero atención: anidar genera estilos más específicos y hay que usarlo con mucho cuidado. 
+El anidado nos permite anidar bloques asimilandose un poco a la jerarquía visual de HTML. Esto nos permite ver algunos bloques más claros o agrupar clases que nos interese ver juntas. Pero atención: anidar genera estilos más específicos y hay que usarlo con mucho cuidado.
 Una buena regla es, cuando vayamos añadir un cuarto nivel de anidación, pararnos a repensar si realmente es necesario. Pero con el uso iremos viendo cuándo usarlo y cuándo no ;)
 
 #### Referenciando al selector padre o madre: `&`
@@ -273,7 +268,7 @@ En nuesto `main.scss` llamaríamos a todos estos archivos en orden:
 
 Una ventaja directa de trabajar con parciales es la cantidad de conflictos de git que nos vamos a ahorrar ;)
 ***
-EJERCICIO 2
+#### EJERCICIO 2
 
 Vamos a crearnos un proyecto con nuestra estructura de imports de SASS. Recordad que iremos haciendo parciales conforme los vayamos necesitando y que en cada carpeta estarán solo los que necesitemos.
 Para el ejercicio querremos:
@@ -376,7 +371,7 @@ Pero, escribir todos los prefijos es un un trabajo muy tedioso, y estar pendient
 > Por dejar claro, autoprefixer sería un post-procesador. Como hemos visto, SASS lo que hace es convertir un código con una sintaxis a CSS. Autoprefixer, en cambio, parte de un código CSS y lo post-procesa para convertirlo en un CSS con una serie de propiedades añadidas.
 
 ***
-EJERCICIO BONUS 1
+#### EJERCICIO BONUS 1
 
 Configurar Autoprefixer en Koala para que tenga en cuenta las 5 últimas versiones de los navegadores (pista: se hace en la parte de css).
 ***
