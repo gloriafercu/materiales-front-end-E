@@ -1,13 +1,11 @@
 # Sistemas de diseño
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Qué es un sistema de diseño?](#qu-es-un-sistema-de-diseo)
-- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
-- [Convertir un sistema a código](#convertir-un-sistema-a-cdigo)
-- [Ejemplos de sistemas de diseño](#ejemplos-de-sistemas-de-diseo)
+    - [EJERCICIO 1: COLORES](#ejercicio-1-colores)
+    - [EJERCICIO 2: TIPOGRAFÍA](#ejercicio-2-tipografa)
+    - [EJERCICIO BONUS 1: Mixin para el tamaño de los botones](#ejercicio-bonus-1-mixin-para-el-tamao-de-los-botones)
+    - [EJERCICIO 3: Nuestro componente input](#ejercicio-3-nuestro-componente-input)
+    - [(BONUS) EJERCICIO 4: UN SISTEMA COMPLETO](#bonus-ejercicio-4-un-sistema-completo)
 
-<!-- TOC END -->
 
 ## Introducción
 
@@ -187,9 +185,9 @@ Que generaría este código CSS:
 
 * * *
 
-EJERCICIO 1: COLORES
+#### EJERCICIO 1: COLORES
 
-Vamos a descargarnos el [ejercicio de evaluación del primer sprint de Adalab](https://github.com/Adalab/clarke-s1-evaluacion).
+Vamos a descargarnos el [ejercicio de evaluación del primer sprint de Adalab de la promoción Clarke](https://github.com/Adalab/clarke-s1-evaluacion).
 
 A continuación, vamos a reestructurar el archivo siguiendo la estructura que hemos aprendido para organizar nuestros archivos de Sass. Por ejemplo, crearemos un archivo en la ruta `scss/layout/_header.scss` donde meteremos los estilos de la cabecera.
 
@@ -330,7 +328,7 @@ Creando estos estilos podremos reutilizarlos simplemente para dar estilo a nuest
 
 * * *
 
-EJERCICIO 2: TIPOGRAFÍA
+#### EJERCICIO 2: TIPOGRAFÍA
 
 Vamos a crear un nuevo proyecto en el que tendremos solo tres archivos `scss`:
 
@@ -657,7 +655,7 @@ Si quieres experimentar más y ver cómo convierte el código Sass a CSS, puedes
 
 * * *
 
-EJERCICIO BONUS 1: Mixin para el tamaño de los botones
+#### EJERCICIO BONUS 1: Mixin para el tamaño de los botones
 
 Como hemos visto en el ejemplo, podemos crear un mixin para los distintos estilos de un botón. Como sugerencia de ejercicio y sólo si quieres, puedes probar a hacer un mixin para los tamaños de los botones. Puedes usar tanto CodePen como Sassmeister para realizarlo. El resultado debería ser idéntico y solo debería cambiar el código.
 
@@ -665,9 +663,7 @@ Puedes partir de este [CodePen](https://codepen.io/anon/pen/vRjLbK) cómo base
 
 * * *
 
-* * *
-
-EJERCICIO 3: Nuestro componente input
+#### EJERCICIO 3: Nuestro componente input
 
 En este ejercicio vamos a crear los estilos para un componente input. Este componente, como se puede ver en la imagen tendrá distintos estados (activo, hover, etc.) y distintos formatos (con y sin icono a la derecha)
 
@@ -772,7 +768,7 @@ Para finalizar y para que sirva de inspiración hemos recogido algunos de los si
 
 * * *
 
-(BONUS) EJERCICIO 4: UN SISTEMA COMPLETO
+#### (BONUS) EJERCICIO 4: UN SISTEMA COMPLETO
 
 A partir de la siguiente imagen. Crea el HTML y los archivos de Sass necesario para replicar los estilos y generar un sistema a partir de lo visto. Utiliza variables para los tamaños de fuente, los colores, los radios de los botones, etc. por si se decide cambiar en el futuro. No importa si no es exacto el color o el radio del borde.
 
