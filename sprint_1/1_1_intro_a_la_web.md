@@ -388,9 +388,17 @@ Para este curso vamos a plantear unas que dan bastante buen resultado para empez
 * El archivo HTML principal se llamará `index.html`
 
 Para la estructura del proyecto usaremos estas carpetas:
+
 ```
-project-name
-|- assets
-|- scripts
-`- styles
+/project-folder
+ │
+ ├── images
+ │    └── background.jpg
+ │
+ ├── scripts
+ │
+ ├── styles
+ │   └── main.css
+ │
+ └── index.html
 ```
