@@ -1,12 +1,10 @@
 # Automatización de tareas
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
-- [Gulp](#gulp)
-- [Cómo usar el kit en nuestros proyectos](#cmo-usar-el-kit-en-nuestros-proyectos)
-- [Recursos externos](#recursos-externos)
-
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1:](#ejercicio-1)
+- [EJERCICIO 2:](#ejercicio-2)
+- [EJERCICIO 3:](#ejercicio-3)
+- [EJERCICIO 4:](#ejercicio-4)
 <!-- TOC END -->
 
 ## Introducción
@@ -31,7 +29,7 @@ Con una herramienta como Gulp, vamos a poder hacer que nuestro código Sass se c
 
 Gulp es una herramienta de automatización de tareas que está programada con JavaScript. Gulp, a diferencia de Koala, no tiene interfaz gráfica sino que se ejecuta desde la terminal de comandos, al igual que sucede con Git. Primero vamos a ver cómo instalarla y después la configuraremos para ayudarnos con algunas tareas.
 
-Bien, sabemos que decir que Gulp lo usaremos a través de la consola, que no tiene interfaz gráfica y que la configuración te la tienes que hacer tú mismo hace difícil el venderlo como algo mejor, pero la clave de Gulp reside en esa última característica, la de configurarlo a través de JavaScript. La clave de usar una herramienta de automatización de tareas como Gulp es que podemos configurarla a nuestra manera y añadir procesos y tareas a medida que las necesitemos e ir mejorando poco a poco estos para adaptarlos a nuestras necesidades, esto es lo que hace que lo que ofrece Koala se quede corto y es el motivo principal por el que en la mayoría de las empresas tienen automatizadas las tareas con herramientas como Gulp. En esta sesión veremos alguna novedad como poder visualizar nuestra página directamente desde el móvil sin tener que subirla al servidor, pero esto es solo la punta del iceberg, existen cientos de utilidades que podremos utilizar con Gulp y que nos facilitarán mucho la tarea de desarrollar páginas web.
+Bien, sabemos que decir que Gulp lo usaremos a través del terminal, que no tiene interfaz gráfica y que la configuración te la tienes que hacer tú mismo hace difícil el venderlo como algo mejor, pero la clave de Gulp reside en esa última característica, la de configurarlo a través de JavaScript. La clave de usar una herramienta de automatización de tareas como Gulp es que podemos configurarla a nuestra manera y añadir procesos y tareas a medida que las necesitemos e ir mejorando poco a poco estos para adaptarlos a nuestras necesidades, esto es lo que hace que lo que ofrece Koala se quede corto y es el motivo principal por el que en la mayoría de las empresas tienen automatizadas las tareas con herramientas como Gulp. En esta sesión veremos alguna novedad como poder visualizar nuestra página directamente desde el móvil sin tener que subirla al servidor, pero esto es solo la punta del iceberg, existen cientos de utilidades que podremos utilizar con Gulp y que nos facilitarán mucho la tarea de desarrollar páginas web.
 
 ### Node
 
@@ -67,7 +65,7 @@ El `-g` indica que se instala de forma global y se puede usar la utilidad de Gul
 
 Ahora que ya tenemos todo instalado, vamos a utilizar Gulp en nuestro proyecto. Vamos a crear un nuevo proyecto, para ello creamos una nueva carpeta (podemos hacerlo desde la terminal con `mkdir <nombre_carpeta>`). **Y nos movemos dentro de la carpeta con `cd <nombre_carpeta>`**.
 
-Para indicar que en este proyecto vamos a usar npm, necesitamos crear un fichero llamado `package.json` que indica la configuración de npm del proyecto. Es un fichero en formato JSON que si recordáis tiene el aspecto de un objeto de JavaScript que tiene solo propiedades pero no métodos (funciones). La forma más sencilla de crear este fichero es ejecutando desde la terminal:
+Para indicar que en este proyecto vamos a usar npm, necesitamos crear un fichero llamado `package.json` que indica la configuración de npm del proyecto. Es un fichero en formato JSON, tiene el aspecto de un objeto de JavaScript que tiene solo propiedades pero no métodos (funciones). La forma más sencilla de crear este fichero es ejecutando desde la terminal:
 
 `npm init`
 
@@ -105,7 +103,7 @@ Además notaremos que se ha creado una carpeta en el proyecto `node_modules` don
 
 El `package.json` se usa para saber qué paquetes (dependencias) tiene el proyecto. ¿Para qué? Porque si alguien se clona tu proyecto no va a tener todo el código de las dependencias (la carpeta `node_modules`) pero en el `package.json` está toda esa información. Simplemente ejecutando `npm install` se instalarán todas esas dependencias y se añadirán a la carpeta `node_modules`.
 
-Ahora solo nos falta crear el fichero de configuración de Gulp llamado `Gulpfile.js`. Vamos a crear un fichero con ese nombre y meter este código de configuración (si miráis con atención ¡es JavaScript!):
+Ahora solo nos falta crear el fichero de configuración de Gulp llamado `gulpfile.js`. Vamos a crear un fichero con ese nombre y meter este código de configuración (si miráis con atención ¡es JavaScript!):
 
 ```javascript
 var gulp = require('gulp');
@@ -188,9 +186,8 @@ Ahora ejecutamos nuestra nueva tarea `gulp watch`. Una vez ejecutada, lo primero
 
 Prueba a modificar el fichero Sass y ver que el CSS se modifica automáticamente. Igual que Koala pero con un toque más de programadora pro, ¿verdad?
 
-***
-
-EJERCICIO 1:
+* * *
+#### EJERCICIO 1:
 
 Ahora vamos a trabajar con un proyecto que ya tiene configurado Gulp. Primero tendremos que clonarlo en nuestro ordenador y en la carpeta ejecutar `npm install` para instalar las dependencias.
 
@@ -198,45 +195,46 @@ https://github.com/Adalab/testing-Gulp
 
 Luego probamos a ejecutar la tarea por defecto `gulp` y la tarea `gulp watch`. Observamos el resultado en la carpeta CSS. Investigad un poco el código y probad a comentar cosas para averiguar qué hacen las 2 nuevas funcionalidades que hemos añadido.
 
-***
+* * *
 
-EJERCICIO 2:
+#### EJERCICIO 2:
 
 ¿Quién sabe decir qué hace la tarea **styles**?
 
-***
+* * *
 
-EJERCICIO 3:
+#### EJERCICIO 3:
 
 ¿Quién sabe decir qué hace la tarea **scripts**?
 
-***
+* * *
 
-EJERCICIO 4:
+#### EJERCICIO 4:
 
 ¿Que diferencias hay entre la tarea **styles** y **styles-min**?
 
-***
+* * *
+
 ### Bueno, ¿y ahora?
 Ahora os hemos preparado un proyecto que os podéis descargar y donde integrar vuestros proyecto y ejercicios en Adalab:  
 [Adalab Web Starter Kit](https://github.com/Adalab/Adalab-web-starter-kit)
 
-#### Tareas incluidas
+### Tareas incluidas
 En el archivo `README.md` del proyecto tenéis información más detallada pero en resumen este kit tiene dos tareas principales:
 * `gulp`
 * `gulp deploy`
 
-##### `gulp`
+### `gulp`
 La tarea por defecto lanza un servidor web con BrowserSync y varios watchers estarán pendientes de los archivos SCSS/JS/HTML para recargar el navegador cuando se necesite.
 Además, aplica automáticamente autoprefixer a nuestros estilos y agrupa todas la mediaqueries que hayamos creado en los SCSS y las coloca al final del documento CSS, de esta manera podemos escribir mediaqueries donde las necesitemos y ya Gulp se ocupará de agruparlas y colocarlas en su sitio.
 
-##### `gulp deploy`
+### `gulp deploy`
 Esta tarea se ejecuta una sola vez y no lanza servidores web ni watchers, pero minimiza nuestros archivos CSS y JS de manera que ocupen menos y tengamos una versión lista para subir a nuestro servidor de producción.
 
 
 ## Cómo usar el kit en nuestros proyectos
 La forma más cómoda es:
-1. crear nuestro repositorio vacío en GitHUb
+1. crear nuestro repositorio vacío en GitHub
 2. clonarlo a nuestro equipo
 3. descargar/clonar el kit a otra carpeta
 4. copiar o mover los archivos y carpetas a nuestro proyecto **SIN OLVIDAR EL ARCHIVO OCULTO .GITIGNORE** (podemos obviar el `README.md`).
@@ -305,6 +303,6 @@ Por último, ahora que tenemos instalado Homebrew, instalar Node será tan senci
 brew install node@8
 ```
 
-#### Instalar Ubuntu en otro sistema operativo distinto de Ubuntu o Mac
+#### Instalar Node en otro sistema operativo distinto de Ubuntu o Mac
 
 Para el resto de sistemas seguimos las [instrucciones de instalación en su web oficial](https://nodejs.org/en/).
