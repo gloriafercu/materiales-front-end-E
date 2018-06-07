@@ -167,7 +167,7 @@ Bien, la otra alternativa para usar colores es, como hemos dicho el map. De esta
   );
 ```
 
-Y para utilizarlo en nuestro CSS, utilizariamos la función [`map-get`](http://sass-lang.com/documentation/Sass/Script/Functions.html#map_get-instance_method) que sería como una función de JavaScript y lo que hace es que nos devuelve el valor asignado a una propiedad dentro de un objeto de Sass:
+Y para utilizarlo en nuestro SCSS, utilizariamos la función [`map-get`](http://sass-lang.com/documentation/Sass/Script/Functions.html#map_get-instance_method) que sería como una función de JavaScript y lo que hace es que nos devuelve el valor asignado a una propiedad dentro de un objeto de Sass:
 
 ```scss
 .button {
