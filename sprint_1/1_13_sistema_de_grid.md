@@ -68,14 +68,14 @@ Para las filas funciona exactamente igual:
 
 También podemos indicar el tamaño del espaciado de elementos en el contenedor con la propiedad `grid-gap`. Podemos indicar 2 valores si queremos espaciado distinto entre filas y columnas.
 
-***
-EJERCICIO 1:
+* * *
+#### EJERCICIO 1:
 
 Partiendo del ejemplo de codepen, conseguid una composición como la de la imagen.
 
 ![Exercise 1](assets/images/1-13/exercise-1.png)
 
-***
+* * *
 
 A la hora de posicionar los elementos en el grid, también podemos usar la palabra `span` para indicar cuánto se expande desde la fila/columna actual. Por ejemplo, para el `item1` que se expandía desde la línea de grid 1 a la 4 podríamos usar:
 
@@ -85,21 +85,21 @@ A la hora de posicionar los elementos en el grid, también podemos usar la palab
 }
 ```
 
-***
+* * *
 
-EJERCICIO 2:
+#### EJERCICIO 2:
 
 Vamos a modificar el ejercicio anterior para usar `span` en vez de punto inicial y final.
 
-***
+* * *
 
-EJERCICIO 3:
+#### EJERCICIO 3:
 
 Vamos a crear un grid de 12 columnas y 3 filas, la primera y la última ocupan el 20% del alto del viewport. Crearemos la composición de la imagen.
 
 ![Exercise 3](assets/images/1-13/exercise-3.png)
 
-***
+* * *
 
 Hasta ahora hemos definido una rejilla fija donde colocar nuestros elementos pero **¿Qué pasa cuando hay más elementos que "huecos"?**  
 
@@ -150,10 +150,10 @@ Si ahora quisiésemos que un elemento en concreto se colocase en una de estas á
 }
 ```
 
-***
-EJERCICIO 4:
+* * *
+#### EJERCICIO 4:
 ¿Seremos capaces de [colocar cada elemento en su sitio](https://codepen.io/adalab/pen/zjPjER)? ;)
-***
+* * *
 
 El soporte el navegadores de CSS grid aún no es completo pero a día de hoy (mayo de 2018) es de [más del 80% según caniuse](https://caniuse.com/#feat=css-grid). Para los casos en que aún no podamos usarlo, tenemos como alternativa usar flexbox o el sistema de grid que nos ofrece Bootstrap.
 
@@ -201,17 +201,16 @@ Como base usaremos un elemento `container` que contiene nuestro grid (como el wr
 </div>
 ```
 
-***
-
-EJERCICIO 5:
+* * *
+#### EJERCICIO 5:
 
 Vamos a crear la composición del **ejercicio 3** con Bootstrap para ver las diferencias de uso respecto a CSS grid.
 
-***
+* * *
 
-EJERCICIO 6:
+#### EJERCICIO 6:
 
-Vamos a crear la típica distribución de columnas que se usa para mostrar cómo funciona un grid:
+COn bootstrap, vamos a crear la típica distribución de columnas que se usa para mostrar cómo funciona un grid:
 
 ![Distribución de columnas](assets/images/1-13/grid-1.png)
 
@@ -222,16 +221,15 @@ Con suficientes divs (las cajas verdes) vamos a mostrar las columnas y opciones 
 4. 2 columnas
 5. 1 columnas
 
-***
-
-EJERCICIO 7:
-Ahora iremos a un paso más y, usando las 12 columnas, intentaremos replicar el siguiente hexagrama:
+* * *
+#### EJERCICIO 7:
+Ahora iremos a un paso más y, usando las 12 columnas de nuevo con bootstrap, intentaremos replicar el siguiente hexagrama:
 
 ![Distribución de columnas](assets/images/1-13/grid-2.png)
 
-***
+* * *
 
-EJERCICIO 8:
+#### EJERCICIO 8:
 
 Vamos a acercarnos a algo más real y probemos a usar los breakpoints de Bootstrap:
 ![Distribución de columnas](assets/images/1-13/grid-3.png)
