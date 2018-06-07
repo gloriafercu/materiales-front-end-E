@@ -1,12 +1,15 @@
 # Sistema de grid
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
-- [CSS grid](#css-grid)
-- [Bootstrap](#bootstrap)
-- [Recursos externos](#recursos-externos)
-
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1:](#ejercicio-1)
+- [EJERCICIO 2:](#ejercicio-2)
+- [EJERCICIO 3:](#ejercicio-3)
+- [EJERCICIO 4:](#ejercicio-4)
+- [EJERCICIO 5:](#ejercicio-5)
+- [EJERCICIO 6:](#ejercicio-6)
+- [EJERCICIO 7:](#ejercicio-7)
+- [EJERCICIO 8:](#ejercicio-8)
+- [EJERCICIO 9:](#ejercicio-9)
 <!-- TOC END -->
 
 ## Introducción
@@ -86,13 +89,11 @@ A la hora de posicionar los elementos en el grid, también podemos usar la palab
 ```
 
 * * *
-
 #### EJERCICIO 2:
 
 Vamos a modificar el ejercicio anterior para usar `span` en vez de punto inicial y final.
 
 * * *
-
 #### EJERCICIO 3:
 
 Vamos a crear un grid de 12 columnas y 3 filas, la primera y la última ocupan el 20% del alto del viewport. Crearemos la composición de la imagen.
@@ -228,7 +229,6 @@ Ahora iremos a un paso más y, usando las 12 columnas de nuevo con bootstrap, in
 ![Distribución de columnas](assets/images/1-13/grid-2.png)
 
 * * *
-
 #### EJERCICIO 8:
 
 Vamos a acercarnos a algo más real y probemos a usar los breakpoints de Bootstrap:
@@ -237,13 +237,13 @@ Vamos a acercarnos a algo más real y probemos a usar los breakpoints de Bootstr
 Los breakpoints que usaremos son Extra small, Medium y Large ;)
 
 > las imágenes de los gaticos están en [este zip](assets/images/1-13/cats.zip)
-***
 
-EJERCICIO 9:
+* * *
+#### EJERCICIO 9:
 
 Vamos a crear el layout para páginas con las que habitualmente trabajaremos, usando CSS grid y/o el sistema de grid de Bootstrap. Para ello, os proponemos replicar [el experimento de Jo Franchetti de este artículo en Medium](https://medium.com/samsung-internet-dev/common-responsive-layouts-with-css-grid-and-some-without-245a862f48df), donde replica layouts típicos usando CSS grid. Realizad al menos el primer ejemplo *"Large Image followed by articles"* usando Sass y el sistema de grid que elijáis.
 
-***
+* * *
 
 ## Recursos externos
 
