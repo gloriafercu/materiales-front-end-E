@@ -340,7 +340,7 @@ A continuación, siguiendo lo aprendido en esta lección, vamos a añadir al arc
 
 Además, asignaremos a `body` los estilos que consideremos necesarios pero usando la siguiente fuente en vez de Helvetica:
 
-`"Lucida Sans Unicode", "Lucida Grande", sans-serif`
+`"Georgia", "times", serif`
 
 * * *
 
