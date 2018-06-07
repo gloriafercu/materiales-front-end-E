@@ -1,6 +1,6 @@
 # Animaciones CSS
 
-<!-- TOC START min:5 max:6 link:true update:true -->
+<!-- TOC START min:4 max:4 link:true update:true -->
 - [EJERCICIO 1:](#ejercicio-1)
 - [EJERCICIO 2:](#ejercicio-2)
 - [EJERCICIO 3:](#ejercicio-3)
@@ -41,7 +41,7 @@ y definimos transiciones de varias propiedades separándolas por `,`:
   transition: color ease 1s, border-color ease 1s;
 }
 ```
-#### Vale, y ¿esta propiedad se coloca en cualquier sitio?
+### Vale, y ¿esta propiedad se coloca en cualquier sitio?
 Pues no, pero para empezar vamos a colocarla en el estado inicial del selector cuyas propiedades vamos a animar.
 Por ejemplo, si queremos un enlace con una transición de color:
 ```scss
@@ -55,7 +55,7 @@ a {
 ```
 
 * * *
-##### EJERCICIO 1:
+#### EJERCICIO 1:
 
 Dado este [botón](https://codepen.io/adalab/pen/XVXGVN?editors=1100):
 - Añade transiciones para que el coloreado y el sombreado no sean tan bruscos
@@ -66,7 +66,7 @@ Con este tipo de efectos podemos limar pequeños detalles o resolver interaccion
 En este [Codepen](https://codepen.io/adalab/pen/goPZep) usamos javascript para que al hacer click en el botón "Menú" se aplique una clase al elemento `.page`, que se elimina al hacer click en la X de "Cerrar".
 
 * * *
-##### EJERCICIO 2:
+#### EJERCICIO 2:
 
 ¿Cómo os veis para hacer un botón central que al hacer click haga que "popup" entre despacito desde abajo de la ventana del navegador y se coloque en el centro?
 
@@ -131,7 +131,7 @@ Tenéis la documentación completa de las sub propiedades de `animation` en la M
 > Animar es un trabajo en sí mismo y aunque, de entrada, nadie nos va a pedir que seamos animadoras profesionales está bien conocer las posibilidades que nos da CSS para tener un repertorio más amplio de opciones a la hora de desarrollar una web. Otra cosa es que nos guste y CSS es suficientemente potente para hacer locuras.
 
 * * *
-##### EJERCICIO 3:  
+#### EJERCICIO 3:  
 Vamos a hacer algo más del día a día: partiendo de un contenedor que ocupe el 100% de la pantalla (en alto y ancho) con una imagen de fondo y un título centrado...
 Tendremos que hacer que el título tenga una animación que lo haga entrar suavemente desde la parte superior del navegador y quedarse en el centro de su contenedor.
 
