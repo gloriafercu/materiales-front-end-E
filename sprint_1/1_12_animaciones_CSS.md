@@ -1,9 +1,9 @@
 # Animaciones CSS
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [Transiciones](#transiciones)
-- [Animaciones](#animaciones)
+<!-- TOC START min:5 max:6 link:true update:true -->
+- [EJERCICIO 1:](#ejercicio-1)
+- [EJERCICIO 2:](#ejercicio-2)
+- [EJERCICIO 3:](#ejercicio-3)
 
 <!-- TOC END -->
 
@@ -53,24 +53,25 @@ a {
 	}
 }
 ```
-***
-EJERCICIO 1:
+
+* * *
+##### EJERCICIO 1:
 
 Dado este [botón](https://codepen.io/adalab/pen/XVXGVN?editors=1100):
 - Añade transiciones para que el coloreado y el sombreado no sean tan bruscos
 - Añade transiciones para modificar alguna propiedad (tamaño, redondeado, color de fuente...)
-***
+* * *
 Con este tipo de efectos podemos limar pequeños detalles o resolver interacciones más complejas, sólo cambiando clases.
 
 En este [Codepen](https://codepen.io/adalab/pen/goPZep) usamos javascript para que al hacer click en el botón "Menú" se aplique una clase al elemento `.page`, que se elimina al hacer click en la X de "Cerrar".
 
-***
-EJERCICIO 2:
+* * *
+##### EJERCICIO 2:
 
 ¿Cómo os veis para hacer un botón central que al hacer click haga que "popup" entre despacito desde abajo de la ventana del navegador y se coloque en el centro?
 
 ![Ejemplo](assets/images/3-3/popup-transition.png)
-***
+* * *
 
 ## Animaciones
 Mientras las transiciones nos permiten pasar de un estado a otro, las animaciones nos dejan variar los valores de las propiedades CSS en el tiempo.
@@ -91,7 +92,7 @@ Primero definimos unos keyframes con la regla `@keyframes` y dentro definiremos 
 ```
 y luego se la aplicamos a nuestro selector con el atajo 'animation' o con sus subpropiedades:
 - `animation-delay`: determina el tiempo  hasta que empieza la animación
-- `animation-direction`: especifica si la animación mantendrá la dirección, o alternarla en cada repetición, o si se resetea al punto inicial
+- `animation-direction`: especifica si la animación mantendrá la dirección, la alternará en cada repetición, o si la resetea al punto inicial
 - `animation-duration`: marca el tiempo que durará la animación
 - `animation-iteration-count`: dice las veces que se va a repetir la animación
 - `animation-name`: especifica el identificador de la animación
@@ -127,12 +128,12 @@ Tenéis la documentación completa de las sub propiedades de `animation` en la M
 - [Cloudy Spiral CSS animation](https://codepen.io/hakimel/pen/aIhkf?q=css+animation&limit=all&type=type-pens)
 
 > **NOTA**:  
-> Animar es un trabajo en sí mismo y aunque, de entrada, nadie nos va a pedir que seamos animadores profesionales está bien conocer las posibilidades que nos da CSS para tener un repertorio más amplio de opciones a la hora de desarrollar una web. Otra cosa es que nos guste y CSS es suficientemente potente para hacer locuras.
+> Animar es un trabajo en sí mismo y aunque, de entrada, nadie nos va a pedir que seamos animadoras profesionales está bien conocer las posibilidades que nos da CSS para tener un repertorio más amplio de opciones a la hora de desarrollar una web. Otra cosa es que nos guste y CSS es suficientemente potente para hacer locuras.
 
-***
-EJERCICIO 3:  
+* * *
+##### EJERCICIO 3:  
 Vamos a hacer algo más del día a día: partiendo de un contenedor que ocupe el 100% de la pantalla (en alto y ancho) con una imagen de fondo y un título centrado...
 Tendremos que hacer que el título tenga una animación que lo haga entrar suavemente desde la parte superior del navegador y quedarse en el centro de su contenedor.
 
 ![Ejemplo](assets/images/3-3/title-animation.png)
-***
+* * *
