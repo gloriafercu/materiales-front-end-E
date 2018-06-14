@@ -479,3 +479,13 @@ Partiendo de este [Codepen de ejemplo](https://codepen.io/oneeyedman/pen/vWEBex)
 4. Comentar el CSS que no se puede tocar y reescribirlo usando una clase por selector para que se vea igual.
 5. BONUS: Cambiar ahora entre `<div>` y `<ul>`/`<li>`
 * * *
+
+## BONUS: indentando el código
+
+Indentar es mover un bloque de código hacía la derecha, separandolo del margen No afecta al resultado final, sólo al código.
+A partir de ahora vamos a indentar siempre nuestro código, nos ayudará a que sea más legible y a prevenir e identificar errores más fácilmente.
+
+* [Qué es la indentación](https://medium.com/@sthefany/que-es-la-indentacion-c9471f3ae84f)
+
+* [Explicación de indentación en wikipedia](https://es.wikipedia.org/wiki/Indentaci%C3%B3n)
+
