@@ -74,7 +74,7 @@ En [gitignore.io](https://www.gitignore.io) podemos encontrar una serie de confi
 ### Licencia
 Uno de los puntos claves un entorno social donde poner al alcance de todos tus proyectos es indicar cómo y en qué términos se deben usar. Para esto están las licencias, que son archivos legales que especifican qué se puede y qué no se puede hacer con los archivos asociados.
 
-Github nos ofrece un enlace donde nos intenta orientar sobre qué licencia elegir en cada caso: [choosealicense.com](https://choosealicense.com).
+GitHub nos ofrece un enlace donde nos intenta orientar sobre qué licencia elegir en cada caso: [choosealicense.com](https://choosealicense.com).
 
 
 ## Compartir código con mi equipo
@@ -111,11 +111,7 @@ Y aquí tenemos dos escenarios diferentes:
 ### ¿Qué pinta tiene un conflicto?
 Un conflicto ocurre cuando el git se encuentra con dos versiones del mismo bloque de código. Entonces, marca en el documento que hay un conflicto y muestra las dos opciones para que nosotros elijamos qué hacer:
 ```
-<<<<<<< HEAD
-1ª versión del bloque en conflicto
-=======
 2ª versión del bloque en conflicto
->>>>>>> 4e2b407f501b68f8588aa645acafffa0224b9b78
 ```
 
 **<<<<<<<**: Indica el inicio de la zona de conflicto, en la línea siguiente muestra el primer bloque en conflicto.  

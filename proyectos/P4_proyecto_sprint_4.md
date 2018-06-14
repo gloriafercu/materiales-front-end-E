@@ -82,7 +82,7 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 
 - 2 días de trabajo.
 - Organizar el trabajo a realizar usando Trello, e ir asignando tareas y responsables.
-- Crear la infraestructura necesaria: repositorio en github con acceso para todos los miembros del equipo. En este proyecto haremos un _fork_ del proyecto que nos hayan asignado.
+- Crear la infraestructura necesaria: repositorio en GitHub con acceso para todos los miembros del equipo. En este proyecto haremos un _fork_ del proyecto que nos hayan asignado.
 - Entender los requisitos del proyecto y las técnicas y herramientas empleadas.
 - Analizar el código y entender su estructura para poder adaptarla a nuestras necesidades y conocimientos.
 - Analizar los componentes empleados en la web y el estilo visual de esta.

@@ -72,7 +72,7 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 
 - 2 sesiones de trabajo.
 - Organizar el trabajo a realizar usando Trello, e ir asignando tareas y responsables.
-- Crear la infraestructura necesaria: repositorio en github con acceso para todos los miembros del equipo.
+- Crear la infraestructura necesaria: repositorio en GitHub con acceso para todos los miembros del equipo.
 - Establecer la estructura del contenido de la web, buscar referencias y esbozar un diseño visual de la web.
 
 
@@ -155,6 +155,6 @@ En esta sección tenéis un listado de páginas para inspiraros a la hora de cre
 Si en este punto algo no ha quedado del todo claro aquí tenéis un ejemplo similar con un generador de firmas de email para nuestra empresa.
 Este es un ejemplo real en el que a través de un formulario actualizamos lo que luego será la firma de email para los empleados de esta empresa.
 
-Está subido a Github y utiliza GitHub Pages para tenerlo online.
+Está subido a GitHub y utiliza GitHub Pages para tenerlo online.
 
 - [Generador de firmas de email](https://chucheria.github.io/EmailSignatureGenerator/index.html)
