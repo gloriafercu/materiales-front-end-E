@@ -19,7 +19,7 @@
 * [1.13 Sistema de Grid](sprint_1/1_13_sistema_de_grid.md)
 * [1.14 Automatización de tareas](sprint_1/1_14_automatizacion_de_tareas.md)
 
-<!-- *
+
 ## Sprint 2. Programando la web
 * [2.1 Intro a la programación](sprint_2/2_1_intro_a_la_programacion.md)
 * [2.2 Estructuras de control](sprint_2/2_2_estructuras_de_control.md)
@@ -29,7 +29,7 @@
 * [2.6 Eventos](sprint_2/2_6_eventos.md)
 * [2.7 Arrays](sprint_2/2_7_arrays.md)
 
-
+<!-- *
 * [2.8 Control de versiones](sprint_2/2_8_control_de_versiones_en_equipo.md)
 * [2.9 DOM avanzado](sprint_2/2_9_dom_avanzado.md)
 * [2.10 Asincronía](sprint_2/2_10_asincronia.md)
@@ -47,6 +47,7 @@
 ## Proyectos
 
 * [Proyecto 1. Web grupal](proyectos/P1_proyecto_sprint_1.md)
+* [Proyecto 2. Awesome profile-cards](proyectos/P2_proyecto_sprint_2.md)
 * [Anexo. Diseña tu web desde cero](proyectos/P1_anexo_diseno.md)
 
 <!-- ## Evaluaciones
