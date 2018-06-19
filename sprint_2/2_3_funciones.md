@@ -1,11 +1,10 @@
 # Funciones
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
-- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
-- [Funciones](#funciones-1)
-- [Recursos externos](#recursos-externos)
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO BONUS 1](#ejercicio-bonus-1)
 
 <!-- TOC END -->
 
@@ -99,26 +98,35 @@ Por defecto, si en una función no indicamos un valor de retorno usando `return`
 
 Cuando ejecutamos una instrucción `return` dentro de una función, termina la ejecución de la función. Todo el código que se fuese a ejecutar después de ese `return` será ignorado, como si no existiese. Por tanto, debemos evitar escribir líneas de código después de un `return` y normalmente será la útlima línea de código de una función.
 
-***
-EJERCICIO 1: Función multiplicación
+* * *
+#### EJERCICIO 1
+
+**Función multiplicación**
 
 Crea una función que reciba como argumento dos valores y devuelva como valor de retorno la multiplicación de ambos. Haz tres pruebas con distintos números para comprobar que funciona correctamente y muestra el resultado usando `alert`.
 
-***
-EJERCICIO 2: Función media
+* * *
+EJERCICIO 2
+
+**Función media**
 
 Crea una función que reciba 4 parámetros, cada uno con un número, y devuelva como valor la media de todos ellos. Haz tres pruebas con distintos números para comprobar que funciona correctamente y muestra el resultado usando `alert`.
 
-***
+* * *
 
-EJERCICIO 3: Ticket con IVA
+#### EJERCICIO 3
+
+**Ticket con IVA**
 
 Crea una función que reciba como parámetro un número, que representará un precio, y devuelva un texto en el que ponga el precio sin IVA, el IVA (21%) y el total. Por ejemplo, si introducimos un 10, la función devolverá `"Precio sin IVA: 10, IVA: 2,1 y Total: 12,1"`.
 
 Para probar que funciona, ejecuta la función recogiendo el resultado en una variable e imprímela en la consola para comprobarlo.
 
-***
-EJERCICIO 4: Calculador de modelo de caja
+* * *
+
+#### EJERCICIO 4
+
+**Calculador de modelo de caja**
 
 Como hemos visto en las clases anteriores, en CSS tenemos dos tipos de cálculo para las dimensiones de un elemento: `border-box` y `content-box`. Vamos a realizar un calculador al que le pasaremos 4 parámetros y nos devolverá el ancho del contenido, en caso de ser _border-box_ o el ancho total de la caja, en caso de ser _content-box_.
 
@@ -126,7 +134,7 @@ La función tendrá 4 parametros: el primero será un booleano para especificar 
 
 Para probar que funciona, ejecuta la función recogiendo el resultado en una variable e imprímela en la consola para comprobarlo.
 
-***
+* * *
 
 ### Funciones en todas partes
 
@@ -142,15 +150,17 @@ A esto se le llama ámbito (en inglés, _scope_) y permite que no se generen con
 
 Desde dentro de una función podemos utilizar las variables que se hayan definido fuera de cualquier función.
 
-***
-EJERCICIO BONUS 1: Convertir el código del árbol de navidad en un función
+* * *
+#### EJERCICIO BONUS 1
+
+**Convertir el código del árbol de navidad en un función**
 
 Vamos a convertir el código del ejercicio del árbol de navidad de la sesión 2.2 en una función. Esta función tendrá tres parametros: número de líneas, si lleva estrella y si lleva tronco. La función debe devolver un string que represente el árbol de navidad.
 
 Si vemos que alguna de las partes del código se puede sacar a otra función, podemos hacerlo. La idea es que el código quede lo más sencillo posible para que otra persona que no haya visto el enunciado ni el código pueda entenderlo sin problemas.
 
 Probaremos a realizar tres árboles con argumentos distintos para que veamos si funciona correctamente.
-***
+* * *
 
 ## Recursos externos
 

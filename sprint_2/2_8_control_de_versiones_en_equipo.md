@@ -1,11 +1,11 @@
 # Control de versiones en equipo
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
-- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
-- [Ramas](#ramas)
-- [Recursos externos](#recursos-externos)
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
 
 <!-- TOC END -->
 
@@ -38,8 +38,8 @@ Cuando iniciamos un repositorio git se crea una primera rama, y se llama `master
 
 Vamos a ver el trabajo en ramas a través de un ejemplo, como un mini proyecto de grupo, porque al fin y al cabo, git va de trabajar en grupo:
 
-***
-EJERCICIO 1:
+* * *
+#### EJERCICIO 1
 
 1. Vamos crear un repositorio por grupo, dentro del equipo de Adalab y lo llamaremos `clarke-s2-gX`, donde `X` será el número del grupo, de 1 a 4 :)
 2. Crearemos una primera versión de nuestra web (solo en HTML) que tendrá:
@@ -72,7 +72,7 @@ Nos tiene que quedar algo así:
 </body>
 </html>
 ```
-***
+* * *
 
 ### Creando ramas
 Para crear ramas escribimos `git branch nombre-de-la-rama` y nos movemos a ella con `git checkout nombre-de-la-rama`.
@@ -91,8 +91,8 @@ git push -u origin nombre-de-la-rama
 
 La primera vez usaremos el git push con `-u`.
 
-***
-EJERCICIO 2:
+* * *
+#### EJERCICIO 2
 
 1. Vamos a crear una rama `footer`, a movernos a ella y a modificar un poco nuestro proyecto. Añadiremos a nuestro footer el enlace a la web de Adalab, quedando así:
 ```html
@@ -104,7 +104,7 @@ EJERCICIO 2:
 3. Si ahora cambiamos a la rama `master` veremos que permanece como la dejamos y que el cambio del enlace solo está hecho en nuestra rama `footer`.
 
 ![Resultado de los ejercicios 1 y 2](assets/images/2-6/ramas-1.png)
-***
+* * *
 
 ### Fusionar ramas
 Una vez que hemos terminado el trabajo en nuestra nueva rama y lo hemos subido al servidor remoto querremos aplicar estos cambios en nuestra rama principal, `master`.
@@ -119,8 +119,8 @@ Esto nos mezclará nuestra versión local de la rama `nombre-de-la-rama` con la 
 	Es importante haber hecho un `git pull` en la rama que vamos a fusionar, en este caso `nombre-de-la-rama` antes de empezar el proceso de fusión para asegurarnos de que tenemos la última versión.
 
 
-***
-EJERCICIO 3:
+* * *
+#### EJERCICIO 3
 
 Vamos a fusionar nuestra rama `footer` con `master` para que nuestra web tenga el enlace que hemos añadido anteriormente.
 Para ello:
@@ -139,9 +139,10 @@ Para ello:
 ```
 
 ![Resultado del ejercicio 3](assets/images/2-6/ramas-2.png)
-***
 
-EJERCICIO 4:
+* * *
+
+#### EJERCICIO 4
 
 Ahora que hemos hecho un primer acercamiento a las ramas, vamos a hacer lo mismo pero con dos equipos por cada grupo. Cada equipo estará encargado de un trabajo diferente que tendrá que realizar en una rama y posteriormente mezclar en la rama principal.
 
@@ -168,21 +169,21 @@ Como refleja la imagen vamos a hacer dos ampliaciones de contenido:
 
 Ahora realmente da igual el orden, el equipo que acabe su trabajo, que suba su rama al repositorio remoto, y siga los pasos para fusionarlo con master. **¡A por ello!**
 
-***
+* * *
 
-### Flujo de trabajo con ramas
+## Flujo de trabajo con ramas
 Vale, y ahora ¿cómo trabajamos con las ramas? ¿Hacemos las que necesitemos? ¿Las llamamos como queramos? ¿Sin orden? No, claro, que no: sin orden solo hay caos.
 
 Vamos a tener dos tipos de ramas, las de largo recorrido o permanentes y las de corta duración o puntuales.
 
 ![Flujo de trabajo](assets/images/2-6/flujo-2.png)
 
-#### Ramas permanentes
+### Ramas permanentes
 Los equipos suelen tener una o dos ramas permanentes, una donde está la versión estable de nuestro proyecto (suele ser la rama `master`), la que vamos a subir a nuestro servidor (o a GitHub Pages) y, quizás, una intermedia donde ir fusionando los diferentes cambios/mejoras (nombres comunes para esta rama son `dev`, `develop`...). Esta segunda rama no siempre tiene código estable, pero cuando lo tiene la fusionaremos hacia `master`.
 
 Por ahora vamos a tener sólo una permanente: `master`.
 
-#### Ramas puntuales
+### Ramas puntuales
 Cuando tenemos una tarea nueva (modificar o crear contenido, por ejemplo) crearemos una nueva rama sólo para dicha tarea. Trabajaremos sobre ella con normalidad, haciendo los commits necesarios y subiéndola a su correspondiente rama remota como hemos venido haciendo hasta ahora con `master`.
 
 Recordad que usaremos `git push origin nombre-de-la-rama`
@@ -194,14 +195,13 @@ Pero todavía hay más. Hemos descrito una forma de trabajar pero hay otras. En 
 
 La mecánica del Pull Request no es propia de git sino de quién da el servicio de git. En este caso GitHub tiene su propio sistema para gestionar los Pull Requests.
 
-***
+* * *
 
-EJERCICIO 5:
+#### EJERCICIO 5
 
 Vamos a hacer un Pull Request con revisión de código en vivo. Para ello una voluntaria sale a hacer parte del ejercicio, y el profesor hace la revisión de código en directo.
 
-***
-
+* * *
 
 ## Recursos externos
 

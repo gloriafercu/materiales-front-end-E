@@ -1,11 +1,14 @@
 # Eventos
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [Escuchando eventos desde JavaScript](#escuchando-eventos-desde-javascript)
-- [El parámetro event](#el-parmetro-event)
-- [Dejando de escuchar eventos](#dejando-de-escuchar-eventos)
-- [Recursos externos](#recursos-externos)
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO 7](#ejercicio-7)
+- [EJERCICIO 8](#ejercicio-8)
 
 <!-- TOC END -->
 
@@ -106,13 +109,13 @@ A partir de ahora usad **siempre, siempre, siempre** la forma correcta, es decir
 
 * * *
 
-EJERCICIO 1
+#### EJERCICIO 1
 
 Crear una página HTML con un párrafo en el que ponga Hola y un botón. Usando JavaScript, cambiar ese texto por "Hello" cuando se pulse el botón.
 
 * * *
 
-EJERCICIO 2
+#### EJERCICIO 2
 
 Crear una página HTML con un input de tipo texto para introducir tu nombre y un botón. Al clickar el botón, que aparezca una ventana de alerta que diga 'Hola <nombre>', con el nombre que aparece en el input de texto.
 
@@ -136,19 +139,19 @@ Aparte del evento click, podéis ver [el listado completo de eventos que podemos
   - `resize`: se ha cambiado el tamaño de la ventana
   - `scroll`: se ha hecho scroll en la ventana o un elemento
 
-  * * *
+* * *
 
-  EJERCICIO 3
+#### EJERCICIO 3
 
-  Crear una página HTML con un párrafo con `lorem ipsum`. Al poner el ratón sobre el párrafo, vamos a añadir un nuevo párrafo a la página con `lorem ipsum`.
+Crear una página HTML con un párrafo con `lorem ipsum`. Al poner el ratón sobre el párrafo, vamos a añadir un nuevo párrafo a la página con `lorem ipsum`.
 
-  * * *
+* * *
 
-  EJERCICIO 4
+#### EJERCICIO 4
 
-  Crear una página HTML con un select que tiene un listado de colores. Cuando el usuario cambia la opción seleccionada  en el select, debe aparecer una ventana de alerta con el texto 'Me gustan los colores'.
+Crear una página HTML con un select que tiene un listado de colores. Cuando el usuario cambia la opción seleccionada  en el select, debe aparecer una ventana de alerta con el texto 'Me gustan los colores'.
 
-  * * *
+* * *
 
 ## El parámetro event
 
@@ -199,19 +202,19 @@ En la función declaramos el parámetro `event` que sabemos que el navegador nos
 
 * * *
 
-EJERCICIO 5
+#### EJERCICIO 5
 
 Crear una página HTML con formulario con un select que tiene un listado de colores. Al cambiar el contenido del select, aparece una ventana de alerta donde aparece el texto 'Me gusta el <color>' con el color seleccionado. Podemos acceder al índice de la opción seleccionada de un select mediante la propiedad `selectedIndex` y al listado de opciones (array) podemos acceder mediante la propiedad `options`.
 
 * * *
 
-EJERCICIO 6
+#### EJERCICIO 6
 
 Crear una página vacía que al pulsar la tecla 'r' se ponga el fondo rojo y al pulsar la 'a' ponga el fondo de la web azul. Vamos a ecuchar evento de teclado (directamente sobre el elemento `document`). En el objeto evento podemos [consultar la propiedad `key`](https://mdn.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code) para saber qué tecla se ha pulsado.
 
 * * *
 
-EJERCICIO 7
+####EJERCICIO 7
 
 Vamos a partir de un HTML con un botón 'Empezar'. Al hacer click, vamos a pintar en el HTML un listado de películas que tenemos en JavaScript:
 ```javascript
@@ -260,7 +263,7 @@ Desde la función de callback accedemos al elemento mediante `currentTarget` y c
 
 * * *
 
-EJERCICIO 8
+#### EJERCICIO 8
 
 Partimos del ejercicio anterior de las películas. Ahora tenemos un array `movies` con más información de cada peli en un objeto JavaScript. Vamos a modificar el código para que, al hacer click sobre el nombre de la película en el listado, mostremos una alerta con el título, director y año de la película.
 

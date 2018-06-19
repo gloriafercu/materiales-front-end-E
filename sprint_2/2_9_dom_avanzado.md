@@ -1,11 +1,7 @@
 # DOM avanzado
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [Qué hemos visto hasta ahora](#qu-hemos-visto-hasta-ahora)
-- [Nuevas formas de seleccionar, crear, añadir y borrar elementos](#nuevas-formas-de-seleccionar-crear-aadir-y-borrar-elementos)
-- [Resumen de la sesión](#resumen-de-la-sesin)
-- [Recursos externos](#recursos-externos)
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1](#ejercicio-1)
 
 <!-- TOC END -->
 
@@ -18,7 +14,7 @@ Siempre que queramos interactuar desde JavaScript con nuestras páginas vamos a 
 
 Lo que vamos a ver en esta sesión cobra especial importancia en tres campos: rendimiento de una página web, prevención de posibles errores y mantenimiento y simplicidad del código.
 
-#### Mejorar el rendimiento
+### Mejorar el rendimiento
 
 En cuanto a rendimiento, hasta ahora cuando utilizábamos `innerHTML` lo que hacía JavaScript, a grandes rasgos, era lo siguiente:
 
@@ -30,7 +26,7 @@ Con lo que vamos a ver en esta sesión el primer paso de parsear el texto no ser
 
 Además en esta sesión veremos cómo crear elementos por un lado y posteriormente añadirlos al DOM, es decir, con `innerHTML` se creaban (se convertía el texto en componentes HTML) y se añadían en el momento. Con lo que vamos a ver en esta sesión seremos capaces de crearlos antes y simplemente añadirlos, con lo cual en el momento de añadirlos solo se realizará un paso, porque tendremos creados previamente los componentes. Para ejemplificar esto, imaginemos que tenemos un código JavaScript que al pulsar en un botón añade tres párrafos a la página, si lo hago con `innerHTML`, en el momento que pulso el botón se convierte el texto de `innerHTML` en tres párrafos y se añaden. Si por el contrario lo hacemos con la alternativa que planteamos en esta sesión, podremos crear los párrafos en el elemento en el momento en el que se empieza a ejecutar JavaScript y cuando el usuario pulse el botón lo único que se hará será añadir esos elementos ya creados previamente.
 
-#### Prevención de posibles errores
+### Prevención de posibles errores
 
 Cuando cambiamos el contenido de un elemento con `innerHTML`, ya sea añadiendo (`+=`) o reasignando (`=`) lo que estamos haciendo es obligar al navegador a crear de nuevo todos los items contenidos dentro del elemento modificado, es decir, el navegador creará todos los hijos de ese elemento de nuevo.
 
@@ -41,7 +37,7 @@ Esto puede derivar en un mal funcionamiento de nuestra página, porque sucederá
 
 Imagina la repercusión de este problema en aplicaciones complejas que tienen que estar repintando varias partes de su código varias veces, se puede montar un cristo bastante bueno e `innerHTML` nos puede perjudicar bastante en este caso frente a las alternativas que propondremos a continuación.
 
-#### Mantenimiento y simplicidad del código
+### Mantenimiento y simplicidad del código
 
 Utilizar HTML como strings en JavaScript puede ser bastante molesto, se nos puede olvidar un más en alguna concatenación, tenemos que poner todo en una línea o usar `+` o escapar saltos de línea (usando `\` antes del salto) para poder poner el código en varios renglones, no se puede indentar...
 
@@ -53,7 +49,7 @@ Aparte de esto existen otras mejoras en temas de seguridad y otros aspectos avan
 
 Y ahora estarás pensando «¿y por qué entonces he aprendido `innerHTML`?» Gracias a haber trabajado con `innerHTML` ahora estás preparada para seguir avanzando y profundizar un poquito más en formas avanzadas de trabajar con el DOM, que son las que veremos hoy.
 
-### ¿En qué casos se utiliza?
+## ¿En qué casos se utiliza?
 
 Lo que vamos a ver hoy te servirá para generar un código más adecuado para proyectos más exigentes, como podría ser una librería de JavaScript, el código de una aplicación compleja o proyectos en los que necesites tener más posibilidades aparte de modificar el contenido de un elemento por completo (añadir algo antes o después, eliminarlo, seleccionar un elemento madre o hija, etc.)
 
@@ -137,9 +133,9 @@ console.log(newItem); // Devuelve "<li>Item nuevo</li>"
 
 Con estos métodos conseguimos un elemento HTML pero todavía tenemos que añadirlo a nuestro DOM para poder verlo. En la siguiente sección veremos 3 formas de añadirlos.
 
-### Añadir elementos al DOM
+## Añadir elementos al DOM
 Mientras que con `.innerHTML` podríamos inyectar una cadena de texto como HTML a nuestro DOM ahora veremos como añadir elementos como el que hemos creado hace un momento.
-#### `.appendChild()` y `.append()`
+### `.appendChild()` y `.append()`
 Son parecidos y nos permiten añadir elementos a nuestra web, siguiendo el ejemplo de esta sesión vamos a añadir el `<li>` que acabamos de crear:
 ```js
 var newItem = document.createElement('li');
@@ -155,7 +151,7 @@ items.append(newItem1, newItem2,...);
 ```
 [Ejemplo en Codepen](https://codepen.io/adalab/pen/mpXqow)
 
-#### `.insertBefore()`
+### `.insertBefore()`
 Con `.insertBefore()` podemos tener un poco más de control ya que admite dos parámetros y nos permite insertar un elemento antes de otro que le especifiquemos.
 Siguiendo el ejemplo vamos a añadir un `<li></li>` antes del segundo item de nuestra lista:
 ```js
@@ -171,7 +167,7 @@ itemList.insertBefore(extraItem, item2);
 
 [Ejemplo en Codepen](https://codepen.io/adalab/pen/XVZzvW)
 
-#### `.insertAdjacentHTML()`
+### `.insertAdjacentHTML()`
 Todo esto está muy bien, lo de crear elementos y tal, pero yo quiero algo como el `.innerHTML`, que me deje meter cadenas como HTML, pero bien. Pues `.insertAdjacentHTML()` viene para salvar el día.
 `.insertAdjacentHTML` acepta dos parámetros: `position` y `text`.
 *Position* dice dónde se va a insertar el elemento:
@@ -215,8 +211,10 @@ itemList.removeChild(item2);
 ```
 [Ejemplo en Codepen](https://codepen.io/adalab/pen/MrQrwM)
 
-***
-EJERCICIO 1: Castigo
+* * *
+#### EJERCICIO 1
+
+**Castigo**
 
 La hemos fastidiado. Otra vez. Y el profe nos ha castigado, ¡y encima sin tener la razón! Nos ha pedido que escribamos 100 veces en la pizarra una frase. ¿Podremos hacer un poco de trampa para que nos ayude JavaScript? Vamos a crear todos los elementos HTML como hemos aprendido en esta sesión, es decir, sin `innerHTML` ;)
 
@@ -240,9 +238,9 @@ Algunas pistas para esta tercera parte:
 
 **¡A por ello!**
 
-***
+* * *
 
-### BONUS: Reemplazar
+## BONUS: Reemplazar
 Vale, ¿y si quiero reemplazar un elemento por otro? Podemos borrarlo e insertar otro elemento en su lugar o usar el atajo `.replaceChild()`.
 ```js
 var newItem = document.createElement('li');
@@ -258,9 +256,9 @@ items.replaceChild(newItem, oldItem);
 [Ejemplo en Codepen](https://codepen.io/adalab/pen/LeQzLg)
 
 
-### Seleccionar elementos
+## Seleccionar elementos
 
-#### `.getElementsByClassName`
+### `.getElementsByClassName`
 
 Selecciona elementos con una cierta clase y siempre devuelve un array, aunque solo haya uno:
 
@@ -271,7 +269,7 @@ console.log('Hay ' + classItems.length + ' items con clase .item');
 ```
 [Ejemplo en Codepen](https://codepen.io/adalab/pen/xpYXmQ)
 
-#### `.getElementsByTagName`
+### `.getElementsByTagName`
 
 También podemos seleccionarlos por etiquetas, en el mismo ejemplo:
 
@@ -286,7 +284,7 @@ console.log('Hay ' + tagItems.length + ' <li>');
 
 Tanto `getElementsByClassName` como `getElementsByTagName` se pueden sustituir por `querySelectorAll`, la ventaja que tienen los dos primeros es que aumentan el rendimiento en más de un 100% frente al tercero, por lo tanto solo será necesario que usemos estos en contextos en los que el rendimiento es fundamental. Dicho esto siempre será más descriptivo usarlos si lo que queremos es obtener un array con todos los elementos con una etiqueta o clase determinada.
 
-#### `.children`
+### `.children`
 
 Podemos seleccionar todas las hijas que tenga cierto elemento:
 

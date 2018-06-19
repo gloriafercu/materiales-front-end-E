@@ -1,11 +1,18 @@
 # JavaScript en la web
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
-- [¿En qué casos se utiliza lo que vamos a aprender?](#en-qu-casos-se-utiliza-lo-que-vamos-a-aprender)
-- [Introducción al DOM](#introduccin-al-dom)
-- [Trabajar con el DOM](#trabajar-con-el-dom)
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO 7](#ejercicio-7)
+- [EJERCICIO 8](#ejercicio-8)
+- [EJERCICIO 9](#ejercicio-9)
+- [EJERCICIO 10](#ejercicio-10)
+- [EJERCICIO 11](#ejercicio-11)
+- [EJERCICIO 12](#ejercicio-12)
 
 <!-- TOC END -->
 
@@ -181,19 +188,19 @@ Bien, ya sabemos cómo obtener cuál será el contenido de un elemento y cómo m
 
 * * *
 
-EJERCICIO 1
+#### EJERCICIO 1
 
 Crear una página HTML con un párrafo en el que ponga Hola y, usando JavaScript, cambiar ese texto por "Hello".
 
 * * *
 
-EJERCICIO 2
+#### EJERCICIO 2
 
 Crear una página HTML con un párrafo en el que ponga "Mi contraseña es: Ada2018" y, usando JavaScript, cambiar ese texto por un texto vacío.
 
 * * *
 
-EJERCICIO 3
+#### EJERCICIO 3
 
 Crear una página HTML con un párrafo vacío en la que, mediante un prompt, el usuario pueda introducir su nombre y se muestre en el párrafo "Hola nombre", donde _nombre_ será el nombre que ha introducido el usuario.
 
@@ -215,13 +222,13 @@ Con esto ya podemos trabajar editando el contenido de nuestra página. A partir 
 
 * * *
 
-EJERCICIO 4
+#### EJERCICIO 4
 
 Crear una página HTML con un div que contenga un `h1` con el texto "Lorem ipsum" y, usando JavaScript, añadir una imagen con el src `http://via.placeholder.com/350x150` y un párrafo con el texto "Lorem ipsum dolor sit amet, consectetur adipisicing elit".
 
 * * *
 
-EJERCICIO 5
+#### EJERCICIO 5
 
 Crear una página HTML con una lista `ul` vacía y, usando JavaScript y un bucle `for`, añadir al contenido de esa lista tres `li`, el primero tendrá como texto 1, el segundo 2 y el tercero 3.
 
@@ -320,13 +327,13 @@ Y hasta aquí los métodos que necesitamos saber de `classList`, es el momento d
 
 * * *
 
-EJERCICIO 6
+#### EJERCICIO 6
 
 Crear dos botones con los mismos estilos (padding, borde, color) y, usando JavaScript, al segundo añadirle una clase para que parezca que esta desactivado (por ejemplo, aplicarle una [opacidad](https://developer.mozilla.org/es/docs/Web/CSS/opacity) menor).
 
 * * *
 
-EJERCICIO 7
+#### EJERCICIO 7
 
 Vamos a simular que nuestra web tiene un tema según quien entra en ella. Para ello crearemos tres clases, cada una con un color de fondo distinto, el que más te guste a ti, el que más le guste a tu compañera y un negro. Nada más cargar la página mostraremos una ventana donde el usuario deberá meter su nombre:
 - si el nombre es el tuyo, añadiremos a `body` la clase que aplica al color de fondo tu color favorito
@@ -335,7 +342,7 @@ Vamos a simular que nuestra web tiene un tema según quien entra en ella. Para e
 
 * * *
 
-EJERCICIO 8
+#### EJERCICIO 8
 
 Crea un div que contenga un título "NOTIFICACIÓN" y un texto "Mensaje por defecto". Crea también tres clases:
 - La primera, `.success`, aplicará un borde verde oscuro, un fondo verde claro y el color de fuente verde oscuro
@@ -350,7 +357,7 @@ Usando JavaScript, haremos que:
 
 * * *
 
-EJERCICIO 9
+#### EJERCICIO 9
 
 Crea un párrafo en HTML y, usando Javascript, haz que si tiene la clase `.active`, esta desaparezca y sino se la ponga. Prueba a añadirle en HTML y quitarle la clase para ver qué sucede. Prueba a añadir otra clase que no haga nada para ver si sigue funcionando correctamente.
 
@@ -415,7 +422,7 @@ document.setAttribute('for', 'firstname'); // asignará for="firstname" al label
 
 * * *
 
-EJERCICIO 10
+#### EJERCICIO 10
 
 Crea una página que contenga tres imágenes, usando prompt preguntale al usuario qué ciudad quiere visitar.
 
@@ -424,7 +431,7 @@ Crea una página que contenga tres imágenes, usando prompt preguntale al usuari
 
 * * *
 
-EJERCICIO 11
+#### EJERCICIO 11
 
 Vamos a crear nuestro propio autocompletado de formularios. Para ello vamos a crear un formulario con tres campos:
 
@@ -436,7 +443,7 @@ Con ayuda de JavaScript, mostraremos una ventana y el usuario deberá introducir
 
 * * *
 
-EJERCICIO 12
+#### EJERCICIO 12
 
 Vamos a crear un div en HTML que contenga tres párrafos con un texto aleatorio. Con la ayuda de JavaScript vamos a obtener su tamaño usando la propiedad [`offsetHeight`](https://developer.mozilla.org/es/docs/Web/CSS/opacity). Posteriormente y usando el atributo HTML [style](https://www.w3schools.com/Tags/att_global_style.asp) vamos a configurar que su altura será un tercio de la actual.
 

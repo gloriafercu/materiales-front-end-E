@@ -1,11 +1,11 @@
 # Objetos
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
-- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
-- [Objetos literales](#objetos-literales)
-- [Recursos externos](#recursos-externos)
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
 
 <!-- TOC END -->
 
@@ -154,8 +154,8 @@ adalaber.isMarried = false;
 //Muestra en una alerta 31
 alert(adalaber.age);
 ```
-***
-EJERCICIO 1:
+* * *
+#### EJERCICIO 1
 
 Crea un nuevo objeto en JavaScript `adalaber1` que nos sirva para representar (modelar) a una Adalaber. Tenemos estos datos:
 - Susana, 34 años, periodista
@@ -167,7 +167,7 @@ Luego muestra una ventana de alerta para mostrar una frase como esta, accediendo
 Ahora hacemos lo mismo (crear el objeto `adalaber2` y mostrar la alerta) con una nueva Adalaber con estos datos:
 - Rocío, 25 años, actriz
 
-***
+* * *
 
 ### Métodos
 
@@ -186,13 +186,13 @@ alert(adalaber.speak('Hola'));
 
 > NOTA: Por convención, los métodos suelen tener como nombre un verbo (`show`, `hide`, `reset`, etc.) y las características (propiedades) suelen tener un sustantivo (`color`, `size`, `type`, `content`, `text`, etc)
 
-***
-EJERCICIO 2:
+* * *
+#### EJERCICIO 2
 
 Partiendo del objeto `adalaber1` del ejercicio anterior, añade un método (una función) `run` que muestra una ventana de alerta con la frase 'Estoy corriendo'.
 
 Ahora, vamos a añadir un nuevo método `runAMarathon` que toma un parámetro `distance` que es un número. Al ejecutarlo, debe mostrarse una ventana de alerta con el texto 'Estoy corriendo un maratón de 50 kilómetros' siendo 50 el valor del argumento `distance` que le hemos pasado.
-***
+* * *
 
 ### Breve introducción al `this`
 
@@ -211,13 +211,13 @@ alert(adalaber.sayHello());
 
 > NOTA: El concepto de `this` en JavaScript es mucho más complejo de lo que hemos aprendido aquí. Por el momento con lo que hemos visto nos sirve para empezar a trabajar con él, pero sabiendo que alberga muchas más posibilidades.
 
-***
-EJERCICIO 3:
+* * *
+#### EJERCICIO 3
 
 Partiendo del objeto `adalaber1` del ejercicio anterior, añade un método (una función) `showBio` que muestra una ventana de alerta con la frase 'Mi nombre es María, tengo 34 años y soy periodista', usando el nombre, edad y estudios que están almacenados en el objeto.
 
 Hacemos lo mismo para `adalaber2`. ¿Hemos tenido que modificar mucho el método `showBio`? ¿Ves alguna ventaja respecto a cómo hacíamos lo mismo en el ejercicio 1?
-***
+* * *
 
 ### BONUS: Los objetos son un tipo de datos especial
 
@@ -259,15 +259,19 @@ En el caso de los números necesitamos crearlos de una forma especial `Number(4)
 
 Puedes consultar el [listado completo de propiedades y métodos de los números en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Number).
 
-***
-EJERCICIO 3: Crear un contador
+* * *
+#### EJERCICIO 4
+
+**Crear un contador**
 
 Vamos a crear un contador con los datos del contador que comentamos en la introducción de esta sesión. Este contador deberá tener como propiedades un valor máximo, un valor mínimo, un valor actual y un valor inicial y como métodos deberá tener un aumentar, disminuir y restablecer.
 
 Con la ayuda de `alert` Probaremos a usar varios métodos distintos y comprobar el estado actual para ver si funciona correctamente.
 
-***
-EJERCICIO 4: Estructura de datos para un usuario
+* * *
+#### EJERCICIO 5
+
+**Estructura de datos para un usuario**
 
 Vamos a crear un objeto para almacenar la información de un usuario y una variable llamada `job` donde guardaremos el valor `developer`. A continuación seguiremos los siguiente pasos
 
@@ -281,7 +285,7 @@ Vamos a crear un objeto para almacenar la información de un usuario y una varia
     7. Aumentaremos en 1 la edad del usuario
     8. Comprobaremos de nuevo que todo sigue funcionando correctamente
 
-***
+* * *
 
 ## Recursos externos
 

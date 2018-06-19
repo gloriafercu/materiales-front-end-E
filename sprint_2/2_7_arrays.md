@@ -1,13 +1,10 @@
 # Arrays
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Qué es un array?](#qu-es-un-array)
-- [¿Para qué sirven?](#para-qu-sirven)
-- [¿En qué casos se utilizan?](#en-qu-casos-se-utilizan)
-- [Trabajando con arrays](#trabajando-con-arrays)
-- [Modificar un array](#modificar-un-array)
-- [Recursos externos adicionales](#recursos-externos-adicionales)
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
 
 <!-- TOC END -->
 
@@ -219,7 +216,9 @@ console.log(arrCopy[4]);// Imprime también 5 en la consola
 Este tipo de comportamiento de guardar la dirección a un dato en vez del dato como tal se llama asignación por referencia y así es como almacena JavaScript los arrays. Tener esto en cuenta es muy importante ya que si lo aprendemos evitaremos bastantes problemas en el futuro a la hora de guardar arrays en variables y copiar arrays.
 
 * * *
-EJERCICIO 1: PELÍCULAS  
+#### EJERCICIO 1
+
+**Películas**  
 
 Vamos a hacer este ejercicio en parejas. ¿Listas? La primera de la pareja con el teclado va a crear un array `movies` con un listado de 3 películas que le gusten. Será un array de cadenas (`strings`).
 
@@ -269,7 +268,9 @@ alert('La puntuación final es ' + result);
 ```
 
 * * *
-EJERCICIO 2: LA MEDIA
+#### EJERCICIO 2
+
+**La media**
 
 a) Vamos a crear un nuevo array `numbers` contendrá 5 números cualesquiera. Vamos a recorrer el array mediante un bucle que calcule la media de los números (la suma de los números dividido por cuántos hay, es decir, 5). Necesitaremos una variable (llamada *acumulador*) para ir almacenando la suma de todos los números. Para comprobar si el resultado es correcto, vamos a escribirlo en un `alert`.
 
@@ -322,8 +323,10 @@ task.participants.push('Diego'); // Añade un nuevo participante a la lista
 task.participants[0] = 'Andrea'; // Cambia el nombre del primer participante
 alert(task.participants);  // Muestra Andrea, Pedro, Laura, Diego
 ```
-***
-EJERCICIO 3: Adalabers
+* * *
+#### EJERCICIO 3
+
+**Adalabers**
 
 Estamos en una clase de Adalab, y queremos saber conocer algunas estadísticas sobre las adalabers de esa clase. Estos son sus datos:
 - María, 29 años, diseñadora
@@ -342,9 +345,11 @@ Después, vamos a crear varias funciones en JavaScript que nos permitan calcular
 
 Según vayáis creando las funciones, debéis ir probando que funcionan invocándolas con nuestra estrucutra de datos como argumento. Al final, modificad la estructura de datos para añadir, modificar o quitar adalabers. Y probad que las funciones siguen devolviendo el valor correcto.
 
-***
+* * *
 
-EJERCICIO 4: Mi lista de tareas
+#### EJERCICIO 4
+
+**Mi lista de tareas**
 
 Hemos creado una aplicación para gestionar un listado de tareas: ¡somos gente muy ocupada! Para eso, hemos pedido los datos de tareas a un servidor y nos ha devuelto la información un objeto JSON (u objeto literal) con el listado de tareas y su estado. Nuestra misión es pintar todas las tareas en pantalla, de forma que las tareas ya realizadas aparezcan tachadas. Vamos a partir de este array de datos en nuestro fichero JavaScript:
 
@@ -365,7 +370,7 @@ c) **Vamos a darle dinamismo.** Ahora viene lo bueno: vamos a añadir la lógica
 - la tarea debe mostrarse como completada (tachada)
 - debemos modificar su estado (propiedad `completed`) en el array `tasks`
 
-***
+* * *
 
 ### Trabajar con varios elementos del DOM
 
@@ -388,11 +393,11 @@ for (var i = 0; i < paragraphs.length; i++) {
 
 ```
 
-### Métodos de array
+## Métodos de array
 
 A continuación veremos algunos de los métodos básicos que más se utilizan para trabajar con arrays.
 
-#### `push`
+### `push`
 
 El método `push()` es uno de los más importantes y sirve para agregar uno o más elementos al final de un array. Es la forma común en JavaScript de añadir elementos a un array y suele ser uno de los más utilizados. Este método tras agregar los elementos al array devuelve la nueva longitud de éste.
 
@@ -413,7 +418,7 @@ var arr = [1, 2, 3];
 arr.push(3, 5, 6, 7, 23, 34, 35, 34, 54, 34, 3434, 34); // Esto es totalmente válido
 ```
 
-#### `reverse`
+### `reverse`
 
 El método reverse() invierte el orden de un array. El primer elemento pasará a ser colocarse en la última posición, el segundo pasará a colocarse en la penúltima y así sucesivamente. Este método modifica directamente el array sobre el que se ha utilizado y devuelve ese array actualizado.
 
@@ -423,7 +428,7 @@ alert(arr.reverse()); // Muestra 3,2,1
 alert(arr); // Muestra también 3,2,1 porque reverse modifica directamente arr
 ```
 
-#### `concat`
+### `concat`
 
 Este método se utiliza para obtener, a partir de dos o más arrays, uno que combine a todos ellos. Este método no modifica ninguno de los arrays que utiliza para combinarlos en uno nuevo, sino que devuelve un valor, como sucede con las operaciones que hacemos con números, por ejemplo. Para concatenar varios arrays con el método `concat()` lo haremos de la siguiente manera:
 
@@ -442,11 +447,11 @@ El array resultante tendrá los elementos ordenados según el orden en que hemos
 
 Puedes consultar el [listado completo de propiedades y métodos de array en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array).
 
-### BONUS: Trabajar con arrays anidados
+## BONUS: Trabajar con arrays anidados
 
 Algunas estructuras como una lista de coordenadas requieren crear listas dentro de otras listas, o lo que es lo mismo, listas anidadas. Si pensamos en ese caso concreto de listas de coordenadas, vemos que tenemos una lista y cada elemento posee dos coordenadas que también se pueden mostrar en lista. Esto es posible de llevar a cabo en JavaScript y es una práctica común. En este apartado veremos cómo crear listas anidadas, cómo obtener un valor de ellas y cómo modificarlas.
 
-#### Crear una lista anidada
+### Crear una lista anidada
 
 Partiendo del ejemplo citado anteriormente de la lista de coordenadas, vamos a declarar una lista anidada en JavaScript:
 
@@ -483,7 +488,7 @@ var randomData = [
 ];
 ```
 
-#### Acceder al valor de un array anidado
+### Acceder al valor de un array anidado
 
 Cuando tenemos estructuras de datos anidadas, como en el caso de arrays anidados, lo que se hace para acceder a los valores es algo así como establecer una hoja de ruta, será como decirle al programa _"Del array X quiero el elemento Y y dentro de ese elemento quiero el elemento Z "_. Veamos cómo se traduce esto en código:
 
@@ -507,7 +512,7 @@ var firstElemX = coordinates[1][0]; // firstElemX es igual a 9
 
 En el código del ejemplo, si tuviésemos otro nivel más de anidación simplemente tendríamos que añadir otro corchete con el índice del elemento que queremos obtener `deepNestedArr[1][2][1]` y así sucesivamente.
 
-### Modificar elementos anidados
+## Modificar elementos anidados
 
 Para modificar elementos, la sintaxis es muy similar a la de acceder al valor de un array anidado:
 
