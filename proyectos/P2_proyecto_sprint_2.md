@@ -1,72 +1,98 @@
-# Proyecto 2: Currículum Interactivo
+# Proyecto 2: Awesome profile-cards
 
-## Índice
+<!-- TOC START min:2 max:2 link:true update:true -->
+- [Resumen (TL;DR)](#resumen-tldr)
+- [Objetivos](#objetivos)
+- [Caso de uso](#caso-de-uso)
+- [Especificaciones](#especificaciones)
+- [Diseño](#diseo)
+- [Hitos](#hitos)
+- [Entrega](#entrega)
+- [Recursos](#recursos)
 
-1. Resumen
-1. Objetivos
-1. Casos de uso
-1. Especificaciones
-1. Hitos
-1. Entrega
-1. Consejos
-1. Recursos
+<!-- TOC END -->
 
 
 ## Resumen ([TL;DR](https://spanish.stackexchange.com/questions/15317/hay-alg%C3%BAn-equivalente-en-castellano-al-ingl%C3%A9s-tldr))
 
-En este proyecto vamos a realizar una librería de componentes que posteriormente emplearemos en realizar una web para crear un currículum de forma interactiva a partir de una plantilla. Para ello, pensaremos primero cómo queremos enfocar el proyecto y diseñaremos una estructura básica y a partir de ahí sacaremos los componentes que se utilicen en ella. Lo bueno de este proyecto es que será algo más que una mera vista o escaparate, será una herramienta de la que os podréis beneficiar, algo parecido a una aplicación, en la que interactuamos con el medio para obtener el resultado deseado.
+En este proyecto vamos a realizar una aplicación web que nos permite crear una tarjeta de visita personalizada. En la página web podemos introducir nuestros datos profesionales y obtener una vista maquetada con esta información. Lo bueno de este proyecto es que será una herramienta de la que os podréis beneficiar. Será una aplicación web interactiva creada por vosotras y que podéis usar para crear vuestras propias tarjetas de visita profesionales.
 
 
 ## Objetivos
 
-1. Aprender los conceptos básicos y globales de programación (variables, estructuras de datos, condicionales, funciones, etc.)
-1. Comprender qué es el DOM y saber obtener información de él e interactuar con éste
-1. Obtener recursos y conocimientos para construir una marca personal
-1. Exponer en la sesión final y seguir adquiriendo habilidades de desarrollo personal
+1. Aprender los conceptos básicos de programación (variables, estructuras de datos, condicionales, funciones, etc.)
+1. Comprender cómo manipular el DOM de una página y responder a eventos del usuario
+1. Manejar estructuras de datos complejas, con arrays y objetos
+1. Realizar peticiones al servidor y almacenar datos en local
+1. Exponer en la sesión final y seguir adquiriendo habilidades de presentación en público
 
 
 ## Caso de uso
 
-Con esta web podréis mostrar que, a parte de maquetar, podéis crear algo con lo que interactuar y sacar algo que vaya más allá de una página que sólo muestra información. Esto os permitirá mostrar vuestras habilidades a la hora de trabajar con JavaScript en GitHub, algo que en las empresas se valora bastante a la hora de escoger candidatos para puestos de programador front-end.
+Con esta web podréis mostrar que, a parte de maquetar, podéis crear una página web con la que interactuar y sacar algo que vaya más allá de una página que solo muestra información. Esto os permitirá mostrar vuestras habilidades a la hora de trabajar con JavaScript en GitHub, algo que en las empresas se valora bastante a la hora de escoger candidatos para puestos de programador front-end.
 
 
 ## Especificaciones
 
-Se desarrollará una página web con las siguientes características:
-- Uso de HTML, CSS y JavaScript
-- Uso de mediaqueries para que el diseño sea adaptable al dispositivo
-- Uso avanzado de formularios
+En el desarrollo de esta aplicación web usaremos las siguientes tecnologías:
+- Uso avanzado de formularios HTML
+- Maquetación usando CSS avanzado, como flex y grid
+- Uso de mediaqueries para que el diseño sea adaptable al dispositivo usando la estrategia mobile first
 - Gestión de eventos (al hacer click, pasa x, etc.)
-- Desarrollo usando la estrategia mobile first
+- Acceso a datos en Internet mediante peticiones AJAX
+- Almacenamiento en local usando LocalStorage
 - Uso de git para el control de versiones del proyecto
 - Publicación del resultado en Internet usando GitHub pages
 
-La web deberá tener las siguientes características:
-- Permitir al usuario que, mediante la introducción de información en un formulario, este texto se muestre maquetado automáticamente en un cuadro similar a una hoja, que será la muestra del resultado final.
-- Permitir que ese usuario, usando la función del navegador de "Imprimir web", pueda imprimir el resultado en una página física.
-- El curriculum deberá tener los siguientes campos:
-  - Nombre
-  - Profesión (desarrolladora front-end ;))
-  - Datos personales
-    - Teléfono
-    - Correo electrónico
-  - Extracto
-  - Experiencia laboral
-    - Trabajo
-      - Cargo
-      - Extensión
+La aplicación funciona siguiendo estos pasos:
+1. Permitir al usuario elegir el estilo de la tarjeta, eligiendo paleta de colores y tipografía
+2. Permitir al usuario que, mediante la introducción de información en un formulario, este texto se muestre maquetado automáticamente en un cuadro similar a una tarjeta de visita, que será la muestra del resultado final
+3. Permitir que el usuario pueda compartir su tarjeta de visita por Twitter
 
-- Los campos se rellenarán a través de un formulario
-- Crearemos pestañas o colapsables para mostrar las distintas partes del formulario
-- Para seleccionar los años en los distintos campos, utilizaremos un desplegable cuyas opciones se generarán a través de JavaScript con años desde 1950 hasta el año actual
-- En el caso de experiencia laboral, deberemos añadir una función que permita cambiar el orden de cada elemento para hacer que se muestre antes o después. Cada uno de los elementos también tendrá un botón para ser eliminado.
-- Cada vez que se cambie un campo deberá de actualizarse la vista del resultado final del currículum
+![Awesome profile-cards versión tablet](assets/images/s2-tablet.png)
+
+La tarjeta de visita deberá tener los siguientes campos (entre paréntesis el nombre del campo a usar):
+- Nombre completo (full_name)
+- Profesión (desarrolladora front-end ;)) (job)
+- Datos personales
+  - Teléfono (phone)
+  - Correo electrónico (email)
+- RRSS
+  - LinkedIn (linkedin)
+  - GitHub (github)
+- Habilidades: a elegir máximo 3 de un listado (skills)
+
+Respecto a la interacción con la web:
 - Los campos deberán tener restricciones para su formato indicado. Campo de teléfono para el móvil, mail para el correo, etc.
+- Las modificaciones que hacemos en el formulario (diseño y contenido), aparecen automáticamente en la vista previa de la tarjeta
+- Las 3 partes del proceso de creación serán elementos colapsables, que al hacer clic en el título se mostrará/ocultará solo mostrando una sección de al vez
+- Las opciones de habilidades las obtenemos al hacer una petición a un [servicio en esta URL](https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json)
+- Se podrán seleccionar varias habilidades (hasta un máximo de 3), pudiendo añadir más con un botón, y borrando las existentes con otro
+- Toda la información del formulario debe almacenarse en LocalStorage (alamcenamiento local del navegador), de forma que al recargar la página siga disponible y podamos borrarla con un botón de *Reset*. Para esto, debemos definir una estructura de datos compleja (con arrays y objetos) que es lo que guardaremos en el navegador.
+- Para compartir en Twitter usaremos un API (la URL os la daremos más adelante) que os devolverá una web con la tarjeta de visita con la información rellena. Con esta URL y un texto predefinido, debéis pre-rellenar un tweet para facilidad del usuario
 
+## Diseño
+
+El diseño lo podéis inspeccionar en [este proyecto de zeplin](https://app.zeplin.io/project/5b28021febd4990163e9020b/screen/5b280288ae4a31fc6a3ab179). También podéis probar cómo funciona en este [prototipo online](https://sketch.cloud/s/12l0y/all/tablet+/00-app-tablet+/play).
+
+Las fuentes necesarias para crear el diseño son
+- Merriweather (google fonts)
+- Open sans (google fonts)
+- Comic Sans MS (sistema)
+- Montserrat (google fonts)
+- Ubuntu (google fonts)
+- FontAwesome (fontawesome.io)
+
+### Archivos
+
+Podéis descargar los logos necesarios para completar el proyecto:
+
+- [Logo de Adalab](assets/images/logo-adalab.png)
+- [Logo de Awesome Profile-cards](assets/images/logo-awesome-profile-cards.svg)
 
 ## Hitos
 
-En esta sección os proponemos una serie de hitos como sugerencia para dividir las fases de este proyecto. Siguiendo los principios de las metodologías ágiles estableceremos pequeños ciclos iterativos de forma que al final de cada uno de estos generemos valor real de cara al usuario (los visitantes de la web):
+En esta sección os proponemos una serie de hitos como sugerencia para dividir las fases de este proyecto. Siguiendo los principios de las metodologías ágiles estableceremos pequeños ciclos iterativos de forma que al final de cada uno de estos generemos valor real de cara al usuario.
 
 ### Primero. Arranque del proyecto (kickoff)
 
@@ -78,19 +104,29 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 
 ### Segundo. Primera versión simple de la web
 
-- 5 sesiones de trabajo.
-- Terminar el diseño del sitio
-- Desarrollar una primera versión básica de la web, con la maquetación de la estructura básica (para web y móvil) y la funcionalidad de meter contenido en el currículum mediante el uso de los `prompt` de JavaScript. Para considerar terminado este hito, debéis tener publicada la web en GitHub pages.
+- 1 semana de trabajo
+- Desarrollar una primera versión básica de la web, con la maquetación de la estructura básica (para web y móvil) que incluye el formulario con los colapsables y la vista previa
+- Funcionalidad básica: al modificar un campo del formulario, se actualiza la vista previa
 
-### Tercero. Implementación de la parte interactiva
+> **NOTA**:  
+Para considerar terminado este hito y todos los siguientes debéis tener publicada la web en GitHub Pages.
 
-- 5 sesiones de trabajo
-- Hacer que el contenido sea editable y dinámico e implementar todas las funcionalidades descritas en las especificaciones. Para estar terminado, debe estar la web pública en Internet y ser visible por cualquier persona.
+### Tercero. Formulario interactivo
+permite
+- 1 semana de trabajo
+- Formulario interactivo, que al modificar cualquier campo de datos o el diseño se actualice la vista previapermite
+- En el campo de habilidades pueden añadirse hasta 3 datos, y se añaden y eliminan de forma dinámica. De momento escribiremos las opciones del campo a manita en el HTML (datos 'harcodeados'), más adelante las sustituiremos por aquellas que nos devuelva el servidor.
+### Cuarto. Manejo de datos
 
-### Cuarto. Presentación final
+- 1 semana de trabajo
+- Hacer que el contenido se almacene en LocalStorage del navegador
+- Hacer que los datos del combo de habilidades se descarguen desde un servidor
+- Añadir la funcionalidad de compartir en Twitter
 
-- 2 sesiones de trabajo.
-- El último día del sprint presentaréis la versión final de este proyecto. Para ello tendréis que dejarlo publicado y acabado con tiempo, y organizaros para preparar la presentación.
+### Quinto. Presentación final
+
+- 2 sesiones de trabajo
+- El último día del sprint presentaréis la versión final de este proyecto. Para ello tendréis que dejarlo publicado y acabado con tiempo, y organizaros para preparar la presentación
 
 
 ## Entrega
@@ -115,41 +151,9 @@ Por último, para acompañar a la entrega del proyecto, el equipo realizará una
 
 Al final de esta presentación habrá un turno breve de preguntas, de manera informal, tanto por parte de otras compañeras como por parte de los profesores.
 
-
-## Consejos
-
-### Pensar antes de implementar
-
-Es fundamental dedicarle tiempo a pensar cómo será la web y realizar un diseño lo más ajustado a lo que queremos. A menudo los desarrolladores cometemos el error de implementar un código sin pararnos a pensar en cómo debería de funcionar. Esto se traduce en retrasos en la planificación, errores y modificaciones posteriores que se podrían haber tenido en cuenta desde un primer momento si se hubiese pensado un poco acerca del problema antes de empezar a atajarlo. Una de las mejores cualidades de un profesional es saber trabajar de forma optima, es decir, invertir su tiempo de manera que aporte el mayor valor posible a cada momento. Por ello es importante que si queremos ser profesionales planifiquemos y reflexionemos sobre el problema y su solución para que en el momento de ponernos a resolverlo seamos lo más eficientes posible.
-
-Para terminar, pensad que se tarda minutos en cambiar una idea, horas en cambiar un diseño y dias en cambiar el código. Cuanto antes atajemos el problema en esta secuencia (siempre que no nos quedemos atascados en él) más rápido y con menos errores avanzaremos a lo largo del proyecto
-
-### Diseñar pensando en móvil primero para que sea más fácil hacer la web responsive
-
-Dado que queremos realizar una web que se adapte de forma correcta a distintos tamaños de pantalla, es fundamental que el primer diseño que hagamos sea enfocado a pantallas móviles. Para ello trabajaremos en Chrome con la vista adaptada a diseños móviles (veremos cómo hacerlo durante las primeras sesiones).
-
-Otro de los beneficios de pensar en un diseño enfocado a móvil es que, al tener un espacio muy reducido, prescindes de todo aquello que no es estrictamente necesario. Esto nos beneficiará ya que nos enfocaremos en meter en nuestra vista unicamente aquello que es fundamental
-
-### Centrarse en el producto y que funcione
-
-Nuestro cometido como programadores web es crear un producto que pueda ser usado por la gente que accede a nuestra página. Por ello debemos centrarnos en que este funcione más que en que sea visualmente estético. Además, este sprint está enfocado en la programación JavaScript y por tanto es el núcleo y donde debemos hacer mayor hincapié, sin dejar a un lado la maquetación.
-
-
 ## Recursos
 
 Para este proyecto hemos preparado un listado de recursos que os pueden servir de ayuda.
-
-### Inspiración
-
-En esta sección tenéis un listado de páginas para inspiraros a la hora de crear vuestro proyecto. También un listado de paletas de colores a usar. De dónde puedes sacar imágenes libres de derechos, etc.
-
-- Páginas de inspiración para curriculums
-  - [Curriculums en Behance](https://www.behance.net/search?content=projects&sort=appreciations&time=month&search=resume) - diseños de curriculums
-  - http://dribbble.com/ - es una galeria de proyectos del ámbito del diseño que es muy conocida entre los diseñadores web. Dentro de ella, si pulsas en algún proyecto te aparece a la derecha la paleta de los colores más utilizados y si pulsas en alguno de esos colores te muestra un resultado con proyectos que emplean un color similar a este.
-  - https://color.adobe.com/explore/?filter=most-popular&time=month - para encontrar paletas de colores con tendencias actuales
-  - https://color.hailpixel.com/ para crear paletas de forma sencilla
-- Páginas de inspiración para elementos de nuestra web:
-  - [Inspiration UI](http://inspirationui.com/) - Inspiración para componentes web
 
 ### Ejemplo similar
 Si en este punto algo no ha quedado del todo claro aquí tenéis un ejemplo similar con un generador de firmas de email para nuestra empresa.
