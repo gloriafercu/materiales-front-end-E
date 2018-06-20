@@ -376,7 +376,7 @@ Intenta ponerle una estrella y un tronco al árbol para que quede mucho más mon
 |
 ```
 
----
+- - -
 
 #### EJERCICIO BONUS 2
 
