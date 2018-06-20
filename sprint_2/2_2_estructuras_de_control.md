@@ -358,7 +358,7 @@ Para que no nos pille el toro esta Navidad, vamos a crear un código que muestre
 ▲▲▲▲
 ▲▲▲▲▲
 ```
-* * *
+***
 #### EJERCICIO BONUS 1
 
 Intenta ponerle una estrella y un tronco al árbol para que quede mucho más mono. Sería algo así:
@@ -372,7 +372,7 @@ Intenta ponerle una estrella y un tronco al árbol para que quede mucho más mon
 ▲▲▲▲▲
 |
 ```
-* * *
+---
 #### EJERCICIO BONUS 2
 
 Intenta cambiar el código para que aparezca el árbol completo.
@@ -386,7 +386,7 @@ Intenta cambiar el código para que aparezca el árbol completo.
 ▲▲▲▲▲▲▲▲▲
     |
 ```
-* * *
+- - -
 
 ## Recursos externos
 
