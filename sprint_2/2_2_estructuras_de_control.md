@@ -344,7 +344,7 @@ Vamos a partir de una variable `result` con valor 0. Construiremos un bucle que 
 
 Cada tres años se produce una luna llena completamente iluminada por el Sol durante unos minutos. Esta luna es conocida como la “Luna del cazador”. En el año 2017 se pudo ver esta luna el 5 de octubre y mucha gente se la perdió. Para que no nos pase los siguientes años vamos a crear un código que muestre en consola cuando serán las 15 próximas lunas.
 
-* * *
+* * * * *
 
 #### EJERCICIO 7
 
@@ -360,7 +360,7 @@ Para que no nos pille el toro esta Navidad, vamos a crear un código que muestre
 ▲▲▲▲▲
 ```
 
-***
+*****
 
 #### EJERCICIO BONUS 1
 
@@ -376,7 +376,7 @@ Intenta ponerle una estrella y un tronco al árbol para que quede mucho más mon
 |
 ```
 
-- - -
+-----
 
 #### EJERCICIO BONUS 2
 
@@ -392,7 +392,7 @@ Intenta cambiar el código para que aparezca el árbol completo.
     |
 ```
 
-- - -
+- - - - -
 
 ## Recursos externos
 
