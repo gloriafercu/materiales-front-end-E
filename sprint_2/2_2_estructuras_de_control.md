@@ -293,7 +293,7 @@ En el este sprint del curso vamos a aprender el bucle `for` que tiene la siguien
 - después irá la _configuración_ del bucle entre paréntesis `( )` que tiene 3 partes, separadas por punto y coma `;`:
   - _inicialización_ será una declaración y asignación de variable (ej: `var i = 1`)
   - _condición_ será la condición que debe cumplirse para que se ejecute el bloque de código (ej: `i < 20`)
-  - _actualización_ será la operación que se realizará al final de cada iteración del bucle (ej: `++i`, que es la abreviación de `i = i + 1`)
+  - _actualización_ será la operación que se realizará al final de cada iteración del bucle (ej: `i++`, que es la abreviación de `i = i + 1`)
 - al definimos un _bloque de código_ entre llaves `{ }` que se va a ejercutar si se cumple la condición
 
 ```js
