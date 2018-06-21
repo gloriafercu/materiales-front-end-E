@@ -242,15 +242,15 @@ Escribe las condiciones para el siguiente ejercicio y utilizando `prompt` haz un
 
 ```js
 if (/* condicion 1 */) {
-  alert('El número es 0')
+  alert('El número es 0');
 } else if (/* condicion 1 */) {
-  alert('El número es negativo')
+  alert('El número es negativo');
 } else if (/* condicion 1 */) {
-  alert('El número es múltiplo de 2 y de 3')
+  alert('El número es múltiplo de 2 y de 3');
 } else if (/* condicion 1 */) {
-  alert('El número es mayor que 20 pero menor que 50')
+  alert('El número es mayor que 20 pero menor que 50');
 } else {
-  alert('el número no es 123123125')
+  alert('el número no es 123123125');
 }
 ```
 * * *
