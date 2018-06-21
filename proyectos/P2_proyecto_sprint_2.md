@@ -72,7 +72,7 @@ Respecto a la interacción con la web:
 - Las 3 partes del proceso de creación serán elementos colapsables, que al hacer clic en el título se mostrará/ocultará solo mostrando una sección de al vez
 - Las opciones de habilidades las obtenemos al hacer una petición a un [servicio en esta URL](https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json)
 - Se podrán seleccionar varias habilidades (hasta un máximo de 3), pudiendo añadir más con un botón, y borrando las existentes con otro
-- Toda la información del formulario debe almacenarse en LocalStorage (alamcenamiento local del navegador), de forma que al recargar la página siga disponible y podamos borrarla con un botón de *Reset*. Para esto, debemos definir una estructura de datos compleja (con arrays y objetos) que es lo que guardaremos en el navegador
+- Toda la información del formulario debe almacenarse en LocalStorage (almacenamiento local del navegador), de forma que al recargar la página siga disponible y podamos borrarla con un botón de *Reset*. Para esto, debemos definir una estructura de datos compleja (con arrays y objetos) que es lo que guardaremos en el navegador
 - Para compartir en Twitter seguiremos 2 pasos
   1. Al hacer clic en el botón de "Enviar" enviaremos el formulario (submit) a un API (la URL del API os la daremos más adelante) que devolverá la URL de una web con la tarjeta de visita con la información rellena
   2. Mostraremos esta URL para que el usuario verifique si la tarjeta está bien definida y un botón de "Compartir" que enlazará a Twitter donde habrá un tweet con texto predefinido que incluye la URL de la tarjeta
@@ -99,7 +99,7 @@ Podéis descargar los logos necesarios para completar el proyecto:
 ### Creatividad
 
 Aunque el diseño del proyecto está cerrado, hemos dejado algunos aspectos que podéis personalizar:
-- usar un logo personalizado del equipo en el pie de página
+- usar un logo personalizado del equipo (o nombre del equipo) en el pie de página, tras la información de copyright
 - utilizar un fondo personalizado en la previsualización de la tarjeta
 - añadir más paletas y fuentes a las definidas en el diseño, pero no eliminar las que os proponemos ;)
 
@@ -112,7 +112,7 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 - 2 sesiones de trabajo.
 - Organizar el trabajo a realizar usando Trello, e ir asignando tareas y responsables.
 - Crear la infraestructura necesaria: repositorio en GitHub con acceso para todos los miembros del equipo.
-- Establecer la estructura del contenido de la web, buscar referencias y esbozar un diseño visual de la web.
+- Establecer la estructura del contenido de la web y buscar referencias.
 
 
 ### Segundo. Primera versión simple de la web
@@ -127,7 +127,7 @@ Para considerar terminado este hito y todos los siguientes debéis tener publica
 ### Tercero. Formulario interactivo
 permite
 - 1 semana de trabajo
-- Formulario interactivo, que al modificar cualquier campo de datos o el diseño se actualice la vista previapermite
+- Formulario interactivo, que al modificar cualquier campo de datos o el diseño se actualice la vista previa
 - En el campo de habilidades pueden añadirse hasta 3 datos, y se añaden y eliminan de forma dinámica. De momento escribiremos las opciones del campo a manita en el HTML (datos 'harcodeados'), más adelante las sustituiremos por aquellas que nos devuelva el servidor.
 ### Cuarto. Manejo de datos
 
