@@ -44,6 +44,10 @@ En el desarrollo de esta aplicación web usaremos las siguientes tecnologías:
 - Uso de git para el control de versiones del proyecto
 - Publicación del resultado en Internet usando GitHub pages
 
+El proyecto consta de 2 páginas
+- una página de bienvenida
+- una página con la aplicación de crear tarjetas
+
 La aplicación funciona siguiendo estos pasos:
 1. Permitir al usuario elegir el estilo de la tarjeta, eligiendo paleta de colores y tipografía
 2. Permitir al usuario que, mediante la introducción de información en un formulario, este texto se muestre maquetado automáticamente en un cuadro similar a una tarjeta de visita, que será la muestra del resultado final
@@ -68,8 +72,10 @@ Respecto a la interacción con la web:
 - Las 3 partes del proceso de creación serán elementos colapsables, que al hacer clic en el título se mostrará/ocultará solo mostrando una sección de al vez
 - Las opciones de habilidades las obtenemos al hacer una petición a un [servicio en esta URL](https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json)
 - Se podrán seleccionar varias habilidades (hasta un máximo de 3), pudiendo añadir más con un botón, y borrando las existentes con otro
-- Toda la información del formulario debe almacenarse en LocalStorage (alamcenamiento local del navegador), de forma que al recargar la página siga disponible y podamos borrarla con un botón de *Reset*. Para esto, debemos definir una estructura de datos compleja (con arrays y objetos) que es lo que guardaremos en el navegador.
-- Para compartir en Twitter usaremos un API (la URL os la daremos más adelante) que os devolverá una web con la tarjeta de visita con la información rellena. Con esta URL y un texto predefinido, debéis pre-rellenar un tweet para facilidad del usuario
+- Toda la información del formulario debe almacenarse en LocalStorage (almacenamiento local del navegador), de forma que al recargar la página siga disponible y podamos borrarla con un botón de *Reset*. Para esto, debemos definir una estructura de datos compleja (con arrays y objetos) que es lo que guardaremos en el navegador
+- Para compartir en Twitter seguiremos 2 pasos
+  1. Al hacer clic en el botón de "Enviar" enviaremos el formulario (submit) a un API (la URL del API os la daremos más adelante) que devolverá la URL de una web con la tarjeta de visita con la información rellena
+  2. Mostraremos esta URL para que el usuario verifique si la tarjeta está bien definida y un botón de "Compartir" que enlazará a Twitter donde habrá un tweet con texto predefinido que incluye la URL de la tarjeta
 
 ## Diseño
 
@@ -90,6 +96,13 @@ Podéis descargar los logos necesarios para completar el proyecto:
 - [Logo de Adalab](assets/images/logo-adalab.png)
 - [Logo de Awesome Profile-cards](https://github.com/Adalab/materiales-front-end-D/blob/master/proyectos/assets/images/logo-awesome-profile-cards.svg)
 
+### Creatividad
+
+Aunque el diseño del proyecto está cerrado, hemos dejado algunos aspectos que podéis personalizar:
+- usar un logo personalizado del equipo (o nombre del equipo) en el pie de página, tras la información de copyright
+- utilizar un fondo personalizado en la previsualización de la tarjeta
+- añadir más paletas y fuentes a las definidas en el diseño, pero no eliminar las que os proponemos ;)
+
 ## Hitos
 
 En esta sección os proponemos una serie de hitos como sugerencia para dividir las fases de este proyecto. Siguiendo los principios de las metodologías ágiles estableceremos pequeños ciclos iterativos de forma que al final de cada uno de estos generemos valor real de cara al usuario.
@@ -99,7 +112,7 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 - 2 sesiones de trabajo.
 - Organizar el trabajo a realizar usando Trello, e ir asignando tareas y responsables.
 - Crear la infraestructura necesaria: repositorio en GitHub con acceso para todos los miembros del equipo.
-- Establecer la estructura del contenido de la web, buscar referencias y esbozar un diseño visual de la web.
+- Establecer la estructura del contenido de la web y buscar referencias.
 
 
 ### Segundo. Primera versión simple de la web
@@ -114,7 +127,7 @@ Para considerar terminado este hito y todos los siguientes debéis tener publica
 ### Tercero. Formulario interactivo
 permite
 - 1 semana de trabajo
-- Formulario interactivo, que al modificar cualquier campo de datos o el diseño se actualice la vista previapermite
+- Formulario interactivo, que al modificar cualquier campo de datos o el diseño se actualice la vista previa
 - En el campo de habilidades pueden añadirse hasta 3 datos, y se añaden y eliminan de forma dinámica. De momento escribiremos las opciones del campo a manita en el HTML (datos 'harcodeados'), más adelante las sustituiremos por aquellas que nos devuelva el servidor.
 ### Cuarto. Manejo de datos
 
