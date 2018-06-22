@@ -2,11 +2,14 @@
 
 <!-- TOC START min:4 max:4 link:true update:true -->
 - [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO 3](#ejercicio-3)
 - [EJERCICIO 4](#ejercicio-4)
 - [EJERCICIO BONUS 1](#ejercicio-bonus-1)
 
 <!-- TOC END -->
+
+
 
 
 ## Introducción
@@ -106,7 +109,7 @@ Cuando ejecutamos una instrucción `return` dentro de una función, termina la e
 Crea una función que reciba como argumento dos valores y devuelva como valor de retorno la multiplicación de ambos. Haz tres pruebas con distintos números para comprobar que funciona correctamente y muestra el resultado usando `alert`.
 
 * * *
-EJERCICIO 2
+#### EJERCICIO 2
 
 **Función media**
 

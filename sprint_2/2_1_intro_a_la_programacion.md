@@ -7,11 +7,14 @@
 - [EJERCICIO 4](#ejercicio-4)
 - [EJERCICIO 5](#ejercicio-5)
 - [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO 7](#ejercicio-7)
 - [EJERCICIO 8](#ejercicio-8)
 - [EJERCICIO 9](#ejercicio-9)
 - [EJERCICIO 10](#ejercicio-10)
 
 <!-- TOC END -->
+
+
 
 
 ## Antes de comenzar
@@ -441,7 +444,7 @@ En este caso el código es mucho más verboso y más largo pero se entiende much
 
 
 * * *
-EJERCICIO 7
+#### EJERCICIO 7
 
 Utilizar variables para mejorar nuestro código
 
