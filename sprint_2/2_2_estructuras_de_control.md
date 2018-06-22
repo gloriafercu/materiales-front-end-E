@@ -1,5 +1,18 @@
 # Estructuras de control
 
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO 7](#ejercicio-7)
+- [EJERCICIO BONUS 1](#ejercicio-bonus-1)
+- [EJERCICIO BONUS 2](#ejercicio-bonus-2)
+
+<!-- TOC END -->
+
 ## Introducción
 
 Utilizando aplicaciones y webs, muchas veces nos encontramos con casos en los que no se nos permite por ejemplo añadir un elemento más al carrito de la compra si hemos superado el límite.
@@ -50,10 +63,10 @@ var filled = false; //Este booleano es falso
 var solved = true; //Este booleano es verdadero
 ```
 
-### Comparaciones
+## Comparaciones
 Podemos obtener también un booleano como resultado de una operación booleana, por ejemplo, una comparación. Vamos a ver algunos operadores de comparación que devuelven booelanos.
 
-#### Igualdad
+### Igualdad
 
 El operador comparación de igualdad es `===` (_strict equal_ o _estrictamente igual_) comprueba si dos valores son iguales y son del mismo tipo. Usaremos siempre esta versión para comparar si algo es igual. Existe también una versión `==` que solo compara el valor (no el tipo de datos) pero que NO debemos usar.
 
@@ -75,7 +88,7 @@ var result = 5;
 (result !== 0 + 5); //El resutaldo es false
 ```
 
-#### Desigualdad
+### Desigualdad
 
 Existen los operadores de desigualdad para comparar números:
 - `<` (_less than_ o _menor que_) comprueba si el número a la izquierda del operador es menor que el que está a su derecha
@@ -96,10 +109,10 @@ var result = 5;
 > Los operadores de comparación se ejecutan siempre después de los operadores numéricos, es decir, si tenemos `5 * 1 - 4 !== '3'`, primero se hará la multiplicación, luego la resta y finalmente se hara la operación de comparación.
 
 
-### Operaciones con booleanos
+## Operaciones con booleanos
 Cuando trabajamos con un valor booleano, podemos realizar algunas operaciones útiles con este valor.
 
-#### Negación
+### Negación
 
 El operador `!` (_NOT_) devuelve el valor contrario al valor dado. Por ejemplo:
 ```js
@@ -108,7 +121,7 @@ var filled = false; //Este booleano es falso
 var opposite = !filled; //Este booleano es verdadero
 ```
 
-#### _AND_
+### _AND_
 
 El operador `&&` (_AND_) devuelve verdadero **SOLO** si ambas condiciones son verdaderas. Por ejemplo:
 
@@ -122,7 +135,7 @@ var age = 35;
 (name === 'Marta' && age >= 40); //El resutaldo es false
 ```
 
-#### _OR_
+### _OR_
 
 El perador  `||` (_OR_) devuelve verdadero si una o más condiciones se cumplen. Por ejemplo:
 
@@ -174,6 +187,16 @@ if (age > 30) {
 }
 ```
 
+* * *
+
+#### EJERCICIO 1
+
+**Control de acceso**
+
+En este ejercicio vamos a crear un control de acceso que muestre una ventana para que el usuario introduzca su nombre. Posteriormente, si el nombre es el tuyo o el de tu compañera muestre el mensaje "Bienvenida, (tu nombre aquí)". Si el nombre es diferente al tuyo deberá mostrar "Lo siento pero el usuario que has introducido no está registrado".
+
+* * *
+
 Podemos complicar incluso más la estructura del condicional cuando queremos que se ejecute un código si NO se cumple la primera condición pero SOLO si se cumple una segunda condición. En este caso, a la estructura del condicinal simple le añadimos:
 - usamos la palabra `else` para definir qué hacer cuando NO se cumple la condición
 - usamos la palabra `if` para definir una nueva comprobación
@@ -210,6 +233,43 @@ if ( age > 30 ){
 
 > NOTA: Los bloques de un condional son excluyentes, es decir, solo se va a ejecutar el código de un bloque (if, else if o else). En ningún momento se ejecutará el código de dos bloques ya que si se cumple una condición se ejecuta el código de su bloque y se ignoran las posteriores condiciones.
 
+* * *
+
+#### EJERCICIO 2
+
+**Completa las condiciones**
+
+Escribe las condiciones para el siguiente ejercicio y utilizando `prompt` haz una prueba para ver que estas se cumplen.
+
+```js
+if (/* condicion 1 */) {
+  alert('El número es 0')
+} else if (/* condicion 1 */) {
+  alert('El número es negativo')
+} else if (/* condicion 1 */) {
+  alert('El número es múltiplo de 2 y de 3')
+} else if (/* condicion 1 */) {
+  alert('El número es mayor que 20 pero menor que 50')
+} else {
+  alert('el número no es 123123125')
+}
+```
+
+* * *
+
+#### EJERCICIO 3
+
+**Conversor de edad de perro a humano**
+
+Te habrá pasado varias veces de ir por la calle y que alguien te pregunte "perdona, tienes a mano un conversor de edad de perros a humanos" y tener que contestar con vergüenza que no y que esa persona te mire raro... ¡hasta ahora! Vamos a crearla para evitar esto que pasa tan a menudo. Para ello, las reglas son las siguientes:
+
+- El primer año de un perro equivale a 15 años de humano
+- El segundo año de un perro equivale a nueve años de humano
+- A partir del tercero, cada año de perro equivale a 5 años de humano.
+
+> NOTA: Prueba que el código funciona correctamente con distintos años (1, 2, 12...). Imagina el alcance de los daños si la próxima vez que te pare una persona para preguntarte por el conversor... ¡no funciona correctamente!
+
+* * *
 
 ## La consola de JavaScript
 
@@ -268,63 +328,15 @@ Este ejemplo hará aparecer 20 veces, en la consola, el texto:
 ...
 - Voy por la vuelta 19
 
-
-## Ejercicios
-
 * * *
 
-### EJERCICIO 1
-
-**Control de acceso**
-
-En este ejercicio vamos a crear un control de acceso que muestre una ventana para que el usuario introduzca su nombre. Posteriormente, si el nombre es el tuyo o el de tu compañera muestre el mensaje "Bienvenida, (tu nombre aquí)". Si el nombre es diferente al tuyo deberá mostrar "Lo siento pero el usuario que has introducido no está registrado".
-
-
-* * *
-
-### EJERCICIO 2
-
-**Completa las condiciones**
-
-Escribe las condiciones para el siguiente ejercicio y utilizando `prompt` haz una prueba para ver que estas se cumplen.
-
-```js
-if (/* condicion 1 */) {
-  alert('El número es 0');
-} else if (/* condicion 1 */) {
-  alert('El número es negativo');
-} else if (/* condicion 1 */) {
-  alert('El número es múltiplo de 2 y de 3');
-} else if (/* condicion 1 */) {
-  alert('El número es mayor que 20 pero menor que 50');
-} else {
-  alert('el número no es 123123125');
-}
-```
-
-* * *
-
-### EJERCICIO 3
-
-**Conversor de edad de perro a humano**
-
-Te habrá pasado varias veces de ir por la calle y que alguien te pregunte "perdona, tienes a mano un conversor de edad de perros a humanos" y tener que contestar con vergüenza que no y que esa persona te mire raro... ¡hasta ahora! Vamos a crearla para evitar esto que pasa tan a menudo. Para ello, las reglas son las siguientes:
-
-- El primer año de un perro equivale a 15 años de humano
-- El segundo año de un perro equivale a nueve años de humano
-- A partir del tercero, cada año de perro equivale a 5 años de humano.
-
-> NOTA: Prueba que el código funciona correctamente con distintos años (1,2, 12...). Imagina el alcance de los daños si la próxima vez que te pare una persona para preguntarte por el conversor... ¡no funciona correctamente!
-
-* * *
-
-### EJERCICIO 4
+#### EJERCICIO 4
 
 Partiendo el ejemplo anterior, crea un bucle que muestre 10 veces, en la consola, el texto `Voy por la vuelta X` siendo el número de vuelta desde 1 hasta 10 (no desde 0 hasta 9).
 
 * * *
 
-### EJERCICIO 5
+#### EJERCICIO 5
 
 Vamos a partir de una variable `result` con valor 0. Construiremos un bucle que se ejecute 10 veces y sume 2 a la variable `result` en cada iteración del bucle. Al acabar el bucle, mostraremos en la consola el texto `El resultado es: X`, siendo X el valor de la variable `result`.
 
@@ -332,7 +344,7 @@ Vamos a partir de una variable `result` con valor 0. Construiremos un bucle que 
 
 * * *
 
-### EJERCICIO 6
+#### EJERCICIO 6
 
 **Previsión para ver la _Luna del cazador_**
 
@@ -340,7 +352,7 @@ Cada tres años se produce una luna llena completamente iluminada por el Sol dur
 
 * * *
 
-### EJERCICIO 7
+#### EJERCICIO 7
 
 **Crea tu árbol de Navidad**
 
@@ -356,7 +368,7 @@ Para que no nos pille el toro esta Navidad, vamos a crear un código que muestre
 
 * * *
 
-### EJERCICIO BONUS 1
+#### EJERCICIO BONUS 1
 
 Intenta ponerle una estrella y un tronco al árbol para que quede mucho más mono. Sería algo así:
 
@@ -372,7 +384,7 @@ Intenta ponerle una estrella y un tronco al árbol para que quede mucho más mon
 
 * * *
 
-### EJERCICIO BONUS 2
+#### EJERCICIO BONUS 2
 
 Intenta cambiar el código para que aparezca el árbol completo.
 
@@ -405,5 +417,3 @@ En este canal tenemos varios vídeos que explican muy bien lo que necesitamos ap
 - [Estructuras de control de flujo](http://librosweb.es/libro/javascript/capitulo_3/estructuras_de_control_de_flujo.html)
 
 > **Nota:** De las estructuras de control de flujo, no vamos a ver el `for...in` de momento y muestra algunas cosas con arrays que por el momento tampoco veremos hasta dentro de un algunas sesiones.
-
-
