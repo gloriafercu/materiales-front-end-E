@@ -1,15 +1,13 @@
 # Programación orientada a objetos
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
-- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
-- [Tipos de objetos](#tipos-de-objetos)
-- [Contexto `this`](#contexto-this)
-- [Creando un objeto para un componente de la web](#creando-un-objeto-para-un-componente-de-la-web)
-- [Recursos externos](#recursos-externos)
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
 
 <!-- TOC END -->
+
 
 ## Introducción
 
@@ -72,7 +70,7 @@ Una vez definida la función constructora, vamos a crear un nuevo objeto de tipo
 
 Estos objetos con más complejos que los literales, pero nos permiten reutilizar más el código si vamos a crear varios objetos del mismo tipo.
 
-#### Prototipos
+### Prototipos
 
 Los prototipos son una forma que tenemos de compartir atributos (datos) y métodos (comportamiento) entre distintos objetos de la misma clase. En el constructor definimos atributos, pero puede que queramos definir algunos más después. Y también puede que queramos definir métodos en nuestro tipo de objetos `Person`. [Vamos a ver cómo hacerlo](https://codepen.io/adalab/pen/govvEa) con la propiedad especial `prototype`.
 
@@ -149,7 +147,9 @@ Finalmente definimos 2 nuevos objetos botón, uno de favorito y otro de comparti
 
 ***
 
-EJERCICIO 1: hagamos botones
+#### EJERCICIO 1
+
+**Hagamos botones**
 
 Partiendo del codepen anterior, crear 3 nuevos botones para entender cómo funciona:
 - botón de alerta
@@ -158,7 +158,9 @@ Partiendo del codepen anterior, crear 3 nuevos botones para entender cómo funci
 
 ***
 
-EJERCICIO 2: personaliza los botones
+#### EJERCICIO 2
+
+**Personaliza los botones**
 
 Partiendo del ejercicio anterior, vamos a añadir un nuevo atributo a los botones que sea el color de letra. Para eso:
 - añade un nuevo parámetro a la función constructora
@@ -224,7 +226,9 @@ De esta forma ya tenemos funcionando nuestro carrusel. En el codepen también he
 
 ***
 
-EJERCICIO 3: carrusel de loros
+#### EJERCICIO 3
+
+**Carrusel de loros**
 
 Partiendo del codepen anterior, vamos a crear un nuevo carrusel, esta vez con fotos de loros 😱 Para hacerlo, sigue estos pasos:
 - crea el HTML necesario para implementar el carrusel: los botones y la imagen
@@ -235,7 +239,9 @@ Partiendo del codepen anterior, vamos a crear un nuevo carrusel, esta vez con fo
 
 ***
 
-EJERCICIO 4: carrusel con cosas
+#### EJERCICIO 4
+
+**Carrusel con cosas**
 
 Para terminar, vamos a añadir un par de cosas molonas a nuestro carrusel:
 

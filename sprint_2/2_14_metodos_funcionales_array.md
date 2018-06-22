@@ -1,11 +1,16 @@
 # Métodos funcionales de array
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
-- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
-- [Métodos funcionales de array](#mtodos-funcionales-de-array-1)
-- [Recursos externos](#recursos-externos)
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO 7](#ejercicio-7)
+- [EJERCICIO 8](#ejercicio-8)
+- [EJERCICIO 9](#ejercicio-9)
+- [EJERCICIO 10](#ejercicio-10)
 
 <!-- TOC END -->
 
@@ -71,19 +76,25 @@ En este caso ejecutamos el método `map` sobre el array de nombres `names`. A `m
 
 ***
 
-EJERCICIO 1: Inflar las notas
+#### EJERCICIO 1
+
+**Inflar las notas**
 
 ¡Ya tenemos las notas  del examen! Los profes, como somos así, las hemos metido en un array: `var marks = [5, 4, 6, 7, 9];`. Casi todo el mundo lo ha hecho bastante bien pero... vamos a hacer un poco de trampa :) Vamos a modificar las notas de todas para añadirles 1 punto, ¿no? Pues usemos nuestro reciente amigo `map` para crear un nuevo array `inflatedMarks` con las notas modificadas. Finalmente, mostraremos en la consola las notas modificadas para ver que funciona correctamente. ¡Al lío!
 
 ***
 
-EJERCICIO 2: Saludar es de buena educación
+#### EJERCICIO 2
+
+**Saludar es de buena educación**
 
 Estamos creando una aplicación web, y lo primero que queremos hacer es saludar al usuario por su nombre, ¡como es debido! Tenemos un array con el listado de usuarios de nuestra aplicación `var names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];` y queremos conseguir otro array con los saludos, por ejemplo, *'Bienvenida Yolanda'*. ¿Podríamos usar `map` para que nos echase una mano?
 
 ***
 
-EJERCICIO 3: Gracias por confiar en nosotros
+#### EJERCICIO 3
+
+**Gracias por confiar en nosotros**
 
 Seguimos desarrollando nuestra aplicación web que romperá el mercado. Pero antes, queremos agradecer a nuestros usuarios premium (de pago) su ayuda en el saludo de la aplicación. Por tanto, a los usuarios premium queremos saludarles así *'Bienvenida Yolanda. Gracias por confiar en nosotros.'*, y mantener el saludo simple *'Bienvenida Yolanda'* para el resto de usuarios.
 
@@ -139,13 +150,17 @@ En este caso hemos ejecutado el método `filter` sobre el array `names` y le pas
 
 ***
 
-EJERCICIO 4: Solo los premium
+#### EJERCICIO 4
+
+**Solo los premium**
 
 Seguimos con nuestra app de moda y vamos a utilizar el listado de usuarios del ejercicio 3. Pero ahora queremos tener un listado de usuarios (en un array `premiumUsers`) que solo tenga los usuarios premium. ¿Sabremos hacerlo con `filter`?
 
 ***
 
-EJERCICIO 5: Los pares pueden entrar
+#### EJERCICIO 5
+
+**Los pares pueden entrar**
 
 Tenemos un listado de las contraseñas (PIN de 4 números) de los usuarios de nuestra web:
 
@@ -159,7 +174,9 @@ De ese listado de contraseñas, queremos que solo puedan entrar los que han eleg
 
 ***
 
-EJERCICIO 6: Los usuarios que pueden entrar
+#### EJERCICIO 6
+
+**Los usuarios que pueden entrar**
 
 Ya hemos conseguido las contraseñas pertenecientes a cada usuario. ¿Podrías darnos un array con los usuarios que pueden acceder a la aplicación, es decir, los que tienen como PIN un número par?
 
@@ -224,7 +241,9 @@ Esta forma de trabajar es bastante compleja y requiere de mucha práctica, así 
 
 ***
 
-EJERCICIO 7: La media de la carrera
+#### EJERCICIO 7
+
+**La media de la carrera**
 
 Hemos organizado una carrera de escobas para que podáis exprimir a fondo vuestra flamante Nimbus 2000. Tenemos los tiempos en este array y nos gustaría conocer la media: ¿nos ayudas a calcularla usando `reduce`?
 
@@ -234,7 +253,9 @@ var times = [56, 9, 45, 28, 35];
 
 ***
 
-EJERCICIO 8: El ganador de la carrera
+#### EJERCICIO 8
+
+**El ganador de la carrera**
 
 Ya hemos conseguido los nombres de los competidores y nos gustaría que usases `reduce` para averiguar quién ha ganado.
 
@@ -285,7 +306,9 @@ De esta forma, si un número `a` es mayor que otro `b` el resultado es positivo 
 
 ***
 
-EJERCICIO 9: Clasificación de la carrera
+#### EJERCICIO 9
+
+**Clasificación de la carrera**
 
 Volviendo a nuestra carrera de escobas, queremos tener el array del ejercicio 8 ordenado para poder tener una clasificación de la carrera: ¿nos ayudar a hacerlo usando `sort`?
 
@@ -293,7 +316,9 @@ Volviendo a nuestra carrera de escobas, queremos tener el array del ejercicio 8 
 
 ***
 
-EJERCICIO 10: Poniendo orden en nuestros usuarios
+#### EJERCICIO 10
+
+**Poniendo orden en nuestros usuarios**
 
 Vamos a volver al listado de usuarios del ejercicio 6, porque nos ha dado la manía de tenerlos ordenados. ¿Podrías ordenarlos por orden alfabético? ¿Y por su número de PIN?
 

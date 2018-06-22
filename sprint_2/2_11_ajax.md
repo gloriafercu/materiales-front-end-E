@@ -1,16 +1,15 @@
 # AJAX
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
-- [Fetch](#fetch)
-- [BONUS: XMLHttpRequest](#bonus-xmlhttprequest)
-- [El formato JSON](#el-formato-json)
-- [Peticiones encadenadas](#peticiones-encadenadas)
-- [Peticiones en paralelo](#peticiones-en-paralelo)
-- [Recursos externos](#recursos-externos)
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
 
 <!-- TOC END -->
+
 
 
 ## Introducción
@@ -79,7 +78,7 @@ Entonces, sobre una promesa podemos hacer un `.then()` pero ¿para qué? Para po
 Tenéis el código del ejemplo ([en este codepen](https://codepen.io/adalab/pen/GxYVww?editors=0010)).
 
 ***
-EJERCICIO 1
+#### EJERCICIO 1
 
 Vamos a jugar un poco con el código en codepen del ejemplo anterior. Mirando la [documentación de thecatAPI](http://thecatapi.com/docs.html) podemos jugar añadiendo otros parámetros a la URL del tipo `clave=valor` separamos por `&`:
 - `results_per_page`: para mostrar más imágenes
@@ -139,7 +138,7 @@ En el segundo `then` tenemos la información que nos da el servidor convertida e
 Podéis jugar con [este ejemplo en Codepen](https://codepen.io/adalab/pen/oqQNvK?editors=1010).
 
 ***
-EJERCICIO 2
+#### EJERCICIO 2
 
 Sigamos jugando un poco con el [Dog API](https://dog.ceo/dog-api/):
 
@@ -148,7 +147,7 @@ a) Vamos a modificar el ejemplo anterior para que las fotos de nuestra página s
 b) Vamos a encapsular toda la lógica para crear una petición en una función. Añadimos un botón a la página con el título 'Enséñame otro Chihuahua' de forma que al pulsarlo se haga otra petición al servidor de una imagen aleatoria y aparezca una nueva imagen de Chihuaua.
 
 ***
-EJERCICIO 3
+#### EJERCICIO 3
 
 Ahora vamos a explorar un nuevo API: [el API de usuarios de GitHub](https://developer.github.com/v3/users/). La URL de este API es `https://api.github.com/users/{username}`, donde `{username}` es el nombre del usuario en GitHub. Por ejemplo, aquí tenéis la URL para obtener información del usuario de Isra `https://api.github.com/users/gootyfer`. Si ponéis esta URL en una nueva pestaña del navegador podréis observar qué datos nos devuelve el API.
 
@@ -206,7 +205,9 @@ Una de las características principales de las promesas es que nos facilitan enc
 
 ***
 
-EJERCICIO 4: LISTADO DE REPOS DE ADALAB
+#### EJERCICIO 4
+
+**Listado de repos de Adalab**
 
 Vamos a seguir explorando el API de GitHub explorando la parte del [API para acceder a la info sobre organizaciones](https://developer.github.com/v3/orgs/). La URL de este API es `https://api.github.com/orgs/orgname`, donde `orgname` es el nombre de la organización en GitHub. Por ejemplo, aquí tenéis la URL para obtener información de la organización Adalab `https://api.github.com/orgs/Adalab`. Si ponéis esta URL en una nueva pestaña del navegador podréis observar qué datos nos devuelve el API.
 
@@ -222,7 +223,9 @@ Para ello vamos a hacer lo siguiente:
 
 ***
 
-EJERCICIO 5: PETICIONES ENCADENADAS CON PROMESAS
+#### EJERCICIO 5
+
+**Peticiones encadenadas con promesas**
 
 Vamos a seguir con el API de organizaciones de GitHub pero ahora vamos a acceder a él usando promesas. Vamos a acceder a la URL de los eventos de una comunidad (en la propiedad `events_url`) del [JSON de la comunidad Adalab](https://api.github.com/orgs/Adalab). Y vamos a realizar una petición nueva a esta URL para pintar en pantalla el tipo (propiedad `type`) del primer evento del array. Si el código es correcto, debería de verse en la pantalla la palabra _"PushEvent"_. ¡A darle caña!
 
@@ -257,7 +260,9 @@ Hemos creado una función `createPromise` que crea las promesas de las peticione
 
 ***
 
-EJERCICIO 6: PINTANDO VARIAS IMÁGENES A LA VEZ
+#### EJERCICIO 6
+
+**Pintando varias imágenes a la vez**
 
 Partiendo el ejemplo anterior en codepen, vamos a modificarlo para que en lugar de pedir 2 imágenes en paralelo pida 10, y el resultado sólo se pinte en la pantalla cuando las 10 imágenes hayan llegado del servidor. Ahora sí que se nota el efecto de que se pintan todas a la vez, ¿verdad? Vamos a probar también con 25 imágenes, para ver bien este efecto.
 

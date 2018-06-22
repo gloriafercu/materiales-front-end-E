@@ -1,15 +1,15 @@
 # APIs y linter
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
-- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
-- [El mundo de las APIs](#el-mundo-de-las-apis)
-- [LocalStorage](#localstorage)
-- [Linter](#linter)
-- [Recursos externos](#recursos-externos)
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
 
 <!-- TOC END -->
+
+
 
 ## Introducción
 
@@ -61,7 +61,7 @@ La petición HTTP también tiene asociado un *método* que indica la *intención
 Otra característica habitual de un API REST es que cuando accedo a un listado de cosas, si hay muchas, no me devuelva todas en la misma petición sino que me devuelve solo las primeras. A esto se le llama *paginación* y al hacer la petición recibiré solo *la primera página* de resultados, por ejemplo 10. Y tendré que añadir un parámetro a la querystring para recuperar el resto de página, por ejemplo, `?page=2`.
 
 ***
-EJERCICIO 1:
+#### EJERCICIO 1
 
 Vamos a explorar [un API abierto de información sobre el mundo Star Wars](https://swapi.co/). En esta página tenemos la documentación completa del API y formulario que nos permite hacer peticiones a la URL que indiquemos. Identifica la siguiente información sobre SWAPI:
 - la URL base del API
@@ -76,7 +76,7 @@ Vamos a explorar [un API abierto de información sobre el mundo Star Wars](https
 
 ***
 
-EJERCICIO 2:
+#### EJERCICIO 2
 
 Ahora que conocemos mejor el API de Star Wars vamos a hacer una sencilla web usándolo. En la web aparece una caja de texto donde escribimos el nombre de un personaje (o parte del nombre) y nuestra web muestra debajo un listado con los personajes que coinciden con la búsqueda indicando su nombre y género.
 
@@ -113,7 +113,7 @@ Otra herramienta fundamental son las propias DevTools del navegador en la pesta�
 ![Devtools Network](assets/images/2-12/devtools-network.png)
 
 ***
-EJERCICIO 3:
+#### EJERCICIO 3
 
 En la página de SWAPI o en la que habéis creado en el ejercicio 2 inspecciona las petiones que has hecho al servidor. Al abrir la pestaña Network aparece vacía así que comienza a hacer peticiones con la pestaña abierta. Con la información que obtienes de esta pestaña averigua:
 - dónde está el método de petición
@@ -174,7 +174,7 @@ var savedTasks = JSON.parse(localStorage.getItem('taks'));
 console.log(savedTasks.length); //4
 ```
 ***
-EJERCICIO 4:
+#### EJERCICIO 4
 
 Sobre el ejercicio 2 vamos a *cachear* las búsquedas al servidor. De forma que cuando a busquemos una cadena a través del campo de búsqueda, primero busque en localStorage si ya tenemos un resultado en local para esa cadena. Si no lo hay se pide al servidor y luego se guarda en `localStorage` usando como clave el texto de la búsqueda; si al buscarlo en `localStorage` lo encontramos pues le enseñamos el resultado directamente al usuario y nos evitamos una petición al servidor.
 
@@ -203,7 +203,7 @@ Para usarlo en un proyecto, tenéis que
 A veces nos resultará molesto tener algunos errores o warnings en el editor porque, por ejemplo, queremos usar un `console.log` para algo. Podemos deshabilitar el uso del linter en una línea concreta usando [las instrucciones de configuración](https://eslint.org/docs/user-guide/configuring).
 
 ***
-EJERCICIO 5:
+#### EJERCICIO 5
 
 Para el proyecto anterior de la búsqueda en SWAPI, incluye el linter y corrige todos los errores detectados.
 

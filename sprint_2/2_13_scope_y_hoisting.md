@@ -1,14 +1,14 @@
 # Scope y hoisting
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
-- [¿En qué casos se utiliza?](#en-qu-casos-se-utiliza)
-- [Ámbito o scope](#mbito-o-scope)
-- [Consultar el scope en las Chrome DevTools](#consultar-el-scope-en-las-chrome-devtools)
-- [Hoisting](#hoisting)
+<!-- TOC START min:4 max:4 link:true update:true -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
 
 <!-- TOC END -->
+
+
 
 ## Introducción
 
@@ -139,7 +139,9 @@ Y hasta aquí sería la descripción de qué es el scope o ámbito en JavaScript
 
 * * *
 
-EJERCICIO 1: Averigua el resultado
+#### EJERCICIO 1
+
+**Averigua el resultado**
 
 A continuación vamos a poner una serie de códigos. Estos no tienen un sentido lógico más allá de practicar con lo aprendido sobre el scope. Sin ejecutarlos, intenta averiguar qué se mostrará en el `console.log` de cada uno de ellos.
 
@@ -183,7 +185,9 @@ Una vez hayas intentado averiguar cuál es el resultado de estos código, compru
 
 * * *
 
-EJERCICIO 2: Aprendiendo a averiguar el scope con las Dev Tools
+#### EJERCICIO 2
+
+**Aprendiendo a averiguar el scope con las Dev Tools**
 
 Abre tu ejercicio de evaluación individual del segundo sprint (el de adivinar el número aleatorio) y después abre el panel de las Chrome Dev Tools. Selecciona la pestaña _Sources_, coloca algunas paradas en el código pulsando en los números de línea del editor de código que aparece. Recarga la página para que se vaya parando en cada una de las líneas y comprueba en el panel derecho cual es el scope en cada caso.
 
@@ -258,13 +262,17 @@ Saber esto nos ayuda a entender varias cosas:
 
 * * *
 
-EJERCICIO 3: Comprobando cómo se aplica el hoisting con las Chrome Dev Tools
+#### EJERCICIO 3
+
+**Comprobando cómo se aplica el hoisting con las Chrome Dev Tools**
 
 Abre tu ejercicio de evaluación individual del segundo sprint (el de adivinar el número aleatorio). Pon una parada en el código y comprueba si las variables se han añadido al scope para ver cómo JavaScript aplica el _hoisting_.
 
 * * *
 
-EJERCICIO 4: Detectando fallos en las declaraciones de variables
+#### EJERCICIO 4
+
+**Detectando fallos en las declaraciones de variables**
 
 A continuación vamos a poner una serie de códigos, algunos de ellos tendrán un error debido a que hemos usado/modificado una variable en un ámbito que no está definido. Averigua cuáles de estos códigos son los que tienen un error e intenta razonar el por qué.
 

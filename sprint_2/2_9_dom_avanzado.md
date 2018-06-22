@@ -110,8 +110,6 @@ console.log('La madre de nuestro elemento es un <' + mother.nodeName.toLowerCase
 
 [Ejemplo en Codepen](https://codepen.io/adalab/pen/QaQObq)
 
-> Esto no lo hemos visto directamente pero sí en algún ejercicio en el que al cambiar el valor de un select teníamos que localizar el contenedor inmediato para cambiar su color: [ejercicio 3 de la segunda sesión de repaso del bloque 2](https://adalab.gitbooks.io/curso-programacion-front-end-2018/content/sprint_2/2_repaso_2.html#3-vamos-a-darle-color)
-
 ### Crear elementos
 
 Hasta ahora insertábamos HTML creando una cadena de texto (a las bravas o a las bravas usando un `for`) e inyectándolo con innerHTML.
