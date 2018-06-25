@@ -59,3 +59,6 @@
 ## Guías
 
 * [Guía paso a paso de git](guias/empezar_con_git.md) -->
+
+## Extra
+* [E.1 Repaso de flexbox y position](extra/e1-flexbox-y-position.md)
