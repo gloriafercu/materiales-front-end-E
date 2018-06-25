@@ -14,11 +14,11 @@
 
 ## Introducción
 
-Ya hemos aprendido a modificar cosas en nuestra página web mediante JavaScript: cambiar contenidos, estilos, etc. Pero siempre nuestro script (código JavaScript) se ejecutaba al cargar la página. En esta sesión vamos a aprender a hacer nuestra web interactiva, es decir, que haya modificaciones también de contenidos o estilos pero en respuesta a la interacción del usuario. La forma de modelar esa interacción del usuario en la web es mediante *eventos*. Un evento representa una interacción, que normalmente es del usuario, tras la cual podemos realizar una acción. Vamos a ver algunos ejemplos de acciones que implican eventos:
-- mostrar una alerta cuando el usuario hace click en un botón
-- cambiar el tamaño de una cabecera fija cuando el usuario llega a un punto de scroll
-- abir una sección oculta de un formulario cuando hago click sobre un botón
-- cerrar una ventana modal cuando termina un temporizador de 15 segundos (aquí no hay acción del usuario)
+Ya hemos aprendido a modificar cosas en nuestra página web mediante JavaScript: cambiar contenidos, estilos, etc. Pero siempre nuestro script (código JavaScript) se ejecutaba al cargar la página. En esta sesión vamos a aprender a hacer nuestra web interactiva, es decir, que haya modificaciones también de contenidos o estilos pero en respuesta a la interacción del usuario. La forma de modelar esa interacción del usuario en la web es mediante *eventos*. Un evento representa una interacción, que normalmente es de la usuaria, tras la cual podemos realizar una acción. Vamos a ver algunos ejemplos de acciones que implican eventos:
+- mostrar una alerta cuando la usuaria hace click en un botón
+- cambiar el tamaño de una cabecera fija cuando la usuaria llega a un punto de scroll
+- abrir una sección oculta de un formulario cuando hago click sobre un botón
+- cerrar una ventana modal cuando termina un temporizador de 15 segundos (aquí no hay acción de la usuaria)
 - cuando selecciono una opción de un select, se deshabilitan los campos de un formulario
 - cuando doy al botón de buscar en Amazon, se envía una petición al servidor para pedir los datos de los artículos que coinciden con mi búsqueda; cuando los datos del servidor llegan al navegador, los pintamos en la página
 
@@ -35,7 +35,7 @@ Lo que podemos hacer desde JavaScript es responder a estos eventos. ¿Cómo? Cre
 
 ## Escuchando eventos desde JavaScript
 
-Vamos a ver cómo traducimos lo anterior a JavaScript. En primer lugar, lo llamamos escuchar eventos porque en JavaScript decimos que "si sucede un evento sobre este elemento, ejecuta esta función". Técnicamente, registramos una función *escuchadora* que se ejecuta cuando sucede un evento. También se la suele llamar *función de callback* o sólo *callback*.
+Vamos a ver cómo traducimos lo anterior a JavaScript. En primer lugar, lo llamamos escuchar eventos porque en JavaScript decimos que "si sucede un evento sobre este elemento, ejecuta esta función". Técnicamente, registramos una función *escuchadora* (listener) que se ejecuta cuando sucede un evento. También se la suele llamar *función de callback* o sólo *callback*.
 
 Vamos a ver el ejemplo de mostrar una alerta pulsando un botón.
 
@@ -147,11 +147,6 @@ Crear una página HTML con un párrafo con `lorem ipsum`. Al poner el ratón sob
 
 * * *
 
-#### EJERCICIO 4
-
-Crear una página HTML con un select que tiene un listado de colores. Cuando el usuario cambia la opción seleccionada  en el select, debe aparecer una ventana de alerta con el texto 'Me gustan los colores'.
-
-* * *
 
 ## El parámetro event
 
@@ -202,34 +197,35 @@ En la función declaramos el parámetro `event` que sabemos que el navegador nos
 
 * * *
 
-#### EJERCICIO 5
+#### EJERCICIO 4
 
 Crear una página HTML con formulario con un select que tiene un listado de colores. Al cambiar el contenido del select, aparece una ventana de alerta donde aparece el texto 'Me gusta el <color>' con el color seleccionado. Podemos acceder al índice de la opción seleccionada de un select mediante la propiedad `selectedIndex` y al listado de opciones (array) podemos acceder mediante la propiedad `options`.
 
 * * *
 
-#### EJERCICIO 6
+#### EJERCICIO 5
 
 Crear una página vacía que al pulsar la tecla 'r' se ponga el fondo rojo y al pulsar la 'a' ponga el fondo de la web azul. Vamos a ecuchar evento de teclado (directamente sobre el elemento `document`). En el objeto evento podemos [consultar la propiedad `key`](https://mdn.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code) para saber qué tecla se ha pulsado.
 
 * * *
 
-####EJERCICIO 7
+####EJERCICIO 6
 
 Vamos a partir de un HTML con un botón 'Empezar'. Al hacer click, vamos a pintar en el HTML un listado de películas que tenemos en JavaScript:
 ```javascript
-var movies = [
-  'Inception',
-  'The butterfly effect',
-  'Eternal sunshine of the spotless mind',
-  'Blue velvet',
-  'Split'];
+var movies = {
+  '0': 'Inception',
+  '1': 'The butterfly effect',
+  '2': 'Eternal sunshine of the spotless mind',
+  '3': 'Blue velvet',
+  '4': 'Split'
+};
 ```
 Después vamos a escuchar eventos sobre cada elemento de la lista, de forma que al hacer click sobre el nombre de una peli aparezca una alerta con el nombre de esa película.
 
 * * *
 
-Cuando accedemos a un elemento mediante `currentTarget` muchas veces nos interesa que ese elemento tenga cierta información para realcionarlo con la estructura de datos de nuestra página. Esta información la podemos almacenar en un elemento mediante los atributos `data-`. Por ejemplo, podemos añadir a un elemento el atributo `data-id="0"` para relacionarlo con el elemento 0 de un array. Al elemento relacionado con el segundo elemento, le podemos poner un atributo `data-id="1"` y así sucesivamente.
+Cuando accedemos a un elemento mediante `currentTarget` muchas veces nos interesa que ese elemento tenga cierta información para relacionarlo con la estructura de datos de nuestra página. Esta información la podemos almacenar en un elemento mediante los atributos `data-`. Por ejemplo, podemos añadir a un elemento el atributo `data-id="0"` para relacionarlo con el elemento 0 de un objeto (o array). Al elemento relacionado con el segundo elemento, le podemos poner un atributo `data-id="1"` y así sucesivamente.
 
 Vamos a ver un ejemplo. Partimos del ejemplo anterior de la fruta usando atributos `data-`:
 ```html
@@ -249,9 +245,13 @@ Vamos a ver un ejemplo. Partimos del ejemplo anterior de la fruta usando atribut
   </body>
 </html>
 ```
-En nuestro JavaScript tenemos un array con el listado de precios de las frutas, de forma que el primero corresponde a la fresa, el segundo al plátano y el tercero al kiwi.
+En nuestro JavaScript tenemos un objeto con el listado de precios de las frutas, de forma que el primero corresponde a la fresa, el segundo al plátano y el tercero al kiwi.
 ```javascript
-var prices = [10, 2, 5];
+var prices = {
+  '0': 10, 
+  '1': 2, 
+  '2': 5,
+};
 
 function showAlertWithFruit(event){
   var id = event.currentTarget.getAttribute('data-id');
@@ -259,21 +259,22 @@ function showAlertWithFruit(event){
 }
 
 ```
-Desde la función de callback accedemos al elemento mediante `currentTarget` y consultamos el valor de su atributo `data-id`. Luego usamos ese id para indexar el array de precios para mostrar en la alerta el precio de la fruta.
+Desde la función de callback accedemos al elemento mediante `currentTarget` y consultamos el valor de su atributo `data-id`. Luego usamos ese id para acceder al precio que corresponda en el objeto de `prices` y mostrar en la alerta el precio de la fruta.
 
 * * *
 
-#### EJERCICIO 8
+#### EJERCICIO 7
 
-Partimos del ejercicio anterior de las películas. Ahora tenemos un array `movies` con más información de cada peli en un objeto JavaScript. Vamos a modificar el código para que, al hacer click sobre el nombre de la película en el listado, mostremos una alerta con el título, director y año de la película.
+Partimos del ejercicio anterior de las películas. Ahora tenemos un objeto `movies` con más información de cada peli en un objeto JavaScript. Vamos a modificar el código para que, al hacer click sobre el nombre de la película en el listado, mostremos una alerta con el título, director y año de la película.
 
 ```javascript
-var movies = [
-  {title: 'Inception', director: 'Christopher Nolan', year: 2010},
-  {title: 'The butterfly effect', director: 'Eric Bress, J. Mackye Gruber', year: 2004},
-  {title: 'Eternal sunshine of the spotless mind', director: 'Michel Gondry', year: 2004},
-  title:'Blue velvet', director: 'David Lynch', year: 1986,
-  title:'Split', director: 'M. Night Shyamalan', year: 2016];
+var movies = {
+  '0': {title: 'Inception', director: 'Christopher Nolan', year: 2010},
+  '1': {title: 'The butterfly effect', director: 'Eric Bress, J. Mackye Gruber', year: 2004},
+  '2': {title: 'Eternal sunshine of the spotless mind', director: 'Michel Gondry', year: 2004},
+  '3': {title:'Blue velvet', director: 'David Lynch', year: 1986},
+  '4': {title:'Split', director: 'M. Night Shyamalan', year: 2016}
+}
 ```
 
 * * *
