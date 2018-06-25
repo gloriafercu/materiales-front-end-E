@@ -171,7 +171,7 @@ Ahora hacemos lo mismo (crear el objeto `adalaber2` y mostrar la alerta) con una
 
 ### Métodos
 
-Los métodos son funciones asociadas a la propiedad de un objeto. Estas funciones suelen definirse como funciones anónimas como las que vimos en la sesión anterior. Para ejecutar un método, accedemos a él como a una propieda de y le pasamos los argumentos entre paréntesis `( )`.  Ejemplo:
+Los métodos son funciones asociadas a la propiedad de un objeto. Estas funciones suelen definirse como funciones anónimas como las que vimos en la sesión anterior. Para ejecutar un método, accedemos a él como a una propieda y le pasamos los argumentos entre paréntesis `( )`.  Ejemplo:
 
 ```js
 var adalaber = {};
