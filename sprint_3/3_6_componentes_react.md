@@ -102,7 +102,7 @@ Ahora, desde un componente padre para crear un item y pasarle la información po
 
 Fíjate que cuando queremos pasar datos distintos a una cadena, tendremos que usar los {} para incrustar JS, en este caso, para meter un número.
 
-> NOTA: el valor de los atributos de un componente en JSX debe ser una cadena (entre comillas) o una expresión JS (entre llaves)
+> NOTA: el valor de los atributos de un componente en JSX debe ser **SIEMPRE** una cadena (entre comillas) o una expresión JS (entre llaves)
 
 Para ver mejor cómo funciona, hemos creado otro componente `ItemList` que nos sirve para manejar listas de items. En este caso, va a crear varios items:
 
@@ -213,7 +213,7 @@ Como se puede observar en el ejemplo, inyectaremos `props.children` en el JSX de
 
 **EJERCICIO 2**:
 
-Desarrolla un componente `HalfPage` que todo su contenido lo ponga en la mitad izquierda de la pantalla (mitad de ancho y todo el alto). Usa `children` para introducir todo el contenido entre la apertura y cierre de `HalfPage` en su interior. Crea 2 componente `HalfPage` con algo de contenido HTML (en JSX) para ver cómo se posiciona en una mitad y la otra.
+Desarrolla un componente `HalfPage` que todo su contenido lo ponga en la mitad izquierda de la pantalla (mitad de ancho y todo el alto). Usa `children` para introducir todo el contenido entre la apertura y cierre de `HalfPage` en su interior. Crea 2 componentes `HalfPage` con algo de contenido HTML (en JSX) para ver cómo se posiciona en una mitad y la otra.
 
 * * *
 
