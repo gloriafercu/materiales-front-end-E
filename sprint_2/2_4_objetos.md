@@ -162,7 +162,7 @@ Crea un nuevo objeto en JavaScript `adalaber1` que nos sirva para representar (m
 
 Luego muestra una ventana de alerta para mostrar una frase como esta, accediendo a los datos del objeto:
 
-'Mi nombre es María, tengo 34 años y soy periodista'
+'Mi nombre es Susana, tengo 34 años y soy periodista'
 
 Ahora hacemos lo mismo (crear el objeto `adalaber2` y mostrar la alerta) con una nueva Adalaber con estos datos:
 - Rocío, 25 años, actriz
