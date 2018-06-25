@@ -269,7 +269,7 @@ sectionB.classList.add('hidden');
 
 ```
 
-Esto hará que el div de `section-b` pase a ser `<div class="section-b hidden"></div>`. Como se puede intuir `classList.add()` sirve para añadir una o más clases a un elemento. En el caso de que quisiéramos añadir más clases, podríamos ir pasando por separado, cada una de las clases que queremos añadir como texto:
+Esto hará que el div de `section-b` pase a ser `<div class="section-b hidden"></div>`. Como se puede intuir `classList.add()` sirve para añadir una o más clases a un elemento. En el caso de que quisiéramos añadir más clases, solo tenemos que separarlas con comas:
 
 ```js
 sectionB.classList.add('hidden', 'otraClase', 'otraMas');
@@ -311,7 +311,7 @@ if (activableSection.classList.contains('hidden')) {
 }
 ```
 
-Como se puede ver, el código es bastante ilustrativo y queda claro cómo funciona pero para que no tengamos que complicarnos ni un poquito, `classList` nos ofrece una forma para realizar el mismo código que antes en una línea usando otro de sus métodos `classList.toggle()`:
+Como se puede ver, el código es bastante ilustrativo y queda claro cómo funciona, pero para que no tengamos que complicarnos ni un poquito, `classList` nos ofrece una forma para realizar el mismo código que antes en una línea usando otro de sus métodos `classList.toggle()`:
 
 ```js
 var activableSection = document.querySelector('.activable-section');
@@ -344,7 +344,8 @@ Vamos a simular que nuestra web tiene un tema según quien entra en ella. Para e
 
 #### EJERCICIO 8
 
-Crea un div que contenga un título "NOTIFICACIÓN" y un texto "Mensaje por defecto". Crea también tres clases:
+Crea un div que contenga un título "NOTIFICACIÓN" y un texto "Mensaje por defecto". 
+Crea también tres clases:
 - La primera, `.success`, aplicará un borde verde oscuro, un fondo verde claro y el color de fuente verde oscuro
 - La segunda, `.error`, igual pero sustituyendo el verde por rojo
 - La tercera, `.warning`, lo mismo pero usando el color amarillo
@@ -355,11 +356,14 @@ Usando JavaScript, haremos que:
 - Si contiene la clase error, el título sea 'ERROR' y el texto sea: 'Ha surgido un error'
 - Si contiene la clase success, el título sea 'CORRECTO' y el texto sea: 'Los datos son correctos'
 
+Cambia la clase en HTML y comprueba que el código de JavaScript funciona.
+
 * * *
 
 #### EJERCICIO 9
 
-Crea un párrafo en HTML y, usando Javascript, haz que si tiene la clase `.active`, esta desaparezca y sino se la ponga. Prueba a añadirle en HTML y quitarle la clase para ver qué sucede. Prueba a añadir otra clase que no haga nada para ver si sigue funcionando correctamente.
+Crea un párrafo en HTML y, usando Javascript, haz que si tiene la clase `.active`, esta desaparezca y sino se la ponga. - Prueba a añadirle y quitarle la clase en HTML para ver qué sucede. 
+- Prueba a añadir una clase extra en el párrafo, por ejemplo `.box`, y confirma que cuando se añade o quita la clase `.active` nuestra segunda clase `.box` no se ve afectada.
 
 * * *
 
@@ -424,9 +428,9 @@ document.setAttribute('for', 'firstname'); // asignará for="firstname" al label
 
 #### EJERCICIO 10
 
-Crea una página que contenga tres imágenes, usando prompt preguntale al usuario qué ciudad quiere visitar.
+Crea una página que contenga tres imágenes, usando prompt preguntale a la usuaria qué ciudad quiere visitar.
 
-- Si el usuario escribe Madrid, haz que en cada imagen se muestre una foto de Madrid
+- Si la usuaria escribe Madrid, haz que en cada imagen se muestre una foto de Madrid
 - Haz lo mismo para París y Nueva York
 
 * * *
@@ -445,6 +449,6 @@ Con ayuda de JavaScript, mostraremos una ventana y el usuario deberá introducir
 
 #### EJERCICIO 12
 
-Vamos a crear un div en HTML que contenga tres párrafos con un texto aleatorio. Con la ayuda de JavaScript vamos a obtener su tamaño usando la propiedad [`offsetHeight`](https://developer.mozilla.org/es/docs/Web/CSS/opacity). Posteriormente y usando el atributo HTML [style](https://www.w3schools.com/Tags/att_global_style.asp) vamos a configurar que su altura será un tercio de la actual.
+Vamos a crear un div en HTML que contenga tres párrafos con un texto aleatorio. Con la ayuda de JavaScript vamos a obtener su tamaño usando la propiedad [`offsetHeight`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetHeight). Posteriormente y usando el atributo HTML [style](https://www.w3schools.com/Tags/att_global_style.asp) vamos a configurar que su altura será un tercio de la actual.
 
 * * *
