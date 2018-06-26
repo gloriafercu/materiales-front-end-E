@@ -7,8 +7,6 @@
 - [EJERCICIO 4](#ejercicio-4)
 - [EJERCICIO 5](#ejercicio-5)
 - [EJERCICIO 6](#ejercicio-6)
-- [EJERCICIO 7](#ejercicio-7)
-- [EJERCICIO 8](#ejercicio-8)
 
 <!-- TOC END -->
 
@@ -72,8 +70,8 @@ button.addEventListener('click', showAlert);
 ```
 [Aquí podéis jugar con el ejemplo en codepen](https://codepen.io/adalab/pen/RjvLXe?editors=1010).
 
-De esta forma, cuando hagamos click sobre el botón se ejecutará la función `showAlert`. Es importante que os fijéis es algunos detalles importantes:
-- el método `addEventListener` lo invocamos sobre `button` que es un elemento del DOM (en este caso un botón); no lo ejecutéis sobre arrays, por ejemplo, en el caso de haber hecho un `querySelectorAll` porque no funcionará
+De esta forma, cuando hagamos click sobre el botón se ejecutará la función `showAlert`. Es importante que os fijéis en algunos detalles importantes:
+- el método `addEventListener` lo invocamos sobre `button` que es un elemento del DOM (en este caso un botón)
 - el primer parámetro del método es una cadena con el nombre del evento, en este caso 'click'
 - el segundo parámetro es una función, es decir, ponemos el nombre de la función pero no la ejecutamos (no ponemos paréntesis al final); además, esta función no puede tener parámetros (más adelante averiguaremos por qué)
 
@@ -199,17 +197,11 @@ En la función declaramos el parámetro `event` que sabemos que el navegador nos
 
 #### EJERCICIO 4
 
-Crear una página HTML con formulario con un select que tiene un listado de colores. Al cambiar el contenido del select, aparece una ventana de alerta donde aparece el texto 'Me gusta el <color>' con el color seleccionado. Podemos acceder al índice de la opción seleccionada de un select mediante la propiedad `selectedIndex` y al listado de opciones (array) podemos acceder mediante la propiedad `options`.
-
-* * *
-
-#### EJERCICIO 5
-
 Crear una página vacía que al pulsar la tecla 'r' se ponga el fondo rojo y al pulsar la 'a' ponga el fondo de la web azul. Vamos a ecuchar evento de teclado (directamente sobre el elemento `document`). En el objeto evento podemos [consultar la propiedad `key`](https://mdn.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code) para saber qué tecla se ha pulsado.
 
 * * *
 
-####EJERCICIO 6
+#### EJERCICIO 5
 
 Vamos a partir de un HTML con un botón 'Empezar'. Al hacer click, vamos a pintar en el HTML un listado de películas que tenemos en JavaScript:
 ```javascript
@@ -248,8 +240,8 @@ Vamos a ver un ejemplo. Partimos del ejemplo anterior de la fruta usando atribut
 En nuestro JavaScript tenemos un objeto con el listado de precios de las frutas, de forma que el primero corresponde a la fresa, el segundo al plátano y el tercero al kiwi.
 ```javascript
 var prices = {
-  '0': 10, 
-  '1': 2, 
+  '0': 10,
+  '1': 2,
   '2': 5,
 };
 
@@ -263,7 +255,7 @@ Desde la función de callback accedemos al elemento mediante `currentTarget` y c
 
 * * *
 
-#### EJERCICIO 7
+#### EJERCICIO 6
 
 Partimos del ejercicio anterior de las películas. Ahora tenemos un objeto `movies` con más información de cada peli en un objeto JavaScript. Vamos a modificar el código para que, al hacer click sobre el nombre de la película en el listado, mostremos una alerta con el título, director y año de la película.
 
