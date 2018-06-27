@@ -166,7 +166,7 @@ Para añadir un elemento simplemente asignaremos un valor a un índice de un arr
 ```js
 var arr = []; // Creamos un array vacío
 arr[0] = 'Hola'; // Añadimos un elemento en el índice 0, la primera posición del array
-arr[1] = '¿qué tal?'; // Añadimos un elemento en el índice 0, la primera posición del array
+arr[1] = '¿qué tal?'; // Añadimos un elemento en el índice 1, la segunda posición del array
 
 // Tras los pasos anteriores arr será igual a  ['Hola', '¿qué tal?']
 ```
@@ -175,7 +175,7 @@ arr[1] = '¿qué tal?'; // Añadimos un elemento en el índice 0, la primera pos
 
 ```js
 var arr = [1, 2, 3];
-arr[8] = 24; // Saltamos del índice 3 al 7 (5 espacios) para añadir un valor en el 8
+arr[8] = 24; // Saltamos del índice 2 al 7 (5 espacios) para añadir un valor en el 8
 
 console.log(arr); // Muestra 1,2,3,,,,,,24 (un array con 5 espacios vacíos)
 ```
