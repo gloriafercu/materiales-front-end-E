@@ -54,11 +54,11 @@
 
 * Evaluación intermedia 1
 * Evaluación final 1
-
+-->
 
 ## Guías
-
-* [Guía paso a paso de git](guias/empezar_con_git.md) -->
+* [Instalar un linter de JavaScript](guias/instalar_linter_js.md)
+<!-- * [Guía paso a paso de git](guias/empezar_con_git.md) -->
 
 ## Extra
 * [E.1 Repaso de flexbox y position](extra/e1-flexbox-y-position.md)
