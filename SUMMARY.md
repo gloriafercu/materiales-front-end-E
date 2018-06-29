@@ -28,8 +28,6 @@
 * [2.5 JavaScript en la web](sprint_2/2_5_javascript_en_la_web.md)
 * [2.6 Eventos](sprint_2/2_6_eventos.md)
 * [2.7 Arrays](sprint_2/2_7_arrays.md)
-
-<!-- *
 * [2.8 Control de versiones](sprint_2/2_8_control_de_versiones_en_equipo.md)
 * [2.9 DOM avanzado](sprint_2/2_9_dom_avanzado.md)
 * [2.10 Asincronía](sprint_2/2_10_asincronia.md)
@@ -39,7 +37,7 @@
 * [2.14 Métodos funcionales de array](sprint_2/2_14_metodos_funcionales_array.md)
 
 
-
+<!--
 ## Sprint 3. ES6 y React -->
 
 
