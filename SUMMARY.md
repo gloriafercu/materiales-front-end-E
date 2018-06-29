@@ -33,8 +33,8 @@
 * [2.10 Asincronía](sprint_2/2_10_asincronia.md)
 * [2.11 AJAX](sprint_2/2_11_ajax.md)
 * [2.12 APIs](sprint_3/2_12_apis.md)
-* [2.13 Scope y hoisting](sprint_2/2_13_scope_y_hoisting.md)
-* [2.14 Métodos funcionales de array](sprint_2/2_14_metodos_funcionales_array.md)
+* [2.13 Métodos funcionales de array](sprint_2/2_14_metodos_funcionales_array.md)
+* [2.14 Scope y hoisting](sprint_2/2_13_scope_y_hoisting.md)
 
 
 <!--
