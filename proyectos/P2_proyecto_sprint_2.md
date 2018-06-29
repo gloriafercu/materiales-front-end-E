@@ -129,6 +129,7 @@ permite
 - 1 semana de trabajo
 - Formulario interactivo, que al modificar cualquier campo de datos o el diseño se actualice la vista previa
 - En el campo de habilidades pueden añadirse hasta 3 datos, y se añaden y eliminan de forma dinámica. De momento escribiremos las opciones del campo a manita en el HTML (datos 'harcodeados'), más adelante las sustituiremos por aquellas que nos devuelva el servidor.
+
 ### Cuarto. Manejo de datos
 
 - 1 semana de trabajo
