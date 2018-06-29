@@ -413,7 +413,7 @@ En el caso de que la propiedad no esté en la lista anterior, deberemos usar `ge
 ```js
 // Si tenemos <label class="firstname-label" for="firstname"></label>
 var label = document.querySelector('.firstname-label');
-document.getAttribute('for'); // devolverá firstname
+label.getAttribute('for'); // devolverá firstname
 ```
 
 Para añadir un elemento que no está en la lista que hemos mencionado anteriormente, usaremos `setAttribute`.
@@ -421,7 +421,7 @@ Para añadir un elemento que no está en la lista que hemos mencionado anteriorm
 ```js
 // Si tenemos <label class="firstname-label" for="firstname"></label>
 var label = document.querySelector('.firstname-label');
-document.setAttribute('for', 'firstname'); // asignará for="firstname" al label
+label.setAttribute('for', 'firstname'); // asignará for="firstname" al label
 ```
 
 * * *
