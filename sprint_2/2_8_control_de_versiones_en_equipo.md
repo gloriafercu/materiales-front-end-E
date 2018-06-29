@@ -144,7 +144,7 @@ Para ello:
 
 #### EJERCICIO 4
 
-Ahora que hemos hecho un primer acercamiento a las ramas, vamos a hacer lo mismo pero cad miembro de la pareja por separado. Cada una estará encargada de un trabajo diferente que tendrá que realizar en una rama y posteriormente mezclar en la rama principal.
+Ahora que hemos hecho un primer acercamiento a las ramas, vamos a hacer lo mismo pero cada miembro de la pareja por separado. Cada una estará encargada de un trabajo diferente que tendrá que realizar en una rama y posteriormente mezclar en la rama principal.
 
 ![Resultado del ejercicio 4](assets/images/2-6/ramas-3.png)
 
