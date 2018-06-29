@@ -41,7 +41,7 @@ Vamos a ver el trabajo en ramas a través de un ejemplo, como un mini proyecto d
 * * *
 #### EJERCICIO 1
 
-1. Vamos crear un repositorio por grupo, dentro del equipo de Adalab y lo llamaremos `clarke-s2-gX`, donde `X` será el número del grupo, de 1 a 4 :)
+1. Vamos crear un repositorio por pareja, donde ambas debéis tener acceso al repositorio (la que lo crea debe dar acceso al usuario de GitHub de la otra)
 2. Crearemos una primera versión de nuestra web (solo en HTML) que tendrá:
 	1. Un `<header>` con un `<h1>` con el nombre del grupo
 	2. Un `<main>` con dos secciones:
@@ -144,13 +144,13 @@ Para ello:
 
 #### EJERCICIO 4
 
-Ahora que hemos hecho un primer acercamiento a las ramas, vamos a hacer lo mismo pero con dos equipos por cada grupo. Cada equipo estará encargado de un trabajo diferente que tendrá que realizar en una rama y posteriormente mezclar en la rama principal.
+Ahora que hemos hecho un primer acercamiento a las ramas, vamos a hacer lo mismo pero cada miembro de la pareja por separado. Cada una estará encargada de un trabajo diferente que tendrá que realizar en una rama y posteriormente mezclar en la rama principal.
 
 ![Resultado del ejercicio 4](assets/images/2-6/ramas-3.png)
 
 Como refleja la imagen vamos a hacer dos ampliaciones de contenido:
-1. el primer equipo de cada grupo tiene que añadir el contenido de la sección con una frase motivadora
-2. el segundo equipo de cada grupo tiene que añadir el contenido de la sección con un título y un pequeño párrafo
+1. una alumna de cada pareja tiene que añadir el contenido de la sección con una frase motivadora
+2. la otra alumna de la pareja tiene que añadir el contenido de la sección con un título y un pequeño párrafo
 
 **Sección con frase motivadora**
 ```html
@@ -167,7 +167,7 @@ Como refleja la imagen vamos a hacer dos ampliaciones de contenido:
 </section>
 ```
 
-Ahora realmente da igual el orden, el equipo que acabe su trabajo, que suba su rama al repositorio remoto, y siga los pasos para fusionarlo con master. **¡A por ello!**
+Ahora realmente da igual el orden, la que acabe su trabajo, que suba su rama al repositorio remoto, y siga los pasos para fusionarlo con master. **¡A por ello!**
 
 * * *
 
@@ -184,7 +184,7 @@ Los equipos suelen tener una o dos ramas permanentes, una donde está la versió
 Por ahora vamos a tener sólo una permanente: `master`.
 
 ### Ramas puntuales
-Cuando tenemos una tarea nueva (modificar o crear contenido, por ejemplo) crearemos una nueva rama sólo para dicha tarea. Trabajaremos sobre ella con normalidad, haciendo los commits necesarios y subiéndola a su correspondiente rama remota como hemos venido haciendo hasta ahora con `master`.
+Cuando tenemos una tarea nueva (modificar o crear contenido, por ejemplo) crearemos una nueva rama solo para dicha tarea. Trabajaremos sobre ella con normalidad, haciendo los commits necesarios y subiéndola a su correspondiente rama remota como hemos venido haciendo hasta ahora con `master`.
 
 Recordad que usaremos `git push origin nombre-de-la-rama`
 
@@ -199,7 +199,12 @@ La mecánica del Pull Request no es propia de git sino de quién da el servicio 
 
 #### EJERCICIO 5
 
-Vamos a hacer un Pull Request con revisión de código en vivo. Para ello una voluntaria sale a hacer parte del ejercicio, y el profesor hace la revisión de código en directo.
+Vamos a hacer un Pull Request con revisión de código. Para ello seguimos estos pasos:
+1. una alumna de la pareja crea una nueva rama en el proyecto, hace algunos cambios y hace commit en esa rama
+2. hace un push de la rama local a una remota con el mismo nombre
+3. ella entra en GitHub con su cuenta y crea un nuevo PR de la rama creada a master, y añade como revisora a la otra alumna
+4. la otra alumna de la pareja tiene que revisar el código de la compañera en GitHub, poner algunos comentarios y aprobar/rechazar el PR. Si lo aprueba, puede hacer un merge a master (y borrar la rama)
+5. una vez hecho esto, ambas vuelven en su ordenador a la rama master y hacen un pull para bajar los cambios nuevos
 
 * * *
 
