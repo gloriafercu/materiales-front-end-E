@@ -183,7 +183,7 @@ var age = 35;
 if (age > 30) {
   alert('Tienes más de 30 años'); //Esta línea se ejecuta solo si se cumple la condición
 } else {
-  alert('Como mucho tienes 30 años'); //Esta línea se ejecuta solo si se NO cumple la condición
+  alert('Como mucho tienes 30 años'); //Esta línea se ejecuta solo si NO se cumple la condición
 }
 ```
 
