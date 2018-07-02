@@ -100,7 +100,7 @@ La primera vez usaremos el git push con `-u`.
 	<p>Maquetado en grupo en <a href="http://adalab.es">Adalab</a></p>
 	</footer>
 ```
-2. Como siempre, añadimos, commiteamos y hacemos push, esta vez usando `git push origin footer`.
+2. Como siempre, añadimos, commiteamos y hacemos push, esta vez usando `git push -u origin footer`.
 3. Si ahora cambiamos a la rama `master` veremos que permanece como la dejamos y que el cambio del enlace solo está hecho en nuestra rama `footer`.
 
 ![Resultado de los ejercicios 1 y 2](assets/images/2-6/ramas-1.png)
