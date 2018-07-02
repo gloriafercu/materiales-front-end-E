@@ -26,7 +26,7 @@ El uso de AJAX, por tanto, nos permite acceder a información en un servidor que
 Algunos ejemplos de uso de AJAX que podemos encontrar en una webapp (aplicación web):
 
 - Cuando realizamos una búsqueda de pisos en Airbnb, hacemos una petición AJAX al servidor, y cuando nos devuelve los datos de los pisos lo pintamos en el HTML
-- Cuando en nuestra app de tareas marcamos una tearea como terminada, se envía una petición al servidor para que almacene en base de datos que esa tarea ha sido completada; así, al abrir la app en nuestro móvil aparecerá como completada
+- Cuando en nuestra app de tareas marcamos una tarea como terminada, se envía una petición al servidor para que almacene en base de datos que esa tarea ha sido completada; así, al abrir la app en nuestro móvil aparecerá como completada
 - En GMail, el listado de nuestros correos se obtiene de una petición al servidor; cuando marcamos un correo como leído se envía la info al servidor; o cuando enviamos un correo, éste se envía a un servidor para que lo lleve a su destinatario
 
 En esta sesión aprenderemos también cómo trabajar en casos de asincronía compleja, como por ejemplo:
@@ -131,7 +131,7 @@ fetch('https://dog.ceo/api/breeds/image/random')
   });
 ```
 
-Vamos a ver los cambios respecto al ejemplo anterior de los gatos. En primer lugar, la URL en el `open` cambia para usar la URL de Dog API que nos da una imagen de perro aleatoria. El segundo cambio está en la función del primer `then()` ya uqe en lugar de recoger la respuesta del servidor y convertirla en texto, la convertimos directamente en JSON.
+Vamos a ver los cambios respecto al ejemplo anterior de los gatos. En primer lugar, la URL en el `fetch` cambia para usar la URL de Dog API que nos da una imagen de perro aleatoria. El segundo cambio está en la función del primer `then()` ya que en lugar de recoger la respuesta del servidor y convertirla en texto, la convertimos directamente en JSON.
 
 En el segundo `then` tenemos la información que nos da el servidor convertida en JSON en el parámetro de la función `json`. Así que podemos acceder a su propiedad `message` (que es donde el servidor nos ha dejado la URL de la imagen) y asignamos su valor al atributo `src` de una `img` del HTML.
 
@@ -201,7 +201,7 @@ fetch('https://dog.ceo/api/breeds/list')
   });
 
 ```
-Una de las características principales de las promesas es que nos facilitan encadenas peticiones como en este caso, y el código resultante es muy sencillo. En el código hemos encadenado hasta 4 promesas: 1) petición al servidor de las razas, 2) convertir a JSON la respuesta, 3) segunda petición de la foto de una raza y convertir la segunda respuesta a JSON. Como hemos indicado antes, es importante que al final de los `then()` devolvamos una promesa para pasar los datos al siguiente `then()`. Así que en el segundo `then()` tenemos que devolver una promesa, es decir, el resultado del `fetch`.
+Una de las características principales de las promesas es que nos facilitan encadenar peticiones como en este caso, y el código resultante es muy sencillo. En el código hemos encadenado hasta 4 promesas: 1) petición al servidor de las razas, 2) convertir a JSON la respuesta, 3) segunda petición de la foto de una raza y convertir la segunda respuesta a JSON. Como hemos indicado antes, es importante que al final de los `then()` devolvamos una promesa para pasar los datos al siguiente `then()`. Así que en el segundo `then()` tenemos que devolver una promesa, es decir, el resultado del `fetch`.
 
 ***
 

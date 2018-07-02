@@ -86,7 +86,7 @@ Otros ejemplos de uso podrían ser cerrar la sesión de una web transcurridos X 
 
 En JavaScript podemos crear código para que se ejecute cada determinado tiempo, para ello utilizamos `setInterval()`.
 
-Esta función recibe 2 parámetro:
+Esta función recibe 2 parámetros:
 - la función a ejecutar cada cierto tiempo (sin paréntesis como hacíamos en el addEventListener)
 - el tiempo en milisegundos
 
