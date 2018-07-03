@@ -15,7 +15,7 @@
 
 En esta sesión vamos a tratar 2 temas diferentes: 1) las APIs, concepto que ya conocemos, pero vamos a entender un poco mejor cómo funcionan; y 2) el linter, una herramienta que nos ayuda a mejorar nuestro código JavaScript.
 
-*API* viene de *Application Programming Interface*, es decir, es una interfaz que está pensada para ser accedida desde una aplicación de código. Dicho de otra forma, el servidor define una forma de pedirle datos que está pensado para que sea una aplicación (un programa) quien los pida y él sepa enviárselos. Hay otra interfaces, como una página web, que están pensadas para ser usadas por personas. Pero las APIs están pensadas para ser usadas desde la programación, en nuestro caso desde nuestro programa JavaScript. Durante esta sesión vamos a ver varios ejemplos de APIs.
+*API* viene de *Application Programming Interface*, es decir, es una interfaz que está pensada para ser accedida desde una aplicación de código. Dicho de otra forma, el servidor define una forma de pedirle datos, pensada para que sea una aplicación (un programa) quien los pida y él sepa enviárselos. Hay otra interfaces, como una página web, que están pensadas para ser usadas por personas. Pero las APIs están pensadas para ser usadas desde la programación, en nuestro caso desde nuestro programa JavaScript. Durante esta sesión vamos a ver varios ejemplos de APIs.
 
 Un *linter* es una herramienta que nos sirve para prevenir errores y nos ayuda a mantener un estilo homogéneo en nuestro código. Veremos cómo usar un linter para JavaScript llamado *ESLint* y cómo integrar los mensajes que nos manda en nuestro editor de código, en este caso Atom.
 
@@ -36,22 +36,22 @@ Utilizaremos un linter en un entorno de trabajo donde varias personas estamos tr
 
 ## El mundo de las APIs
 
-Como ya hemos dicho, las APIs son la forma en que desde un programa (en nuestro caso un código JavaScript en el front-end) podemos acceder a datos en un servidor web, que están en un back-end (un servidor, es decir, un ordenador conectado a Internet). En el back-end normalmente tendremos un programa ejecutándose, que podría estar escrito en distintos lenguajes de programación (PHP, python, ruby, o incluso JavaScript), y que tiene acceso a una base de datos (una base de datos es un tipo especial de programa que sirve para almacenar datos y poder consultarlos). Pero a nosotros nos da igual el lenguaje de programación en que esté escrito el back-end, lo que nos importa es que **podemos interactuar con él a través de una URL**.
+Como ya hemos dicho, las APIs son la forma en que desde un programa (en nuestro caso un código JavaScript en el front-end) podemos acceder a datos en un servidor web, que están en un back-end (un servidor, es decir, un ordenador conectado a Internet). En el back-end normalmente tendremos un programa ejecutándose, que podría estar escrito en distintos lenguajes de programación (PHP, python, ruby, Node...), y que tiene acceso a una base de datos (una base de datos es un tipo especial de programa que sirve para almacenar datos y poder consultarlos). Pero a nosotros nos da igual el lenguaje de programación en que esté escrito el back-end, lo que nos importa es que **podemos interactuar con él a través de una URL**.
 
-Como hemos visto en la sesión anterior, haciendo una petición con `fetch` a una URL del servidor conseguíamos obtener datos, desde fotos de gatos hasta los repos de una organización en GitHub. Por tanto el servidor de una aplicación web (página web que maneja datos dinámicos) tiene establecida una API, es decir, un conjunto de URLs especiales con las que podemos interactuar desde nuestro programa para consultar y almacenar datos. Estas URLs no están escogidas al azar sino que siguen una serie de convenciones a la hora de crearse. La convención más usada para la creación de APIs se llama REST (*REpresentational State Transfer*) por eso muchas veces oiremos hablar de **APIs REST**. La convención que define REST está basada en HTTP, el protocolo de comunicación entre los ordenadores de la web (la World Wide Web - WWW). Estos dos acrónimos seguro que nos suenan mucho porque los escribimos millones de veces al escribir un URL en nuestro navegador web.
+Como vimos en la sesión anterior, haciendo una petición con `fetch` a una URL del servidor conseguíamos obtener datos, desde fotos de gatos hasta los repos de una organización en GitHub. Por tanto el servidor de una aplicación web (página web que maneja datos dinámicos) tiene establecida una API, es decir, un conjunto de URLs especiales con las que podemos interactuar desde nuestro programa para consultar y almacenar datos. Estas URLs no están escogidas al azar sino que siguen una serie de convenciones a la hora de crearse. La convención más usada para la creación de APIs se llama REST (*REpresentational State Transfer*) por eso muchas veces oiremos hablar de **APIs REST**. La convención que define REST está basada en HTTP, el protocolo de comunicación entre los ordenadores de la web (la World Wide Web - WWW). Estos dos acrónimos seguro que nos suenan mucho porque los escribimos millones de veces al escribir un URL en nuestro navegador web.
 
 ### Un poquito de HTTP
 
 Las máquinas que están conectadas a Internet para entenderse entre ellas utilizan un protocolo, es decir, una forma estándar de enviarse información para poder entenderse. HTTP viene de *Hyper Text Transfer Protocol*, en español protocolo para transferencia de hiper-texto, es decir, para que las máquinas intercambien información entre ellas más allá del simple texto (texto, imágenes, videos, etc).
 
-La forma de funcionar de HTTP es mediante **petición y respuesta**. Un ordenador hace una petición (el que llamamos cliente, en nuestro caso el navegador) y otro ordenador (el que llamamos servidor) recibe esa petición, la procesa (hace cosas) y envía de vuelta una respuesta.
+La forma de funcionar de HTTP es mediante **petición y respuesta**. Un ordenador hace una petición (el que llamamos cliente, en nuestro caso desde navegador) y otro ordenador (el que llamamos servidor) recibe esa petición, la procesa (hace cosas) y envía de vuelta una respuesta.
 
 La **petición**, como hemos visto en los ejemplos de la sesión anterior, siempre lleva asociada una URL que indica dónde está el servidor y el tipo de datos que le pedimos. Por ejemplo la URL `https://thecatapi.com/api/images/get?format=html` de una petición a catAPI nos muestra que
 - el servidor del API está en `https://thecatapi.com/api/` (se le llama normalmente *URL base*)
-- el servicio (tipo de datos que pedimos) que accedemos es `images/get` nos da una imagen de gato aleatoria
-- los parámetros `?format=html` (también llamado *querystring*) indica que el formato de la respuesta que queremos el de tipo HTML
+- el servicio (tipo de datos que pedimos) al que accedemos es `images/get` y nos da una imagen de gato aleatoria
+- los parámetros `?format=html` (también llamado *querystring*) indican que el formato de la respuesta que queremos es de tipo HTML
 
-La petición HTTP también tiene asociado un *método* que indica la *intención* con la que hacemos la petición. Los métodos más usados son *GET* y *POST*. *GET* lo usamos para decir al servidor que esa petición es para consultar datos que él ya tiene, como por ejemplo las fotos de gatos. *POST* lo usamos para enviar nosotros datos al servidor. Si recordáis estos mismo métodos los podíamos definir para el método de envío de un formulario HTML que sirve para enviar datos al servidor. Existen otros métodos HTTP menos conocidos, por ejemplo, *PUT* y *PATCH* sirven para actualizar datos ya existentes en el servidor, y *DELETE* sirve para borrar datos.
+La petición HTTP también tiene asociada un *método* que indica la *intención* con la que hacemos la petición. Los métodos más usados son *GET* y *POST*. *GET* lo usamos para decir al servidor que esa petición es para consultar datos que él ya tiene, como por ejemplo las fotos de gatos. *POST* lo usamos para enviar nosotros datos al servidor. Si recordáis estos mismo métodos los podíamos definir para el método de envío de un formulario HTML que sirve para enviar datos al servidor. Existen otros métodos HTTP, por ejemplo, *PUT* y *PATCH* sirven para actualizar datos ya existentes en el servidor, y *DELETE* sirve para borrar datos.
 
  El método HTTP junto a la URL es lo que define la acción que queremos realizar en el servidor según la convención de REST. Aquí vemos algunos ejemplos de un API para manejar información de usuarios:
 - petición `GET` a la URL `/users`: el servidor devuelve un listado (array) de usuarios
@@ -63,13 +63,13 @@ Otra característica habitual de un API REST es que cuando accedo a un listado d
 ***
 #### EJERCICIO 1
 
-Vamos a explorar [un API abierto de información sobre el mundo Star Wars](https://swapi.co/). En esta página tenemos la documentación completa del API y formulario que nos permite hacer peticiones a la URL que indiquemos. Identifica la siguiente información sobre SWAPI:
+Vamos a explorar [un API abierto de información sobre el mundo Star Wars](https://swapi.co/). En esta página tenemos la documentación completa del API y un formulario que nos permite hacer peticiones a la URL que indiquemos. Identifica la siguiente información sobre SWAPI:
 - la URL base del API
 - si necesita autenticación
-- método HTTP deben usar las peticiones a este API
+- método HTTP que deben usar las peticiones a este API
 - URL para acceder a la info del personaje "Luke Skywalker"
 - URL para acceder a la info de la película "A New Hope"
-- qué otros recursos puedo acceder desde el API además de personajes y pelis
+- a qué otros recursos puedo acceder desde el API además de personajes y pelis
 - URL para acceder al listado de personajes, ¿está paginada?
 - cómo puedo buscar personajes mediante la URL
 - cómo puedo hacer que el JSON de una petición se me devuelva traducido a Wookiee
@@ -97,7 +97,7 @@ Pues porque las APIs normalmente requieren de una *autenticación*, es decir, qu
 
 ***
 
-La **respuesta** HTTP que viene del servidor tiene más información además de los datos que le hemos pedido. Uno de ellos es código del estado de la respuesta, en inglés *HTTP status code*. Existe un estándar definido para saber qué indica este código, y los principales son:
+La **respuesta** HTTP que viene del servidor tiene más información además de los datos que le hemos pedido. Uno de ellos es el código del estado de la respuesta, en inglés *HTTP status code*. Existe un estándar definido para saber qué indica este código, y los principales son:
 - 200: las respuestas con código 2xx (doscientos y lo que sea) indican que la petición ha ido bien (OK)
 - 400: las respuestas con código 4xx (cuatrocientos y pico) indican que ha sucedido un error en la petición; por ejemplo, que el usuario no ha enviado todos los datos que el servidor necesita, o que no está autorizado a acceder a a ese servicio
 - 500: las respuestas con código 5xx (quinientos y pico) indican que el servidor ha tenido un error (¿os suena la ballena de Twitter? 😜)
@@ -120,7 +120,7 @@ En la página de SWAPI o en la que habéis creado en el ejercicio 2 inspecciona 
 - el código de la respuesta (recuerda que 200 es OK)
 - en las cabeceras de la petición busca una llamada `user-agent`, ¿qué puedes decir de su contenido?
 - la respuesta del servidor en JSON
-- al recargar la página aparecen un montón de peticiones en la pestaña Network, ¿sabrías filtrar solo las que son de AJAX? Pista: ante de `fetch` las peticiones se hacían con el objeto `XMLHttpRequest` (XHR)
+- al recargar la página aparecen un montón de peticiones en la pestaña Network, ¿sabrías filtrar solo las que son de AJAX? Pista: antes de `fetch` las peticiones se hacían con el objeto `XMLHttpRequest` (XHR)
 
 ***
 
@@ -132,7 +132,7 @@ Hasta ahora, la única fuente de datos que hemos usado es un API en el servidor,
 
 Usar el LocalStorage es bastante sencillo: solo necesitamos un nombre (clave) y unos datos (valor).
 
-Para guardar datos es tan sencillo como usar `setItem` cuyo primer parámetro es el nombre que le ponemos a los datos y luego los datos que queremos guardar, que pueden ser de cualquier tipo (cadena, número, booleano). Por ejemplo:
+Para guardar datos es tan sencillo como usar `setItem` cuyo primer parámetro es el nombre que le ponemos a los datos y luego los datos que queremos guardar, que pueden ser de cualquier tipo primitivo (cadena, número, booleano). Por ejemplo:
 
 ```js
 localStorage.setItem('name', 'Ana');
@@ -184,7 +184,7 @@ Sobre el ejercicio 2 vamos a *cachear* las búsquedas al servidor. De forma que 
 
 Un linter es una herramienta que nos ayuda a prevenir errores y tener un formato homogéneo en nuestro código. Existen linters para varios lenguajes de programación, pero aquí veremos ESLint que es un linter para JavaScript.
 
-En un linter definimos una serie de reglas en un fichero de configuración que son las que queremos comprobar en el código. Luego el programador que usa un linter ejecutará esas reglas, normalmente el propio editor (Atom) lo hace por ti, y si no se cumplen te mostrará un error o un warning (aviso).
+En un linter definimos una serie de reglas en un fichero de configuración que son las que queremos comprobar en el código. Luego el programador que usa un linter ejecutará esas reglas, normalmente el propio editor (Atom o Code) lo hace por ti, y si no se cumplen te mostrará un error o un warning (aviso).
 
 Hemos creado una configuración específica de linter para vosotras, adalabers, porque queremos que os ayude a detectar algunos errores y a escribir código con un estilo correcto. Algunas de estas reglas son:
 - da error si no se pone `;` al final de una sentencia
@@ -195,8 +195,11 @@ Hemos creado una configuración específica de linter para vosotras, adalabers, 
 Para usarlo en un proyecto, tenéis que
 - descargar el fichero de configuración `.eslintrc.json` de [este repositorio](https://github.com/Adalab/linter-adalab)
 - instalar ESLint de forma global mediante `npm install -g eslint`
-- en el editor (Atom) tenemos instalado el plugin `linter-eslint` y activa la opción `Use Global Eslint`
-- una vez configurado, al abrir un fichero JS en Atom nos aparecen los errores y warnings, y para los errores solucionables, un botón para resolverlo.
+- en el editor Atom instalar el plugin `linter-eslint` y activa la opción `Use Global Eslint`
+- en el editor Code instalar el plugin `ESLint`.
+- una vez configurado, al abrir un fichero JS nos aparecen los errores y warnings.
+- En Atom para los errores solucionables, aparecerá un botón para resolverlo.
+- En Code, si abrimos la paleta de comando (Ctrl + Shift + p) y escribimos `> ESLint`, nos aparecerán las opciones disponibles, una de ellas nos permite arreglar todos los errores solucionables.
 
 ![Linter Atom](assets/images/2-12/linter-atom.png)
 
