@@ -44,7 +44,7 @@ Vamos a ver algunos de estos métodos y descubriremos su utilidad usando ejemplo
 
 El método `map` nos permite aplicar una función a todos los elementos de un array y devuelve otro array de la misma longitud con los resultados de aplicar esa función sobre cada elemento.
 
-Vamos a ver cómo usarlo. [En este ejemplo](https://codepen.io/adalab/pen/wppeQx?editors=0011), partimos de un array con nombres `names` y queremos obtener otro array con los nombres en mayúscula `capitalNames`:
+Vamos a ver cómo usarlo. [En este ejemplo en codepen](https://codepen.io/adalab/pen/wppeQx?editors=0011), partimos de un array con nombres `names` y queremos obtener otro array con los nombres en mayúscula `capitalNames`:
 
 ```js
 var names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
@@ -57,7 +57,7 @@ for (var i = 0; i < names.length; i++) {
 
 console.log(capitalNames);
 ```
-En el bucle, simplemente llamamos a la función `toUpperCase` sobre cada elemento del array de forma que la cadena se convierte en mayúsculas. Después, sólo metemos el resultado en el array de resultados `capitalNames` usando `push`.
+En el bucle, simplemente llamamos a la función `toUpperCase` sobre cada elemento del array de forma que la cadena se convierte en mayúsculas. Después, sólo metemos el resultado en un nuevo array al que hemos llamado `capitalNames`, usando `push`.
 
 Ahora vamos a ver cómo [realizar esto mismo usando `map`](https://codepen.io/adalab/pen/gooREe?editors=0011):
 
@@ -80,7 +80,7 @@ En este caso ejecutamos el método `map` sobre el array de nombres `names`. A `m
 
 **Inflar las notas**
 
-¡Ya tenemos las notas  del examen! Los profes, como somos así, las hemos metido en un array: `var marks = [5, 4, 6, 7, 9];`. Casi todo el mundo lo ha hecho bastante bien pero... vamos a hacer un poco de trampa :) Vamos a modificar las notas de todas para añadirles 1 punto, ¿no? Pues usemos nuestro reciente amigo `map` para crear un nuevo array `inflatedMarks` con las notas modificadas. Finalmente, mostraremos en la consola las notas modificadas para ver que funciona correctamente. ¡Al lío!
+¡Ya tenemos las notas  del examen! Los profes, como somos así, las hemos metido en un array: `var marks = [5, 4, 6, 7, 9];`. Casi todo el mundo lo ha hecho bastante bien pero... vamos a hacer un poco de trampa de la buena :) Vamos a modificar las notas de todas para añadirles 1 punto, ¿no? Pues usemos nuestro reciente amigo `map` para crear un nuevo array `inflatedMarks` con las notas modificadas. Finalmente, mostraremos en la consola las notas modificadas para ver que funciona correctamente. ¡Al lío!
 
 ***
 
@@ -98,7 +98,9 @@ Estamos creando una aplicación web, y lo primero que queremos hacer es saludar 
 
 Seguimos desarrollando nuestra aplicación web que romperá el mercado. Pero antes, queremos agradecer a nuestros usuarios premium (de pago) su ayuda en el saludo de la aplicación. Por tanto, a los usuarios premium queremos saludarles así *'Bienvenida Yolanda. Gracias por confiar en nosotros.'*, y mantener el saludo simple *'Bienvenida Yolanda'* para el resto de usuarios.
 
-Vamos a partir de este array con el listado de usuarios que incluye tanto su nombre como si son usuarios premium o no. ¿Podremos hacerlo con `map`?
+Vamos a partir de este array con el listado de usuarios que incluye tanto su nombre como si son usuarios premium o no. 
+
+Tenemos que crear un nuevo array con los saludos. ¿Podremos hacerlo con `map`?
 
 ```js
 var users = [
@@ -196,7 +198,7 @@ var users = [
 
 El método `reduce` es un método funcional complejo que nos permite realizar cálculos o acciones que requieran utilizar varios elementos de un array. A diferencia de `map` o `filter` el resultado de `reduce` no es un array sino un valor del tipo que queramos. Se basa en aplicar una función a todos los elementos de un array (como las anteriores) y se va trabajando con resultados parciales hasta que se llega al resultado final. Se usa cuando queremos obtener un resultado que depende de varios de los elementos del array, por ejemplo, calcular la media de un listado de números.
 
-Vamos a empezar con un [ejemplo de la sesión 2.5 sobre arrays](../sprint_2/2_5_arrays.md) que calcula la suma de un listado de números:
+Vamos a empezar con un [ejemplo de la sesión 2.5 sobre arrays](../sprint_2/2_7_arrays.md#user-content-iterando-sobre-los-elementos-de-un-array) que calcula la suma de un listado de números:
 
 ```js
 var scores = [4, 2, 7, 8, 6, 7, 9, 1, 2, 6, 7];
@@ -223,9 +225,9 @@ var result = scores.reduce(function(acc, number){
 console.log(result);
 ```
 
-En este caso ejecutamos el método `reduce` sobre el array `scores` y le pasamos como parámetros 1) una función y 2) un valor.
+En este caso ejecutamos el método `reduce` sobre el array `scores` y le pasamos como parámetros 1) una función y 2) un valor inicial.
 
-1) La función se ejecuta por cada elemento del array y toma como parámetros: a) un *acumulador* `acc`, que acumula el resultado de un elemento al siguiente; y b) el elemento del array, por ejemplo, 4.
+1) La función se ejecuta por cada elemento del array y toma como parámetros: a) un *acumulador* `acc`, que acumula el resultado de un elemento al siguiente; y b) el elemento del array, por ejemplo, el en la primera vuelta será el de índice 0 cuyo valor es 4.
 
 2) El valor segundo parámetro, en este caso `0`, es el valor inicial del acumulador.
 
