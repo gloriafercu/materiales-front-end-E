@@ -12,7 +12,7 @@
 
 ## Introducción
 
-A medida que vamos aprendiendo más y más JavaScript, es necesario que vayamos profundizando en conceptos un poco más técnicos pero que es fundamental que entendamos. Estos conceptos nos ayudarán a entender cómo funciona JavaScript a más bajo nivel y nos harán que captemos mejor el funcionamiento de un código y, por tanto, sepamos resolver mejor los errores que se producen y creemos un código más estable y mejor estructurado.
+A medida que vamos aprendiendo más y más JavaScript, es necesario que vayamos profundizando en conceptos un poco más técnicos pero que es fundamental que entendamos. Estos conceptos nos ayudarán a entender cómo funciona JavaScript a más bajo nivel y harán que captemos mejor el funcionamiento de un código y, por tanto, sepamos resolver mejor los errores que se producen y creemos un código más estable y mejor estructurado.
 
 En esta sesión veremos, en primer lugar, qué es el ámbito (scope) de las variables y funciones y aprenderemos a fondo cómo funciona para tenerlo en cuenta a la hora de ver dónde declarar variables y funciones en nuestro código.
 
@@ -66,17 +66,17 @@ JavaScript en este caso realiza los siguientes pasos:
 1. Al ejecutar la función `sayHello` y por tanto el código que contiene, se crea una variable `greeting` en el ámbito de la función `sayHello`
 1. Se ejecuta el `console.log`, en este caso como le hemos pasado como argumento la variable `greeting`, buscará esa variable en el ámbito más próximo y utilizará el valor que almacena
 
-Bien, la clave en estos pasos reside en una palabra, ámbito. Hemos hablado de ámbito de la función, ámbito global y ámbito más próximo, pero ¿qué es el ámbito?. En JavaScript, el ámbito se encarga de llevar la lista de todas las variables y funciones declaradas y define una serie de reglas que establecen si esas variables son accesibles en el momento de ejecutar un código. Dentro de nuestro código podremos tener distintos ámbitos, cada uno con una serie distinta de variables a las que podemos acceder.
+Bien, la clave en estos pasos reside en una palabra, ámbito. Hemos hablado de ámbito de la función, ámbito global y ámbito más próximo, pero ¿qué es el ámbito?. En JavaScript, el ámbito (o scope) se encarga de llevar la lista de todas las variables y funciones declaradas y define una serie de reglas que establecen si esas variables son accesibles en el momento de ejecutar un código. Dentro de nuestro código podremos tener distintos ámbitos, cada uno con una serie distinta de variables a las que podemos acceder.
 
 En JavaScript, la única forma de generar un nuevo ámbito es creando una función. Dentro de esta todo lo que definamos (variables o funciones) estará encapsulado y solo se podrá acceder desde dentro de la función, desde su ámbito, fuera de este será como si no existiese.
 
->NOTA: en realidad es mentira que la única forma de crear un nuevo ámbito en JavaScript es a través de las funciones. Existe otra manera para crear un nuevo ámbito en la versión que estamos utilizando de JavaScript pero no la vamos a ver en este curso. Sí que veremos más adelante, una nueva forma de crear ámbitos en la nueva versión de JavaScript, pero por el momento pensemos que solo se puede generar un nuevo ámbito usando funciones.
+>NOTA: en realidad no es 100% cierto que la única forma de crear un nuevo ámbito en JavaScript es a través de las funciones. Existe otra manera para crear un nuevo ámbito en la versión que estamos utilizando de JavaScript pero no la vamos a ver en este curso. Sí que veremos más adelante, una nueva forma de crear ámbitos en la nueva versión de JavaScript, pero por el momento pensemos que solo se puede generar un nuevo ámbito usando funciones.
 
 Por lo tanto, cada vez que creemos una nueva función estaremos generando a la par un nuevo ámbito. Todo lo que esté fuera de funciones y se defina directamente en el código, pertenecerá al denominado ámbito global, que es el que engloba todo nuestro código y es accesible desde cualquier parte.
 
 Como esto puede ser un poco lioso, vamos a ilustrar cuáles serían los ámbitos en el ejemplo anterior, cómo funcionan y cómo se modifican en cada paso.
 
-Bien, volviendo a los pasos anteriores, vamos a ilustrar cada uno de ellos para ver que sucede en cada uno de ellos:
+Bien, volviendo a los pasos anteriores, vamos a ilustrar cada uno de ellos para ver que sucede:
 
 ### 1. Genera la variable `greeting` en el ámbito global y posteriormente le asigna `Hola`
 
@@ -257,7 +257,7 @@ Como se puede ver, lo que hace básicamente es mover las declaraciones de funcio
 Saber esto nos ayuda a entender varias cosas:
 
 - Las funciones siempre se van a mover arriba, por lo que da igual dónde las declaremos (antes o después de usarlas) siempre podremos usarlas donde queramos
-- Las declaración de variables siempre se "mueve" arriba, pero la asignación no. Debemos tener cuidado de siempre crear y asignar una variable antes de usarla
+- Las declaraciones de variables siempre se "mueven" arriba, pero las asignación no. Debemos tener cuidado de siempre crear y asignar una variable antes de usarla
 - JavaScript realiza una serie de operaciones antes de ejecutar el código, estas le facilitan el trabajo y optimizan la ejecución del código
 
 * * *
