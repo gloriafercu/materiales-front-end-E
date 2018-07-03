@@ -11,11 +11,11 @@
 
 ## Introducción
 
-En esta sesión vamos a profundizar en algunos conceptos avanzados de JavaScript. En primer lugar exploraremos el contexto de las funciones y qué representa el `this` que ya hemos visto en alguna ocasión. También veremos cómo se trabaja con objetos en JavaScript, cómo crearlos y definir prototipos para que tener datos y comportamientos compartidos entre varios objetos.
+En esta sesión vamos a profundizar en algunos conceptos avanzados de JavaScript. En primer lugar exploraremos el contexto de las funciones y qué representa `this` que ya hemos visto en alguna ocasión. También veremos cómo se trabaja con objetos en JavaScript, cómo crearlos y definir prototipos para tener datos y comportamientos compartidos entre varios objetos.
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-En una aplicación web sencilla como las que hemos hecho hasta ahora, tenemos variables y funciones en el ámbito global y se trabaja sin ningún problema. Pero cuando el código empieza a crecer, puede convertirse en algo inmanejable hacer algún cambio (por ejemplo, ¿dónde estaba la función de callback de este botón?). Para estructurar mejor nuestro código JS tenemos la posibilidad de trabajar con objetos. Los objetos al final son abstracciones de objetos del mundo real, que tienen
+En una aplicación web sencilla como las que hemos hecho hasta ahora, tenemos variables y funciones en el ámbito global y se trabaja sin ningún problema. Pero cuando el código empieza a crecer, hacer algún cambio puede convertirse en algo inmanejable (por ejemplo, ¿dónde estaba la función de callback de este botón?). Para estructurar mejor nuestro código JS tenemos la posibilidad de trabajar con objetos. Los objetos al final son abstracciones de objetos del mundo real, que tienen
 - **atributos**, que son datos del cualquier tipo: cadenas, números, arrays, booleanos, objetos, etc.
 - **métodos**, que establecen comportamientos y son funciones
 
@@ -143,7 +143,7 @@ En la función constructora almacenamos los parámetros de texto e icono, pero e
 
 Luego definimos un método `render` que accede a ese elemento del DOM (el `<button>`) y modifica su contenido para meter el text y el icono.
 
-Finalmente definimos 2 nuevos objetos botón, uno de favorito y otro de compartir, para comprobar que funciona como esperamos.
+Finalmente definimos 2 nuevos objetos botón, uno de favorito y otro de compartir, y ejecutamos sus metodos `render` respectivamente, para comprobar que funciona como esperamos.
 
 ***
 
@@ -172,7 +172,7 @@ Partiendo del ejercicio anterior, vamos a añadir un nuevo atributo a los botone
 
 Vamos a ver un segundo ejemplo de uso de objetos: [un carrusel de imágenes](https://codepen.io/adalab/pen/qpxoJO).
 
-En la parte de JS empezamos creando una función constructora `Carousel` que toma dos parámetros: un selector CSS para acceder a la imagen y un array de `sources` que es un array con el listado de URL de las imágenes a mostrar en el carrusel. En el constructor definimos un atributo `current` que representa el estado actual del carrusel, es decir, qué imagen está siendo mostrada en este momento por medio de un índica. Empezaremos con el índice 0 para empezar con la primera foto del array. También definimos un parámetro `sources` para almacenar el array de imágenes. Y un tercer atributo `img` donde guardamos directamente la referencia a la imagen en el DOM. También definimos un método `render` que se encarga de modificar la imagen del DOM y asignarle como `src` la imagen del array `sources` en el índice `current`, es decir, la primera imagen del array.
+En la parte de JS empezamos creando una función constructora `Carousel` que toma dos parámetros: un selector CSS para acceder a la imagen y un array de `sources` que es un array con el listado de URL de las imágenes a mostrar en el carrusel. En el constructor definimos un atributo `current` que representa el estado actual del carrusel, es decir, qué imagen está siendo mostrada en este momento por medio de un índice. Empezaremos con el índice 0 para seleccionar con la primera foto del array. También definimos un parámetro `sources` para almacenar el array de imágenes. Y un tercer atributo `img` donde guardamos directamente la referencia a la imagen en el DOM. También definimos un método `render` que se encarga de modificar la imagen del DOM y asignarle como `src` la imagen del array `sources` en el índice `current`, es decir, la primera imagen del array.
 
 ```js
 function Carousel(imgSelector, sources) {
@@ -211,7 +211,7 @@ Con nuestro objeto ya creado, vamos a crear un par de carruseles para probarlo. 
 
 En la parte de JavaScript definimos un array `cats` con el listado de imágenes de gatos que queramos. Luego creamos un nuevo objeto carrusel `catCarousel` que toma como parámetro el selector de la imagen '.cat' y el array de imágenes `cats`. Luego llamamos a `render` para mostrar la primera imagen.
 
-Ya solo nos falta hacer que al clickar en los botones el carrusel pase a la siguiente imagen o a la previa. Para eso usamos nuestro viejo conocido `addEventListener` y en el evento 'click' le pedimos que ejecute la función correspondiente (`prev` o `next`) de nuestro objeto `catCarousel`. Pero tenemos uno de esos problemas raros de contexto que mencionábamos antes que se solucionan con `bind` ya que no somos nosotros quiénes llamamos a la función `catCarousel.next()` sino que es el navegador quien la llama cuando sucede el evento (es un callback). Así que pasamos a `bind` el objeto `catCarousel` para que sea el `this` dentro de esta función cuando el navegador la ejecute.
+Ya solo nos falta hacer que al clickar en los botones el carrusel pase a la siguiente imagen o a la previa. Para eso usamos nuestro viejo amigo `addEventListener` y en el evento 'click' le pedimos que ejecute la función correspondiente (`prev` o `next`) de nuestro objeto `catCarousel`. Pero tenemos uno de esos problemas raros de contexto que mencionábamos antes que se solucionan con `bind` ya que no somos nosotros quiénes llamamos a la función `catCarousel.next()` sino que es el navegador quien la llama cuando sucede el evento (es un callback). Así que pasamos a `bind` el objeto `catCarousel` para que sea el `this` dentro de esta función cuando el navegador la ejecute.
 
 ```js
 var cats = [  ]; // Cat images
