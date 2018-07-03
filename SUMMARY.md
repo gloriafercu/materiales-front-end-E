@@ -46,6 +46,7 @@
 
 * [Proyecto 1. Web grupal](proyectos/P1_proyecto_sprint_1.md)
 * [Proyecto 2. Awesome profile-cards](proyectos/P2_proyecto_sprint_2.md)
+* [Anexo. Documentación del API de Awesome Profile Cards](proyectos/P2_anexo.md)
 * [Anexo. Diseña tu web desde cero](proyectos/P1_anexo_diseno.md)
 
 <!-- ## Evaluaciones

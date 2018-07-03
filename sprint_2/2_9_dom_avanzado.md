@@ -22,7 +22,7 @@ En cuanto a rendimiento, hasta ahora cuando utilizábamos `innerHTML` lo que hac
 2. Crear cada uno de los elementos HTML en el momento
 3. Añadir esos elementos como contenido a un elemento del DOM (un `p`, un `div` lo que fuese)
 
-Con lo que vamos a ver en esta sesión el primer paso de parsear el texto no será necesario porque no utilizaremos texto para crear componentes sino JavaScript, lo cual reducirá drásticamente el tiempo que tarda en ejecutarse el código y, por tanto, mejorará el rendimiento de nuestra aplicación. Esto en pequeñas apps no va a ser fundamental pero en aplicaciones más grandes y complejas que requieren de pintar muchos elementos es clave para que no se note un retardo a medida que utilizamos las web.
+Con lo que vamos a ver en esta sesión el primer paso de parsear el texto no será necesario porque no utilizaremos texto para crear componentes sino JavaScript, lo cual reducirá drásticamente el tiempo que tarda en ejecutarse el código y, por tanto, mejorará el rendimiento de nuestra aplicación. Esto en pequeñas apps no va a ser fundamental pero en aplicaciones más grandes y complejas que requieren de pintar muchos elementos es clave para que no se note un retardo a medida que utilizamos las webs.
 
 Además en esta sesión veremos cómo crear elementos por un lado y posteriormente añadirlos al DOM, es decir, con `innerHTML` se creaban (se convertía el texto en componentes HTML) y se añadían en el momento. Con lo que vamos a ver en esta sesión seremos capaces de crearlos antes y simplemente añadirlos, con lo cual en el momento de añadirlos solo se realizará un paso, porque tendremos creados previamente los componentes. Para ejemplificar esto, imaginemos que tenemos un código JavaScript que al pulsar en un botón añade tres párrafos a la página, si lo hago con `innerHTML`, en el momento que pulso el botón se convierte el texto de `innerHTML` en tres párrafos y se añaden. Si por el contrario lo hacemos con la alternativa que planteamos en esta sesión, podremos crear los párrafos en el elemento en el momento en el que se empieza a ejecutar JavaScript y cuando el usuario pulse el botón lo único que se hará será añadir esos elementos ya creados previamente.
 
@@ -121,8 +121,10 @@ Otra opción que tenemos es crear un elemento con `.createElement()` y añadirle
 // Creamos un elemento nuevo, un <li>
 var newItem = document.createElement('li');
 console.log(newItem); // Devuelve "<li></li>"
+
 // Ahora creamos algo de contenido
 var newContent = document.createTextNode('Item nuevo');
+
 // Y se lo añadimos a nuestro <li>
 newItem.appendChild(newContent);
 console.log(newItem); // Devuelve "<li>Item nuevo</li>"
@@ -133,6 +135,7 @@ Con estos métodos conseguimos un elemento HTML pero todavía tenemos que añadi
 
 ## Añadir elementos al DOM
 Mientras que con `.innerHTML` podríamos inyectar una cadena de texto como HTML a nuestro DOM ahora veremos como añadir elementos como el que hemos creado hace un momento.
+
 ### `.appendChild()` y `.append()`
 Son parecidos y nos permiten añadir elementos a nuestra web, siguiendo el ejemplo de esta sesión vamos a añadir el `<li>` que acabamos de crear:
 ```js
