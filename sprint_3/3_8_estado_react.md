@@ -16,10 +16,12 @@
 
 Hasta ahora hemos usado los componentes prácticamente como plantillas HTML que podemos personalizar con `props`. Declarábamos los componentes y se pintaban. Aunque también hemos visto cómo pueden reaccionar a eventos, en esta sesión iremos un paso más allá y veremos cómo cada componente puede tener una pequeña memoria que le permitirá tener actividad por sí mismo.
 
-También aprenderemos cómo declarar componentes _dummies_ (títeres) con una sintaxis simplificada y asentaremos algunas prácticas para organizar nuestros componentes y aplicaciones.
-
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
+
+El __estado__ de una interfaz son sencillamente los datos que necesitamos para representarla. Por ejemplo, vamos a fijarnos en la interfaz de entrada a GMail. Los datos que necesitamos para poder pintarla son muchos más de los que pensamos a priori. Por un lado, necesitamos los datos concretos de email: el nombre de remitente, asunto, el texto inicial del email y la fecha. Pero también necesitamos conocer si un correo está marcado como favorito para mostrar la estrella rellana o vacía. O, al marcar algún correo con un check, hay opciones nuevas que aparecen. Por tanto, todos estos datos que necesito para poder pintar la interfaz son el estado.
+
+![New GMail cover](assets/images/3_8_new-gmail-web-cover.jpg)
 
 React es especialmente bueno manejando los pequeños cambios que se necesitan en cada uno de los componentes de una web. Cada instancia de un componente tiene un **estado** que refleja cada uno de esos pequeños cambios. React encapsula toda la complejidad y la distribuye en este sistema predecible. Saber utilizar los estados nos permitirá definir cómo se comportarán los componentes en cada momento y declarar _react-ciones_ más elaboradas a según qué interación con el usuario.
 
@@ -168,6 +170,8 @@ Como hemos visto varias veces arriba, React no asegura que los cambios de estado
 
 Un cambio de estado no solo cambia los valores de `this.state`. Lo más importante que hace es **volver a llamar al método `render()`** del componente después. Recordemos que podemos usar valores del estado en nuestro JSX como texto, para calcular otros valores que utilizaremos o como `props` para otros componentes hijo, por ejemplo. Cuando el estado cambia, el componente se tiene que re-`render`izar de nuevo, y si las `props` de los hijos cambian, esos componentes hijos también tienen que re-`render`izarse, y sus hijos a su vez. Así que cambiar el estado es costoso, porque hace que vuelvan a `render`izarse varios componentes **en cadena**.
 
+> **NOTA**: a partir de ahora tenemos que recordar que, para que un componente vuelva a pintarse, es decir, se ejecute su método `render` puede ser por 2 motivos: 1) por un cambio en el estado (`this.state`) o 2) por un cambio en las `props` que le llegan del componente padre.
+
 Ahora podemos entender por qué React no asegura que los cambios de estado ocurran al momento, aunque sean bastante rápidos. Cuando llamamos a `setState()` en cualquiera de sus formas, React registra esa **petición** de cambio de estado y la añade a una cola de tareas por hacer. Para no tener que re-`render`izar componentes demasiadas veces, es posible que agrupe en lotes (_batches_) algunos cambios de estado a la vez y los procese juntos para mejorar con eso el rendimiento. Esto significa que tendremos que pensar **las llamadas a `setState()` como llamadas asíncronas**.
 
 
@@ -188,138 +192,15 @@ this.setState(
 
 El `callback` se ejecutará justo después de que el cambio de estado haya tenido lugar, así que se pueden usar los nuevos valores de `this.state` sin problema.
 
+* * *
 
-## Arquitectura de componentes con estado
+**EJERCICIO 3: CONTADOR DE OVEJAS AVANZADO**
 
-A pesar de que todos los componentes pueden tener estado, a la hora de hacer aplicaciones web con React, preferiremos **agrupar todos los estados en el componente raíz**. El resto de componentes serán _dummies_ (títeres), que significa que no tendrán estado. Podemos referirnos al estado del componente raíz como **estado de la aplicación** o **estado global**.
+Sobre el componente cuentaovejas (`SheepCounter`) del ejercicio anterior, añadimos la funcionalidad de que, además de mostrar el número de ovejas, muestra también la imagen de una oveja. Por ejemplo, si el contador está en 6, además de aparecer el número 6 veremos 6 imágenes de ovejas.
 
-¿Por qué hacemos esto? En los estados guardaremos diferentes datos, algunos de los cuales habremos recibido de servidores: una lista de artículos en venta, sus precios y un booleano de si mostramos el IVA o no, por ejemplo. El mejor sitio para guardar esos datos es siempre el componente raíz, porque es el sitio desde el que cualquier componente hijo podrá acceder a ellos.
+> Podéis usar esta imagen por ejemplo: http://www.clker.com/cliparts/e/4/8/7/13280460782141411990Cartoon%20Sheep.svg.hi.png
 
-¿Y cómo lo haremos? Como vimos en la última sesión, la 4.5, podemos pasar datos de hijos a padres/madres **mediante _lifting_**. Recordemos que la técnica de _lifting_ consistía en pasar una función definida en el padre/madre a un componente hijo mediante las `props`. Esa función puede modificar al padre. Ahora que hemos visto los estados, podemos ver un nuevo uso del _lifting_: **actualizar estados de los padres/madres desde los hijos**.
-
-```js
-const ENDPOINT = 'https://...';
-
-class AppRoot extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      reasonsStore: []
-    }
-
-    this.fetchNewReasons = this.fetchNewReasons.bind(this);
-  }
-
-  fetchNewReasons() {
-    fetch(ENDPOINT)
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({
-          reasonsStore: data.reasons
-        });
-      });
-  }
-
-  render() {
-    const { reasonsStore } = this.state;
-
-    return (
-      <section>
-        <ReasonsList reasons={ reasonsStore } />
-        <UpdateButton updateList={ this.fetchNewReasons } />
-      </section>
-    );
-  }
-}
-
-class UpdateButton extends React.Component {
-  render() {
-    const { updateList } = this.props;
-
-    return (
-      <button onClick={ updateList }>Update reasons</button>
-    );
-  }
-}
-```
-
-[&blacktriangleright; _Lifting_ de estados en Codepen][codepen-lifting-state-up]
-
-
-### BONUS: crear componentes _dummies_ más rápido
-
-Llamamos componente _dummy_ (títere) a los componentes en React que **no tienen ni estado ni comportamiento**. Es decir, lo único de lo que dependerán son las `props` que se les pase, y solo en función de eso se pintarán. Sus cambios serán gestionados por otros componentes superiores que les pasarán esas `props`.
-
-Hasta ahora los hemos escrito como componentes completos para que os familiarizaseis con la sintaxis de clases de React:
-
-```js
-import React from 'react';
-
-class Greetings extends React.Component {
-  render() {
-    return (
-      <h1>Hello, { this.props.name }!</h1>
-    );
-  }
-}
-
-export default Greetings;
-```
-
-Pero React también tiene una manera de escribir estos componentes de manera más sencilla. La idea, sencillamente, es pensar los componentes _dummies_ como funciones que reciben unas `props` como parámetros y devuelven elementos y componentes de JSX:
-
-```js
-import React from 'react';
-
-const Greetings = (props) => {
-  return (
-    <h1>Hello, { props.name }!</h1>
-  );
-};
-
-export default Greetings;
-```
-
-> Estos componentes _dummies_ también se llaman componentes funcionales (_functional components_) o, más específicamente, componentes funcionales sin estado (_stateless functional components_), porque tienen forma de función y carecen de estado.
-
-Aunque parezca difícil, esta sintaxis se puede simplificar aún más. Recordamos que en ES2015 tenemos la habilidad de _destructuring_ de objetos. `props` es un objeto que podemos dividir en variables con los nombres de las `props`, directamente:
-
-```js
-// ...
-const Greetings = (props) => {
-  const { name } = props; // "destructuring" de objeto
-  return (
-    <h1>Hello, { name }!</h1>
-  );
-}
-// ...
-```
-
-Podemos hacer _destructuring_ directamente en los parámetros de una función:
-
-```js
-// ...
-const Greetings = ({ name }) => { // "destructuring" en los parámetros
-  return (
-    <h1>Hello, { name }!</h1>
-  );
-}
-// ...
-```
-
-Y si lo combinamos con el _return_ implícito de las _arrow functions_, queda así:
-
-```js
-// ...
-const Greetings = ({ name }) => ( // "arrow function" sin llaves, con "return" implícito
-  <h1>Hello, { name }!</h1>
-);
-// ...
-```
-
-Hemos reducido la declaración de un componente de siete líneas a tres. Es una práctica común hacerlo al revés: declarar un componente nuevo primero como función, _dummy_, y si más tarde necesita estado o comportamiento, [ampliar su declaración](https://reactjs.org/docs/state-and-lifecycle.html#converting-a-function-to-a-class) a la de un componente de clase completo.
-
+* * *
 
 ## Recursos externos
 
@@ -335,4 +216,4 @@ Documentación oficial de React (en inglés).
 Serie de clases en vídeo que introduce y explora los fundamentos básicos de React (en inglés).
 
 - [Gestión de los estados en los componentes](https://egghead.io/lessons/react-state-basics)
-- [Componentes de orden superior (con lógica) o contenedores](https://egghead.io/lessons/react-react-fundamentals-higher-order-components-replaces-mixins)
+
