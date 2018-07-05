@@ -97,21 +97,19 @@ No solo podemos usar funciones escuchadoras en elementos sueltos de JSX, como he
 
 Es una práctica común declarar **dentro** del componente las _event handlers_ que se usan en el componente. Como los componentes son clases, los _event handlers_ serán **métodos** de la clase, y su nombre suele empezar por `handle` ("encargarse de", en inglés), seguido del nombre del evento. Por ejemplo, un _event handler_ que se ocupe del evento `click` se llamará `handleClick()`.
 
-Vamos a ver un ejemplo. Recordaréis [el componente `RandomCat`][codepen-remembering-randomcat] que creamos en una sesión anterior. Este componente pintaba una foto aleatoria con un gato. Pero algunos días como hoy nos gustan más las pizzas que los gatos, así que haremos un componente `RandomPizza` que pinte una foto aleatoria de una pizza:
+Vamos a ver un ejemplo. Recordaréis [el componente `RandomCat`][codepen-remembering-randomcat] que creamos en una sesión anterior. Este componente pintaba una foto aleatoria con un gato. Pero algunos días como hoy nos gusta más Bill Murray que los gatos, así que haremos un componente `RandomMurray` que pinte una foto aleatoria de Bill:
 
 ```js
-const getRandomInteger = (maxNumber) => Math.floor(Math.random() * maxNumber);
-const NUMBER_OF_PIZZAS = 10;
+const getRandomInteger = (max, min) => Math.floor(Math.random() * (max - min + 1)) + min;
+const MIN_SIZE = 200;
+const MAX_SIZE = 400;
 
-class RandomPizza extends React.Component {
+class RandomMurray extends React.Component {
   render() {
-    const randomPizza = getRandomInteger(NUMBER_OF_PIZZAS);
+    const randomMurray = getRandomInteger(MIN_SIZE, MAX_SIZE);
 
     return (
-      <img
-        src={ `http://lorempizza.com/400/200/${randomPizza}` }
-        alt="Random pizza"
-      />
+      <img src={ `http://www.fillmurray.com/200/${randomMurray}` } alt="Random murray" />
     );
   }
 }
@@ -121,7 +119,7 @@ Lo modificaremos para que, cuando hagamos clic en la imagen, se genere otra imag
 
 ```js
 // ...
-class RandomPizza extends React.Component {
+class RandomMurray extends React.Component {
   handleClick() {
     // method body
   }
@@ -133,18 +131,19 @@ La función que pinta nuestro componente, `render()`, es también la función qu
 
 ```js
 // ...
-class RandomPizza extends React.Component {
+class RandomMurray extends React.Component {
   handleClick(event) {
     this.forceUpdate();
   }
 
   render() {
-    const randomPizza = getRandomInteger(NUMBER_OF_PIZZAS);
+    const randomMurray = getRandomInteger(MIN_SIZE, MAX_SIZE);
 
     return (
       <img
-        src={ `http://lorempizza.com/400/200/${randomPizza}` }
-        alt="Random pizza"
+        src={ `http://www.fillmurray.com/200/${randomMurray}` }
+        alt="Random murray"
+        onClick={ this.handleClick }
       />
     );
   }
@@ -157,7 +156,7 @@ Como nuestro método `handleClick()` contiene un `this` y el método lo ejecutar
 
 ```js
 // ...
-class RandomPizza extends React.Component {
+class RandomMurray extends React.Component {
   constructor(props) {
     super(props);
 
@@ -175,10 +174,11 @@ class RandomPizza extends React.Component {
 Ahora que tenemos nuestro método `handleClick()` declarado y enlazado, podemos registrarlo en el elemento JSX donde queremos escuchar el evento.
 
 ```js
-const getRandomInteger = (maxNumber) => Math.floor(Math.random() * maxNumber);
-const NUMBER_OF_PIZZAS = 10;
+const getRandomInteger = (max, min) => Math.floor(Math.random() * (max - min + 1)) + min;
+const MIN_SIZE = 200;
+const MAX_SIZE = 400;
 
-class RandomPizza extends React.Component {
+class RandomMurray extends React.Component {
   constructor(props) {
     super(props);
 
@@ -190,13 +190,13 @@ class RandomPizza extends React.Component {
   }
 
   render() {
-    const randomPizza = getRandomInteger(NUMBER_OF_PIZZAS);
+    const randomMurray = getRandomInteger(MIN_SIZE, MAX_SIZE);
 
     return (
       <img
-        src={ `http://lorempizza.com/400/200/${randomPizza}` }
-        alt="Random pizza"
-        onClick={ this.handleClick } // asignamos el método como escuchador del evento click
+        src={ `http://www.fillmurray.com/200/${randomMurray}` }
+        alt="Random murray"
+        onClick={ this.handleClick }
       />
     );
   }

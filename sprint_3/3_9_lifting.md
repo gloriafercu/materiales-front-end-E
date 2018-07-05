@@ -22,17 +22,17 @@ Para poder pasar información desde cualquier componente a cualquier otro compon
 
 ## _Lifting_ (alzamiento) para pasar datos de hijos a padres
 
-_Lifting_ es una técnica que consiste en pasar funciones a los hijos/as y que sean estos quienes se encarguen de ejecutarlas cuando sea necesario, provocando un cambio _hacia arriba_, en los padres. Generalmente se usa para cambiar el _estado_ de los padres, que luego provocará un re-`render`izado de los hijos/as con nuevas `props`. Aún no sabemos qué es el estado de un componente ni cómo usarlo, así que de momento utilizaremos `forceUpdate()` para provocar el re-`render`izado manualmente.
+_Lifting_ es una técnica que consiste en pasar funciones a los hijos/as y que sean estos quienes se encarguen de ejecutarlas cuando sea necesario, provocando un cambio _hacia arriba_, en los padres. Generalmente se usa para cambiar el _estado_ de los padres, que luego provocará un re-`render`izado de los hijos/as con nuevas `props`.
 
-Vamos a ver un ejemplo, con pizzas de nuevo. Tenemos tres componentes, `PizzaList`, `RandomPizza` y `ReloadButton`, cada uno en su módulo. `PizzaList` renderiza una lista con tres componentes `RandomPizza`, y además un botón `ReloadButton`:
+Vamos a ver un ejemplo, con Murrays de nuevo. Tenemos tres componentes, `MurrayList`, `RandomMurray` y `ReloadButton`, cada uno en su módulo. `MurrayList` renderiza una lista con varios componentes `RandomMurray`, y además un botón `ReloadButton`:
 
-**components/PizzaList.js**
+**components/MurrayList.js**
 ```js
 import React from 'react';
-import RandomPizza from `./RandomPizza`;
+import RandomMurray from `./RandomMurray`;
 import ReloadButton from './ReloadButton';
 
-class PizzaList extends React.Component {
+class MurrayList extends React.Component {
   constructor(props) {
     super(props);
 
@@ -41,28 +41,28 @@ class PizzaList extends React.Component {
   }
 
   handleClick() {
-    this.forceUpdate(); // se ejecutará el método `render()` de PizzaList, que hará a su vez que se ejecute de nuevo el método `render()` de los hijos
+    this.forceUpdate(); // se ejecutará el método `render()` de MurrayList, que hará a su vez que se ejecute de nuevo el método `render()` de los hijos
   }
 
   render() {
     const { handleClick } = this;
 
     return (
-      <section className="section-pizzas">
-        <h1>All <del>Cats</del> Pizzas Are Beautiful</h1>
-        <ul className="section-pizzas_list">
-          <li><RandomPizza /></li>
-          <li><RandomPizza /></li>
-          <li><RandomPizza /></li>
+      <section className="section-murrays">
+        <h1>All <del>Cats</del> Murrays Are Beautiful</h1>
+        <ul className="section-murrays_list">
+          <li><RandomMurray /></li>
+          <li><RandomMurray /></li>
+          <li><RandomMurray /></li>
         </ul>
         {/* pasamos handleClick al hijo como prop */}
-        <ReloadButton actionToPerform={ handleClick } label="More pizzas"/>
+        <ReloadButton actionToPerform={ handleClick } label="More murrays"/>
       </section>
     );
   }
 }
 
-export default PizzaList;
+export default MurrayList;
 ```
 
 **components/ReloadButton.js**
@@ -86,24 +86,25 @@ class ReloadButton extends React.Component {
 export default ReloadButton;
 ```
 
-**components/RandomPizza.js**
+**components/RandomMurray.js**
 ```js
 import React from 'react';
 
-const getRandomInteger = (maxNumber) => Math.floor(Math.random() * maxNumber);
-const NUMBER_OF_PIZZAS = 10;
+const getRandomInteger = (max, min) => Math.floor(Math.random() * (max - min + 1)) + min;
+const MIN_SIZE = 200;
+const MAX_SIZE = 400;
 
-class RandomPizza extends React.Component {
+class RandomMurray extends React.Component {
   render() {
-    const randomPizza = getRandomInteger(NUMBER_OF_PIZZAS);
+    const randomMurray = getRandomInteger(MIN_SIZE, MAX_SIZE);
 
     return (
-      <img src={ `http://lorempizza.com/400/200/${randomPizza}` } alt="Random pizza" />
+      <img src={ `http://loremmurray.com/400/200/${randomMurray}` } alt="Random murray" />
     );
   }
 }
 
-export default RandomPizza;
+export default RandomMurray;
 ```
 
 **index.js**
@@ -111,10 +112,10 @@ export default RandomPizza;
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './stylesheets/index.css';
-import PizzaList from './components/PizzaList';
+import MurrayList from './components/MurrayList';
 
 ReactDOM.render(
-  <PizzaList />,
+  <MurrayList />,
   document.getElementById('react-root')
 );
 ```
@@ -138,7 +139,7 @@ En nuestro `ItemList` vamos a pintar, además del `ul` con el listado de items, 
 Ahora viene lo bueno: vamos a escuchar eventos `click` sobre el botón de la categoría, de forma que se invoca un método del componente madre (`ItemList`) que hemos recibido por `props` (_lifting_). A este método de la madre le pasamos como parámetro el nombre de la categoría, para que sepa qué botón se ha clicado. Ya en `ItemList` definimos ese método para que si se pulsa el botón de la categoría bebidas sólo aparezcan los items de esa categoría en pantalla. Esto podemos hacerlo de varias formas:
 - si tenemos todos los items en un array, podemos filtrarlos con `filter` para dejar solo los de la categoría seleccionada
 - podemos pasar una prop más a los `Item` para indicar si está visible o no, y ocultarlo con una clase CSS
-Al final, elijamos la que elijamos, tendremos que realizar un `forceUpdate` para forzar la ejecución del método `render` de `ItemList` que a su vez fuerza el de sus hijas.
+Al final, elijamos la que elijamos, tendremos que realizar un cambio de estado para forzar la ejecución del método `render` de `ItemList` que a su vez fuerza el de sus hijas.
 
 _BONUS_: cuando tenemos todo funcionando para una categoría, podemos añadir botones para cada de las que tengamos productos. Incluso un botón especial 'Todos' para mostar de nuevo los productos de todas las categorías.
 
