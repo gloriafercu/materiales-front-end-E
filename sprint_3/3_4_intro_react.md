@@ -5,9 +5,10 @@
 - [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
 - [Qué es React](#qué-es-react)
 - [Estructura de un proyecto en React](#estructura-de-un-proyecto-en-react)
-- ["Hola, mundo" con `create-react-app`](#hola-mundo-con-create-react-app)
+- ["Hola, mundo" con `create-react-app`](#"hola-mundo"-con-create-react-app)
 - [JSX y el método `render`: la magia de no tener que manipular el DOM](#jsx-y-el-método-render)
 - [Interfaz declarativa VS imperativa](#interfaz-declarativa-vs-imperativa)
+- [Usando Sass en nuestro proyecto de React](#usando-sass-en-nuestro-proyecto-de-react)
 
 ## Introducción
 
@@ -205,7 +206,7 @@ const titleElement = <h1 className="App-title">¡Hola, mundo!</h1>;
 Por último, hay que destacar otra cosa de este fichero: estamos importando imágenes y CSS. _¿Y esooo?_ Pues porque en React tenemos la posibilidad y es una buena práctica trabajar de esta forma: desde un componente (fichero JS) importamos las imágenes y CSS que necesitemos para montar la interfaz del componente. Y confiamos en que la configuración del automatizador que tenemos por debajo (en este caso webpack), se encarga de importar los CSS desde el HTML (para que el navegador los entienda) y modificar las imágenes por su ruta para que puedan ser visualizadas. De momento nos quedamos con que _en React se hace así_.
 
 
-### JSX es JavaScript y el método `render`
+### JSX y el método `render`
 
 Para terminar, recordemos que el JSX que escribimos al final se convierte en código JavaScript. Pero entonces, ¿por qué usamos JSX y no directamente escribimos JavaScript? Porque la sintaxis de JSX es muy cercana a HTML, mucho más legible y simplifica el desarrollo de nuestros componentes. _¿Y si no usáramos JSX?_ Vamos a ver un ejemplo:
 
@@ -271,7 +272,7 @@ render() {
 * * *
 
 
-## BONUS: Interfaz declarativa VS imperativa
+## Interfaz declarativa VS imperativa
 
 Con React haremos interfaces declarativas, en vez de imperativas. La programación declarativa nos permite focalizarnos en **el resultado final** de lo que programamos, en vez de en los detalles específicos de cómo se lleva a cabo el resultado.
 
@@ -326,6 +327,46 @@ ReactDOM.render(personCardComponent, personCardElement);
 
 Este flujo es más útil cuando creamos una aplicación web compleja que cambie mucho con la interacción del usuario o si recibimos **datos dinámicos** de un servidor. No importa lo que recibamos, una vez hayamos declarado lo que pintar en función a un formato dado, se pintará _solo_.
 
+## Usando Sass en nuestro proyecto de React
+
+Durante el curso hemos usado `gulp` o `Koala` para compilar Sass en nuestro proyectos. En el caso de los proyectos de React, que creamos con `create-react-app`, ya tienen su propio sistema de automatización de tareas que convierte los ficheros en ES6 a ES6 con Babel, y lanza un servidor local. Es mejor que, por tanto, en vez de incluir más herramientas como `gulp` usamos el sistema de automatización que ya tenemos (basado en [webpack](https://webpack.js.org/), por cierto) para observar los ficheros SCSS y compilarlos a CSS.
+
+Ahora vamos a detallar los pasos a seguir para conseguirlo.
+
+### 1. Instalar paquetes
+
+Para poder compilar desde la terminal, tendremos que instalar en nuestro proyecto `node-sass`:
+
+`npm install --save node-sass-chokidar`
+
+También instalamos `npm-run-all` para poder lanzar varias tareas a la vez, es decir, las de React y las nuevas de Sass:
+
+`npm install --save npm-run-all`
+
+### 2. Modificar los scripts de npm
+
+Después vamos a modificar los scripts de npm en nuestro `package.json` para que se lancen las nuevas tareas al lanzar el servidor con `npm start`:
+
+```json
+"scripts": {
+     "build-css": "node-sass-chokidar src/ -o src/",
+     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+     "start-js": "react-scripts start",
+     "start": "npm-run-all -p watch-css start-js",
+     "build-js": "react-scripts build",
+     "build": "npm-run-all build-css build-js",
+     "test": "react-scripts test --env=jsdom",
+     "eject": "react-scripts eject"
+   }
+```
+
+Con esto, hemos añadido varias tareas:
+- `build-css`: para compilar los ficheros scss en la carpeta `src` a css en la misma carpeta
+- `watch-css`: para observar los ficheros scss y si se modifican compilarlos a css
+- `start-js` y `build-js`: los scripts originales por defecto de `create-react-app`
+- `start` y `build`: usamos el `npm-run-all` para ejecutar los scripts originales y los nuevos para compilar Sass
+
+Para tener más información, podéis mirar la [documentción oficial de cómo usar SASS con create-react-app](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc).
 
 ## Recursos externos
 
