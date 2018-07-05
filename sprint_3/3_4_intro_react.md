@@ -254,14 +254,8 @@ Partiendo del proyecto anterior, solo modificaremos el método `render()` dentro
 render() {
   /* aquí irán el resto de variables que extraeremos */
   const appRoot = (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">¡Hola, mundo!</h1>
-      </header>
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
+    <div className="card">
+    ...
     </div>
   );
 
@@ -367,6 +361,14 @@ Con esto, hemos añadido varias tareas:
 - `start` y `build`: usamos el `npm-run-all` para ejecutar los scripts originales y los nuevos para compilar Sass
 
 Para tener más información, podéis mirar la [documentción oficial de cómo usar SASS con create-react-app](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc).
+
+* * *
+
+**EJERCICIO 3**:
+
+Vamos a modificar el ejercicio anterior de la tarjeta para hacerlo con Sass dentro de nuestro proyecto de React.
+
+* * *
 
 ## Recursos externos
 
