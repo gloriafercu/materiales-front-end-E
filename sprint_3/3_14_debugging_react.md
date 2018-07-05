@@ -9,10 +9,10 @@
 
 ## Introducción
 
-En esta sesión echaremos un vistazo a la extensión de depuración (_debugging_) de React para navegadores.
+En esta sesión echaremos un vistazo a la extensión de depuración (_debugging_) de React para navegadores. La _depuración_ consiste en el proceso de encontrar y eliminar errores (_bugs_) de una base de código.
 
 
-## ¿Para qué sirven los que vamos a ver en esta sesión?
+## ¿Para qué sirve los que vamos a ver en esta sesión?
 
 Utilizaremos la extensión de Chrome para detectar y corregir errores en nuestra aplicación React.
 
