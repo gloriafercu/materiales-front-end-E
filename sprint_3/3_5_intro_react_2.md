@@ -4,8 +4,8 @@
 - [Introducción](#introducción)
 - [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
 - [Creando nuestro primer componente](#creando-nuestro-primer-componente)
-- [Componentes funcionales](#componentes-funcionales)
 - [Las `props` para personalizar un componente](#las-props-para-personalizar-un-componente)
+- [Crear componentes _dummies_ más rápido](#crear-componentes-dummies-más-rápido)
 - [Creando varios componentes](#creando-varios-componentes)
 
 
@@ -126,31 +126,6 @@ Vamos a partir del ejercicio 1 (o del 2) de la sesión anterior. En lugar de usa
 
 * * *
 
-## Componentes funcionales
-
-Hasta ahora hemos visto cómo definir un componente usando una clase con el método `render`. Existe una forma más sencilla de definir componentes que solo tienen un `render`, es decir, que solo tienen como objetivo "pintar algo en pantalla". Hasta ahora todos los componentes que hemos usado podrían ser _componentes funcionales_. La diferencia es que en lugar de una clase, se definen como una función que es precisamente el `render`. El ejemplo anterior quedaría así con un componente funcional.
-
-```js
-import React from 'react';
-
-function RandomCat (props){
-  return (
-    <a href="http://lorempixel.com">
-      <img src="http://lorempixel.com/400/200/cats/" alt="Random cat" />
-    </a>
-  );
-}
-
-export default RandomCat;
-```
-
-* * *
-**EJERCICIO 2**:
-
-Convierte el componente `MediaCard` del ejercicio anterior en un componente funcional.
-
-* * *
-
 ## Las `props` para personalizar un componente
 
 Hasta aquí todo bien, pero ¿y si queremos que `RandomCat` no sea siempre igual? De la misma manera que pasamos atributos a los elementos del DOM, podemos pasar datos a los componentes de React.
@@ -191,7 +166,7 @@ render() {
 ```
 
 * * *
-**EJERCICIO 3**:
+**EJERCICIO 2**:
 
 Vamos a partir del ejercicio 1 (el anterior). Vamos a usar las `props` para personalizar el contenido de una tarjeta social `MediaCard`. En concreto, vamos a personalizar
 - el nombre del usuario
@@ -203,6 +178,85 @@ Vamos a partir del ejercicio 1 (el anterior). Vamos a usar las `props` para pers
 
 * * *
 
+### Crear componentes _dummies_ más rápido
+
+Llamamos componente _dummy_ (títere) a los componentes en React que **no tienen ni estado ni comportamiento**. Es decir, lo único de lo que dependerán son las `props` que se les pase, y solo en función de eso se pintarán. Sus cambios serán gestionados por otros componentes superiores que les pasarán esas `props`.
+
+Hasta ahora los hemos escrito como componentes completos para que os familiarizaseis con la sintaxis de clases de React:
+
+```js
+import React from 'react';
+
+class Greetings extends React.Component {
+  render() {
+    return (
+      <h1>Hello, { this.props.name }!</h1>
+    );
+  }
+}
+
+export default Greetings;
+```
+
+Pero React también tiene una manera de escribir estos componentes de manera más sencilla. La idea, sencillamente, es pensar los componentes _dummies_ como funciones que reciben unas `props` como parámetros y devuelven elementos y componentes de JSX:
+
+```js
+import React from 'react';
+
+const Greetings = (props) => {
+  return (
+    <h1>Hello, { props.name }!</h1>
+  );
+};
+
+export default Greetings;
+```
+
+> Estos componentes _dummies_ también se llaman componentes funcionales (_functional components_) o, más específicamente, componentes funcionales sin estado (_stateless functional components_), porque tienen forma de función y carecen de estado.
+
+Aunque parezca difícil, esta sintaxis se puede simplificar aún más. Recordamos que en ES2015 tenemos la habilidad de _destructuring_ de objetos. `props` es un objeto que podemos dividir en variables con los nombres de las `props`, directamente:
+
+```js
+// ...
+const Greetings = (props) => {
+  const { name } = props; // "destructuring" de objeto
+  return (
+    <h1>Hello, { name }!</h1>
+  );
+}
+// ...
+```
+
+Podemos hacer _destructuring_ directamente en los parámetros de una función:
+
+```js
+// ...
+const Greetings = ({ name }) => { // "destructuring" en los parámetros
+  return (
+    <h1>Hello, { name }!</h1>
+  );
+}
+// ...
+```
+
+Y si lo combinamos con el _return_ implícito de las _arrow functions_, queda así:
+
+```js
+// ...
+const Greetings = ({ name }) => ( // "arrow function" sin llaves, con "return" implícito
+  <h1>Hello, { name }!</h1>
+);
+// ...
+```
+
+Hemos reducido la declaración de un componente de siete líneas a tres. Es una práctica común hacerlo al revés: declarar un componente nuevo primero como función, _dummy_, y si más tarde necesita estado o comportamiento, [ampliar su declaración](https://reactjs.org/docs/state-and-lifecycle.html#converting-a-function-to-a-class) a la de un componente de clase completo.
+
+* * *
+**EJERCICIO 3**:
+
+Convierte el componente `MediaCard` del ejercicio anterior en un componente funcional.
+
+* * *
 
 ## Creando varios componentes
 

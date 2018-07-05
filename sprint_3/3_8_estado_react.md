@@ -9,7 +9,6 @@
 - [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
 - [Manejo del estado en un componente de React](#manejo-del-estado-en-un-componente-de-react)
 - [¿Qué pasa cuando hay un cambio de estado?](#¿qué-pasa-cuando-hay-un-cambio-de-estado)
-- [Arquitectura de componentes con estado](#arquitectura-de-componentes-con-estado)
 
 ## Introducción
 
