@@ -125,7 +125,7 @@ npm start
 
 `create-react-app` nos ha instalado un _live-server_, así que sin cerrar el navegador ni el terminal, vamos a abrir el archivo `my-react-project/src/App.js` y probar a cambiar la frase "Welcome to React" por "¡Hola, mundo!". Guardamos y cambiamos al navegador.
 
-!["Hola, mundo" en React](assets/3-4/react-hello-world.png)
+!["Hola, mundo" en React](assets/images/3_4_react-hello-world.png)
 
 ## Estructura de un proyecto React creado con `create-react-app`
 
@@ -240,7 +240,7 @@ Muy parecido al JSX que hemos escrito, ¿verdad?
 
 Vamos a crear un nuevo proyecto de React llamado MediaCard. Vamos a modificar el método `render` del componente `App` para que tenga un diseño similar al de la imagen. Podéis usar una imagen a vuestra elección para la que aparece en el diseño, y Font-Awesome para el icono del corazón. De esta forma, aprenderemos a cómo trabajar con cosas que ya conocemos (HTML y CSS) en una aplicación de React.
 
-![Media Card](assets/3-4/media-card.png)
+![Media Card](assets/images/3_4_media-card.png)
 
 * * *
 

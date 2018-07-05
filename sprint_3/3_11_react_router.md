@@ -1,6 +1,6 @@
 # El router de React
 
-[session-4-6-stateful-components-architecture]: 4_6_estado_react.html#arquitectura-de-componentes-con-estado
+[session-3-10-stateful-components-architecture]: 3_10_arquitectura_estado.md#arquitectura-de-componentes-con-estado
 
 [react-router-site]: https://reacttraining.com/react-router/
 [mdn-history-api]: https://developer.mozilla.org/en-US/docs/Web/API/History_API
@@ -37,7 +37,7 @@ React Router es una librería compatible con React (aunque no desarrollada por e
 
 React Router se aprovecha de la separación de la interfaz en componentes que hace React. La lógica básica de cómo funciona es simple: depende de la ruta de la página en la que estemos, se pinta un componente u otro. Por ejemplo, podríamos decirle que si estamos en la ruta `/` renderice el componente `<Home />` en la página, pero si estamos en la ruta `/about`, que renderice el componente `<About />`.
 
-Una de las características de las SPAs es que también mantienen el estado entre pantallas de nuestra página. Con React Router y la [arquitectura de componentes con estado que vimos en la sesión 4.6][session-4-6-stateful-components-architecture] esto se puede observar en el estado de nuestro componente principal, que normalmente se llamará algo parecido a `<App />`. `<App />` tiene el estado relativo a todos los componentes incluídos dentro de sí, y aunque cambiemos un componente dentro de él dependiendo de la ruta, seguimos conservando los datos del estado que tenemos en `<App />`.
+Una de las características de las SPAs es que también mantienen el estado entre pantallas de nuestra página. Con React Router y la [arquitectura de componentes con estado que vimos en la sesión 3.10][session-3-10-stateful-components-architecture] esto se puede observar en el estado de nuestro componente principal, que normalmente se llamará algo parecido a `<App />`. `<App />` tiene el estado relativo a todos los componentes incluídos dentro de sí, y aunque cambiemos un componente dentro de él dependiendo de la ruta, seguimos conservando los datos del estado que tenemos en `<App />`.
 
 
 ## Uso básico del router para navegar entre pantallas de nuestra SPA
@@ -139,7 +139,7 @@ Luego, en nuestro componente principal (`App`) vamos a dibujar las 3 pestañas (
 
 * * *
 
-## BONUS: Gestión avanzada de rutas
+## Gestión avanzada de rutas
 
 Los componentes `Route` aceptan distintas `props`. En la sección anterior hemos visto la más básica, `component`. Cuando pasamos la `prop` así, el componente `Route` renderizará ese componente cuando la ruta coincida con la que especifica en `path`. Sin embargo, podemos querer renderizar algo más complejo, o puede que queramos pasar `props` a ese componente. Para esas situaciones, `Route` acepta una `prop` de nombre `render` al que le pasaremos una función que devuelva lo que queremos que se pinte.
 

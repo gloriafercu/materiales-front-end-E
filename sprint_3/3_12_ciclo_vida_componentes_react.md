@@ -1,6 +1,6 @@
 # Métodos del ciclo de vida de componentes en React
 
-[session-4-6-stateful-components-architecture]: 4_6_estado_react.html#arquitectura-de-componentes-con-estado
+[session-3-10-stateful-components-architecture]: 3_10_arquitectura_estado.md#arquitectura-de-componentes-con-estado
 
 [codepen-lifecycle-mounting]: https://codepen.io/adalab/pen/ZvaNMM?editors=0010
 [codepen-remembering-lifting-state-up]: https://codepen.io/adalab/pen/xpzBYz?editors=0010
@@ -42,6 +42,8 @@ Podemos clasificar los métodos del ciclo de vida en tres tipos:
 - De **actualización**: los que se ejecutan mientras el componente vive.
 - De **desmontaje**: los que se ejecutan antes de que el componente se destruya.
 
+![Fases del ciclo de vida de componentes](assets/images/3_12_lifecycle.png)
+> Fuente: [React lifecycle methods diagram](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
 ## Ciclo de vida: montaje de un componente
 
@@ -168,7 +170,7 @@ Este método no se llama cuando se llama a `forceUpdate()`.
 
 ### Peticiones a un servidor
 
-Tomemos el ejemplo de [_lifting_ de estados de la sesión anterior][session-4-6-stateful-components-architecture] en el que creábamos una lista de razones ([ver en Codepen][codepen-remembering-lifting-state-up]). Teníamos un método `fetchNewReasons()` que actualizaba el estado, y pasábamos el método por `props` al componente botón. Sin embargo, teníamos que esperar a que el usuario pulsase el botón para mostrar resultados por primera vez. ¿Cómo haríamos para que el propio elemento los cargase?
+Tomemos el ejemplo de [_lifting_ de estados de la sesión 3.10][session-3-10-stateful-components-architecture] en el que creábamos una lista de razones ([ver en Codepen][codepen-remembering-lifting-state-up]). Teníamos un método `fetchNewReasons()` que actualizaba el estado, y pasábamos el método por `props` al componente botón. Sin embargo, teníamos que esperar a que el usuario pulsase el botón para mostrar resultados por primera vez. ¿Cómo haríamos para que el propio elemento los cargase?
 
 ```js
 const ENDPOINT = 'https://...';
@@ -282,7 +284,7 @@ class AppRoot extends React.Component {
 
 **EJERCICIO 1: La hora con ciclo de vida**
 
-Vamos a partir del componente `Clock` del ejercicio 1 de la sesión anterior. Y vamos a usar métodos del ciclo de vida para estructurar mejor el código.
+Vamos a partir del componente `Clock` del ejercicio 1 de la sesión 3.8. Y vamos a usar métodos del ciclo de vida para estructurar mejor el código.
 
 > PISTA: en el constructor no deberíamos llamar a `setInterval` sino en el método de ciclo de vida adecuado
 

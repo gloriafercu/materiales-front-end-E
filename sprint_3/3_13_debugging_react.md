@@ -29,15 +29,15 @@ Para solucionar esto, el equipo de React proporciona una _webextension_ (extensi
 
 La extensión de los navegadores se integra con las herramientas de desarrollo (<kbd>F12</kbd>) en ambos navegadores:
 
-![React DevTools integrado con las herramientas de desarrollo de Chrome](assets/images/4_7_react-devtools.png)
+![React DevTools integrado con las herramientas de desarrollo de Chrome](assets/images/3_13_react-devtools.png)
 
 Cuando estemos en una página hecha con React, la pestaña React de las herramientas de desarrollo nos mostrará la **jerarquía de componentes**:
 
-![React DevTools mostrando jerarquía de componentes de la página](assets/images/4_7_devtools-tree-view.png)
+![React DevTools mostrando jerarquía de componentes de la página](assets/images/3_13_devtools-tree-view.png)
 
 Tras seleccionar un componente, en el panel lateral de esa misma pestaña podremos ver más detalles y has cambiar las `props` y el estado del componente en tiempo real:
 
-![React DevTools editando el estado de un componente en tiempo real](assets/images/4_7_devtools-side-pane.gif)
+![React DevTools editando el estado de un componente en tiempo real](assets/images/3_13_devtools-side-pane.gif)
 
 ## Recursos externos
 

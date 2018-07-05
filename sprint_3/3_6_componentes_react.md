@@ -59,7 +59,7 @@ Estas relaciones forman una jerarquía importante para entender React. Desde los
 
 Vamos a ver un ejemplo para entender mejor el paso de información de un componente a sus hijas. Partimos de un componente `Item` que es un artículo que tenemos en una lista de la compra:
 
-![Item example](./assets/images/4_4/item.png)
+![Item example](./assets/images/4_4_item.png)
 
 Como vemos en la imagen, un item tiene estas propiedades:
 - nombre
