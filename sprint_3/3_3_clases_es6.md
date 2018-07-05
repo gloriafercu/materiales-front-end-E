@@ -3,7 +3,6 @@
 ## Contenidos
 
 [sección-constructor]: #el-constructor-y-this
-[sección-módulos]: #módulos-de-js
 
 - [Introducción](#introducción)
 - [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
@@ -13,8 +12,6 @@
 - [El constructor y `this`][sección-constructor]
 - [Herencia (`extends`)](#herencia-extends)
 - [Bonus: _getters_ y _setters_](#bonus-getters-y-setters)
-- [Módulos de JS][sección-módulos]
-
 
 ## Introducción
 
@@ -29,8 +26,6 @@ En esta sesión veremos el concepto de clases, que está muy relacionado con la 
 JavaScript es un lenguaje muy flexible. Por eso, en la práctica, muchos programadores recurren a otros conceptos asentados de programación al escribir JavaScript. Con ES6 se guiñó un ojo a los programadores que usaban las posibilidades de JavaScript para la POO y se introdujeron las clases.
 
 Las clases en ES6 nos ayudan a delimitar la responsabilidad de ciertas partes de nuestro código y organizarlo de manera más clara y también nos ayudan a reutilizar partes del código y ahorrar líneas y posibilidades de error.
-
-En la [última sección][sección-módulos], veremos cómo reutilizar nuestro código entre distintos proyectos, o importar código ajeno.
 
 
 ## Clases y objetos
@@ -202,148 +197,7 @@ Crearemos tres instancias: una con `1` de lado, otra con `3` y otra con `7`. Lla
 
 * * *
 
-## Módulos de JS
-
-Los módulos nos facilitan dividir nuestro código en pequeñas partes reutilizables. Podemos dividir nuestro código en partes tanto para **organizar** un proyecto, **compartir** código entre distintos proyectos nuestros o para **usar librerías** de terceros.
-
-**dog.js**:
-```js
-class Dog {
-  // class body
-}
-
-const FAMOUS_DOGS = ['Hachiko', 'Laika', '101 Dalmatians'];
-
-export { Dog, FAMOUS_DOGS };
-```
-
-**main.js**:
-```js
-import { Dog, FAMOUS_DOGS } from './dog';
-
-const hachiko = new Dog('Hachiko');
-
-console.log(`Some famous dogs in history: ${FAMOUS_DOGS.join(', ')}...`); // 'Some famous dogs in history: Hachiko, Laika, 101 Dalmatians...'
-hachiko.bark(); // 'Wan, wan!'
-```
-
-### `export`
-
-Todo lo que hay dentro de un módulo de JavaScript pertenece exclusivamente al módulo por defecto. Nada se puede acceder desde fuera excepto si se **exporta**. La palabra clave `export` nos permite exportar una variable (`var`, `let` o `const`), función o clase que podrá ser **importada** por otro código más tarde.
-
-Podemos exportar de varias maneras. Podemos exportar individualmente valores que ya hayamos declarado:
-
-**module.js**:
-```js
-export const aConstant = 'constant';
-
-export function aFunction() { /* function body */ }
-```
-
-También podemos exportar todo de una sola vez (como un objeto envoltorio), que mejora la legibilidad del código cuando es extenso:
-
-**module.js**:
-```js
-const aConstant = 'constant';
-
-function aFunction() { /* function body */ }
-
-export { aConstant, aFunction };
-```
-
-Por último, podemos declarar un valor exportado por defecto, si queremos. Solo puede haber un valor exportado por defecto en cada módulo, y puede o no tener nombre:
-
-**module_default-unnamed.js**:
-```js
-export default function() { /* function body */ };
-```
-
-**module_default-named.js**:
-```js
-export default aFunction;
-```
-
-
-### `import`
-
-Para usar código de un módulo, primero tendremos que importarlo en nuestro código. Como es normal en JavaScript, tenemos varias maneras distintas de importar módulos.
-
-Podemos seleccionar, por su nombre, qué valores exportados importar. Importaremos solo uno de la siguiente manera:
-
-**main.js**:
-```js
-import { aConstant } from './module';
-
-console.log(aConstant); // 'constant'
-```
-
-E importaremos varios valores así:
-
-**main.js**:
-```js
-import { aConstant, aFunction } from './module';
-
-aFunction(); // do things as declared in module.js
-console.log(aConstant); // 'constant'
-```
-
-Si queremos cambiarle el nombre a algún valor, lo podemos hacer con `as`:
-
-**main.js**:
-```js
-import { aFunction as functionFromModule } from './module';
-
-functionFromModule(); // do things as declared in module.js
-```
-```js
-import {
-  aConstant,
-  aFunction as functionFromModule
-} from './module';
-
-functionFromModule(); // do things as declared in module.js
-console.log(aConstant); // 'constant'
-```
-```js
-import {
-  aConstant as constantFromModule,
-  aFunction as functionFromModule
-} from './module';
-
-functionFromModule(); // do things as declared in module.js
-console.log(constantFromModule); // 'constant'
-```
-
-También podemos importar todo el contenido de un módulo con `*`. Esto nos importa todos los valores dentro de un objeto envoltorio al que debemos darle nombre con `as`:
-
-**main.js**:
-```js
-import * as module from './module';
-
-module.aFunction(); // do things as declared in module.js
-console.log(module.aConstant); // 'constant'
-```
-
-### Declarar módulos
-
-Podemos declarar archivos de JavaScript como módulos en el HTML de la siguiente manera:
-
-**index.html**:
-```html
-<script type="module" src="route/to/module.js"></script>
-```
-
-Sin embargo, esta manera [no está muy soportada aún](https://caniuse.com/#feat=es6-module) por los navegadores: solo un 62.81% de las últimas versiones de los navegadores lo soporta. Sin embargo, no tendremos ningún problema cuando usemos _module bundlers_ o [Babel](http://babeljs.io/) para compilar nuestro código, y en estos casos no será necesario declarar los módulos en el HTML.
-
-* * *
-
-**EJERCICIO 3**:
-
-Prueba los ejemplos anteriores exportando datos desde un fichero e importándolos desde otros. Asegúrate de entender bien cómo funcionan las rutas para importar/exportar adecuadamente.
-
-* * *
-
-## BONUS: Herencia (`extends`)
+## Herencia (`extends`)
 
 Una de las características más potentes de las clases es que podemos crear subclases. Una subclase es una clase que **hereda** los métodos y atributos de otra clase. De esta manera, podemos hacer clases más concretas cuando nos haga falta sin tener que reescribir partes del código.
 
@@ -584,4 +438,3 @@ Lista de artículos de colaboradores de Mozilla explicando las novedades de ECMA
 
 - [ES6 in Depth - Classes](https://hacks.mozilla.org/2015/07/es6-in-depth-classes/)
 - [ES6 in Depth - Subclassing](https://hacks.mozilla.org/2015/08/es6-in-depth-subclassing/) (herencia)
-- [ES6 in Depth - Modules](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/)

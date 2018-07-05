@@ -1,14 +1,18 @@
 # Básicos de ES2015 - 2 (ES6)
 
+[sección-módulos]: #módulos-de-js
+
 ## Contenidos
 - [Introducción](#introducción)
 - [_Spread operator_](#spread-operator)
 - [_Arrow functions_ y el `this` léxico](#arrow-functions-y-el-this-léxico)
-
+- [Módulos de JS][sección-módulos]
 
 ## Introducción
 
 Hasta el momento hemos visto algunas de las características de la nueva sintaxis de ES2015 (ES6). Ahora veamos el resto.
+
+En la [última sección][sección-módulos], veremos cómo reutilizar nuestro código entre distintos proyectos, o importar código ajeno.
 
 
 ## _Spread operator_
@@ -236,6 +240,146 @@ Vamos a rehacer las funciones del ejercicio 5 de la sesión anterior usando arro
 
 * * *
 
+## Módulos de JS
+
+Los módulos nos facilitan dividir nuestro código en pequeñas partes reutilizables. Podemos dividir nuestro código en partes tanto para **organizar** un proyecto, **compartir** código entre distintos proyectos nuestros o para **usar librerías** de terceros.
+
+**dog.js**:
+```js
+class Dog {
+  // class body
+}
+
+const FAMOUS_DOGS = ['Hachiko', 'Laika', '101 Dalmatians'];
+
+export { Dog, FAMOUS_DOGS };
+```
+
+**main.js**:
+```js
+import { Dog, FAMOUS_DOGS } from './dog';
+
+const hachiko = new Dog('Hachiko');
+
+console.log(`Some famous dogs in history: ${FAMOUS_DOGS.join(', ')}...`); // 'Some famous dogs in history: Hachiko, Laika, 101 Dalmatians...'
+hachiko.bark(); // 'Wan, wan!'
+```
+
+### `export`
+
+Todo lo que hay dentro de un módulo de JavaScript pertenece exclusivamente al módulo por defecto. Nada se puede acceder desde fuera excepto si se **exporta**. La palabra clave `export` nos permite exportar una variable (`var`, `let` o `const`), función o clase que podrá ser **importada** por otro código más tarde.
+
+Podemos exportar de varias maneras. Podemos exportar individualmente valores que ya hayamos declarado:
+
+**module.js**:
+```js
+export const aConstant = 'constant';
+
+export function aFunction() { /* function body */ }
+```
+
+También podemos exportar todo de una sola vez (como un objeto envoltorio), que mejora la legibilidad del código cuando es extenso:
+
+**module.js**:
+```js
+const aConstant = 'constant';
+
+function aFunction() { /* function body */ }
+
+export { aConstant, aFunction };
+```
+
+Por último, podemos declarar un valor exportado por defecto, si queremos. Solo puede haber un valor exportado por defecto en cada módulo, y puede o no tener nombre:
+
+**module_default-unnamed.js**:
+```js
+export default function() { /* function body */ };
+```
+
+**module_default-named.js**:
+```js
+export default aFunction;
+```
+
+
+### `import`
+
+Para usar código de un módulo, primero tendremos que importarlo en nuestro código. Como es normal en JavaScript, tenemos varias maneras distintas de importar módulos.
+
+Podemos seleccionar, por su nombre, qué valores exportados importar. Importaremos solo uno de la siguiente manera:
+
+**main.js**:
+```js
+import { aConstant } from './module';
+
+console.log(aConstant); // 'constant'
+```
+
+E importaremos varios valores así:
+
+**main.js**:
+```js
+import { aConstant, aFunction } from './module';
+
+aFunction(); // do things as declared in module.js
+console.log(aConstant); // 'constant'
+```
+
+Si queremos cambiarle el nombre a algún valor, lo podemos hacer con `as`:
+
+**main.js**:
+```js
+import { aFunction as functionFromModule } from './module';
+
+functionFromModule(); // do things as declared in module.js
+```
+```js
+import {
+  aConstant,
+  aFunction as functionFromModule
+} from './module';
+
+functionFromModule(); // do things as declared in module.js
+console.log(aConstant); // 'constant'
+```
+```js
+import {
+  aConstant as constantFromModule,
+  aFunction as functionFromModule
+} from './module';
+
+functionFromModule(); // do things as declared in module.js
+console.log(constantFromModule); // 'constant'
+```
+
+También podemos importar todo el contenido de un módulo con `*`. Esto nos importa todos los valores dentro de un objeto envoltorio al que debemos darle nombre con `as`:
+
+**main.js**:
+```js
+import * as module from './module';
+
+module.aFunction(); // do things as declared in module.js
+console.log(module.aConstant); // 'constant'
+```
+
+### Declarar módulos
+
+Podemos declarar archivos de JavaScript como módulos en el HTML de la siguiente manera:
+
+**index.html**:
+```html
+<script type="module" src="route/to/module.js"></script>
+```
+
+Sin embargo, esta manera [no está muy soportada aún](https://caniuse.com/#feat=es6-module) por los navegadores: solo un 62.81% de las últimas versiones de los navegadores lo soporta. Sin embargo, no tendremos ningún problema cuando usemos _module bundlers_ o [Babel](http://babeljs.io/) para compilar nuestro código, y en estos casos no será necesario declarar los módulos en el HTML.
+
+* * *
+
+**EJERCICIO 3**:
+
+Prueba los ejemplos anteriores exportando datos desde un fichero e importándolos desde otros. Asegúrate de entender bien cómo funcionan las rutas para importar/exportar adecuadamente.
+
+* * *
 
 ## Recursos externos
 
@@ -245,21 +389,8 @@ Páginas donde se explica en más profundidad las diferentes características de
 - [Spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
 - [Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
-### You Don't Know JS
-
-Una serie de libros para entender JavaScript en profundidad (en inglés)
-
-- [You Don't Know JS: ES6 & Beyond](https://github.com/getify/You-Dont-Know-JS/blob/master/es6 & beyond/README.md)
-
 ### Mozilla Hacks: ES6 in Depth
 
 Lista de artículos de colaboradores de Mozilla explicando las novedades de ECMAScript 6
 
-- [ES6 in Depth](https://hacks.mozilla.org/category/es6-in-depth/)
-
-### Compatibilidad de ES6
-
-Para comprobar la compatibilidad de las características de ES2015/ES6 en los diferentes navegadores
-
-- [Can I Use](http://caniuse.com/)
-- También, aunque más engorrosa, la [ECMAScript 6 Compatibility Table](https://kangax.github.io/compat-table/es6/), que incluye distintos motores de JavaScript
+- [ES6 in Depth - Modules](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/)
