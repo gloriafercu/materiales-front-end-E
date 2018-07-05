@@ -280,7 +280,7 @@ class AppRoot extends React.Component {
 
 * * *
 
-**EJERCICIO 1: La hora con cicle de vida**
+**EJERCICIO 1: La hora con ciclo de vida**
 
 Vamos a partir del componente `Clock` del ejercicio 1 de la sesión anterior. Y vamos a usar métodos del ciclo de vida para estructurar mejor el código.
 

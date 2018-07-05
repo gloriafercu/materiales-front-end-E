@@ -2,7 +2,6 @@
 
 [codepen-setstate-object-literal]: https://codepen.io/adalab/pen/EoLXOr?editors=0010
 [codepen-setstate-incremental-function]: https://codepen.io/adalab/pen/baMRQW?editors=0010
-[codepen-lifting-state-up]: https://codepen.io/adalab/pen/xpzBYz?editors=0010
 
 ## Contenidos
 

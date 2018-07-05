@@ -38,3 +38,9 @@ Cuando estemos en una página hecha con React, la pestaña React de las herramie
 Tras seleccionar un componente, en el panel lateral de esa misma pestaña podremos ver más detalles y has cambiar las `props` y el estado del componente en tiempo real:
 
 ![React DevTools editando el estado de un componente en tiempo real](assets/images/4_7_devtools-side-pane.gif)
+
+## Recursos externos
+
+### Documentación oficial de facebook
+
+[React Developer Tools](https://github.com/facebook/react-devtools)
