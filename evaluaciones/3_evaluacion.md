@@ -56,16 +56,13 @@ Vamos a listar los criterios de evaluación de este ejercicio. Si superas más d
 - Usa notación de arrow functions
 
 #### React básico
-- Crea una estructura adecuada de componentes
+- Crea una estructura adecuada de componentes, el principal maneja el estado
 - Usa el método render y JSX para pintar componentes
 - Usa las props para pasar datos a componentes hijos
-- Define propiedades obligatorias y sus tipos
 - Usa el estado para almacenar información de la interfaz
-- Usa una arquitectura con un componente principal que maneja el estado
 - Usa eventos en React para atender a interacciones del usuario
 - Sabe pintar listados de datos
 - Usa lifting para pasar info de hijos a padres
-- Usa componetes controlados de formulario 
 - Usa métodos del ciclo de vida como componentDidMount para las peticiones AJAX
 
 #### React router
