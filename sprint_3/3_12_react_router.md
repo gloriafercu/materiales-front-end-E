@@ -6,6 +6,7 @@
 [mdn-history-api]: https://developer.mozilla.org/en-US/docs/Web/API/History_API
 
 [codepen-react-router-basic]: https://codepen.io/adalab/pen/MrZQpE?editors=0010
+[codepen-react-router-params]: https://codepen.io/adalab/pen/eKwbMZ?editors=0010
 [codepen-react-router-active-nav]: https://codepen.io/adalab/pen/OzrYZN?editors=0010
 
 ## Contenidos
@@ -14,6 +15,7 @@
 - [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
 - [Qué es React Router](#qué-es-react-router)
 - [Uso básico del router para navegar entre pantallas de nuestra SPA](#uso-básico-del-router-para-navegar-entre-pantallas-de-nuestra-spa)
+- [Usando parámetros en las rutas](#usando-parámetros-en-las-rutas)
 - [Gestión avanzada de rutas](#gestión-avanzada-de-rutas)
 
 
@@ -139,9 +141,67 @@ Luego, en nuestro componente principal (`App`) vamos a dibujar las 3 pestañas (
 
 * * *
 
+## Usando parámetros en las rutas
+
+React router también nos facilita crear rutas que tengan parámetros, es decir, que no sean rutas fijas sino que dependan del algún valor. Por ejemplo, si tenemos un listado de elemento y queremos crear una ruta para cada uno de ellos.
+
+En este ejemplo, vamos a crear rutas para varios del estilo `/child/:id` donde `:id` es un identificar único de cada elemento. En el elemento `Switch` crearemos una nueva ruta `Route` con ese `path='/child/:id'` y que renderiza el componente `Child`. Ahora, los enlaces de la cabecera enlazan a `/child/1`, `/child/2`, etc. Al hacer clic en alguno de estos enlaces, se renderizará el componente `Child` al que le llegará por `props` un parámetro `match` que tiene información sobre los paráemtros de la URL, en este caso, el número al final de la URL.
+
+**App.js**:
+```js
+import React from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
+
+class App extends React.Component {
+  // ...
+  render() {
+    return (
+      <div>
+        <header>
+          <nav>
+          <ul>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/child/1'>Child 1</Link></li>
+            <li><Link to='/child/2'>Child 2</Link></li>
+            <li><Link to='/child/3'>Child 3</Link></li>
+          </ul>
+          </nav>
+        </header>
+        <main>
+          <Switch>
+            <Route exact path='/' component={ Home } />
+            <Route path='/child/:id' component={ Child } />
+          </Switch>
+        </main>
+      </div>
+    );
+  }
+}
+```
+
+**Child.js**:
+```js
+class Child extends React.Component {
+  render() {
+    return (
+      <p>This is child number {this.props.match.params.id}</p>
+    );
+  }
+}
+```
+
+[&blacktriangleright; Rutas con React Router en Codepen][codepen-react-router-params]
+
+* * *
+**EJERCICIO 2: Directorio con detalle**
+
+Vamos a partir del ejercicio de la sesión anterior sobre un directorio de personas. En la página principal aparecía un listado de personas con información de https://randomuser.me/. Ahora vamos a hacer un enlace por cada persona de la lista para acceder a una vista de detalle de esa persona. Implementaremos la vista de detalle con un nuevo componente `PersonDetail` al que navegaremos usando React router con una ruta por cada persona de la lista. **¡A por ello!**
+
+* * *
+
 ## Gestión avanzada de rutas
 
-Los componentes `Route` aceptan distintas `props`. En la sección anterior hemos visto la más básica, `component`. Cuando pasamos la `prop` así, el componente `Route` renderizará ese componente cuando la ruta coincida con la que especifica en `path`. Sin embargo, podemos querer renderizar algo más complejo, o puede que queramos pasar `props` a ese componente. Para esas situaciones, `Route` acepta una `prop` de nombre `render` al que le pasaremos una función que devuelva lo que queremos que se pinte.
+Los componentes `Route` aceptan distintas `props`. En las secciones anteriores hemos visto la más básica, `component`. Cuando pasamos la `prop` así, el componente `Route` renderizará ese componente cuando la ruta coincida con la que especifica en `path`. Sin embargo, podemos querer renderizar algo más complejo, o puede que queramos pasar `props` a ese componente. Para esas situaciones, `Route` acepta una `prop` de nombre `render` al que le pasaremos una función que devuelva lo que queremos que se pinte.
 
 ```js
 // ...
