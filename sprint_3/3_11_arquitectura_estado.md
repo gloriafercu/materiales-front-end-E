@@ -12,8 +12,6 @@
 
 En esta sesión vamos a ver buenas prácticas para organizar nuestros componentes y aplicaciones cuando hacemos uso del estado.
 
-También aprenderemos cómo declarar componentes _dummies_ (títeres) con una sintaxis simplificada. 
-
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
@@ -26,7 +24,7 @@ A pesar de que todos los componentes pueden tener estado, a la hora de hacer apl
 
 ¿Por qué hacemos esto? En los estados guardaremos diferentes datos, algunos de los cuales habremos recibido de servidores: una lista de artículos en venta, sus precios y un booleano de si mostramos el IVA o no, por ejemplo. El mejor sitio para guardar esos datos es siempre el componente raíz, porque es el sitio desde el que cualquier componente hijo podrá acceder a ellos.
 
-¿Y cómo lo haremos? Como vimos en la sesión 3.7 podemos pasar datos de hijos a padres/madres **mediante _lifting_**. Recordemos que la técnica de _lifting_ consistía en pasar una función definida en el padre/madre a un componente hijo mediante las `props`. Esa función puede modificar al padre. Ahora que hemos visto los estados, podemos ver un nuevo uso del _lifting_: **actualizar estados de los padres/madres desde los hijos**.
+¿Y cómo lo haremos? Como vimos en la sesión 3.10 podemos pasar datos de hijos a padres/madres **mediante _lifting_**. Recordemos que la técnica de _lifting_ consistía en pasar una función definida en el padre/madre a un componente hijo mediante las `props`. Esa función puede modificar al padre. Ahora que hemos visto los estados, podemos ver un nuevo uso del _lifting_: **actualizar estados de los padres/madres desde los hijos**.
 
 ```js
 const ENDPOINT = 'https://...';
