@@ -296,7 +296,7 @@ const cardList = document.createElement('ul');
 cardList.classList.add('card-area-list');
 for (const area of person.areas) {
   const cardListItem = document.createElement('li');
-  cardListItem.classList.add('card-area-list');
+  cardListItem.classList.add('card-area');
   cardListItem.textContent = area;
   cardList.appendChild(cardListItem);
 }
