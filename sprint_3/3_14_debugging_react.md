@@ -35,7 +35,7 @@ Cuando estemos en una página hecha con React, la pestaña React de las herramie
 
 ![React DevTools mostrando jerarquía de componentes de la página](assets/images/3_13_devtools-tree-view.png)
 
-Tras seleccionar un componente, en el panel lateral de esa misma pestaña podremos ver más detalles y has cambiar las `props` y el estado del componente en tiempo real:
+Tras seleccionar un componente, en el panel lateral de esa misma pestaña podremos ver más detalles y cambiar las `props` y el estado del componente en tiempo real:
 
 ![React DevTools editando el estado de un componente en tiempo real](assets/images/3_13_devtools-side-pane.gif)
 
