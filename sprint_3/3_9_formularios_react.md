@@ -65,7 +65,7 @@ Muy bien, pero hay una cosa más que tenemos que hacer para asegurarnos de que l
 
 El ciclo que siguen los datos es:
 1. el usuario escribe en el `input`
-2. en el evento de cambio se gardan en el estado
+2. en el evento de cambio se guardan en el estado
 3. al cambiar el estado se ejecuta en método `render` y se asignan como `value` al `input`
 
 ¿Y para qué tanto lío? Pues para garantizar que en el estado tenemos todos los datos necesarios para pintar la interfaz. Vamos a ver cómo queda en el ejemplo anterior.
