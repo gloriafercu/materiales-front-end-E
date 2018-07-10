@@ -5,12 +5,11 @@
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO 3](#ejercicio-3)
 - [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
 - [EJERCICIO 6](#ejercicio-6)
 - [EJERCICIO 7](#ejercicio-7)
 
 <!-- TOC END -->
-
-
 
 ## Introducción
 
@@ -168,7 +167,7 @@ Para obtener más información acerca de `setTimeout()`, consultaremos la docume
 - [Documentación de setTimeout en MDN](https://developer.mozilla.org/es/docs/Web/API/WindowTimers/setTimeout)
 
 * * *
-EJERCICIO 5
+#### EJERCICIO 5
 
 Con JavaScript, crear un código para mostrar una ventana en nuestro navegador una vez transcurridos 15 segundos que ponga "su sesión ha expirado" (creada usando HTML y CSS).
 
