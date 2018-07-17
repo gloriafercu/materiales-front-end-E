@@ -37,7 +37,6 @@
 * [2.14 Scope y hoisting](sprint_2/2_13_scope_y_hoisting.md)
 
 
-<!--
 ## Sprint 3. ES6 y React 
 * [3.1 Básicos de ES6](sprint_3/3_1_basicos_es6.md)
 * [3.2 Básicos de ES6 II](sprint_3/3_2_basicos_es6_2.md)
@@ -46,7 +45,7 @@
 * [3.5 Intro a React II](sprint_3/3_5_intro_react_2.md)
 * [3.6 Componentes en React](sprint_3/3_6_componentes_react.md)
 * [3.7 Eventos en React](sprint_3/3_7_eventos_react.md)
-
+<!--
 * [3.8 Estado en React](sprint_3/3_8_estado_react.md)
 * [3.9 Formularios en React](sprint_3/3_9_formularios_react.md)
 * [3.10 Lifting](sprint_3/3_10_lifting.md)
@@ -57,11 +56,11 @@
 -->
 
 
-
 ## Proyectos
 
 * [Proyecto 1. Web grupal](proyectos/P1_proyecto_sprint_1.md)
 * [Proyecto 2. Awesome profile-cards](proyectos/P2_proyecto_sprint_2.md)
+* [Proyecto 3. Un caso de código heredado](proyectos/P3_proyecto_sprint_3.md)
 * [Anexo. Documentación del API de Awesome Profile Cards](proyectos/P2_anexo.md)
 * [Anexo. Diseña tu web desde cero](proyectos/P1_anexo_diseno.md)
 
