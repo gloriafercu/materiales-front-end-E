@@ -92,7 +92,7 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 
 > **NOTA**: No debéis copiar código de vuestro proyecto anterior, sino esforzaros por entender el que han creado otras compañeras. Para partes incompletas o que no funcionen podéis arreglarlas pero no re-hacerlas desde cero.
 
-### Tercero. Añadir las mejoras
+### Tercero. Versión React
 
 - 5 sesiones de trabajo
 - Incluir estado y eventos de React

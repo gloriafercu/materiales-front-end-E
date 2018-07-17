@@ -45,6 +45,7 @@
 * [3.5 Intro a React II](sprint_3/3_5_intro_react_2.md)
 * [3.6 Componentes en React](sprint_3/3_6_componentes_react.md)
 * [3.7 Eventos en React](sprint_3/3_7_eventos_react.md)
+
 <!--
 * [3.8 Estado en React](sprint_3/3_8_estado_react.md)
 * [3.9 Formularios en React](sprint_3/3_9_formularios_react.md)
