@@ -87,9 +87,10 @@ console.log(twinSister); // { name: 'Juliette', lastName: 'Smith', age: 39, lang
 
 **EJERCICIO 1**
 
-Partiendo del listado de participantes de la carrera de escobas del ejercicio 6 de ayer. Vamos a realizar varios ejercicios:
+Partiendo del listado de participantes de la carrera de escobas del ejercicio 6 de ayer. Vamos a realizar varios ejercicios:  
+
 1. Añadir un último participantes que ha llegado tarde: el señor Argus Filch ha hecho un tiempo de 78. Añádelo al array usando el `spreading` de array.
-2. Sacamos el objeto del ganador de la carrera usando destructuring del array, y añadimos a ese objeto una nueva propiedad `win` con valor 1. Lo hacemos usando `spreading` del objeto.
+1. Sacamos el objeto del ganador de la carrera usando destructuring del array, y añadimos a ese objeto una nueva propiedad `win` con valor 1. Lo hacemos usando `spreading` del objeto.
 
 ```js
 const users = [
