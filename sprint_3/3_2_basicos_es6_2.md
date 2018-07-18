@@ -258,7 +258,9 @@ Los módulos nos facilitan dividir nuestro código en pequeñas partes reutiliza
 **dog.js**:
 ```js
 class Dog {
-  // class body
+  bark() {
+    console.log('Wan, wan!');
+  }
 }
 
 const FAMOUS_DOGS = ['Hachiko', 'Laika', '101 Dalmatians'];
@@ -268,7 +270,7 @@ export { Dog, FAMOUS_DOGS };
 
 **main.js**:
 ```js
-import { Dog, FAMOUS_DOGS } from './dog';
+import { Dog, FAMOUS_DOGS } from './dog.js';
 
 const hachiko = new Dog('Hachiko');
 
@@ -321,7 +323,7 @@ Podemos seleccionar, por su nombre, qué valores exportados importar. Importarem
 
 **main.js**:
 ```js
-import { aConstant } from './module';
+import { aConstant } from './module.js';
 
 console.log(aConstant); // 'constant'
 ```
@@ -330,7 +332,7 @@ E importaremos varios valores así:
 
 **main.js**:
 ```js
-import { aConstant, aFunction } from './module';
+import { aConstant, aFunction } from './module.js';
 
 aFunction(); // do things as declared in module.js
 console.log(aConstant); // 'constant'
@@ -340,7 +342,7 @@ Si queremos cambiarle el nombre a algún valor, lo podemos hacer con `as`:
 
 **main.js**:
 ```js
-import { aFunction as functionFromModule } from './module';
+import { aFunction as functionFromModule } from './module.js';
 
 functionFromModule(); // do things as declared in module.js
 ```
@@ -348,7 +350,7 @@ functionFromModule(); // do things as declared in module.js
 import {
   aConstant,
   aFunction as functionFromModule
-} from './module';
+} from './module.js';
 
 functionFromModule(); // do things as declared in module.js
 console.log(aConstant); // 'constant'
@@ -357,7 +359,7 @@ console.log(aConstant); // 'constant'
 import {
   aConstant as constantFromModule,
   aFunction as functionFromModule
-} from './module';
+} from './module.js';
 
 functionFromModule(); // do things as declared in module.js
 console.log(constantFromModule); // 'constant'
@@ -367,7 +369,7 @@ También podemos importar todo el contenido de un módulo con `*`. Esto nos impo
 
 **main.js**:
 ```js
-import * as module from './module';
+import * as module from './module.js';
 
 module.aFunction(); // do things as declared in module.js
 console.log(module.aConstant); // 'constant'
