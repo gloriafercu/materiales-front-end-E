@@ -77,7 +77,7 @@ const person = {
 
 const twinSister = {...person, name: 'Juliette'};
 
-console.log(twinSister); // { name: 'Juliette', lastName: 'Smith', age: 39, languages: ['English', 'French'] }
+console.log(twinSister); // { name: 'Juliette', lastName: 'Smith', age: 39 }
 ```
 
 > Cuidado: si alguna de las propiedades del objeto original es un array u otro objeto, esa propiedad no se clonaría, sino que se compartiría. Para evitar errores, solo copiaremos de esta manera objetos "planos".
@@ -89,8 +89,8 @@ console.log(twinSister); // { name: 'Juliette', lastName: 'Smith', age: 39, lang
 
 Partiendo del listado de participantes de la carrera de escobas del ejercicio 6 de ayer. Vamos a realizar varios ejercicios:  
 
-1. Añadir un último participantes que ha llegado tarde: el señor Argus Filch ha hecho un tiempo de 78. Añádelo al array usando el `spreading` de array.
-1. Sacamos el objeto del ganador de la carrera usando destructuring del array, y añadimos a ese objeto una nueva propiedad `win` con valor 1. Lo hacemos usando `spreading` del objeto.
+1. Añadir un último participante que ha llegado tarde: el señor Argus Filch ha hecho un tiempo de 78. Crea un array nuevo con todos los resultados usando el `spreading` de array.
+1. Sacamos el objeto del ganador de la carrera usando destructuring del array, y creamos un nuevo objeto añadiendo una nueva propiedad `win` con valor 1. Lo hacemos usando `spreading` del objeto.
 
 ```js
 const users = [
