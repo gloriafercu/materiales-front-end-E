@@ -87,9 +87,19 @@ console.log(twinSister); // { name: 'Juliette', lastName: 'Smith', age: 39, lang
 
 **EJERCICIO 1**
 
-Partiendo del listado de participantes de la carrera de escobas del ejercicio 6. Vamos a realizar varios ejercicios:
+Partiendo del listado de participantes de la carrera de escobas del ejercicio 6 de ayer. Vamos a realizar varios ejercicios:
 1. Añadir un último participantes que ha llegado tarde: el señor Argus Filch ha hecho un tiempo de 78. Añádelo al array usando el `spreading` de array.
 2. Sacamos el objeto del ganador de la carrera usando destructuring del array, y añadimos a ese objeto una nueva propiedad `win` con valor 1. Lo hacemos usando `spreading` del objeto.
+
+```js
+const users = [
+  {name: 'Nymphadora Tonks', time: 9},
+  {name: 'Cedric Diggory', time: 28},
+  {name: 'Cho Chang', time: 35},
+  {name: 'Luna Lovegood', time: 45},
+  {name: 'Gregory Goyle', time: 56}
+];
+```
 
 * * *
 
@@ -173,7 +183,7 @@ makePersonObject('Emma', 'Watson', 27); // { name: "Emma", lastName: "Watson", b
 
 ### El `this` léxico
 
-Ya vimos en la sesión 3.7 que en todas las funciones se define automáticamente una variable `this` que puede resultar un poco problemática, porque lo entendemos traducido del inglés como "esto que está aquí". `this`, sin embargo, tiene distinto valor según desde qué contexto **se ejecute** la función. Existe una inconveniencia con esto en los _callbacks_, una función que pasas a otra parte del código (_aquello_) para que se ejecute en asíncrono (_allá_). Al declarar una función que use `this`, puede parecer que estemos usando el `this` del contexto (_esto_) desde el que escribimos (_aquí_) la función, pero en realidad no es así:
+En todas las funciones se define automáticamente una variable `this` que puede resultar un poco problemática, porque lo entendemos traducido del inglés como "esto que está aquí". `this`, sin embargo, tiene distinto valor según desde qué contexto **se ejecute** la función. Existe una inconveniencia con esto en los _callbacks_, una función que pasas a otra parte del código (_aquello_) para que se ejecute en asíncrono (_allá_). Al declarar una función que use `this`, puede parecer que estemos usando el `this` del contexto (_esto_) desde el que escribimos (_aquí_) la función, pero en realidad no es así:
 
 ```js
 function Person() {
