@@ -29,7 +29,7 @@ Los componentes de React, además, pueden personalizarse a través de un mecanis
 
 _¡Manos a la obra!_ Vamos a crear nuestro primer componente de React. Va a ser un componente que nos muestre una imagen aleatoria de un gato usando la web de lorempixel, y que además será un enlace a una página. Primero, creamos un proyecto nuevo con `create-react-app`. 
 
-Para comenzar, vamos a crear un nuevo módulo JavaScript para definir el componente. Crearemos un archivo `RandomCat.js` en la misma carpeta `src` donde definiremos el componente. Tendremos que `import`ar React de su módulo, así que añadiremos al principio:
+Para comenzar, vamos a crear un nuevo módulo JavaScript para definir el componente. Crearemos un archivo `RandomCat.js` en la misma carpeta `src` donde definiremos el componente. Tendremos que importar React de su módulo, así que añadiremos al principio:
 
 **RandomCat.js**:
 ```js
@@ -37,7 +37,7 @@ import React from 'react';
 // ...
 ```
 
-Para que nuestro componente se pueda usar desde fuera del módulo, lo `export`aremos. Para eso, añadiremos al final:
+Para que nuestro componente se pueda usar desde fuera del módulo, lo exportaremos. Para eso, añadiremos al final:
 
 **RandomCat.js**:
 ```js
@@ -69,7 +69,7 @@ class RandomCat extends React.Component {
 }
 ```
 
-_¡Ya está!_ Ahora para ver el resultado tendremos que decirle a React que lo pinte. Para usar nuestro componente en el archivo `index.js`, tendremos que `import`ar nuestro componente del módulo, naturalmente. Escribiremos arriba:
+_¡Ya está!_ Ahora para ver el resultado tendremos que decirle a React que lo pinte. Para usar nuestro componente en el archivo `index.js`, tendremos que importar nuestro componente del módulo, naturalmente. Escribiremos arriba:
 
 **index.js**:
 ```js
@@ -78,7 +78,7 @@ import React from 'react';
 import RandomCat from './RandomCat';
 ```
 
-> Para `import`ar de un archivo local, utilizaremos el prefijo `./` antes de la ruta. Sin embargo, no pondremos el prefijo cuando sea una dependencia en `npm`, como nos preconfigura `create-react-app` para `react` y `react-dom`.
+> Para importar de un archivo local, utilizaremos el prefijo `./` antes de la ruta. Sin embargo, no pondremos el prefijo cuando sea una dependencia en `npm`, como nos preconfigura `create-react-app` para `react` y `react-dom`.
 
 Solo falta el paso final: es tan fácil como cambiar la línea que empieza por `ReactDOM.render` y reemplazar `<App />` por `<RandomCat />`:
 
@@ -122,7 +122,7 @@ ReactDOM.render(<RandomCat />, document.getElementById('root'));
 * * *
 **EJERCICIO 1**:
 
-Vamos a partir del ejercicio 1 (o del 2) de la sesión anterior. En lugar de usar el componente genérico App, vamos a crear un nuevo componente `MediaCard` que sea quien el encargado de pintar una tarjeta social para un usuario. Vamoso a cargar ese nuevo componente desde el `index.js` para pintarlo con ReactDOM.
+Vamos a partir del ejercicio 1 (o del 2) de la sesión anterior. En lugar de usar el componente genérico App, vamos a crear un nuevo componente `MediaCard` encargado de pintar una tarjeta social para un usuario. Vamos a cargar ese nuevo componente desde el `index.js` para pintarlo con ReactDOM.
 
 * * *
 
@@ -198,7 +198,7 @@ class Greetings extends React.Component {
 export default Greetings;
 ```
 
-Pero React también tiene una manera de escribir estos componentes de manera más sencilla. La idea, sencillamente, es pensar los componentes _dummies_ como funciones que reciben unas `props` como parámetros y devuelven elementos y componentes de JSX:
+Pero React también tiene una manera de escribir estos componentes de manera más sencilla. La idea, sencillamente, es pensar en los componentes _dummies_ como funciones que reciben unas `props` como parámetros y devuelven elementos y componentes de JSX:
 
 ```js
 import React from 'react';
@@ -319,7 +319,7 @@ Lo siguiente tenemos que agradecérselo a JSX: para usar nuestro componente solo
 // ...
 ```
 
-Finalmente, en el archivo `index.js` importaremos el componente `CatList` y le diremos a `ReactDOM` que `render`ice `<CatList />`:
+Finalmente, en el archivo `index.js` importaremos el componente `CatList` y le diremos a `ReactDOM` que renderice `<CatList />`:
 
 **index.js**:
 ```js

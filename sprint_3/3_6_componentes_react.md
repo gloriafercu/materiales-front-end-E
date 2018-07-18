@@ -193,13 +193,13 @@ class Popup extends React.Component {
 
 ReactDOM.render(
   <Popup styling="info">
-  <h1 className="horizontal-center">Welcome</h1>
-  <p>
-  Thank you for visiting our webpage!
-  </p>
-  <p>
-  We hope you enjoy our new shiny site!
-  </p>
+    <h1 className="horizontal-center">Welcome</h1>
+    <p>
+     Thank you for visiting our webpage!
+    </p>
+    <p>
+      We hope you enjoy our new shiny site!
+    </p>
   </Popup>,
   document.getElementById('react-root')
 );
@@ -257,7 +257,7 @@ Partiendo del código del ejercicio 1, usa las `defaultProps` para que la descri
 
 ## `props` tipadas con `propTypes`
 
-JavaScript no tiene un sistema de tipado fuerte, lo que significa que nuestras variables pueden almacenar cualquier tipo de valor. Podemos declarar una variable `const nameOfAPerson` que debería almacenar una `string` y, sin embargo, podemos asignarle un valor numérico como `4`, tanto en su inicialización como en un futuro, si fuera `let` o `var`. Cuando controlamos una pequeña base de código, esto no supone ningún problema, pero existen dos casos en los que es más probable que empiecen a surgir incoherencias o errores:
+JavaScript no tiene un sistema de tipado fuerte, lo que significa que nuestras variables pueden almacenar cualquier tipo de valor. Podemos declarar una variable `const nameOfAPerson` que debería almacenar una `string` y, sin embargo, podemos asignarle un valor numérico como `4`, tanto en su inicialización, como en un futuro si fuera `let` o `var`. Cuando controlamos una pequeña base de código, esto no supone ningún problema, pero existen dos casos en los que es más probable que empiecen a surgir incoherencias o errores:
 
 - Cuando nuestra base de código es o va a ser muy grande (escalabilidad)
 - Cuando nuestro código será usado por otras personas (amabilidad, ;)
