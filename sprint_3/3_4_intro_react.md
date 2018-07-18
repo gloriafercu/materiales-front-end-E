@@ -59,7 +59,7 @@ Hasta ahora hemos visto cómo crear webs escribiendo la vista en archivos HTML y
 
 React es una librería que nos permite hacer componentes gráficos con los que estructurar nuestra web. Los componentes gráficos se pintarán "solos" en el DOM, sin que tengamos que manejarlo "a mano". Además, React lo hace de una manera pensada para que los componentes cambien, así que crearemos webs muy reactivas y rápidas.
 
-Es intuitivo hacer webs con React porque todo son componentes que llaman a otros. El flujo es unidireccional (de arriba abajo), así que es fácil entender y solucionar los errores que pueda haber: si el error no está en mi componente, está en quien ha llamado a mi componente y cómo.
+Es intuitivo hacer webs con React porque todo son componentes que llaman a otros componentes. El flujo es unidireccional (de arriba abajo), así que es fácil entender y solucionar los errores que pueda haber: si el error no está en mi componente, está en quien ha llamado a mi componente y cómo.
 
 
 ## Estructura de un proyecto en React
@@ -100,7 +100,7 @@ my-react-project
 `npm` instalará las dependencias en la carpeta `node_modules`, de donde podremos importar módulos de JS como `react` y `react-dom` a nuestro código.
 Nuestro código se agrupará dentro de la carpeta `src`, excepto el único archivo HTML que usaremos, que estará en `public/index.html`.
 
-Nuestros componentes de React irán en la carpeta `src/compontents`, cada uno en su fichero. En cuanto a los archivos de estilo, seguiremos compilando Sass con gulp/Koala y metiendo los archivos CSS en la carpeta `src/stylesheets`.
+Nuestros componentes de React irán en la carpeta `src/components`, cada uno en su fichero. En cuanto a los archivos de estilo, seguiremos compilando Sass con gulp/Koala y metiendo los archivos CSS en la carpeta `src/stylesheets`.
 
 Basta de cháchara: ¡empecemos!
 
@@ -137,9 +137,11 @@ Es el único fichero HTML que usaremos en nuestra aplicación. Podemos modificar
 
 ### `src/index.js`
 
-Este será el fichero JS de entrada a nuestra aplicación React. Será el único en el que carguemos `ReactDOM` y se encarga de acceder a un nodo del DOM (el `div` que antes identificamos como `root`) y pintar el componente principal de la aplicación, en este caso, llamado `App`.
+Este será el fichero JS de entrada a nuestra aplicación React. Será el único en el que carguemos `ReactDOM` y se encarga de acceder a un nodo del DOM (el `div` que antes identificamos como `root`) e importar y pintar el componente principal de la aplicación, en este caso, llamado `App`.
 
 ```js
+import App from './App';
+
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
@@ -238,7 +240,7 @@ Muy parecido al JSX que hemos escrito, ¿verdad?
 
 **EJERCICIO 1**:
 
-Vamos a crear un nuevo proyecto de React llamado MediaCard. Vamos a modificar el método `render` del componente `App` para que tenga un diseño similar al de la imagen. Podéis usar una imagen a vuestra elección para la que aparece en el diseño, y Font-Awesome para el icono del corazón. De esta forma, aprenderemos a cómo trabajar con cosas que ya conocemos (HTML y CSS) en una aplicación de React.
+Vamos a crear un nuevo proyecto de React llamado MediaCard. Vamos a modificar el método `render` del componente `App` para que tenga un diseño similar al de la imagen. Podéis usar una imagen a vuestra elección en lugar de la que aparece en el diseño, y Font-Awesome para el icono del corazón. De esta forma, aprenderemos a cómo trabajar con cosas que ya conocemos (HTML y CSS) en una aplicación de React.
 
 ![Media Card](assets/images/3_4_media-card.png)
 
@@ -248,7 +250,7 @@ Vamos a crear un nuevo proyecto de React llamado MediaCard. Vamos a modificar el
 
 Partiendo del ejercicio anterior, en este ejercicio aprenderemos mejor cómo funciona JSX. Para ello vamos a asignar nombres a las variables, un tema que será importante cuando creemos nuestros componentes más adelante.
 
-Partiendo del proyecto anterior, solo modificaremos el método `render()` dentro del archivo `App.js`. El objetivo será que el `return` de `render()` devuelva una sola variable. Para lo que extraeremos a variables cada una de las "etiquetas" del contenido del `return` original. Por ejemplo, una variable para la cabecera, y otra para el párrafo. Haremos que los nombres de nuestras variables sean descriptivos y, solo cuando sea posible, cortos.
+Partiendo del proyecto anterior, solo modificaremos el método `render()` dentro del archivo `App.js`. El objetivo será que el `return` de `render()` devuelva una sola variable. Para lo que extraeremos a variables cada una de las "etiquetas" del contenido del `return` original. Por ejemplo, una variable para la cabecera, y otra para el párrafo. Haremos que los nombres de nuestras variables sean descriptivos y, cuando sea posible, cortos.
 
 ```js
 render() {

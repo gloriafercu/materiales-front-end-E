@@ -259,7 +259,7 @@ Vamos a hacer un pequeño programa que le pregunte al usuario cuáles son sus do
 
 **EJERCICIO 5: A STORY `of` ADALABERS**
 
-Estamos en una clase de Adalab, y queremos saber conocer algunas estadísticas sobre las adalabers de esa clase. Estos son sus datos:
+Estamos en una clase de Adalab, y queremos conocer algunas estadísticas sobre las adalabers de esa clase. Estos son sus datos:
 
 - María, 29 años, diseñadora
 - Lucía, 31 años, ingeniera química
@@ -321,7 +321,7 @@ console.log(`The z-index is ${z}`); // The z-index is 12
 
 **EJERCICIO 6: Otra vez la carrera de escobas**
 
-Partiendo de este array con los resultados de una carrera de escobas, vamos a sacar del array e imprimir en la consola el podium, es decir, los tiempos del primero, segundo y tercer clasificado usando destructuring del array.
+Partiendo de este array con los resultados de una carrera de escobas ya ordenados, vamos a sacar del array e imprimir en la consola el podium, es decir, los tiempos del primero, segundo y tercer clasificado usando destructuring del array.
 
 ```js
 var users = [
