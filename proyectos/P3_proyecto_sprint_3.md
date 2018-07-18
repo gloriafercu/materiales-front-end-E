@@ -77,7 +77,7 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 
 - 2 sesiones de trabajo
 - Organizar el trabajo a realizar usando Trello, e ir asignando tareas y responsables
-- Crear la infraestructura necesaria de repositorios. En este proyecto usaremos 2 repos: 1) haremos un _fork_ del proyecto que nos hayan asignado y trabajaremos en una rama para pasarlo a ES6; 2) un nuevo repo con el proyecto de React
+- Crear la infraestructura necesaria de repositorios. En este proyecto usaremos 2 repos: 1) el repo del proyecto que nos hayan asignado, donde trabajaremos en una rama para pasarlo a ES6; 2) un nuevo repo con el proyecto de React
 - Entender los requisitos del proyecto y las técnicas y herramientas empleadas
 - Analizar el código y entender su estructura para poder adaptarla a nuestras necesidades y conocimientos
 - Analizar los componentes empleados en la web y el estilo visual de esta
