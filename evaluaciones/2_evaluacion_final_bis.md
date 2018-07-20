@@ -1,6 +1,6 @@
 ## Ejercicio de evaluación final (bis) - Sprint 2
 
-El ejercicio consiste en desarrollar una aplicación web que simula un juego de buscar las parejas. El objetivo del ejercicio es desarrollar la interfaz del juego, no implementar el juego en sí que quedará como un BONUS.
+El ejercicio consiste en desarrollar una aplicación web que simula un juego de buscar las parejas. El objetivo del ejercicio es desarrollar la interfaz del juego, **no implementar el juego en sí** que quedará como un BONUS.
 
 Vamos de definir los distintos hitos del ejercicio:
 
@@ -10,7 +10,7 @@ En primer lugar vamos a realizar una maquetación básica del juego.
 
 ![Juego parejas v1](assets/images/2-final-bis/juego-parejas-v1.png)
 
-La aplicación de búsqueda de series consta de dos partes
+La aplicación consta de dos partes
 1. Un formulario para elegir el tamaño de la partida y un botón
 2. Un listado de cartas, representadas por 2 imágenes: una de la parte anterior de la carta y otra de la parte posterior. La imagen de la parte anterior la obtendremos de un servidor, y la imagen posterior será fija, por ejemplo, usando https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB
 
@@ -40,7 +40,7 @@ La entrega del ejercicio se realizará en un repositorio de GitHub enviado por s
 
 ### Normas
 
-Este ejercicio está pensado para que se realice de forma individual,  pero podrás consultar tus dudas con la profesora y tus compañeras si lo consideras necesario. Es una buena oportunidad para conocer cómo estás progresando, saber qué temas debes reforzar durante las siguientes semanas y cuáles dominas. Te recomendamos que te sientas cómoda con el ejercicio que entregues y no envíes cosas copiadas que no entiendas, puesto que en la revisión del ejercicio con la profesora te pedirá que expliques las decisiones tomadas para realizar el ejercicio. Este feedback individual con la profesora será de un máximo de 30 minutos, y te propondrá además realizar cambios in situ sobre el ejercicio. Al final, tendrás un feedback sobre aspectos a destacar y a mejorar en tu ejercicio, y sabrás qué objetivos de aprendizaje has superado de los listados a continuación.
+Este ejercicio está pensado para que se realice de forma individual, pero podrás consultar tus dudas con la profesora y tus compañeras si lo consideras necesario. Es una buena oportunidad para conocer cómo estás progresando, saber qué temas debes reforzar durante las siguientes semanas y cuáles dominas. Te recomendamos que te sientas cómoda con el ejercicio que entregues y no envíes cosas copiadas que no entiendas, puesto que en la revisión del ejercicio con la profesora te pedirá que expliques las decisiones tomadas para realizar el ejercicio. Este feedback individual con la profesora será de un máximo de 30 minutos, y te propondrá además realizar cambios in situ sobre el ejercicio. Al final, tendrás un feedback sobre aspectos a destacar y a mejorar en tu ejercicio, y sabrás qué objetivos de aprendizaje has superado de los listados a continuación.
 
 ### Criterios de evaluación
 
