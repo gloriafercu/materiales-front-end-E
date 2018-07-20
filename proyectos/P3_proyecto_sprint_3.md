@@ -69,6 +69,25 @@ La webapp deberá tener las siguientes nuevas características:
 - La web debe estar en una única página, por lo que usaremos React router para navegar de la página de bienvenida a la aplicación y ambas tendrán su propia ruta
 
 
+## Especificaciones
+
+Se partirá de un proyecto funcional y se realizará una refactorización del código incluyendo el uso de React. _Refactorizar_ código consiste en modificar un código para mejorar su estructura pero sin añadir nuevas funcionalidades.
+
+De cara a la refactorización, el proyecto debe utilizar estas tecnologías:
+- Uso de Sass para los estilos
+- Uso de ES6 y React para la estructuración del JS de la aplicación
+- Uso de mediaqueries para que el diseño sea adaptable al dispositivo
+- Utilizar una librería para el grid si fuese necesario
+- Desarrollo usando la estrategia mobile first
+- Uso de git para el control de versiones del proyecto, con ramas y pull-requests para revisar los cambios de las compañeras
+- Publicación del resultado en Internet usando GitHub Pages
+
+La webapp deberá tener las siguientes nuevas características:
+- Deberá usar transiciones y/o animaciones para mejorar interacciones con la aplicación
+- Incluir una pequeña mejora de interacción: el contenido de la previsualización de la tarjeta se modifica a la vez que modifico los campos del formulario
+- Los distintos pasos de para crear la tarjeta (1. elegir estilos, 2. datos personales, 3. experiencia laboral, etc.) debe implementarse con una navegación entre distintas páginas de la aplicación usando React router
+
+
 ## Hitos
 
 En esta sección os proponemos una serie de hitos como sugerencia para dividir las fases de este proyecto. Siguiendo los principios de las metodologías ágiles estableceremos pequeños ciclos iterativos de forma que al final de cada uno de estos generemos valor real de cara al usuario.
@@ -114,7 +133,7 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 
 ## Entrega
 
-El formato de entrega de este proyecto será mediante la subida de este a la plataforma de GitHub. Para subirlo, se creará un repositorio en la organización de Adalab. El nombre del repositorio deberá estar compuesto de las siguientes partes, todo ello separado por guiones:
+El formato de entrega de este proyecto será mediante la subida de este a la plataforma de GitHub. Para subirlo, se creará un repositorio en la organización de Adalab (en este proyecto es hacer un _fork_ de un proyecto existente). El nombre del repositorio deberá estar compuesto de las siguientes partes, todo ello separado por guiones:
 - Nombre de la promoción en minúsculas
 - "s" minúscula seguida del número del sprint
 - Nombre del equipo en minúsculas
