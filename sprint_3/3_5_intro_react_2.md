@@ -442,7 +442,8 @@ En nuestra web de tarjetas sociales, vamos a crear un nuevo componente `MediaLis
 
 > GitHub Pages se sirve como https y "pide" que el resto de recursos externos que pidamos usen el mismo protocolo. Esto se aplica, por ejemplo, a las peticiones a una API.
 
-Entraremos por terminal a nuestra carpeta de proyecto y esto es lo que hay que hacer:
+Entraremos por terminal a nuestra carpeta de proyecto y esto es lo que hay que hacer:  
+
 1. Modificar `package.json` para que las rutas sean relativas a nuestros archivos: hay que añadir `”homepage”: “./“,`.
 2. Ya que lo vamos a servir desde GitHub, y usa https, tendremos que cambiar cualquier recurso `http` a `https`: por ejemplo, en un fetch
 3. Ejecutar `npm run build` para que nos cree la versión para producción en la carpeta **build/**.
