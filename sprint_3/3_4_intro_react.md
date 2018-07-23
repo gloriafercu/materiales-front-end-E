@@ -333,11 +333,11 @@ Ahora vamos a detallar los pasos a seguir para conseguirlo.
 
 Para poder compilar desde la terminal, tendremos que instalar en nuestro proyecto `node-sass`:
 
-`npm install --save node-sass-chokidar`
+`npm install --save-dev node-sass-chokidar`
 
 También instalamos `npm-run-all` para poder lanzar varias tareas a la vez, es decir, las de React y las nuevas de Sass:
 
-`npm install --save npm-run-all`
+`npm install --save-dev npm-run-all`
 
 ### 2. Modificar los scripts de npm
 
