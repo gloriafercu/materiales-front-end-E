@@ -12,7 +12,11 @@ En primer lugar vamos a realizar una maquetación básica del juego.
 
 La aplicación consta de dos partes
 1. Un formulario para elegir el tamaño de la partida y un botón
-2. Un listado de cartas, representadas por 2 imágenes: una de la parte anterior de la carta y otra de la parte posterior. La imagen de la parte anterior la obtendremos de un servidor, y la imagen posterior será fija, por ejemplo, usando https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB
+2. Un listado de cartas, cada una con 2 imágenes que representan las dos caras de una carta (cuando una está visible la otra está oculta). 
+
+La imagen para la cara anterior la obtendremos de un servidor y para la posterior usaremos https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB.
+
+En la imagen del el diseño propuesto podemos ver algunas cartas boca arriba y otras boca abajo.
 
 Para realizar la maquetación básica del ejercicio usaremos Sass y la base de gulp del [Adalab Web Starter Kit](https://github.com/Adalab/Adalab-web-starter-kit).
 
@@ -32,7 +36,13 @@ Al hacer clic sobre una carta vamos a mostrar su parte frontal y a ocultar su pa
 
 ### 4. BONUS: Implementar el juego
 
-Una vez terminada la parte obligatoria, os animamos a intentar implementar el juego de las parejas en una rama del repositorio. Por cada carta, tenemos información en el JSON de cuáles son pareja. Esta parte del ejercicio es bastante compleja, así que no os desesperéis si no conseguís completarla.
+Una vez terminada la parte obligatoria, os animamos a intentar implementar el juego de las parejas en una rama del repositorio. 
+Por cada carta, tenemos información en el JSON de cuáles son pareja. 
+
+- Cuando se hace clic en una primera carta esta se da la vuelta y nos muestra su pokemon (como hasta ahora).
+- Al hacer clic en una segunda carta esta se da la vuelta y: si es la pareja de la primera las dos se quedan boca arriba (como hasta ahora), si no es la pareja de la primera las dos deben mantenerse visibles durante un periodo corto de tiempo (para que la usuaria vea los pokemon) y ponerse boca abajo.
+
+Esta parte del ejercicio es bastante compleja, así que no os desesperéis si no conseguís completarla.
 
 ### Entrega
 
