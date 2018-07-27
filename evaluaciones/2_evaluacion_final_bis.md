@@ -14,7 +14,7 @@ La aplicación consta de dos partes
 1. Un formulario para elegir el tamaño de la partida y un botón
 2. Un listado de cartas, cada una con 2 imágenes que representan las dos caras de una carta (cuando una está visible la otra está oculta). 
 
-La imagen para la cara anterior la obtendremos de un servidor y para la posterior usaremos https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB.
+La imagen para la cara anterior la obtendremos de un servidor y para la posterior usaremos [https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB](https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB).
 
 En la imagen del el diseño propuesto podemos ver algunas cartas boca arriba y otras boca abajo.
 
@@ -22,7 +22,7 @@ Para realizar la maquetación básica del ejercicio usaremos Sass y la base de g
 
 ### 2. Inicio de la partida
 
-Al hacer clic sobre el botón de 'Comenzar', nuestra aplicación debe recoger el valor del tamaño de la partida y conectarse a un API que devuelve un listado de cartas. La URL del API es https://raw.githubusercontent.com/Adalab/cards-data/master/NUMERO.json, donde NUMERO puede tomar el valor de 4, 6 y 8. Por cada carta obtendremos, entre otros datos, la URL de la imagen a mostrar.
+Al hacer clic sobre el botón de 'Comenzar', nuestra aplicación debe recoger el valor del tamaño de la partida y conectarse a un API que devuelve un listado de cartas. La URL del API es [https://raw.githubusercontent.com/Adalab/cards-data/master/NUMERO.json](https://raw.githubusercontent.com/Adalab/cards-data/master/NUMERO.json), donde NUMERO puede tomar el valor de 4, 6 y 8. Por cada carta obtendremos, entre otros datos, la URL de la imagen a mostrar.
 
 ### 3. Interacción
 
