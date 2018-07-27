@@ -77,15 +77,14 @@ De cara a la refactorización, el proyecto debe utilizar estas tecnologías:
 - Uso de Sass para los estilos
 - Uso de ES6 y React para la estructuración del JS de la aplicación
 - Uso de mediaqueries para que el diseño sea adaptable al dispositivo
-- Utilizar una librería para el grid si fuese necesario
 - Desarrollo usando la estrategia mobile first
 - Uso de git para el control de versiones del proyecto, con ramas y pull-requests para revisar los cambios de las compañeras
 - Publicación del resultado en Internet usando GitHub Pages
 
 La webapp deberá tener las siguientes nuevas características:
 - Deberá usar transiciones y/o animaciones para mejorar interacciones con la aplicación
-- Incluir una pequeña mejora de interacción: el contenido de la previsualización de la tarjeta se modifica a la vez que modifico los campos del formulario
-- Los distintos pasos de para crear la tarjeta (1. elegir estilos, 2. datos personales, 3. experiencia laboral, etc.) debe implementarse con una navegación entre distintas páginas de la aplicación usando React router
+
+- Debe implementarse con una navegación entre distintas páginas de la aplicación usando React router
 
 
 ## Hitos
