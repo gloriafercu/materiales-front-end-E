@@ -45,8 +45,6 @@
 * [3.5 Intro a React II](sprint_3/3_5_intro_react_2.md)
 * [3.6 Componentes en React](sprint_3/3_6_componentes_react.md)
 * [3.7 Eventos en React](sprint_3/3_7_eventos_react.md)
-
-<!--
 * [3.8 Estado en React](sprint_3/3_8_estado_react.md)
 * [3.9 Formularios en React](sprint_3/3_9_formularios_react.md)
 * [3.10 Lifting](sprint_3/3_10_lifting.md)
@@ -54,7 +52,7 @@
 * [3.12 React router](sprint_3/3_12_react_router.md)
 * [3.13 Métodos del ciclo de vida de componentes](sprint_3/3_13_ciclo_vida_componentes_react.md)
 * [3.14 Debugging en React](sprint_3/3_14_debugging_react.md)
--->
+
 
 
 ## Proyectos
