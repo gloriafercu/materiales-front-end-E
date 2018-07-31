@@ -126,7 +126,7 @@ ReactDOM.render(
 
 **EJERCICIO 1: FILTRANDO ARTÍCULOS**
 
-Vamos a partir del [Ejercicio del listado de items de la lista de la compra de la sesión anterior](https://codepen.io/adalab/pen/XVoVOa?editors=0110). Si recuerdas bien, teníamos un componente `ItemList` que mostraba un listado de `Item`s. Vamos a crear un nuevo componente `CategoryButton` que es un botón con el nombre de una categoría de productos y que recibe por `props` el nombre de la categoría.
+Vamos a partir de [la segunda parte del ejercicio 1 de la sesión 3.6 (los items de la lista de la compra)](https://books.adalab.es/materiales-front-end-d/sprint-3.-es6-y-react/3_6_componentes_react#ejemplos-de-app-con-varios-componentes-y-como-se-pasan-datos-con-las-props). Si recuerdas bien, teníamos un componente `ItemList` que mostraba un listado de `Item`s. Vamos a crear un nuevo componente `CategoryButton` que es un botón con el nombre de una categoría de productos y que recibe por `props` el nombre de la categoría.
 
 ```html
 <CategoryButton category="Bebida" />
