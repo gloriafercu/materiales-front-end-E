@@ -293,15 +293,16 @@ Vamos a partir del componente `Clock` del ejercicio 1 de la sesión 3.8. Y vamos
 **EJERCICIO 2: El menú dinámico**
 
 Vamos a crear un menú de opciones dinámico, es decir, que las opciones vienen de hacer una petición a un servidor. Vamos a ver paso por paso cómo hacerlo:
+
 1. Creamos un componente `App` que será el contenedor de la aplicación
 
 2. Creamos un componente `Menu` al que le pasamos por `props` un array con las opciones en este formato:
 ```js
 [
   {
-  "label": "inicio",
-  "link": "#inicio"
-  }
+    "label": "inicio",
+    "link": "#inicio"
+  },
   ...
 ]
 ```
