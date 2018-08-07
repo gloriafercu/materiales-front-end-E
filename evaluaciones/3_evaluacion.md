@@ -30,6 +30,7 @@ El listado debe tener los siguientes componentes como mínimo:
   - Componente para la tarjeta de cada personaje del listado
 
 Como en el ejemplo:
+
 ![Componentes del listado de personajes](assets/images/3-final/hp-components.png)
 
 ### 4. Detalle de personajes
