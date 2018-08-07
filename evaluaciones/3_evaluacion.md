@@ -23,13 +23,25 @@ Ahora que ya tenemos el listado de personajes en pantalla, la segunda parte cons
 
 > NOTA: en principio no es necesario tener en cuenta si las letras están en mayúscula/minúscula para la búsqueda, pero si queréis añadir esta mejora pues genial
 
-### 3. Detalle de personajes
+### 3 Componentes del listado de personajes
+El listado debe tener los siguientes componentes como mínimo:
+- Componente para los filtros
+- Componente para el listado
+  - Componente para la tarjeta de cada personale del listado
+
+Como en el ejemplo:
+![Componentes del listado de personajes](assets/images/3-final/hp-components.png)
+
+### 4. Detalle de personajes
 
 Vamos a implementar una nueva funcionalidad: al hacer clic sobre la tarjeta de un personaje, su información aparecerá a pantalla completa. Para hacer esto usaremos rutas y React router. En la pantalla de detalle aparecerá además de nombre, foto y casa, el año de nacimiento, el patronus y si está vivo o muerto al final de la saga.
 
 ![My Harry Potter characters detail](assets/images/3-final/hp-detail.png)
 
-### 4. BONUS: Mejoras visuales
+>  Ya que esta API no nos devuelve resultados con un identificador único por objeto tendremos que añadirle uno nosotras ;)  
+>  **PISTA**: ¿Quizás podríamos usar el operador spread para conseguirlo? ¿Yay or nay?
+
+### 5. BONUS: Mejoras visuales
 
 Para terminar, podéis realizar algunas mejoras visuales del ejercicio. Por ejemplo:
 - mostrar la casa y si un personajes está muerto con un icono
