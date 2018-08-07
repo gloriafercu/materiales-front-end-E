@@ -27,7 +27,7 @@ Ahora que ya tenemos el listado de personajes en pantalla, la segunda parte cons
 El listado debe tener los siguientes componentes como mínimo:
 - Componente para los filtros
 - Componente para el listado
-  - Componente para la tarjeta de cada personale del listado
+  - Componente para la tarjeta de cada personaje del listado
 
 Como en el ejemplo:
 ![Componentes del listado de personajes](assets/images/3-final/hp-components.png)
