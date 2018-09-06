@@ -31,7 +31,7 @@ Vamos a implementar una nueva funcionalidad: al hacer clic sobre la tarjeta de u
 
 ### Entrega
 
-La entrega del ejercicio se realizará en un repositorio de GitHub enviado por slack a la profesora. El límite de entrega es el **miércoles 12 de septiembre antes de las 8:00h para el turno de mañana y antes de las 15:00h para el turno de tarde**.
+La entrega del ejercicio se realizará en un repositorio de GitHub enviado por slack a la profesora. El límite de entrega es el **martes 11 de septiembre antes de las 8:00h para el turno de mañana y antes de las 15:00h para el turno de tarde**.
 
 ### Normas
 
