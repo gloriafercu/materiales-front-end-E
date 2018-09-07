@@ -17,7 +17,7 @@ Debéis usar al menos estos componentes:
 - un componente `App` principal de la aplicación
 - un componente `RepoList` para el listado de repos
 - un componente `Repo` para modelar la tarjeta con la información de un repo
-- un componente `Search` para el filtrado
+- un componente `Search` para los elementos del filtrado
 
 ### 2. Filtrado por nombre y lenguaje
 
